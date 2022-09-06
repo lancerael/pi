@@ -1,0 +1,9 @@
+{
+  "name": "@pi/types",
+  "version": "0.1.0",
+  "description": "Global types for Pi",
+  "main": "index.ts",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

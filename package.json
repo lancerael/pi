@@ -1,0 +1,11 @@
+{
+  "name": "pi",
+  "version": "0.1.0",
+  "description": "Monorepo of React UI components and supporting utilities.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
