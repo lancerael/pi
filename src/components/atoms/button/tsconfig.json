@@ -12,9 +12,14 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
+    "outDir": "build",
+    "rootDir": "src",
     "jsx": "react-jsx",
-    "types": ["vitest/globals", "jest"],
+    "types": ["vitest/globals"],
     "composite": true,
+    "declaration": true
   },
-  "include": ["**/*.ts", "**/*.tsx"]
+  "include": ["src/*.tsx", "src/*.*.ts"],
+  "exclude": ["src/*.*.tsx"],
+  "references": [{ "path": "./tsconfig.vite.json" }]
 }

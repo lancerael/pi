@@ -34,6 +34,11 @@ Error.args = {
   status: 'error',
 }
 
+export const Success = Template.bind({})
+Success.args = {
+  children: 'Success',
+  status: 'success',
+}
 export const Disabled = Template.bind({})
 Disabled.args = {
   children: 'Disabled',

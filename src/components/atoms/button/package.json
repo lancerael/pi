@@ -6,12 +6,12 @@
   "files": [
     "dist"
   ],
-  "main": "dist/pi-button.js",
-  "module": "./dist/pi-button.js",
+  "main": "dist/pi-button.umd.js",
+  "module": "dist/pi-button.js",
   "scripts": {
     "test": "vitest",
     "test:coverage": "vitest --coverage",
-    "build": "rimraf build && rimraf dist && tsc && vite build"
+    "build": "rimraf dist && vite build"
   },
   "keywords": [
     "react",

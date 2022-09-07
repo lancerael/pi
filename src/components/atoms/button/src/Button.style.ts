@@ -11,8 +11,9 @@ export const StyledButton = styled.button(({ status }: StyledButtonProps) => css
   border: 2px solid ${STATUS_COLOURS[status]};
   color:  ${STATUS_COLOURS[status]};
   background-color: white;
+  border-radius: 15px;
   width: 220px;
-  padding: 15px 15px 13px 15px;
+  padding: 10px;
   margin: 15px;
   cursor: pointer;
   &:disabled {
