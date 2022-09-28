@@ -2,7 +2,7 @@
 import { defineConfig } from 'vite'
 import { resolve } from 'node:path'
 
-export default defineConfig({
+export default () => defineConfig({
   // resolve: {
   //   alias: [
   //     { find: '@config', replacement: resolve(__dirname, 'src/config') },
@@ -18,7 +18,7 @@ export default defineConfig({
   },
   build: {
     lib: {
-      entry: resolve(__dirname, 'src/index.ts'),
+      entry: 'src/index.ts',
       formats: ['es', 'cjs'],
       name: '@pi/button',
       fileName: 'pi-button',

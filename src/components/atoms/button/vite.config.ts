@@ -1,1 +1,3 @@
-export * from '@pi/config'
+import config from '@pi/config'
+
+export default config()

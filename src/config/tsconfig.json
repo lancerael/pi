@@ -7,7 +7,7 @@
     "allowSyntheticDefaultImports": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
-    "module": "ESNext",
+    "module": "ES2022",
     "moduleResolution": "Node",
     "resolveJsonModule": true,
     "isolatedModules": true,
@@ -15,11 +15,12 @@
     "outDir": "build",
     "rootDir": "src",
     "jsx": "react-jsx",
+    "type": "modules",
     "types": ["vitest/globals"],
     "composite": true,
     "declaration": true
   },
-  "include": ["src/*.tsx", "src/*.*.ts"],
-  "exclude": ["src/*.*.tsx"],
+  "include": ["../../../src/*.tsx", "../../../src/*.*.ts"],
+  "exclude": ["../../../src/*.*.tsx"],
   "references": [{ "path": "./tsconfig.vite.json" }]
 }
