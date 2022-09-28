@@ -1,7 +1,7 @@
 import { Status } from '@pi/types'
 
 
-export interface ButtonProps extends Pick<React.HTMLProps<HTMLButtonElement>, 'onClick' | 'onMouseOver' | 'onMouseOut' | 'disabled' | 'children'> {
+export interface ButtonProps extends Omit<React.HTMLProps<HTMLButtonElement>, 'style'> {
   /**
    * The data-selector for the button
    */

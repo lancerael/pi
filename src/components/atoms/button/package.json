@@ -1,13 +1,16 @@
 {
   "name": "@pi/button",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "",
   "type": "module",
   "files": [
     "dist"
   ],
-  "main": "dist/pi-button.umd.js",
-  "module": "dist/pi-button.js",
+  "main": "./dist/pi-button.js",
+  "exports": {
+    "import": "./dist/pi-button.js",
+    "require": "./dist/pi-button.cjs"
+  },
   "scripts": {
     "test": "vitest",
     "test:coverage": "vitest --coverage",
@@ -20,14 +23,15 @@
   "author": "Lance Taylor",
   "license": "ISC",
   "dependencies": {
-    "@pi/constants": "workspace:^1.0.0",
-    "@pi/types": "workspace:^0.1.0"
+    "@pi/constants": "workspace:^1.*.*",
+    "@pi/types": "workspace:^1.*.*"
   },
   "peerDependencies": {
     "react": "^18.2.0",
     "styled-components": "^5.3.5"
   },
   "devDependencies": {
+    "@pi/config": "workspace:^1.0.0",
     "@testing-library/react": "^13.3.0",
     "@types/jest": "^28.1.8",
     "@types/jest-axe": "^3.5.4",

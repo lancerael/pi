@@ -1,5 +1,3 @@
 packages:
-  - 'src/components/*/*'
-  - 'src/utils/*'
-  - 'src/types'
-  - 'src/constants'
+  - 'src/**/*'
+  - 'src/*'
