@@ -1,6 +1,3 @@
 import createConfig from '@pi/config'
 
-export default createConfig({
-  name: '@pi/button',
-  fileName: 'pi-button',
-})
+export default createConfig('button')

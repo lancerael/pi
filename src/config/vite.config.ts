@@ -3,7 +3,7 @@ import { defineConfig } from 'vite'
 import { resolve, dirname } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
-export default (libNames: { name: string, fileName: string }) => defineConfig({
+export default (libName: string) => defineConfig({
   test: {
     globals: true,
     environment: 'jsdom',
@@ -14,9 +14,11 @@ export default (libNames: { name: string, fileName: string }) => defineConfig({
   },
   build: {
     lib: {
-      entry: resolve(dirname(fileURLToPath(import.meta.url)), '../src/index.ts'),
+      // entry: resolve(dirname(fileURLToPath(import.meta.url)), '../../../../src/index.ts'),
+      entry: './src/index.ts',
       formats: ['es', 'umd'],
-      ...libNames,
+      name: `@pi/${libName}`,
+      fileName: `pi-${libName}`
     },
     rollupOptions: {
       external: ['react', 'styled-components'],
