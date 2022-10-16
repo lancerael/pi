@@ -1,3 +1,6 @@
-import config from '@pi/config'
+import createConfig from '@pi/config'
 
-export default config
+export default createConfig({
+  name: '@pi/button',
+  fileName: 'pi-button',
+})
