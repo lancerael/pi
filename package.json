@@ -19,7 +19,7 @@
     "@storybook/manager-webpack4": "^6.5.10",
     "@storybook/react": "^6.5.10",
     "@storybook/testing-library": "0.0.13",
-    "babel-loader": "^8.2.5"
-  },
-  "dependencies": {}
+    "babel-loader": "^8.2.5",
+    "nx": "^15.0.0"
+  }
 }
