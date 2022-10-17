@@ -1,13 +1,13 @@
 {
-  "name": "@pi/button",
+  "name": "@pi/loader",
   "version": "1.0.0",
   "description": "",
   "type": "module",
   "files": [
     "dist"
   ],
-  "main": "dist/pi-button.umd.js",
-  "module": "dist/pi-button.js",
+  "main": "dist/pi-loader.umd.js",
+  "module": "dist/pi-loader.js",
   "scripts": {
     "test": "vitest",
     "test:coverage": "vitest --coverage",

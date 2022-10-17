@@ -13,13 +13,10 @@
     "isolatedModules": true,
     "noEmit": true,
     "outDir": "build",
-    "rootDir": "src",
     "jsx": "react-jsx",
     "types": ["vitest/globals"],
     "composite": true,
     "esModuleInterop": true,
     "declaration": true
-  },
-  "include": ["src/*.tsx", "src/*.*.ts"],
-  "exclude": ["src/*.*.tsx"]
+  }
 }
