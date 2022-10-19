@@ -1,0 +1,5 @@
+{
+  "extends": "@pi/config/tsconfig.shared.json",
+  "include": ["./src/*.tsx", "./src/*.*.ts"],
+  "exclude": ["./src/*.*.tsx"]
+}

@@ -13,7 +13,9 @@ importers:
       '@storybook/manager-webpack4': ^6.5.10
       '@storybook/react': ^6.5.10
       '@storybook/testing-library': 0.0.13
+      '@types/node': ^18.7.11
       babel-loader: ^8.2.5
+      fs-extra: ^10.1.0
       nx: ^15.0.0
     devDependencies:
       '@babel/core': 7.19.0
@@ -25,7 +27,9 @@ importers:
       '@storybook/manager-webpack4': 6.5.10_rw34wyrummvuuuhgiylphbvpae
       '@storybook/react': 6.5.10_6pwtqshhriktr7gydhudaruqnm
       '@storybook/testing-library': 0.0.13_sfoxds7t5ydpegc3knd667wn6m
+      '@types/node': 18.7.15
       babel-loader: 8.2.5_qwstbnxu6wb3c6qztknt67z3ha
+      fs-extra: 10.1.0
       nx: 15.0.0
 
   src/components/atoms/Button:
@@ -74,6 +78,51 @@ importers:
       vitest: 0.22.1_jsdom@20.0.0
 
   src/components/atoms/Loader:
+    specifiers:
+      '@pi/config': workspace:*
+      '@pi/constants': workspace:*
+      '@pi/types': workspace:*
+      '@testing-library/react': ^13.3.0
+      '@types/jest': ^28.1.8
+      '@types/jest-axe': ^3.5.4
+      '@types/node': ^18.7.11
+      '@types/react': ^18.0.17
+      '@types/react-dom': ^18.0.6
+      '@types/styled-components': ^5.1.26
+      '@vitejs/plugin-react': ^2.0.1
+      '@vitest/coverage-istanbul': ^0.23.1
+      jest-axe: ^6.0.0
+      jsdom: ^20.0.0
+      react: ^18.2.0
+      rimraf: ^3.0.2
+      styled-components: ^5.3.5
+      typescript: ^4.7.4
+      vite: ^3.0.9
+      vitest: ^0.22.1
+    dependencies:
+      '@pi/constants': link:../../../constants
+      react: 18.2.0
+      styled-components: 5.3.5_7i5myeigehqah43i5u7wbekgba
+    devDependencies:
+      '@pi/config': link:../../../config
+      '@pi/types': link:../../../types
+      '@testing-library/react': 13.4.0_biqbaboplfbrettd7655fr4n2y
+      '@types/jest': 28.1.8
+      '@types/jest-axe': 3.5.4
+      '@types/node': 18.7.15
+      '@types/react': 18.0.18
+      '@types/react-dom': 18.0.6
+      '@types/styled-components': 5.1.26
+      '@vitejs/plugin-react': 2.1.0_vite@3.1.0
+      '@vitest/coverage-istanbul': 0.23.1_jsdom@20.0.0
+      jest-axe: 6.0.0
+      jsdom: 20.0.0
+      rimraf: 3.0.2
+      typescript: 4.8.2
+      vite: 3.1.0
+      vitest: 0.22.1_jsdom@20.0.0
+
+  src/components/atoms/TextInput:
     specifiers:
       '@pi/config': workspace:*
       '@pi/constants': workspace:*
