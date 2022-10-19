@@ -4,7 +4,7 @@ import { StyledButton } from './Button.style'
 
 export const Button = ({ children, status = 'default', dataSelector = 'pi-button', ...buttonProps }: ButtonProps) => (
   <StyledButton {...{status, ...buttonProps}} data-selector={dataSelector}>
-    { children }x
+    { children }
   </StyledButton>
 )
 
