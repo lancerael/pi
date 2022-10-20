@@ -1,4 +1,4 @@
-import { Status } from '@pi/types'
+import { Status } from '@pi-lib/types'
 
 export interface StyledButtonProps {
   status: Status

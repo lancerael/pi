@@ -12,8 +12,10 @@ const files = [
 const subFiles = [
   "_NAME_.stories.tsx",
   "_NAME_.style.ts",
+  "_NAME_.style.types.ts",
   "_NAME_.test.tsx",
   "_NAME_.tsx",
+  "_NAME_.types.ts",
   "index.ts",
 ]
 const generate = async () => {

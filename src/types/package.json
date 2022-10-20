@@ -1,5 +1,5 @@
 {
-  "name": "@pi/types",
+  "name": "@pi-lib/types",
   "version": "1.0.0",
   "description": "Global types for Pi",
   "main": "index.ts",

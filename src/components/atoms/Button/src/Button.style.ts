@@ -1,4 +1,4 @@
-import { STATUS_COLOURS } from '@pi/constants'
+import { STATUS_COLOURS } from '@pi-lib/constants'
 import styled, { css } from 'styled-components'
 // import { standardFont } from '../../../../styles/index'
 

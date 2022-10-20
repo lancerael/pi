@@ -1,4 +1,4 @@
-import { Status } from '@pi/types'
+import { Status } from '@pi-lib/types'
 
 
 export interface ButtonProps extends Pick<React.HTMLProps<HTMLButtonElement>, 'onClick' | 'onMouseOver' | 'onMouseOut' | 'disabled' | 'children'> {

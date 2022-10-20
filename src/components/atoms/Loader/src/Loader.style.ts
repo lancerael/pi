@@ -1,4 +1,4 @@
-import { STATUS_COLOURS } from '@pi/constants'
+import { STATUS_COLOURS } from '@pi-lib/constants'
 import styled, { keyframes } from 'styled-components'
 
 const rotate = keyframes`

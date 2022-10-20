@@ -1,5 +1,5 @@
 {
-  "name": "pi",
+  "name": "pi-lib",
   "version": "0.1.0",
   "description": "Monorepo of React UI components and supporting utilities.",
   "scripts": {
