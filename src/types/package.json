@@ -1,6 +1,6 @@
 {
   "name": "@pi-lib/types",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Global types for Pi",
   "main": "index.ts",
   "keywords": [],

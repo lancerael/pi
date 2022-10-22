@@ -1,7 +1,7 @@
 import fs from "fs-extra"
 
 const [node, location, path, name] = process.argv
-const lcName = name.toLowerCase()
+const lcName = name.replace(/([a-z0–9])([A-Z])/g, "$1-$2").toLowerCase()
 const source = "./generator"
 const destination = `./${path}/${name}`
 const files = [
