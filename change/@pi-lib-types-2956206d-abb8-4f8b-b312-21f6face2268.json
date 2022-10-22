@@ -1,7 +1,7 @@
 {
   "type": "minor",
-  "comment": "Cleanup",
-  "packageName": "@pi-lib/test-component",
+  "comment": "First release",
+  "packageName": "@pi-lib/types",
   "email": "lancerael@hotmail.com",
   "dependentChangeType": "patch"
 }

@@ -1,0 +1,7 @@
+{
+  "type": "minor",
+  "comment": "New component",
+  "packageName": "@pi-lib/loader",
+  "email": "lancerael@hotmail.com",
+  "dependentChangeType": "patch"
+}
