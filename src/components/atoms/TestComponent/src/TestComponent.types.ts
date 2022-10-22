@@ -1,4 +1,4 @@
-export interface StyledLinkProps {
+export interface TestComponentProps {
   /**
    * The description of the prop
    */

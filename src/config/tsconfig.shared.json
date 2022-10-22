@@ -11,12 +11,10 @@
     "moduleResolution": "Node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "noEmit": true,
-    "outDir": "build",
     "jsx": "react-jsx",
-    "types": ["vitest/globals"],
+    "types": ["react", "vitest/globals"],
     "composite": true,
     "esModuleInterop": true,
-    "declaration": true
+    "emitDeclarationOnly": true
   }
 }
