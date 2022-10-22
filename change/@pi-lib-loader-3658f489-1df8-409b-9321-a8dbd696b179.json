@@ -1,0 +1,7 @@
+{
+  "type": "major",
+  "comment": "Updated library name Added generator Tested generator on Link Added gitignores",
+  "packageName": "@pi-lib/loader",
+  "email": "lancerael@hotmail.com",
+  "dependentChangeType": "patch"
+}
