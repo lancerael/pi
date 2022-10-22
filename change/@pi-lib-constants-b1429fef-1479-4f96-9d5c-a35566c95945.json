@@ -1,7 +1,0 @@
-{
-  "type": "minor",
-  "comment": "First release",
-  "packageName": "@pi-lib/constants",
-  "email": "lancerael@hotmail.com",
-  "dependentChangeType": "patch"
-}

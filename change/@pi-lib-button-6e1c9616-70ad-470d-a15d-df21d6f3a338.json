@@ -1,7 +1,0 @@
-{
-  "type": "minor",
-  "comment": "New component",
-  "packageName": "@pi-lib/button",
-  "email": "lancerael@hotmail.com",
-  "dependentChangeType": "patch"
-}
