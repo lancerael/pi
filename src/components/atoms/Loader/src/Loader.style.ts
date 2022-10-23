@@ -1,5 +1,6 @@
 import { STATUS_COLOURS } from '@pi-lib/constants'
-import styled, { keyframes } from 'styled-components'
+import styled, { keyframes, css } from 'styled-components'
+import { StyledLoaderProps } from './Loader.style.types'
 
 const rotate = keyframes`
   to {
@@ -7,13 +8,18 @@ const rotate = keyframes`
   }
 `
 
-export const StyledLoaderCircle = styled.div`
-  border-radius: 50%;
-  border: 2px solid ${STATUS_COLOURS['pending']};
-  width: 22px;
-  height: 22px;
-  margin: -8px 0 -8px 28px;
+export const StyledLoader = styled.div`
+  width: 14px;
+  height: 14px;
   display: inline-block;
-  clip-path: polygon(0 0, 50% 0, 50% 50%, 100% 50%, 100% 100%, 0 100%);
-  animation: ${rotate} 1s linear infinite;
 `
+export const StyledLoaderCircle = styled.div(({ secondary }: StyledLoaderProps) => css`
+  width: inherit;
+  height: inherit;
+  position: absolute;
+  border-radius: 50%;
+  box-shadow: 0 0 0px 2px ${STATUS_COLOURS['pending']};
+  overflow: hidden;
+  clip-path: polygon(-3px -3px, 50% -3px, 50% 23px, -3px 23px);
+  animation: ${rotate} ${secondary ? '2' : '3'}s linear infinite;
+`)

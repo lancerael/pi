@@ -1,6 +1,11 @@
 import React from 'react'
-import { StyledLoaderCircle } from './Loader.style'
+import { StyledLoader, StyledLoaderCircle } from './Loader.style'
 
-export const Loader = () => <StyledLoaderCircle title='Loading...' data-selector='pi-lib-loader'/>
+export const Loader = () => (
+  <StyledLoader title='Loading...' data-selector='pi-lib-loader'>
+    <StyledLoaderCircle/>
+    <StyledLoaderCircle secondary/>
+  </StyledLoader>
+)
 
 export default Loader
