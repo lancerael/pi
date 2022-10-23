@@ -1,8 +1,16 @@
 # Change Log - @pi-lib/loader
 
-This log was last generated on Sat, 22 Oct 2022 17:32:26 GMT and should not be manually modified.
+This log was last generated on Sun, 23 Oct 2022 17:23:59 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 0.2.0
+
+Sun, 23 Oct 2022 17:23:59 GMT
+
+### Minor changes
+
+- Improved loader UI (lancerael@hotmail.com)
 
 ## 0.1.0
 
