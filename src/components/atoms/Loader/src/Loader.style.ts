@@ -14,8 +14,8 @@ export const StyledLoader = styled.div`
   display: inline-block;
 `
 export const StyledLoaderCircle = styled.div(({ secondary }: StyledLoaderProps) => css`
-  width: inherit;
   height: inherit;
+  width: inherit;
   position: absolute;
   border-radius: 50%;
   box-shadow: 0 0 0px 2px ${STATUS_COLOURS['pending']};
