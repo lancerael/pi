@@ -1,0 +1,7 @@
+{
+  "type": "minor",
+  "comment": "Added descriptions",
+  "packageName": "@pi-lib/config",
+  "email": "lancerael@hotmail.com",
+  "dependentChangeType": "patch"
+}
