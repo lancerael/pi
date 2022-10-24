@@ -4,9 +4,9 @@
   "license": "ISC",
   "main": "./dist/vite.config.js",
   "type": "module",
-  "scripts": {
-    "build": "npx tsc"
-  },
+	"scripts": {
+		"build": "npx tsc"
+	},
   "devDependencies": {
     "@types/jest": "^28.1.8",
     "@types/jest-axe": "^3.5.4",
