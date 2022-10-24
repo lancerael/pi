@@ -1,7 +1,7 @@
 {
   "name": "@pi-lib/button",
   "version": "0.1.0",
-  "description": "",
+  "description": "Basic button component",
   "type": "module",
   "files": [
     "dist"

@@ -1,5 +1,6 @@
 {
   "name": "@pi-lib/config",
+  "description": "Shared Pi config",
   "version": "0.1.0",
   "license": "ISC",
   "main": "./dist/vite.config.js",
