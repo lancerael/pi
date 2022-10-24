@@ -1,13 +1,13 @@
 {
   "name": "@pi-lib/config",
   "description": "Shared Pi config",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "license": "ISC",
   "main": "./dist/vite.config.js",
   "type": "module",
-	"scripts": {
-		"build": "npx tsc"
-	},
+  "scripts": {
+    "build": "npx tsc"
+  },
   "devDependencies": {
     "@types/jest": "^28.1.8",
     "@types/jest-axe": "^3.5.4",
