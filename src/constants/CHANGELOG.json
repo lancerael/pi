@@ -1,0 +1,20 @@
+{
+  "name": "@pi-lib/constants",
+  "entries": [
+    {
+      "date": "Sat, 22 Oct 2022 17:32:26 GMT",
+      "tag": "@pi-lib/constants_v0.1.0",
+      "version": "0.1.0",
+      "comments": {
+        "minor": [
+          {
+            "author": "lancerael@hotmail.com",
+            "package": "@pi-lib/constants",
+            "commit": "89c10a60a5d8e539b2b9cf856bebb62a8a66a1f6",
+            "comment": "First release"
+          }
+        ]
+      }
+    }
+  ]
+}

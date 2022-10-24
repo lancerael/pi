@@ -1,6 +1,6 @@
 {
   "name": "@pi-lib/loader",
-  "version": "0.0.1",
+  "version": "0.2.0",
   "description": "",
   "type": "module",
   "files": [
@@ -27,15 +27,15 @@
   "author": "Lance Taylor",
   "license": "ISC",
   "dependencies": {
-    "@pi-lib/constants": "^1.*.*"
+    "@pi-lib/constants": "^0.1.0"
   },
   "peerDependencies": {
     "react": "^18.2.0",
     "styled-components": "^5.3.5"
   },
   "devDependencies": {
-    "@pi-lib/config": "^1.*.*",
-    "@pi-lib/types": "^1.*.*",
+    "@pi-lib/config": "^0.1.0",
+    "@pi-lib/types": "^0.1.0",
     "@testing-library/react": "^13.3.0",
     "@types/jest": "^28.1.8",
     "@types/jest-axe": "^3.5.4",

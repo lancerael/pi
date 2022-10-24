@@ -1,7 +1,0 @@
-{
-  "type": "minor",
-  "comment": "First release",
-  "packageName": "@pi-lib/types",
-  "email": "lancerael@hotmail.com",
-  "dependentChangeType": "patch"
-}

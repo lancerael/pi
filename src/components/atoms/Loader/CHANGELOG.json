@@ -1,0 +1,53 @@
+{
+  "name": "@pi-lib/loader",
+  "entries": [
+    {
+      "date": "Sun, 23 Oct 2022 17:23:59 GMT",
+      "tag": "@pi-lib/loader_v0.2.0",
+      "version": "0.2.0",
+      "comments": {
+        "minor": [
+          {
+            "author": "lancerael@hotmail.com",
+            "package": "@pi-lib/loader",
+            "commit": "619a19e7e7c4c601bf9cd292f2c9d738a3eff829",
+            "comment": "Improved loader UI"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Sat, 22 Oct 2022 17:32:26 GMT",
+      "tag": "@pi-lib/loader_v0.1.0",
+      "version": "0.1.0",
+      "comments": {
+        "minor": [
+          {
+            "author": "lancerael@hotmail.com",
+            "package": "@pi-lib/loader",
+            "commit": "89c10a60a5d8e539b2b9cf856bebb62a8a66a1f6",
+            "comment": "New component"
+          },
+          {
+            "author": "beachball",
+            "package": "@pi-lib/loader",
+            "comment": "Bump @pi-lib/constants to v0.1.0",
+            "commit": "83fef80fdbf4a46b34ca5b2505604474077afe9f"
+          },
+          {
+            "author": "beachball",
+            "package": "@pi-lib/loader",
+            "comment": "Bump @pi-lib/config to v0.1.0",
+            "commit": "83fef80fdbf4a46b34ca5b2505604474077afe9f"
+          },
+          {
+            "author": "beachball",
+            "package": "@pi-lib/loader",
+            "comment": "Bump @pi-lib/types to v0.1.0",
+            "commit": "83fef80fdbf4a46b34ca5b2505604474077afe9f"
+          }
+        ]
+      }
+    }
+  ]
+}
