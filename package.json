@@ -13,6 +13,9 @@
   "keywords": [],
   "author": "Lance Taylor",
   "license": "ISC",
+  "beachball": {
+    "access": "public"
+  },
   "devDependencies": {
     "@babel/core": "^7.19.0",
     "@storybook/addon-actions": "^6.5.10",
