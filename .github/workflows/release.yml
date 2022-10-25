@@ -10,9 +10,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-
+      - uses: actions/setup-node@v1
       - uses: ecraig12345/beachball-actions/install-beachball@v1
-
       - uses: mikeal/npx@master
 
       - name: Publish packages
