@@ -1,7 +1,0 @@
-{
-  "type": "minor",
-  "comment": "First commit of AdvancedButton",
-  "packageName": "@pi-lib/advanced-button",
-  "email": "lancerael@hotmail.com",
-  "dependentChangeType": "minor"
-}
