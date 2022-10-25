@@ -1,0 +1,18 @@
+name: Tests
+
+on:
+  pull_request:
+    types:
+      - closed
+
+jobs:
+  release:
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: ecraig12345/beachball-actions/install-beachball@v1
+
+      - uses: mikeal/npx@master
+
+      - name: Publish packages
+        run: npx beachball publish -n ${{ secrets.PI_PUB }}
