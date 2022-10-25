@@ -2,6 +2,27 @@
   "name": "@pi-lib/loader",
   "entries": [
     {
+      "date": "Mon, 24 Oct 2022 22:49:57 GMT",
+      "tag": "@pi-lib/loader_v0.3.0",
+      "version": "0.3.0",
+      "comments": {
+        "minor": [
+          {
+            "author": "lancerael@hotmail.com",
+            "package": "@pi-lib/loader",
+            "commit": "75e533ce20450b03240e3cddddf12f54fdc6a6b2",
+            "comment": "Added descriptions"
+          },
+          {
+            "author": "beachball",
+            "package": "@pi-lib/loader",
+            "comment": "Bump @pi-lib/config to v0.2.0",
+            "commit": "a0dc1310aedb5148a7663f3ac498834ce7ccef6c"
+          }
+        ]
+      }
+    },
+    {
       "date": "Sun, 23 Oct 2022 17:23:59 GMT",
       "tag": "@pi-lib/loader_v0.2.0",
       "version": "0.2.0",

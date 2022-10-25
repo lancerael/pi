@@ -2,6 +2,27 @@
   "name": "@pi-lib/button",
   "entries": [
     {
+      "date": "Mon, 24 Oct 2022 22:49:58 GMT",
+      "tag": "@pi-lib/button_v0.2.0",
+      "version": "0.2.0",
+      "comments": {
+        "minor": [
+          {
+            "author": "lancerael@hotmail.com",
+            "package": "@pi-lib/button",
+            "commit": "75e533ce20450b03240e3cddddf12f54fdc6a6b2",
+            "comment": "Added descriptions"
+          },
+          {
+            "author": "beachball",
+            "package": "@pi-lib/button",
+            "comment": "Bump @pi-lib/config to v0.2.0",
+            "commit": "a0dc1310aedb5148a7663f3ac498834ce7ccef6c"
+          }
+        ]
+      }
+    },
+    {
       "date": "Sat, 22 Oct 2022 17:32:26 GMT",
       "tag": "@pi-lib/button_v0.1.0",
       "version": "0.1.0",
