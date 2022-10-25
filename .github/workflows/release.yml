@@ -16,4 +16,4 @@ jobs:
       - uses: ecraig12345/beachball-actions/install-beachball@v1
 
       - name: Publish packages
-        run: npm run publish -- -y ${{ secrets.PI_PUB }}
+        run: npm run publish -- -n ${{ secrets.PI_PUB }} -yes
