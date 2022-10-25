@@ -1,6 +1,6 @@
 {
   "name": "@pi-lib/loader",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Basic loading spinner component",
   "type": "module",
   "files": [

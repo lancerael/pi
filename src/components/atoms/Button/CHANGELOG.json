@@ -2,6 +2,21 @@
   "name": "@pi-lib/button",
   "entries": [
     {
+      "date": "Tue, 25 Oct 2022 12:52:07 GMT",
+      "tag": "@pi-lib/button_v0.5.1",
+      "version": "0.5.1",
+      "comments": {
+        "patch": [
+          {
+            "author": "lancerael@hotmail.com",
+            "package": "@pi-lib/button",
+            "commit": "467b3d36a2d2fada761b5142f405cd1d560fc278",
+            "comment": "Fixed dists and generator"
+          }
+        ]
+      }
+    },
+    {
       "date": "Tue, 25 Oct 2022 11:25:57 GMT",
       "tag": "@pi-lib/button_v0.5.0",
       "version": "0.5.0",

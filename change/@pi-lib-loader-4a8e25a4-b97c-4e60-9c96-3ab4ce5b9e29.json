@@ -1,7 +1,0 @@
-{
-  "type": "patch",
-  "comment": "Fixed dists and generator",
-  "packageName": "@pi-lib/loader",
-  "email": "lancerael@hotmail.com",
-  "dependentChangeType": "patch"
-}
