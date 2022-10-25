@@ -5,6 +5,7 @@
   "scripts": {
     "sb": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
+    "build": "npx nx run-many --target=build",
     "publish": "npx beachball publish"
   },
   "repository": {
