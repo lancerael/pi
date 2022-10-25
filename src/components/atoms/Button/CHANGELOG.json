@@ -2,6 +2,21 @@
   "name": "@pi-lib/button",
   "entries": [
     {
+      "date": "Tue, 25 Oct 2022 13:44:42 GMT",
+      "tag": "@pi-lib/button_v0.6.0",
+      "version": "0.6.0",
+      "comments": {
+        "minor": [
+          {
+            "author": "lancerael@hotmail.com",
+            "package": "@pi-lib/button",
+            "commit": "3ae9f61c1e9ab61af3e4649e338f5fb432314254",
+            "comment": "Changed button style"
+          }
+        ]
+      }
+    },
+    {
       "date": "Tue, 25 Oct 2022 12:52:07 GMT",
       "tag": "@pi-lib/button_v0.5.1",
       "version": "0.5.1",

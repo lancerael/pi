@@ -2,6 +2,45 @@
   "name": "@pi-lib/advanced-button",
   "entries": [
     {
+      "date": "Tue, 25 Oct 2022 13:44:42 GMT",
+      "tag": "@pi-lib/advanced-button_v0.1.1",
+      "version": "0.1.1",
+      "comments": {
+        "patch": [
+          {
+            "author": "beachball",
+            "package": "@pi-lib/advanced-button",
+            "comment": "Bump @pi-lib/constants to v0.1.0",
+            "commit": "3ae9f61c1e9ab61af3e4649e338f5fb432314254"
+          },
+          {
+            "author": "beachball",
+            "package": "@pi-lib/advanced-button",
+            "comment": "Bump @pi-lib/loader to v0.3.1",
+            "commit": "3ae9f61c1e9ab61af3e4649e338f5fb432314254"
+          },
+          {
+            "author": "beachball",
+            "package": "@pi-lib/advanced-button",
+            "comment": "Bump @pi-lib/button to v0.6.0",
+            "commit": "3ae9f61c1e9ab61af3e4649e338f5fb432314254"
+          },
+          {
+            "author": "beachball",
+            "package": "@pi-lib/advanced-button",
+            "comment": "Bump @pi-lib/config to v0.2.0",
+            "commit": "3ae9f61c1e9ab61af3e4649e338f5fb432314254"
+          },
+          {
+            "author": "beachball",
+            "package": "@pi-lib/advanced-button",
+            "comment": "Bump @pi-lib/types to v0.1.0",
+            "commit": "3ae9f61c1e9ab61af3e4649e338f5fb432314254"
+          }
+        ]
+      }
+    },
+    {
       "date": "Tue, 25 Oct 2022 13:34:59 GMT",
       "tag": "@pi-lib/advanced-button_v0.1.0",
       "version": "0.1.0",
