@@ -11,6 +11,8 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v1
+        with:
+          node-version: 16.x
       - uses: ecraig12345/beachball-actions/install-beachball@v1
 
       - name: Publish packages
