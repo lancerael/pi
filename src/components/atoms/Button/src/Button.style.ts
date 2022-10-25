@@ -4,7 +4,7 @@ import styled, { css } from 'styled-components'
 
 import { StyledButtonProps } from './Button.style.types'
 
-const standardFont = ''
+const standardFont = 'font-family: sans-serif;'
 
 export const StyledButton = styled.button(({ status }: StyledButtonProps) => css`
   ${standardFont}
