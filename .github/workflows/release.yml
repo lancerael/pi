@@ -9,9 +9,13 @@ jobs:
     if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
-      - uses: de-vri-es/setup-git-credentials@v2
+      - uses: oleksiyrudenko/gha-git-credentials@v2.1
         with:
-          credentials: ${{secrets.GIT_CREDENTIALS}}
+          global: true
+          name: 'Lance Rael'
+          email: 'lancerael@outlook.com'
+          actor: 'LanceRael'
+          token: '${{ secrets.GL_PAT_WEB_CENTRAL }}'
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v1
         with:
