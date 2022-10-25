@@ -1,7 +1,0 @@
-{
-  "type": "minor",
-  "comment": "Added font to button",
-  "packageName": "@pi-lib/button",
-  "email": "lancerael@hotmail.com",
-  "dependentChangeType": "patch"
-}

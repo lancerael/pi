@@ -2,6 +2,21 @@
   "name": "@pi-lib/button",
   "entries": [
     {
+      "date": "Tue, 25 Oct 2022 11:25:57 GMT",
+      "tag": "@pi-lib/button_v0.5.0",
+      "version": "0.5.0",
+      "comments": {
+        "minor": [
+          {
+            "author": "lancerael@hotmail.com",
+            "package": "@pi-lib/button",
+            "commit": "b6930106295265082f97cf3128719a5a811b4640",
+            "comment": "Added font to button"
+          }
+        ]
+      }
+    },
+    {
       "date": "Mon, 24 Oct 2022 22:49:58 GMT",
       "tag": "@pi-lib/button_v0.2.0",
       "version": "0.2.0",

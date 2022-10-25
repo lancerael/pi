@@ -1,8 +1,16 @@
 # Change Log - @pi-lib/button
 
-This log was last generated on Mon, 24 Oct 2022 22:49:58 GMT and should not be manually modified.
+This log was last generated on Tue, 25 Oct 2022 11:25:57 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 0.5.0
+
+Tue, 25 Oct 2022 11:25:57 GMT
+
+### Minor changes
+
+- Added font to button (lancerael@hotmail.com)
 
 ## 0.2.0
 
