@@ -4,7 +4,8 @@
   "description": "Monorepo of React UI components and supporting utilities.",
   "scripts": {
     "sb": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "publish": "npx beachball publish"
   },
   "repository": {
     "type" : "git",
