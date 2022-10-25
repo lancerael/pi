@@ -15,7 +15,7 @@ jobs:
           name: 'Lance Rael'
           email: 'lancerael@outlook.com'
           actor: 'LanceRael'
-          token: '${{ secrets.GL_PAT_WEB_CENTRAL }}'
+          token: '${{ secrets.PI_PUBLISH }}'
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v1
         with:
