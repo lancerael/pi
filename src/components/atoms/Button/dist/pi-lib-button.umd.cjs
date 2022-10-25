@@ -1,5 +1,5 @@
-(function(t,o){typeof exports=="object"&&typeof module<"u"?module.exports=o(require("react"),require("styled-components")):typeof define=="function"&&define.amd?define(["react","styled-components"],o):(t=typeof globalThis<"u"?globalThis:t||self,t["@pi-lib/button"]=o(t.React,t.styled))})(this,function(t,o){"use strict";const n=e=>e&&typeof e=="object"&&"default"in e?e:{default:e},r=n(t),u=n(o),d={default:"black",pending:"blue",error:"red",success:"green"},c="",s=u.default.button(({status:e})=>o.css`
-  ${c}
+(function(t,n){typeof exports=="object"&&typeof module<"u"?module.exports=n(require("react"),require("styled-components")):typeof define=="function"&&define.amd?define(["react","styled-components"],n):(t=typeof globalThis<"u"?globalThis:t||self,t["@pi-lib/button"]=n(t.React,t.styled))})(this,function(t,n){"use strict";const o=e=>e&&typeof e=="object"&&"default"in e?e:{default:e},r=o(t),s=o(n),d={default:"black",pending:"blue",error:"red",success:"green"},u="font-family: sans-serif;",i=s.default.button(({status:e})=>n.css`
+  ${u}
   border: 2px solid ${d[e]};
   color:  ${d[e]};
   background-color: white;
@@ -12,4 +12,4 @@
     color: grey;
     cursor: default;
   }
-`);return({children:e,status:i="default",dataSelector:l="pi-lib-button",...a})=>r.default.createElement(s,{status:i,...a,"data-selector":l},e)});
+`);return({children:e,status:c="default",dataSelector:f="pi-lib-button",...l})=>r.default.createElement(i,{status:c,...l,"data-selector":f},e)});

@@ -124,6 +124,55 @@ importers:
       vite: 3.1.0
       vitest: 0.22.1_jsdom@20.0.0
 
+  src/components/molecules/AdvancedButton:
+    specifiers:
+      '@pi-lib/button': ^0.*.*
+      '@pi-lib/config': ^0.*.*
+      '@pi-lib/constants': ^0.*.*
+      '@pi-lib/loader': ^0.*.*
+      '@pi-lib/types': ^0.*.*
+      '@testing-library/react': ^13.3.0
+      '@types/jest': ^28.1.8
+      '@types/jest-axe': ^3.5.4
+      '@types/node': ^18.7.11
+      '@types/react': ^18.0.17
+      '@types/react-dom': ^18.0.6
+      '@types/styled-components': ^5.1.26
+      '@vitejs/plugin-react': ^2.0.1
+      '@vitest/coverage-istanbul': ^0.23.1
+      jest-axe: ^6.0.0
+      jsdom: ^20.0.0
+      react: ^18.2.0
+      rimraf: ^3.0.2
+      styled-components: ^5.3.5
+      typescript: ^4.7.4
+      vite: ^3.0.9
+      vitest: ^0.22.1
+    dependencies:
+      '@pi-lib/button': link:../../atoms/Button
+      '@pi-lib/constants': link:../../../constants
+      '@pi-lib/loader': link:../../atoms/Loader
+      react: 18.2.0
+      styled-components: 5.3.5_7i5myeigehqah43i5u7wbekgba
+    devDependencies:
+      '@pi-lib/config': link:../../../config
+      '@pi-lib/types': link:../../../types
+      '@testing-library/react': 13.4.0_biqbaboplfbrettd7655fr4n2y
+      '@types/jest': 28.1.8
+      '@types/jest-axe': 3.5.4
+      '@types/node': 18.7.15
+      '@types/react': 18.0.18
+      '@types/react-dom': 18.0.6
+      '@types/styled-components': 5.1.26
+      '@vitejs/plugin-react': 2.1.0_vite@3.1.0
+      '@vitest/coverage-istanbul': 0.23.1_jsdom@20.0.0
+      jest-axe: 6.0.0
+      jsdom: 20.0.0
+      rimraf: 3.0.2
+      typescript: 4.8.2
+      vite: 3.1.0
+      vitest: 0.22.1_jsdom@20.0.0
+
   src/config:
     specifiers:
       '@types/jest': ^28.1.8
