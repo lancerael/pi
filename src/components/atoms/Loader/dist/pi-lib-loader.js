@@ -1,27 +1,33 @@
 import e from "react";
-import t, { keyframes as r } from "styled-components";
-const o = {
+import o, { keyframes as r, css as n } from "styled-components";
+const a = {
   default: "black",
   pending: "blue",
   error: "red",
   success: "green"
-}, i = r`
+}, d = r`
   to {
     transform: rotate(360deg);
   }
-`, a = t.div`
-  border-radius: 50%;
-  border: 2px solid ${o.pending};
-  width: 22px;
-  height: 22px;
-  margin: -8px 0 -8px 28px;
+`, l = o.div`
+  width: 14px;
+  height: 14px;
   display: inline-block;
-  clip-path: polygon(0 0, 50% 0, 50% 50%, 100% 50%, 100% 100%, 0 100%);
-  animation: ${i} 1s linear infinite;
-`, l = () => /* @__PURE__ */ e.createElement(a, {
+`, t = o.div(({ secondary: i }) => n`
+  height: inherit;
+  width: inherit;
+  position: absolute;
+  border-radius: 50%;
+  box-shadow: 0 0 0px 2px ${a.pending};
+  overflow: hidden;
+  clip-path: polygon(-3px -3px, 50% -3px, 50% 23px, -3px 23px);
+  animation: ${d} ${i ? "2" : "3"}s linear infinite;
+`), c = () => /* @__PURE__ */ e.createElement(l, {
   title: "Loading...",
   "data-selector": "pi-lib-loader"
-});
+}, /* @__PURE__ */ e.createElement(t, null), /* @__PURE__ */ e.createElement(t, {
+  secondary: !0
+}));
 export {
-  l as default
+  c as default
 };

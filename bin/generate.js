@@ -1,4 +1,4 @@
-import fs from "fs-extra"
+const fs = require("fs-extra")
 
 const [node, location, path, name] = process.argv
 const lcName = name.replace(/([a-z0–9])([A-Z])/g, "$1-$2").toLowerCase()
@@ -31,10 +31,11 @@ const generate = async () => {
     for (const fileName of subFiles) {
       const oldFileName = `${destination}/src/${fileName}`
       const newFileName = `${destination}/src/${fileName.replace(/_NAME_/g, name)}`
-
-      const fileContents = await fs.readFile(oldFileName, 'utf8')
-      await fs.writeFile(newFileName, fileContents.replace(/_NAME_/g, name))
-      await fs.unlink(oldFileName)
+      if (!oldFileName.match('index')) {
+        const fileContents = await fs.readFile(oldFileName, 'utf8')
+        await fs.writeFile(newFileName, fileContents.replace(/_NAME_/g, name))
+        await fs.unlink(oldFileName)
+      }
     }
     console.log("Success!")
   } catch (err) {
