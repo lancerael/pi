@@ -1,6 +1,6 @@
 {
-  "type": "minor",
-  "comment": "* Generalised clanup for consistent builds * Enhancements to AdvancedButton",
+  "type": "patch",
+  "comment": "Beachball cleanup",
   "packageName": "@pi-lib/advanced-button",
   "email": "lancerael@hotmail.com",
   "dependentChangeType": "patch"
