@@ -2,6 +2,21 @@
   "name": "@pi-lib/loader",
   "entries": [
     {
+      "date": "Wed, 23 Nov 2022 17:17:00 GMT",
+      "tag": "@pi-lib/loader_v0.3.3",
+      "version": "0.3.3",
+      "comments": {
+        "patch": [
+          {
+            "author": "lancerael@hotmail.com",
+            "package": "@pi-lib/loader",
+            "commit": "ba8ba096e6468508e29d1f930b2835fea2e2ffd2",
+            "comment": "Cleanuo"
+          }
+        ]
+      }
+    },
+    {
       "date": "Tue, 25 Oct 2022 12:52:07 GMT",
       "tag": "@pi-lib/loader_v0.3.1",
       "version": "0.3.1",

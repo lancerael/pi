@@ -2,6 +2,21 @@
   "name": "@pi-lib/button",
   "entries": [
     {
+      "date": "Wed, 23 Nov 2022 17:17:00 GMT",
+      "tag": "@pi-lib/button_v0.6.2",
+      "version": "0.6.2",
+      "comments": {
+        "patch": [
+          {
+            "author": "lancerael@hotmail.com",
+            "package": "@pi-lib/button",
+            "commit": "ba8ba096e6468508e29d1f930b2835fea2e2ffd2",
+            "comment": "Cleanup"
+          }
+        ]
+      }
+    },
+    {
       "date": "Tue, 25 Oct 2022 13:44:42 GMT",
       "tag": "@pi-lib/button_v0.6.0",
       "version": "0.6.0",
