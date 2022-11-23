@@ -13,7 +13,8 @@ export const StyledLoader = styled.div`
   height: 14px;
   display: inline-block;
 `
-export const StyledLoaderCircle = styled.div(({ secondary }: StyledLoaderProps) => css`
+
+export const StyledLoaderCircle = styled.div`
   height: inherit;
   width: inherit;
   position: absolute;
@@ -21,5 +22,5 @@ export const StyledLoaderCircle = styled.div(({ secondary }: StyledLoaderProps) 
   box-shadow: 0 0 0px 2px ${STATUS_COLOURS['pending']};
   overflow: hidden;
   clip-path: polygon(-3px -3px, 50% -3px, 50% 23px, -3px 23px);
-  animation: ${rotate} ${secondary ? '2' : '3'}s linear infinite;
-`)
+  animation: ${rotate} 2s linear infinite;
+`

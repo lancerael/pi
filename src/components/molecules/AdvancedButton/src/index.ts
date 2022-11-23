@@ -1,1 +1,1 @@
-export { default } from './_NAME_'
+export { default } from './AdvancedButton'

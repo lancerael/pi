@@ -6,8 +6,8 @@
   "files": [
     "dist"
   ],
-  "main": "dist/pi-lib-_LC_NAME_.umd.js",
-  "module": "dist/pi-lib-_LC_NAME_.js",
+  "main": "./dist/pi-lib-_LC_NAME_.umd.js",
+  "module": "./dist/pi-lib-_LC_NAME_.js",
   "exports": {
     ".": {
       "import": "./dist/pi-lib-_LC_NAME_.js",
@@ -18,7 +18,7 @@
   "scripts": {
     "test": "vitest",
     "test:coverage": "vitest --coverage",
-    "build": "rimraf dist && vite build"
+    "build": "rimraf dist && vite build && npx tsc"
   },
   "keywords": [
     "react",

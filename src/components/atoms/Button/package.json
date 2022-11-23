@@ -6,8 +6,8 @@
   "files": [
     "dist"
   ],
-  "main": "dist/pi-lib-button.umd.js",
-  "module": "dist/pi-lib-button.js",
+  "main": "./dist/pi-lib-button.umd.js",
+  "module": "./dist/pi-lib-button.js",
   "exports": {
     ".": {
       "import": "./dist/pi-lib-button.js",
@@ -18,7 +18,7 @@
   "scripts": {
     "test": "vitest",
     "test:coverage": "vitest --coverage",
-    "build": "rimraf dist && vite build"
+    "build": "rimraf dist && vite build && npx tsc"
   },
   "keywords": [
     "react",

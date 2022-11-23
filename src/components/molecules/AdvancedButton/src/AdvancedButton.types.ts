@@ -1,6 +1,13 @@
-export interface AdvancedButtonProps {
+import { ButtonProps } from "@pi-lib/button/dist/src/Button.types";
+import { PropsWithChildren } from "react";
+
+export interface AdvancedButtonProps extends PropsWithChildren  {
   /**
-   * The description of the prop
+   * Whether the button is in a loading state
    */
-  prop?: any
+  isLoading?: boolean
+  /**
+   * Any props to be passed to the internal button
+   */
+  buttonProps?: ButtonProps
 }

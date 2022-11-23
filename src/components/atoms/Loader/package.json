@@ -6,8 +6,8 @@
   "files": [
     "dist"
   ],
-  "main": "dist/pi-lib-loader.umd.js",
-  "module": "dist/pi-lib-loader.js",
+  "main": "./dist/pi-lib-loader.umd.js",
+  "module": "./dist/pi-lib-loader.js",
   "exports": {
     ".": {
       "import": "./dist/pi-lib-loader.js",
