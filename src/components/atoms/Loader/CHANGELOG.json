@@ -2,6 +2,21 @@
   "name": "@pi-lib/loader",
   "entries": [
     {
+      "date": "Wed, 23 Nov 2022 16:01:21 GMT",
+      "tag": "@pi-lib/loader_v0.3.2",
+      "version": "0.3.2",
+      "comments": {
+        "patch": [
+          {
+            "author": "lancerael@hotmail.com",
+            "package": "@pi-lib/loader",
+            "commit": "5c309c59cdcc7c1408d238c4f4b7596fc7cbc784",
+            "comment": "* Generalised clanup for consistent builds * Enhancements to AdvancedButton"
+          }
+        ]
+      }
+    },
+    {
       "date": "Tue, 25 Oct 2022 12:52:07 GMT",
       "tag": "@pi-lib/loader_v0.3.1",
       "version": "0.3.1",

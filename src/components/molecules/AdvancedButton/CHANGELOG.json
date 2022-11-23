@@ -2,6 +2,51 @@
   "name": "@pi-lib/advanced-button",
   "entries": [
     {
+      "date": "Wed, 23 Nov 2022 16:01:21 GMT",
+      "tag": "@pi-lib/advanced-button_v0.2.0",
+      "version": "0.2.0",
+      "comments": {
+        "minor": [
+          {
+            "author": "lancerael@hotmail.com",
+            "package": "@pi-lib/advanced-button",
+            "commit": "5c309c59cdcc7c1408d238c4f4b7596fc7cbc784",
+            "comment": "* Generalised clanup for consistent builds * Enhancements to AdvancedButton"
+          },
+          {
+            "author": "beachball",
+            "package": "@pi-lib/advanced-button",
+            "comment": "Bump @pi-lib/constants to v0.1.0",
+            "commit": "5c309c59cdcc7c1408d238c4f4b7596fc7cbc784"
+          },
+          {
+            "author": "beachball",
+            "package": "@pi-lib/advanced-button",
+            "comment": "Bump @pi-lib/loader to v0.3.2",
+            "commit": "5c309c59cdcc7c1408d238c4f4b7596fc7cbc784"
+          },
+          {
+            "author": "beachball",
+            "package": "@pi-lib/advanced-button",
+            "comment": "Bump @pi-lib/button to v0.6.1",
+            "commit": "5c309c59cdcc7c1408d238c4f4b7596fc7cbc784"
+          },
+          {
+            "author": "beachball",
+            "package": "@pi-lib/advanced-button",
+            "comment": "Bump @pi-lib/config to v0.2.0",
+            "commit": "5c309c59cdcc7c1408d238c4f4b7596fc7cbc784"
+          },
+          {
+            "author": "beachball",
+            "package": "@pi-lib/advanced-button",
+            "comment": "Bump @pi-lib/types to v0.1.0",
+            "commit": "5c309c59cdcc7c1408d238c4f4b7596fc7cbc784"
+          }
+        ]
+      }
+    },
+    {
       "date": "Tue, 25 Oct 2022 13:44:42 GMT",
       "tag": "@pi-lib/advanced-button_v0.1.1",
       "version": "0.1.1",

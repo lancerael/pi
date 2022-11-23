@@ -2,6 +2,21 @@
   "name": "@pi-lib/button",
   "entries": [
     {
+      "date": "Wed, 23 Nov 2022 16:01:21 GMT",
+      "tag": "@pi-lib/button_v0.6.1",
+      "version": "0.6.1",
+      "comments": {
+        "patch": [
+          {
+            "author": "lancerael@hotmail.com",
+            "package": "@pi-lib/button",
+            "commit": "5c309c59cdcc7c1408d238c4f4b7596fc7cbc784",
+            "comment": "* Generalised clanup for consistent builds * Enhancements to AdvancedButton"
+          }
+        ]
+      }
+    },
+    {
       "date": "Tue, 25 Oct 2022 13:44:42 GMT",
       "tag": "@pi-lib/button_v0.6.0",
       "version": "0.6.0",

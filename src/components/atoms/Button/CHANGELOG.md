@@ -1,8 +1,16 @@
 # Change Log - @pi-lib/button
 
-This log was last generated on Tue, 25 Oct 2022 13:44:42 GMT and should not be manually modified.
+This log was last generated on Wed, 23 Nov 2022 16:01:21 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 0.6.1
+
+Wed, 23 Nov 2022 16:01:21 GMT
+
+### Patches
+
+- * Generalised clanup for consistent builds * Enhancements to AdvancedButton (lancerael@hotmail.com)
 
 ## 0.6.0
 
