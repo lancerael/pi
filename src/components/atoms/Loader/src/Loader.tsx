@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import { StyledLoaderCircle, StyledLoader } from './Loader.style'
+import { StyledLoader, StyledLoaderCircle } from './Loader.style'
 
 export const Loader: FC = () => (
   <StyledLoader title='Loading...' data-selector='pi-lib-loader'>

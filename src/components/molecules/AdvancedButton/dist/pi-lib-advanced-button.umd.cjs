@@ -1,7 +1,7 @@
-(function(t,n){typeof exports=="object"&&typeof module<"u"?module.exports=n(require("styled-components"),require("react")):typeof define=="function"&&define.amd?define(["styled-components","react"],n):(t=typeof globalThis<"u"?globalThis:t||self,t["@pi-lib/advanced-button"]=n(t.o,t.e))})(this,function(t,n){"use strict";const i=e=>e&&typeof e=="object"&&"default"in e?e:{default:e},d=i(t),a=i(n),s=d.default.div``,l={default:"black",pending:"blue",error:"red",success:"green"},c="font-family: serif;",u=d.default.button(({status:e})=>t.css`
-  ${c}
-  border: 2px solid ${l[e]};
-  color:  ${l[e]};
+(function(t,n){typeof exports=="object"&&typeof module<"u"?module.exports=n(require("react"),require("styled-components")):typeof define=="function"&&define.amd?define(["react","styled-components"],n):(t=typeof globalThis<"u"?globalThis:t||self,t["@pi-lib/advanced-button"]=n(t.React,t.t))})(this,function(t,n){"use strict";const l=e=>e&&typeof e=="object"&&"default"in e?e:{default:e},d=l(t),a=l(n),r={default:"black",pending:"blue",error:"red",success:"green"},u="font-family: serif;",s=a.default.button(({status:e})=>n.css`
+  ${u}
+  border: 2px solid ${r[e]};
+  color:  ${r[e]};
   background-color: white;
   border-radius: 15px;
   width: 220px;
@@ -12,21 +12,22 @@
     color: grey;
     cursor: default;
   }
-`),p=({children:e,status:o="default",dataSelector:m="pi-lib-button",...y})=>a.default.createElement(u,{status:o,...y,"data-selector":m},e),f={default:"black",pending:"blue",error:"red",success:"green"},b=t.keyframes`
+`),c=({children:e,status:i="default",dataSelector:o="pi-lib-button",...g})=>d.default.createElement(s,{status:i,...g,"data-selector":o},e),p={default:"black",pending:"blue",error:"red",success:"green"},f=n.keyframes`
   to {
     transform: rotate(360deg);
   }
-`,x=d.default.div`
-  width: 14px;
-  height: 14px;
+`,b=a.default.div`
+  width: 24px;
+  height: 24px;
   display: inline-block;
-`,r=d.default.div(({secondary:e})=>t.css`
+  margin: -8px 0;
+`,h=a.default.div`
   height: inherit;
   width: inherit;
   position: absolute;
   border-radius: 50%;
-  box-shadow: 0 0 0px 2px ${f.pending};
+  box-shadow: inset 0 0 0px 2px ${p.pending};
   overflow: hidden;
-  clip-path: polygon(-3px -3px, 50% -3px, 50% 23px, -3px 23px);
-  animation: ${b} ${e?"2":"3"}s linear infinite;
-`),h=()=>a.default.createElement(x,{title:"Loading...","data-selector":"pi-lib-loader"},a.default.createElement(r,null),a.default.createElement(r,{secondary:!0}));return({isLoading:e,children:o})=>React.createElement(s,null,React.createElement(p,null,e?React.createElement(h,null):o))});
+  clip-path: polygon(-5px -5px, 50% -5px, 50% 50%, 100% 50%, 100% 100%, -5px 100%);
+  animation: ${f} 2s linear infinite;
+`,m=()=>d.default.createElement(b,{title:"Loading...","data-selector":"pi-lib-loader"},d.default.createElement(h,null)),x=a.default.div``;return({isLoading:e,children:i,buttonProps:o})=>d.default.createElement(x,null,d.default.createElement(c,{status:e?"pending":"default",...o},e?d.default.createElement(m,null):i))});
