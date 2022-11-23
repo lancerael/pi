@@ -6,6 +6,7 @@
     "sb": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "build": "npx nx run-many --target=build",
+    "change": "pnpm build && beachball change",
     "publish": "npx beachball publish"
   },
   "repository": {

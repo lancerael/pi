@@ -9,9 +9,10 @@ const rotate = keyframes`
 `
 
 export const StyledLoader = styled.div`
-  width: 14px;
-  height: 14px;
+  width: 24px;
+  height: 24px;
   display: inline-block;
+  margin: -8px 0;
 `
 
 export const StyledLoaderCircle = styled.div`
@@ -19,8 +20,8 @@ export const StyledLoaderCircle = styled.div`
   width: inherit;
   position: absolute;
   border-radius: 50%;
-  box-shadow: 0 0 0px 2px ${STATUS_COLOURS['pending']};
+  box-shadow: inset 0 0 0px 2px ${STATUS_COLOURS['pending']};
   overflow: hidden;
-  clip-path: polygon(-3px -3px, 50% -3px, 50% 23px, -3px 23px);
+  clip-path: polygon(-5px -5px, 50% -5px, 50% 50%, 100% 50%, 100% 100%, -5px 100%);
   animation: ${rotate} 2s linear infinite;
 `
