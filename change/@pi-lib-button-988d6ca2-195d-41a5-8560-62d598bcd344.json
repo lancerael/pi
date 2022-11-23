@@ -1,7 +1,0 @@
-{
-  "type": "patch",
-  "comment": "Beachball cleanup",
-  "packageName": "@pi-lib/button",
-  "email": "lancerael@hotmail.com",
-  "dependentChangeType": "patch"
-}
