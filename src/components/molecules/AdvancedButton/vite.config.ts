@@ -1,3 +1,3 @@
 import createConfig from '@pi-lib/config'
 
-export default createConfig('loader')
+export default createConfig('advanced-button')

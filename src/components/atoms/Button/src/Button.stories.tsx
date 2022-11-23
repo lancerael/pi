@@ -11,7 +11,7 @@ export default {
       options: [true, false],
       control: { type: 'radio' },
     },
-  }
+  },
 } as ComponentMeta<typeof Button>
 
 const Template: ComponentStory<typeof Button> = (args: ButtonProps) => <Button {...args} />

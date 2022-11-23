@@ -6,8 +6,8 @@
   "files": [
     "dist"
   ],
-  "main": "dist/pi-lib-advanced-button.umd.js",
-  "module": "dist/pi-lib-advanced-button.js",
+  "main": "./dist/pi-lib-advanced-button.umd.js",
+  "module": "./dist/pi-lib-advanced-button.js",
   "exports": {
     ".": {
       "import": "./dist/pi-lib-advanced-button.js",
@@ -18,7 +18,7 @@
   "scripts": {
     "test": "vitest",
     "test:coverage": "vitest --coverage",
-    "build": "rimraf dist && vite build"
+    "build": "rimraf dist && vite build && npx tsc"
   },
   "keywords": [
     "react",
@@ -29,7 +29,7 @@
   "dependencies": {
     "@pi-lib/constants": "^0.*.*",
     "@pi-lib/loader": "^0.*.*",
-    "@pi-lib/button": "^0.6.0"
+    "@pi-lib/button": "^0.*.*"
   },
   "peerDependencies": {
     "react": "^18.2.0",

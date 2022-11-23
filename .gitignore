@@ -45,3 +45,5 @@ jspm_packages/
 # DynamoDB Local files
 .dynamodb/
 
+# TS build files
+*.tsbuildinfo
