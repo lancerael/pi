@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import React, { FC } from 'react'
 import { StyledLoader, StyledLoaderCircle } from './Loader.style'
 
 export const Loader: FC = () => (

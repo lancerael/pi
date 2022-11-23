@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import React, { FC } from 'react'
 import { ButtonProps } from './Button.types'
 import { StyledButton } from './Button.style'
 
