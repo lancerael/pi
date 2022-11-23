@@ -1,0 +1,7 @@
+{
+  "type": "patch",
+  "comment": "Beachball cleanup",
+  "packageName": "@pi-lib/loader",
+  "email": "lancerael@hotmail.com",
+  "dependentChangeType": "patch"
+}
