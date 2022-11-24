@@ -25,3 +25,5 @@ export type SVGSelection = Selection<
 >
 
 export type BarType = 'wicks' | 'candles'
+
+export type ValueKeys = 'low' | 'high' | 'open' | 'close'
