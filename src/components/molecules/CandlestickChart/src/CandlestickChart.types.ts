@@ -1,3 +1,5 @@
+import { Selection } from 'd3-selection'
+
 export interface CandlestickDayData {
   date: string
   open: number
@@ -14,3 +16,12 @@ export interface CandlestickChartProps {
    */
   data: CandlestickDayData[]
 }
+
+export type SVGSelection = Selection<
+  SVGSVGElement | SVGGElement | null,
+  unknown,
+  null,
+  undefined
+>
+
+export type BarType = 'wicks' | 'candles'

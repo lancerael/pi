@@ -7,7 +7,8 @@
     "build-storybook": "build-storybook",
     "build": "npx nx run-many --target=build",
     "change": "pnpm build && beachball change",
-    "publish": "npx beachball publish"
+    "publish": "npx beachball publish",
+    "lint": "npx prettier -w . && npx eslint --fix"
   },
   "repository": {
     "type": "git",
@@ -30,8 +31,13 @@
     "@storybook/react": "^6.5.10",
     "@storybook/testing-library": "0.0.13",
     "@types/node": "^18.7.11",
+    "@typescript-eslint/eslint-plugin": "^5.44.0",
+    "@typescript-eslint/parser": "^5.44.0",
     "babel-loader": "^8.2.5",
     "beachball": "^2.31.4",
+    "eslint": "^8.28.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
     "fs-extra": "^10.1.0",
     "nx": "^15.0.0",
     "prettier": "^2.8.0"

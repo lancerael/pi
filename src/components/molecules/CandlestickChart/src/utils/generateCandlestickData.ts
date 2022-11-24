@@ -40,7 +40,7 @@ const generateCandlestickDay = (
   let date = new Date()
   date.setDate(date.getDate() - daysAgo)
   const open = prevData
-    ? movePrevValue(prevData.close, 5)
+    ? movePrevValue(prevData.close, 3)
     : randomNumber(100, 400)
   const close = movePrevValue(open, strength)
   const high = randomNumber(Math.max(open, close), Math.max(open, close) + 20)

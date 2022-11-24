@@ -2,72 +2,88 @@ import React, { FC, useEffect, useRef, useState } from 'react'
 import { select } from 'd3-selection'
 import 'd3-transition'
 import { StyledCandlestickChart } from './CandlestickChart.style'
-import { CandlestickChartProps } from './CandlestickChart.types'
+import {
+  BarType,
+  CandlestickChartProps,
+  CandlestickDayData,
+  SVGSelection,
+} from './CandlestickChart.types'
 
 const xAxis = {
   wicks: [1, 52],
   candles: [5, 50],
 }
 
+const TRANSITION_TIME = 300
+
+const { abs, min } = Math
+
+import { scaleBand, scaleLinear } from 'd3-scale'
+
+const useScales = (svg: any | null, data: CandlestickDayData[]) => {
+  // console.log('h', svg.current, data)
+  if (!svg)
+    return { height: 0, xScale: (x: number) => x, yScale: (x: number) => x }
+  // const { width, height } = svg.getBBox()
+  const height = 500
+  const width = 800
+  const max = Math.max(...data.map(({ high }) => high))
+  const xScale = scaleBand().rangeRound([0, width]).padding(0.1)
+  const yScale = scaleLinear().domain([0, max]).range([0, height])
+  return { height, xScale, yScale }
+}
+
 export const CandlestickChart: FC<CandlestickChartProps> = ({ data }) => {
   const svgRef = useRef<SVGSVGElement>(null)
-  // let candles: any, wicks: any
+  const { height, xScale, yScale } = useScales(svgRef, data)
 
-  // const svg = select(svgRef.current)
+  const getSvg = () => select(svgRef.current)
 
-  // const bindData = (type: 'wicks' | 'candles', addGroup = false) => {
-  //   const svg = select(svgRef.current)
-  //   if (addGroup) svg.append('g')
-  // }
+  const bindData = (
+    type: BarType,
+    parent: SVGSelection = getSvg() as SVGSelection
+  ) => parent.selectAll(`rect.${type}`).data(data)
 
-  const bindGroup = (type: 'wicks' | 'candles') =>
-    select(svgRef.current)
-      .append('g')
-      .selectAll(`rect.${type}`)
-      .data(data)
+  const bindGroup = (type: BarType) =>
+    bindData(type, getSvg().append('g') as SVGSelection)
       .enter()
       .append('rect')
       .attr('class', type)
       .attr('width', xAxis[type][0])
       .attr('x', (d, i) => xAxis[type][1] + 10 * i)
 
-  const placeWicks = () => {
-    // console.log(data)
-    return select(svgRef.current)
-      .selectAll(`g rect.wicks`)
-      .data(data)
+  const placeWicks = () =>
+    bindData('wicks')
       .transition()
-      .duration(300)
-      .attr('height', ({ low, high }) => Math.abs(low - high))
+      .duration(TRANSITION_TIME)
+      .attr('height', (d) => yScale(abs(d.low - d.high)))
       .attr(
         'y',
-        ({ low, high }, i) => 500 - Math.min(low, high) - Math.abs(low - high)
+        (d) => height - yScale(min(d.low, d.high)) - yScale(abs(d.low - d.high))
       )
-  }
 
   const placeCandles = () =>
-    select(svgRef.current)
-      .selectAll(`g rect.candles`)
-      .data(data)
+    bindData('candles')
       .transition()
-      .duration(300)
-      .attr('fill', ({ open, close }, i) => (close < open ? 'red' : 'green'))
-      .attr('height', ({ open, close }) => Math.abs(open - close))
+      .duration(TRANSITION_TIME)
+      .attr('fill', (d) => (d.close < d.open ? 'red' : 'green'))
+      .attr('height', (d, i) => yScale?.(abs(d.open - d.close)) ?? 0)
       .attr(
         'y',
-        ({ open, close }, i) =>
-          500 - Math.min(open, close) - Math.abs(open - close)
+        (d) =>
+          height - yScale(min(d.open, d.close)) - yScale(abs(d.open - d.close))
       )
 
   useEffect(() => {
-    wicks = bindGroup('wicks').attr('fill', 'grey')
-    candles = bindGroup('candles')
+    bindGroup('wicks').attr('fill', 'grey')
+    bindGroup('candles')
   }, [])
 
   useEffect(() => {
     placeWicks()
     placeCandles()
-  }, [data])
+    console.log(data)
+  }, [data, yScale])
 
   return <StyledCandlestickChart ref={svgRef} />
 }
