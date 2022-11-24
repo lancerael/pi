@@ -3,6 +3,6 @@
   "include": ["./src/*.tsx", "./src/*.*.ts"],
   "exclude": ["./src/*.*.tsx"],
   "compilerOptions": {
-		"outDir": "./dist"
+    "outDir": "./dist"
   }
 }

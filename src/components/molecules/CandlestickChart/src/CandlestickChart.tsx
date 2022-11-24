@@ -1,38 +1,75 @@
-import React, { FC, useEffect, useRef } from 'react'
+import React, { FC, useEffect, useRef, useState } from 'react'
 import { select } from 'd3-selection'
+import 'd3-transition'
 import { StyledCandlestickChart } from './CandlestickChart.style'
 import { CandlestickChartProps } from './CandlestickChart.types'
 
+const xAxis = {
+  wicks: [1, 52],
+  candles: [5, 50],
+}
+
 export const CandlestickChart: FC<CandlestickChartProps> = ({ data }) => {
   const svgRef = useRef<SVGSVGElement>(null)
-  let candles, wicks
+  // let candles: any, wicks: any
 
-  const bindDataToGroup = (type: string) => select(svgRef.current)
+  // const svg = select(svgRef.current)
+
+  // const bindData = (type: 'wicks' | 'candles', addGroup = false) => {
+  //   const svg = select(svgRef.current)
+  //   if (addGroup) svg.append('g')
+  // }
+
+  const bindGroup = (type: 'wicks' | 'candles') =>
+    select(svgRef.current)
       .append('g')
       .selectAll(`rect.${type}`)
       .data(data)
       .enter()
       .append('rect')
       .attr('class', type)
+      .attr('width', xAxis[type][0])
+      .attr('x', (d, i) => xAxis[type][1] + 10 * i)
+
+  const placeWicks = () => {
+    // console.log(data)
+    return select(svgRef.current)
+      .selectAll(`g rect.wicks`)
+      .data(data)
+      .transition()
+      .duration(300)
+      .attr('height', ({ low, high }) => Math.abs(low - high))
+      .attr(
+        'y',
+        ({ low, high }, i) => 500 - Math.min(low, high) - Math.abs(low - high)
+      )
+  }
+
+  const placeCandles = () =>
+    select(svgRef.current)
+      .selectAll(`g rect.candles`)
+      .data(data)
+      .transition()
+      .duration(300)
+      .attr('fill', ({ open, close }, i) => (close < open ? 'red' : 'green'))
+      .attr('height', ({ open, close }) => Math.abs(open - close))
+      .attr(
+        'y',
+        ({ open, close }, i) =>
+          500 - Math.min(open, close) - Math.abs(open - close)
+      )
 
   useEffect(() => {
-    wicks = bindDataToGroup('wicks')
-      .attr('fill', 'grey')
-      .attr('width', 1)
-      .attr('height', ({ low, high }) => Math.abs(low-high))
-      .attr('x', (d, i) => 52 + (10 * i))
-      .attr('y', ({ low, high }, i) =>  500 - Math.min(low, high) - Math.abs(low-high))
-
-    candles = bindDataToGroup('candles')
-      .attr('fill', ({ open, close }, i) => close < open ? 'red' : 'green')
-      .attr('width', 5)
-      .attr('height', ({ open, close }) => Math.abs(open-close))
-      .attr('y', ({ open, close }, i) =>  500 - Math.min(open, close) - Math.abs(open-close))
-      .attr('x', (d, i) => 50 + (10 * i))
-
+    wicks = bindGroup('wicks').attr('fill', 'grey')
+    candles = bindGroup('candles')
   }, [])
 
-  return <StyledCandlestickChart ref={svgRef}/>
+  useEffect(() => {
+    placeWicks()
+    placeCandles()
+  }, [data])
+
+  return <StyledCandlestickChart ref={svgRef} />
 }
 
 export default CandlestickChart
