@@ -29,7 +29,9 @@
   "license": "ISC",
   "dependencies": {
     "@pi-lib/constants": "^0.*.*",
+    "@types/d3-axis": "^3.0.1",
     "@types/d3-scale": "^4.0.2",
+    "d3-axis": "^3.0.0",
     "d3-scale": "^4.0.2",
     "d3-selection": "^3.0.0",
     "d3-transition": "^3.0.1"

@@ -9,6 +9,7 @@ import {
   ValueKeys,
 } from './CandlestickChart.types'
 import { useScaling } from './hooks/useScaling'
+import { useAxes } from './hooks/useAxes'
 
 const xAxis = {
   wicks: [1, 52],
@@ -19,32 +20,36 @@ const TRANSITION_TIME = 300
 
 export const CandlestickChart: FC<CandlestickChartProps> = ({ data }) => {
   const svgRef = useRef<SVGSVGElement>(null)
-  const { scaledHeight, scaledY } = useScaling(svgRef, data)
+  const { scaledHeight, scaledY, xScale, height } = useScaling(svgRef, data)
+  useAxes(svgRef, xScale, height)
 
-  // Short cut to d3 selection of SVG
+  // Alias to d3 selection of SVG
   const getSvg = () => select(svgRef.current)
 
-  // Bind the data to the current rectangles
+  // Bind the data to the chosen type of rectangles
   const bindData = (
     type: BarType,
     parent: SVGSelection = getSvg() as SVGSelection
   ) => parent.selectAll(`rect.${type}`).data(data)
 
-  // Create the group to contain the rectangles
+  // Create the group and initialise the rectangles
   const createGroup = (type: BarType) =>
     bindData(type, getSvg().append('g') as SVGSelection)
       .enter()
       .append('rect')
       .attr('class', type)
       .attr('width', xAxis[type][0])
-      .attr('x', (d, i) => xAxis[type][1] + 10 * i)
+  // .attr('x', (d, i) => xAxis[type][1] + 10 * i)
 
-  const placeRects = (type: BarType, valueKeys: ValueKeys[]) =>
+  // Place the rectangles based on latest data
+  const placeRects = (type: BarType, keys: ValueKeys[]) =>
     bindData(type)
       .transition()
       .duration(TRANSITION_TIME)
-      .attr('height', (d) => scaledHeight(d[valueKeys[0]], d[valueKeys[1]]))
-      .attr('y', (d) => scaledY(d[valueKeys[0]], d[valueKeys[1]]))
+      .attr('height', (d) => scaledHeight(d[keys[0]], d[keys[1]]))
+      .attr('y', (d) => scaledY(d[keys[0]], d[keys[1]]))
+      // .attr('width', Number(xScale.bandwidth()))
+      .attr('x', ({ date }) => Number(xScale(date)) - xAxis[type][0] / 2)
 
   // Initialise the canvas with groups for wicks and candles
   useEffect(() => {
@@ -54,11 +59,13 @@ export const CandlestickChart: FC<CandlestickChartProps> = ({ data }) => {
 
   // Update the wicks whenever the data (or scales) changes
   useEffect(() => {
-    placeRects('wicks', ['low', 'high'])
-    placeRects('candles', ['open', 'close']).attr('fill', (d) =>
-      d.close < d.open ? 'red' : 'green'
-    )
-  }, [data, scaledHeight])
+    if (typeof xScale.bandwidth == 'function') {
+      placeRects('wicks', ['low', 'high'])
+      placeRects('candles', ['open', 'close']).attr('fill', (d) =>
+        d.close < d.open ? 'red' : 'green'
+      )
+    }
+  }, [data, xScale])
 
   return <StyledCandlestickChart ref={svgRef} />
 }

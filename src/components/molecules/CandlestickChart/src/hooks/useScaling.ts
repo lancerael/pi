@@ -16,15 +16,18 @@ export const useScaling = (svg: any | null, data: CandlestickDayData[]) => {
     setDimensions({ width, height })
     const max = Math.max(...data.map(({ high }) => high))
     setScales({
-      xScale: scaleBand().rangeRound([0, width]).padding(0.1),
+      xScale: scaleBand()
+        .range([20, width - 20])
+        .domain(data.map(({ date }) => date))
+        .padding(1),
       yScale: scaleLinear().domain([0, max]).range([0, height]),
     })
   }, [])
 
   const scaledHeight = (low: number, high: number) =>
-    scales.yScale(abs(low - high))
+    scales.yScale(abs(low - high)) || 1
   const scaledY = (low: number, high: number) =>
     dimensions.height - scales.yScale(min(low, high)) - scaledHeight(low, high)
 
-  return { scaledHeight, scaledY }
+  return { scaledHeight, scaledY, ...dimensions, ...scales }
 }

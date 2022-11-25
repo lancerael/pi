@@ -191,7 +191,7 @@ importers:
       '@pi-lib/constants': ^0.*.*
       '@pi-lib/types': ^0.*.*
       '@testing-library/react': ^13.3.0
-      '@types/d3-array': ^3.0.3
+      '@types/d3-axis': ^3.0.1
       '@types/d3-scale': ^4.0.2
       '@types/d3-selection': ^3.0.3
       '@types/d3-transition': ^3.0.2
@@ -203,7 +203,7 @@ importers:
       '@types/styled-components': ^5.1.26
       '@vitejs/plugin-react': ^2.0.1
       '@vitest/coverage-istanbul': ^0.23.1
-      d3-array: ^3.2.0
+      d3-axis: ^3.0.0
       d3-scale: ^4.0.2
       d3-selection: ^3.0.0
       d3-transition: ^3.0.1
@@ -218,9 +218,9 @@ importers:
       vitest: ^0.22.1
     dependencies:
       '@pi-lib/constants': link:../../../constants
-      '@types/d3-array': 3.0.3
+      '@types/d3-axis': 3.0.1
       '@types/d3-scale': 4.0.2
-      d3-array: 3.2.0
+      d3-axis: 3.0.0
       d3-scale: 4.0.2
       d3-selection: 3.0.0
       d3-transition: 3.0.1_d3-selection@3.0.0
@@ -3557,8 +3557,10 @@ packages:
     resolution: {integrity: sha512-hC7OMnszpxhZPduX+m+nrx+uFoLkWOMiR4oa/AZF3MuSETYTZmFfJAHqZEM8MVlvfG7BEUcgvtwoCTxBp6hm3g==}
     dev: true
 
-  /@types/d3-array/3.0.3:
-    resolution: {integrity: sha512-Reoy+pKnvsksN0lQUlcH6dOGjRZ/3WRwXR//m+/8lt1BXeI4xyaUZoqULNjyXXRuh0Mj4LNpkCvhUpQlY3X5xQ==}
+  /@types/d3-axis/3.0.1:
+    resolution: {integrity: sha512-zji/iIbdd49g9WN0aIsGcwcTBUkgLsCSwB+uH+LPVDAiKWENMtI3cJEWt+7/YYwelMoZmbBfzA3qCdrZ2XFNnw==}
+    dependencies:
+      '@types/d3-selection': 3.0.3
     dev: false
 
   /@types/d3-scale/4.0.2:
@@ -3569,7 +3571,6 @@ packages:
 
   /@types/d3-selection/3.0.3:
     resolution: {integrity: sha512-Mw5cf6nlW1MlefpD9zrshZ+DAWL4IQ5LnWfRheW6xwsdaWOb6IRRu2H7XPAQcyXEx1D7XQWgdoKR83ui1/HlEA==}
-    dev: true
 
   /@types/d3-time/3.0.0:
     resolution: {integrity: sha512-sZLCdHvBUcNby1cB6Fd3ZBrABbjz3v1Vm90nysCQ6Vt7vd6e/h9Lt7SiJUoEX0l4Dzc7P5llKyhqSi1ycSf1Hg==}
@@ -5874,6 +5875,11 @@ packages:
     engines: {node: '>=12'}
     dependencies:
       internmap: 2.0.3
+    dev: false
+
+  /d3-axis/3.0.0:
+    resolution: {integrity: sha512-IH5tgjV4jE/GhHkRV0HiVYPDtvfjHQlQfJHs0usq7M30XcSBvOotpmH1IgkcXsO/5gEQZD43B//fc7SRT5S+xw==}
+    engines: {node: '>=12'}
     dev: false
 
   /d3-color/3.1.0:
