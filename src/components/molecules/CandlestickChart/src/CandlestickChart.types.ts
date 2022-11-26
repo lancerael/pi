@@ -8,6 +8,7 @@ export interface CandlestickDayData {
   close: number
   volume: number
   trades: number
+  width?: number
 }
 
 export interface CandlestickChartProps {

@@ -7,15 +7,15 @@ export const useAxes = (svg: any, xScale: any, height: number) => {
     if (xScale.domain) {
       select(svg.current)
         .append('g')
-        .attr('class', 'pic-axis pic-axis-x')
         .call(axisBottom(xScale))
-        .attr('transform', `translate(0,${height - 100})`)
+        .attr('transform', `translate(0,${height - 70})`)
         .selectAll('text')
         .attr('x', -35)
         .attr('y', -4)
         .attr('transform', 'rotate(270)')
-        .attr('class', 'pic-axis-label pic-axis-label-x')
-        .text((d) => d as string)
+        .text((d, i) =>
+          i % 5 && i < xScale.domain().length - 1 ? '' : String(d)
+        )
     }
   }, [xScale])
 }

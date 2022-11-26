@@ -19,7 +19,7 @@ export const useScaling = (svg: any | null, data: CandlestickDayData[]) => {
       xScale: scaleBand()
         .range([20, width - 20])
         .domain(data.map(({ date }) => date))
-        .padding(1),
+        .padding(0.3),
       yScale: scaleLinear().domain([0, max]).range([0, height]),
     })
   }, [])

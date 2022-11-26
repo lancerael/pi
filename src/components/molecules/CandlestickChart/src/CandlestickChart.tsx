@@ -11,19 +11,15 @@ import {
 import { useScaling } from './hooks/useScaling'
 import { useAxes } from './hooks/useAxes'
 
-const xAxis = {
-  wicks: [1, 52],
-  candles: [5, 50],
-}
-
 const TRANSITION_TIME = 300
 
 export const CandlestickChart: FC<CandlestickChartProps> = ({ data }) => {
   const svgRef = useRef<SVGSVGElement>(null)
   const { scaledHeight, scaledY, xScale, height } = useScaling(svgRef, data)
+  // const { createGroup, placeRects }
   useAxes(svgRef, xScale, height)
 
-  // Alias to d3 selection of SVG
+  // Get d3 selection of SVG
   const getSvg = () => select(svgRef.current)
 
   // Bind the data to the chosen type of rectangles
@@ -38,18 +34,23 @@ export const CandlestickChart: FC<CandlestickChartProps> = ({ data }) => {
       .enter()
       .append('rect')
       .attr('class', type)
-      .attr('width', xAxis[type][0])
-  // .attr('x', (d, i) => xAxis[type][1] + 10 * i)
 
   // Place the rectangles based on latest data
   const placeRects = (type: BarType, keys: ValueKeys[]) =>
     bindData(type)
+      .each(
+        (d) => (d.width = type === 'wicks' ? 1 : Number(xScale.bandwidth()))
+      )
       .transition()
       .duration(TRANSITION_TIME)
+      .attr('width', (d) => d.width ?? 0)
       .attr('height', (d) => scaledHeight(d[keys[0]], d[keys[1]]))
+      .attr(
+        'x',
+        (d) =>
+          Number(xScale(d.date)) + (type === 'wicks' ? (d?.width ?? 0) + 2 : 0)
+      )
       .attr('y', (d) => scaledY(d[keys[0]], d[keys[1]]))
-      // .attr('width', Number(xScale.bandwidth()))
-      .attr('x', ({ date }) => Number(xScale(date)) - xAxis[type][0] / 2)
 
   // Initialise the canvas with groups for wicks and candles
   useEffect(() => {
