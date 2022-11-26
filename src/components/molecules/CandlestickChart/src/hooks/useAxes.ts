@@ -2,10 +2,10 @@ import { axisBottom } from 'd3-axis'
 import { select } from 'd3-selection'
 import { useEffect } from 'react'
 
-export const useAxes = (svg: any, xScale: any, height: number) => {
+export const useAxes = (svgRef: any, xScale: any, height: number) => {
   useEffect(() => {
     if (xScale.domain) {
-      select(svg.current)
+      select(svgRef.current)
         .append('g')
         .call(axisBottom(xScale))
         .attr('transform', `translate(0,${height - 70})`)

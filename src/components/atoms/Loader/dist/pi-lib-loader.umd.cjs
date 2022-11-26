@@ -14,6 +14,13 @@
   border-radius: 50%;
   box-shadow: inset 0 0 0px 2px ${r.pending};
   overflow: hidden;
-  clip-path: polygon(-5px -5px, 50% -5px, 50% 50%, 100% 50%, 100% 100%, -5px 100%);
+  clip-path: polygon(
+    -5px -5px,
+    50% -5px,
+    50% 50%,
+    100% 50%,
+    100% 100%,
+    -5px 100%
+  );
   animation: ${a} 2s linear infinite;
 `;return()=>o.default.createElement(l,{title:"Loading...","data-selector":"pi-lib-loader"},o.default.createElement(s,null))});

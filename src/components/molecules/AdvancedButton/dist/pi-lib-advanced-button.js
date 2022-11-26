@@ -1,38 +1,47 @@
 import t from "react";
-import r, { css as l, keyframes as d } from "styled-components";
-const i = {
+import r, { css as l, keyframes as s } from "styled-components";
+const a = {
   default: "black",
   pending: "blue",
   error: "red",
   success: "green"
-}, s = "font-family: serif;", c = r.button(({ status: e }) => l`
-  ${s}
-  border: 2px solid ${i[e]};
-  color:  ${i[e]};
-  background-color: white;
-  border-radius: 15px;
-  width: 220px;
-  padding: 10px;
-  margin: 15px;
-  cursor: pointer;
-  &:disabled {
-    color: grey;
-    cursor: default;
-  }
-`), p = ({ children: e, status: n = "default", dataSelector: a = "pi-lib-button", ...o }) => /* @__PURE__ */ t.createElement(c, {
-  status: n,
-  ...o,
-  "data-selector": a
-}, e), u = {
+}, c = "font-family: serif;", p = r.button(
+  ({ status: e, minWidth: i }) => l`
+    ${c}
+    border: 2px solid ${a[e]};
+    color: ${a[e]};
+    background-color: white;
+    border-radius: 15px;
+    min-width: ${i};
+    padding: 10px;
+    margin: 15px;
+    cursor: pointer;
+    &:disabled {
+      color: grey;
+      cursor: default;
+    }
+  `
+), u = ({
+  children: e,
+  status: i = "default",
+  dataSelector: n = "pi-lib-button",
+  minWidth: o = "220px",
+  ...d
+}) => /* @__PURE__ */ t.createElement(p, {
+  status: i,
+  ...d,
+  minWidth: o,
+  "data-selector": n
+}, e), m = {
   default: "black",
   pending: "blue",
   error: "red",
   success: "green"
-}, b = d`
+}, b = s`
   to {
     transform: rotate(360deg);
   }
-`, m = r.div`
+`, h = r.div`
   width: 24px;
   height: 24px;
   display: inline-block;
@@ -42,17 +51,28 @@ const i = {
   width: inherit;
   position: absolute;
   border-radius: 50%;
-  box-shadow: inset 0 0 0px 2px ${u.pending};
+  box-shadow: inset 0 0 0px 2px ${m.pending};
   overflow: hidden;
-  clip-path: polygon(-5px -5px, 50% -5px, 50% 50%, 100% 50%, 100% 100%, -5px 100%);
+  clip-path: polygon(
+    -5px -5px,
+    50% -5px,
+    50% 50%,
+    100% 50%,
+    100% 100%,
+    -5px 100%
+  );
   animation: ${b} 2s linear infinite;
-`, f = () => /* @__PURE__ */ t.createElement(m, {
+`, f = () => /* @__PURE__ */ t.createElement(h, {
   title: "Loading...",
   "data-selector": "pi-lib-loader"
-}, /* @__PURE__ */ t.createElement(x, null)), g = r.div``, v = ({ isLoading: e, children: n, buttonProps: a }) => /* @__PURE__ */ t.createElement(g, null, /* @__PURE__ */ t.createElement(p, {
+}, /* @__PURE__ */ t.createElement(x, null)), g = r.div``, w = ({
+  isLoading: e,
+  children: i,
+  buttonProps: n
+}) => /* @__PURE__ */ t.createElement(g, null, /* @__PURE__ */ t.createElement(u, {
   status: e ? "pending" : "default",
-  ...a
-}, e ? /* @__PURE__ */ t.createElement(f, null) : n));
+  ...n
+}, e ? /* @__PURE__ */ t.createElement(f, null) : i));
 export {
-  v as default
+  w as default
 };

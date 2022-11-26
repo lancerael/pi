@@ -9,4 +9,8 @@ export interface ButtonProps extends Pick<React.HTMLProps<HTMLButtonElement>, 'o
      * It denotes the status of the button
      */
     status?: Status;
+    /**
+     * Set the min width for the button
+     */
+    minWidth?: string;
 }

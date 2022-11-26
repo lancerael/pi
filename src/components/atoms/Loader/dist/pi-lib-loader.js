@@ -21,7 +21,14 @@ const o = {
   border-radius: 50%;
   box-shadow: inset 0 0 0px 2px ${o.pending};
   overflow: hidden;
-  clip-path: polygon(-5px -5px, 50% -5px, 50% 50%, 100% 50%, 100% 100%, -5px 100%);
+  clip-path: polygon(
+    -5px -5px,
+    50% -5px,
+    50% 50%,
+    100% 50%,
+    100% 100%,
+    -5px 100%
+  );
   animation: ${r} 2s linear infinite;
 `, p = () => /* @__PURE__ */ e.createElement(n, {
   title: "Loading...",

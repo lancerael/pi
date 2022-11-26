@@ -4,7 +4,7 @@ import { scaleBand, scaleLinear, ScaleBand } from 'd3-scale'
 
 const { abs, min } = Math
 
-export const useScaling = (svg: any | null, data: CandlestickDayData[]) => {
+export const useScaling = (svgRef: any | null, data: CandlestickDayData[]) => {
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 })
   const [scales, setScales] = useState({
     xScale: ((x: string) => x) as unknown as ScaleBand<string>,
@@ -12,7 +12,7 @@ export const useScaling = (svg: any | null, data: CandlestickDayData[]) => {
   })
 
   useEffect(() => {
-    const { clientWidth: width, clientHeight: height } = svg.current
+    const { clientWidth: width, clientHeight: height } = svgRef.current
     setDimensions({ width, height })
     const max = Math.max(...data.map(({ high }) => high))
     setScales({
