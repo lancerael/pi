@@ -6,6 +6,7 @@ import { ControlsProps } from './Controls.types'
 export const Controls = ({
   setZoomLevel: z,
   setPanLevel: p,
+  multiplier,
 }: ControlsProps) => {
   const css = {
     minWidth: 'auto',
@@ -13,16 +14,19 @@ export const Controls = ({
   }
   return (
     <StyledControls>
-      <Button {...css} onClick={() => z((c) => (c > 0.1 ? c - 0.1 : 0.1))}>
-        ➖
-      </Button>
-      <Button {...css} onClick={() => z((c: any) => c + 0.1)}>
-        ➕
-      </Button>
-      <Button {...css} onClick={() => p((c: any) => c + 10)}>
+      <Button {...css} onClick={() => p((c: any) => c + multiplier * 100)}>
         <StyledEmoji rotate={-90}>🔺</StyledEmoji>
       </Button>
-      <Button {...css} onClick={() => p((c: any) => c - 10)}>
+      <Button
+        {...css}
+        onClick={() => z((c) => (c > multiplier ? c - multiplier : multiplier))}
+      >
+        ➖
+      </Button>
+      <Button {...css} onClick={() => z((c: any) => c + multiplier)}>
+        ➕
+      </Button>
+      <Button {...css} onClick={() => p((c: any) => c - multiplier * 100)}>
         <StyledEmoji rotate={90}>🔺</StyledEmoji>
       </Button>
     </StyledControls>

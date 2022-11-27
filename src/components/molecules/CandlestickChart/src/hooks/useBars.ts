@@ -36,18 +36,15 @@ export const useBars = (
   // Place the rectangles based on latest data
   const placeRects = (type: BarType, keys: ValueKeys[]) =>
     bindData(type)
-      .each(
-        (d) => (d.width = type === 'wicks' ? 1 : Number(xScale.bandwidth()))
-      )
       .transition()
       .duration(TRANSITION_TIME)
-      .attr('width', (d) => d.width ?? 0)
+      .attr('width', () => (type === 'wicks' ? 1 : Number(xScale.bandwidth())))
       .attr('height', (d) => scaledHeight(d[keys[0]], d[keys[1]]))
       .attr(
         'x',
         (d) =>
           Number(xScale(d.date)) +
-          (type === 'wicks' ? (d?.width ?? 0) + 2 : 0) +
+          (type === 'wicks' ? (Number(xScale.bandwidth()) - 1) / 2 : 0) +
           panLevel
       )
       .attr('y', (d) => scaledY(d[keys[0]], d[keys[1]]))

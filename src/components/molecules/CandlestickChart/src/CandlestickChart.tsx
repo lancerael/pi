@@ -8,7 +8,7 @@ import { useScaling, useAxes, useBars } from './hooks'
 import Controls from './components/Controls'
 
 export const CandlestickChart: FC<CandlestickChartProps> = ({ data }) => {
-  const [zoomLevel, setZoomLevel] = useState(1)
+  const [zoomLevel, setZoomLevel] = useState(data.length / 100)
   const [panLevel, setPanLevel] = useState(0)
   const svgRef = useRef<SVGSVGElement>(null)
   const { scaledHeight, scaledY, xScale, height } = useScaling(
@@ -21,7 +21,9 @@ export const CandlestickChart: FC<CandlestickChartProps> = ({ data }) => {
 
   return (
     <StyledContainer>
-      <Controls {...{ setZoomLevel, setPanLevel }} />
+      <Controls
+        {...{ setZoomLevel, setPanLevel, multiplier: data.length / 1000 }}
+      />
       <StyledCandlestickChart ref={svgRef} />
     </StyledContainer>
   )
