@@ -8,7 +8,8 @@ const { abs, min } = Math
 export const useScaling = (
   svgRef: any | null,
   data: CandlestickDayData[],
-  zoomLevel: number
+  zoomLevel: number,
+  panLevel: number
 ) => {
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 })
   const [scales, setScales] = useState({
@@ -39,6 +40,9 @@ export const useScaling = (
     scaledHeight(low, high) -
     AXIS_OFFSETS[0] -
     CHART_PADDING * 2
+  const totalWidth = scales.xScale.bandwidth?.() * 1.42 * data.length
+  const offsetWidth =
+    panLevel - totalWidth + dimensions.width - AXIS_OFFSETS[1] * 2
 
-  return { scaledHeight, scaledY, ...dimensions, ...scales }
+  return { scaledHeight, scaledY, offsetWidth, ...dimensions, ...scales }
 }

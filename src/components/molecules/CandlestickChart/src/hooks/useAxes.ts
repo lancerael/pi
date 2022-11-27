@@ -8,7 +8,8 @@ export const useAxes = (
   svgRef: any,
   xScale: any,
   height: number,
-  panLevel: number
+  panLevel: number,
+  offsetWidth: number = 0
 ) => {
   useEffect(() => {
     if (xScale.domain) {
@@ -19,7 +20,9 @@ export const useAxes = (
         .call(axisBottom(xScale))
         .attr(
           'transform',
-          `translate(${panLevel},${height - CHART_PADDING - AXIS_OFFSETS[0]})`
+          `translate(${offsetWidth},${
+            height - CHART_PADDING - AXIS_OFFSETS[0]
+          })`
         )
         .selectAll('text')
         .attr('x', -35)

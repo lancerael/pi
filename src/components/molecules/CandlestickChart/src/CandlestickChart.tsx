@@ -11,13 +11,14 @@ export const CandlestickChart: FC<CandlestickChartProps> = ({ data }) => {
   const [zoomLevel, setZoomLevel] = useState(data.length / 100)
   const [panLevel, setPanLevel] = useState(0)
   const svgRef = useRef<SVGSVGElement>(null)
-  const { scaledHeight, scaledY, xScale, height } = useScaling(
+  const { scaledHeight, scaledY, xScale, height, offsetWidth } = useScaling(
     svgRef,
     data,
-    zoomLevel
+    zoomLevel,
+    panLevel
   )
-  useBars(svgRef, xScale, scaledHeight, scaledY, data, panLevel)
-  useAxes(svgRef, xScale, height, panLevel)
+  useBars(svgRef, xScale, scaledHeight, scaledY, data, panLevel, offsetWidth)
+  useAxes(svgRef, xScale, height, panLevel, offsetWidth)
 
   return (
     <StyledContainer>

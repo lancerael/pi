@@ -7,7 +7,7 @@ import {
   SVGSelection,
   ValueKeys,
 } from '../CandlestickChart.types'
-import { TRANSITION_TIME } from '../CandlestickChart.constants'
+import { AXIS_OFFSETS, TRANSITION_TIME } from '../CandlestickChart.constants'
 
 export const useBars = (
   svgRef: any,
@@ -15,7 +15,8 @@ export const useBars = (
   scaledHeight: any,
   scaledY: any,
   data: CandlestickDayData[],
-  panLevel: number
+  panLevel: number,
+  offsetWidth: number = 0
 ) => {
   // Get d3 selection of SVG
   const getSvg = () => select(svgRef.current)
@@ -45,7 +46,7 @@ export const useBars = (
         (d) =>
           Number(xScale(d.date)) +
           (type === 'wicks' ? (Number(xScale.bandwidth()) - 1) / 2 : 0) +
-          panLevel
+          offsetWidth
       )
       .attr('y', (d) => scaledY(d[keys[0]], d[keys[1]]))
 
