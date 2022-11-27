@@ -7,8 +7,7 @@ import {
   SVGSelection,
   ValueKeys,
 } from '../CandlestickChart.types'
-
-const TRANSITION_TIME = 300
+import { TRANSITION_TIME } from '../CandlestickChart.constants'
 
 export const useBars = (
   svgRef: any,

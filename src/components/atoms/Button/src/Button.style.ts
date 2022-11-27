@@ -9,10 +9,10 @@ const standardFont = 'font-family: serif;'
 export const StyledButton = styled.button(
   ({ status, minWidth, margin }: StyledButtonProps) => css`
     ${standardFont}
-    border: 2px solid ${STATUS_COLOURS[status]};
+    border: 1px solid ${STATUS_COLOURS[status]};
     color: ${STATUS_COLOURS[status]};
     background-color: white;
-    border-radius: 15px;
+    border-radius: 10px;
     min-width: ${minWidth};
     padding: 10px;
     margin: ${margin};
@@ -20,6 +20,9 @@ export const StyledButton = styled.button(
     &:disabled {
       color: grey;
       cursor: default;
+    }
+    &:hover {
+      filter: brightness(85%);
     }
   `
 )

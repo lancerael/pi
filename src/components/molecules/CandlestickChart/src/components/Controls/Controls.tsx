@@ -1,6 +1,6 @@
 import React, { FC } from 'react'
 import Button from '@pi-lib/button'
-import { StyledControls } from './Controls.style'
+import { StyledControls, StyledEmoji } from './Controls.style'
 import { ControlsProps } from './Controls.types'
 
 export const Controls = ({
@@ -20,10 +20,10 @@ export const Controls = ({
         ➕
       </Button>
       <Button {...css} onClick={() => p((c: any) => c + 10)}>
-        ⬅️
+        <StyledEmoji rotate={-90}>🔺</StyledEmoji>
       </Button>
       <Button {...css} onClick={() => p((c: any) => c - 10)}>
-        ➡️
+        <StyledEmoji rotate={90}>🔺</StyledEmoji>
       </Button>
     </StyledControls>
   )
