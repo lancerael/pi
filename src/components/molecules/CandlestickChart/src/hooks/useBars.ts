@@ -15,7 +15,8 @@ export const useBars = (
   xScale: any,
   scaledHeight: any,
   scaledY: any,
-  data: CandlestickDayData[]
+  data: CandlestickDayData[],
+  panLevel: number
 ) => {
   // Get d3 selection of SVG
   const getSvg = () => select(svgRef.current)
@@ -46,7 +47,9 @@ export const useBars = (
       .attr(
         'x',
         (d) =>
-          Number(xScale(d.date)) + (type === 'wicks' ? (d?.width ?? 0) + 2 : 0)
+          Number(xScale(d.date)) +
+          (type === 'wicks' ? (d?.width ?? 0) + 2 : 0) +
+          panLevel
       )
       .attr('y', (d) => scaledY(d[keys[0]], d[keys[1]]))
 
@@ -64,5 +67,5 @@ export const useBars = (
         d.close < d.open ? 'red' : 'green'
       )
     }
-  }, [data, xScale])
+  }, [data, xScale, panLevel])
 }

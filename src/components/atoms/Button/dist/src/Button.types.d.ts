@@ -13,4 +13,8 @@ export interface ButtonProps extends Pick<React.HTMLProps<HTMLButtonElement>, 'o
      * Set the min width for the button
      */
     minWidth?: string;
+    /**
+     * Set the margin for the button
+     */
+    margin?: string;
 }

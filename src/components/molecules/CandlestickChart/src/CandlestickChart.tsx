@@ -1,28 +1,27 @@
 import React, { FC, useRef, useState } from 'react'
-import Button from '@pi-lib/button'
 import {
   StyledCandlestickChart,
   StyledContainer,
-  StyledControls,
 } from './CandlestickChart.style'
 import { CandlestickChartProps } from './CandlestickChart.types'
-import { useScaling } from './hooks/useScaling'
-import { useAxes } from './hooks/useAxes'
-import { useBars } from './hooks/useBars'
+import { useScaling, useAxes, useBars } from './hooks'
+import Controls from './components/Controls'
 
 export const CandlestickChart: FC<CandlestickChartProps> = ({ data }) => {
-  const svgRef = useRef<SVGSVGElement>(null)
-  const { scaledHeight, scaledY, xScale, height } = useScaling(svgRef, data)
   const [zoomLevel, setZoomLevel] = useState(1)
-  useBars(svgRef, xScale, scaledHeight, scaledY, data)
-  useAxes(svgRef, xScale, height)
+  const [panLevel, setPanLevel] = useState(0)
+  const svgRef = useRef<SVGSVGElement>(null)
+  const { scaledHeight, scaledY, xScale, height } = useScaling(
+    svgRef,
+    data,
+    zoomLevel
+  )
+  useBars(svgRef, xScale, scaledHeight, scaledY, data, panLevel)
+  useAxes(svgRef, xScale, height, panLevel)
 
   return (
     <StyledContainer>
-      <StyledControls>
-        <Button minWidth="auto">-</Button>
-        <Button minWidth="auto">+</Button>
-      </StyledControls>
+      <Controls {...{ setZoomLevel, setPanLevel }} />
       <StyledCandlestickChart ref={svgRef} />
     </StyledContainer>
   )

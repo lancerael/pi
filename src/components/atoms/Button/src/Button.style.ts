@@ -7,7 +7,7 @@ import { StyledButtonProps } from './Button.style.types'
 const standardFont = 'font-family: serif;'
 
 export const StyledButton = styled.button(
-  ({ status, minWidth }: StyledButtonProps) => css`
+  ({ status, minWidth, margin }: StyledButtonProps) => css`
     ${standardFont}
     border: 2px solid ${STATUS_COLOURS[status]};
     color: ${STATUS_COLOURS[status]};
@@ -15,7 +15,7 @@ export const StyledButton = styled.button(
     border-radius: 15px;
     min-width: ${minWidth};
     padding: 10px;
-    margin: 15px;
+    margin: ${margin};
     cursor: pointer;
     &:disabled {
       color: grey;

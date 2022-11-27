@@ -1,6 +1,6 @@
 import { CandlestickDayData } from '../CandlestickChart.types';
 import { ScaleBand } from 'd3-scale';
-export declare const useScaling: (svgRef: any | null, data: CandlestickDayData[]) => {
+export declare const useScaling: (svgRef: any | null, data: CandlestickDayData[], zoomLevel: number) => {
     xScale: ScaleBand<string>;
     yScale: (y: number) => number;
     width: number;

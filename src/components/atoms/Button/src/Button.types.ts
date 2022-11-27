@@ -17,4 +17,8 @@ export interface ButtonProps
    * Set the min width for the button
    */
   minWidth?: string
+  /**
+   * Set the margin for the button
+   */
+  margin?: string
 }
