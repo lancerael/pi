@@ -1,4 +1,4 @@
 export interface ControlsProps {
-  setZoomLevel: any
-  setPanLevel: any
+  setZoomLevel: (setter: (c: number) => number) => void
+  setPanLevel: (setter: (c: number) => number) => void
 }

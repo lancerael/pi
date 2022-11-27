@@ -8,6 +8,7 @@ export const StyledCandlestickChart = styled.svg`
 `
 
 export const StyledContainer = styled.div`
+  background: radial-gradient(ellipse at center, #e9f2f7 0%, #ffffff 100%);
   width: 100%;
   height: 100%;
 `
