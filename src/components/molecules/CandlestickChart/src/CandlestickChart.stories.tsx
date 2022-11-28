@@ -3,7 +3,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react'
 import { CandlestickChart } from './CandlestickChart'
 import { generateCandlestickData } from './utils/generateCandlestickData'
 
-const candlestickData = generateCandlestickData(500)
+const candlestickData = generateCandlestickData(700)
 
 const CandlestickContainer = ({ data }) => {
   // const [chartData, setChartData] = useState(data)

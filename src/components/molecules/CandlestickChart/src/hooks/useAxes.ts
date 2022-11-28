@@ -22,12 +22,12 @@ export const useAxes = (
     const [year, month, day] = d.split('-')
     if (day === '01') {
       if (month === '01') return year
-      return date.toLocaleString('en-US', {
+      return date.toLocaleString('en-UK', {
         month: 'short',
       })
     }
     const daysInMonth = new Date(+year, +month, 0).getDate()
-    const halfDay = Math.round(daysInMonth / 2)
+    const halfDay = Math.ceil(daysInMonth / 2)
     const quarterDay = Math.round(halfDay / 2)
     let dayList = []
     if (candleWidth > 1) dayList.push(halfDay)
@@ -56,6 +56,8 @@ export const useAxes = (
   // Update the axes when the scales change
   useEffect(() => {
     if (!xScale.domain) return
+
+    // Update the x axis text labels
     axisX
       .call(axisBottom(xScale))
       .attr(
@@ -63,22 +65,27 @@ export const useAxes = (
         `translate(${offsetWidth},${height - AXIS_OFFSETS[0]})`
       )
       .selectAll('text')
-      .attr('x', (d: string, i: number) => getDateLabel(d, i).length * -3 - 10)
+      .attr('x', (d: string, i: number) => getDateLabel(d, i).length * -3 - 16)
       .attr('y', -4)
       .attr('transform', 'rotate(270)')
       .text(getDateLabel)
 
+    // Update the x axis tick lines
     axisX
       .selectAll('line')
       .attr('stroke', (d: string, i: number) =>
-        getDateLabel(d, i).length ? 'currentColor' : 'grey'
+        getDateLabel(d, i).length > 2 ? 'currentColor' : 'grey'
+      )
+      .attr('y2', (d: string, i: number) =>
+        getDateLabel(d, i).length ? 12 : 6
       )
 
+    // Update the y axis
     axisY
       .call(axisRight(yScale))
       .attr(
         'transform',
-        `translate(${width - AXIS_OFFSETS[0]},${CHART_PADDING})`
+        `translate(${width - AXIS_OFFSETS[1] + CHART_PADDING},${CHART_PADDING})`
       )
   }, [xScale, yScale, panLevel])
 }

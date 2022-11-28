@@ -17,8 +17,6 @@ export const useScaling = (
     yScale: (y: number) => y,
   })
 
-  const heightOffset = AXIS_OFFSETS[0] - CHART_PADDING * 3
-
   const scaledHeight = (low: number, high: number) =>
     dimensions.height -
       AXIS_OFFSETS[0] -
@@ -30,7 +28,14 @@ export const useScaling = (
 
   const totalWidth = scales.xScale.bandwidth?.() * 1.42 * data.length
 
-  const offsetWidth = panLevel - totalWidth + dimensions.width - AXIS_OFFSETS[1]
+  const offsetWidth =
+    panLevel -
+    totalWidth +
+    dimensions.width -
+    AXIS_OFFSETS[1] * 2 +
+    CHART_PADDING
+
+  // const firstVisible =
 
   useEffect(() => {
     const { clientWidth: width, clientHeight: height } = svgRef.current
