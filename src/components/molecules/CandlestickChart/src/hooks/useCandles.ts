@@ -54,10 +54,7 @@ export const useCandles = (
           (type === 'wicks' ? (Number(xScale.bandwidth()) - 1) / 2 : 0) +
           offsetWidth
       )
-      .attr('y', (d) => {
-        console.log(type, d.low, d.high)
-        return scaledY(d[keys[0]], d[keys[1]])
-      })
+      .attr('y', (d) => scaledY(d[keys[0]], d[keys[1]]))
 
   // Initialise the canvas with groups for wicks and candles
   useEffect(() => {
