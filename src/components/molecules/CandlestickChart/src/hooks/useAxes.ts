@@ -1,4 +1,4 @@
-import { axisBottom } from 'd3-axis'
+import { axisBottom, axisRight } from 'd3-axis'
 import { select } from 'd3-selection'
 import { useEffect } from 'react'
 import { CHART_PADDING } from '../CandlestickChart.constants'
@@ -7,6 +7,8 @@ import { AXIS_OFFSETS } from './../CandlestickChart.constants'
 export const useAxes = (
   svgRef: any,
   xScale: any,
+  yScale: any,
+  width: number,
   height: number,
   panLevel: number,
   offsetWidth: number = 0
@@ -20,10 +22,9 @@ export const useAxes = (
         .call(axisBottom(xScale))
         .attr(
           'transform',
-          `translate(${offsetWidth},${
-            height - CHART_PADDING - AXIS_OFFSETS[0]
-          })`
+          `translate(${offsetWidth},${height - AXIS_OFFSETS[0]})`
         )
+        // .attr('clip-path', 'url(#bottom-axis)')
         .selectAll('text')
         .attr('x', -35)
         .attr('y', -4)
@@ -31,6 +32,19 @@ export const useAxes = (
         .text((d, i) =>
           i % 5 && i < xScale.domain().length - 1 ? '' : String(d)
         )
+
+      select(svgRef.current).selectAll(`g.y-axis`).remove()
+      select(svgRef.current)
+        .append('g')
+        .attr('class', 'y-axis')
+        .call(axisRight(yScale))
+        .attr(
+          'transform',
+          `translate(${width - AXIS_OFFSETS[0]},${CHART_PADDING})`
+        )
+      // .selectAll('.pic-axis-y .tick line')
+      // .attr('class', 'pic-line')
+      // .attr('x2', () => innerWidth)
     }
   }, [xScale, panLevel])
 }

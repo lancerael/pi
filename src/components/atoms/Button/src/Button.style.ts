@@ -17,12 +17,14 @@ export const StyledButton = styled.button(
     padding: 10px;
     margin: ${margin};
     cursor: pointer;
+    box-shadow: 2px 2px 2px 0px rgb(61 61 61 / 20%);
+    &:hover {
+      filter: brightness(85%);
+    }
     &:disabled {
       color: grey;
       cursor: default;
-    }
-    &:hover {
-      filter: brightness(85%);
+      filter: brightness(95%);
     }
   `
 )

@@ -1,3 +1,3 @@
 export * from './useAxes';
 export * from './useScaling';
-export * from './useBars';
+export * from './useCandles';

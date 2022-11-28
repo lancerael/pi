@@ -61,7 +61,7 @@ const generateCandlestickDay = (
 
 export const generateCandlestickData = (daysAgo: number) => {
   let prevData: undefined | CandlestickDayData
-  const dates = new Array(daysAgo).fill('').map((day, index) => {
+  const dates = new Array(daysAgo + 1).fill('').map((day, index) => {
     const thisData = generateCandlestickDay(daysAgo - index, prevData)
     prevData = thisData
     return thisData

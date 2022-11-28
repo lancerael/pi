@@ -17,6 +17,21 @@ export const useScaling = (
     yScale: (y: number) => y,
   })
 
+  const heightOffset = AXIS_OFFSETS[0] - CHART_PADDING * 3
+
+  const scaledHeight = (low: number, high: number) =>
+    dimensions.height -
+      AXIS_OFFSETS[0] -
+      CHART_PADDING -
+      scales.yScale(abs(high - low)) || 1
+
+  const scaledY = (low: number, high: number) =>
+    scales.yScale(min(low, high)) - scaledHeight(low, high) + CHART_PADDING
+
+  const totalWidth = scales.xScale.bandwidth?.() * 1.42 * data.length
+
+  const offsetWidth = panLevel - totalWidth + dimensions.width - AXIS_OFFSETS[1]
+
   useEffect(() => {
     const { clientWidth: width, clientHeight: height } = svgRef.current
     setDimensions({ width, height })
@@ -28,21 +43,9 @@ export const useScaling = (
         .padding(0.3),
       yScale: scaleLinear()
         .domain([0, max])
-        .range([0, height - AXIS_OFFSETS[0] - CHART_PADDING * 3]),
+        .range([height - AXIS_OFFSETS[0] - CHART_PADDING, CHART_PADDING]),
     })
   }, [zoomLevel])
-
-  const scaledHeight = (low: number, high: number) =>
-    scales.yScale(abs(low - high)) || 1
-  const scaledY = (low: number, high: number) =>
-    dimensions.height -
-    scales.yScale(min(low, high)) -
-    scaledHeight(low, high) -
-    AXIS_OFFSETS[0] -
-    CHART_PADDING * 2
-  const totalWidth = scales.xScale.bandwidth?.() * 1.42 * data.length
-  const offsetWidth =
-    panLevel - totalWidth + dimensions.width - AXIS_OFFSETS[1] * 2
 
   return { scaledHeight, scaledY, offsetWidth, ...dimensions, ...scales }
 }

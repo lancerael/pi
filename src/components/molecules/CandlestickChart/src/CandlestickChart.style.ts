@@ -1,19 +1,22 @@
 import styled from 'styled-components'
-import { STATUS_COLOURS } from '@pi-lib/constants'
 
 export const StyledCandlestickChart = styled.svg`
-  border: 1px solid ${STATUS_COLOURS['success']};
   width: 100%;
   height: 100%;
+
+  /* & rect {
+    content-visibility: auto;
+  } */
 `
 
 export const StyledContainer = styled.div`
+  border: 1px solid lightgrey;
   background: linear-gradient(
     135deg,
-    #f8f8f8 0%,
-    #f6f6f6 50%,
-    #f4f4f4 51%,
-    #ffffff 100%
+    #fafbfc 0%,
+    #ebf1f5 50%,
+    #e2ecf2 51%,
+    #f5f8fb 100%
   );
   width: 100%;
   height: 100%;

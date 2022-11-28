@@ -7,9 +7,9 @@ import {
   SVGSelection,
   ValueKeys,
 } from '../CandlestickChart.types'
-import { AXIS_OFFSETS, TRANSITION_TIME } from '../CandlestickChart.constants'
+import { TRANSITION_TIME } from '../CandlestickChart.constants'
 
-export const useBars = (
+export const useCandles = (
   svgRef: any,
   xScale: any,
   scaledHeight: any,
@@ -29,10 +29,16 @@ export const useBars = (
 
   // Create the group and initialise the rectangles
   const createGroup = (type: BarType) =>
-    bindData(type, getSvg().append('g') as SVGSelection)
+    bindData(
+      type,
+      getSvg()
+        .append('g')
+        .classed(`${type}-group`, true)
+        .attr('clip-path', 'url(#chart-contents)') as SVGSelection
+    )
       .enter()
       .append('rect')
-      .attr('class', type)
+      .classed(type, true)
 
   // Place the rectangles based on latest data
   const placeRects = (type: BarType, keys: ValueKeys[]) =>
@@ -48,7 +54,10 @@ export const useBars = (
           (type === 'wicks' ? (Number(xScale.bandwidth()) - 1) / 2 : 0) +
           offsetWidth
       )
-      .attr('y', (d) => scaledY(d[keys[0]], d[keys[1]]))
+      .attr('y', (d) => {
+        console.log(type, d.low, d.high)
+        return scaledY(d[keys[0]], d[keys[1]])
+      })
 
   // Initialise the canvas with groups for wicks and candles
   useEffect(() => {
