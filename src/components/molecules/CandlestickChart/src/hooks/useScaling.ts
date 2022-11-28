@@ -3,7 +3,7 @@ import { CandlestickDayData } from '../CandlestickChart.types'
 import { scaleBand, scaleLinear, ScaleBand } from 'd3-scale'
 import { AXIS_OFFSETS, CHART_PADDING } from '../CandlestickChart.constants'
 
-const { abs, min } = Math
+const { abs, min, round } = Math
 
 export const useScaling = (
   svgRef: any | null,
@@ -26,7 +26,9 @@ export const useScaling = (
   const scaledY = (low: number, high: number) =>
     scales.yScale(min(low, high)) - scaledHeight(low, high) + CHART_PADDING
 
-  const totalWidth = scales.xScale.bandwidth?.() * 1.42 * data.length
+  const candleWidth = scales.xScale.bandwidth?.() * 1.42
+
+  const totalWidth = candleWidth * data.length
 
   const offsetWidth =
     panLevel -
@@ -35,11 +37,14 @@ export const useScaling = (
     AXIS_OFFSETS[1] * 2 +
     CHART_PADDING
 
-  // const firstVisible =
+  const firstVisible = abs(round(offsetWidth / candleWidth))
+  const lastVisible =
+    firstVisible - abs(round((offsetWidth + dimensions.width) / candleWidth))
 
   useEffect(() => {
     const { clientWidth: width, clientHeight: height } = svgRef.current
     setDimensions({ width, height })
+    const min = Math.min(...data.map(({ low }) => low))
     const max = Math.max(...data.map(({ high }) => high))
     setScales({
       xScale: scaleBand()

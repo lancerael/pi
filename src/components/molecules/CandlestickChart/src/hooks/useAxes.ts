@@ -16,13 +16,17 @@ export const useAxes = (
   const [axisX, setAxisX] = useState<any>()
   const [axisY, setAxisY] = useState<any>()
 
+  const dateMap: { [key: string]: string } = {}
+
   const getDateLabel = (d: string = '', i: number) => {
+    if (dateMap[d] !== undefined) return dateMap[d]
+    let dateLabel = ''
     const candleWidth = xScale.bandwidth?.() || 0
     const date = new Date(d)
     const [year, month, day] = d.split('-')
     if (day === '01') {
-      if (month === '01') return year
-      return date.toLocaleString('en-UK', {
+      if (month === '01') dateLabel = year
+      dateLabel = date.toLocaleString('en-UK', {
         month: 'short',
       })
     }
@@ -33,9 +37,10 @@ export const useAxes = (
     if (candleWidth > 1) dayList.push(halfDay)
     if (candleWidth > 3) dayList.push(quarterDay, quarterDay * 3)
     if (candleWidth > 7) dayList = [3, 6, 9, 12, 15, 18, 21, 24, 27, 30]
-    if (dayList.includes(Number(day))) return day
-    if (xScale.domain().length - 1 === i) return day
-    return ''
+    if (dayList.includes(Number(day))) dateLabel = day
+    if (xScale.domain().length - 1 === i) dateLabel = day
+    dateMap[d] = dateLabel
+    return dateLabel
   }
 
   // Set up the x and y axes
