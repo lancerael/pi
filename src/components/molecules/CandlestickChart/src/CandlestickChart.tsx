@@ -28,8 +28,8 @@ export const CandlestickChart: FC<CandlestickChartProps> = ({ data }) => {
           zoomLevel,
           setZoomLevel,
           setPanLevel,
-          multiplier: data.length / 1000,
           visibleRange,
+          multiplier: data.length / 1000,
           length: data.length,
         }}
       />
