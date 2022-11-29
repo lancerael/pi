@@ -2497,8 +2497,8 @@ const Oa = (t, n, e, r, i, o, a) => {
     zoomLevel: n,
     setZoomLevel: e,
     setPanLevel: i,
-    multiplier: t.length / 1e3,
     visibleRange: c,
+    multiplier: t.length / 1e3,
     length: t.length
   }), /* @__PURE__ */ E.createElement(Ne, {
     ref: o
