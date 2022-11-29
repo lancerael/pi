@@ -22,6 +22,8 @@ NPM: _@pi-lib/advanced-button_
 
 NPM: _@pi-lib/candlestick-chart_
 
+https://github.com/lancerael/pi/tree/main/src/components/molecules/CandlestickChart/src
+
 FEATURES:
 
 - Created as a standalone component inside mono repo and published to NPM
