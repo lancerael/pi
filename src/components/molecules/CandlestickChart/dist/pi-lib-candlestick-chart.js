@@ -1692,7 +1692,7 @@ const { abs: zt, min: bo, round: In } = Math, Mo = (t, n, e, r) => {
     var D;
     if (!n)
       return;
-    const { clientWidth: l, clientHeight: d } = t.current, g = oe().range([20, l * e - 20]).domain(n.map(({ date: S }) => S)).padding(0.3), p = ((D = g.bandwidth) == null ? void 0 : D.call(g)) * 1.44, _ = p * n.length, y = r - _ + l - Y[1] + z, x = In((zt(y) - z) / p), w = In((zt(y) + l - Y[1]) / p) + 1, M = n.slice(x, w), v = Math.min(...M.map(({ low: S }) => S)), F = Math.max(...M.map(({ high: S }) => S)), A = pe().domain([v - 20, F + 20]).range([d - Y[0] - z, z]);
+    const { clientWidth: l, clientHeight: d } = t.current, g = oe().range([20, l * e - 20]).domain(n.map(({ date: S }) => S)).padding(0.3), p = ((D = g.bandwidth) == null ? void 0 : D.call(g)) * 1.44, _ = p * n.length, y = r - _ + l - Y[1] + z, x = In((zt(y) - z) / p), w = In((zt(y) + l - Y[1]) / p) + 1, M = n.slice(x > 0 ? x : 0, w), v = Math.min(...M.map(({ low: S }) => S)), F = Math.max(...M.map(({ high: S }) => S)), A = pe().domain([v - 20, F + 20]).range([d - Y[0] - z, z]);
     c({ first: x, last: w }), o({ width: l, height: d, offsetWidth: y }), s({ xScale: g, yScale: A });
   }, [t, e, r, n]), { utils: { scaledHeight: f, scaledY: h }, visibleRange: u, dimensions: i, scales: a };
 };
@@ -2457,7 +2457,7 @@ const Oa = (t, n, e, r, i, o, a) => {
   }, "\u{1F53A}")), /* @__PURE__ */ E.createElement(_t, {
     ...a,
     onClick: () => n((s) => s > r ? s - r : r),
-    disabled: t <= r * 5
+    disabled: t <= r * 2
   }, "\u2796"), /* @__PURE__ */ E.createElement(_t, {
     ...a,
     onClick: () => n((s) => s + r),
