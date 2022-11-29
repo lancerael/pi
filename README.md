@@ -16,6 +16,7 @@ NPM:_@pi-lib/advanced-button_
 NPM:_@pi-lib/candlestick-chart_
 
 FEATURES:
+* Created as a standalone component inside mono repo and published to NPM
 * Created using d3 and React (with hooks)
 * Randomised data (for now)
 * Current day's data fluctuates to simulate market forces
@@ -23,7 +24,6 @@ FEATURES:
 * Scales adjust to visible data
 * Nodes outside of visible range are not rendered
 * Pan and zoom controls
-* Created as a standalone component inside mono repo and published to NPM
 
 TODO:
 * Fix known issues (zoom not centered, glitch when panning to the far left if fully zoomed out)
