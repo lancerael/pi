@@ -1,1 +1,2 @@
-export declare const useAxes: (svgRef: any, xScale: any, yScale: any, width: number, height: number, panLevel: number, offsetWidth?: number) => void;
+import { CandlestickDayData } from '../CandlestickChart.types';
+export declare const useAxes: (svgRef: any | null, data: CandlestickDayData[], panLevel: number, scales: any, dimensions: any) => void;

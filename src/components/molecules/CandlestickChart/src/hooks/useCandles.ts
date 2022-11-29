@@ -11,13 +11,18 @@ import { TRANSITION_TIME } from '../CandlestickChart.constants'
 
 export const useCandles = (
   svgRef: any,
-  xScale: any,
-  scaledHeight: any,
-  scaledY: any,
   data: CandlestickDayData[],
   panLevel: number,
-  offsetWidth: number = 0
+  scales: any,
+  dimensions: any,
+  utils: any,
+  visibleRange: any
 ) => {
+  const { xScale } = scales
+  const { offsetWidth } = dimensions
+  const { scaledHeight, scaledY } = utils
+  const { first, last } = visibleRange
+
   // Get d3 selection of SVG
   const getSvg = () => select(svgRef.current)
 
@@ -43,6 +48,7 @@ export const useCandles = (
   // Place the rectangles based on latest data
   const placeRects = (type: BarType, keys: ValueKeys[]) =>
     bindData(type)
+      .classed('is-offscreen', (d, i) => i < first - 10 || i > last + 10)
       .transition()
       .duration(TRANSITION_TIME)
       .attr('width', () => (type === 'wicks' ? 1 : Number(xScale.bandwidth())))

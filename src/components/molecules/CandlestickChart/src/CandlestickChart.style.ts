@@ -4,9 +4,15 @@ export const StyledCandlestickChart = styled.svg`
   width: 100%;
   height: 100%;
 
-  /* & rect {
-    content-visibility: auto;
-  } */
+  & rect.is-offscreen {
+    display: none;
+  }
+
+  & text.emphasise {
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 1px;
+  }
 `
 
 export const StyledContainer = styled.div`

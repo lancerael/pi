@@ -8,30 +8,26 @@
 
 import { CandlestickDayData } from '../CandlestickChart.types'
 
+// Appends zero to an integer for a consistent date string
 const appendZero = (value: number) => (value < 10 ? `0${value}` : value)
 
+// Formats the date in standard format
 const formatDate = (date: Date) => {
   const year = date.getFullYear()
   const month = date.getMonth()
   const day = date.getDate()
-  return `${year}-${appendZero(month)}-${appendZero(day)}`
+  return `${year}-${appendZero(month + 1)}-${appendZero(day)}`
 }
 
-/**
- * Generates a random number within a range.
- *
- * @method randomNumber
- *
- * @param min minimum random value
- * @param max max random value
- * @return new random number
- */
+//Generates a random number within a range.
 const randomNumber = (min = 0, max = 10000): number =>
   Math.floor(Math.random() * (min - max - 1)) + max + 1
 
+// Moves the previous value to simulate market forces
 const movePrevValue = (val: number, strength = 100) =>
   Math.abs(val + (val - randomNumber(val - strength, val + strength)))
 
+// Generate data for a candlestick day
 const generateCandlestickDay = (
   daysAgo: number,
   prevData?: CandlestickDayData
@@ -51,14 +47,15 @@ const generateCandlestickDay = (
   return {
     date: formatDate(date),
     high,
-    low,
+    low: low > 0 ? low : 0,
     open,
-    close,
+    close: close > 0 ? close : 0,
     volume: randomNumber(5000, 10000),
     trades: randomNumber(50, 100),
   }
 }
 
+// Generate a range of candlestick data
 export const generateCandlestickData = (daysAgo: number) => {
   let prevData: undefined | CandlestickDayData
   const dates = new Array(daysAgo + 1).fill('').map((day, index) => {
