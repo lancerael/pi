@@ -47,3 +47,7 @@ jspm_packages/
 
 # TS build files
 *.tsbuildinfo
+
+# Storybook
+.storybook
+storybook-static

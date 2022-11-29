@@ -22,14 +22,14 @@ export const useScaling = (
   })
   const [visibleRange, setVisibleRange] = useState({ first: 0, last: 0 })
 
-  // A helper to scale the height
+  // A helper to scale the candle height
   const scaledHeight = useCallback(
     (low: number, high: number) =>
       abs(scales.yScale(high) - scales.yScale(low)) || 1,
     [scales.yScale]
   )
 
-  // A helper to scale the Y axis
+  // A helper to scale the candle Y axis position
   const scaledY = useCallback(
     (low: number, high: number) =>
       scales.yScale(min(low, high)) - scaledHeight(low, high) + CHART_PADDING,
