@@ -1,6 +1,6 @@
 {
   "type": "patch",
-  "comment": "no message",
+  "comment": "Defect fix",
   "packageName": "@pi-lib/candlestick-chart",
   "email": "lancerael@hotmail.com",
   "dependentChangeType": "patch"
