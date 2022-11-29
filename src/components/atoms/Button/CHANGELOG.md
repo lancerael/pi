@@ -1,8 +1,21 @@
 # Change Log - @pi-lib/button
 
-This log was last generated on Tue, 25 Oct 2022 13:44:42 GMT and should not be manually modified.
+This log was last generated on Tue, 29 Nov 2022 15:26:29 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 0.7.0
+
+Tue, 29 Nov 2022 15:26:29 GMT
+
+### Minor changes
+
+- Finer spacing controls (lancerael@hotmail.com)
+- Bump @pi-lib/config to v0.2.1
+
+### Patches
+
+- Cleanup (lancerael@hotmail.com)
 
 ## 0.6.0
 

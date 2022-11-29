@@ -1,8 +1,16 @@
 # Change Log - @pi-lib/config
 
-This log was last generated on Mon, 24 Oct 2022 22:49:58 GMT and should not be manually modified.
+This log was last generated on Tue, 29 Nov 2022 15:26:29 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 0.2.1
+
+Tue, 29 Nov 2022 15:26:29 GMT
+
+### Patches
+
+- Cleanup (lancerael@hotmail.com)
 
 ## 0.2.0
 

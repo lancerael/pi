@@ -1,7 +1,0 @@
-{
-  "type": "minor",
-  "comment": "Cleanup",
-  "packageName": "@pi-lib/advanced-button",
-  "email": "lancerael@hotmail.com",
-  "dependentChangeType": "patch"
-}

@@ -3,7 +3,8 @@
 Monorepo of React UI components and supporting utilities.  
 Currently in pre-development.
 
-DEMO: http://dtheia.org/pi
+* DEMO: http://dtheia.org/pi
+* VIDEO: http://dtheia.org/pi//demo.mp4
 
 ## Button
 
@@ -21,6 +22,12 @@ NPM: _@pi-lib/advanced-button_
 
 NPM: _@pi-lib/candlestick-chart_
 
+A candlestick chart used to show the market forces acting on a traded asset.
+
+At this stage it is just a rough POC made over several days to show my understanding of d3 combined with React hooks.
+
+https://github.com/lancerael/pi/tree/main/src/components/molecules/CandlestickChart/src
+
 FEATURES:
 
 - Created as a standalone component inside mono repo and published to NPM
@@ -36,7 +43,8 @@ TODO:
 
 - Controls to collapse data into weeks/months (or expand to units smaller than a day)
 - Keyboard/mouse/touch controls
-- Tooltips
+- Fully responsive layout
+- Tooltips and other minor UI enhancements
 - Better usage of groups to control positions of candles
 - Convert candle wicks to lines (rects used for rapid prototype)
 - Performance improvements

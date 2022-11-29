@@ -2,6 +2,33 @@
   "name": "@pi-lib/loader",
   "entries": [
     {
+      "date": "Tue, 29 Nov 2022 15:26:29 GMT",
+      "tag": "@pi-lib/loader_v0.3.4",
+      "version": "0.3.4",
+      "comments": {
+        "patch": [
+          {
+            "author": "lancerael@hotmail.com",
+            "package": "@pi-lib/loader",
+            "commit": "4ab2e0302aa2e45c60c33998f1f9fbd5ff904f06",
+            "comment": "Cleanuo"
+          },
+          {
+            "author": "lancerael@hotmail.com",
+            "package": "@pi-lib/loader",
+            "commit": "4ab2e0302aa2e45c60c33998f1f9fbd5ff904f06",
+            "comment": "Cleanup"
+          },
+          {
+            "author": "beachball",
+            "package": "@pi-lib/loader",
+            "comment": "Bump @pi-lib/config to v0.2.1",
+            "commit": "4ab2e0302aa2e45c60c33998f1f9fbd5ff904f06"
+          }
+        ]
+      }
+    },
+    {
       "date": "Tue, 25 Oct 2022 12:52:07 GMT",
       "tag": "@pi-lib/loader_v0.3.1",
       "version": "0.3.1",

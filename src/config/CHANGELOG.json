@@ -2,6 +2,21 @@
   "name": "@pi-lib/config",
   "entries": [
     {
+      "date": "Tue, 29 Nov 2022 15:26:29 GMT",
+      "tag": "@pi-lib/config_v0.2.1",
+      "version": "0.2.1",
+      "comments": {
+        "patch": [
+          {
+            "author": "lancerael@hotmail.com",
+            "package": "@pi-lib/config",
+            "commit": "4ab2e0302aa2e45c60c33998f1f9fbd5ff904f06",
+            "comment": "Cleanup"
+          }
+        ]
+      }
+    },
+    {
       "date": "Mon, 24 Oct 2022 22:49:58 GMT",
       "tag": "@pi-lib/config_v0.2.0",
       "version": "0.2.0",
