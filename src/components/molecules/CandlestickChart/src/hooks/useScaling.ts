@@ -52,7 +52,7 @@ export const useScaling = (
     const first = round((abs(offsetWidth) - CHART_PADDING) / candleWidth)
     const last =
       round((abs(offsetWidth) + width - AXIS_OFFSETS[1]) / candleWidth) + 1
-    const visibleData = data.slice(first, last)
+    const visibleData = data.slice(first > 0 ? first : 0, last)
     const min = Math.min(...visibleData.map(({ low }) => low))
     const max = Math.max(...visibleData.map(({ high }) => high))
 
