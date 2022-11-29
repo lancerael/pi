@@ -1,29 +1,45 @@
-import n from "react";
-import a, { css as c } from "styled-components";
-const r = {
+import i from "react";
+import l, { css as a } from "styled-components";
+const o = {
   default: "black",
   pending: "blue",
   error: "red",
   success: "green"
-}, l = "font-family: serif;", s = a.button(({ status: o }) => c`
-  ${l}
-  border: 2px solid ${r[o]};
-  color:  ${r[o]};
-  background-color: white;
-  border-radius: 15px;
-  width: 220px;
-  padding: 10px;
-  margin: 15px;
-  cursor: pointer;
-  &:disabled {
-    color: grey;
-    cursor: default;
-  }
-`), p = ({ children: o, status: t = "default", dataSelector: e = "pi-lib-button", ...d }) => /* @__PURE__ */ n.createElement(s, {
+}, c = "font-family: serif;", p = l.button(
+  ({ status: r, minWidth: t, margin: e }) => a`
+    ${c}
+    border: 1px solid ${o[r]};
+    color: ${o[r]};
+    background-color: white;
+    border-radius: 10px;
+    min-width: ${t};
+    padding: 10px;
+    margin: ${e};
+    cursor: pointer;
+    box-shadow: 2px 2px 2px 0px rgb(61 61 61 / 20%);
+    &:hover {
+      filter: brightness(85%);
+    }
+    &:disabled {
+      color: grey;
+      cursor: default;
+      filter: brightness(95%);
+    }
+  `
+), f = ({
+  children: r,
+  status: t = "default",
+  dataSelector: e = "pi-lib-button",
+  minWidth: d = "220px",
+  margin: n = "10px",
+  ...s
+}) => /* @__PURE__ */ i.createElement(p, {
   status: t,
-  ...d,
+  ...s,
+  minWidth: d,
+  margin: n,
   "data-selector": e
-}, o);
+}, r);
 export {
-  p as default
+  f as default
 };

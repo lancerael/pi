@@ -1,0 +1,7 @@
+{
+  "type": "minor",
+  "comment": "First draft of POC",
+  "packageName": "@pi-lib/candlestick-chart",
+  "email": "lancerael@hotmail.com",
+  "dependentChangeType": "patch"
+}

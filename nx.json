@@ -1,25 +1,25 @@
 {
-	"tasksRunnerOptions": {
-		"default": {
-			"runner": "nx/tasks-runners/default",
-			"options": {
-				"cacheableOperations": ["build", "test:coverage"]
-			}
-		}
-	},
-	"namedInputs": {
-		"dist": ["!{projectRoot}/**/dist/**"]
-	},
-	"targetDefaults": {
-		"build": {
-			"inputs": ["dist", "^dist"],
-			"dependsOn": ["^build"]
-		},
-		"test": {
-			"dependsOn": ["^build"]
-		},
-		"test:coverage": {
-			"dependsOn": ["^build"]
-		}
-	}
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "nx/tasks-runners/default",
+      "options": {
+        "cacheableOperations": ["build", "test:coverage"]
+      }
+    }
+  },
+  "namedInputs": {
+    "dist": ["!{projectRoot}/**/dist/**"]
+  },
+  "targetDefaults": {
+    "build": {
+      "inputs": ["dist", "^dist"],
+      "dependsOn": ["^build"]
+    },
+    "test": {
+      "dependsOn": ["^build"]
+    },
+    "test:coverage": {
+      "dependsOn": ["^build"]
+    }
+  }
 }
