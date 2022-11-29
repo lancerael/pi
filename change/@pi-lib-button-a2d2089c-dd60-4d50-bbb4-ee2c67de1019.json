@@ -1,0 +1,7 @@
+{
+  "type": "minor",
+  "comment": "Finer spacing controls",
+  "packageName": "@pi-lib/button",
+  "email": "lancerael@hotmail.com",
+  "dependentChangeType": "patch"
+}
