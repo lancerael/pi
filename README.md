@@ -37,7 +37,7 @@ TODO:
 - Fix known issues (glitch when panning to the far left if fully zoomed out)
 - Controls to collapse data into weeks/months (or expand to units smaller than a day)
 - Keyboard/mouse/touch controls
-- Tooltips
+- Tooltips and other minor UI enhancements
 - Better usage of groups to control positions of candles
 - Convert candle wicks to lines (rects used for rapid prototype)
 - Performance improvements
