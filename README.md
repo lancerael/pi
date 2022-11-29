@@ -41,7 +41,6 @@ FEATURES:
 
 TODO:
 
-- Fix known issues (glitch when panning to the far left if fully zoomed out)
 - Controls to collapse data into weeks/months (or expand to units smaller than a day)
 - Keyboard/mouse/touch controls
 - Fully responsive layout

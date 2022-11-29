@@ -27,7 +27,7 @@ export const Controls = ({
       <Button
         {...buttonStyle}
         onClick={() => z((c) => (c > multiplier ? c - multiplier : multiplier))}
-        disabled={zoomLevel <= multiplier * 5}
+        disabled={zoomLevel <= multiplier * 2}
       >
         ➖
       </Button>
