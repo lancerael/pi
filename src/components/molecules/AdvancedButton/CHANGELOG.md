@@ -1,8 +1,25 @@
 # Change Log - @pi-lib/advanced-button
 
-This log was last generated on Tue, 25 Oct 2022 13:44:42 GMT and should not be manually modified.
+This log was last generated on Tue, 29 Nov 2022 15:26:29 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 0.3.0
+
+Tue, 29 Nov 2022 15:26:29 GMT
+
+### Minor changes
+
+- Cleanup (lancerael@hotmail.com)
+- Bump @pi-lib/constants to v0.1.0
+- Bump @pi-lib/loader to v0.3.4
+- Bump @pi-lib/button to v0.7.0
+- Bump @pi-lib/config to v0.2.1
+- Bump @pi-lib/types to v0.1.0
+
+### Patches
+
+- Cleanup (lancerael@hotmail.com)
 
 ## 0.1.1
 

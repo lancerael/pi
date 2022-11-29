@@ -1,8 +1,18 @@
 # Change Log - @pi-lib/loader
 
-This log was last generated on Tue, 25 Oct 2022 12:52:07 GMT and should not be manually modified.
+This log was last generated on Tue, 29 Nov 2022 15:26:29 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 0.3.4
+
+Tue, 29 Nov 2022 15:26:29 GMT
+
+### Patches
+
+- Cleanuo (lancerael@hotmail.com)
+- Cleanup (lancerael@hotmail.com)
+- Bump @pi-lib/config to v0.2.1
 
 ## 0.3.1
 

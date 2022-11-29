@@ -2,6 +2,59 @@
   "name": "@pi-lib/advanced-button",
   "entries": [
     {
+      "date": "Tue, 29 Nov 2022 15:26:29 GMT",
+      "tag": "@pi-lib/advanced-button_v0.3.0",
+      "version": "0.3.0",
+      "comments": {
+        "patch": [
+          {
+            "author": "lancerael@hotmail.com",
+            "package": "@pi-lib/advanced-button",
+            "commit": "4ab2e0302aa2e45c60c33998f1f9fbd5ff904f06",
+            "comment": "Cleanup"
+          }
+        ],
+        "minor": [
+          {
+            "author": "lancerael@hotmail.com",
+            "package": "@pi-lib/advanced-button",
+            "commit": "4ab2e0302aa2e45c60c33998f1f9fbd5ff904f06",
+            "comment": "Cleanup"
+          },
+          {
+            "author": "beachball",
+            "package": "@pi-lib/advanced-button",
+            "comment": "Bump @pi-lib/constants to v0.1.0",
+            "commit": "4ab2e0302aa2e45c60c33998f1f9fbd5ff904f06"
+          },
+          {
+            "author": "beachball",
+            "package": "@pi-lib/advanced-button",
+            "comment": "Bump @pi-lib/loader to v0.3.4",
+            "commit": "4ab2e0302aa2e45c60c33998f1f9fbd5ff904f06"
+          },
+          {
+            "author": "beachball",
+            "package": "@pi-lib/advanced-button",
+            "comment": "Bump @pi-lib/button to v0.7.0",
+            "commit": "4ab2e0302aa2e45c60c33998f1f9fbd5ff904f06"
+          },
+          {
+            "author": "beachball",
+            "package": "@pi-lib/advanced-button",
+            "comment": "Bump @pi-lib/config to v0.2.1",
+            "commit": "4ab2e0302aa2e45c60c33998f1f9fbd5ff904f06"
+          },
+          {
+            "author": "beachball",
+            "package": "@pi-lib/advanced-button",
+            "comment": "Bump @pi-lib/types to v0.1.0",
+            "commit": "4ab2e0302aa2e45c60c33998f1f9fbd5ff904f06"
+          }
+        ]
+      }
+    },
+    {
       "date": "Tue, 25 Oct 2022 13:44:42 GMT",
       "tag": "@pi-lib/advanced-button_v0.1.1",
       "version": "0.1.1",
