@@ -1,23 +1,29 @@
 import React, { useEffect, useState } from 'react'
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 import { CandlestickChart } from './CandlestickChart'
-import { generateCandlestickData } from './utils/generateCandlestickData'
+import {
+  generateCandlestickData,
+  movePrevValue,
+} from './utils/generateCandlestickData'
 
 const candlestickData = generateCandlestickData(390)
 
-const CandlestickContainer = ({ data }) => {
-  const [chartData, setChartData] = useState(data)
+const CandlestickContainer = ({ data }: { data?: any }) => {
+  const [chartData, setChartData] = useState<any[]>()
 
+  // Simulate an API request
   useEffect(() => {
-    setInterval(() => {
-      setChartData((currentData) => {
-        const newData = [...currentData]
-        const lastItem = newData[newData.length - 1]
-        lastItem.close = lastItem.close + (+`${+new Date()}`[12] > 5 ? 2 : -2)
-        lastItem.low = Math.min(lastItem.close, lastItem.low)
-        lastItem.high = Math.max(lastItem.open, lastItem.high)
-        return newData
-      })
+    setTimeout(() => {
+      setInterval(() => {
+        setChartData((currentData) => {
+          const newData = [...(currentData ?? data)]
+          const lastItem = newData[newData.length - 1]
+          lastItem.close = movePrevValue(lastItem.close, 50)
+          lastItem.low = Math.min(lastItem.close, lastItem.low)
+          lastItem.high = Math.max(lastItem.close, lastItem.high)
+          return newData
+        })
+      }, 2000)
     }, 1000)
   }, [])
 

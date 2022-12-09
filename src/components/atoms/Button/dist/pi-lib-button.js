@@ -11,9 +11,9 @@ const o = {
     border: 1px solid ${o[r]};
     color: ${o[r]};
     background-color: white;
-    border-radius: 10px;
+    border-radius: 6px;
     min-width: ${t};
-    padding: 10px;
+    padding: 8px;
     margin: ${e};
     cursor: pointer;
     box-shadow: 2px 2px 2px 0px rgb(61 61 61 / 20%);

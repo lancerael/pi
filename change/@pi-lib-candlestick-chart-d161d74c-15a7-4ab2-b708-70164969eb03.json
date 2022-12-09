@@ -1,0 +1,7 @@
+{
+  "type": "minor",
+  "comment": "Emulated API call for candlestick data and improved chart performance. Enhanced Loader and Button styles.",
+  "packageName": "@pi-lib/candlestick-chart",
+  "email": "lancerael@hotmail.com",
+  "dependentChangeType": "patch"
+}

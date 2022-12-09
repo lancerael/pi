@@ -3,9 +3,9 @@
     border: 1px solid ${i[e]};
     color: ${i[e]};
     background-color: white;
-    border-radius: 10px;
+    border-radius: 6px;
     min-width: ${n};
-    padding: 10px;
+    padding: 8px;
     margin: ${r};
     cursor: pointer;
     box-shadow: 2px 2px 2px 0px rgb(61 61 61 / 20%);

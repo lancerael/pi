@@ -24,7 +24,7 @@ const randomNumber = (min = 0, max = 10000): number =>
   Math.floor(Math.random() * (min - max - 1)) + max + 1
 
 // Moves the previous value to simulate market forces
-const movePrevValue = (val: number, strength = 100) =>
+export const movePrevValue = (val: number, strength = 100) =>
   Math.abs(val + (val - randomNumber(val - strength, val + strength)))
 
 // Generate data for a candlestick day

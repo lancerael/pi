@@ -15,7 +15,7 @@ export interface CandlestickChartProps {
   /**
    * The candlestick chart data
    */
-  data: CandlestickDayData[]
+  data?: CandlestickDayData[]
 }
 
 export type SVGSelection = Selection<
@@ -23,6 +23,13 @@ export type SVGSelection = Selection<
   unknown,
   null,
   undefined
+>
+
+export type BarSelection = Selection<
+  SVGRectElement,
+  CandlestickDayData,
+  SVGSVGElement | SVGGElement | null,
+  unknown
 >
 
 export type BarType = 'wicks' | 'candles'

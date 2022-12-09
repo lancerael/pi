@@ -1,9 +1,23 @@
 import React, { FC } from 'react'
-import { StyledLoader, StyledLoaderCircle } from './Loader.style'
+import {
+  StyledCircle,
+  StyledCircleRow,
+  StyledLoader,
+  StyledLoaderInner,
+} from './Loader.style'
 
 export const Loader: FC = () => (
   <StyledLoader title="Loading..." data-selector="pi-lib-loader">
-    <StyledLoaderCircle />
+    <StyledLoaderInner>
+      <StyledCircleRow>
+        <StyledCircle delay />
+        <StyledCircle />
+      </StyledCircleRow>
+      <StyledCircleRow>
+        <StyledCircle />
+        <StyledCircle delay />
+      </StyledCircleRow>
+    </StyledLoaderInner>
   </StyledLoader>
 )
 

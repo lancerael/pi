@@ -1,21 +1,67 @@
 import { STATUS_COLOURS } from '@pi-lib/constants'
 import styled, { keyframes, css } from 'styled-components'
-import { StyledLoaderProps } from './Loader.style.types'
+import { StyledCircleProps } from './Loader.style.types'
+
+let loaderIndex = 0
+
+const loaderPositions = [[]]
 
 const rotate = keyframes`
   to {
-    transform: rotate(360deg);
+    rotate: 360deg;
+  }
+`
+
+const circle = keyframes`
+  to {
+    height: 3px;
+    width: 3px;
+    margin: 3px;
+    opacity: 0.3;
   }
 `
 
 export const StyledLoader = styled.div`
   width: 24px;
   height: 24px;
-  display: inline-block;
   margin: -8px 0;
+  position: relative;
+  display: inline-block;
 `
 
-export const StyledLoaderCircle = styled.div`
+export const StyledLoaderInner = styled.div`
+  position: absolute;
+  left: 0;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: space-between;
+  animation: ${rotate} 2s linear infinite;
+  margin: 2px;
+`
+
+export const StyledCircleRow = styled.div`
+  height: 8px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: auto;
+`
+export const StyledCircle = styled.div(
+  ({ delay }: StyledCircleProps) => css`
+    width: 7px;
+    height: 7px;
+    margin: 2px;
+    opacity: 0.6;
+    display: inline-block;
+    border-radius: 50%;
+    background: ${STATUS_COLOURS['pending']};
+    animation: ${circle} 0.3s linear alternate infinite;
+
+    ${delay ? 'animation-delay: 0.2s;' : ''}
+  `
+)
+
+export const StyledLoaderCircle2 = styled.div`
   height: inherit;
   width: inherit;
   position: absolute;

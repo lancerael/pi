@@ -38,8 +38,9 @@ export const useScaling = (
 
   // Recalculate the scales when necessary
   useEffect(() => {
-    if (!data) return
+    if (!data?.length) return
     const { clientWidth: width, clientHeight: height } = svgRef.current
+
     const xScale = scaleBand()
       .range([20, width * zoomLevel - 20])
       .domain(data.map(({ date }) => date))
@@ -63,7 +64,7 @@ export const useScaling = (
     setVisibleRange({ first, last })
     setDimensions({ width, height, offsetWidth })
     setScales({ xScale, yScale })
-  }, [svgRef, zoomLevel, panLevel, data])
+  }, [zoomLevel, panLevel, data])
 
   return { utils: { scaledHeight, scaledY }, visibleRange, dimensions, scales }
 }

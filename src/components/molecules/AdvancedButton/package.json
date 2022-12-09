@@ -28,8 +28,8 @@
   "license": "ISC",
   "dependencies": {
     "@pi-lib/constants": "^0.*.*",
-    "@pi-lib/loader": "^0.3.4",
-    "@pi-lib/button": "^0.7.0"
+    "@pi-lib/loader": "workspace:^0.3.4",
+    "@pi-lib/button": "workspace:^0.7.0"
   },
   "peerDependencies": {
     "react": "^18.2.0",
