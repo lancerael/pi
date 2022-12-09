@@ -1,0 +1,7 @@
+{
+  "type": "minor",
+  "comment": "Enhanced stying",
+  "packageName": "@pi-lib/button",
+  "email": "lancerael@hotmail.com",
+  "dependentChangeType": "patch"
+}
