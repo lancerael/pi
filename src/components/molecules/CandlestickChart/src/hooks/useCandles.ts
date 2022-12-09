@@ -78,7 +78,7 @@ export const useCandles = (
   useEffect(() => {
     getGroup('wicks').attr('fill', 'grey')
     getGroup('candles')
-  }, [svgRef])
+  }, [])
 
   // Update the chart whenever the data/scale changes
   useEffect(() => {
