@@ -60,7 +60,7 @@ export const useAxes = (
     )
     // Initialise the y axis
     setAxisY(select(svgRef.current).append('g').classed('y-axis', true))
-  }, [svgRef])
+  }, [])
 
   // Update the axes when the scales change
   useEffect(() => {
@@ -103,5 +103,5 @@ export const useAxes = (
         'transform',
         `translate(${width - AXIS_OFFSETS[1] + CHART_PADDING},${CHART_PADDING})`
       )
-  }, [xScale, yScale, data, panLevel])
+  }, [xScale, yScale])
 }

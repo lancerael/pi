@@ -12,9 +12,9 @@ export const StyledButton = styled.button(
     border: 1px solid ${STATUS_COLOURS[status]};
     color: ${STATUS_COLOURS[status]};
     background-color: white;
-    border-radius: 10px;
+    border-radius: 6px;
     min-width: ${minWidth};
-    padding: 10px;
+    padding: 8px;
     margin: ${margin};
     cursor: pointer;
     box-shadow: 2px 2px 2px 0px rgb(61 61 61 / 20%);

@@ -13,8 +13,9 @@ export interface CandlestickChartProps {
     /**
      * The candlestick chart data
      */
-    data: CandlestickDayData[];
+    data?: CandlestickDayData[];
 }
 export declare type SVGSelection = Selection<SVGSVGElement | SVGGElement | null, unknown, null, undefined>;
+export declare type BarSelection = Selection<SVGRectElement, CandlestickDayData, SVGSVGElement | SVGGElement | null, unknown>;
 export declare type BarType = 'wicks' | 'candles';
 export declare type ValueKeys = 'low' | 'high' | 'open' | 'close';

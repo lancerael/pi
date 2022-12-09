@@ -1,3 +1,3 @@
-export interface StyledLoaderProps {
-  secondary?: Boolean
+export interface StyledCircleProps {
+  delay?: boolean
 }

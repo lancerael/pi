@@ -1,25 +1,61 @@
 import e from "react";
-import t, { keyframes as i } from "styled-components";
-const o = {
+import t, { keyframes as l, css as d } from "styled-components";
+const a = {
   default: "black",
   pending: "blue",
   error: "red",
   success: "green"
-}, r = i`
+}, o = l`
   to {
-    transform: rotate(360deg);
+    rotate: 360deg;
   }
-`, n = t.div`
+`, c = l`
+  to {
+    height: 3px;
+    width: 3px;
+    margin: 3px;
+    opacity: 0.3;
+  }
+`, p = t.div`
   width: 24px;
   height: 24px;
-  display: inline-block;
   margin: -8px 0;
-`, a = t.div`
+  position: relative;
+  display: inline-block;
+`, s = t.div`
+  position: absolute;
+  left: 0;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: space-between;
+  animation: ${o} 2s linear infinite;
+  margin: 2px;
+`, n = t.div`
+  height: 8px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: auto;
+`, i = t.div(
+  ({ delay: r }) => d`
+    width: 7px;
+    height: 7px;
+    margin: 2px;
+    opacity: 0.6;
+    display: inline-block;
+    border-radius: 50%;
+    background: ${a.pending};
+    animation: ${c} 0.3s linear alternate infinite;
+
+    ${r ? "animation-delay: 0.2s;" : ""}
+  `
+);
+t.div`
   height: inherit;
   width: inherit;
   position: absolute;
   border-radius: 50%;
-  box-shadow: inset 0 0 0px 2px ${o.pending};
+  box-shadow: inset 0 0 0px 2px ${a.pending};
   overflow: hidden;
   clip-path: polygon(
     -5px -5px,
@@ -29,11 +65,16 @@ const o = {
     100% 100%,
     -5px 100%
   );
-  animation: ${r} 2s linear infinite;
-`, p = () => /* @__PURE__ */ e.createElement(n, {
+  animation: ${o} 2s linear infinite;
+`;
+const x = () => /* @__PURE__ */ e.createElement(p, {
   title: "Loading...",
   "data-selector": "pi-lib-loader"
-}, /* @__PURE__ */ e.createElement(a, null));
+}, /* @__PURE__ */ e.createElement(s, null, /* @__PURE__ */ e.createElement(n, null, /* @__PURE__ */ e.createElement(i, {
+  delay: !0
+}), /* @__PURE__ */ e.createElement(i, null)), /* @__PURE__ */ e.createElement(n, null, /* @__PURE__ */ e.createElement(i, null), /* @__PURE__ */ e.createElement(i, {
+  delay: !0
+}))));
 export {
-  p as default
+  x as default
 };

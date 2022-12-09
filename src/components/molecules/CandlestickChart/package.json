@@ -29,6 +29,7 @@
   "license": "ISC",
   "dependencies": {
     "@pi-lib/constants": "^0.*.*",
+    "@pi-lib/loader": "^0.3.4",
     "@pi-lib/button": "workspace:^0.7.0",
     "@types/d3-axis": "^3.0.1",
     "@types/d3-scale": "^4.0.2",

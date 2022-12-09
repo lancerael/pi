@@ -138,10 +138,10 @@ importers:
 
   src/components/molecules/AdvancedButton:
     specifiers:
-      '@pi-lib/button': ^0.7.0
+      '@pi-lib/button': workspace:^0.7.0
       '@pi-lib/config': ^0.2.1
       '@pi-lib/constants': ^0.*.*
-      '@pi-lib/loader': ^0.3.4
+      '@pi-lib/loader': workspace:^0.3.4
       '@pi-lib/types': ^0.*.*
       '@testing-library/react': ^13.3.0
       '@types/jest': ^28.1.8
@@ -190,6 +190,7 @@ importers:
       '@pi-lib/button': workspace:^0.7.0
       '@pi-lib/config': ^0.2.1
       '@pi-lib/constants': ^0.*.*
+      '@pi-lib/loader': ^0.3.4
       '@pi-lib/types': ^0.*.*
       '@testing-library/react': ^13.3.0
       '@types/d3-axis': ^3.0.1
@@ -220,6 +221,7 @@ importers:
     dependencies:
       '@pi-lib/button': link:../../atoms/Button
       '@pi-lib/constants': link:../../../constants
+      '@pi-lib/loader': link:../../atoms/Loader
       '@types/d3-axis': 3.0.1
       '@types/d3-scale': 4.0.2
       d3-axis: 3.0.0

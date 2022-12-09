@@ -1,7 +1,8 @@
-import { useEffect } from 'react'
+import { useEffect, useRef } from 'react'
 import { select } from 'd3-selection'
 import 'd3-transition'
 import {
+  BarSelection,
   BarType,
   CandlestickDayData,
   SVGSelection,
@@ -22,6 +23,7 @@ export const useCandles = (
   const { offsetWidth } = dimensions
   const { scaledHeight, scaledY } = utils
   const { first, last } = visibleRange
+  const groups = useRef<{ [key: string]: SVGSelection }>({})
 
   // Get d3 selection of SVG
   const getSvg = () => select(svgRef.current)
@@ -30,24 +32,29 @@ export const useCandles = (
   const bindData = (
     type: BarType,
     parent: SVGSelection = getSvg() as SVGSelection
-  ) => parent.selectAll(`rect.${type}`).data(data)
+  ) => parent.selectAll(`rect.${type}`).data(data) as unknown as BarSelection
 
   // Create the group and initialise the rectangles
-  const createGroup = (type: BarType) =>
-    bindData(
-      type,
-      getSvg()
+  const getGroup = (type: BarType) => {
+    groups.current[type] =
+      groups.current[type] ??
+      (getSvg()
         .append('g')
         .classed(`${type}-group`, true)
-        .attr('clip-path', 'url(#chart-contents)') as SVGSelection
-    )
-      .enter()
-      .append('rect')
-      .classed(type, true)
+        .attr('clip-path', 'url(#chart-contents)') as SVGSelection)
+    return groups.current[type]
+  }
 
   // Place the rectangles based on latest data
-  const placeRects = (type: BarType, keys: ValueKeys[]) =>
-    bindData(type)
+  const placeRects = (type: BarType, keys: ValueKeys[]) => {
+    let rects = bindData(type, getGroup(type))
+
+    if (rects.size() !== data.length) {
+      rects = rects.enter().append('rect')
+    }
+
+    rects
+      .classed(type, true)
       .classed('is-offscreen', (d, i) => i < first - 10 || i > last + 10)
       .transition()
       .duration(TRANSITION_TIME)
@@ -62,19 +69,24 @@ export const useCandles = (
       )
       .attr('y', (d) => scaledY(d[keys[0]], d[keys[1]]))
 
+    rects.exit().remove()
+
+    return rects
+  }
+
   // Initialise the canvas with groups for wicks and candles
   useEffect(() => {
-    createGroup('wicks').attr('fill', 'grey')
-    createGroup('candles')
-  }, [])
+    getGroup('wicks').attr('fill', 'grey')
+    getGroup('candles')
+  }, [svgRef])
 
-  // Update the wicks whenever the data (or scales) changes
+  // Update the chart whenever the data/scale changes
   useEffect(() => {
-    if (typeof xScale.bandwidth == 'function') {
+    if (xScale?.bandwidth?.()) {
       placeRects('wicks', ['low', 'high'])
       placeRects('candles', ['open', 'close']).attr('fill', (d) =>
         d.close < d.open ? 'red' : 'green'
       )
     }
-  }, [data, xScale, panLevel])
+  }, [xScale])
 }
