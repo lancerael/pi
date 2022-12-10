@@ -2,6 +2,21 @@
   "name": "@pi-lib/button",
   "entries": [
     {
+      "date": "Fri, 09 Dec 2022 21:11:59 GMT",
+      "tag": "@pi-lib/button_v0.8.0",
+      "version": "0.8.0",
+      "comments": {
+        "minor": [
+          {
+            "author": "lancerael@hotmail.com",
+            "package": "@pi-lib/button",
+            "commit": "006787a6582eebad368cf59c402ccd887eb8bd97",
+            "comment": "Enhanced stying"
+          }
+        ]
+      }
+    },
+    {
       "date": "Tue, 29 Nov 2022 15:26:29 GMT",
       "tag": "@pi-lib/button_v0.7.0",
       "version": "0.7.0",

@@ -1,10 +1,9 @@
 # pi-lib
 
 Monorepo of React UI components and supporting utilities.  
-Currently in pre-development.
 
 - DEMO: http://dtheia.org/pi
-- VIDEO: http://dtheia.org/pi//demo.mp4
+- VIDEO: http://dtheia.org/pi/demo.mp4
 
 ## Button
 
@@ -23,10 +22,6 @@ NPM: _@pi-lib/advanced-button_
 NPM: _@pi-lib/candlestick-chart_
 
 A candlestick chart used to show the market forces acting on a traded asset.
-
-At this stage it is just a rough POC made over several days to show my understanding of d3 combined with React hooks.
-
-https://github.com/lancerael/pi/tree/main/src/components/molecules/CandlestickChart/src
 
 FEATURES:
 

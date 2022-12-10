@@ -1,6 +1,6 @@
 {
   "name": "@pi-lib/candlestick-chart",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "",
   "type": "module",
   "files": [
@@ -29,8 +29,8 @@
   "license": "ISC",
   "dependencies": {
     "@pi-lib/constants": "^0.*.*",
-    "@pi-lib/loader": "^0.3.4",
-    "@pi-lib/button": "workspace:^0.7.0",
+    "@pi-lib/loader": "^0.4.0",
+    "@pi-lib/button": "workspace:^0.8.0",
     "@types/d3-axis": "^3.0.1",
     "@types/d3-scale": "^4.0.2",
     "d3-axis": "^3.0.0",

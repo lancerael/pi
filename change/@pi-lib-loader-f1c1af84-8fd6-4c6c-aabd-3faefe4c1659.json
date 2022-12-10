@@ -1,7 +1,0 @@
-{
-  "type": "minor",
-  "comment": "Enhanced styling",
-  "packageName": "@pi-lib/loader",
-  "email": "lancerael@hotmail.com",
-  "dependentChangeType": "patch"
-}
