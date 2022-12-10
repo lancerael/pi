@@ -1,0 +1,7 @@
+{
+  "type": "patch",
+  "comment": "Fixed vite config",
+  "packageName": "@pi-lib/config",
+  "email": "lancerael@hotmail.com",
+  "dependentChangeType": "patch"
+}
