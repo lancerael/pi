@@ -1,8 +1,17 @@
 # Change Log - @pi-lib/loader
 
-This log was last generated on Fri, 09 Dec 2022 21:11:59 GMT and should not be manually modified.
+This log was last generated on Sat, 10 Dec 2022 13:13:39 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 0.4.1
+
+Sat, 10 Dec 2022 13:13:39 GMT
+
+### Patches
+
+- Fixed vite config (lancerael@hotmail.com)
+- Bump @pi-lib/config to v0.2.2
 
 ## 0.4.0
 

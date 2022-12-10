@@ -2,6 +2,51 @@
   "name": "@pi-lib/candlestick-chart",
   "entries": [
     {
+      "date": "Sat, 10 Dec 2022 13:13:39 GMT",
+      "tag": "@pi-lib/candlestick-chart_v0.3.0",
+      "version": "0.3.0",
+      "comments": {
+        "minor": [
+          {
+            "author": "lancerael@hotmail.com",
+            "package": "@pi-lib/candlestick-chart",
+            "commit": "3ee1d120ba119fef29493d64bbdc3d3d3af0d66a",
+            "comment": "Added fake api hook"
+          },
+          {
+            "author": "beachball",
+            "package": "@pi-lib/candlestick-chart",
+            "comment": "Bump @pi-lib/constants to v0.1.0",
+            "commit": "3ee1d120ba119fef29493d64bbdc3d3d3af0d66a"
+          },
+          {
+            "author": "beachball",
+            "package": "@pi-lib/candlestick-chart",
+            "comment": "Bump @pi-lib/loader to v0.4.1",
+            "commit": "3ee1d120ba119fef29493d64bbdc3d3d3af0d66a"
+          },
+          {
+            "author": "beachball",
+            "package": "@pi-lib/candlestick-chart",
+            "comment": "Bump @pi-lib/button to v0.8.1",
+            "commit": "3ee1d120ba119fef29493d64bbdc3d3d3af0d66a"
+          },
+          {
+            "author": "beachball",
+            "package": "@pi-lib/candlestick-chart",
+            "comment": "Bump @pi-lib/config to v0.2.2",
+            "commit": "3ee1d120ba119fef29493d64bbdc3d3d3af0d66a"
+          },
+          {
+            "author": "beachball",
+            "package": "@pi-lib/candlestick-chart",
+            "comment": "Bump @pi-lib/types to v0.1.0",
+            "commit": "3ee1d120ba119fef29493d64bbdc3d3d3af0d66a"
+          }
+        ]
+      }
+    },
+    {
       "date": "Fri, 09 Dec 2022 21:11:59 GMT",
       "tag": "@pi-lib/candlestick-chart_v0.2.0",
       "version": "0.2.0",
