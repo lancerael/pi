@@ -1,5 +1,6 @@
 /// <reference types="vitest" />
 import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
 export default (function (libName) {
     return defineConfig({
         test: {
@@ -20,6 +21,7 @@ export default (function (libName) {
             rollupOptions: {
                 external: ['react', 'styled-components']
             }
-        }
+        },
+        plugins: [react()]
     });
 });
