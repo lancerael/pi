@@ -29,22 +29,21 @@ export const CandlestickChart: FC<CandlestickChartProps> = ({ data = [] }) => {
 
   return (
     <StyledContainer>
-      <Controls
-        {...{
-          zoomLevel,
-          setZoomLevel,
-          setPanLevel,
-          multiplier: data.length / 1000,
-          visibleRange,
-          length: data.length,
-        }}
-      />
       {!data?.length ? (
         <StyledLoaderContainer>
           <Loader />
         </StyledLoaderContainer>
       ) : (
-        ''
+        <Controls
+          {...{
+            zoomLevel,
+            setZoomLevel,
+            setPanLevel,
+            multiplier: data.length / 1000,
+            visibleRange,
+            length: data.length,
+          }}
+        />
       )}
       <StyledCandlestickChart ref={svgRef}>
         <ClipPaths {...dimensions} />

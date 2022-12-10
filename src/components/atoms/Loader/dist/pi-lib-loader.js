@@ -67,14 +67,7 @@ t.div`
   );
   animation: ${o} 2s linear infinite;
 `;
-const x = () => /* @__PURE__ */ e.createElement(p, {
-  title: "Loading...",
-  "data-selector": "pi-lib-loader"
-}, /* @__PURE__ */ e.createElement(s, null, /* @__PURE__ */ e.createElement(n, null, /* @__PURE__ */ e.createElement(i, {
-  delay: !0
-}), /* @__PURE__ */ e.createElement(i, null)), /* @__PURE__ */ e.createElement(n, null, /* @__PURE__ */ e.createElement(i, null), /* @__PURE__ */ e.createElement(i, {
-  delay: !0
-}))));
+const x = () => /* @__PURE__ */ e.createElement(p, { title: "Loading...", "data-selector": "pi-lib-loader" }, /* @__PURE__ */ e.createElement(s, null, /* @__PURE__ */ e.createElement(n, null, /* @__PURE__ */ e.createElement(i, { delay: !0 }), /* @__PURE__ */ e.createElement(i, null)), /* @__PURE__ */ e.createElement(n, null, /* @__PURE__ */ e.createElement(i, null), /* @__PURE__ */ e.createElement(i, { delay: !0 }))));
 export {
   x as default
 };

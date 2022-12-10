@@ -33,13 +33,17 @@ const r = {
   minWidth: u = "220px",
   margin: m = "10px",
   ...x
-}) => /* @__PURE__ */ e.createElement(g, {
-  status: n,
-  ...x,
-  minWidth: u,
-  margin: m,
-  "data-selector": a
-}, t), p = {
+}) => /* @__PURE__ */ e.createElement(
+  g,
+  {
+    status: n,
+    ...x,
+    minWidth: u,
+    margin: m,
+    "data-selector": a
+  },
+  t
+), p = {
   default: "black",
   pending: "blue",
   error: "red",
@@ -106,21 +110,11 @@ i.div`
   );
   animation: ${c} 2s linear infinite;
 `;
-const w = () => /* @__PURE__ */ e.createElement(y, {
-  title: "Loading...",
-  "data-selector": "pi-lib-loader"
-}, /* @__PURE__ */ e.createElement($, null, /* @__PURE__ */ e.createElement(o, null, /* @__PURE__ */ e.createElement(l, {
-  delay: !0
-}), /* @__PURE__ */ e.createElement(l, null)), /* @__PURE__ */ e.createElement(o, null, /* @__PURE__ */ e.createElement(l, null), /* @__PURE__ */ e.createElement(l, {
-  delay: !0
-})))), E = i.div``, W = ({
+const w = () => /* @__PURE__ */ e.createElement(y, { title: "Loading...", "data-selector": "pi-lib-loader" }, /* @__PURE__ */ e.createElement($, null, /* @__PURE__ */ e.createElement(o, null, /* @__PURE__ */ e.createElement(l, { delay: !0 }), /* @__PURE__ */ e.createElement(l, null)), /* @__PURE__ */ e.createElement(o, null, /* @__PURE__ */ e.createElement(l, null), /* @__PURE__ */ e.createElement(l, { delay: !0 })))), E = i.div``, W = ({
   isLoading: t,
   buttonProps: n,
   children: a
-}) => /* @__PURE__ */ e.createElement(E, null, /* @__PURE__ */ e.createElement(b, {
-  status: t ? "pending" : "default",
-  ...n
-}, t ? /* @__PURE__ */ e.createElement(w, null) : a));
+}) => /* @__PURE__ */ e.createElement(E, null, /* @__PURE__ */ e.createElement(b, { status: t ? "pending" : "default", ...n }, t ? /* @__PURE__ */ e.createElement(w, null) : a));
 export {
   W as default
 };

@@ -4,7 +4,6 @@ import { useEffect, useState } from 'react'
 import { CHART_PADDING } from '../CandlestickChart.constants'
 import { CandlestickDayData } from '../CandlestickChart.types'
 import { AXIS_OFFSETS } from './../CandlestickChart.constants'
-import { useScaling } from './useScaling'
 
 // Used to cache date labels
 const dateMap: { [key: string]: string } = {}

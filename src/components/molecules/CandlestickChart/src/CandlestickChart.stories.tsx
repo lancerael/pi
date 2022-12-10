@@ -1,31 +1,10 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 import { CandlestickChart } from './CandlestickChart'
-import {
-  generateCandlestickData,
-  movePrevValue,
-} from './utils/generateCandlestickData'
+import { useFakeApi } from './hooks'
 
-const candlestickData = generateCandlestickData(390)
-
-const CandlestickContainer = ({ data }: { data?: any }) => {
-  const [chartData, setChartData] = useState<any[]>()
-
-  // Simulate an API request
-  useEffect(() => {
-    setTimeout(() => {
-      setInterval(() => {
-        setChartData((currentData) => {
-          const newData = [...(currentData ?? data)]
-          const lastItem = newData[newData.length - 1]
-          lastItem.close = movePrevValue(lastItem.close, 50)
-          lastItem.low = Math.min(lastItem.close, lastItem.low)
-          lastItem.high = Math.max(lastItem.close, lastItem.high)
-          return newData
-        })
-      }, 2000)
-    }, 1000)
-  }, [])
+const CandlestickContainer = ({ length }: { length: number }) => {
+  const chartData = useFakeApi(length)
 
   return (
     <div style={{ width: '800px', height: '500px' }}>
@@ -39,11 +18,11 @@ export default {
   component: CandlestickChart,
 } as ComponentMeta<typeof CandlestickChart>
 
-const Template: ComponentStory<typeof CandlestickChart> = (props) => (
+const Template: ComponentStory<typeof CandlestickContainer> = (props) => (
   <CandlestickContainer {...props} />
 )
 
 export const Default = Template.bind({})
 Default.args = {
-  data: candlestickData.dates,
+  length: 390,
 }

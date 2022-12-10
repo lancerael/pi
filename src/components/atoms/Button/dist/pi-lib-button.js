@@ -33,13 +33,17 @@ const o = {
   minWidth: d = "220px",
   margin: n = "10px",
   ...s
-}) => /* @__PURE__ */ i.createElement(p, {
-  status: t,
-  ...s,
-  minWidth: d,
-  margin: n,
-  "data-selector": e
-}, r);
+}) => /* @__PURE__ */ i.createElement(
+  p,
+  {
+    status: t,
+    ...s,
+    minWidth: d,
+    margin: n,
+    "data-selector": e
+  },
+  r
+);
 export {
   f as default
 };
