@@ -1,0 +1,7 @@
+{
+  "type": "minor",
+  "comment": "Added fake api hook",
+  "packageName": "@pi-lib/candlestick-chart",
+  "email": "lancerael@hotmail.com",
+  "dependentChangeType": "patch"
+}
