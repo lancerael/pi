@@ -1,8 +1,18 @@
 # Change Log - @pi-lib/candlestick-chart
 
-This log was last generated on Sat, 10 Dec 2022 13:13:39 GMT and should not be manually modified.
+This log was last generated on Mon, 12 Dec 2022 16:23:01 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 0.3.2
+
+Mon, 12 Dec 2022 16:23:01 GMT
+
+### Patches
+
+- Fix loader spacing (lancerael@hotmail.com)
+- Bump @pi-lib/constants to v0.1.0
+- Bump @pi-lib/types to v0.1.0
 
 ## 0.3.0
 

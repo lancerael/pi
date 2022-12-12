@@ -2,6 +2,33 @@
   "name": "@pi-lib/candlestick-chart",
   "entries": [
     {
+      "date": "Mon, 12 Dec 2022 16:23:01 GMT",
+      "tag": "@pi-lib/candlestick-chart_v0.3.2",
+      "version": "0.3.2",
+      "comments": {
+        "patch": [
+          {
+            "author": "lancerael@hotmail.com",
+            "package": "@pi-lib/candlestick-chart",
+            "commit": "da3d1e141f8f2b1281dce851b62d86be94a89054",
+            "comment": "Fix loader spacing"
+          },
+          {
+            "author": "beachball",
+            "package": "@pi-lib/candlestick-chart",
+            "comment": "Bump @pi-lib/constants to v0.1.0",
+            "commit": "da3d1e141f8f2b1281dce851b62d86be94a89054"
+          },
+          {
+            "author": "beachball",
+            "package": "@pi-lib/candlestick-chart",
+            "comment": "Bump @pi-lib/types to v0.1.0",
+            "commit": "da3d1e141f8f2b1281dce851b62d86be94a89054"
+          }
+        ]
+      }
+    },
+    {
       "date": "Sat, 10 Dec 2022 13:13:39 GMT",
       "tag": "@pi-lib/candlestick-chart_v0.3.0",
       "version": "0.3.0",
