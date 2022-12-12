@@ -30,11 +30,7 @@ export const StyledContainer = styled.div`
 `
 
 export const StyledLoaderContainer = styled.div`
-  position: absolute;
-  margin-top: -12px;
-  margin-left: -12px;
-  width: calc(100% - ${CHART_PADDING * 2}px);
-  height: calc(100% - ${CHART_PADDING * 2}px);
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
