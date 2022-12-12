@@ -6,8 +6,8 @@ import {
 } from './CandlestickChart.style'
 import { CandlestickChartProps } from './CandlestickChart.types'
 import { useScaling, useAxes, useCandles } from './hooks'
-import Controls from './components/Controls'
 import ClipPaths from './components/ClipPaths'
+import Controls from './components/Controls'
 import Loader from '@pi-lib/loader'
 
 export const CandlestickChart: FC<CandlestickChartProps> = ({ data = [] }) => {
