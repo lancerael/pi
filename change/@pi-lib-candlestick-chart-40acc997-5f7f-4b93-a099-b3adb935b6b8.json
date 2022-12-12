@@ -1,7 +1,0 @@
-{
-  "type": "patch",
-  "comment": "Force BB publish",
-  "packageName": "@pi-lib/candlestick-chart",
-  "email": "lancerael@hotmail.com",
-  "dependentChangeType": "patch"
-}
