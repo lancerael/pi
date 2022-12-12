@@ -3,7 +3,6 @@
 Monorepo of React UI components and supporting utilities.  
 
 - DEMO: http://dtheia.org/pi
-- VIDEO: http://dtheia.org/pi/demo.mp4
 
 ## Button
 
