@@ -5,6 +5,9 @@ import { AXIS_OFFSETS, CHART_PADDING } from '../CandlestickChart.constants'
 
 const { abs, min, max, round } = Math
 
+const candlePadding = 0.3
+const candleWidth = 10
+
 export const useScaling = (
   svgRef: any | null,
   data: CandlestickDayData[],
@@ -41,18 +44,22 @@ export const useScaling = (
     if (!data?.length) return
     const { clientWidth: width, clientHeight: height } = svgRef.current
 
-    const xScale = scaleBand()
-      .range([20, width * zoomLevel - 20])
-      .domain(data.map(({ date }) => date))
-      .padding(0.3)
+    const fullCandleWidth = candleWidth * (1 + candlePadding) * zoomLevel
 
-    const candleWidth = xScale.bandwidth?.() * 1.44
-    const totalWidth = candleWidth * data.length
-    const offsetWidth =
-      panLevel - totalWidth + width - AXIS_OFFSETS[1] + CHART_PADDING
-    const first = round((abs(offsetWidth) - CHART_PADDING) / candleWidth)
-    const last =
-      round((abs(offsetWidth) + width - AXIS_OFFSETS[1]) / candleWidth) + 1
+    const totalWidth = fullCandleWidth * data.length
+
+    const xScale = scaleBand()
+      .range([CHART_PADDING, totalWidth - CHART_PADDING])
+      .domain(data.map(({ date }) => date))
+      .padding(candlePadding)
+
+    const baseOffset = width - AXIS_OFFSETS[1] + CHART_PADDING * 2
+
+    let offsetWidth = panLevel - totalWidth + baseOffset
+    offsetWidth = offsetWidth > 0 ? 0 : offsetWidth
+    offsetWidth = totalWidth > width ? offsetWidth : width - totalWidth
+    const first = round((offsetWidth * -1 - CHART_PADDING) / fullCandleWidth)
+    const last = round((offsetWidth * -1 + baseOffset) / fullCandleWidth)
     const visibleData = data.slice(first > 0 ? first : 0, last)
     const minY = min(...visibleData.map(({ low }) => low))
     const maxY = max(...visibleData.map(({ high }) => high))

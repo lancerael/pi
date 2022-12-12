@@ -11,7 +11,7 @@ import ClipPaths from './components/ClipPaths'
 import Loader from '@pi-lib/loader'
 
 export const CandlestickChart: FC<CandlestickChartProps> = ({ data = [] }) => {
-  const [zoomLevel, setZoomLevel] = useState(data.length / 100 || 1)
+  const [zoomLevel, setZoomLevel] = useState(1)
   const [panLevel, setPanLevel] = useState(0)
   const svgRef = useRef<SVGSVGElement>(null)
   const { scales, dimensions, utils, visibleRange } = useScaling(
@@ -22,10 +22,6 @@ export const CandlestickChart: FC<CandlestickChartProps> = ({ data = [] }) => {
   )
   useCandles(svgRef, data, panLevel, scales, dimensions, utils, visibleRange)
   useAxes(svgRef, data, panLevel, scales, dimensions)
-
-  useEffect(() => {
-    setZoomLevel(data.length / 100 || 1)
-  }, [data.length])
 
   return (
     <StyledContainer>
@@ -39,7 +35,6 @@ export const CandlestickChart: FC<CandlestickChartProps> = ({ data = [] }) => {
             zoomLevel,
             setZoomLevel,
             setPanLevel,
-            multiplier: data.length / 1000,
             visibleRange,
             length: data.length,
           }}

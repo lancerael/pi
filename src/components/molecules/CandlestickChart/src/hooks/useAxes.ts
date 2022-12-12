@@ -49,6 +49,10 @@ export const useAxes = (
   // Set up the x and y axes
   useEffect(() => {
     if (!svgRef.current) return
+
+    // Cleanup if needed
+    select(svgRef.current).select('g.x-axis, y.y-axis').remove()
+
     // Initialise the x axis
     setAxisX(
       select(svgRef.current)
