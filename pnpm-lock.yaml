@@ -96,7 +96,7 @@ importers:
       react: 18.2.0
       styled-components: 5.3.5_7i5myeigehqah43i5u7wbekgba
     devDependencies:
-      '@pi-lib/config': link:../../../config
+      '@pi-lib/config': 0.2.2
       '@pi-lib/types': link:../../../types
       '@testing-library/react': 13.4.0_biqbaboplfbrettd7655fr4n2y
       '@types/jest': 28.1.8
@@ -141,7 +141,7 @@ importers:
       react: 18.2.0
       styled-components: 5.3.5_7i5myeigehqah43i5u7wbekgba
     devDependencies:
-      '@pi-lib/config': link:../../../config
+      '@pi-lib/config': 0.2.2
       '@pi-lib/types': link:../../../types
       '@testing-library/react': 13.4.0_biqbaboplfbrettd7655fr4n2y
       '@types/jest': 28.1.8
@@ -190,7 +190,7 @@ importers:
       react: 18.2.0
       styled-components: 5.3.5_7i5myeigehqah43i5u7wbekgba
     devDependencies:
-      '@pi-lib/config': link:../../../config
+      '@pi-lib/config': 0.2.2
       '@pi-lib/types': link:../../../types
       '@testing-library/react': 13.4.0_biqbaboplfbrettd7655fr4n2y
       '@types/jest': 28.1.8
@@ -244,7 +244,7 @@ importers:
     dependencies:
       '@pi-lib/button': link:../../atoms/Button
       '@pi-lib/constants': link:../../../constants
-      '@pi-lib/loader': link:../../atoms/Loader
+      '@pi-lib/loader': 0.4.1_eb6zb4csny6bofei5ykbhergru
       '@types/d3-axis': 3.0.1
       '@types/d3-scale': 4.0.2
       d3-axis: 3.0.0
@@ -3451,6 +3451,25 @@ packages:
       node-addon-api: 3.2.1
       node-gyp-build: 4.5.0
     dev: true
+
+  /@pi-lib/config/0.2.2:
+    resolution: {integrity: sha512-Oi4pOD8xHGTpKrMWKipHjvldvLKxkrWlmTXbnhW7Db9brIG6KixNsKmCcxKiO+LLaEufvs6ZU6SUF7EPRgpaFA==}
+    dev: true
+
+  /@pi-lib/constants/0.1.0:
+    resolution: {integrity: sha512-QkDvMwMdjLazKmNeTJtGMlnvZ6J5rX+PWMFp9IcjBrDBpQgNUdlfQq9r0QtNxQ840UBfcvjTwh2b5xQ0CfB6lQ==}
+    dev: false
+
+  /@pi-lib/loader/0.4.1_eb6zb4csny6bofei5ykbhergru:
+    resolution: {integrity: sha512-TSSQIAVnDwY5j3E6OKUgD/xlfbYIv71ER0k7N+YNIVlQpHBI1rSqzbwJeLQaD8Te318ENWE6cp+jmH3X7zNKWA==}
+    peerDependencies:
+      react: ^18.2.0
+      styled-components: ^5.3.5
+    dependencies:
+      '@pi-lib/constants': 0.1.0
+      react: 18.2.0
+      styled-components: 5.3.5_7i5myeigehqah43i5u7wbekgba
+    dev: false
 
   /@pmmmwh/react-refresh-webpack-plugin/0.5.7_metx475lqcp4j5c75za4zf7xbi:
     resolution: {integrity: sha512-bcKCAzF0DV2IIROp9ZHkRJa6O4jy7NlnHdWL3GmcUxYWNjLXkK5kfELELwEfSP5hXPfVL/qOGMAROuMQb9GG8Q==}
