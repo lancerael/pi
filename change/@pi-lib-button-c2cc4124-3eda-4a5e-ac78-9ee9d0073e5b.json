@@ -1,7 +1,0 @@
-{
-  "type": "patch",
-  "comment": "Fixed vite config",
-  "packageName": "@pi-lib/button",
-  "email": "lancerael@hotmail.com",
-  "dependentChangeType": "patch"
-}

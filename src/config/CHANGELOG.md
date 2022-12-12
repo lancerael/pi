@@ -1,8 +1,16 @@
 # Change Log - @pi-lib/config
 
-This log was last generated on Tue, 29 Nov 2022 15:26:29 GMT and should not be manually modified.
+This log was last generated on Sat, 10 Dec 2022 13:13:39 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 0.2.2
+
+Sat, 10 Dec 2022 13:13:39 GMT
+
+### Patches
+
+- Fixed vite config (lancerael@hotmail.com)
 
 ## 0.2.1
 
