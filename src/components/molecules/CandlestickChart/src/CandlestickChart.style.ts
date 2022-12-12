@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { CHART_PADDING } from './CandlestickChart.constants'
 
 export const StyledCandlestickChart = styled.svg`
   width: 100%;
@@ -29,8 +30,11 @@ export const StyledContainer = styled.div`
 `
 
 export const StyledLoaderContainer = styled.div`
-  width: 100%;
-  height: 100%;
+  position: absolute;
+  margin-top: -12px;
+  margin-left: -12px;
+  width: calc(100% - ${CHART_PADDING * 2}px);
+  height: calc(100% - ${CHART_PADDING * 2}px);
   display: flex;
   justify-content: center;
   align-items: center;

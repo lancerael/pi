@@ -21,7 +21,7 @@ export const useFakeApi = (length: number) => {
           lastItem.high = Math.max(lastItem.close, lastItem.high)
           return newData
         })
-      }, 2000)
+      }, 5000)
     }, 3000)
   }, [])
 
