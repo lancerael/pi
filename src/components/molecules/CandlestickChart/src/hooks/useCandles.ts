@@ -9,6 +9,12 @@ import {
   ValueKeys,
 } from '../CandlestickChart.types'
 import { TRANSITION_TIME } from '../CandlestickChart.constants'
+import { C } from 'vitest/dist/global-fe52f84b'
+
+const typeMap = {
+  wicks: 'line',
+  candles: 'rect',
+}
 
 export const useCandles = (
   svgRef: any,
@@ -32,7 +38,10 @@ export const useCandles = (
   const bindData = (
     type: BarType,
     parent: SVGSelection = getSvg() as SVGSelection
-  ) => parent.selectAll(`rect.${type}`).data(data) as unknown as BarSelection
+  ) =>
+    parent
+      .selectAll(`${typeMap[type]}.${type}`)
+      .data(data) as unknown as BarSelection
 
   // Create the group and initialise the rectangles
   const getGroup = (type: BarType) => {
@@ -46,45 +55,56 @@ export const useCandles = (
   }
 
   // Place the rectangles based on latest data
-  const placeRects = (type: BarType, keys: ValueKeys[]) => {
-    let rects = bindData(type, getGroup(type))
+  const placeBars = (type: BarType, keys: ValueKeys[]) => {
+    let bars = bindData(type, getGroup(type))
 
-    if (rects.size() !== data.length) {
-      rects = rects.enter().append('rect')
+    if (bars.size() !== data.length) {
+      bars = bars.enter().append(typeMap[type])
     }
 
-    rects
-      .classed(type, true)
-      .classed('is-offscreen', (d, i) => i < first - 10 || i > last + 10)
-      .transition()
-      .duration(TRANSITION_TIME)
-      .attr('width', () => (type === 'wicks' ? 1 : Number(xScale.bandwidth())))
-      .attr('height', (d) => scaledHeight(d[keys[0]], d[keys[1]]))
-      .attr(
-        'x',
-        (d) =>
-          Number(xScale(d.date)) +
-          (type === 'wicks' ? (Number(xScale.bandwidth()) - 1) / 2 : 0) +
-          offsetWidth
-      )
-      .attr('y', (d) => scaledY(d[keys[0]], d[keys[1]]))
+    const getTransition = () =>
+      bars.classed(type, true).transition().duration(TRANSITION_TIME)
 
-    rects.exit().remove()
+    const x = (d: CandlestickDayData) =>
+      Number(xScale(d.date)) +
+      (type === 'wicks' ? +xScale.bandwidth() / 2 : 0) +
+      offsetWidth
 
-    return rects
+    const y = (d: CandlestickDayData) => scaledY(d[keys[0]], d[keys[1]])
+
+    const height = (d: CandlestickDayData) =>
+      scaledHeight(d[keys[0]], d[keys[1]])
+
+    if (type === 'candles') {
+      getTransition()
+        .attr('width', () => +xScale.bandwidth())
+        .attr('height', height)
+        .attr('x', x)
+        .attr('y', y)
+    } else {
+      getTransition()
+        .attr('x1', x)
+        .attr('y1', y)
+        .attr('x2', x)
+        .attr('y2', (d) => y(d) + height(d))
+    }
+
+    bars.exit().remove()
+
+    return bars
   }
 
   // Initialise the canvas with groups for wicks and candles
   useEffect(() => {
-    getGroup('wicks').attr('fill', 'grey')
+    getGroup('wicks')
     getGroup('candles')
   }, [])
 
   // Update the chart whenever the data/scale changes
   useEffect(() => {
     if (xScale?.bandwidth?.()) {
-      placeRects('wicks', ['low', 'high'])
-      placeRects('candles', ['open', 'close']).attr('fill', (d) =>
+      placeBars('wicks', ['low', 'high'])
+      placeBars('candles', ['open', 'close']).attr('fill', (d) =>
         d.close < d.open ? 'red' : 'green'
       )
     }

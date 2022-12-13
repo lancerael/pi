@@ -24,5 +24,5 @@ const Template: ComponentStory<typeof CandlestickContainer> = (props) => (
 
 export const Default = Template.bind({})
 Default.args = {
-  length: 390,
+  length: 800,
 }

@@ -42,27 +42,29 @@ export const useScaling = (
   // Recalculate the scales when necessary
   useEffect(() => {
     if (!data?.length) return
+
     const { clientWidth: width, clientHeight: height } = svgRef.current
-
     const fullCandleWidth = candleWidth * (1 + candlePadding) * zoomLevel
-
     const totalWidth = fullCandleWidth * data.length
-
-    const xScale = scaleBand()
-      .range([CHART_PADDING, totalWidth - CHART_PADDING])
-      .domain(data.map(({ date }) => date))
-      .padding(candlePadding)
-
     const baseOffset = width - AXIS_OFFSETS[1] + CHART_PADDING * 2
+    let offsetWidth = panLevel * zoomLevel - totalWidth + baseOffset
+    offsetWidth = offsetWidth <= 0 ? offsetWidth : 0
+    offsetWidth = totalWidth > width ? offsetWidth : baseOffset - totalWidth
+    offsetWidth =
+      abs(offsetWidth - baseOffset) <= totalWidth
+        ? offsetWidth
+        : -totalWidth + baseOffset
 
-    let offsetWidth = panLevel - totalWidth + baseOffset
-    offsetWidth = offsetWidth > 0 ? 0 : offsetWidth
-    offsetWidth = totalWidth > width ? offsetWidth : width - totalWidth
     const first = round((offsetWidth * -1 - CHART_PADDING) / fullCandleWidth)
     const last = round((offsetWidth * -1 + baseOffset) / fullCandleWidth)
     const visibleData = data.slice(first > 0 ? first : 0, last)
     const minY = min(...visibleData.map(({ low }) => low))
     const maxY = max(...visibleData.map(({ high }) => high))
+
+    const xScale = scaleBand()
+      .range([CHART_PADDING, totalWidth - CHART_PADDING])
+      .domain(data.map(({ date }) => date))
+      .padding(candlePadding)
 
     const yScale = scaleLinear()
       .domain([minY - 20, maxY + 20])

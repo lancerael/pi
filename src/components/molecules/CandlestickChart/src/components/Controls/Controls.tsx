@@ -21,7 +21,7 @@ export const Controls = ({
     <StyledControls>
       <Button
         {...buttonStyle}
-        onClick={() => p((c: any) => c + panSpeed)}
+        onClick={() => p((c: any) => c + panSpeed / zoomLevel)}
         disabled={visibleRange.first <= 0}
       >
         <StyledEmoji rotate={-90}>🔺</StyledEmoji>
@@ -51,7 +51,7 @@ export const Controls = ({
       </Button>
       <Button
         {...buttonStyle}
-        onClick={() => p((c: any) => c - panSpeed)}
+        onClick={() => p((c: any) => c - panSpeed / zoomLevel)}
         disabled={
           visibleRange.last >= length - 1 ||
           visibleRange.last - visibleRange.first > length

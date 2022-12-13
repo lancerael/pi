@@ -39,8 +39,6 @@ TODO:
 - Keyboard/mouse/touch controls
 - Fully responsive layout
 - Tooltips and other minor UI enhancements
-- Better usage of groups to control positions of candles
-- Convert candle wicks to lines (rects used for rapid prototype)
 - Performance improvements
 - Better TS typing (replace "any")
 - Unit tests

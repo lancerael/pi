@@ -9,6 +9,11 @@ export const StyledCandlestickChart = styled.svg`
     display: none;
   }
 
+  & line.wicks {
+    stroke: grey;
+    stroke-width: 1;
+  }
+
   & text.emphasise {
     font-size: 11px;
     font-weight: bold;
