@@ -1,0 +1,7 @@
+{
+  "type": "patch",
+  "comment": "* Responsive candlestiuck chart * Cleanup and performance improvements",
+  "packageName": "@pi-lib/candlestick-chart",
+  "email": "lancerael@hotmail.com",
+  "dependentChangeType": "patch"
+}
