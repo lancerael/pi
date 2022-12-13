@@ -37,14 +37,14 @@ const getDateLabel = (d: string = '', i: number, xScale: any) => {
 export const useAxes = (
   svgRef: any | null,
   data: CandlestickDayData[],
-  panLevel: number,
+  offset: number,
   scales: any,
   dimensions: any
 ) => {
   const [axisX, setAxisX] = useState<any>()
   const [axisY, setAxisY] = useState<any>()
   const { xScale, yScale } = scales
-  const { width, height, offsetWidth } = dimensions
+  const { width, height } = dimensions
 
   // Set up the x and y axes
   useEffect(() => {
@@ -61,6 +61,7 @@ export const useAxes = (
         .classed('x-axis', true)
         .append('g')
     )
+
     // Initialise the y axis
     setAxisY(select(svgRef.current).append('g').classed('y-axis', true))
   }, [])
@@ -72,10 +73,7 @@ export const useAxes = (
     // Update the x axis text labels
     axisX
       .call(axisBottom(xScale))
-      .attr(
-        'transform',
-        `translate(${offsetWidth},${height - AXIS_OFFSETS[0]})`
-      )
+      .attr('transform', `translate(${offset},${height - AXIS_OFFSETS[0]})`)
       .selectAll('text')
       .classed(
         'emphasise',

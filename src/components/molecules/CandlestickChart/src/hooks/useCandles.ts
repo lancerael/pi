@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useCallback } from 'react'
 import { select } from 'd3-selection'
 import 'd3-transition'
 import {
@@ -9,7 +9,6 @@ import {
   ValueKeys,
 } from '../CandlestickChart.types'
 import { TRANSITION_TIME } from '../CandlestickChart.constants'
-import { C } from 'vitest/dist/global-fe52f84b'
 
 const typeMap = {
   wicks: 'line',
@@ -19,80 +18,82 @@ const typeMap = {
 export const useCandles = (
   svgRef: any,
   data: CandlestickDayData[],
-  panLevel: number,
   scales: any,
-  dimensions: any,
   utils: any,
   visibleRange: any
 ) => {
   const { xScale } = scales
-  const { offsetWidth } = dimensions
+  const { offset } = visibleRange
   const { scaledHeight, scaledY } = utils
-  const { first, last } = visibleRange
   const groups = useRef<{ [key: string]: SVGSelection }>({})
 
   // Get d3 selection of SVG
-  const getSvg = () => select(svgRef.current)
+  const getSvg = useCallback(() => select(svgRef.current), [svgRef.current])
 
-  // Bind the data to the chosen type of rectangles
-  const bindData = (
-    type: BarType,
-    parent: SVGSelection = getSvg() as SVGSelection
-  ) =>
-    parent
-      .selectAll(`${typeMap[type]}.${type}`)
-      .data(data) as unknown as BarSelection
+  // Bind the data to the chosen type of bars
+  const bindData = useCallback(
+    (type: BarType, parent: SVGSelection = getSvg() as SVGSelection) =>
+      parent
+        .selectAll(`${typeMap[type]}.${type}`)
+        .data(data) as unknown as BarSelection,
+    [data]
+  )
 
-  // Create the group and initialise the rectangles
-  const getGroup = (type: BarType) => {
-    groups.current[type] =
-      groups.current[type] ??
-      (getSvg()
-        .append('g')
-        .classed(`${type}-group`, true)
-        .attr('clip-path', 'url(#chart-contents)') as SVGSelection)
-    return groups.current[type]
-  }
+  // Create the groups
+  const getGroup = useCallback(
+    (type: BarType) => {
+      groups.current[type] =
+        groups.current[type] ??
+        (getSvg()
+          .append('g')
+          .classed(`${type}-group`, true)
+          .attr('clip-path', 'url(#chart-contents)') as SVGSelection)
+      return groups.current[type]
+    },
+    [groups]
+  )
 
-  // Place the rectangles based on latest data
-  const placeBars = (type: BarType, keys: ValueKeys[]) => {
-    let bars = bindData(type, getGroup(type))
+  // Place the bars based on latest data
+  const placeBars = useCallback(
+    (type: BarType, keys: ValueKeys[]) => {
+      let bars = bindData(type, getGroup(type))
 
-    if (bars.size() !== data.length) {
-      bars = bars.enter().append(typeMap[type])
-    }
+      if (bars.size() !== data.length) {
+        bars = bars.enter().append(typeMap[type])
+      }
 
-    const getTransition = () =>
-      bars.classed(type, true).transition().duration(TRANSITION_TIME)
+      const getTransition = () => bars.transition().duration(TRANSITION_TIME)
 
-    const x = (d: CandlestickDayData) =>
-      Number(xScale(d.date)) +
-      (type === 'wicks' ? +xScale.bandwidth() / 2 : 0) +
-      offsetWidth
+      const x = (d: CandlestickDayData) =>
+        Number(xScale(d.date)) +
+        (type === 'wicks' ? +xScale.bandwidth() / 2 : 0) +
+        offset
 
-    const y = (d: CandlestickDayData) => scaledY(d[keys[0]], d[keys[1]])
+      const y = (d: CandlestickDayData) => scaledY(d[keys[0]], d[keys[1]])
 
-    const height = (d: CandlestickDayData) =>
-      scaledHeight(d[keys[0]], d[keys[1]])
+      const height = (d: CandlestickDayData) =>
+        scaledHeight(d[keys[0]], d[keys[1]])
 
-    if (type === 'candles') {
-      getTransition()
-        .attr('width', () => +xScale.bandwidth())
-        .attr('height', height)
-        .attr('x', x)
-        .attr('y', y)
-    } else {
-      getTransition()
-        .attr('x1', x)
-        .attr('y1', y)
-        .attr('x2', x)
-        .attr('y2', (d) => y(d) + height(d))
-    }
+      if (type === 'candles') {
+        getTransition()
+          .attr('width', () => +xScale.bandwidth())
+          .attr('height', height)
+          .attr('x', x)
+          .attr('y', y)
+      } else {
+        getTransition()
+          .attr('x1', x)
+          .attr('y1', y)
+          .attr('x2', x)
+          .attr('y2', (d) => y(d) + height(d))
+      }
 
-    bars.exit().remove()
+      bars.classed(type, true).exit().remove()
 
-    return bars
-  }
+      return bars
+    },
+    [xScale, scaledY]
+  )
 
   // Initialise the canvas with groups for wicks and candles
   useEffect(() => {
@@ -108,5 +109,5 @@ export const useCandles = (
         d.close < d.open ? 'red' : 'green'
       )
     }
-  }, [xScale])
+  }, [xScale, scaledY])
 }
