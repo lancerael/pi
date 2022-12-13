@@ -26,18 +26,17 @@ FEATURES:
 
 - Created as a standalone component inside mono repo and published to NPM
 - Created using d3 and React (with hooks)
-- Randomised data (for now)
+- Randomised data tools
 - Current day's data fluctuates to simulate market forces
 - Candles and axes
 - Scales adjust to visible data
-- Nodes outside of visible range are not rendered
 - Pan and zoom controls
+- Fully responsive layout
 
 TODO:
 
 - Controls to collapse data into weeks/months (or expand to units smaller than a day)
 - Keyboard/mouse/touch controls
-- Fully responsive layout
 - Tooltips and other minor UI enhancements
 - Performance improvements
 - Better TS typing (replace "any")

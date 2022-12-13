@@ -7,7 +7,7 @@ const CandlestickContainer = ({ length }: { length: number }) => {
   const chartData = useFakeApi(length)
 
   return (
-    <div style={{ width: '800px', height: '500px' }}>
+    <div style={{ width: '100%', height: '100%' }}>
       <CandlestickChart data={chartData} />
     </div>
   )

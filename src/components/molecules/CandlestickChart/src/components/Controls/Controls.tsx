@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import React from 'react'
 import Button from '@pi-lib/button'
 import { StyledControls, StyledEmoji } from './Controls.style'
 import { ControlsProps } from './Controls.types'
@@ -34,7 +34,7 @@ export const Controls = ({
               +(c - zoomSpeed > 0 ? c - zoomSpeed : zoomSpeed / 2).toFixed(2)
           )
         }
-        disabled={zoomLevel < zoomSpeed || visibleRange.first <= 0}
+        disabled={zoomLevel < zoomSpeed}
       >
         ➖
       </Button>

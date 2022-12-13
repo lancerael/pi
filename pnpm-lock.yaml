@@ -49,7 +49,7 @@ importers:
   src/apps/sandbox:
     specifiers:
       '@pi-lib/button': 0.8.1
-      '@pi-lib/candlestick-chart': 0.3.2
+      '@pi-lib/candlestick-chart': 0.3.3
       '@types/react': ^18.0.26
       '@types/react-dom': ^18.0.9
       '@vitejs/plugin-react': ^3.0.0
@@ -161,10 +161,10 @@ importers:
 
   src/components/molecules/AdvancedButton:
     specifiers:
-      '@pi-lib/button': workspace:^0.8.1
+      '@pi-lib/button': ^0.8.1
       '@pi-lib/config': ^0.2.2
       '@pi-lib/constants': ^0.*.*
-      '@pi-lib/loader': workspace:^0.4.1
+      '@pi-lib/loader': ^0.4.1
       '@pi-lib/types': ^0.*.*
       '@testing-library/react': ^13.3.0
       '@types/jest': ^28.1.8
@@ -210,8 +210,8 @@ importers:
 
   src/components/molecules/CandlestickChart:
     specifiers:
-      '@pi-lib/button': workspace:^0.8.1
-      '@pi-lib/config': workspace:^0.2.2
+      '@pi-lib/button': ^0.8.1
+      '@pi-lib/config': ^0.2.2
       '@pi-lib/constants': ^0.*.*
       '@pi-lib/loader': ^0.4.1
       '@pi-lib/types': ^0.*.*
@@ -222,6 +222,7 @@ importers:
       '@types/d3-transition': ^3.0.2
       '@types/jest': ^28.1.8
       '@types/jest-axe': ^3.5.4
+      '@types/lodash.throttle': ^4.1.7
       '@types/node': ^18.7.11
       '@types/react': ^18.0.17
       '@types/react-dom': ^18.0.6
@@ -234,6 +235,7 @@ importers:
       d3-transition: ^3.0.1
       jest-axe: ^6.0.0
       jsdom: ^20.0.0
+      lodash.throttle: ^4.1.1
       prettier: ^2.8.0
       react: ^18.2.0
       rimraf: ^3.0.2
@@ -251,6 +253,7 @@ importers:
       d3-scale: 4.0.2
       d3-selection: 3.0.0
       d3-transition: 3.0.1_d3-selection@3.0.0
+      lodash.throttle: 4.1.1
       react: 18.2.0
       styled-components: 5.3.5_7i5myeigehqah43i5u7wbekgba
     devDependencies:
@@ -261,6 +264,7 @@ importers:
       '@types/d3-transition': 3.0.2
       '@types/jest': 28.1.8
       '@types/jest-axe': 3.5.4
+      '@types/lodash.throttle': 4.1.7
       '@types/node': 18.7.15
       '@types/react': 18.0.18
       '@types/react-dom': 18.0.6
@@ -4994,6 +4998,12 @@ packages:
 
   /@types/json5/0.0.29:
     resolution: {integrity: sha512-dRLjCWHYg4oaA77cxO64oO+7JwCwnIzkZPdrrC71jQmQtlhM556pwKo5bUzqvZndkVbeFLIIi+9TC40JNF5hNQ==}
+    dev: true
+
+  /@types/lodash.throttle/4.1.7:
+    resolution: {integrity: sha512-znwGDpjCHQ4FpLLx19w4OXDqq8+OvREa05H89obtSyXyOFKL3dDjCslsmfBz0T2FU8dmf5Wx1QvogbINiGIu9g==}
+    dependencies:
+      '@types/lodash': 4.14.184
     dev: true
 
   /@types/lodash/4.14.184:
@@ -10380,6 +10390,10 @@ packages:
   /lodash.merge/4.6.2:
     resolution: {integrity: sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==}
     dev: true
+
+  /lodash.throttle/4.1.1:
+    resolution: {integrity: sha512-wIkUCfVKpVsWo3JSZlc+8MB5it+2AN5W8J7YVMST30UrvcQNZ1Okbj+rbVniijTWE6FGYy4XJq/rHkas8qJMLQ==}
+    dev: false
 
   /lodash.uniq/4.5.0:
     resolution: {integrity: sha512-xfBaXQd9ryd9dlSDvnvI0lvxfLJlYAZzXomUYzLKtUeOQvOP5piqAWuGtrhWeqaXK9hhoM/iyJc5AV+XfsX3HQ==}

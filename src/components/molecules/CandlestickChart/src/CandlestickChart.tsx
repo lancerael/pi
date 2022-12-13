@@ -5,7 +5,7 @@ import {
   StyledLoaderContainer,
 } from './CandlestickChart.style'
 import { CandlestickChartProps } from './CandlestickChart.types'
-import { useScaling, useAxes, useCandles } from './hooks'
+import { useScaling, useAxes, useCandles, useDimensions } from './hooks'
 import ClipPaths from './components/ClipPaths'
 import Controls from './components/Controls'
 import Loader from '@pi-lib/loader'
@@ -14,14 +14,15 @@ export const CandlestickChart: FC<CandlestickChartProps> = ({ data = [] }) => {
   const [zoomLevel, setZoomLevel] = useState(1)
   const [panLevel, setPanLevel] = useState(0)
   const svgRef = useRef<SVGSVGElement>(null)
-  const { scales, dimensions, utils, visibleRange } = useScaling(
+  const { dimensions, visibleRange } = useDimensions(
     svgRef,
-    data,
+    data.length,
     zoomLevel,
     panLevel
   )
-  useCandles(svgRef, data, panLevel, scales, dimensions, utils, visibleRange)
-  useAxes(svgRef, data, panLevel, scales, dimensions)
+  const { scales, utils } = useScaling(data, dimensions, visibleRange)
+  useCandles(svgRef, data, scales, utils, visibleRange)
+  useAxes(svgRef, data, visibleRange.offset, scales, dimensions)
 
   return (
     <StyledContainer>
