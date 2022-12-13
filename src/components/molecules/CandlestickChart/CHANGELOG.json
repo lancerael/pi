@@ -2,6 +2,33 @@
   "name": "@pi-lib/candlestick-chart",
   "entries": [
     {
+      "date": "Tue, 13 Dec 2022 13:00:39 GMT",
+      "tag": "@pi-lib/candlestick-chart_v0.3.3",
+      "version": "0.3.3",
+      "comments": {
+        "patch": [
+          {
+            "author": "lancerael@hotmail.com",
+            "package": "@pi-lib/candlestick-chart",
+            "commit": "3a2c78f6599740e9cf1707e053bbdaaf371d81b2",
+            "comment": "* Converted wicks to line for performance * Improved pan/zoom range behaviours"
+          },
+          {
+            "author": "beachball",
+            "package": "@pi-lib/candlestick-chart",
+            "comment": "Bump @pi-lib/constants to v0.1.0",
+            "commit": "4bec53c6e69608ad589083ac00323f09e670a68d"
+          },
+          {
+            "author": "beachball",
+            "package": "@pi-lib/candlestick-chart",
+            "comment": "Bump @pi-lib/types to v0.1.0",
+            "commit": "4bec53c6e69608ad589083ac00323f09e670a68d"
+          }
+        ]
+      }
+    },
+    {
       "date": "Mon, 12 Dec 2022 16:23:01 GMT",
       "tag": "@pi-lib/candlestick-chart_v0.3.2",
       "version": "0.3.2",

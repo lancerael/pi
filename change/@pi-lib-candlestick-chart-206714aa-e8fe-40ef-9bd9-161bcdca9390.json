@@ -1,7 +1,0 @@
-{
-  "type": "patch",
-  "comment": "* Converted wicks to line for performance * Improved pan/zoom range behaviours",
-  "packageName": "@pi-lib/candlestick-chart",
-  "email": "lancerael@hotmail.com",
-  "dependentChangeType": "patch"
-}

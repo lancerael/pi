@@ -1,8 +1,18 @@
 # Change Log - @pi-lib/candlestick-chart
 
-This log was last generated on Mon, 12 Dec 2022 16:23:01 GMT and should not be manually modified.
+This log was last generated on Tue, 13 Dec 2022 13:00:39 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 0.3.3
+
+Tue, 13 Dec 2022 13:00:39 GMT
+
+### Patches
+
+- * Converted wicks to line for performance * Improved pan/zoom range behaviours (lancerael@hotmail.com)
+- Bump @pi-lib/constants to v0.1.0
+- Bump @pi-lib/types to v0.1.0
 
 ## 0.3.2
 

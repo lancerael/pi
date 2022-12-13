@@ -2,6 +2,27 @@
   "name": "@pi-lib/advanced-button",
   "entries": [
     {
+      "date": "Tue, 13 Dec 2022 13:00:39 GMT",
+      "tag": "@pi-lib/advanced-button_v0.4.3",
+      "version": "0.4.3",
+      "comments": {
+        "undefined": [
+          {
+            "author": "beachball",
+            "package": "@pi-lib/advanced-button",
+            "comment": "Bump @pi-lib/constants to v0.1.0",
+            "commit": "4bec53c6e69608ad589083ac00323f09e670a68d"
+          },
+          {
+            "author": "beachball",
+            "package": "@pi-lib/advanced-button",
+            "comment": "Bump @pi-lib/types to v0.1.0",
+            "commit": "4bec53c6e69608ad589083ac00323f09e670a68d"
+          }
+        ]
+      }
+    },
+    {
       "date": "Mon, 12 Dec 2022 16:23:01 GMT",
       "tag": "@pi-lib/advanced-button_v0.4.2",
       "version": "0.4.2",
