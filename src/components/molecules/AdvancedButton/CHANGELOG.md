@@ -1,8 +1,18 @@
 # Change Log - @pi-lib/advanced-button
 
-This log was last generated on Sat, 10 Dec 2022 13:13:39 GMT and should not be manually modified.
+This log was last generated on Tue, 13 Dec 2022 16:27:45 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 0.4.4
+
+Tue, 13 Dec 2022 16:27:45 GMT
+
+### Patches
+
+- noop (lancerael@hotmail.com)
+- Bump @pi-lib/constants to v0.1.0
+- Bump @pi-lib/types to v0.1.0
 
 ## 0.4.1
 
