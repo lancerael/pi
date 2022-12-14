@@ -1,9 +1,6 @@
 import { useEffect, useState } from 'react'
 import { CandlestickDayData } from '../CandlestickChart.types'
-import {
-  generateCandlestickData,
-  movePrevValue,
-} from '../utils/generateCandlestickData'
+import { generateCandlestickData, movePrevValue } from '../utils'
 
 export const useFakeApi = (length: number) => {
   const [chartData, setChartData] = useState<CandlestickDayData[]>()

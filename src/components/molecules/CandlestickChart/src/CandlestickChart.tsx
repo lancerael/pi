@@ -1,18 +1,21 @@
-import React, { FC, useEffect, useRef, useState } from 'react'
+import React, { FC, useRef, useState } from 'react'
+import Loader from '@pi-lib/loader'
+import { useScaling, useAxes, useCandles, useDimensions } from './hooks'
+import { ClipPaths, Controls, CandleTooltip } from './components'
 import {
   StyledCandlestickChart,
   StyledContainer,
   StyledLoaderContainer,
 } from './CandlestickChart.style'
-import { CandlestickChartProps } from './CandlestickChart.types'
-import { useScaling, useAxes, useCandles, useDimensions } from './hooks'
-import ClipPaths from './components/ClipPaths'
-import Controls from './components/Controls'
-import Loader from '@pi-lib/loader'
+import {
+  CandlestickChartProps,
+  CandlestickDayData,
+} from './CandlestickChart.types'
 
 export const CandlestickChart: FC<CandlestickChartProps> = ({ data = [] }) => {
   const [zoomLevel, setZoomLevel] = useState(1)
   const [panLevel, setPanLevel] = useState(0)
+  const [tooltipItem, setTooltipItem] = useState<CandlestickDayData>()
   const svgRef = useRef<SVGSVGElement>(null)
   const { dimensions, visibleRange } = useDimensions(
     svgRef,
@@ -21,7 +24,7 @@ export const CandlestickChart: FC<CandlestickChartProps> = ({ data = [] }) => {
     panLevel
   )
   const { scales, utils } = useScaling(data, dimensions, visibleRange)
-  useCandles(svgRef, data, scales, utils, visibleRange)
+  useCandles(svgRef, data, scales, utils, visibleRange, setTooltipItem)
   useAxes(svgRef, data, visibleRange.offset, scales, dimensions)
 
   return (
@@ -44,6 +47,7 @@ export const CandlestickChart: FC<CandlestickChartProps> = ({ data = [] }) => {
       <StyledCandlestickChart ref={svgRef}>
         <ClipPaths {...dimensions} />
       </StyledCandlestickChart>
+      <CandleTooltip item={tooltipItem} />
     </StyledContainer>
   )
 }

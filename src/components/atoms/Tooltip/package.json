@@ -1,43 +1,33 @@
 {
-  "name": "@pi-lib/candlestick-chart",
-  "version": "0.3.3",
+  "name": "@pi-lib/tooltip",
+  "version": "0.0.0",
   "description": "",
   "type": "module",
   "files": [
     "dist"
   ],
-  "main": "./dist/pi-lib-candlestick-chart.umd.js",
-  "module": "./dist/pi-lib-candlestick-chart.js",
+  "main": "./dist/pi-lib-tooltip.umd.js",
+  "module": "./dist/pi-lib-tooltip.js",
   "exports": {
     ".": {
-      "import": "./dist/pi-lib-candlestick-chart.js",
-      "require": "./dist/pi-lib-candlestick-chart.umd.js"
+      "import": "./dist/pi-lib-tooltip.js",
+      "require": "./dist/pi-lib-tooltip.umd.js"
     }
   },
-  "types": "./dist/src/CandlestickChart.d.ts",
+  "types": "./dist/src/Tooltip.d.ts",
   "scripts": {
     "test": "vitest",
     "test:coverage": "vitest --coverage",
-    "build": "rimraf dist && vite build && npx tsc",
-    "format": "npx prettier -c"
+    "build": "rimraf dist && vite build && npx tsc"
   },
   "keywords": [
     "react",
-    "chart"
+    "tooltip"
   ],
   "author": "Lance Taylor",
   "license": "ISC",
   "dependencies": {
-    "@pi-lib/button": "^0.8.1",
     "@pi-lib/constants": "^0.*.*",
-    "@pi-lib/loader": "^0.4.1",
-    "@pi-lib/tooltip": "workspace:^0.0.0",
-    "@types/d3-axis": "^3.0.1",
-    "@types/d3-scale": "^4.0.2",
-    "d3-axis": "^3.0.0",
-    "d3-scale": "^4.0.2",
-    "d3-selection": "^3.0.0",
-    "d3-transition": "^3.0.1",
     "lodash.throttle": "^4.1.1"
   },
   "peerDependencies": {
@@ -45,11 +35,9 @@
     "styled-components": "^5.3.5"
   },
   "devDependencies": {
-    "@pi-lib/config": "^0.2.2",
+    "@pi-lib/config": "^0.*.*",
     "@pi-lib/types": "^0.*.*",
     "@testing-library/react": "^13.3.0",
-    "@types/d3-selection": "^3.0.3",
-    "@types/d3-transition": "^3.0.2",
     "@types/jest": "^28.1.8",
     "@types/jest-axe": "^3.5.4",
     "@types/lodash.throttle": "^4.1.7",
@@ -61,7 +49,6 @@
     "@vitest/coverage-istanbul": "^0.23.1",
     "jest-axe": "^6.0.0",
     "jsdom": "^20.0.0",
-    "prettier": "^2.8.0",
     "rimraf": "^3.0.2",
     "typescript": "^4.7.4",
     "vite": "^3.0.9",

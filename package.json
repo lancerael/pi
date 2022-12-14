@@ -10,7 +10,8 @@
     "change": "pnpm build && beachball change",
     "publish": "npx beachball publish",
     "lint": "npx prettier -w . && npx eslint --fix",
-    "test": "npx nx run-many --target=test"
+    "test": "npx nx run-many --target=test",
+    "generate": "node ./bin/generate.js"
   },
   "repository": {
     "type": "git",
