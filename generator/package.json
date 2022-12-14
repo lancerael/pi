@@ -21,8 +21,7 @@
     "build": "rimraf dist && vite build && npx tsc"
   },
   "keywords": [
-    "react",
-    "button"
+    "react"
   ],
   "author": "Lance Taylor",
   "license": "ISC",

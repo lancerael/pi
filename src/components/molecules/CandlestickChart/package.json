@@ -23,7 +23,7 @@
   },
   "keywords": [
     "react",
-    "button"
+    "chart"
   ],
   "author": "Lance Taylor",
   "license": "ISC",
@@ -31,6 +31,7 @@
     "@pi-lib/button": "^0.8.1",
     "@pi-lib/constants": "^0.*.*",
     "@pi-lib/loader": "^0.4.1",
+    "@pi-lib/tooltip": "workspace:^0.0.0",
     "@types/d3-axis": "^3.0.1",
     "@types/d3-scale": "^4.0.2",
     "d3-axis": "^3.0.0",

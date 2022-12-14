@@ -20,7 +20,8 @@ export const useCandles = (
   data: CandlestickDayData[],
   scales: any,
   utils: any,
-  visibleRange: any
+  visibleRange: any,
+  setTooltipItem: any
 ) => {
   const { xScale } = scales
   const { offset } = visibleRange
@@ -80,6 +81,9 @@ export const useCandles = (
           .attr('height', height)
           .attr('x', x)
           .attr('y', y)
+        bars
+          .on('mouseover', (e, d) => setTooltipItem(d))
+          .on('mouseout', () => setTooltipItem())
       } else {
         getTransition()
           .attr('x1', x)
