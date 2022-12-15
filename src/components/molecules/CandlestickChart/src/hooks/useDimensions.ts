@@ -12,10 +12,12 @@ const { abs, round } = Math
 export const useDimensions = (
   svgRef: any | null,
   length: number,
-  zoomLevel: number,
-  panLevel: number
+  controls: {
+    zoomLevel: number
+    panLevel: number
+  }
 ) => {
-  const [dimensions, setDimensions] = useState({
+  const [sizes, setDimensions] = useState({
     width: 0,
     height: 0,
   })
@@ -25,35 +27,24 @@ export const useDimensions = (
     offset: 0,
     totalWidth: 0,
   })
-  const resizeRef = useRef<void>()
-
-  // Handler used to update the SVG sizes
-  const updateSVG = useCallback(
-    throttle(() => {
-      const { clientWidth: width, clientHeight: height } = svgRef.current
-      setDimensions({ width, height })
-    }, 200),
-    [svgRef.current]
-  )
+  const { zoomLevel, panLevel } = controls
 
   // Add resize handler for responsiveness
   useEffect(() => {
-    resizeRef.current = addEventListener('resize', updateSVG)
-    return () => {
-      removeEventListener('resize', updateSVG)
-      resizeRef.current = undefined
-    }
-  }, [])
+    const updateSVG = throttle(() => {
+      const { clientWidth: width, clientHeight: height } = svgRef.current
+      setDimensions({ width, height })
+    }, 200)
 
-  // Recalculate dimensions
-  useEffect(() => {
     updateSVG()
-  }, [svgRef.current, length])
+    addEventListener('resize', updateSVG)
+    return () => removeEventListener('resize', updateSVG)
+  }, [])
 
   // Recalculate offset and range
   useEffect(() => {
     if (!length) return
-    const { width } = dimensions
+    const { width } = sizes
 
     const fullCandleWidth = CANDLE_WIDTH * (1 + CANDLE_PADDING) * zoomLevel
     const totalWidth = fullCandleWidth * length
@@ -68,7 +59,7 @@ export const useDimensions = (
     const last = round((offset * -1 + baseOffset) / fullCandleWidth)
 
     setVisibleRange({ first, last, offset, totalWidth })
-  }, [zoomLevel, panLevel, length, dimensions.width])
+  }, [zoomLevel, panLevel, length, sizes.width])
 
-  return { visibleRange, dimensions }
+  return { visibleRange, sizes }
 }

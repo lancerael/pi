@@ -7,9 +7,8 @@ const zoomSpeed = 0.2
 const panSpeed = 100
 
 export const Controls = ({
-  zoomLevel,
-  setZoomLevel: z,
-  setPanLevel: p,
+  controls: { zoomLevel },
+  setControls,
   visibleRange,
   length,
 }: ControlsProps) => {
@@ -21,7 +20,12 @@ export const Controls = ({
     <StyledControls>
       <Button
         {...buttonStyle}
-        onClick={() => p((c: any) => c + panSpeed / zoomLevel)}
+        onClick={() =>
+          setControls(({ panLevel, zoomLevel }: any) => ({
+            panLevel: panLevel + panSpeed / zoomLevel,
+            zoomLevel,
+          }))
+        }
         disabled={visibleRange.first <= 0}
       >
         <StyledEmoji rotate={-90}>🔺</StyledEmoji>
@@ -29,10 +33,12 @@ export const Controls = ({
       <Button
         {...buttonStyle}
         onClick={() =>
-          z(
-            (c) =>
-              +(c - zoomSpeed > 0 ? c - zoomSpeed : zoomSpeed / 2).toFixed(2)
-          )
+          setControls(({ panLevel, zoomLevel }: any) => ({
+            zoomLevel: +(
+              zoomLevel - zoomSpeed > 0 ? zoomLevel - zoomSpeed : zoomSpeed / 2
+            ).toFixed(2),
+            panLevel,
+          }))
         }
         disabled={zoomLevel < zoomSpeed}
       >
@@ -41,9 +47,12 @@ export const Controls = ({
       <Button
         {...buttonStyle}
         onClick={() =>
-          z(
-            (c) => +(c === zoomSpeed / 2 ? zoomSpeed : c + zoomSpeed).toFixed(2)
-          )
+          setControls(({ panLevel, zoomLevel }: any) => ({
+            zoomLevel: +(
+              zoomLevel === zoomSpeed / 2 ? zoomSpeed : zoomLevel + zoomSpeed
+            ).toFixed(2),
+            panLevel,
+          }))
         }
         disabled={zoomLevel >= zoomSpeed * 10}
       >
@@ -51,7 +60,12 @@ export const Controls = ({
       </Button>
       <Button
         {...buttonStyle}
-        onClick={() => p((c: any) => c - panSpeed / zoomLevel)}
+        onClick={() =>
+          setControls(({ panLevel, zoomLevel }: any) => ({
+            panLevel: panLevel - panSpeed / zoomLevel,
+            zoomLevel,
+          }))
+        }
         disabled={
           visibleRange.last >= length - 1 ||
           visibleRange.last - visibleRange.first > length

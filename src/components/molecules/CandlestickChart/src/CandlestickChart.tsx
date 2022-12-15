@@ -11,23 +11,16 @@ import { CandlestickChartProps } from './CandlestickChart.types'
 
 export const CandlestickChart: FC<CandlestickChartProps> = ({ data = [] }) => {
   const svgRef = useRef<SVGSVGElement>(null)
-  const [zoomLevel, setZoomLevel] = useState(1)
-  const [panLevel, setPanLevel] = useState(0)
-  const { dimensions, visibleRange } = useDimensions(
-    svgRef,
-    data.length,
-    zoomLevel,
-    panLevel
-  )
-  const { scales, utils } = useScaling(data, dimensions, visibleRange)
+  const [controls, setControls] = useState({ zoomLevel: 1, panLevel: 1 })
+  const dimensions = useDimensions(svgRef, data.length, controls)
+  const scaling = useScaling(data, dimensions)
   const { item, position } = useCandles(
     svgRef,
     data,
-    scales,
-    utils,
-    visibleRange
+    dimensions.visibleRange,
+    scaling
   )
-  useAxes(svgRef, data, visibleRange.offset, scales, dimensions)
+  useAxes(svgRef, data, scaling.scales, dimensions)
 
   return (
     <StyledContainer>
@@ -38,16 +31,15 @@ export const CandlestickChart: FC<CandlestickChartProps> = ({ data = [] }) => {
       ) : (
         <Controls
           {...{
-            zoomLevel,
-            setZoomLevel,
-            setPanLevel,
-            visibleRange,
+            controls,
+            setControls,
+            visibleRange: dimensions.visibleRange,
             length: data.length,
           }}
         />
       )}
       <StyledCandlestickChart ref={svgRef}>
-        <ClipPaths {...dimensions} />
+        <ClipPaths {...dimensions.sizes} />
       </StyledCandlestickChart>
       <CandleTooltip {...{ item, position }} />
     </StyledContainer>

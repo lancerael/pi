@@ -9,11 +9,9 @@ import {
 
 const { abs, min, max } = Math
 
-export const useScaling = (
-  data: CandlestickDayData[],
-  dimensions: any,
-  visibleRange: any
-) => {
+export const useScaling = (data: CandlestickDayData[], dimensions: any) => {
+  const { sizes, visibleRange } = dimensions
+
   const [scales, setScales] = useState({
     xScale: ((x: string) => x) as unknown as ScaleBand<string>,
     yScale: (y: number) => y,
@@ -39,7 +37,7 @@ export const useScaling = (
     if (!data?.length) return
 
     const { first, last, totalWidth } = visibleRange
-    const { height } = dimensions
+    const { height } = sizes
 
     const visibleData = data.slice(first > 0 ? first : 0, last)
     const minY = min(...visibleData.map(({ low }) => low))
@@ -55,7 +53,7 @@ export const useScaling = (
       .range([height - AXIS_OFFSETS[0] - CHART_PADDING, CHART_PADDING])
 
     setScales({ xScale, yScale })
-  }, [visibleRange, dimensions.height, data])
+  }, [visibleRange, sizes.height, data])
 
   return { utils: { scaledHeight, scaledY }, scales }
 }

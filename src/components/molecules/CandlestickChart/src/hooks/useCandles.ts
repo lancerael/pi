@@ -19,13 +19,14 @@ const typeMap = {
 export const useCandles = (
   svgRef: any,
   data: CandlestickDayData[],
-  scales: any,
-  utils: any,
-  visibleRange: any
+  visibleRange: any,
+  scaling: any
 ) => {
-  const { xScale } = scales
+  const {
+    scales: { xScale },
+    utils: { scaledHeight, scaledY },
+  } = scaling
   const { offset } = visibleRange
-  const { scaledHeight, scaledY } = utils
   const groups = useRef<{ [key: string]: SVGSelection }>({})
   const isActive = useRef<boolean>(false)
   const [activeItem, setActiveItem] = useState<ActiveItem>({
@@ -137,8 +138,12 @@ export const useCandles = (
         setActiveItem(({ position }) => ({ item: undefined, position }))
       }
     }
-    document.addEventListener('click', resetSelection)
-    return () => document.removeEventListener('click', resetSelection)
+    addEventListener('resize', resetSelection)
+    addEventListener('click', resetSelection)
+    return () => {
+      removeEventListener('click', resetSelection)
+      removeEventListener('resize', resetSelection)
+    }
   }, [])
 
   // Update the chart whenever the data/scale changes
