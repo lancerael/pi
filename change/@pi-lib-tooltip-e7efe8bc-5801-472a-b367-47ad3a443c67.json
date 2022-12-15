@@ -1,0 +1,7 @@
+{
+  "type": "minor",
+  "comment": "Controlled tooltip",
+  "packageName": "@pi-lib/tooltip",
+  "email": "lancerael@hotmail.com",
+  "dependentChangeType": "patch"
+}

@@ -5,8 +5,31 @@ export const StyledCandlestickChart = styled.svg`
   width: 100%;
   height: 100%;
 
-  & rect.is-offscreen {
-    display: none;
+  & rect {
+    cursor: pointer;
+    transition: filter 0.2s;
+
+    &.is-offscreen {
+      display: none;
+    }
+
+    &:hover {
+      filter: brightness(0.8);
+    }
+
+    &.is-increased {
+      fill: green;
+    }
+
+    &.is-decreased {
+      fill: red;
+    }
+
+    &.is-active {
+      filter: brightness(1);
+      stroke: black;
+      stroke-width: 2;
+    }
   }
 
   & line.wicks {

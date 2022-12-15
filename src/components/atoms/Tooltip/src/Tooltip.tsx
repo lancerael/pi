@@ -1,40 +1,54 @@
-import React, { FC, useEffect, useRef, useState } from 'react'
+import React, { FC, useCallback, useEffect, useRef, useState } from 'react'
 import throttle from 'lodash.throttle'
 import { StyledTooltip } from './Tooltip.style'
 import { TooltipProps } from './Tooltip.types'
 
-export const Tooltip: FC<TooltipProps> = ({ children, isVisible = false }) => {
-  const moveRef = useRef<void>()
+export const Tooltip: FC<TooltipProps> = ({
+  children,
+  isVisible = false,
+  x = 0,
+  y = 0,
+}) => {
+  // const moveRef = useRef<void>()
   const containerRef = useRef<HTMLDivElement>(null)
+  const [position, setPosition] = useState({ x, y })
 
-  const [position, setPosition] = useState({ x: 0, y: 0 })
-
-  const updateMousePos = throttle(
-    ({ clientX, clientY }: MouseEvent) =>
+  // Update the tooltip to the correct position
+  const updatePosition = useCallback(
+    (xPos: number, yPos: number) =>
       setPosition({
-        x: clientX - (containerRef.current?.clientWidth ?? 0) / 2,
-        y: clientY + 24,
+        x: xPos - (containerRef.current?.clientWidth ?? 0) / 2,
+        y: yPos + 24,
       }),
-    100
+    [containerRef.current]
   )
 
-  // Add mousemove handler
+  // Allow  positioning
   useEffect(() => {
-    moveRef.current = addEventListener('mousemove', updateMousePos)
-    return () => {
+    updatePosition(x, y)
+
+    // Update the position based on mouse location
+    const updateMousePos = throttle(
+      ({ clientX, clientY }: MouseEvent) =>
+        !x && !y && updatePosition(clientX, clientY),
+      100
+    )
+
+    const removeListener = () => {
       removeEventListener('mousemove', updateMousePos)
-      moveRef.current = undefined
     }
-  }, [])
+
+    if (x || y) removeListener()
+    else addEventListener('mousemove', updateMousePos)
+    return removeListener
+  }, [x, y])
 
   return (
     <StyledTooltip
       ref={containerRef}
-      {...{ isVisible }}
+      {...{ isVisible, children }}
       style={{ left: position.x, top: position.y }}
-    >
-      {children}
-    </StyledTooltip>
+    />
   )
 }
 

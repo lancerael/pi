@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from 'react'
 import { formatDate } from '../../utils'
 import { CandleTooltipProps } from './CandleTooltip.types'
 
-export const CandleTooltip = ({ item }: CandleTooltipProps) => {
+export const CandleTooltip = ({ item, position }: CandleTooltipProps) => {
   const [displayItem, setDisplayItem] = useState(item)
   const displayTimeout = useRef<any>()
 
@@ -18,7 +18,7 @@ export const CandleTooltip = ({ item }: CandleTooltipProps) => {
   }, [item])
 
   return (
-    <Tooltip isVisible={!!item}>
+    <Tooltip isVisible={!!item} {...position}>
       <div>
         <strong>{formatDate(displayItem?.date)}</strong>
       </div>

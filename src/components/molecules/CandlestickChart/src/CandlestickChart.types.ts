@@ -18,6 +18,12 @@ export interface CandlestickChartProps {
   data?: CandlestickDayData[]
 }
 
+export interface ActiveItem {
+  item?: CandlestickDayData
+  isActive?: Boolean
+  position?: any
+}
+
 export type SVGSelection = Selection<
   SVGSVGElement | SVGGElement | null,
   unknown,
