@@ -19,13 +19,14 @@ const typeMap = {
 export const useCandles = (
   svgRef: any,
   data: CandlestickDayData[],
-  scales: any,
-  utils: any,
-  visibleRange: any
+  visibleRange: any,
+  scaling: any
 ) => {
-  const { xScale } = scales
+  const {
+    scales: { xScale },
+    utils: { scaledHeight, scaledY },
+  } = scaling
   const { offset } = visibleRange
-  const { scaledHeight, scaledY } = utils
   const groups = useRef<{ [key: string]: SVGSelection }>({})
   const isActive = useRef<boolean>(false)
   const [activeItem, setActiveItem] = useState<ActiveItem>({

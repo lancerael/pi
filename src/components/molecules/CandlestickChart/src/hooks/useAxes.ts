@@ -37,14 +37,16 @@ const getDateLabel = (d: string = '', i: number, xScale: any) => {
 export const useAxes = (
   svgRef: any | null,
   data: CandlestickDayData[],
-  offset: number,
   scales: any,
   dimensions: any
 ) => {
   const [axisX, setAxisX] = useState<any>()
   const [axisY, setAxisY] = useState<any>()
   const { xScale, yScale } = scales
-  const { width, height } = dimensions
+  const {
+    sizes: { width, height },
+    visibleRange: { offset },
+  } = dimensions
 
   // Set up the x and y axes
   useEffect(() => {

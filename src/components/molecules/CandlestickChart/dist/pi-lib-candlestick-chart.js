@@ -2694,7 +2694,7 @@ const { abs: Iu, round: En } = Math, Lu = (e, r, n, i) => {
     S = S <= 0 ? S : 0, S = g > h ? S : v - g, S = Iu(S - v) <= g ? S : -g + v;
     const C = En((S * -1 - Ae) / d), j = En((S * -1 + v) / d);
     c({ first: C, last: j, offset: S, totalWidth: g });
-  }, [n, i, r, o.width]), { visibleRange: u, dimensions: o };
+  }, [n, i, r, o.width]), { visibleRange: u, sizes: o };
 }, Wu = (e = "") => new Date(e).toLocaleDateString("en-UK");
 function ur(e, r) {
   return e == null || r == null ? NaN : e < r ? -1 : e > r ? 1 : e >= r ? 0 : NaN;
@@ -5427,7 +5427,7 @@ const Qc = Ai.exports.jsx, nr = ({
   data: e = []
 }) => {
   const r = Et(null), [n, i] = Le(1), [o, s] = Le(0), {
-    dimensions: u,
+    sizes: u,
     visibleRange: c
   } = Lu(r, e.length, n, o), {
     scales: l,

@@ -5,7 +5,7 @@ export declare const useDimensions: (svgRef: any | null, length: number, zoomLev
         offset: number;
         totalWidth: number;
     };
-    dimensions: {
+    sizes: {
         width: number;
         height: number;
     };
