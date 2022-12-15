@@ -1,6 +1,6 @@
 import { CandlestickDayData } from '../CandlestickChart.types';
 import { ScaleBand } from 'd3-scale';
-export declare const useScaling: (data: CandlestickDayData[], sizes: any, visibleRange: any) => {
+export declare const useScaling: (data: CandlestickDayData[], dimensions: any) => {
     utils: {
         scaledHeight: (low: number, high: number) => number;
         scaledY: (low: number, high: number) => number;

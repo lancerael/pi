@@ -1,7 +1,9 @@
 export interface ControlsProps {
-    zoomLevel: number;
-    setZoomLevel: (setter: (c: number) => number) => void;
-    setPanLevel: (setter: (c: number) => number) => void;
+    controls: {
+        zoomLevel: number;
+        panLevel: number;
+    };
+    setControls: any;
     visibleRange: any;
     length: number;
 }
