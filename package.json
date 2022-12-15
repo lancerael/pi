@@ -7,7 +7,7 @@
     "build-storybook": "build-storybook",
     "sandbox": "pnpm --filter sandbox dev",
     "build": "npx nx run-many --target=build",
-    "change": "pnpm build && beachball change",
+    "change": "beachball sync && pnpm build && beachball change",
     "publish": "npx beachball publish",
     "lint": "npx prettier -w . && npx eslint --fix",
     "test": "npx nx run-many --target=test",
