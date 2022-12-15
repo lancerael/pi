@@ -2,6 +2,39 @@
   "name": "@pi-lib/candlestick-chart",
   "entries": [
     {
+      "date": "Thu, 15 Dec 2022 13:15:18 GMT",
+      "tag": "@pi-lib/candlestick-chart_v0.5.0",
+      "version": "0.5.0",
+      "comments": {
+        "minor": [
+          {
+            "author": "lancerael@hotmail.com",
+            "package": "@pi-lib/candlestick-chart",
+            "commit": "d78dc84c2d5903837c9ff1734b10a5c4048ec8c9",
+            "comment": "Made tooltip clickable Improved candle implementation"
+          },
+          {
+            "author": "beachball",
+            "package": "@pi-lib/candlestick-chart",
+            "comment": "Bump @pi-lib/constants to v0.1.0",
+            "commit": "d78dc84c2d5903837c9ff1734b10a5c4048ec8c9"
+          },
+          {
+            "author": "beachball",
+            "package": "@pi-lib/candlestick-chart",
+            "comment": "Bump @pi-lib/tooltip to v0.2.0",
+            "commit": "d78dc84c2d5903837c9ff1734b10a5c4048ec8c9"
+          },
+          {
+            "author": "beachball",
+            "package": "@pi-lib/candlestick-chart",
+            "comment": "Bump @pi-lib/types to v0.1.0",
+            "commit": "d78dc84c2d5903837c9ff1734b10a5c4048ec8c9"
+          }
+        ]
+      }
+    },
+    {
       "date": "Wed, 14 Dec 2022 12:25:37 GMT",
       "tag": "@pi-lib/candlestick-chart_v0.4.0",
       "version": "0.4.0",
