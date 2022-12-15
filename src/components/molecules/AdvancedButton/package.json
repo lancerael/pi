@@ -1,6 +1,7 @@
 {
   "name": "@pi-lib/advanced-button",
   "version": "0.4.5",
+  "private": true,
   "description": "",
   "type": "module",
   "files": [
