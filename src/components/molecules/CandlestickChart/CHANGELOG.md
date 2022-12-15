@@ -1,8 +1,19 @@
 # Change Log - @pi-lib/candlestick-chart
 
-This log was last generated on Wed, 14 Dec 2022 12:25:37 GMT and should not be manually modified.
+This log was last generated on Thu, 15 Dec 2022 13:15:18 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 0.5.0
+
+Thu, 15 Dec 2022 13:15:18 GMT
+
+### Minor changes
+
+- Made tooltip clickable Improved candle implementation (lancerael@hotmail.com)
+- Bump @pi-lib/constants to v0.1.0
+- Bump @pi-lib/tooltip to v0.2.0
+- Bump @pi-lib/types to v0.1.0
 
 ## 0.4.0
 
