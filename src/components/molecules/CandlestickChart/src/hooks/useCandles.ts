@@ -137,8 +137,12 @@ export const useCandles = (
         setActiveItem(({ position }) => ({ item: undefined, position }))
       }
     }
-    document.addEventListener('click', resetSelection)
-    return () => document.removeEventListener('click', resetSelection)
+    addEventListener('resize', resetSelection)
+    addEventListener('click', resetSelection)
+    return () => {
+      removeEventListener('click', resetSelection)
+      removeEventListener('resize', resetSelection)
+    }
   }, [])
 
   // Update the chart whenever the data/scale changes
