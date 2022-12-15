@@ -1,0 +1,38 @@
+{
+  "name": "@pi-lib/tooltip",
+  "entries": [
+    {
+      "date": "Wed, 14 Dec 2022 12:25:37 GMT",
+      "tag": "@pi-lib/tooltip_v0.1.0",
+      "version": "0.1.0",
+      "comments": {
+        "minor": [
+          {
+            "author": "lancerael@hotmail.com",
+            "package": "@pi-lib/tooltip",
+            "commit": "15e6f83f802dba767a800454d32805e27254db36",
+            "comment": "Added tooltip"
+          },
+          {
+            "author": "beachball",
+            "package": "@pi-lib/tooltip",
+            "comment": "Bump @pi-lib/constants to v0.1.0",
+            "commit": "15e6f83f802dba767a800454d32805e27254db36"
+          },
+          {
+            "author": "beachball",
+            "package": "@pi-lib/tooltip",
+            "comment": "Bump @pi-lib/config to v0.2.2",
+            "commit": "15e6f83f802dba767a800454d32805e27254db36"
+          },
+          {
+            "author": "beachball",
+            "package": "@pi-lib/tooltip",
+            "comment": "Bump @pi-lib/types to v0.1.0",
+            "commit": "15e6f83f802dba767a800454d32805e27254db36"
+          }
+        ]
+      }
+    }
+  ]
+}
