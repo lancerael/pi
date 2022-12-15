@@ -15,6 +15,11 @@ export interface CandlestickChartProps {
      */
     data?: CandlestickDayData[];
 }
+export interface ActiveItem {
+    item?: CandlestickDayData;
+    isActive?: Boolean;
+    position?: any;
+}
 export declare type SVGSelection = Selection<SVGSVGElement | SVGGElement | null, unknown, null, undefined>;
 export declare type BarSelection = Selection<SVGRectElement, CandlestickDayData, SVGSVGElement | SVGGElement | null, unknown>;
 export declare type BarType = 'wicks' | 'candles';

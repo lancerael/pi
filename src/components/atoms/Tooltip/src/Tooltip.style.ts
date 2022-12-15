@@ -4,11 +4,12 @@ import { StyledTooltipProps } from './Tooltip.style.types'
 
 export const StyledTooltip = styled.div(
   ({ isVisible = false }: StyledTooltipProps) => css`
+    font-family: sans-serif;
     position: absolute;
     transition: all 0.2s;
 
     opacity: ${isVisible ? 0.8 : 0};
-    padding: 1px 4px 2px 4px;
+    padding: 4px;
     border: 1px solid ${STATUS_COLOURS['default']};
     color: ${STATUS_COLOURS['default']};
     background-color: white;
