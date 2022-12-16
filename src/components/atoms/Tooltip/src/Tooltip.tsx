@@ -9,7 +9,6 @@ export const Tooltip: FC<TooltipProps> = ({
   x = 0,
   y = 0,
 }) => {
-  // const moveRef = useRef<void>()
   const containerRef = useRef<HTMLDivElement>(null)
   const [position, setPosition] = useState({ x, y })
 
