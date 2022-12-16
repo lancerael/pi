@@ -20,7 +20,8 @@ export const useCandles = (
   svgRef: any,
   data: CandlestickDayData[],
   dimensions: any,
-  scaling: any
+  scaling: any,
+  transition: boolean
 ) => {
   const {
     scales: { xScale },
@@ -71,7 +72,8 @@ export const useCandles = (
         bars = bars.enter().append(typeMap[type])
       }
 
-      const getTransition = () => bars.transition().duration(TRANSITION_TIME)
+      const getTransition = () =>
+        bars.transition().duration(transition ? TRANSITION_TIME : 50)
 
       const x = (d: CandlestickDayData) =>
         Number(xScale(d.date)) +
