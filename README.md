@@ -31,13 +31,13 @@ FEATURES:
 - Candles and axes
 - Scales adjust to visible data
 - Pan and zoom controls
+- Keyboard/mouse/touch controls
+- Tooltips on hover and select
 - Fully responsive layout
 
 TODO:
 
 - Controls to collapse data into weeks/months (or expand to units smaller than a day)
-- Keyboard/mouse/touch controls
-- Tooltips and other minor UI enhancements
 - Performance improvements
 - Better TS typing (replace "any")
 - Unit tests

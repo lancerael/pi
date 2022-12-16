@@ -92,8 +92,11 @@ export const useAxes = (
     // Update the x axis tick lines
     axisX
       .selectAll('line')
-      .attr('stroke', (d: string, i: number) =>
-        getDateLabel(d, i, xScale).length > 2 ? 'currentColor' : 'grey'
+      .attr('stroke', (d: string, i: number) => 'lightgrey')
+      .attr('y1', (d: string, i: number) =>
+        getDateLabel(d, i, xScale).length
+          ? -height + AXIS_OFFSETS[0] + CHART_PADDING * 2
+          : 0
       )
       .attr('y2', (d: string, i: number) =>
         getDateLabel(d, i, xScale).length ? 12 : 6

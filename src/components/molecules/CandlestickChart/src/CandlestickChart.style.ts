@@ -4,8 +4,9 @@ import { CHART_PADDING } from './CandlestickChart.constants'
 export const StyledCandlestickChart = styled.svg`
   width: 100%;
   height: 100%;
+  user-select: none;
 
-  & rect {
+  & rect.candles {
     cursor: pointer;
     transition: filter 0.2s;
 
@@ -33,7 +34,7 @@ export const StyledCandlestickChart = styled.svg`
   }
 
   & line.wicks {
-    stroke: grey;
+    stroke: black;
     stroke-width: 1;
   }
 

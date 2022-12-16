@@ -8,19 +8,26 @@ import {
   StyledLoaderContainer,
 } from './CandlestickChart.style'
 import { CandlestickChartProps } from './CandlestickChart.types'
+import { useTouch } from './hooks/useTouch'
 
 export const CandlestickChart: FC<CandlestickChartProps> = ({ data = [] }) => {
   const svgRef = useRef<SVGSVGElement>(null)
-  const [controls, setControls] = useState({ zoomLevel: 1, panLevel: 1 })
+  const [controls, setControls] = useState({
+    zoomLevel: 1,
+    panLevel: 1,
+    transition: false,
+  })
   const dimensions = useDimensions(svgRef, data.length, controls)
   const scaling = useScaling(data, dimensions)
-  const { item, position } = useCandles(
+  useAxes(svgRef, data, scaling.scales, dimensions)
+  const candles = useCandles(
     svgRef,
     data,
-    dimensions.visibleRange,
-    scaling
+    dimensions,
+    scaling,
+    controls.transition
   )
-  useAxes(svgRef, data, scaling.scales, dimensions)
+  useTouch(svgRef, setControls)
 
   return (
     <StyledContainer>
@@ -31,6 +38,7 @@ export const CandlestickChart: FC<CandlestickChartProps> = ({ data = [] }) => {
       ) : (
         <Controls
           {...{
+            svgRef,
             controls,
             setControls,
             visibleRange: dimensions.visibleRange,
@@ -41,7 +49,7 @@ export const CandlestickChart: FC<CandlestickChartProps> = ({ data = [] }) => {
       <StyledCandlestickChart ref={svgRef}>
         <ClipPaths {...dimensions.sizes} />
       </StyledCandlestickChart>
-      <CandleTooltip {...{ item, position }} />
+      <CandleTooltip {...candles} />
     </StyledContainer>
   )
 }

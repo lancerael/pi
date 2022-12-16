@@ -19,14 +19,17 @@ const typeMap = {
 export const useCandles = (
   svgRef: any,
   data: CandlestickDayData[],
-  visibleRange: any,
-  scaling: any
+  dimensions: any,
+  scaling: any,
+  transition: boolean
 ) => {
   const {
     scales: { xScale },
     utils: { scaledHeight, scaledY },
   } = scaling
-  const { offset } = visibleRange
+  const {
+    visibleRange: { offset },
+  } = dimensions
   const groups = useRef<{ [key: string]: SVGSelection }>({})
   const isActive = useRef<boolean>(false)
   const [activeItem, setActiveItem] = useState<ActiveItem>({
@@ -69,7 +72,8 @@ export const useCandles = (
         bars = bars.enter().append(typeMap[type])
       }
 
-      const getTransition = () => bars.transition().duration(TRANSITION_TIME)
+      const getTransition = () =>
+        bars.transition().duration(transition ? TRANSITION_TIME : 50)
 
       const x = (d: CandlestickDayData) =>
         Number(xScale(d.date)) +
