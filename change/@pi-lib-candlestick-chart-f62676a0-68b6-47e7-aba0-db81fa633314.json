@@ -1,7 +1,0 @@
-{
-  "type": "patch",
-  "comment": "Cleanup and fix tooltip on resize",
-  "packageName": "@pi-lib/candlestick-chart",
-  "email": "lancerael@hotmail.com",
-  "dependentChangeType": "patch"
-}
