@@ -1,0 +1,7 @@
+{
+  "type": "minor",
+  "comment": "Added touch controls",
+  "packageName": "@pi-lib/candlestick-chart",
+  "email": "lancerael@hotmail.com",
+  "dependentChangeType": "patch"
+}
