@@ -15,8 +15,8 @@ export const CandlestickChart: FC<CandlestickChartProps> = ({ data = [] }) => {
   const [controls, setControls] = useState({ zoomLevel: 1, panLevel: 1 })
   const dimensions = useDimensions(svgRef, data.length, controls)
   const scaling = useScaling(data, dimensions)
-  const candles = useCandles(svgRef, data, dimensions, scaling)
   useAxes(svgRef, data, scaling.scales, dimensions)
+  const candles = useCandles(svgRef, data, dimensions, scaling)
 
   useEffect(() => {
     let isDragging = false

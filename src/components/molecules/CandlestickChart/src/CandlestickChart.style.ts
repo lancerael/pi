@@ -6,7 +6,7 @@ export const StyledCandlestickChart = styled.svg`
   height: 100%;
   user-select: none;
 
-  & rect {
+  & rect.candles {
     cursor: pointer;
     transition: filter 0.2s;
 
@@ -34,7 +34,7 @@ export const StyledCandlestickChart = styled.svg`
   }
 
   & line.wicks {
-    stroke: grey;
+    stroke: black;
     stroke-width: 1;
   }
 
