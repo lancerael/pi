@@ -3975,7 +3975,7 @@ const Uc = Ai.exports.jsx, Hc = ({
     }) => !n && !i && f(h, d), 100), p = () => {
       removeEventListener("mousemove", c);
     };
-    return n || i ? p() : addEventListener("mousemove", c), p;
+    return n && i ? p() : addEventListener("mousemove", c), p;
   }, [n, i]), /* @__PURE__ */ Uc(zc, {
     ref: o,
     isVisible: r,
