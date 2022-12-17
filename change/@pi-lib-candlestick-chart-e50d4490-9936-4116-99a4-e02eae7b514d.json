@@ -1,7 +1,0 @@
-{
-  "type": "patch",
-  "comment": "Fixed touch drag",
-  "packageName": "@pi-lib/candlestick-chart",
-  "email": "lancerael@hotmail.com",
-  "dependentChangeType": "patch"
-}
