@@ -37,7 +37,7 @@ export const Tooltip: FC<TooltipProps> = ({
       removeEventListener('mousemove', updateMousePos)
     }
 
-    if (x || y) removeListener()
+    if (x && y) removeListener()
     else addEventListener('mousemove', updateMousePos)
     return removeListener
   }, [x, y])
