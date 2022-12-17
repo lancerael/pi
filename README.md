@@ -31,7 +31,7 @@ FEATURES:
 - Candles and axes
 - Scales adjust to visible data
 - Pan and zoom controls
-- Keyboard/mouse/touch controls
+- Keyboard/mouse/touch controls (wip)
 - Tooltips on hover and select
 - Fully responsive layout
 

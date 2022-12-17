@@ -7,13 +7,23 @@ export const useTouch = (
 ) => {
   useEffect(() => {
     let isDragging = false
+    let oldClientX = 0
+
     const start = () => {
       isDragging = true
     }
-    const drag = throttle(({ movementX }: any) => {
+
+    const stop = () => {
+      isDragging = false
+    }
+
+    const drag = throttle((e: any) => {
       if (isDragging) {
+        const { clientX } = e.targetTouches?.[0] || e
+        const movementX = oldClientX ? clientX - oldClientX : 0
+        oldClientX = clientX
         setControls(({ panLevel, zoomLevel }: any) => {
-          const newPanLevel = panLevel + (movementX * 2.2) / zoomLevel
+          const newPanLevel = panLevel + movementX / zoomLevel
           return {
             panLevel: newPanLevel > 1 ? newPanLevel : 1,
             zoomLevel,
@@ -22,34 +32,42 @@ export const useTouch = (
         })
       }
     }, 100)
-    const stop = () => {
-      isDragging = false
-    }
+
+    const zoom = throttle((e: any) => {
+      setControls(({ panLevel, zoomLevel }: any) => {
+        let newZoom = zoomLevel - e.deltaY * 0.006
+        newZoom = newZoom < 0.1 ? 0.1 : newZoom
+        return {
+          zoomLevel: Math.round(newZoom * 1000) / 1000,
+          panLevel,
+          transition: false,
+        }
+      })
+    }, 100)
 
     const pinch = (e: any) => {
       if (e.ctrlKey) {
+        zoom(e)
         e.preventDefault()
-        stop()
-        setControls(({ panLevel, zoomLevel }: any) => {
-          let newZoom = zoomLevel - e.deltaY * 0.001
-          newZoom = newZoom < 0.1 ? 0.1 : newZoom
-          return {
-            zoomLevel: Math.round(newZoom * 1000) / 1000,
-            panLevel,
-            transition: false,
-          }
-        })
       }
     }
 
-    svgRef.current?.addEventListener('mousedown', start)
-    addEventListener('mousemove', drag)
-    addEventListener('mouseup', stop)
-    svgRef.current?.addEventListener('wheel', pinch, { passive: false })
-    return () => {
-      svgRef.current?.removeEventListener('mousedown', start)
-      removeEventListener('mousemove', drag)
-      removeEventListener('mouseup', stop)
+    const updateListeners = (
+      action: 'add' | 'remove' = 'remove',
+      pinchArgs?: { passive: boolean }
+    ) => {
+      const onWindow = window[`${action}EventListener`]
+      const onSvg = svgRef.current?.[`${action}EventListener`]
+      onWindow('mousemove', drag)
+      onWindow('touchmove', drag)
+      onWindow('mouseup', stop)
+      onWindow('touchend', stop)
+      onSvg?.('mousedown', start)
+      onSvg?.('touchstart', start)
+      onSvg?.('wheel', pinch, pinchArgs)
     }
+
+    updateListeners('add', { passive: false })
+    return updateListeners
   }, [svgRef.current])
 }
