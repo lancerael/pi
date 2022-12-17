@@ -11,6 +11,7 @@ export const useTouch = (
 
     const start = () => {
       isDragging = true
+      oldClientX = 0
     }
 
     const stop = () => {
