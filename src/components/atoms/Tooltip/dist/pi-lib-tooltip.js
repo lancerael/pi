@@ -762,7 +762,7 @@ const Nr = Ye.exports.jsx, Vr = ({
     }) => !c && !d && v(p, m), 100), R = () => {
       removeEventListener("mousemove", s);
     };
-    return c || d ? R() : addEventListener("mousemove", s), R;
+    return c && d ? R() : addEventListener("mousemove", s), R;
   }, [c, d]), /* @__PURE__ */ Nr(Wr, {
     ref: h,
     isVisible: l,
