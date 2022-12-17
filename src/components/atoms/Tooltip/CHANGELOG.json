@@ -2,6 +2,39 @@
   "name": "@pi-lib/tooltip",
   "entries": [
     {
+      "date": "Fri, 16 Dec 2022 14:26:12 GMT",
+      "tag": "@pi-lib/tooltip_v0.2.0",
+      "version": "0.2.0",
+      "comments": {
+        "none": [
+          {
+            "author": "lancerael@hotmail.com",
+            "package": "@pi-lib/tooltip",
+            "commit": "706d366d05ae87a0fc27019dda143a0e7671d946",
+            "comment": "Cleanup"
+          },
+          {
+            "author": "beachball",
+            "package": "@pi-lib/tooltip",
+            "comment": "Bump @pi-lib/constants to v0.1.0",
+            "commit": "706d366d05ae87a0fc27019dda143a0e7671d946"
+          },
+          {
+            "author": "beachball",
+            "package": "@pi-lib/tooltip",
+            "comment": "Bump @pi-lib/config to v0.2.2",
+            "commit": "706d366d05ae87a0fc27019dda143a0e7671d946"
+          },
+          {
+            "author": "beachball",
+            "package": "@pi-lib/tooltip",
+            "comment": "Bump @pi-lib/types to v0.1.0",
+            "commit": "706d366d05ae87a0fc27019dda143a0e7671d946"
+          }
+        ]
+      }
+    },
+    {
       "date": "Thu, 15 Dec 2022 13:15:18 GMT",
       "tag": "@pi-lib/tooltip_v0.2.0",
       "version": "0.2.0",
