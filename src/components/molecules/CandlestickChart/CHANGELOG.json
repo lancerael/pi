@@ -2,6 +2,33 @@
   "name": "@pi-lib/candlestick-chart",
   "entries": [
     {
+      "date": "Mon, 19 Dec 2022 14:17:57 GMT",
+      "tag": "@pi-lib/candlestick-chart_v0.7.0",
+      "version": "0.7.0",
+      "comments": {
+        "minor": [
+          {
+            "author": "lancerael@hotmail.com",
+            "package": "@pi-lib/candlestick-chart",
+            "commit": "e448e00c648b80075969d5ca66c14f260e59e862",
+            "comment": "Improved touch handlers"
+          },
+          {
+            "author": "beachball",
+            "package": "@pi-lib/candlestick-chart",
+            "comment": "Bump @pi-lib/constants to v0.1.0",
+            "commit": "e448e00c648b80075969d5ca66c14f260e59e862"
+          },
+          {
+            "author": "beachball",
+            "package": "@pi-lib/candlestick-chart",
+            "comment": "Bump @pi-lib/types to v0.1.0",
+            "commit": "e448e00c648b80075969d5ca66c14f260e59e862"
+          }
+        ]
+      }
+    },
+    {
       "date": "Sat, 17 Dec 2022 20:20:48 GMT",
       "tag": "@pi-lib/candlestick-chart_v0.6.2",
       "version": "0.6.2",

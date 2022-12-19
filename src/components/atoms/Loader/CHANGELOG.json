@@ -2,6 +2,21 @@
   "name": "@pi-lib/loader",
   "entries": [
     {
+      "date": "Mon, 19 Dec 2022 14:17:57 GMT",
+      "tag": "@pi-lib/loader_v0.4.2",
+      "version": "0.4.2",
+      "comments": {
+        "none": [
+          {
+            "author": "lancerael@hotmail.com",
+            "package": "@pi-lib/loader",
+            "commit": "e448e00c648b80075969d5ca66c14f260e59e862",
+            "comment": "noop"
+          }
+        ]
+      }
+    },
+    {
       "date": "Wed, 14 Dec 2022 12:25:37 GMT",
       "tag": "@pi-lib/loader_v0.4.2",
       "version": "0.4.2",
