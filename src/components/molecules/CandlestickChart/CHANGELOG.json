@@ -2,6 +2,33 @@
   "name": "@pi-lib/candlestick-chart",
   "entries": [
     {
+      "date": "Sat, 17 Dec 2022 20:20:48 GMT",
+      "tag": "@pi-lib/candlestick-chart_v0.6.2",
+      "version": "0.6.2",
+      "comments": {
+        "patch": [
+          {
+            "author": "lancerael@hotmail.com",
+            "package": "@pi-lib/candlestick-chart",
+            "commit": "be26a746d798ddbf24d9f0d960d0a59579080da2",
+            "comment": "Fixed touch drag"
+          },
+          {
+            "author": "beachball",
+            "package": "@pi-lib/candlestick-chart",
+            "comment": "Bump @pi-lib/constants to v0.1.0",
+            "commit": "be26a746d798ddbf24d9f0d960d0a59579080da2"
+          },
+          {
+            "author": "beachball",
+            "package": "@pi-lib/candlestick-chart",
+            "comment": "Bump @pi-lib/types to v0.1.0",
+            "commit": "be26a746d798ddbf24d9f0d960d0a59579080da2"
+          }
+        ]
+      }
+    },
+    {
       "date": "Sat, 17 Dec 2022 00:59:39 GMT",
       "tag": "@pi-lib/candlestick-chart_v0.6.1",
       "version": "0.6.1",
