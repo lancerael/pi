@@ -72,6 +72,12 @@ export const useAxes = (
   useEffect(() => {
     if (!xScale.domain || !data) return
 
+    // const xLabelMap = {
+    //   2: 4,
+    //   : 6,
+    //   4: 7
+    // }
+
     // Update the x axis and text labels
     axisX
       .call(axisBottom(xScale))
@@ -81,10 +87,8 @@ export const useAxes = (
         'emphasise',
         (d: string, i: number) => getDateLabel(d, i, xScale).length > 2
       )
-      .attr(
-        'x',
-        (d: string, i: number) => getDateLabel(d, i, xScale).length * -4 - 16
-      )
+      .attr('text-anchor', 'end')
+      .attr('x', () => -16)
       .attr('y', -4)
       .attr('transform', 'rotate(270)')
       .text((d: string, i: number) => getDateLabel(d, i, xScale))
@@ -101,7 +105,7 @@ export const useAxes = (
           var clone = e[i].parentNode.appendChild(e[i].cloneNode(true))
           select(clone)
             .classed('clone', true)
-            .attr('y1', -height + AXIS_OFFSETS[0] + CHART_PADDING * 2)
+            .attr('y1', -height + AXIS_OFFSETS[0] + CHART_PADDING)
             .attr('y2', -1)
         }
       })
@@ -111,7 +115,7 @@ export const useAxes = (
       .call(axisRight(yScale as AxisScale<number>))
       .attr(
         'transform',
-        `translate(${width - AXIS_OFFSETS[1] + CHART_PADDING},${CHART_PADDING})`
+        `translate(${width - AXIS_OFFSETS[1] + CHART_PADDING}, 0)`
       )
 
     // Update the y axis tick lines

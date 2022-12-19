@@ -27,8 +27,7 @@ export const useScaling = (data: CandlestickDayData[], dimensions: any) => {
   // A helper to scale the candle Y axis position
   const scaledY = useCallback(
     (low: number, high: number) =>
-      scales.yScale(min(low, high)) - scaledHeight(low, high) + CHART_PADDING ||
-      1,
+      scales.yScale(min(low, high)) - scaledHeight(low, high) || 1,
     [scales.yScale]
   )
 
@@ -50,7 +49,7 @@ export const useScaling = (data: CandlestickDayData[], dimensions: any) => {
 
     const yScale = scaleLinear()
       .domain([minY - 20, maxY + 20])
-      .range([height - AXIS_OFFSETS[0] - CHART_PADDING, CHART_PADDING])
+      .range([height - AXIS_OFFSETS[0], CHART_PADDING])
 
     setScales({ xScale, yScale })
   }, [visibleRange, sizes.height, data])
