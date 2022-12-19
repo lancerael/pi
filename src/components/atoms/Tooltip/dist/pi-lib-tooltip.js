@@ -104,8 +104,8 @@ const fe = {
     position: absolute;
     transition: all 0.2s;
     opacity: ${n ? 0.8 : 0};
-    // padding: 4px;
     ${Wr(fe.default)}
+    // padding: 4px;
 
     ::after {
       content: '';

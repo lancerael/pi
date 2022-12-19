@@ -10,8 +10,8 @@
     position: absolute;
     transition: all 0.2s;
     opacity: ${n?.8:0};
-    // padding: 4px;
     ${sr(ee.default)}
+    // padding: 4px;
 
     ::after {
       content: '';
