@@ -38,6 +38,10 @@ export const StyledCandlestickChart = styled.svg`
     stroke-width: 1;
   }
 
+  & line.clone {
+    stroke: #dedede;
+  }
+
   & text.emphasise {
     font-size: 11px;
     font-weight: bold;

@@ -4,7 +4,7 @@ import { Tooltip } from './Tooltip'
 import { TooltipProps } from './Tooltip.types'
 
 export default {
-  title: 'Tooltip',
+  title: 'UI/Tooltip',
   component: Tooltip,
 } as ComponentMeta<typeof Tooltip>
 

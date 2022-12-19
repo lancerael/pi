@@ -27,7 +27,7 @@ const getDateLabel = (d: string = '', i: number, xScale: any) => {
   let dayList = []
   if (c > 1) dayList.push(16)
   if (c > 3) dayList.push(8, 24)
-  if (c > 7) dayList = [3, 6, 9, 12, 15, 18, 21, 24, 27, 30]
+  if (c > 7) dayList = [4, 7, 10, 13, 16, 19, 22, 25, 28]
   if (dayList.includes(Number(day))) dateLabel = day
   if (xScale.domain().length - 1 === i) dateLabel = day
   dateMap[mapKey] = dateLabel
@@ -45,7 +45,7 @@ export const useAxes = (
   const { xScale, yScale } = scales
   const {
     sizes: { width, height },
-    visibleRange: { offset },
+    visibleRange: { offset, first, last },
   } = dimensions
 
   // Set up the x and y axes
@@ -72,7 +72,7 @@ export const useAxes = (
   useEffect(() => {
     if (!xScale.domain || !data) return
 
-    // Update the x axis text labels
+    // Update the x axis and text labels
     axisX
       .call(axisBottom(xScale))
       .attr('transform', `translate(${offset},${height - AXIS_OFFSETS[0]})`)
@@ -90,17 +90,21 @@ export const useAxes = (
       .text((d: string, i: number) => getDateLabel(d, i, xScale))
 
     // Update the x axis tick lines
+    axisX.selectAll('line.clone').remove()
     axisX
       .selectAll('line')
-      .attr('stroke', (d: string, i: number) => 'lightgrey')
-      .attr('y1', (d: string, i: number) =>
-        getDateLabel(d, i, xScale).length
-          ? -height + AXIS_OFFSETS[0] + CHART_PADDING * 2
-          : 0
-      )
       .attr('y2', (d: string, i: number) =>
         getDateLabel(d, i, xScale).length ? 12 : 6
       )
+      .each((d: string, i: any, e: any) => {
+        if (i > first && i < last && getDateLabel(d, i, xScale).length) {
+          var clone = e[i].parentNode.appendChild(e[i].cloneNode(true))
+          select(clone)
+            .classed('clone', true)
+            .attr('y1', -height + AXIS_OFFSETS[0] + CHART_PADDING * 2)
+            .attr('y2', -1)
+        }
+      })
 
     // Update the y axis
     axisY
@@ -109,5 +113,15 @@ export const useAxes = (
         'transform',
         `translate(${width - AXIS_OFFSETS[1] + CHART_PADDING},${CHART_PADDING})`
       )
+
+    // Update the y axis tick lines
+    axisY.selectAll('line.clone').remove()
+    axisY.selectAll('line').each((d: string, i: any, e: any) => {
+      var clone = e[i].parentNode.appendChild(e[i].cloneNode(true))
+      select(clone)
+        .classed('clone', true)
+        .attr('x2', -width + AXIS_OFFSETS[1])
+        .attr('x1', -1)
+    })
   }, [xScale, yScale])
 }
