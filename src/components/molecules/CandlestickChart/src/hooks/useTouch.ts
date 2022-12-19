@@ -50,6 +50,12 @@ export const useTouch = (
     const stop = (e: PointerEvent) => {
       isPressed = false
       delete activePointers[e.pointerId]
+      setControls((controls: any) => {
+        return {
+          ...controls,
+          transition: true,
+        }
+      })
     }
 
     // Handles movement - used to zoom or pan

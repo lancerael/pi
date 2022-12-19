@@ -20,10 +20,18 @@ export const StyledCandlestickChart = styled.svg`
 
     &.is-increased {
       fill: green;
+
+      &.is-zoomed {
+        stroke: darkgreen;
+      }
     }
 
     &.is-decreased {
       fill: red;
+
+      &.is-zoomed {
+        stroke: darkred;
+      }
     }
 
     &.is-active {
