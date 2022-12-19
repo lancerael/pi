@@ -1,0 +1,7 @@
+{
+  "type": "minor",
+  "comment": "Improved touch handlers",
+  "packageName": "@pi-lib/candlestick-chart",
+  "email": "lancerael@hotmail.com",
+  "dependentChangeType": "patch"
+}
