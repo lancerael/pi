@@ -15,7 +15,7 @@ export const CandlestickChart: FC<CandlestickChartProps> = ({ data = [] }) => {
   const [controls, setControls] = useState({
     zoomLevel: 1,
     panLevel: 1,
-    transition: false,
+    transition: true,
   })
   const dimensions = useDimensions(svgRef, data.length, controls)
   const scaling = useScaling(data, dimensions)

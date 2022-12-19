@@ -4,7 +4,7 @@ import { AdvancedButton } from './AdvancedButton'
 import { AdvancedButtonProps } from './AdvancedButton.types'
 
 export default {
-  title: 'AdvancedButton',
+  title: 'Interactions/AdvancedButton',
   component: AdvancedButton,
   argTypes: {
     isLoading: {

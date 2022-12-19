@@ -4,7 +4,7 @@ import Button from './Button'
 import { ButtonProps } from './Button.types'
 
 export default {
-  title: 'Button',
+  title: 'Interactions/Button',
   component: Button,
   argTypes: {
     disabled: {

@@ -3,7 +3,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react'
 import { Loader } from './Loader'
 
 export default {
-  title: 'Loader',
+  title: 'UI/Loader',
   component: Loader,
 } as ComponentMeta<typeof Loader>
 

@@ -96,6 +96,7 @@ export const useCandles = (
         bars
           .classed('is-increased', (d) => d.close > d.open)
           .classed('is-decreased', (d) => d.close < d.open)
+          .classed('is-zoomed', (d) => +xScale.bandwidth() > 10)
           .on('click', ({ target }, d) => {
             bars.classed('is-active', false)
             select(target).classed('is-active', true)

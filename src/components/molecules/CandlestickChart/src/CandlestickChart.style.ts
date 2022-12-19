@@ -1,10 +1,10 @@
 import styled from 'styled-components'
-import { CHART_PADDING } from './CandlestickChart.constants'
 
 export const StyledCandlestickChart = styled.svg`
   width: 100%;
   height: 100%;
   user-select: none;
+  touch-action: none;
 
   & rect.candles {
     cursor: pointer;
@@ -20,10 +20,18 @@ export const StyledCandlestickChart = styled.svg`
 
     &.is-increased {
       fill: green;
+
+      &.is-zoomed {
+        stroke: darkgreen;
+      }
     }
 
     &.is-decreased {
       fill: red;
+
+      &.is-zoomed {
+        stroke: darkred;
+      }
     }
 
     &.is-active {
@@ -36,6 +44,10 @@ export const StyledCandlestickChart = styled.svg`
   & line.wicks {
     stroke: black;
     stroke-width: 1;
+  }
+
+  & line.clone {
+    stroke: #dedede;
   }
 
   & text.emphasise {

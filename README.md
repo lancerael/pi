@@ -4,18 +4,6 @@ Monorepo of React UI components and supporting utilities.
 
 - DEMO: http://dtheia.org/pi
 
-## Button
-
-NPM: _@pi-lib/button_
-
-## Loader
-
-NPM: _@pi-lib/loader_
-
-## AdvancedButton
-
-NPM: _@pi-lib/advanced-button_
-
 ## CandlestickChart
 
 NPM: _@pi-lib/candlestick-chart_
@@ -31,7 +19,7 @@ FEATURES:
 - Candles and axes
 - Scales adjust to visible data
 - Pan and zoom controls
-- Keyboard/mouse/touch controls (wip)
+- Keyboard/mouse/touch controls
 - Tooltips on hover and select
 - Fully responsive layout
 
@@ -43,3 +31,15 @@ TODO:
 - Unit tests
 - Deploy data API to AWS lamda and access via HTTP
 - Deploy demo to AWS via CI pipeline
+
+## Button
+
+NPM: _@pi-lib/button_
+
+## Loader
+
+NPM: _@pi-lib/loader_
+
+## AdvancedButton
+
+NPM: _@pi-lib/advanced-button_
