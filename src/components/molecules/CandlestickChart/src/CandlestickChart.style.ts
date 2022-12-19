@@ -1,10 +1,10 @@
 import styled from 'styled-components'
-import { CHART_PADDING } from './CandlestickChart.constants'
 
 export const StyledCandlestickChart = styled.svg`
   width: 100%;
   height: 100%;
   user-select: none;
+  touch-action: none;
 
   & rect.candles {
     cursor: pointer;
