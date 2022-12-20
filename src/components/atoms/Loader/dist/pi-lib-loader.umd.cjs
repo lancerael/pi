@@ -1,4 +1,4 @@
-(function(y,C){typeof exports=="object"&&typeof module<"u"?module.exports=C(require("styled-components"),require("react")):typeof define=="function"&&define.amd?define(["styled-components","react"],C):(y=typeof globalThis<"u"?globalThis:y||self,y["@pi-lib/loader"]=C(y.styled,y.require$$0))})(this,function(y,C){"use strict";const ne=v=>v&&typeof v=="object"&&"default"in v?v:{default:v},P=ne(y),ae=ne(C),ie={default:"black",pending:"blue",error:"red",success:"green"},oe=y.keyframes`
+(function(y,C){typeof exports=="object"&&typeof module<"u"?module.exports=C(require("styled-components"),require("react")):typeof define=="function"&&define.amd?define(["styled-components","react"],C):(y=typeof globalThis<"u"?globalThis:y||self,y["@pi-lib/loader"]=C(y.styled,y.require$$0))})(this,function(y,C){"use strict";const ne=v=>v&&typeof v=="object"&&"default"in v?v:{default:v},P=ne(y),ae=ne(C),ie={default:"#444444",pending:"blue",error:"red",success:"green"},oe=y.keyframes`
   to {
     rotate: 360deg;
   }

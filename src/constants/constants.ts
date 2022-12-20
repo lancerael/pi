@@ -6,7 +6,7 @@ export const STATUS_MAP = {
 }
 
 export const STATUS_COLOURS = {
-  default: 'black',
+  default: '#444444',
   pending: 'blue',
   error: 'red',
   success: 'green',

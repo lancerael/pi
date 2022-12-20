@@ -68,6 +68,7 @@ export const StyledContainer = styled.div`
   );
   width: 100%;
   height: 100%;
+  font-family: sans-serif;
 `
 
 export const StyledLoaderContainer = styled.div`

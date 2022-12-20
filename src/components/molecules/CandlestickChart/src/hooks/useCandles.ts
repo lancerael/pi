@@ -103,7 +103,10 @@ export const useCandles = (
             isActive.current = true
             setActiveItem({
               item: d,
-              position: { x: x(d) + CHART_PADDING * 2, y: y2(d) + 8 },
+              position: {
+                x: x(d) + xScale.bandwidth() + CHART_PADDING,
+                y: y2(d) + 8,
+              },
             })
           })
           .on('mouseover', (e, d) => {
@@ -144,9 +147,9 @@ export const useCandles = (
       }
     }
     addEventListener('resize', resetSelection)
-    addEventListener('click', resetSelection)
+    addEventListener('pointerdown', resetSelection)
     return () => {
-      removeEventListener('click', resetSelection)
+      removeEventListener('pointerdown', resetSelection)
       removeEventListener('resize', resetSelection)
     }
   }, [])

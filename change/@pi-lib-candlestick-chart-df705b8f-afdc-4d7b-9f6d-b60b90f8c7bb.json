@@ -1,0 +1,7 @@
+{
+  "type": "minor",
+  "comment": "Improved layout and grid Added current value indicator",
+  "packageName": "@pi-lib/candlestick-chart",
+  "email": "lancerael@hotmail.com",
+  "dependentChangeType": "patch"
+}

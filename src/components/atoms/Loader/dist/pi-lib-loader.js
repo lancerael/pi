@@ -1,7 +1,7 @@
 import A, { keyframes as Pe, css as pr } from "styled-components";
 import je from "react";
 const ke = {
-  default: "black",
+  default: "#444444",
   pending: "blue",
   error: "red",
   success: "green"
