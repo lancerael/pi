@@ -1346,7 +1346,7 @@ ye.prototype = Yt.prototype = {
 function bt(e) {
   return typeof e == "string" ? new ye([[document.querySelector(e)]], [document.documentElement]) : new ye([[e]], si);
 }
-const $a = 500, de = 10, Be = [55, 40], ui = 0.3, Na = 10, Ca = {
+const $a = 500, de = 10, Be = [55, 50], ui = 0.3, Na = 10, Ca = {
   zoomLevel: 1,
   panLevel: 1,
   transition: !0
@@ -5612,7 +5612,7 @@ const il = Mi.exports.jsx, rr = ({
   y: n
 }) => n > de ? /* @__PURE__ */ U(hl, {
   style: {
-    left: r - de + 2,
+    left: r - de * 2 + 2,
     top: n + de - 4
   },
   children: e.toLocaleString("en-US")
