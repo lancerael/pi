@@ -2,6 +2,33 @@
   "name": "@pi-lib/button",
   "entries": [
     {
+      "date": "Tue, 20 Dec 2022 00:15:50 GMT",
+      "tag": "@pi-lib/button_v0.8.2",
+      "version": "0.8.2",
+      "comments": {
+        "patch": [
+          {
+            "author": "lancerael@hotmail.com",
+            "package": "@pi-lib/button",
+            "commit": "47f96ce222a886afe8a01be2e60577bc1decd7e9",
+            "comment": "Code cleanup"
+          },
+          {
+            "author": "beachball",
+            "package": "@pi-lib/button",
+            "comment": "Bump @pi-lib/constants to v0.1.1",
+            "commit": "47f96ce222a886afe8a01be2e60577bc1decd7e9"
+          },
+          {
+            "author": "beachball",
+            "package": "@pi-lib/button",
+            "comment": "Bump @pi-lib/styles to v0.1.0",
+            "commit": "47f96ce222a886afe8a01be2e60577bc1decd7e9"
+          }
+        ]
+      }
+    },
+    {
       "date": "Mon, 19 Dec 2022 14:17:57 GMT",
       "tag": "@pi-lib/button_v0.8.1",
       "version": "0.8.1",

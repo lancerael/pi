@@ -1,7 +1,0 @@
-{
-  "type": "patch",
-  "comment": "Code cleanup",
-  "packageName": "@pi-lib/tooltip",
-  "email": "lancerael@hotmail.com",
-  "dependentChangeType": "patch"
-}

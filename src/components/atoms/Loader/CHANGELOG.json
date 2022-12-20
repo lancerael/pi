@@ -2,6 +2,27 @@
   "name": "@pi-lib/loader",
   "entries": [
     {
+      "date": "Tue, 20 Dec 2022 00:15:50 GMT",
+      "tag": "@pi-lib/loader_v0.4.3",
+      "version": "0.4.3",
+      "comments": {
+        "patch": [
+          {
+            "author": "lancerael@hotmail.com",
+            "package": "@pi-lib/loader",
+            "commit": "47f96ce222a886afe8a01be2e60577bc1decd7e9",
+            "comment": "Code cleanup"
+          },
+          {
+            "author": "beachball",
+            "package": "@pi-lib/loader",
+            "comment": "Bump @pi-lib/constants to v0.1.1",
+            "commit": "47f96ce222a886afe8a01be2e60577bc1decd7e9"
+          }
+        ]
+      }
+    },
+    {
       "date": "Mon, 19 Dec 2022 14:17:57 GMT",
       "tag": "@pi-lib/loader_v0.4.2",
       "version": "0.4.2",

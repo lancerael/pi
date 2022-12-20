@@ -1,0 +1,20 @@
+{
+  "name": "@pi-lib/styles",
+  "entries": [
+    {
+      "date": "Tue, 20 Dec 2022 00:15:50 GMT",
+      "tag": "@pi-lib/styles_v0.1.0",
+      "version": "0.1.0",
+      "comments": {
+        "minor": [
+          {
+            "author": "lancerael@hotmail.com",
+            "package": "@pi-lib/styles",
+            "commit": "47f96ce222a886afe8a01be2e60577bc1decd7e9",
+            "comment": "Code cleanup"
+          }
+        ]
+      }
+    }
+  ]
+}
