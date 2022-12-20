@@ -6,7 +6,9 @@ Monorepo of React UI components and supporting utilities.
 
 ## CandlestickChart
 
-[Docs](https://github.com/lancerael/pi/tree/main/src/components/molecules/CandlestickChart)
+A React candlestick chart used to show the market forces acting on a traded asset.
+
+[Docs](https://github.com/lancerael/pi/blob/main/src/components/molecules/CandlestickChart/README.md)
 
 ## Button
 
