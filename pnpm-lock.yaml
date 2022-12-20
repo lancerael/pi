@@ -73,7 +73,7 @@ importers:
     specifiers:
       '@pi-lib/config': ^0.2.2
       '@pi-lib/constants': ^0.1.0
-      '@pi-lib/styles': workspace:^0.0.0
+      '@pi-lib/styles': ^0.0.0
       '@pi-lib/types': ^0.1.0
       '@testing-library/react': ^13.3.0
       '@types/jest': ^28.1.8
@@ -165,7 +165,7 @@ importers:
     specifiers:
       '@pi-lib/config': ^0.*.*
       '@pi-lib/constants': ^0.*.*
-      '@pi-lib/styles': workspace:^0.0.0
+      '@pi-lib/styles': ^0.0.0
       '@pi-lib/types': ^0.*.*
       '@testing-library/react': ^13.3.0
       '@types/jest': ^28.1.8
@@ -267,8 +267,8 @@ importers:
       '@pi-lib/config': ^0.2.2
       '@pi-lib/constants': ^0.*.*
       '@pi-lib/loader': ^0.4.2
-      '@pi-lib/styles': workspace:^0.0.0
-      '@pi-lib/tooltip': workspace:^0.2.1
+      '@pi-lib/styles': ^0.0.0
+      '@pi-lib/tooltip': ^0.2.1
       '@pi-lib/types': ^0.*.*
       '@testing-library/react': ^13.3.0
       '@types/d3-axis': ^3.0.1
