@@ -11,7 +11,7 @@
     transition: all 0.2s;
     opacity: ${n?.8:0};
     ${sr(ee.default)}
-    // padding: 4px;
+    padding: 4px;
 
     ::after {
       content: '';

@@ -10,7 +10,7 @@ export const StyledTooltip = styled.div(
     transition: all 0.2s;
     opacity: ${isVisible ? 0.8 : 0};
     ${box(STATUS_COLOURS['default'])}
-    // padding: 4px;
+    padding: 4px;
 
     ::after {
       content: '';

@@ -9,9 +9,8 @@ import {
 } from './CandlestickChart.style'
 import { CandlestickChartProps } from './CandlestickChart.types'
 import { useTouch } from './hooks/useTouch'
-import { DEFAULT_CONTROLS, CHART_PADDING } from './CandlestickChart.constants'
+import { DEFAULT_CONTROLS } from './CandlestickChart.constants'
 import { CurrentIndicator } from './components/CurrentIndicator'
-import { scaleSequential } from 'd3-scale'
 
 export const CandlestickChart: FC<CandlestickChartProps> = ({ data = [] }) => {
   const svgRef = useRef<SVGSVGElement>(null)

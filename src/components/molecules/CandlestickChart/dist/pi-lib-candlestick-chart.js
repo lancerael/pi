@@ -3327,7 +3327,7 @@ const Cr = {
     transition: all 0.2s;
     opacity: ${e ? 0.8 : 0};
     ${Yc(Cr.default)}
-    // padding: 4px;
+    padding: 4px;
 
     ::after {
       content: '';

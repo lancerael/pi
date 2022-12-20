@@ -72,12 +72,6 @@ export const useAxes = (
   useEffect(() => {
     if (!xScale.domain || !data) return
 
-    // const xLabelMap = {
-    //   2: 4,
-    //   : 6,
-    //   4: 7
-    // }
-
     // Update the x axis and text labels
     axisX
       .call(axisBottom(xScale))

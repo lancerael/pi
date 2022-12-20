@@ -95,7 +95,7 @@ Check the top-level render call using <`+l+">.")}return a}}function je(t,a){{if(
     transition: all 0.2s;
     opacity: ${e?.8:0};
     ${Ic(Qn.default)}
-    // padding: 4px;
+    padding: 4px;
 
     ::after {
       content: '';
