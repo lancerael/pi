@@ -2,7 +2,7 @@ export const TRANSITION_TIME = 500
 
 export const CHART_PADDING = 10
 
-export const AXIS_OFFSETS = [55, 40]
+export const AXIS_OFFSETS = [55, 50]
 
 export const DEFAULT_TRIM = 100
 
