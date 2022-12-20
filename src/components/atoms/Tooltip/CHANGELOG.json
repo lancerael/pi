@@ -2,6 +2,45 @@
   "name": "@pi-lib/tooltip",
   "entries": [
     {
+      "date": "Tue, 20 Dec 2022 00:15:50 GMT",
+      "tag": "@pi-lib/tooltip_v0.2.2",
+      "version": "0.2.2",
+      "comments": {
+        "patch": [
+          {
+            "author": "lancerael@hotmail.com",
+            "package": "@pi-lib/tooltip",
+            "commit": "47f96ce222a886afe8a01be2e60577bc1decd7e9",
+            "comment": "Code cleanup"
+          },
+          {
+            "author": "beachball",
+            "package": "@pi-lib/tooltip",
+            "comment": "Bump @pi-lib/constants to v0.1.1",
+            "commit": "47f96ce222a886afe8a01be2e60577bc1decd7e9"
+          },
+          {
+            "author": "beachball",
+            "package": "@pi-lib/tooltip",
+            "comment": "Bump @pi-lib/styles to v0.1.0",
+            "commit": "47f96ce222a886afe8a01be2e60577bc1decd7e9"
+          },
+          {
+            "author": "beachball",
+            "package": "@pi-lib/tooltip",
+            "comment": "Bump @pi-lib/config to v0.2.2",
+            "commit": "47f96ce222a886afe8a01be2e60577bc1decd7e9"
+          },
+          {
+            "author": "beachball",
+            "package": "@pi-lib/tooltip",
+            "comment": "Bump @pi-lib/types to v0.1.0",
+            "commit": "47f96ce222a886afe8a01be2e60577bc1decd7e9"
+          }
+        ]
+      }
+    },
+    {
       "date": "Mon, 19 Dec 2022 14:17:57 GMT",
       "tag": "@pi-lib/tooltip_v0.2.1",
       "version": "0.2.1",

@@ -1,6 +1,6 @@
 {
   "name": "@pi-lib/loader",
-  "version": "0.4.2",
+  "version": "0.4.3",
   "description": "Basic loading spinner component",
   "type": "module",
   "files": [
@@ -27,7 +27,7 @@
   "author": "Lance Taylor",
   "license": "ISC",
   "dependencies": {
-    "@pi-lib/constants": "^0.1.0"
+    "@pi-lib/constants": "^0.1.1"
   },
   "peerDependencies": {
     "react": "^18.2.0",

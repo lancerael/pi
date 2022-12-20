@@ -2,6 +2,57 @@
   "name": "@pi-lib/candlestick-chart",
   "entries": [
     {
+      "date": "Tue, 20 Dec 2022 00:15:50 GMT",
+      "tag": "@pi-lib/candlestick-chart_v0.8.0",
+      "version": "0.8.0",
+      "comments": {
+        "minor": [
+          {
+            "author": "lancerael@hotmail.com",
+            "package": "@pi-lib/candlestick-chart",
+            "commit": "47f96ce222a886afe8a01be2e60577bc1decd7e9",
+            "comment": "Improved layout and grid Added current value indicator"
+          },
+          {
+            "author": "beachball",
+            "package": "@pi-lib/candlestick-chart",
+            "comment": "Bump @pi-lib/button to v0.8.2",
+            "commit": "47f96ce222a886afe8a01be2e60577bc1decd7e9"
+          },
+          {
+            "author": "beachball",
+            "package": "@pi-lib/candlestick-chart",
+            "comment": "Bump @pi-lib/constants to v0.1.1",
+            "commit": "47f96ce222a886afe8a01be2e60577bc1decd7e9"
+          },
+          {
+            "author": "beachball",
+            "package": "@pi-lib/candlestick-chart",
+            "comment": "Bump @pi-lib/loader to v0.4.3",
+            "commit": "47f96ce222a886afe8a01be2e60577bc1decd7e9"
+          },
+          {
+            "author": "beachball",
+            "package": "@pi-lib/candlestick-chart",
+            "comment": "Bump @pi-lib/styles to v0.1.0",
+            "commit": "47f96ce222a886afe8a01be2e60577bc1decd7e9"
+          },
+          {
+            "author": "beachball",
+            "package": "@pi-lib/candlestick-chart",
+            "comment": "Bump @pi-lib/tooltip to v0.2.2",
+            "commit": "47f96ce222a886afe8a01be2e60577bc1decd7e9"
+          },
+          {
+            "author": "beachball",
+            "package": "@pi-lib/candlestick-chart",
+            "comment": "Bump @pi-lib/types to v0.1.0",
+            "commit": "47f96ce222a886afe8a01be2e60577bc1decd7e9"
+          }
+        ]
+      }
+    },
+    {
       "date": "Mon, 19 Dec 2022 14:17:57 GMT",
       "tag": "@pi-lib/candlestick-chart_v0.7.0",
       "version": "0.7.0",

@@ -1,6 +1,6 @@
 {
   "name": "@pi-lib/candlestick-chart",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "description": "",
   "type": "module",
   "files": [
@@ -28,11 +28,11 @@
   "author": "Lance Taylor",
   "license": "ISC",
   "dependencies": {
-    "@pi-lib/button": "^0.8.1",
-    "@pi-lib/constants": "^0.*.*",
-    "@pi-lib/loader": "^0.4.2",
-    "@pi-lib/styles": "^0.0.0",
-    "@pi-lib/tooltip": "^0.2.1",
+    "@pi-lib/button": "^0.8.2",
+    "@pi-lib/constants": "^0.1.1",
+    "@pi-lib/loader": "^0.4.3",
+    "@pi-lib/styles": "^0.1.0",
+    "@pi-lib/tooltip": "^0.2.2",
     "@types/d3-axis": "^3.0.1",
     "@types/d3-scale": "^4.0.2",
     "d3-axis": "^3.0.0",

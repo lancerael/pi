@@ -1,8 +1,22 @@
 # Change Log - @pi-lib/candlestick-chart
 
-This log was last generated on Mon, 19 Dec 2022 14:17:57 GMT and should not be manually modified.
+This log was last generated on Tue, 20 Dec 2022 00:15:50 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 0.8.0
+
+Tue, 20 Dec 2022 00:15:50 GMT
+
+### Minor changes
+
+- Improved layout and grid Added current value indicator (lancerael@hotmail.com)
+- Bump @pi-lib/button to v0.8.2
+- Bump @pi-lib/constants to v0.1.1
+- Bump @pi-lib/loader to v0.4.3
+- Bump @pi-lib/styles to v0.1.0
+- Bump @pi-lib/tooltip to v0.2.2
+- Bump @pi-lib/types to v0.1.0
 
 ## 0.7.0
 

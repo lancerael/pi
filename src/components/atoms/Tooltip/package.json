@@ -1,6 +1,6 @@
 {
   "name": "@pi-lib/tooltip",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "",
   "type": "module",
   "files": [
@@ -27,8 +27,8 @@
   "author": "Lance Taylor",
   "license": "ISC",
   "dependencies": {
-    "@pi-lib/constants": "^0.*.*",
-    "@pi-lib/styles": "^0.0.0",
+    "@pi-lib/constants": "^0.1.1",
+    "@pi-lib/styles": "^0.1.0",
     "lodash.throttle": "^4.1.1"
   },
   "peerDependencies": {
