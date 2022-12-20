@@ -2,6 +2,33 @@
   "name": "@pi-lib/tooltip",
   "entries": [
     {
+      "date": "Tue, 20 Dec 2022 12:22:56 GMT",
+      "tag": "@pi-lib/tooltip_v0.2.2",
+      "version": "0.2.2",
+      "comments": {
+        "none": [
+          {
+            "author": "lancerael@hotmail.com",
+            "package": "@pi-lib/tooltip",
+            "commit": "d6fbda64cf08f3e47166b420fe9d46c000aa7a7a",
+            "comment": "Bb fix"
+          },
+          {
+            "author": "beachball",
+            "package": "@pi-lib/tooltip",
+            "comment": "Bump @pi-lib/config to v0.2.2",
+            "commit": "d6fbda64cf08f3e47166b420fe9d46c000aa7a7a"
+          },
+          {
+            "author": "beachball",
+            "package": "@pi-lib/tooltip",
+            "comment": "Bump @pi-lib/types to v0.1.0",
+            "commit": "d6fbda64cf08f3e47166b420fe9d46c000aa7a7a"
+          }
+        ]
+      }
+    },
+    {
       "date": "Tue, 20 Dec 2022 00:15:50 GMT",
       "tag": "@pi-lib/tooltip_v0.2.2",
       "version": "0.2.2",

@@ -1,8 +1,18 @@
 # Change Log - @pi-lib/candlestick-chart
 
-This log was last generated on Tue, 20 Dec 2022 00:15:50 GMT and should not be manually modified.
+This log was last generated on Tue, 20 Dec 2022 12:22:56 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 0.8.1
+
+Tue, 20 Dec 2022 12:22:56 GMT
+
+### Patches
+
+- Bb fix (lancerael@hotmail.com)
+- Minor tweaks and updated readme (lancerael@hotmail.com)
+- Bump @pi-lib/types to v0.1.0
 
 ## 0.8.0
 
