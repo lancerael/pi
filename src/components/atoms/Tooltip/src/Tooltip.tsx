@@ -4,10 +4,10 @@ import { StyledTooltip } from './Tooltip.style'
 import { TooltipProps } from './Tooltip.types'
 
 export const Tooltip: FC<TooltipProps> = ({
+  children,
   isVisible = false,
   x = 0,
   y = 0,
-  children,
 }) => {
   const containerRef = useRef<HTMLDivElement>(null)
   const [position, setPosition] = useState({ x, y })
