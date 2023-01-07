@@ -2,6 +2,8 @@ import React from 'react'
 import { ThemeProvider } from 'styled-components'
 import * as themes from './themes'
 
+type ThemeTypes = 'pebble'
+
 export const baseTheme = {
   fonts: ['sans-serif', 'Roboto'],
   fontSizes: {
@@ -11,7 +13,7 @@ export const baseTheme = {
   },
 }
 
-export const getTheme = (themeName = 'pebble') => ({
+export const getTheme = (themeName: ThemeTypes = 'pebble') => ({
   colors: themes[themeName],
   ...baseTheme,
 })

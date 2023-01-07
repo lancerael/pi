@@ -11,9 +11,9 @@ const ke = {
   }
 `, hr = Pe`
   to {
-    height: 3px;
-    width: 3px;
-    margin: 3px;
+    height: 4px;
+    width: 4px;
+    margin: 4px;
     opacity: 0.3;
   }
 `, gr = A.div`
@@ -41,13 +41,13 @@ const ke = {
     width: 7px;
     height: 7px;
     margin: 2px;
-    opacity: 0.6;
+    opacity: 0.7;
     display: inline-block;
     border-radius: 50%;
     background: ${ke.pending};
     animation: ${hr} 0.3s linear alternate infinite;
 
-    ${b ? "animation-delay: 0.2s;" : ""}
+    ${b ? "animation-delay: 0.3s;" : ""}
   `
 );
 A.div`
