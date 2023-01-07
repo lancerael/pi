@@ -2,10 +2,6 @@ import { STATUS_COLOURS } from '@pi-lib/constants'
 import styled, { keyframes, css } from 'styled-components'
 import { StyledCircleProps } from './Loader.style.types'
 
-let loaderIndex = 0
-
-const loaderPositions = [[]]
-
 const rotate = keyframes`
   to {
     rotate: 360deg;
@@ -14,9 +10,9 @@ const rotate = keyframes`
 
 const circle = keyframes`
   to {
-    height: 3px;
-    width: 3px;
-    margin: 3px;
+    height: 4px;
+    width: 4px;
+    margin: 4px;
     opacity: 0.3;
   }
 `
@@ -51,13 +47,13 @@ export const StyledCircle = styled.div(
     width: 7px;
     height: 7px;
     margin: 2px;
-    opacity: 0.6;
+    opacity: 0.7;
     display: inline-block;
     border-radius: 50%;
     background: ${STATUS_COLOURS['pending']};
     animation: ${circle} 0.3s linear alternate infinite;
 
-    ${delay ? 'animation-delay: 0.2s;' : ''}
+    ${delay ? 'animation-delay: 0.3s;' : ''}
   `
 )
 

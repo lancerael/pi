@@ -98,7 +98,7 @@ Tue, 13 Dec 2022 16:27:45 GMT
 
 ### Patches
 
-- * Responsive candlestiuck chart * Cleanup and performance improvements (lancerael@hotmail.com)
+- - Responsive candlestiuck chart \* Cleanup and performance improvements (lancerael@hotmail.com)
 - Bump @pi-lib/constants to v0.1.0
 - Bump @pi-lib/types to v0.1.0
 
@@ -108,7 +108,7 @@ Tue, 13 Dec 2022 13:00:39 GMT
 
 ### Patches
 
-- * Converted wicks to line for performance * Improved pan/zoom range behaviours (lancerael@hotmail.com)
+- - Converted wicks to line for performance \* Improved pan/zoom range behaviours (lancerael@hotmail.com)
 - Bump @pi-lib/constants to v0.1.0
 - Bump @pi-lib/types to v0.1.0
 

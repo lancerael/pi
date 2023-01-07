@@ -1,8 +1,48 @@
-export const box = (color: string) => `
-  border: 1px solid ${color};
-  color: ${color};
-  background-color: white;
-  border-radius: 6px;
-  padding: 8px;
-  box-shadow: 2px 2px 2px 0px rgb(61 61 61 / 20%);
+import { createGlobalStyle } from 'styled-components'
+import { getTheme } from './theme'
+
+const getVars = (scheme: any) =>
+  Object.entries(scheme).reduce(
+    (acc, [key, val]) => `${acc} --${key}: ${val};`,
+    ''
+  )
+
+export const getGlobalStyle = (
+  {
+    colors: {
+      light,
+      dark = light,
+      lightContrast = light,
+      darkContrast = light,
+    },
+    fonts,
+    fontSizes,
+  }: any = getTheme()
+) => createGlobalStyle`
+  :root {
+    ${getVars(light)}
+    font-family: ${fonts.join(', ')};
+    background-color: var(--bg);
+    color: var(--text);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      ${getVars(dark)}
+    }
+  }
+
+  @media (prefers-color-scheme: light) and (prefers-contrast: more) {
+    :root {
+      ${getVars(lightContrast)}
+    }
+  }
+
+  @media (prefers-color-scheme: dark) and (prefers-contrast: more) {
+    :root {
+      ${getVars(darkContrast)}
+    }
+  }
 `
+
+export const GlobalStyle = getGlobalStyle()
