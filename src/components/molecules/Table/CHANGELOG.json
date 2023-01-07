@@ -1,0 +1,50 @@
+{
+  "name": "@pi-lib/table",
+  "entries": [
+    {
+      "date": "Sat, 07 Jan 2023 18:00:36 GMT",
+      "tag": "@pi-lib/table_v0.1.0",
+      "version": "0.1.0",
+      "comments": {
+        "minor": [
+          {
+            "author": "lancerael@hotmail.com",
+            "package": "@pi-lib/table",
+            "commit": "a0703a3ed7c89dbdcdc285543d4d80d78936b27e",
+            "comment": "Added table"
+          },
+          {
+            "author": "beachball",
+            "package": "@pi-lib/table",
+            "comment": "Bump @pi-lib/constants to v0.1.1",
+            "commit": "a0703a3ed7c89dbdcdc285543d4d80d78936b27e"
+          },
+          {
+            "author": "beachball",
+            "package": "@pi-lib/table",
+            "comment": "Bump @pi-lib/loader to v0.4.4",
+            "commit": "a0703a3ed7c89dbdcdc285543d4d80d78936b27e"
+          },
+          {
+            "author": "beachball",
+            "package": "@pi-lib/table",
+            "comment": "Bump @pi-lib/config to v0.2.2",
+            "commit": "a0703a3ed7c89dbdcdc285543d4d80d78936b27e"
+          },
+          {
+            "author": "beachball",
+            "package": "@pi-lib/table",
+            "comment": "Bump @pi-lib/styles to v0.2.0",
+            "commit": "a0703a3ed7c89dbdcdc285543d4d80d78936b27e"
+          },
+          {
+            "author": "beachball",
+            "package": "@pi-lib/table",
+            "comment": "Bump @pi-lib/types to v0.1.0",
+            "commit": "a0703a3ed7c89dbdcdc285543d4d80d78936b27e"
+          }
+        ]
+      }
+    }
+  ]
+}
