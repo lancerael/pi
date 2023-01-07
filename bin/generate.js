@@ -12,7 +12,7 @@ const subFiles = [
   '_NAME_.test.tsx',
   '_NAME_.tsx',
   '_NAME_.types.ts',
-  'index.ts',
+  '_NAME_index.ts',
 ]
 const generate = async () => {
   try {
@@ -34,13 +34,11 @@ const generate = async () => {
       const oldFileName = `${destination}/src/${fileName}`
       const newFileName = `${destination}/src/${fileName.replace(
         /_NAME_/g,
-        name
+        oldFileName.match('index') ? '' : name
       )}`
-      if (!oldFileName.match('index')) {
-        const fileContents = await fs.readFile(oldFileName, 'utf8')
-        await fs.writeFile(newFileName, fileContents.replace(/_NAME_/g, name))
-        await fs.unlink(oldFileName)
-      }
+      const fileContents = await fs.readFile(oldFileName, 'utf8')
+      await fs.writeFile(newFileName, fileContents.replace(/_NAME_/g, name))
+      await fs.unlink(oldFileName)
     }
     console.log('Success!')
   } catch (err) {

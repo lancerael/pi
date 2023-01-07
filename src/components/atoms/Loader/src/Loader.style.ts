@@ -55,7 +55,7 @@ export const StyledCircle = styled.div(
     display: inline-block;
     border-radius: 50%;
     background: ${STATUS_COLOURS['pending']};
-    animation: ${circle} 0.3s linear alternate infinite;
+    animation: ${circle} 3s linear infinite;
 
     ${delay ? 'animation-delay: 0.2s;' : ''}
   `
