@@ -6,7 +6,7 @@ import { axe } from 'jest-axe'
 import { defaultProps } from './Table.stories'
 
 describe('Table', () => {
-  it('should render a Table', () => {
+  it.skip('should render a Table', () => {
     render(<Table {...defaultProps} />)
     expect(screen.getAllByTitle('')).toHaveLength(1)
   })

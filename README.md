@@ -1,6 +1,6 @@
 # pi-lib
 
-Monorepo of React UI components and supporting utilities.  
+Monorepo of React UI components and supporting utilities.
 
 - DEMO: http://dtheia.org/pi
 

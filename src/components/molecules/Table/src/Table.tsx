@@ -1,5 +1,4 @@
 import React from 'react'
-import Loader from '@pi-lib/loader'
 import Row from './components/Row'
 import { StyledTable, StyledTableHead } from './Table.style'
 import { TableProps } from './Table.types'
