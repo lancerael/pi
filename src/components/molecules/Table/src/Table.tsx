@@ -7,7 +7,7 @@ import { TableProps } from './Table.types'
 export const Table = ({
   headers,
   tableRows,
-  fixedWidths,
+  fixedWidths = {},
   isLight,
 }: TableProps) => {
   return tableRows.length ? (

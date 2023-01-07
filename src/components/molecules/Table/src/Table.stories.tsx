@@ -11,5 +11,10 @@ const Template: ComponentStory<typeof Table> = (args) => <Table {...args} />
 
 export const Default = Template.bind({})
 Default.args = {
-  tableRows: [{ cols: ['1', '2', '3'] }],
+  headers: ['One', 'Two', 'Three'],
+  tableRows: [
+    { cols: ['1', '2', '3'] },
+    { cols: ['4', '5', '6'] },
+    { cols: ['7', '8', '9'] },
+  ],
 }
