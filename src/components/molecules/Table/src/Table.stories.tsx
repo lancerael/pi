@@ -1,5 +1,6 @@
 import React from 'react'
 import { ComponentMeta, ComponentStory } from '@storybook/react'
+import { Theme, GlobalStyle } from '@pi-lib/styles'
 import { Table } from './Table'
 
 export default {
@@ -7,14 +8,19 @@ export default {
   component: Table,
 } as ComponentMeta<typeof Table>
 
-const Template: ComponentStory<typeof Table> = (args) => <Table {...args} />
+const Template: ComponentStory<typeof Table> = (args) => (
+  <Theme>
+    <GlobalStyle />
+    <Table {...args} />
+  </Theme>
+)
 
 export const Default = Template.bind({})
 Default.args = {
   headers: ['One', 'Two', 'Three'],
   tableRows: [
-    { cols: ['1', '2', '3'] },
-    { cols: ['4', '5', '6'] },
-    { cols: ['7', '8', '9'] },
+    { cols: ['a', 'b', 'c'] },
+    { cols: ['1', '2', '3'], expandedContent: <>EXPANDED</> },
+    { cols: ['x', 'y', 'z'] },
   ],
 }

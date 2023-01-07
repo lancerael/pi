@@ -1,19 +1,14 @@
 import React from 'react'
 import Loader from '@pi-lib/loader'
 import Row from './components/Row'
-import { StyledTable } from './Table.style'
+import { StyledTable, StyledTableHead } from './Table.style'
 import { TableProps } from './Table.types'
 
-export const Table = ({
-  headers,
-  tableRows,
-  fixedWidths = {},
-  isLight,
-}: TableProps) => {
+export const Table = ({ headers, tableRows, fixedWidths = {} }: TableProps) => {
   return tableRows.length ? (
     <StyledTable>
       {!!headers?.length && (
-        <thead>
+        <StyledTableHead>
           <tr>
             {headers.map((label: string) => (
               <th key={label} style={{ ...fixedWidths[label] }}>
@@ -21,9 +16,9 @@ export const Table = ({
               </th>
             ))}
           </tr>
-        </thead>
+        </StyledTableHead>
       )}
-      <tbody className={isLight ? 'light' : ''}>
+      <tbody>
         {tableRows.map(({ cols, expandedContent }, i) => (
           <Row key={i} {...{ cols, i, expandedContent }} />
         ))}

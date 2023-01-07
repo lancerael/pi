@@ -4,5 +4,4 @@ export interface TableProps {
   headers?: string[]
   tableRows: Omit<RowProps, 'i'>[]
   fixedWidths?: any
-  isLight?: boolean
 }

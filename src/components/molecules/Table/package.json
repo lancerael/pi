@@ -27,7 +27,7 @@
   "license": "ISC",
   "dependencies": {
     "@pi-lib/constants": "^0.*.*",
-    "@pi-lib/loader": "workspace:0.4.3"
+    "@pi-lib/loader": "0.4.3"
   },
   "peerDependencies": {
     "react": "^18.2.0",
@@ -35,6 +35,7 @@
   },
   "devDependencies": {
     "@pi-lib/config": "^0.*.*",
+    "@pi-lib/styles": "^0.1.0",
     "@pi-lib/types": "^0.*.*",
     "@testing-library/react": "^13.3.0",
     "@types/jest": "^28.1.8",

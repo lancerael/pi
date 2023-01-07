@@ -13,3 +13,18 @@ function App() {
 }
 
 export default App
+
+// console.log(
+//   JSON.stringify(
+//     Object.entries(theme).reduce(
+//       (acc, [key, val]) => ({
+//         ...acc,
+//         [key]: val.reduce(
+//           (acc2, { name, hex }) => ({ ...acc2, [name]: hex }),
+//           {}
+//         ),
+//       }),
+//       {}
+//     )
+//   )
+// )

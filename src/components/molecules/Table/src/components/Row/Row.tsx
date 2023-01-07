@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { StyledDetails, StyledRow } from './Row.styles'
 import { RowProps } from './Row.types'
 
 export const Row = ({ cols, i, expandedContent }: RowProps) => {
@@ -11,8 +12,9 @@ export const Row = ({ cols, i, expandedContent }: RowProps) => {
 
   return (
     <>
-      <tr
-        className={`row${i % 2 ? ' odd' : ''}`}
+      <StyledRow
+        isOdd={!!(i % 2)}
+        isExpandable={!!expandedContent}
         onClick={() =>
           !!expandedContent && setIsItemActive((isActive) => !isActive)
         }
@@ -20,9 +22,9 @@ export const Row = ({ cols, i, expandedContent }: RowProps) => {
         {cols.map((col, i) => (
           <td key={i}>{col}</td>
         ))}
-      </tr>
+      </StyledRow>
       {isItemActive && (
-        <tr className="details">
+        <StyledDetails>
           <td
             colSpan={7}
             style={{
@@ -33,7 +35,7 @@ export const Row = ({ cols, i, expandedContent }: RowProps) => {
           >
             {expandedContent}
           </td>
-        </tr>
+        </StyledDetails>
       )}
     </>
   )
