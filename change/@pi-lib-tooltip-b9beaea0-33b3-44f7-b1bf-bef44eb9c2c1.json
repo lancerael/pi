@@ -1,0 +1,7 @@
+{
+  "type": "major",
+  "comment": "Theme styles integration",
+  "packageName": "@pi-lib/tooltip",
+  "email": "lancerael@hotmail.com",
+  "dependentChangeType": "patch"
+}
