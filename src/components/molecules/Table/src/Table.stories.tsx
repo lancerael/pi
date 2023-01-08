@@ -12,7 +12,7 @@ const defaultProps = {
 }
 
 export default {
-  title: 'Table',
+  title: 'Layout/Table',
   component: Table,
 } as ComponentMeta<typeof Table>
 

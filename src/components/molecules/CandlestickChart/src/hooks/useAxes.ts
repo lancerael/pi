@@ -99,7 +99,7 @@ export const useAxes = (
           var clone = e[i].parentNode.appendChild(e[i].cloneNode(true))
           select(clone)
             .classed('clone', true)
-            .attr('y1', -height + AXIS_OFFSETS[0] + CHART_PADDING)
+            .attr('y1', -height + 1 + AXIS_OFFSETS[0] + CHART_PADDING)
             .attr('y2', -1)
         }
       })
@@ -118,7 +118,7 @@ export const useAxes = (
       var clone = e[i].parentNode.appendChild(e[i].cloneNode(true))
       select(clone)
         .classed('clone', true)
-        .attr('x2', -width + AXIS_OFFSETS[1])
+        .attr('x2', -width + 1 + AXIS_OFFSETS[1])
         .attr('x1', -1)
     })
   }, [xScale, yScale])
