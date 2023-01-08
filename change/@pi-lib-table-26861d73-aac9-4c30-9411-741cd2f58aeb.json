@@ -1,7 +1,0 @@
-{
-  "type": "minor",
-  "comment": "Added table",
-  "packageName": "@pi-lib/table",
-  "email": "lancerael@hotmail.com",
-  "dependentChangeType": "patch"
-}

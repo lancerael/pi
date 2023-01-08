@@ -1,7 +1,0 @@
-{
-  "type": "patch",
-  "comment": "Added theme & fixed loader",
-  "packageName": "@pi-lib/loader",
-  "email": "lancerael@hotmail.com",
-  "dependentChangeType": "patch"
-}
