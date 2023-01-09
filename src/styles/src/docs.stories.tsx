@@ -50,7 +50,7 @@ const Converter = () => {
         Pi Themes contain both a dark and light colour palette. You can access
         the props directly from the theme object in styled components as usual.
         However it is more powerful to do so via CSS variables, as these are
-        automatically substituted for Light/Dark variations according to the
+        automatically substituted for Light or Dark variations according to the
         user's local preferences. Try adjusting yours to see the changes.
         <ul>
           <li>
