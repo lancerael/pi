@@ -4,22 +4,19 @@ import { STATUS_COLOURS } from '@pi-lib/constants'
 
 import { StyledButtonProps } from './Button.style.types'
 
-const standardFont = 'font-family: sans-serif;'
-
 export const StyledButton = styled.button(
   ({ status, minWidth, margin }: StyledButtonProps) => css`
-    ${standardFont}
-    ${box(STATUS_COLOURS[status])}
+    ${box({ color: status === 'default' ? '' : STATUS_COLOURS[status] })}
     min-width: ${minWidth};
     margin: ${margin};
     cursor: pointer;
-    &:hover {
-      filter: brightness(85%);
+    &:hover:not([disabled]) {
+      filter: brightness(115%);
     }
     &:disabled {
-      color: grey;
+      background-color: var(--border);
+      color: var(--textSoft);
       cursor: default;
-      filter: brightness(95%);
     }
   `
 )

@@ -1,3 +1,4 @@
+/// <reference types="react" />
 export interface RowProps {
     cols: (JSX.Element | string)[];
     i: number;

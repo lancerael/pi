@@ -15,7 +15,7 @@ export const StyledRow = styled.tr(
     css`
       cursor: pointer;
       &:hover {
-        background: var(--special);
+        background: var(--shadow);
       }
     `}
 
@@ -27,8 +27,18 @@ export const StyledRow = styled.tr(
 )
 
 export const StyledDetails = styled.tr`
+  & > td,
+  & > div {
+    transition: all 1s;
+  }
+
   & > td {
-    transition: all 0.5s;
     background: var(--shadow);
+    position: relative;
+    overflow: hidden;
+
+    & > div {
+      position: absolute;
+    }
   }
 `

@@ -29,11 +29,15 @@ export const Row = ({ cols, i, expandedContent }: RowProps) => {
             colSpan={7}
             style={{
               height: isDetailVisible ? '175px' : '0px',
-              position: 'relative',
-              overflow: 'hidden',
             }}
           >
-            {expandedContent}
+            <div
+              style={{
+                opacity: isDetailVisible ? '1' : '0',
+              }}
+            >
+              {expandedContent}
+            </div>
           </td>
         </StyledDetails>
       )}

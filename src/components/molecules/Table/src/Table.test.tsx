@@ -3,7 +3,15 @@ import Table from './Table'
 import { render, screen } from '@testing-library/react'
 import { expect, vi } from 'vitest'
 import { axe } from 'jest-axe'
-import { defaultProps } from './Table.stories'
+
+const defaultProps = {
+  headers: ['One', 'Two', 'Three'],
+  tableRows: [
+    { cols: ['a', 'b', 'c'] },
+    { cols: ['1', '2', '3'], expandedContent: <>EXPANDED</> },
+    { cols: ['x', 'y', 'z'] },
+  ],
+}
 
 describe('Table', () => {
   it.skip('should render a Table', () => {

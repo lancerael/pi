@@ -36,18 +36,18 @@ export const StyledCandlestickChart = styled.svg`
 
     &.is-active {
       filter: brightness(1);
-      stroke: black;
+      stroke: var(--textSoft);
       stroke-width: 2;
     }
   }
 
   & line.wicks {
-    stroke: black;
+    stroke: var(--text);
     stroke-width: 1;
   }
 
   & line.clone {
-    stroke: #dedede;
+    stroke: var(--shadow);
   }
 
   & text.emphasise {
@@ -58,13 +58,13 @@ export const StyledCandlestickChart = styled.svg`
 `
 
 export const StyledContainer = styled.div`
-  border: 1px solid lightgrey;
+  border: 1px solid var(--border);
   background: linear-gradient(
     135deg,
-    #fafbfc 0%,
-    #ebf1f5 50%,
-    #e2ecf2 51%,
-    #f5f8fb 100%
+    var(--bg) 0%,
+    var(--subtle) 50%,
+    var(--border) 51%,
+    var(--bg) 100%
   );
   width: 100%;
   height: 100%;

@@ -4,7 +4,7 @@ import styled from 'styled-components'
 
 export const StyledIndicator = styled.div`
   position: absolute;
-  ${box(STATUS_COLOURS['default'])}
+  ${box()}
   padding: 3px;
   font-size: 0.65em;
   font-weight: bold;

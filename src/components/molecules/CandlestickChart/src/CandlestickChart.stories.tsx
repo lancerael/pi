@@ -14,7 +14,7 @@ const CandlestickContainer = ({ length }: { length: number }) => {
 }
 
 export default {
-  title: 'CandlestickChart',
+  title: 'Charts/CandlestickChart',
   component: CandlestickChart,
 } as ComponentMeta<typeof CandlestickChart>
 
