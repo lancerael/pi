@@ -1,7 +1,19 @@
 import React, { useRef, useState } from 'react'
 import { ComponentMeta, ComponentStory } from '@storybook/react'
+import styled from 'styled-components'
 
-const Converter = () => {
+const ShowLight = styled.span`
+  @media (prefers-color-scheme: dark) {
+    display: none;
+  }
+`
+const ShowDark = styled.span`
+  @media (prefers-color-scheme: light) {
+    display: none;
+  }
+`
+
+const ThemeDocs = () => {
   const ref = useRef<any>(null)
   const [theme, setTheme] = useState('')
 
@@ -67,6 +79,12 @@ const Converter = () => {
             </a>
           </li>
         </ul>
+        You are currently using{' '}
+        <strong>
+          <ShowLight>Light</ShowLight>
+          <ShowDark>Dark</ShowDark>
+        </strong>{' '}
+        Mode.
       </div>
       <h3>Custom themes</h3>
       <div>
@@ -119,9 +137,9 @@ const Converter = () => {
 
 export default {
   title: 'Styles/Docs',
-  component: Converter,
-} as ComponentMeta<typeof Converter>
+  component: ThemeDocs,
+} as ComponentMeta<typeof ThemeDocs>
 
-const Template: ComponentStory<typeof Converter> = () => <Converter />
+const Template: ComponentStory<typeof ThemeDocs> = () => <ThemeDocs />
 
 export const ThemeUse = Template.bind({})

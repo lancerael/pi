@@ -1,5 +1,5 @@
 import Tooltip from '@pi-lib/tooltip'
-import { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { formatDate } from '../../utils'
 import { StyledTooltipContainer } from './CandleTooltip.styles'
 import { CandleTooltipProps } from './CandleTooltip.types'
