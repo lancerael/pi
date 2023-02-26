@@ -52,6 +52,7 @@
     "prettier": "^2.8.0",
     "styled-components": "^5.3.6",
     "@pi-lib/constants": "^0.1.1",
-    "@pi-lib/styles": "^1.0.0"
+    "@pi-lib/styles": "^1.0.0",
+    "lodash.throttle": "^4.1.1"
   }
 }

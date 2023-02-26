@@ -30,6 +30,7 @@ importers:
       eslint-config-prettier: ^8.5.0
       eslint-plugin-prettier: ^4.2.1
       fs-extra: ^10.1.0
+      lodash.throttle: ^4.1.1
       nx: ^15.0.0
       prettier: ^2.8.0
       styled-components: ^5.3.6
@@ -60,6 +61,7 @@ importers:
       eslint-config-prettier: 8.5.0_eslint@8.28.0
       eslint-plugin-prettier: 4.2.1_cwlo2dingkvfydnaculr42urve
       fs-extra: 10.1.0
+      lodash.throttle: 4.1.1
       nx: 15.0.0
       prettier: 2.8.0
       styled-components: 5.3.6_v5ja746gkdtknuc6tj46sve3be
@@ -10542,7 +10544,6 @@ packages:
 
   /lodash.throttle/4.1.1:
     resolution: {integrity: sha512-wIkUCfVKpVsWo3JSZlc+8MB5it+2AN5W8J7YVMST30UrvcQNZ1Okbj+rbVniijTWE6FGYy4XJq/rHkas8qJMLQ==}
-    dev: false
 
   /lodash.uniq/4.5.0:
     resolution: {integrity: sha512-xfBaXQd9ryd9dlSDvnvI0lvxfLJlYAZzXomUYzLKtUeOQvOP5piqAWuGtrhWeqaXK9hhoM/iyJc5AV+XfsX3HQ==}
