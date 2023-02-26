@@ -1,6 +1,6 @@
 {
   "name": "@pi-lib/table",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "",
   "type": "module",
   "files": [
@@ -34,7 +34,7 @@
   },
   "devDependencies": {
     "@pi-lib/config": "^0.2.3",
-    "@pi-lib/styles": "^0.2.0",
+    "@pi-lib/styles": "^1.0.0",
     "@pi-lib/types": "^0.*.*",
     "@testing-library/react": "^13.3.0",
     "@vitejs/plugin-react": "^2.0.1",

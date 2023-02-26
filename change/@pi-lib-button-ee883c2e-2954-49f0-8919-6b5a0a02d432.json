@@ -1,7 +1,0 @@
-{
-  "type": "major",
-  "comment": "Theme styles integration",
-  "packageName": "@pi-lib/button",
-  "email": "lancerael@hotmail.com",
-  "dependentChangeType": "patch"
-}
