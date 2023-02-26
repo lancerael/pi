@@ -37,7 +37,7 @@
   "devDependencies": {
     "react": "^18.2.0",
     "styled-components": "^5.3.5",
-    "@pi-lib/config": "^0.2.2",
+    "@pi-lib/config": "^0.2.3",
     "@pi-lib/types": "^0.1.0",
     "@testing-library/react": "^13.3.0",
     "@vitejs/plugin-react": "^2.0.1",
