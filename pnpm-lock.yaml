@@ -5,8 +5,11 @@ importers:
   .:
     specifiers:
       '@babel/core': ^7.19.0
-      '@pi-lib/constants': ^0.1.1
-      '@pi-lib/styles': ^1.0.0
+      '@pi-lib/button': '*'
+      '@pi-lib/constants': '*'
+      '@pi-lib/loader': '*'
+      '@pi-lib/styles': '*'
+      '@pi-lib/tooltip': '*'
       '@storybook/addon-actions': ^6.5.10
       '@storybook/addon-essentials': ^6.5.10
       '@storybook/addon-interactions': ^6.5.10
@@ -15,6 +18,8 @@ importers:
       '@storybook/manager-webpack4': ^6.5.10
       '@storybook/react': ^6.5.10
       '@storybook/testing-library': 0.0.13
+      '@types/d3-axis': ^3.0.1
+      '@types/d3-scale': ^4.0.2
       '@types/jest': ^28.1.8
       '@types/jest-axe': ^3.5.4
       '@types/lodash.throttle': ^4.1.7
@@ -26,6 +31,10 @@ importers:
       '@typescript-eslint/parser': ^5.44.0
       babel-loader: ^8.2.5
       beachball: ^2.31.4
+      d3-axis: ^3.0.0
+      d3-scale: ^4.0.2
+      d3-selection: ^3.0.0
+      d3-transition: ^3.0.1
       eslint: ^8.28.0
       eslint-config-prettier: ^8.5.0
       eslint-plugin-prettier: ^4.2.1
@@ -36,8 +45,11 @@ importers:
       styled-components: ^5.3.6
     devDependencies:
       '@babel/core': 7.19.0
+      '@pi-lib/button': link:src/components/atoms/Button
       '@pi-lib/constants': link:src/constants
+      '@pi-lib/loader': link:src/components/atoms/Loader
       '@pi-lib/styles': link:src/styles
+      '@pi-lib/tooltip': link:src/components/atoms/Tooltip
       '@storybook/addon-actions': 6.5.10_sfoxds7t5ydpegc3knd667wn6m
       '@storybook/addon-essentials': 6.5.10_bc54xfyxjmje7ufmd77aif6p3a
       '@storybook/addon-interactions': 6.5.10_edayvaylqqm2dbzwl2v56m6x4a
@@ -46,6 +58,8 @@ importers:
       '@storybook/manager-webpack4': 6.5.10_ykfbl2ylhwwjyfxq2bqs7relly
       '@storybook/react': 6.5.10_fawpfc4mdwggnlwtchoryg5cl4
       '@storybook/testing-library': 0.0.13_sfoxds7t5ydpegc3knd667wn6m
+      '@types/d3-axis': 3.0.1
+      '@types/d3-scale': 4.0.2
       '@types/jest': 28.1.8
       '@types/jest-axe': 3.5.4
       '@types/lodash.throttle': 4.1.7
@@ -57,6 +71,10 @@ importers:
       '@typescript-eslint/parser': 5.44.0_wy4udjehnvkneqnogzx5kughki
       babel-loader: 8.2.5_z22tmofudeh3tyeifpjvwjl5ei
       beachball: 2.31.4
+      d3-axis: 3.0.0
+      d3-scale: 4.0.2
+      d3-selection: 3.0.0
+      d3-transition: 3.0.1_d3-selection@3.0.0
       eslint: 8.28.0
       eslint-config-prettier: 8.5.0_eslint@8.28.0
       eslint-plugin-prettier: 4.2.1_cwlo2dingkvfydnaculr42urve
@@ -235,12 +253,12 @@ importers:
 
   src/components/molecules/CandlestickChart:
     specifiers:
-      '@pi-lib/button': ^1.0.0
+      '@pi-lib/button': '*'
       '@pi-lib/config': ^0.2.3
-      '@pi-lib/constants': ^0.1.1
-      '@pi-lib/loader': ^2.0.0
-      '@pi-lib/styles': ^1.0.0
-      '@pi-lib/tooltip': ^1.0.0
+      '@pi-lib/constants': '*'
+      '@pi-lib/loader': '*'
+      '@pi-lib/styles': '*'
+      '@pi-lib/tooltip': '*'
       '@pi-lib/types': ^0.*.*
       '@testing-library/react': ^13.3.0
       '@types/d3-axis': ^3.0.1
@@ -4986,20 +5004,17 @@ packages:
     resolution: {integrity: sha512-zji/iIbdd49g9WN0aIsGcwcTBUkgLsCSwB+uH+LPVDAiKWENMtI3cJEWt+7/YYwelMoZmbBfzA3qCdrZ2XFNnw==}
     dependencies:
       '@types/d3-selection': 3.0.3
-    dev: false
 
   /@types/d3-scale/4.0.2:
     resolution: {integrity: sha512-Yk4htunhPAwN0XGlIwArRomOjdoBFXC3+kCxK2Ubg7I9shQlVSJy/pG/Ht5ASN+gdMIalpk8TJ5xV74jFsetLA==}
     dependencies:
       '@types/d3-time': 3.0.0
-    dev: false
 
   /@types/d3-selection/3.0.3:
     resolution: {integrity: sha512-Mw5cf6nlW1MlefpD9zrshZ+DAWL4IQ5LnWfRheW6xwsdaWOb6IRRu2H7XPAQcyXEx1D7XQWgdoKR83ui1/HlEA==}
 
   /@types/d3-time/3.0.0:
     resolution: {integrity: sha512-sZLCdHvBUcNby1cB6Fd3ZBrABbjz3v1Vm90nysCQ6Vt7vd6e/h9Lt7SiJUoEX0l4Dzc7P5llKyhqSi1ycSf1Hg==}
-    dev: false
 
   /@types/d3-transition/3.0.2:
     resolution: {integrity: sha512-jo5o/Rf+/u6uerJ/963Dc39NI16FQzqwOc54bwvksGAdVfvDrqDpVeq95bEvPtBwLCVZutAEyAtmSyEMxN7vxQ==}
@@ -7417,39 +7432,32 @@ packages:
     engines: {node: '>=12'}
     dependencies:
       internmap: 2.0.3
-    dev: false
 
   /d3-axis/3.0.0:
     resolution: {integrity: sha512-IH5tgjV4jE/GhHkRV0HiVYPDtvfjHQlQfJHs0usq7M30XcSBvOotpmH1IgkcXsO/5gEQZD43B//fc7SRT5S+xw==}
     engines: {node: '>=12'}
-    dev: false
 
   /d3-color/3.1.0:
     resolution: {integrity: sha512-zg/chbXyeBtMQ1LbD/WSoW2DpC3I0mpmPdW+ynRTj/x2DAWYrIY7qeZIHidozwV24m4iavr15lNwIwLxRmOxhA==}
     engines: {node: '>=12'}
-    dev: false
 
   /d3-dispatch/3.0.1:
     resolution: {integrity: sha512-rzUyPU/S7rwUflMyLc1ETDeBj0NRuHKKAcvukozwhshr6g6c5d8zh4c2gQjY2bZ0dXeGLWc1PF174P2tVvKhfg==}
     engines: {node: '>=12'}
-    dev: false
 
   /d3-ease/3.0.1:
     resolution: {integrity: sha512-wR/XK3D3XcLIZwpbvQwQ5fK+8Ykds1ip7A2Txe0yxncXSdq1L9skcG7blcedkOX+ZcgxGAmLX1FrRGbADwzi0w==}
     engines: {node: '>=12'}
-    dev: false
 
   /d3-format/3.1.0:
     resolution: {integrity: sha512-YyUI6AEuY/Wpt8KWLgZHsIU86atmikuoOmCfommt0LYHiQSPjvX2AcFc38PX0CBpr2RCyZhjex+NS/LPOv6YqA==}
     engines: {node: '>=12'}
-    dev: false
 
   /d3-interpolate/3.0.1:
     resolution: {integrity: sha512-3bYs1rOD33uo8aqJfKP3JWPAibgw8Zm2+L9vBKEHJ2Rg+viTR7o5Mmv5mZcieN+FRYaAOWX5SJATX6k1PWz72g==}
     engines: {node: '>=12'}
     dependencies:
       d3-color: 3.1.0
-    dev: false
 
   /d3-scale/4.0.2:
     resolution: {integrity: sha512-GZW464g1SH7ag3Y7hXjf8RoUuAFIqklOAq3MRl4OaWabTFJY9PN/E1YklhXLh+OQ3fM9yS2nOkCoS+WLZ6kvxQ==}
@@ -7460,31 +7468,26 @@ packages:
       d3-interpolate: 3.0.1
       d3-time: 3.0.0
       d3-time-format: 4.1.0
-    dev: false
 
   /d3-selection/3.0.0:
     resolution: {integrity: sha512-fmTRWbNMmsmWq6xJV8D19U/gw/bwrHfNXxrIN+HfZgnzqTHp9jOmKMhsTUjXOJnZOdZY9Q28y4yebKzqDKlxlQ==}
     engines: {node: '>=12'}
-    dev: false
 
   /d3-time-format/4.1.0:
     resolution: {integrity: sha512-dJxPBlzC7NugB2PDLwo9Q8JiTR3M3e4/XANkreKSUxF8vvXKqm1Yfq4Q5dl8budlunRVlUUaDUgFt7eA8D6NLg==}
     engines: {node: '>=12'}
     dependencies:
       d3-time: 3.0.0
-    dev: false
 
   /d3-time/3.0.0:
     resolution: {integrity: sha512-zmV3lRnlaLI08y9IMRXSDshQb5Nj77smnfpnd2LrBa/2K281Jijactokeak14QacHs/kKq0AQ121nidNYlarbQ==}
     engines: {node: '>=12'}
     dependencies:
       d3-array: 3.2.0
-    dev: false
 
   /d3-timer/3.0.1:
     resolution: {integrity: sha512-ndfJ/JxxMd3nw31uyKoY2naivF+r29V+Lc0svZxe1JvvIRmi8hUsrMvdOwgS1o6uBHmiz91geQ0ylPP0aj1VUA==}
     engines: {node: '>=12'}
-    dev: false
 
   /d3-transition/3.0.1_d3-selection@3.0.0:
     resolution: {integrity: sha512-ApKvfjsSR6tg06xrL434C0WydLr7JewBB3V+/39RMHsaXTOG0zmt/OAXeng5M5LBm0ojmxJrpomQVZ1aPvBL4w==}
@@ -7498,7 +7501,6 @@ packages:
       d3-interpolate: 3.0.1
       d3-selection: 3.0.0
       d3-timer: 3.0.1
-    dev: false
 
   /data-urls/3.0.2:
     resolution: {integrity: sha512-Jy/tj3ldjZJo63sVAvg6LHt2mHvl4V6AgRAmNDtLdm7faqtsx+aJG42rsyCo9JCoRVKwPFzKlIPx3DIibwSIaQ==}
@@ -9641,7 +9643,6 @@ packages:
   /internmap/2.0.3:
     resolution: {integrity: sha512-5Hh7Y1wQbvY5ooGgPbDaL5iYLAPzMTUrjMulskHLH6wnv/A+1q5rgEaiuqEjB+oxGXIVZs1FF+R/KPN3ZSQYYg==}
     engines: {node: '>=12'}
-    dev: false
 
   /interpret/2.2.0:
     resolution: {integrity: sha512-Ju0Bz/cEia55xDwUWEa8+olFpCiQoypjnQySseKtmjNrnps3P+xfpUmGr90T7yjlVJmOtybRvPXhKMbHr+fWnw==}

@@ -51,8 +51,17 @@
     "nx": "^15.0.0",
     "prettier": "^2.8.0",
     "styled-components": "^5.3.6",
-    "@pi-lib/constants": "^0.1.1",
-    "@pi-lib/styles": "^1.0.0",
+    "@pi-lib/button": "*",
+    "@pi-lib/constants": "*",
+    "@pi-lib/loader": "*",
+    "@pi-lib/styles": "*",
+    "@pi-lib/tooltip": "*",
+    "@types/d3-axis": "^3.0.1",
+    "@types/d3-scale": "^4.0.2",
+    "d3-axis": "^3.0.0",
+    "d3-scale": "^4.0.2",
+    "d3-selection": "^3.0.0",
+    "d3-transition": "^3.0.1",
     "lodash.throttle": "^4.1.1"
   }
 }
