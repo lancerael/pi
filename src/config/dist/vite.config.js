@@ -5,6 +5,7 @@ export default (function (libName) {
     return defineConfig({
         test: {
             globals: true,
+            watch: false,
             environment: 'jsdom',
             setupFiles: ['./node_modules/@pi-lib/config/vitest-setup.ts'],
             coverage: {
@@ -19,7 +20,17 @@ export default (function (libName) {
                 fileName: "pi-lib-".concat(libName)
             },
             rollupOptions: {
-                external: ['react', 'styled-components']
+                external: [
+                    'react',
+                    'styled-components',
+                    'react/jsx-runtime',
+                    '@pi-lib/styles',
+                ],
+                output: {
+                    globals: {
+                        react: 'React'
+                    }
+                }
             }
         },
         plugins: [react()]

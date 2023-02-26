@@ -2,7 +2,7 @@
   "name": "@pi-lib/styles",
   "version": "0.2.0",
   "description": "",
-  "main": "index.ts",
+  "main": "src/index.ts",
   "keywords": [],
   "author": "",
   "license": "ISC",

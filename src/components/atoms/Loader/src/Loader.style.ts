@@ -20,7 +20,7 @@ const circle = keyframes`
 export const StyledLoader = styled.div`
   width: 24px;
   height: 24px;
-  margin: -8px 0;
+  margin: -7px 0;
   position: relative;
   display: inline-block;
 `
@@ -50,27 +50,10 @@ export const StyledCircle = styled.div(
     opacity: 0.7;
     display: inline-block;
     border-radius: 50%;
-    background: ${STATUS_COLOURS['pending']};
+    background: var(--special);
     animation: ${circle} 0.3s linear alternate infinite;
+    box-shadow: inset 0 0 0px 1px var(--specialShadow);
 
     ${delay ? 'animation-delay: 0.3s;' : ''}
   `
 )
-
-export const StyledLoaderCircle2 = styled.div`
-  height: inherit;
-  width: inherit;
-  position: absolute;
-  border-radius: 50%;
-  box-shadow: inset 0 0 0px 2px ${STATUS_COLOURS['pending']};
-  overflow: hidden;
-  clip-path: polygon(
-    -5px -5px,
-    50% -5px,
-    50% 50%,
-    100% 50%,
-    100% 100%,
-    -5px 100%
-  );
-  animation: ${rotate} 2s linear infinite;
-`

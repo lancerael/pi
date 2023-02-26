@@ -1,4 +1,6 @@
 import React from 'react'
+
+import { Theme } from '@pi-lib/styles'
 import CandlestickChart from '@pi-lib/candlestick-chart'
 import { useFakeApi } from '../../../components/molecules/CandlestickChart/src/hooks'
 
@@ -7,24 +9,11 @@ function App() {
 
   return (
     <div style={{ width: '800px', height: '500px' }}>
-      <CandlestickChart data={chartData} />
+      <Theme themeName="electron">
+        <CandlestickChart data={chartData} />
+      </Theme>
     </div>
   )
 }
 
 export default App
-
-// console.log(
-//   JSON.stringify(
-//     Object.entries(theme).reduce(
-//       (acc, [key, val]) => ({
-//         ...acc,
-//         [key]: val.reduce(
-//           (acc2, { name, hex }) => ({ ...acc2, [name]: hex }),
-//           {}
-//         ),
-//       }),
-//       {}
-//     )
-//   )
-// )

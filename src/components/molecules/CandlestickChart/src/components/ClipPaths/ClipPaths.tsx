@@ -1,3 +1,4 @@
+import React from 'react'
 import { AXIS_OFFSETS, CHART_PADDING } from '../../CandlestickChart.constants'
 import { ClipPathsProps } from './ClipPaths.types'
 
