@@ -2,6 +2,27 @@
   "name": "@pi-lib/button",
   "entries": [
     {
+      "date": "Sun, 26 Feb 2023 22:41:48 GMT",
+      "tag": "@pi-lib/button_v1.0.0",
+      "version": "1.0.0",
+      "comments": {
+        "major": [
+          {
+            "author": "lancerael@hotmail.com",
+            "package": "@pi-lib/button",
+            "commit": "4d4b073523c33b8e1feee0c64c32bfcd73dc1347",
+            "comment": "Theme styles integration"
+          },
+          {
+            "author": "beachball",
+            "package": "@pi-lib/button",
+            "comment": "Bump @pi-lib/styles to v1.0.0",
+            "commit": "4d4b073523c33b8e1feee0c64c32bfcd73dc1347"
+          }
+        ]
+      }
+    },
+    {
       "date": "Sat, 07 Jan 2023 18:00:36 GMT",
       "tag": "@pi-lib/button_v0.8.3",
       "version": "0.8.3",

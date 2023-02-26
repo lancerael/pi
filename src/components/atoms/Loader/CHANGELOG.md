@@ -1,8 +1,16 @@
 # Change Log - @pi-lib/loader
 
-This log was last generated on Sat, 07 Jan 2023 18:00:36 GMT and should not be manually modified.
+This log was last generated on Sun, 26 Feb 2023 22:41:48 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 2.0.0
+
+Sun, 26 Feb 2023 22:41:48 GMT
+
+### Major changes
+
+- Theme styles integration (lancerael@hotmail.com)
 
 ## 0.4.4
 

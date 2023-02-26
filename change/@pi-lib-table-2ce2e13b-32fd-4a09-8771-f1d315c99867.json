@@ -1,7 +1,0 @@
-{
-  "type": "major",
-  "comment": "Theme styles integration",
-  "packageName": "@pi-lib/table",
-  "email": "lancerael@hotmail.com",
-  "dependentChangeType": "patch"
-}

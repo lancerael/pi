@@ -2,6 +2,51 @@
   "name": "@pi-lib/candlestick-chart",
   "entries": [
     {
+      "date": "Sun, 26 Feb 2023 22:41:48 GMT",
+      "tag": "@pi-lib/candlestick-chart_v1.0.0",
+      "version": "1.0.0",
+      "comments": {
+        "major": [
+          {
+            "author": "lancerael@hotmail.com",
+            "package": "@pi-lib/candlestick-chart",
+            "commit": "4d4b073523c33b8e1feee0c64c32bfcd73dc1347",
+            "comment": "Theme styles integration"
+          },
+          {
+            "author": "beachball",
+            "package": "@pi-lib/candlestick-chart",
+            "comment": "Bump @pi-lib/button to v1.0.0",
+            "commit": "4d4b073523c33b8e1feee0c64c32bfcd73dc1347"
+          },
+          {
+            "author": "beachball",
+            "package": "@pi-lib/candlestick-chart",
+            "comment": "Bump @pi-lib/loader to v2.0.0",
+            "commit": "4d4b073523c33b8e1feee0c64c32bfcd73dc1347"
+          },
+          {
+            "author": "beachball",
+            "package": "@pi-lib/candlestick-chart",
+            "comment": "Bump @pi-lib/styles to v1.0.0",
+            "commit": "4d4b073523c33b8e1feee0c64c32bfcd73dc1347"
+          },
+          {
+            "author": "beachball",
+            "package": "@pi-lib/candlestick-chart",
+            "comment": "Bump @pi-lib/tooltip to v1.0.0",
+            "commit": "4d4b073523c33b8e1feee0c64c32bfcd73dc1347"
+          },
+          {
+            "author": "beachball",
+            "package": "@pi-lib/candlestick-chart",
+            "comment": "Bump @pi-lib/types to v0.1.0",
+            "commit": "4d4b073523c33b8e1feee0c64c32bfcd73dc1347"
+          }
+        ]
+      }
+    },
+    {
       "date": "Sat, 07 Jan 2023 18:00:36 GMT",
       "tag": "@pi-lib/candlestick-chart_v0.8.2",
       "version": "0.8.2",

@@ -1,6 +1,6 @@
 {
   "name": "@pi-lib/button",
-  "version": "0.8.3",
+  "version": "1.0.0",
   "description": "Basic button component",
   "type": "module",
   "files": [
@@ -28,7 +28,7 @@
   "license": "ISC",
   "dependencies": {
     "@pi-lib/constants": "^0.1.1",
-    "@pi-lib/styles": "^0.2.0"
+    "@pi-lib/styles": "^1.0.0"
   },
   "peerDependencies": {
     "react": "^18.2.0",
