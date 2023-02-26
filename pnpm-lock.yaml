@@ -62,7 +62,7 @@ importers:
     specifiers:
       '@pi-lib/button': '*'
       '@pi-lib/candlestick-chart': '*'
-      '@pi-lib/styles': workspace:^0.2.0
+      '@pi-lib/styles': '*'
       '@types/react': ^18.0.26
       '@types/react-dom': ^18.0.9
       '@vitejs/plugin-react': ^3.0.0
@@ -71,9 +71,9 @@ importers:
       typescript: ^4.9.3
       vite: ^4.0.0
     dependencies:
-      '@pi-lib/button': link:../../components/atoms/Button
-      '@pi-lib/candlestick-chart': link:../../components/molecules/CandlestickChart
-      '@pi-lib/styles': link:../../styles
+      '@pi-lib/button': 1.0.0_23mhwjhnzfjwvdn7ol54k26zom
+      '@pi-lib/candlestick-chart': 1.0.0_23mhwjhnzfjwvdn7ol54k26zom
+      '@pi-lib/styles': 1.0.0_tylgtfz3e7dzbz26ojoomdn4qi
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
     devDependencies:
@@ -209,7 +209,7 @@ importers:
     dependencies:
       '@pi-lib/button': link:../../atoms/Button
       '@pi-lib/constants': link:../../../constants
-      '@pi-lib/loader': link:../../atoms/Loader
+      '@pi-lib/loader': 0.4.4_eb6zb4csny6bofei5ykbhergru
       react: 18.2.0
       styled-components: 5.3.5_7i5myeigehqah43i5u7wbekgba
     devDependencies:
@@ -258,7 +258,7 @@ importers:
     dependencies:
       '@pi-lib/button': link:../../atoms/Button
       '@pi-lib/constants': link:../../../constants
-      '@pi-lib/loader': link:../../atoms/Loader
+      '@pi-lib/loader': 0.4.4_eb6zb4csny6bofei5ykbhergru
       '@pi-lib/styles': link:../../../styles
       '@pi-lib/tooltip': link:../../atoms/Tooltip
       '@types/d3-axis': 3.0.1
@@ -462,7 +462,7 @@ packages:
     resolution: {integrity: sha512-S1ahxf1gZ2dpoiFgA+ohK9DIpz50bJ0CWs7Zlzb54Z4sG8qmdIrGrVqmy1sAtTVRb+9CU6U8VqT9L0Zj7hxHVg==}
     engines: {node: '>=6.9.0'}
     dependencies:
-      '@babel/types': 7.19.0
+      '@babel/types': 7.20.5
       '@jridgewell/gen-mapping': 0.3.2
       jsesc: 2.5.2
     dev: true
@@ -696,8 +696,8 @@ packages:
       '@babel/helper-split-export-declaration': 7.18.6
       '@babel/helper-validator-identifier': 7.19.1
       '@babel/template': 7.18.10
-      '@babel/traverse': 7.19.0
-      '@babel/types': 7.19.0
+      '@babel/traverse': 7.20.5
+      '@babel/types': 7.20.5
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -839,8 +839,8 @@ packages:
     engines: {node: '>=6.9.0'}
     dependencies:
       '@babel/template': 7.18.10
-      '@babel/traverse': 7.19.0
-      '@babel/types': 7.19.0
+      '@babel/traverse': 7.20.5
+      '@babel/types': 7.20.5
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -869,7 +869,7 @@ packages:
     engines: {node: '>=6.0.0'}
     hasBin: true
     dependencies:
-      '@babel/types': 7.19.0
+      '@babel/types': 7.20.5
     dev: true
 
   /@babel/parser/7.20.5:
@@ -2882,7 +2882,7 @@ packages:
       '@babel/helper-hoist-variables': 7.18.6
       '@babel/helper-split-export-declaration': 7.18.6
       '@babel/parser': 7.19.0
-      '@babel/types': 7.19.0
+      '@babel/types': 7.20.5
       debug: 4.3.4
       globals: 11.12.0
     transitivePeerDependencies:
@@ -3551,6 +3551,98 @@ packages:
       node-addon-api: 3.2.1
       node-gyp-build: 4.5.0
     dev: true
+
+  /@pi-lib/button/1.0.0_23mhwjhnzfjwvdn7ol54k26zom:
+    resolution: {integrity: sha512-8czmtj2gTPZDt3ZzVBL2NXs5pZkLfNuGHQ9RCISPEG9QFSFglNK80/NruD/LkgZxjUtwVJdHjJnZA6TwUDAANA==}
+    peerDependencies:
+      react: ^18.2.0
+      styled-components: ^5.3.5
+    dependencies:
+      '@pi-lib/constants': 0.1.1
+      '@pi-lib/styles': 1.0.0_tylgtfz3e7dzbz26ojoomdn4qi
+      react: 18.2.0
+      styled-components: 5.3.6_7i5myeigehqah43i5u7wbekgba
+    transitivePeerDependencies:
+      - react-dom
+      - react-is
+    dev: false
+
+  /@pi-lib/candlestick-chart/1.0.0_23mhwjhnzfjwvdn7ol54k26zom:
+    resolution: {integrity: sha512-qKtH/0UnO1x43zsfCVcQeRnLYcsEAKkl9tXm1wgJ6CaWJU6fXSiB7RdNDm10mBfGwm9jCvj/2KXQoq29ddLEQw==}
+    peerDependencies:
+      react: ^18.2.0
+      styled-components: ^5.3.5
+    dependencies:
+      '@pi-lib/button': 1.0.0_23mhwjhnzfjwvdn7ol54k26zom
+      '@pi-lib/constants': 0.1.1
+      '@pi-lib/loader': 2.0.0_56nicwxcbpehznvjhlpvpy75bu
+      '@pi-lib/styles': 1.0.0_tylgtfz3e7dzbz26ojoomdn4qi
+      '@pi-lib/tooltip': 1.0.0_23mhwjhnzfjwvdn7ol54k26zom
+      '@types/d3-axis': 3.0.1
+      '@types/d3-scale': 4.0.2
+      d3-axis: 3.0.0
+      d3-scale: 4.0.2
+      d3-selection: 3.0.0
+      d3-transition: 3.0.1_d3-selection@3.0.0
+      lodash.throttle: 4.1.1
+      react: 18.2.0
+      styled-components: 5.3.6_7i5myeigehqah43i5u7wbekgba
+    transitivePeerDependencies:
+      - react-dom
+      - react-is
+    dev: false
+
+  /@pi-lib/constants/0.1.1:
+    resolution: {integrity: sha512-mgslhWYDIxz1dN6oiYHTLUDnL0cQeJG8QS8qgMKcNPTT6XsxdD4fc45xAoziBVhbTOl4kPCgsCQIVczT3uwXVg==}
+    dev: false
+
+  /@pi-lib/loader/0.4.4_eb6zb4csny6bofei5ykbhergru:
+    resolution: {integrity: sha512-mKKhj5NY8LSbagDFS82JweqMZfO+N6wEyBlEu3CczapZswu4zIPqzYr6eIHaBsCDxMcFn+P0Lt/wtNkDstYFQw==}
+    peerDependencies:
+      react: ^18.2.0
+      styled-components: ^5.3.5
+    dependencies:
+      '@pi-lib/constants': 0.1.1
+      react: 18.2.0
+      styled-components: 5.3.5_7i5myeigehqah43i5u7wbekgba
+    dev: false
+
+  /@pi-lib/loader/2.0.0_56nicwxcbpehznvjhlpvpy75bu:
+    resolution: {integrity: sha512-5B7Hyru8SmKYV6NxS5UjN/psW/1epzwDfvRKItAy5o0FOQP8xbcnit52AZrGT3oXg/gMwC0DglBA5WmPplDnWA==}
+    peerDependencies:
+      react: ^18.2.0
+      styled-components: ^5.3.5
+    dependencies:
+      '@pi-lib/constants': 0.1.1
+      react: 18.2.0
+      styled-components: 5.3.6_7i5myeigehqah43i5u7wbekgba
+    dev: false
+
+  /@pi-lib/styles/1.0.0_tylgtfz3e7dzbz26ojoomdn4qi:
+    resolution: {integrity: sha512-zbUCmJqUJckrQ56VuZUpqNrmDRK0gJnzKbVNh/v7JSHDQeT505FQAxLgKZhLxdjyFl59CLqydkNG4GdCNfLJ/g==}
+    dependencies:
+      react: 18.2.0
+      styled-components: 5.3.6_7i5myeigehqah43i5u7wbekgba
+    transitivePeerDependencies:
+      - react-dom
+      - react-is
+    dev: false
+
+  /@pi-lib/tooltip/1.0.0_23mhwjhnzfjwvdn7ol54k26zom:
+    resolution: {integrity: sha512-WaM6kY+h9v6rlwYA3MheKco+zQVajCnkUnVCmhaHBiVr0baTzxG1IZ2A85q2pq/jpaVViUxxuiyZTQ8t0avG0w==}
+    peerDependencies:
+      react: ^18.2.0
+      styled-components: ^5.3.5
+    dependencies:
+      '@pi-lib/constants': 0.1.1
+      '@pi-lib/styles': 1.0.0_tylgtfz3e7dzbz26ojoomdn4qi
+      lodash.throttle: 4.1.1
+      react: 18.2.0
+      styled-components: 5.3.6_7i5myeigehqah43i5u7wbekgba
+    transitivePeerDependencies:
+      - react-dom
+      - react-is
+    dev: false
 
   /@pmmmwh/react-refresh-webpack-plugin/0.5.7_metx475lqcp4j5c75za4zf7xbi:
     resolution: {integrity: sha512-bcKCAzF0DV2IIROp9ZHkRJa6O4jy7NlnHdWL3GmcUxYWNjLXkK5kfELELwEfSP5hXPfVL/qOGMAROuMQb9GG8Q==}
