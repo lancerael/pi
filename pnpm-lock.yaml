@@ -43,6 +43,7 @@ importers:
       nx: ^15.0.0
       prettier: ^2.8.0
       styled-components: ^5.3.6
+      typescript: ^4.7.4
     devDependencies:
       '@babel/core': 7.19.0
       '@pi-lib/button': link:src/components/atoms/Button
@@ -83,6 +84,7 @@ importers:
       nx: 15.0.0
       prettier: 2.8.0
       styled-components: 5.3.6_v5ja746gkdtknuc6tj46sve3be
+      typescript: 4.9.4
 
   src/apps/sandbox:
     specifiers:
