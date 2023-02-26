@@ -5,6 +5,8 @@ importers:
   .:
     specifiers:
       '@babel/core': ^7.19.0
+      '@pi-lib/constants': ^0.1.1
+      '@pi-lib/styles': ^1.0.0
       '@storybook/addon-actions': ^6.5.10
       '@storybook/addon-essentials': ^6.5.10
       '@storybook/addon-interactions': ^6.5.10
@@ -33,6 +35,8 @@ importers:
       styled-components: ^5.3.6
     devDependencies:
       '@babel/core': 7.19.0
+      '@pi-lib/constants': link:src/constants
+      '@pi-lib/styles': link:src/styles
       '@storybook/addon-actions': 6.5.10_sfoxds7t5ydpegc3knd667wn6m
       '@storybook/addon-essentials': 6.5.10_bc54xfyxjmje7ufmd77aif6p3a
       '@storybook/addon-interactions': 6.5.10_edayvaylqqm2dbzwl2v56m6x4a
