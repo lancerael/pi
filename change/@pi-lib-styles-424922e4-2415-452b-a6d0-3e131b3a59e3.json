@@ -1,0 +1,9 @@
+{
+  "type": "patch",
+  "comment": {
+    "title": ""
+  },
+  "packageName": "@pi-lib/styles",
+  "email": "lancerael@hotmail.com",
+  "dependentChangeType": "patch"
+}
