@@ -2,6 +2,23 @@
   "name": "@pi-lib/config",
   "entries": [
     {
+      "date": "Tue, 28 Feb 2023 23:33:14 GMT",
+      "tag": "@pi-lib/config_v0.2.4",
+      "version": "0.2.4",
+      "comments": {
+        "patch": [
+          {
+            "author": "lancerael@hotmail.com",
+            "package": "@pi-lib/config",
+            "commit": "6abbf96185b84258cad6a7d626c1a8113ac7b6bb",
+            "comment": {
+              "title": ""
+            }
+          }
+        ]
+      }
+    },
+    {
       "date": "Sat, 10 Dec 2022 13:13:39 GMT",
       "tag": "@pi-lib/config_v0.2.2",
       "version": "0.2.2",
