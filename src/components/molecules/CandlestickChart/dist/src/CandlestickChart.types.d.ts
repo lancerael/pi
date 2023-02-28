@@ -20,7 +20,7 @@ export interface ActiveItem {
     isActive?: Boolean;
     position?: any;
 }
-export declare type SVGSelection = Selection<SVGSVGElement | SVGGElement | null, unknown, null, undefined>;
-export declare type BarSelection = Selection<SVGRectElement, CandlestickDayData, SVGSVGElement | SVGGElement | null, unknown>;
-export declare type BarType = 'wicks' | 'candles';
-export declare type ValueKeys = 'low' | 'high' | 'open' | 'close';
+export type SVGSelection = Selection<SVGSVGElement | SVGGElement | null, unknown, null, undefined>;
+export type BarSelection = Selection<SVGRectElement, CandlestickDayData, SVGSVGElement | SVGGElement | null, unknown>;
+export type BarType = 'wicks' | 'candles';
+export type ValueKeys = 'low' | 'high' | 'open' | 'close';

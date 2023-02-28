@@ -136,7 +136,7 @@ const ThemeDocs = () => {
 }
 
 export default {
-  title: 'Styles/Docs',
+  title: 'Docs/Theming',
   component: ThemeDocs,
 } as ComponentMeta<typeof ThemeDocs>
 

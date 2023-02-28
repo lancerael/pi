@@ -1,8 +1,8 @@
 {
+  "extends": "./tsconfig.shared.json",
   "compilerOptions": {
-    "module": "ESNext",
-    "moduleResolution": "Node",
-    "outDir": "./dist"
+    "outDir": "./dist",
+    "emitDeclarationOnly": false
   },
   "files": ["vite.config.ts"]
 }

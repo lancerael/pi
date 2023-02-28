@@ -27,8 +27,8 @@
   "author": "Lance Taylor",
   "license": "ISC",
   "dependencies": {
-    "@pi-lib/constants": "^0.1.1",
-    "@pi-lib/styles": "^1.0.0"
+    "@pi-lib/constants": "*",
+    "@pi-lib/styles": "*"
   },
   "peerDependencies": {
     "react": "^18.2.0",

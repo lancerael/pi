@@ -8,6 +8,7 @@
   "scripts": {
     "build": "npx tsc"
   },
+  "types": "./dist/vite.config.d.ts",
   "devDependencies": {
     "@types/jest": "^28.1.8",
     "@types/jest-axe": "^3.5.4",

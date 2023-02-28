@@ -1,0 +1,40 @@
+export declare const pebble: {
+    light: {
+        bg: string;
+        text: string;
+        textSoft: string;
+        textStrong: string;
+        subtle: string;
+        border: string;
+        shadow: string;
+        input: string;
+        outline: string;
+        mark: string;
+        special: string;
+        specialBg: string;
+        specialText: string;
+        specialShadow: string;
+        specialMark: string;
+        light: string;
+        dark: string;
+    };
+    dark: {
+        bg: string;
+        text: string;
+        textSoft: string;
+        textStrong: string;
+        subtle: string;
+        border: string;
+        shadow: string;
+        input: string;
+        outline: string;
+        mark: string;
+        special: string;
+        specialBg: string;
+        specialText: string;
+        specialShadow: string;
+        specialMark: string;
+        light: string;
+        dark: string;
+    };
+};

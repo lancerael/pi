@@ -1,9 +1,8 @@
 import React from 'react'
 import { ComponentMeta, ComponentStory } from '@storybook/react'
-import { Theme } from './'
 import * as themes from './themes'
 import { ThemeType } from './themes'
-import Table from '../../components/molecules/Table/src/Table'
+import Table from '../../../molecules/Table'
 
 const StyleDemo = ({ themeName }: { themeName: ThemeType }) => {
   const theme = themes[themeName]
