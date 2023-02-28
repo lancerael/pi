@@ -49,5 +49,4 @@ jspm_packages/
 *.tsbuildinfo
 
 # Storybook
-.storybook
 storybook-static
