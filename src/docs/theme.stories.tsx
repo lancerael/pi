@@ -165,9 +165,7 @@ export default withTheme(Component, 'pebble')
       <h3>Using your theme</h3>
       <div>
         Once converted, copy the output and save it. You can then pass this to
-        your imported <em>@pi-lib/styles/getTheme</em> helper to get a{' '}
-        <em>theme</em> which you can pass to the imported{' '}
-        <em>@pi-lib/styles/Theme</em> provider as a prop.
+        your imported <em>@pi-lib/styles/Theme</em> provider as a prop.
         <br />
         <pre>
           {`
