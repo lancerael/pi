@@ -1,4 +1,4 @@
-/// <reference types="react" />
+import React from 'react';
 import { ThemeType } from './themes';
 export declare const baseTheme: {
     fonts: string[];
@@ -174,3 +174,4 @@ export declare const getTheme: (themeName?: ThemeType) => {
     };
 };
 export declare const Theme: ({ children, themeName, theme, }: any) => JSX.Element;
+export declare const withTheme: (Component: React.JSXElementConstructor<any>, themeName: string) => (props: any) => JSX.Element;

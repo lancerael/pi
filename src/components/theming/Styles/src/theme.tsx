@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { ReactComponentElement, ReactElement } from 'react'
 import { ThemeProvider } from 'styled-components'
 import { getGlobalStyle } from './styles'
 import * as themes from './themes'
@@ -31,3 +31,12 @@ export const Theme = ({
     </ThemeProvider>
   )
 }
+
+export const withTheme =
+  (Component: React.JSXElementConstructor<any>, themeName: string) =>
+  (props: any) =>
+    (
+      <Theme {...{ themeName }}>
+        <Component {...props} />
+      </Theme>
+    )

@@ -1,5 +1,5 @@
-import { ThemeProvider as b, createGlobalStyle as l } from "styled-components";
-import { jsxs as s, jsx as i } from "react/jsx-runtime";
+import { ThemeProvider as l, createGlobalStyle as s } from "styled-components";
+import { jsxs as i, jsx as o } from "react/jsx-runtime";
 const p = {
   light: {
     bg: "#ffffff",
@@ -156,40 +156,45 @@ const p = {
     light: "#bfdf80",
     dark: "#303822"
   }
-}, u = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+}, h = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   pebble: p,
   rose: n,
   electron: g,
   avocado: x
-}, Symbol.toStringTag, { value: "Module" })), h = {
+}, Symbol.toStringTag, { value: "Module" })), u = {
   fonts: ["sans-serif", "Roboto"],
   fontSizes: {
     small: "1em",
     medium: "2em",
     large: "3em"
   }
-}, c = (e = "pebble") => ({
-  colors: u[e],
-  ...h
-}), m = ({
+}, r = (e = "pebble") => ({
+  colors: h[e],
+  ...u
+}), k = ({
   children: e,
   themeName: t = "pebble",
-  theme: a = c(t)
+  theme: a = r(t)
 }) => {
-  const f = r(a);
-  return /* @__PURE__ */ s(b, {
+  const f = d(a);
+  return /* @__PURE__ */ i(l, {
     theme: a,
-    children: [/* @__PURE__ */ i(f, {
+    children: [/* @__PURE__ */ o(f, {
       theme: a
     }), e]
   });
-}, o = (e) => Object.entries(e).reduce(
+}, w = (e, t) => (a) => /* @__PURE__ */ o(k, {
+  themeName: t,
+  children: /* @__PURE__ */ o(e, {
+    ...a
+  })
+}), c = (e) => Object.entries(e).reduce(
   (t, [a, f]) => `${t} --${a}: ${f};`,
   ""
-), r = ({ colors: { light: e, dark: t = e }, fonts: a, fontSizes: f } = c()) => l`
+), d = ({ colors: { light: e, dark: t = e }, fonts: a, fontSizes: f } = r()) => s`
   :root {
-    ${o(e)}
+    ${c(e)}
     font-family: ${a.join(", ")};
     background-color: var(--bg);
     color: var(--text);
@@ -201,28 +206,29 @@ const p = {
 
   @media (prefers-color-scheme: dark) {
     :root {
-      ${o(t)}
+      ${c(t)}
     }
   }
-`, w = r(), T = ({
+`, T = d(), $ = ({
   color: e,
   isSpecial: t
 } = {}) => {
-  const a = t ? "special" : "border", f = t ? "specialText" : "textSoft", d = t ? "specialBg" : "subtle";
+  const a = t ? "special" : "border", f = t ? "specialText" : "textSoft", b = t ? "specialBg" : "subtle";
   return `
     border: 3px solid var(--${a});
     color: ${e || `var(--${f})`};
-    background-color: var(--${d});
+    background-color: var(--${b});
     border-radius: 6px;
     padding: 8px;
     box-shadow: 2px 2px 2px 0px rgb(61 61 61 / 20%);
   `;
 };
 export {
-  w as GlobalStyle,
-  m as Theme,
-  h as baseTheme,
-  T as box,
-  r as getGlobalStyle,
-  c as getTheme
+  T as GlobalStyle,
+  k as Theme,
+  u as baseTheme,
+  $ as box,
+  d as getGlobalStyle,
+  r as getTheme,
+  w as withTheme
 };

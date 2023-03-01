@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import { useRef, useState } from 'react'
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 import styled from 'styled-components'
 
@@ -58,6 +58,50 @@ const ThemeDocs = () => {
   return (
     <div>
       <h3>Theming Pi</h3>
+      <div>
+        You need a theme in order to view Pi components in your app. The
+        available themes can be previewed by selecting from the{' '}
+        <code>Themes</code> dropdown above.
+        <br />
+        <br />
+        Install <code>@pi-lib/styles</code> and use the <code>Theme</code>{' '}
+        provider:
+        <pre>
+          {`
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import { Theme } from '@pi-lib/styles'
+import App from './App'
+
+ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
+  <React.StrictMode>
+    <Theme themeName="electron">
+      <App />
+    </Theme>
+  </React.StrictMode>
+)
+          `}
+        </pre>
+        Or install the theme on individual components using{' '}
+        <code>withTheme</code>:
+        <pre>
+          {`
+import React from 'react'
+import Button from '@pi-lib/button'
+import { withTheme } from '@pi-lib/styles'
+
+const Component = () => {
+  return (
+    <Button>
+      My component.
+    </Button>
+  )
+}
+
+export default withTheme(Component, 'pebble')
+          `}
+        </pre>
+      </div>
       <div>
         Pi Themes contain both a dark and light colour palette. You can access
         the props directly from the theme object in styled components as usual.
@@ -125,9 +169,17 @@ const ThemeDocs = () => {
         <em>theme</em> which you can pass to the imported{' '}
         <em>@pi-lib/styles/Theme</em> provider as a prop.
         <br />
+        <pre>
+          {`
+import customTheme from './local/myThemes/customTheme'
+/.../
+<Theme themeName="customTheme" theme={customTheme}>
+  <App/>
+</Theme>
+          `}
+        </pre>
         <br />
-        You should then be able to access your theme, once you wrap you app in
-        the provider. 🎉
+        You should then be able to access your theme from your App. 🎉
         <br />
         <br />
       </div>

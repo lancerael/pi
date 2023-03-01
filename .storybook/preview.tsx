@@ -1,6 +1,6 @@
 import React, { DecoratorFn } from '@storybook/react'
 
-import { Theme } from '../src/components/theming/Styles/dist/pi-lib-styles'
+import { Theme } from '@pi-lib/styles'
 
 const withTheme: DecoratorFn = (StoryFn, context) => {
   const themeName = context.parameters.themeName ?? context.globals.themeName
@@ -23,7 +23,7 @@ export const parameters = {
   },
   options: {
     storySort: {
-      order: ['CandlestickChart'],
+      order: ['Docs', 'Styles', 'CandlestickChart'],
     },
   },
 }
