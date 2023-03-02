@@ -1,6 +1,6 @@
 # pi-lib
 
-Monorepo of React UI components and supporting utilities. Check this link for example usage and props. 
+Monorepo of React UI components and supporting utilities. It supports theming and comes with some starter themes. Check this link for example usage and props. 
 
 - [DEMO & Docs](https://main.d3nmdhmk6s7nee.amplifyapp.com)
 
@@ -14,31 +14,23 @@ The number of components is small at first but will grow. Here is the story so f
 
 ## _Interactions_
 #### Button
-A simple button, styled via Pi theme.
-
-_@pi-lib/button_
+_@pi-lib/button_ - A simple button, styled via Pi theme.
 
 #### AdvancedButton
-An advanced button, with a loader.
-
-_@pi-lib/advanced-button_
+_@pi-lib/advanced-button_ - An advanced button, with a loader.
 
 ## _UI_
 
 #### Loader
-An simple themed loading spinner.
-
-_@pi-lib/loader_
+_@pi-lib/loader_ - A simple themed loading spinner.
 
 #### Tooltip
-A themed tooltip.
-
- _@pi-lib/loader_
+_@pi-lib/loader_ - A themed tooltip.
 
 ## _Charts_
 #### CandlestickChart
 
-A React candlestick chart used to show the market forces acting on a traded asset.
+_@pi-lib/candlestick-chart_ - A React candlestick chart used to show the market forces acting on a traded asset.
 
 [Candlestick Chart Docs](https://github.com/lancerael/pi/blob/main/src/components/molecules/CandlestickChart/README.md)
 
