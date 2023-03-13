@@ -71,9 +71,9 @@ importers:
       typescript: ^4.9.3
       vite: ^4.0.0
     dependencies:
-      '@pi-lib/button': link:../../components/atoms/Button
-      '@pi-lib/candlestick-chart': link:../../components/molecules/CandlestickChart
-      '@pi-lib/styles': link:../../styles
+      '@pi-lib/button': 1.0.2_56nicwxcbpehznvjhlpvpy75bu
+      '@pi-lib/candlestick-chart': 1.0.2_56nicwxcbpehznvjhlpvpy75bu
+      '@pi-lib/styles': 1.0.2_56nicwxcbpehznvjhlpvpy75bu
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
     devDependencies:
@@ -102,9 +102,9 @@ importers:
       vitest: ^0.22.1
     dependencies:
       '@pi-lib/constants': link:../../../constants
-      '@pi-lib/styles': link:../../../styles
+      '@pi-lib/styles': 1.0.2_eb6zb4csny6bofei5ykbhergru
     devDependencies:
-      '@pi-lib/config': link:../../../config
+      '@pi-lib/config': 0.2.5
       '@pi-lib/types': link:../../../types
       '@testing-library/react': 13.4.0_biqbaboplfbrettd7655fr4n2y
       '@vitejs/plugin-react': 2.1.0_vite@3.2.5
@@ -139,7 +139,7 @@ importers:
       react: 18.2.0
       styled-components: 5.3.5_7i5myeigehqah43i5u7wbekgba
     devDependencies:
-      '@pi-lib/config': link:../../../config
+      '@pi-lib/config': 0.2.5
       '@pi-lib/types': link:../../../types
       '@testing-library/react': 13.4.0_biqbaboplfbrettd7655fr4n2y
       '@vitejs/plugin-react': 2.1.0_vite@3.2.5
@@ -171,12 +171,47 @@ importers:
       vitest: ^0.22.1
     dependencies:
       '@pi-lib/constants': link:../../../constants
-      '@pi-lib/styles': link:../../../styles
+      '@pi-lib/styles': 1.0.2_eb6zb4csny6bofei5ykbhergru
       lodash.throttle: 4.1.1
       react: 18.2.0
       styled-components: 5.3.5_7i5myeigehqah43i5u7wbekgba
     devDependencies:
-      '@pi-lib/config': link:../../../config
+      '@pi-lib/config': 0.2.5
+      '@pi-lib/types': link:../../../types
+      '@testing-library/react': 13.4.0_biqbaboplfbrettd7655fr4n2y
+      '@vitejs/plugin-react': 2.1.0_vite@3.2.5
+      '@vitest/coverage-istanbul': 0.23.1_jsdom@20.0.0
+      jest-axe: 6.0.0
+      jsdom: 20.0.0
+      rimraf: 3.0.2
+      typescript: 4.9.4
+      vite: 3.2.5
+      vitest: 0.22.1_jsdom@20.0.0
+
+  src/components/charts/BarChart:
+    specifiers:
+      '@pi-lib/charts': ^0.3.0
+      '@pi-lib/config': ^0.*.*
+      '@pi-lib/constants': ^0.*.*
+      '@pi-lib/types': ^0.*.*
+      '@testing-library/react': ^13.3.0
+      '@vitejs/plugin-react': ^2.0.1
+      '@vitest/coverage-istanbul': ^0.23.1
+      jest-axe: ^6.0.0
+      jsdom: ^20.0.0
+      react: ^18.2.0
+      rimraf: ^3.0.2
+      styled-components: ^5.3.5
+      typescript: ^4.7.4
+      vite: ^3.0.9
+      vitest: ^0.22.1
+    dependencies:
+      '@pi-lib/charts': 0.3.0
+      '@pi-lib/constants': link:../../../constants
+      react: 18.2.0
+      styled-components: 5.3.6_7i5myeigehqah43i5u7wbekgba
+    devDependencies:
+      '@pi-lib/config': 0.2.5
       '@pi-lib/types': link:../../../types
       '@testing-library/react': 13.4.0_biqbaboplfbrettd7655fr4n2y
       '@vitejs/plugin-react': 2.1.0_vite@3.2.5
@@ -207,13 +242,13 @@ importers:
       vite: ^3.0.9
       vitest: ^0.22.1
     dependencies:
-      '@pi-lib/button': link:../../atoms/Button
+      '@pi-lib/button': 1.0.2_eb6zb4csny6bofei5ykbhergru
       '@pi-lib/constants': link:../../../constants
-      '@pi-lib/loader': link:../../atoms/Loader
+      '@pi-lib/loader': 2.0.2_eb6zb4csny6bofei5ykbhergru
       react: 18.2.0
       styled-components: 5.3.5_7i5myeigehqah43i5u7wbekgba
     devDependencies:
-      '@pi-lib/config': link:../../../config
+      '@pi-lib/config': 0.2.5
       '@pi-lib/types': link:../../../types
       '@testing-library/react': 13.4.0_biqbaboplfbrettd7655fr4n2y
       '@vitejs/plugin-react': 2.1.0_vite@3.2.5
@@ -256,11 +291,11 @@ importers:
       vite: ^3.0.9
       vitest: ^0.22.1
     dependencies:
-      '@pi-lib/button': link:../../atoms/Button
+      '@pi-lib/button': 1.0.2_eb6zb4csny6bofei5ykbhergru
       '@pi-lib/constants': link:../../../constants
-      '@pi-lib/loader': link:../../atoms/Loader
-      '@pi-lib/styles': link:../../../styles
-      '@pi-lib/tooltip': link:../../atoms/Tooltip
+      '@pi-lib/loader': 2.0.2_eb6zb4csny6bofei5ykbhergru
+      '@pi-lib/styles': 1.0.2_eb6zb4csny6bofei5ykbhergru
+      '@pi-lib/tooltip': 1.0.2_eb6zb4csny6bofei5ykbhergru
       '@types/d3-axis': 3.0.1
       '@types/d3-scale': 4.0.2
       d3-axis: 3.0.0
@@ -271,7 +306,7 @@ importers:
       react: 18.2.0
       styled-components: 5.3.5_7i5myeigehqah43i5u7wbekgba
     devDependencies:
-      '@pi-lib/config': link:../../../config
+      '@pi-lib/config': 0.2.5
       '@pi-lib/types': link:../../../types
       '@testing-library/react': 13.4.0_biqbaboplfbrettd7655fr4n2y
       '@types/d3-selection': 3.0.3
@@ -308,8 +343,8 @@ importers:
       react: 18.2.0
       styled-components: 5.3.5_7i5myeigehqah43i5u7wbekgba
     devDependencies:
-      '@pi-lib/config': link:../../../config
-      '@pi-lib/styles': link:../../../styles
+      '@pi-lib/config': 0.2.5
+      '@pi-lib/styles': 1.0.2_eb6zb4csny6bofei5ykbhergru
       '@pi-lib/types': link:../../../types
       '@testing-library/react': 13.4.0_biqbaboplfbrettd7655fr4n2y
       '@vitejs/plugin-react': 2.1.0_vite@3.2.5
@@ -803,11 +838,6 @@ packages:
     engines: {node: '>=6.9.0'}
     dependencies:
       '@babel/types': 7.20.5
-
-  /@babel/helper-string-parser/7.18.10:
-    resolution: {integrity: sha512-XtIfWmeNY3i4t7t4D2t02q50HvqHybPqW2ki1kosnvWCwuCMeo81Jf0gwr85jy/neUdg5XDdeFE/80DXiO+njw==}
-    engines: {node: '>=6.9.0'}
-    dev: true
 
   /@babel/helper-string-parser/7.19.4:
     resolution: {integrity: sha512-nHtDoQcuqFmwYNYPz3Rah5ph2p8PFeFCsZk9A/48dPc/rGocJ5J3hAAZ7pb76VWX3fZKu+uEr/FhH5jLx7umrw==}
@@ -2286,16 +2316,6 @@ packages:
       '@babel/plugin-transform-react-jsx': 7.19.0_@babel+core@7.20.5
     dev: true
 
-  /@babel/plugin-transform-react-jsx-self/7.18.6_@babel+core@7.19.0:
-    resolution: {integrity: sha512-A0LQGx4+4Jv7u/tWzoJF7alZwnBDQd6cGLh9P+Ttk4dpiL+J5p7NSNv/9tlEFFJDq3kjxOavWmbm6t0Gk+A3Ig==}
-    engines: {node: '>=6.9.0'}
-    peerDependencies:
-      '@babel/core': ^7.0.0-0
-    dependencies:
-      '@babel/core': 7.19.0
-      '@babel/helper-plugin-utils': 7.19.0
-    dev: true
-
   /@babel/plugin-transform-react-jsx-self/7.18.6_@babel+core@7.20.5:
     resolution: {integrity: sha512-A0LQGx4+4Jv7u/tWzoJF7alZwnBDQd6cGLh9P+Ttk4dpiL+J5p7NSNv/9tlEFFJDq3kjxOavWmbm6t0Gk+A3Ig==}
     engines: {node: '>=6.9.0'}
@@ -2303,16 +2323,6 @@ packages:
       '@babel/core': ^7.0.0-0
     dependencies:
       '@babel/core': 7.20.5
-      '@babel/helper-plugin-utils': 7.19.0
-    dev: true
-
-  /@babel/plugin-transform-react-jsx-source/7.18.6_@babel+core@7.19.0:
-    resolution: {integrity: sha512-utZmlASneDfdaMh0m/WausbjUjEdGrQJz0vFK93d7wD3xf5wBtX219+q6IlCNZeguIcxS2f/CvLZrlLSvSHQXw==}
-    engines: {node: '>=6.9.0'}
-    peerDependencies:
-      '@babel/core': ^7.0.0-0
-    dependencies:
-      '@babel/core': 7.19.0
       '@babel/helper-plugin-utils': 7.19.0
     dev: true
 
@@ -2876,12 +2886,12 @@ packages:
     engines: {node: '>=6.9.0'}
     dependencies:
       '@babel/code-frame': 7.18.6
-      '@babel/generator': 7.19.0
+      '@babel/generator': 7.20.5
       '@babel/helper-environment-visitor': 7.18.9
       '@babel/helper-function-name': 7.19.0
       '@babel/helper-hoist-variables': 7.18.6
       '@babel/helper-split-export-declaration': 7.18.6
-      '@babel/parser': 7.19.0
+      '@babel/parser': 7.20.5
       '@babel/types': 7.20.5
       debug: 4.3.4
       globals: 11.12.0
@@ -2928,7 +2938,7 @@ packages:
     resolution: {integrity: sha512-YuGopBq3ke25BVSiS6fgF49Ul9gH1x70Bcr6bqRLjWCkcX8Hre1/5+z+IiWOIerRMSSEfGZVB9z9kyq7wVs9YA==}
     engines: {node: '>=6.9.0'}
     dependencies:
-      '@babel/helper-string-parser': 7.18.10
+      '@babel/helper-string-parser': 7.19.4
       '@babel/helper-validator-identifier': 7.19.1
       to-fast-properties: 2.0.0
     dev: true
@@ -3551,6 +3561,140 @@ packages:
       node-addon-api: 3.2.1
       node-gyp-build: 4.5.0
     dev: true
+
+  /@pi-lib/button/1.0.2_56nicwxcbpehznvjhlpvpy75bu:
+    resolution: {integrity: sha512-6ytUDLXw8zXQ5ef+/jU0J80cly3u733Ym+Lr5twXP6ez6nQVotpCNcAtOXuXRJpF1n/GAih1ISv8DclY8VCYcQ==}
+    peerDependencies:
+      react: ^18.2.0
+      styled-components: ^5.3.5
+    dependencies:
+      '@pi-lib/constants': 0.1.1
+      '@pi-lib/styles': 1.0.2_56nicwxcbpehznvjhlpvpy75bu
+      react: 18.2.0
+      styled-components: 5.3.6_7i5myeigehqah43i5u7wbekgba
+    dev: false
+
+  /@pi-lib/button/1.0.2_eb6zb4csny6bofei5ykbhergru:
+    resolution: {integrity: sha512-6ytUDLXw8zXQ5ef+/jU0J80cly3u733Ym+Lr5twXP6ez6nQVotpCNcAtOXuXRJpF1n/GAih1ISv8DclY8VCYcQ==}
+    peerDependencies:
+      react: ^18.2.0
+      styled-components: ^5.3.5
+    dependencies:
+      '@pi-lib/constants': 0.1.1
+      '@pi-lib/styles': 1.0.2_eb6zb4csny6bofei5ykbhergru
+      react: 18.2.0
+      styled-components: 5.3.5_7i5myeigehqah43i5u7wbekgba
+    dev: false
+
+  /@pi-lib/candlestick-chart/1.0.2_56nicwxcbpehznvjhlpvpy75bu:
+    resolution: {integrity: sha512-pTVHZgJqcG4tBo/pgKnQ1/W3A7rtiO3p8P/2fzjRkFMD9MLkxM8V1+hG+EtAaQgk3KviLymqIaKzNkBL/8efzg==}
+    peerDependencies:
+      react: ^18.2.0
+      styled-components: ^5.3.5
+    dependencies:
+      '@pi-lib/button': 1.0.2_56nicwxcbpehznvjhlpvpy75bu
+      '@pi-lib/constants': 0.1.1
+      '@pi-lib/loader': 2.0.2_56nicwxcbpehznvjhlpvpy75bu
+      '@pi-lib/styles': 1.0.2_56nicwxcbpehznvjhlpvpy75bu
+      '@pi-lib/tooltip': 1.0.2_56nicwxcbpehznvjhlpvpy75bu
+      '@types/d3-axis': 3.0.2
+      '@types/d3-scale': 4.0.3
+      d3-axis: 3.0.0
+      d3-scale: 4.0.2
+      d3-selection: 3.0.0
+      d3-transition: 3.0.1_d3-selection@3.0.0
+      lodash.throttle: 4.1.1
+      react: 18.2.0
+      styled-components: 5.3.6_7i5myeigehqah43i5u7wbekgba
+    dev: false
+
+  /@pi-lib/charts/0.3.0:
+    resolution: {integrity: sha512-teXZITBn1hPIQgT3uxzuieTyAGsPW0IDMVXE7200dfLr9KtzSCxEYrcvKM5UB+1KcJa2dfnTJNtkamMfXov+gA==}
+    dependencies:
+      d3-array: 3.2.2
+      d3-axis: 3.0.0
+      d3-color: 3.1.0
+      d3-ease: 3.0.1
+      d3-scale: 4.0.2
+      d3-selection: 3.0.0
+      d3-transition: 3.0.1_d3-selection@3.0.0
+    dev: false
+
+  /@pi-lib/config/0.2.5:
+    resolution: {integrity: sha512-8IX1NYXOiKrVjo46fuaFMynDRDQVWdDn9j1JfsUbQ3H9nofDp9rfNDDpl+SUCZ2uh5mWkNirf4psXJWu8wmbAQ==}
+    dev: true
+
+  /@pi-lib/constants/0.1.1:
+    resolution: {integrity: sha512-mgslhWYDIxz1dN6oiYHTLUDnL0cQeJG8QS8qgMKcNPTT6XsxdD4fc45xAoziBVhbTOl4kPCgsCQIVczT3uwXVg==}
+
+  /@pi-lib/loader/2.0.2_56nicwxcbpehznvjhlpvpy75bu:
+    resolution: {integrity: sha512-PU9vQAXgKGTpdIzZ21jwZX/oDXQxIXDnfL94DUSbJ8GOjILSsZpdTkWjFfDOYoDlKz1Z9BlLvSGtWXvSVwKL9Q==}
+    peerDependencies:
+      react: ^18.2.0
+      styled-components: ^5.3.5
+    dependencies:
+      '@pi-lib/constants': 0.1.1
+      react: 18.2.0
+      styled-components: 5.3.6_7i5myeigehqah43i5u7wbekgba
+    dev: false
+
+  /@pi-lib/loader/2.0.2_eb6zb4csny6bofei5ykbhergru:
+    resolution: {integrity: sha512-PU9vQAXgKGTpdIzZ21jwZX/oDXQxIXDnfL94DUSbJ8GOjILSsZpdTkWjFfDOYoDlKz1Z9BlLvSGtWXvSVwKL9Q==}
+    peerDependencies:
+      react: ^18.2.0
+      styled-components: ^5.3.5
+    dependencies:
+      '@pi-lib/constants': 0.1.1
+      react: 18.2.0
+      styled-components: 5.3.5_7i5myeigehqah43i5u7wbekgba
+    dev: false
+
+  /@pi-lib/styles/1.0.2_56nicwxcbpehznvjhlpvpy75bu:
+    resolution: {integrity: sha512-ddMrSH59ArEPqIi1B6ncs3a9A0aWGxAQLsj6J6Yn09cJahtXyUVISDhPV+OBQWXCHPhK/ELI1nm9iCcVQOPgkg==}
+    peerDependencies:
+      react: ^18.2.0
+      styled-components: ^5.3.5
+    dependencies:
+      '@pi-lib/constants': 0.1.1
+      react: 18.2.0
+      styled-components: 5.3.6_7i5myeigehqah43i5u7wbekgba
+    dev: false
+
+  /@pi-lib/styles/1.0.2_eb6zb4csny6bofei5ykbhergru:
+    resolution: {integrity: sha512-ddMrSH59ArEPqIi1B6ncs3a9A0aWGxAQLsj6J6Yn09cJahtXyUVISDhPV+OBQWXCHPhK/ELI1nm9iCcVQOPgkg==}
+    peerDependencies:
+      react: ^18.2.0
+      styled-components: ^5.3.5
+    dependencies:
+      '@pi-lib/constants': 0.1.1
+      react: 18.2.0
+      styled-components: 5.3.5_7i5myeigehqah43i5u7wbekgba
+
+  /@pi-lib/tooltip/1.0.2_56nicwxcbpehznvjhlpvpy75bu:
+    resolution: {integrity: sha512-/B007nZbxUi5+1KluTiNK1C3o7P12GLNi4VpTajup6yRHmEaNBgLhOxZ8FHOEpbXN81habDqW5i/v6yK6MjymA==}
+    peerDependencies:
+      react: ^18.2.0
+      styled-components: ^5.3.5
+    dependencies:
+      '@pi-lib/constants': 0.1.1
+      '@pi-lib/styles': 1.0.2_56nicwxcbpehznvjhlpvpy75bu
+      lodash.throttle: 4.1.1
+      react: 18.2.0
+      styled-components: 5.3.6_7i5myeigehqah43i5u7wbekgba
+    dev: false
+
+  /@pi-lib/tooltip/1.0.2_eb6zb4csny6bofei5ykbhergru:
+    resolution: {integrity: sha512-/B007nZbxUi5+1KluTiNK1C3o7P12GLNi4VpTajup6yRHmEaNBgLhOxZ8FHOEpbXN81habDqW5i/v6yK6MjymA==}
+    peerDependencies:
+      react: ^18.2.0
+      styled-components: ^5.3.5
+    dependencies:
+      '@pi-lib/constants': 0.1.1
+      '@pi-lib/styles': 1.0.2_eb6zb4csny6bofei5ykbhergru
+      lodash.throttle: 4.1.1
+      react: 18.2.0
+      styled-components: 5.3.5_7i5myeigehqah43i5u7wbekgba
+    dev: false
 
   /@pmmmwh/react-refresh-webpack-plugin/0.5.7_metx475lqcp4j5c75za4zf7xbi:
     resolution: {integrity: sha512-bcKCAzF0DV2IIROp9ZHkRJa6O4jy7NlnHdWL3GmcUxYWNjLXkK5kfELELwEfSP5hXPfVL/qOGMAROuMQb9GG8Q==}
@@ -4980,8 +5124,20 @@ packages:
       '@types/d3-selection': 3.0.3
     dev: false
 
+  /@types/d3-axis/3.0.2:
+    resolution: {integrity: sha512-uGC7DBh0TZrU/LY43Fd8Qr+2ja1FKmH07q2FoZFHo1eYl8aj87GhfVoY1saJVJiq24rp1+wpI6BvQJMKgQm8oA==}
+    dependencies:
+      '@types/d3-selection': 3.0.3
+    dev: false
+
   /@types/d3-scale/4.0.2:
     resolution: {integrity: sha512-Yk4htunhPAwN0XGlIwArRomOjdoBFXC3+kCxK2Ubg7I9shQlVSJy/pG/Ht5ASN+gdMIalpk8TJ5xV74jFsetLA==}
+    dependencies:
+      '@types/d3-time': 3.0.0
+    dev: false
+
+  /@types/d3-scale/4.0.3:
+    resolution: {integrity: sha512-PATBiMCpvHJSMtZAMEhc2WyL+hnzarKzI6wAHYjhsonjWJYGq5BXTzQjv4l8m2jO183/4wZ90rKvSeT7o72xNQ==}
     dependencies:
       '@types/d3-time': 3.0.0
     dev: false
@@ -5391,11 +5547,11 @@ packages:
     peerDependencies:
       vite: ^3.0.0
     dependencies:
-      '@babel/core': 7.19.0
-      '@babel/plugin-transform-react-jsx': 7.19.0_@babel+core@7.19.0
-      '@babel/plugin-transform-react-jsx-development': 7.18.6_@babel+core@7.19.0
-      '@babel/plugin-transform-react-jsx-self': 7.18.6_@babel+core@7.19.0
-      '@babel/plugin-transform-react-jsx-source': 7.18.6_@babel+core@7.19.0
+      '@babel/core': 7.20.5
+      '@babel/plugin-transform-react-jsx': 7.19.0_@babel+core@7.20.5
+      '@babel/plugin-transform-react-jsx-development': 7.18.6_@babel+core@7.20.5
+      '@babel/plugin-transform-react-jsx-self': 7.18.6_@babel+core@7.20.5
+      '@babel/plugin-transform-react-jsx-source': 7.19.6_@babel+core@7.20.5
       magic-string: 0.26.3
       react-refresh: 0.14.0
       vite: 3.2.5
@@ -5759,12 +5915,6 @@ packages:
 
   /acorn/7.4.1:
     resolution: {integrity: sha512-nQyp0o1/mNdbTO1PO6kHkwSrmgZ0MT/jCCpNiwbUjGoRN4dlBhqJtoQuCnEOKzgTVwg0ZWiCoQy6SxMebQVh8A==}
-    engines: {node: '>=0.4.0'}
-    hasBin: true
-    dev: true
-
-  /acorn/8.8.0:
-    resolution: {integrity: sha512-QOxyigPVrpZ2GXT+PFyZTl6TtOFc5egxHIP9IlQ+RbupQuX4RkT/Bee4/kQuC02Xkzg84JcT7oLYtDIQxp+v7w==}
     engines: {node: '>=0.4.0'}
     hasBin: true
     dev: true
@@ -7412,6 +7562,13 @@ packages:
       internmap: 2.0.3
     dev: false
 
+  /d3-array/3.2.2:
+    resolution: {integrity: sha512-yEEyEAbDrF8C6Ob2myOBLjwBLck1Z89jMGFee0oPsn95GqjerpaOA4ch+vc2l0FNFFwMD5N7OCSEN5eAlsUbgQ==}
+    engines: {node: '>=12'}
+    dependencies:
+      internmap: 2.0.3
+    dev: false
+
   /d3-axis/3.0.0:
     resolution: {integrity: sha512-IH5tgjV4jE/GhHkRV0HiVYPDtvfjHQlQfJHs0usq7M30XcSBvOotpmH1IgkcXsO/5gEQZD43B//fc7SRT5S+xw==}
     engines: {node: '>=12'}
@@ -7471,7 +7628,7 @@ packages:
     resolution: {integrity: sha512-zmV3lRnlaLI08y9IMRXSDshQb5Nj77smnfpnd2LrBa/2K281Jijactokeak14QacHs/kKq0AQ121nidNYlarbQ==}
     engines: {node: '>=12'}
     dependencies:
-      d3-array: 3.2.0
+      d3-array: 3.2.2
     dev: false
 
   /d3-timer/3.0.1:
@@ -10301,7 +10458,7 @@ packages:
         optional: true
     dependencies:
       abab: 2.0.6
-      acorn: 8.8.0
+      acorn: 8.8.1
       acorn-globals: 6.0.0
       cssom: 0.5.0
       cssstyle: 2.3.0
@@ -10325,7 +10482,7 @@ packages:
       whatwg-encoding: 2.0.0
       whatwg-mimetype: 3.0.0
       whatwg-url: 11.0.0
-      ws: 8.8.1
+      ws: 8.11.0
       xml-name-validator: 4.0.0
     transitivePeerDependencies:
       - bufferutil
@@ -14571,19 +14728,6 @@ packages:
 
   /ws/8.11.0:
     resolution: {integrity: sha512-HPG3wQd9sNQoT9xHyNCXoDUa+Xw/VevmY9FoHyQ+g+rrMn4j6FB4np7Z0OhdTgjx6MgQLK7jwSy1YecU1+4Asg==}
-    engines: {node: '>=10.0.0'}
-    peerDependencies:
-      bufferutil: ^4.0.1
-      utf-8-validate: ^5.0.2
-    peerDependenciesMeta:
-      bufferutil:
-        optional: true
-      utf-8-validate:
-        optional: true
-    dev: true
-
-  /ws/8.8.1:
-    resolution: {integrity: sha512-bGy2JzvzkPowEJV++hF07hAD6niYSr0JzBNo/J29WsB57A2r7Wlc1UFcTR9IzrPvuNVO4B8LGqF8qcpsVOhJCA==}
     engines: {node: '>=10.0.0'}
     peerDependencies:
       bufferutil: ^4.0.1
