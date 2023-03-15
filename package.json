@@ -63,6 +63,8 @@
     "lodash.throttle": "^4.1.1",
     "nx": "^15.8.6",
     "prettier": "^2.8.4",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
     "styled-components": "^5.3.9",
     "typescript": "^4.9.5"
   },
