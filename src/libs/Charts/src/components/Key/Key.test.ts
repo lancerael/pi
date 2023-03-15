@@ -8,6 +8,7 @@ import {
 import { select } from 'd3-selection'
 import jsdom from 'jsdom'
 import fs from 'fs'
+import 'jasmine'
 
 const { JSDOM } = jsdom
 const index = fs.readFileSync('index.html', 'utf-8')

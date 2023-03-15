@@ -7,7 +7,7 @@ import { axe } from 'jest-axe'
 describe('BarChart', () => {
   it('should render a BarChart', () => {
     render(<BarChart />)
-    expect(screen.getAllByTitle('')).toHaveLength(1)
+    expect(screen.getAllByText('Random Chart Data')).toHaveLength(1)
   })
 
   it('should not fail any accessibility tests', async () => {

@@ -4,6 +4,7 @@ import {
   randomData,
   //@ts-ignore
 } from '../../../vanilla/index.js'
+import 'jasmine'
 
 const { data: dataSet } = randomData()
 

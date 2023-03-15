@@ -6,6 +6,7 @@ import {
 } from '../../../vanilla/index.js'
 import jsdom from 'jsdom'
 import fs from 'fs'
+import 'jasmine'
 
 const index = fs.readFileSync('index.html', 'utf-8')
 const { JSDOM } = jsdom

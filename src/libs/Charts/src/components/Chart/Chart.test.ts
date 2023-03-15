@@ -7,6 +7,7 @@ import {
 
 import jsdom from 'jsdom'
 import fs from 'fs'
+import 'jasmine'
 import { ChartParams, TableData } from '../../types'
 
 const index = fs.readFileSync('index.html', 'utf-8')
