@@ -29,4 +29,3 @@ Responsive in any device, providing additional detail via hover/touch tooltips.
 - `test`: Run unit tests
 - `build`: Build distributable
 - `dev`: Run development server
-
