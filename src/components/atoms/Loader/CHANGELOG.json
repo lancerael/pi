@@ -2,6 +2,33 @@
   "name": "@pi-lib/loader",
   "entries": [
     {
+      "date": "Wed, 15 Mar 2023 22:33:31 GMT",
+      "tag": "@pi-lib/loader_v2.0.3",
+      "version": "2.0.3",
+      "comments": {
+        "patch": [
+          {
+            "author": "lancerael@hotmail.com",
+            "package": "@pi-lib/loader",
+            "commit": "aaf54ea800193e01e725774b0d27fb120c46bcfc",
+            "comment": "Vanilla dists"
+          },
+          {
+            "author": "beachball",
+            "package": "@pi-lib/loader",
+            "comment": "Bump @pi-lib/constants to v0.1.2",
+            "commit": "aaf54ea800193e01e725774b0d27fb120c46bcfc"
+          },
+          {
+            "author": "beachball",
+            "package": "@pi-lib/loader",
+            "comment": "Bump @pi-lib/config to v0.2.6",
+            "commit": "aaf54ea800193e01e725774b0d27fb120c46bcfc"
+          }
+        ]
+      }
+    },
+    {
       "date": "Wed, 01 Mar 2023 23:24:27 GMT",
       "tag": "@pi-lib/loader_v2.0.2",
       "version": "2.0.2",

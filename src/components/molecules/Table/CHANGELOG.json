@@ -2,6 +2,45 @@
   "name": "@pi-lib/table",
   "entries": [
     {
+      "date": "Wed, 15 Mar 2023 22:33:31 GMT",
+      "tag": "@pi-lib/table_v1.0.3",
+      "version": "1.0.3",
+      "comments": {
+        "patch": [
+          {
+            "author": "lancerael@hotmail.com",
+            "package": "@pi-lib/table",
+            "commit": "aaf54ea800193e01e725774b0d27fb120c46bcfc",
+            "comment": "Vanilla dists"
+          },
+          {
+            "author": "beachball",
+            "package": "@pi-lib/table",
+            "comment": "Bump @pi-lib/constants to v0.1.2",
+            "commit": "aaf54ea800193e01e725774b0d27fb120c46bcfc"
+          },
+          {
+            "author": "beachball",
+            "package": "@pi-lib/table",
+            "comment": "Bump @pi-lib/config to v0.2.6",
+            "commit": "aaf54ea800193e01e725774b0d27fb120c46bcfc"
+          },
+          {
+            "author": "beachball",
+            "package": "@pi-lib/table",
+            "comment": "Bump @pi-lib/styles to v1.0.3",
+            "commit": "aaf54ea800193e01e725774b0d27fb120c46bcfc"
+          },
+          {
+            "author": "beachball",
+            "package": "@pi-lib/table",
+            "comment": "Bump @pi-lib/types to v0.1.0",
+            "commit": "aaf54ea800193e01e725774b0d27fb120c46bcfc"
+          }
+        ]
+      }
+    },
+    {
       "date": "Wed, 01 Mar 2023 23:24:27 GMT",
       "tag": "@pi-lib/table_v1.0.2",
       "version": "1.0.2",
