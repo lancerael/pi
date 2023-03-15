@@ -3,22 +3,11 @@
   "version": "1.0.2",
   "description": "",
   "type": "module",
-  "files": [
-    "dist"
-  ],
-  "main": "./dist/pi-lib-tooltip.umd.js",
-  "module": "./dist/pi-lib-tooltip.js",
-  "exports": {
-    ".": {
-      "import": "./dist/pi-lib-tooltip.js",
-      "require": "./dist/pi-lib-tooltip.umd.js"
-    }
-  },
-  "types": "./dist/src/Tooltip.d.ts",
+  "main": "./src/index.ts",
   "scripts": {
     "test": "vitest",
     "test:coverage": "vitest --coverage",
-    "build": "rimraf dist && vite build && npx tsc"
+    "build": "rimraf vanilla && vite build"
   },
   "keywords": [
     "react",

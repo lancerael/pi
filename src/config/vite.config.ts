@@ -1,8 +1,9 @@
 /// <reference types="vitest" />
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
+import { RollupOptions } from 'rollup'
 
-export default (libName: string) =>
+export default (libName: string, customRollup?: RollupOptions) =>
   defineConfig({
     test: {
       globals: true,
@@ -16,11 +17,12 @@ export default (libName: string) =>
     build: {
       lib: {
         entry: './src/index.ts',
-        formats: ['es', 'umd'],
+        formats: ['es'],
         name: `@pi-lib/${libName}`,
-        fileName: `pi-lib-${libName}`,
+        fileName: 'index',
       },
-      rollupOptions: {
+      outDir: 'vanilla',
+      rollupOptions: customRollup ?? {
         external: [
           'react',
           'styled-components',

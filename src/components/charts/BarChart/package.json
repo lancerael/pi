@@ -1,0 +1,38 @@
+{
+  "name": "@pi-lib/bar-chart",
+  "version": "0.0.0",
+  "description": "",
+  "type": "module",
+  "main": "./src/index.ts",
+  "scripts": {
+    "test": "vitest",
+    "test:coverage": "vitest --coverage",
+    "build": "rimraf vanilla && vite build"
+  },
+  "keywords": [
+    "react"
+  ],
+  "author": "Lance Taylor",
+  "license": "ISC",
+  "dependencies": {
+    "@pi-lib/charts": "^0.8.0",
+    "@pi-lib/constants": "^0.*.*"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "styled-components": "^5.3.5"
+  },
+  "devDependencies": {
+    "@pi-lib/config": "*",
+    "@pi-lib/types": "^0.*.*",
+    "@testing-library/react": "^13.3.0",
+    "@vitejs/plugin-react": "^2.0.1",
+    "@vitest/coverage-istanbul": "^0.23.1",
+    "jest-axe": "^6.0.0",
+    "jsdom": "^20.0.0",
+    "rimraf": "^3.0.2",
+    "typescript": "^4.7.4",
+    "vite": "^3.0.9",
+    "vitest": "^0.22.1"
+  }
+}

@@ -3,22 +3,11 @@
   "version": "2.0.2",
   "description": "Basic loading spinner component",
   "type": "module",
-  "files": [
-    "dist"
-  ],
-  "main": "./dist/pi-lib-loader.umd.js",
-  "module": "./dist/pi-lib-loader.js",
-  "exports": {
-    ".": {
-      "import": "./dist/pi-lib-loader.js",
-      "require": "./dist/pi-lib-loader.umd.js"
-    }
-  },
-  "types": "./dist/src/Loader.d.ts",
+  "main": "./src/index.ts",
   "scripts": {
     "test": "vitest",
     "test:coverage": "vitest --coverage",
-    "build": "rimraf dist && vite build && npx tsc"
+    "build": "rimraf vanilla && vite build"
   },
   "keywords": [
     "react",

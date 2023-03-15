@@ -15,6 +15,6 @@
     "types": ["react", "vitest/globals"],
     "composite": true,
     "esModuleInterop": true,
-    "emitDeclarationOnly": true
+    "noEmit": true
   }
 }

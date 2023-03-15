@@ -1,0 +1,7 @@
+{
+  "type": "patch",
+  "comment": "Vanilla dists",
+  "packageName": "@pi-lib/config",
+  "email": "lancerael@hotmail.com",
+  "dependentChangeType": "patch"
+}
