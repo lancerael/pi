@@ -1,0 +1,7 @@
+{
+  "type": "patch",
+  "comment": "Vanilla dists",
+  "packageName": "@pi-lib/candlestick-chart",
+  "email": "lancerael@hotmail.com",
+  "dependentChangeType": "patch"
+}
