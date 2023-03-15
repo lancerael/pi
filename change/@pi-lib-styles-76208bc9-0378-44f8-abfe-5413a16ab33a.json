@@ -1,7 +1,0 @@
-{
-  "type": "patch",
-  "comment": "Vanilla dists",
-  "packageName": "@pi-lib/styles",
-  "email": "lancerael@hotmail.com",
-  "dependentChangeType": "patch"
-}

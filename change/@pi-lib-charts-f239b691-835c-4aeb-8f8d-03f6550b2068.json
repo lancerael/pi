@@ -1,7 +1,0 @@
-{
-  "type": "patch",
-  "comment": "adding bar chart",
-  "packageName": "@pi-lib/charts",
-  "email": "lancerael@hotmail.com",
-  "dependentChangeType": "patch"
-}
