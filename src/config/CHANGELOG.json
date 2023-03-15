@@ -2,6 +2,21 @@
   "name": "@pi-lib/config",
   "entries": [
     {
+      "date": "Wed, 15 Mar 2023 22:57:50 GMT",
+      "tag": "@pi-lib/config_v0.2.6",
+      "version": "0.2.6",
+      "comments": {
+        "none": [
+          {
+            "author": "lancerael@hotmail.com",
+            "package": "@pi-lib/config",
+            "commit": "3ff3c07fc1730a228dfdf6759b124b7cce34c590",
+            "comment": "Linting"
+          }
+        ]
+      }
+    },
+    {
       "date": "Wed, 15 Mar 2023 22:33:31 GMT",
       "tag": "@pi-lib/config_v0.2.6",
       "version": "0.2.6",
