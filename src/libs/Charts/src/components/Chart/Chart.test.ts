@@ -5,13 +5,12 @@ import {
   //@ts-ignore
 } from '../../../vanilla/index.js'
 
-import jsdom from 'jsdom'
-import fs from 'fs'
-import 'jasmine'
 import { ChartParams, TableData } from '../../types'
+import { JSDOM } from 'jsdom'
+import { readFileSync } from 'fs'
+import 'jasmine'
 
-const index = fs.readFileSync('index.html', 'utf-8')
-const { JSDOM } = jsdom
+const index = readFileSync('index.html', 'utf-8')
 
 const dom = new JSDOM(index)
 global.document = dom.window.document

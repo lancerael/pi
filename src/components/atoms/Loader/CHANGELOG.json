@@ -2,6 +2,21 @@
   "name": "@pi-lib/loader",
   "entries": [
     {
+      "date": "Wed, 15 Mar 2023 22:57:50 GMT",
+      "tag": "@pi-lib/loader_v2.0.3",
+      "version": "2.0.3",
+      "comments": {
+        "none": [
+          {
+            "author": "lancerael@hotmail.com",
+            "package": "@pi-lib/loader",
+            "commit": "3ff3c07fc1730a228dfdf6759b124b7cce34c590",
+            "comment": "Linting"
+          }
+        ]
+      }
+    },
+    {
       "date": "Wed, 15 Mar 2023 22:33:31 GMT",
       "tag": "@pi-lib/loader_v2.0.3",
       "version": "2.0.3",

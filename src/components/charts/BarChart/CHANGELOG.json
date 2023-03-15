@@ -2,6 +2,27 @@
   "name": "@pi-lib/bar-chart",
   "entries": [
     {
+      "date": "Wed, 15 Mar 2023 22:57:50 GMT",
+      "tag": "@pi-lib/bar-chart_v0.0.1",
+      "version": "0.0.1",
+      "comments": {
+        "none": [
+          {
+            "author": "lancerael@hotmail.com",
+            "package": "@pi-lib/bar-chart",
+            "commit": "3ff3c07fc1730a228dfdf6759b124b7cce34c590",
+            "comment": "Linting"
+          },
+          {
+            "author": "beachball",
+            "package": "@pi-lib/bar-chart",
+            "comment": "Bump @pi-lib/types to v0.1.0",
+            "commit": "3ff3c07fc1730a228dfdf6759b124b7cce34c590"
+          }
+        ]
+      }
+    },
+    {
       "date": "Wed, 15 Mar 2023 22:33:31 GMT",
       "tag": "@pi-lib/bar-chart_v0.0.1",
       "version": "0.0.1",
