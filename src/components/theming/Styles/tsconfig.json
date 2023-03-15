@@ -1,0 +1,8 @@
+{
+  "extends": "@pi-lib/config/tsconfig.shared.json",
+  "include": ["./src/**/*"],
+  "exclude": ["./**/*.*.tsx"],
+  "compilerOptions": {
+    "outDir": "./dist"
+  }
+}

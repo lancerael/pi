@@ -1,15 +1,16 @@
 import React, { FC, useEffect, useRef } from 'react'
 import { StyledBarChart } from './BarChart.style'
 import { BarChartProps } from './BarChart.types'
-//@ts-ignore
 import { Chart, randomData } from '@pi-lib/charts'
 
 export const BarChart: FC<BarChartProps> = () => {
   const divRef = useRef(null)
 
   useEffect(() => {
-    Chart({ container: divRef, ...randomData() }).addDefaults()
-  }, [])
+    if (divRef.current) {
+      new Chart({ container: divRef.current, ...randomData() }).addDefaults()
+    }
+  }, [divRef.current])
 
   return (
     <>

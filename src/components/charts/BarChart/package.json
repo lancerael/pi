@@ -3,22 +3,11 @@
   "version": "0.0.0",
   "description": "",
   "type": "module",
-  "files": [
-    "dist"
-  ],
-  "main": "./dist/pi-lib-bar-chart.umd.js",
-  "module": "./dist/pi-lib-bar-chart.js",
-  "exports": {
-    ".": {
-      "import": "./dist/pi-lib-bar-chart.js",
-      "require": "./dist/pi-lib-bar-chart.umd.js"
-    }
-  },
-  "types": "./dist/src/BarChart.d.ts",
+  "main": "./src/index.ts",
   "scripts": {
     "test": "vitest",
     "test:coverage": "vitest --coverage",
-    "build": "rimraf dist && vite build && npx tsc"
+    "build": "rimraf vanilla && vite build"
   },
   "keywords": [
     "react"
@@ -26,7 +15,7 @@
   "author": "Lance Taylor",
   "license": "ISC",
   "dependencies": {
-    "@pi-lib/charts": "^0.3.0",
+    "@pi-lib/charts": "^0.8.0",
     "@pi-lib/constants": "^0.*.*"
   },
   "peerDependencies": {
@@ -34,7 +23,7 @@
     "styled-components": "^5.3.5"
   },
   "devDependencies": {
-    "@pi-lib/config": "^0.*.*",
+    "@pi-lib/config": "*",
     "@pi-lib/types": "^0.*.*",
     "@testing-library/react": "^13.3.0",
     "@vitejs/plugin-react": "^2.0.1",

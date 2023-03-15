@@ -1,24 +1,13 @@
 {
   "name": "@pi-lib/button",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Basic button component",
   "type": "module",
-  "files": [
-    "dist"
-  ],
-  "main": "./dist/pi-lib-button.umd.js",
-  "module": "./dist/pi-lib-button.js",
-  "exports": {
-    ".": {
-      "import": "./dist/pi-lib-button.js",
-      "require": "./dist/pi-lib-button.umd.js"
-    }
-  },
-  "types": "./dist/src/Button.d.ts",
+  "main": "./src/index.ts",
   "scripts": {
     "test": "vitest",
     "test:coverage": "vitest --coverage",
-    "build": "rimraf dist && vite build && npx tsc"
+    "build": "rimraf vanilla && vite build"
   },
   "keywords": [
     "react",
@@ -27,8 +16,8 @@
   "author": "Lance Taylor",
   "license": "ISC",
   "dependencies": {
-    "@pi-lib/constants": "^0.1.1",
-    "@pi-lib/styles": "^1.0.0"
+    "@pi-lib/constants": "*",
+    "@pi-lib/styles": "^1.0.2"
   },
   "peerDependencies": {
     "react": "^18.2.0",
@@ -37,7 +26,7 @@
   "devDependencies": {
     "react": "^18.2.0",
     "styled-components": "^5.3.5",
-    "@pi-lib/config": "^0.2.3",
+    "@pi-lib/config": "workspace:^0.2.5",
     "@pi-lib/types": "^0.1.0",
     "@testing-library/react": "^13.3.0",
     "@vitejs/plugin-react": "^2.0.1",

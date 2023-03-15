@@ -2,6 +2,60 @@
   "name": "@pi-lib/table",
   "entries": [
     {
+      "date": "Wed, 01 Mar 2023 23:24:27 GMT",
+      "tag": "@pi-lib/table_v1.0.2",
+      "version": "1.0.2",
+      "comments": {
+        "patch": [
+          {
+            "author": "beachball",
+            "package": "@pi-lib/table",
+            "comment": "Bump @pi-lib/config to v0.2.5",
+            "commit": "791735456d0bbf62de2a874aa387aeb295ee9327"
+          },
+          {
+            "author": "beachball",
+            "package": "@pi-lib/table",
+            "comment": "Bump @pi-lib/styles to v1.0.2",
+            "commit": "791735456d0bbf62de2a874aa387aeb295ee9327"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Tue, 28 Feb 2023 23:33:15 GMT",
+      "tag": "@pi-lib/table_v1.0.1",
+      "version": "1.0.1",
+      "comments": {
+        "patch": [
+          {
+            "author": "beachball",
+            "package": "@pi-lib/table",
+            "comment": "Bump @pi-lib/constants to v0.1.1",
+            "commit": "5a373b28a8a3905b59d5d00b7d50ff71d6a4f70f"
+          },
+          {
+            "author": "beachball",
+            "package": "@pi-lib/table",
+            "comment": "Bump @pi-lib/config to v0.2.4",
+            "commit": "5a373b28a8a3905b59d5d00b7d50ff71d6a4f70f"
+          },
+          {
+            "author": "beachball",
+            "package": "@pi-lib/table",
+            "comment": "Bump @pi-lib/styles to v1.0.1",
+            "commit": "5a373b28a8a3905b59d5d00b7d50ff71d6a4f70f"
+          },
+          {
+            "author": "beachball",
+            "package": "@pi-lib/table",
+            "comment": "Bump @pi-lib/types to v0.1.0",
+            "commit": "5a373b28a8a3905b59d5d00b7d50ff71d6a4f70f"
+          }
+        ]
+      }
+    },
+    {
       "date": "Sun, 26 Feb 2023 22:41:48 GMT",
       "tag": "@pi-lib/table_v1.0.0",
       "version": "1.0.0",

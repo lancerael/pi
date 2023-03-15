@@ -1,8 +1,28 @@
 # Change Log - @pi-lib/table
 
-This log was last generated on Sun, 26 Feb 2023 22:41:48 GMT and should not be manually modified.
+This log was last generated on Wed, 01 Mar 2023 23:24:27 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 1.0.2
+
+Wed, 01 Mar 2023 23:24:27 GMT
+
+### Patches
+
+- Bump @pi-lib/config to v0.2.5
+- Bump @pi-lib/styles to v1.0.2
+
+## 1.0.1
+
+Tue, 28 Feb 2023 23:33:15 GMT
+
+### Patches
+
+- Bump @pi-lib/constants to v0.1.1
+- Bump @pi-lib/config to v0.2.4
+- Bump @pi-lib/styles to v1.0.1
+- Bump @pi-lib/types to v0.1.0
 
 ## 1.0.0
 

@@ -1,9 +1,9 @@
 {
   "name": "@pi-lib/config",
   "description": "Shared Pi config",
-  "version": "0.2.3",
+  "version": "0.2.5",
   "license": "ISC",
-  "main": "./dist/vite.config.js",
+  "main": "./vite.config.ts",
   "type": "module",
   "scripts": {
     "build": "npx tsc"
@@ -17,6 +17,7 @@
     "rimraf": "^3.0.2",
     "typescript": "^4.7.4",
     "vite": "^3.0.9",
-    "vitest": "^0.22.1"
+    "vitest": "^0.22.1",
+    "rollup": "^2.79.1"
   }
 }
