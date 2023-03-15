@@ -1,8 +1,10 @@
 {
   "extends": "./tsconfig.shared.json",
   "compilerOptions": {
-    "outDir": "./dist",
-    "emitDeclarationOnly": false
+    "outDir": "./vanilla",
+    "composite": false,
+    "declaration": false,
+    "noEmit": false
   },
   "files": ["vite.config.ts"]
 }

@@ -1,23 +1,25 @@
 # pi-lib
 
-Monorepo of React UI components and supporting utilities. It supports theming and comes with some starter themes. Check this link for example usage and props. 
+Monorepo of mainly React UI components, but also contains supporting libraries and utilities. It supports theming and comes with some starter themes. Check this link for example usage and props. 
 
 - [DEMO & Docs](https://main.d3nmdhmk6s7nee.amplifyapp.com)
 
-All components prefixed with _@pi-lib/..._ can be installed individually as npm packages.  They are bundled to avoid the need for you to use TypeScript, but they are not bundled with common dependencies. So make sure your project includes:
+All components prefixed with `@pi-lib/...` can be installed individually as npm packages.  They designed for use with TypeScript, but they are also bundled in vanilla JS if you want to install your own dependencies. In this case import from the package name with a suffix of `/vanilla`
 
-* React
-* styled-components
-* @pi-lib/styles
+## _Charts_
 
-The number of components is small at first but will grow. Here is the story so far... 
+_@pi-lib/charts_ is not a React component, but a standalone charting library that can be used in any framework.
+[Pi Charts Docs](https://github.com/lancerael/pi/blob/main/src/libs/Charts/README.md)
 
-## _Interactions_
-#### Button
-_@pi-lib/button_ - A simple button, styled via Pi theme.
+#### BarChart
 
-#### AdvancedButton
-_@pi-lib/advanced-button_ - An advanced button, with a loader.
+_@pi-lib/bar-chart_ - A React component which uses Pi Charts to make a simple bar chart.
+
+#### CandlestickChart
+
+_@pi-lib/candlestick-chart_ - A React candlestick chart used to show the market forces acting on a traded asset.
+
+[Candlestick Chart Docs](https://github.com/lancerael/pi/blob/main/src/components/molecules/CandlestickChart/README.md)
 
 ## _UI_
 
@@ -27,12 +29,12 @@ _@pi-lib/loader_ - A simple themed loading spinner.
 #### Tooltip
 _@pi-lib/loader_ - A themed tooltip.
 
-## _Charts_
-#### CandlestickChart
+## _Interactions_
+#### Button
+_@pi-lib/button_ - A simple button, styled via Pi theme.
 
-_@pi-lib/candlestick-chart_ - A React candlestick chart used to show the market forces acting on a traded asset.
-
-[Candlestick Chart Docs](https://github.com/lancerael/pi/blob/main/src/components/molecules/CandlestickChart/README.md)
+#### AdvancedButton
+_@pi-lib/advanced-button_ - An advanced button, with a loader.
 
 
 ## Develpoment
@@ -42,6 +44,7 @@ Pi uses PNPM to manage the monorepo, with some performance enhancements from nx.
 * *Installation* - Clone the repo and use `pnpm i` to install.
 * *Storybook* - Use `pnpm sb` to launch Storybook.
 * *New components* - Use `pnpm generate [path] [ComponentName]` to scaffold a new component.
+* *Vanilla versions* - run `pnpm build` to generate the alternative vanilla JS export.
   
 ## Contribution
 

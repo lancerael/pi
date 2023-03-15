@@ -23,7 +23,15 @@ export const parameters = {
   },
   options: {
     storySort: {
-      order: ['Docs', 'Styles', 'CandlestickChart'],
+      order: [
+        'Docs',
+        'Styles',
+        'Charts',
+        ['Charts', 'BarChart', 'CandlestickChart'],
+        'UI',
+        'Interactions',
+        'Layout',
+      ],
     },
   },
 }
