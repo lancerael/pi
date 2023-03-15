@@ -7,12 +7,11 @@ import {
   //@ts-ignore
 } from '../../../vanilla/index.js'
 import { select } from 'd3-selection'
-import jsdom from 'jsdom'
-import fs from 'fs'
+import { JSDOM } from 'jsdom'
+import { readFileSync } from 'fs'
 import 'jasmine'
 
-const { JSDOM } = jsdom
-const index = fs.readFileSync('index.html', 'utf-8')
+const index = readFileSync('index.html', 'utf-8')
 const dom = new JSDOM(index)
 global.document = dom.window.document
 
