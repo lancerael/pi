@@ -29,11 +29,11 @@ export const parameters = {
       order: [
         'Docs',
         'Styles',
-        'Charts',
-        ['Pi-Charts', 'BarChart', 'CandlestickChart'],
         'UI',
         'Interactions',
         'Layout',
+        'Charts',
+        ['Pi-Charts', 'BarChart', 'CandlestickChart'],
       ],
     },
   },

@@ -1,6 +1,5 @@
 import { max, min } from 'd3-array'
 import { select } from 'd3-selection'
-import ResizeObserver from 'resize-observer-polyfill'
 import { Tooltip, Axis, Scale, Bars, Key } from '../'
 import {
   addColorsToConfig,
