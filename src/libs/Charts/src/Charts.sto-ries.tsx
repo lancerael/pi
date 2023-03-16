@@ -1,9 +1,9 @@
-import React, { useEffect, useRef } from 'react'
+import { useEffect, useRef } from 'react'
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 import { Chart, randomData } from '.'
 
 export default {
-  title: 'Charts/Charts',
+  title: 'Charts/Pi-Charts',
   component: () => <></>,
 } as ComponentMeta<any>
 

@@ -27,7 +27,7 @@ export const parameters = {
         'Docs',
         'Styles',
         'Charts',
-        ['Charts', 'BarChart', 'CandlestickChart'],
+        ['Pi-Charts', 'BarChart', 'CandlestickChart'],
         'UI',
         'Interactions',
         'Layout',

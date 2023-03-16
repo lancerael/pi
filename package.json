@@ -36,8 +36,8 @@
     "@storybook/addon-essentials": "^6.5.16",
     "@storybook/addon-interactions": "^6.5.16",
     "@storybook/addon-links": "^6.5.16",
-    "@storybook/builder-webpack4": "^6.5.16",
-    "@storybook/manager-webpack4": "^6.5.16",
+    "@storybook/builder-webpack5": "^6.5.16",
+    "@storybook/manager-webpack5": "^6.5.16",
     "@storybook/react": "^6.5.16",
     "@storybook/testing-library": "0.0.13",
     "@types/d3-axis": "^3.0.2",
@@ -75,6 +75,5 @@
       "glob-parent@<5.1.2": ">=5.1.2",
       "trim-newlines@<3.0.1": ">=3.0.1"
     }
-  },
-  "dependencies": {}
+  }
 }
