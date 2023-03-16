@@ -24,7 +24,6 @@
     "access": "public"
   },
   "devDependencies": {
-    "@babel/core": "^7.21.3",
     "@pi-lib/button": "^1.0.3",
     "@pi-lib/charts": "^0.8.1",
     "@pi-lib/config": "^0.2.6",
@@ -51,7 +50,6 @@
     "@typescript-eslint/eslint-plugin": "^5.55.0",
     "@typescript-eslint/parser": "^5.55.0",
     "@vitejs/plugin-react": "^3.1.0",
-    "babel-loader": "^9.1.2",
     "beachball": "^2.31.12",
     "d3-axis": "^3.0.0",
     "d3-scale": "^4.0.2",
