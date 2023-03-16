@@ -26,6 +26,7 @@
   "devDependencies": {
     "@babel/core": "^7.19.0",
     "@pi-lib/button": "*",
+    "@pi-lib/charts": "*",
     "@pi-lib/config": "*",
     "@pi-lib/constants": "*",
     "@pi-lib/loader": "*",
