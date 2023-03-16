@@ -126,10 +126,10 @@ importers:
 
   src/components/atoms/Button:
     specifiers:
-      '@pi-lib/config': workspace:^0.2.6
+      '@pi-lib/config': ^0.2.6
       '@pi-lib/constants': ^0.1.2
-      '@pi-lib/styles': workspace:^1.0.3
-      '@pi-lib/types': workspace:^0.1.0
+      '@pi-lib/styles': ^1.0.3
+      '@pi-lib/types': ^0.1.0
       '@testing-library/react': ^14.0.0
       '@vitejs/plugin-react': ^3.1.0
       '@vitest/coverage-istanbul': ^0.29.3
@@ -161,9 +161,9 @@ importers:
 
   src/components/atoms/Loader:
     specifiers:
-      '@pi-lib/config': workspace:^0.2.6
-      '@pi-lib/constants': workspace:^0.1.2
-      '@pi-lib/types': workspace:^0.1.0
+      '@pi-lib/config': ^0.2.6
+      '@pi-lib/constants': ^0.1.2
+      '@pi-lib/types': ^0.1.0
       '@testing-library/react': ^14.0.0
       '@vitejs/plugin-react': ^3.1.0
       '@vitest/coverage-istanbul': ^0.29.3
@@ -194,10 +194,10 @@ importers:
 
   src/components/atoms/Tooltip:
     specifiers:
-      '@pi-lib/config': workspace:^0.2.6
+      '@pi-lib/config': ^0.2.6
       '@pi-lib/constants': ^0.1.2
-      '@pi-lib/styles': workspace:^1.0.3
-      '@pi-lib/types': workspace:^0.1.0
+      '@pi-lib/styles': ^1.0.3
+      '@pi-lib/types': ^0.1.0
       '@testing-library/react': ^14.0.0
       '@vitejs/plugin-react': ^3.1.0
       '@vitest/coverage-istanbul': ^0.29.3
@@ -231,10 +231,10 @@ importers:
 
   src/components/charts/BarChart:
     specifiers:
-      '@pi-lib/charts': workspace:^0.8.1
+      '@pi-lib/charts': ^0.8.1
       '@pi-lib/config': ^0.2.6
-      '@pi-lib/constants': workspace:^0.1.2
-      '@pi-lib/types': workspace:^0.1.0
+      '@pi-lib/constants': ^0.1.2
+      '@pi-lib/types': ^0.1.0
       '@testing-library/react': ^14.0.0
       '@vitejs/plugin-react': ^3.1.0
       '@vitest/coverage-istanbul': ^0.29.3
@@ -266,11 +266,11 @@ importers:
 
   src/components/molecules/AdvancedButton:
     specifiers:
-      '@pi-lib/button': workspace:^1.0.3
-      '@pi-lib/config': workspace:^0.2.6
-      '@pi-lib/constants': workspace:^0.1.2
-      '@pi-lib/loader': workspace:^2.0.3
-      '@pi-lib/types': workspace:^0.1.0
+      '@pi-lib/button': ^1.0.3
+      '@pi-lib/config': ^0.2.6
+      '@pi-lib/constants': ^0.1.2
+      '@pi-lib/loader': ^2.0.3
+      '@pi-lib/types': ^0.1.0
       '@testing-library/react': ^14.0.0
       '@vitejs/plugin-react': ^3.1.0
       '@vitest/coverage-istanbul': ^0.29.3
@@ -303,13 +303,13 @@ importers:
 
   src/components/molecules/CandlestickChart:
     specifiers:
-      '@pi-lib/button': workspace:^1.0.3
-      '@pi-lib/config': workspace:^0.2.6
+      '@pi-lib/button': ^1.0.3
+      '@pi-lib/config': ^0.2.6
       '@pi-lib/constants': ^0.1.2
-      '@pi-lib/loader': workspace:^2.0.3
-      '@pi-lib/styles': workspace:^1.0.3
-      '@pi-lib/tooltip': workspace:^1.0.3
-      '@pi-lib/types': workspace:^0.1.0
+      '@pi-lib/loader': ^2.0.3
+      '@pi-lib/styles': ^1.0.3
+      '@pi-lib/tooltip': ^1.0.3
+      '@pi-lib/types': ^0.1.0
       '@testing-library/react': ^14.0.0
       '@types/d3-axis': ^3.0.2
       '@types/d3-scale': ^4.0.3
@@ -360,10 +360,10 @@ importers:
 
   src/components/molecules/Table:
     specifiers:
-      '@pi-lib/config': workspace:^0.2.6
-      '@pi-lib/constants': workspace:^0.1.2
-      '@pi-lib/styles': workspace:^1.0.3
-      '@pi-lib/types': workspace:^0.1.0
+      '@pi-lib/config': ^0.2.6
+      '@pi-lib/constants': ^0.1.2
+      '@pi-lib/styles': ^1.0.3
+      '@pi-lib/types': ^0.1.0
       '@testing-library/react': ^14.0.0
       '@vitejs/plugin-react': ^3.1.0
       '@vitest/coverage-istanbul': ^0.29.3
@@ -395,7 +395,7 @@ importers:
 
   src/components/theming/Styles:
     specifiers:
-      '@pi-lib/config': workspace:^0.2.6
+      '@pi-lib/config': ^0.2.6
       '@pi-lib/constants': ^0.1.2
       '@pi-lib/types': ^0.1.0
       '@testing-library/react': ^14.0.0
@@ -1033,7 +1033,7 @@ packages:
       '@babel/core': ^7.0.0-0
     dependencies:
       '@babel/core': 7.12.9
-      '@babel/helper-plugin-utils': 7.10.4
+      '@babel/helper-plugin-utils': 7.20.2
       '@babel/plugin-syntax-object-rest-spread': 7.8.3_@babel+core@7.12.9
       '@babel/plugin-transform-parameters': 7.21.3_@babel+core@7.12.9
     dev: true
@@ -6749,7 +6749,7 @@ packages:
       supports-color:
         optional: true
     dependencies:
-      ms: 2.1.3
+      ms: 2.1.2
     dev: true
 
   /debug/4.3.4:

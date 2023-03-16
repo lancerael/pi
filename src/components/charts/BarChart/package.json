@@ -15,8 +15,8 @@
   "author": "Lance Taylor",
   "license": "ISC",
   "dependencies": {
-    "@pi-lib/charts": "workspace:^0.8.1",
-    "@pi-lib/constants": "workspace:^0.1.2"
+    "@pi-lib/charts": "^0.8.1",
+    "@pi-lib/constants": "^0.1.2"
   },
   "peerDependencies": {
     "react": "^18.2.0",
@@ -24,7 +24,7 @@
   },
   "devDependencies": {
     "@pi-lib/config": "^0.2.6",
-    "@pi-lib/types": "workspace:^0.1.0",
+    "@pi-lib/types": "^0.1.0",
     "@testing-library/react": "^14.0.0",
     "@vitejs/plugin-react": "^3.1.0",
     "@vitest/coverage-istanbul": "^0.29.3",
