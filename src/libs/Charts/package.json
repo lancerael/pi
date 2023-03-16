@@ -24,8 +24,8 @@
     "test:full": "npm run lint && npm run test"
   },
   "devDependencies": {
-    "@pi-lib/config": "*",
     "@istanbuljs/nyc-config-typescript": "^1.0.2",
+    "@pi-lib/config": "^0.2.6",
     "@types/d3-array": "^3.0.4",
     "@types/d3-axis": "^3.0.2",
     "@types/d3-color": "^3.1.0",
@@ -49,7 +49,7 @@
     "eslint": "^8.36.0",
     "eslint-config-prettier": "^8.7.0",
     "eslint-plugin-prettier": "^4.2.1",
-    "jasmine": "^4.5.0",
+    "jasmine": "^4.6.0",
     "jasmine-spec-reporter": "^7.0.0",
     "jasmine-ts": "^0.4.0",
     "jsdom": "^21.1.1",
