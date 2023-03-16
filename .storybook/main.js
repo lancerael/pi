@@ -5,7 +5,6 @@ crypto.createHash = (a) => c(a == 'md4' ? 'sha256' : a)
 module.exports = {
   stories: ['../src/**/*.stories.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
   addons: [
-    '@storybook/addon-actions',
     '@storybook/addon-essentials',
     '@storybook/addon-interactions',
     '@storybook/addon-links',
@@ -13,6 +12,6 @@ module.exports = {
   framework: '@storybook/react',
   core: {
     disableTelemetry: true,
-    builder: 'webpack5',
+    builder: '@storybook/builder-vite',
   },
 }

@@ -1,6 +1,9 @@
 import React, { DecoratorFn } from '@storybook/react'
-
+import * as jest from 'jest-mock'
 import { Theme } from '@pi-lib/styles'
+
+//@ts-ignore
+window.jest = jest
 
 const withTheme: DecoratorFn = (StoryFn, context) => {
   const themeName = context.parameters.themeName ?? context.globals.themeName
