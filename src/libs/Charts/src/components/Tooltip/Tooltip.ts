@@ -84,7 +84,7 @@ export class Tooltip {
   private readonly move = throttle((event: MouseEvent): void => {
     // const { devicePixelRatio: zoom = 0 } = window ?? {}
     // const zoomDivider = 1 + (zoom > 1 ? zoom / 20 : 0)
-    const offset = 10
+    const offset = 20
     const { left, width, top, height } = this.container.getBoundingClientRect()
     const { width: ttWidth, height: ttHeight } =
       this.tooltip.getBoundingClientRect()

@@ -6,7 +6,7 @@ import {
   AxisParams,
   D3Group,
 } from '../../types'
-import { truncateString, truthy } from '../../helpers'
+import { throttle, truncateString, truthy } from '../../helpers'
 import { Tooltip } from '../Tooltip'
 import { style } from './Axis.style'
 
@@ -112,13 +112,13 @@ export class Axis {
    *
    * @method render
    */
-  public render(dimensions?: Dimensions): void {
+  public render = throttle((dimensions?: Dimensions): void => {
     if (dimensions !== undefined) this.dimensions = dimensions
     if (this.dimensions === undefined) return
     this.renderAxisX()
     this.renderAxisY()
     this.renderLabels()
-  }
+  })
 
   /**
    * Render the x axis
@@ -175,7 +175,8 @@ export class Axis {
         .append('text')
         .attr('class', 'pic-label pic-label-x')
         .attr('x', height / -2 + padding.b / 2)
-        .attr('y', 20)
+        .attr('y', 15)
+        .attr('font-size', '14px')
         .attr('transform', 'rotate(-90)')
         .attr('text-anchor', 'middle')
         .text(this.axisLabels?.[0] ?? '')
@@ -183,9 +184,10 @@ export class Axis {
     if (truthy(this.axisLabels?.[1])) {
       this.d3Svg
         .append('text')
+        .attr('font-size', '14px')
         .attr('class', 'pic-label pic-label-y')
         .attr('x', (width + padding.l + padding.r) / 2)
-        .attr('y', height - padding.b / 3)
+        .attr('y', height - padding.b / 3 - 3)
         .attr('text-anchor', 'middle')
         .text(this.axisLabels?.[1] ?? '')
     }

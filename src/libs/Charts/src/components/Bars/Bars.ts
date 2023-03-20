@@ -13,7 +13,7 @@ import {
   VisualRenderParams,
 } from '../../types'
 import { Tooltip } from '../'
-import { darkerColor } from '../../helpers'
+import { darkerColor, throttle } from '../../helpers'
 import { RGBColor } from 'd3-color'
 
 /**
@@ -124,94 +124,93 @@ export class Bars {
    *
    * @method render
    */
-  render = ({
-    reset = false,
-    transition = false,
-  }: VisualRenderParams = {}): void => {
-    if (this.scales.x === undefined || this.scales.y === undefined) return
-    const { data, minValue, maxValue } = this.dataSet
-    const { values } = this.config
-    const { innerHeight, padding } = this.dimensions
-    const scaleX = this.scales.x.axisScale as ScaleBand<string>
-    const scaleY = this.scales.y.axisScale as ScaleLinear<number, number>
-    const barWidth = scaleX.bandwidth() / values.length
-    // const barType = 'side'
-    const transitionTime = transition ? this.transitionTime : 0
+  public render = throttle(
+    ({ reset = false, transition = false }: VisualRenderParams = {}): void => {
+      if (this.scales.x === undefined || this.scales.y === undefined) return
+      const { data, minValue, maxValue } = this.dataSet
+      const { values } = this.config
+      const { innerHeight, padding } = this.dimensions
+      const scaleX = this.scales.x.axisScale as ScaleBand<string>
+      const scaleY = this.scales.y.axisScale as ScaleLinear<number, number>
+      const barWidth = scaleX.bandwidth() / values.length
+      // const barType = 'side'
+      const transitionTime = transition ? this.transitionTime : 0
 
-    // Reset bars data and clear graph
-    if (reset) {
-      this.bars.forEach((bar, i) => {
-        bar = this.chartGroup.selectAll(`rect.pic-bars-${i}`).data([])
-        bar.exit().remove()
-        bar = undefined
-      })
-      this.bars = []
-    }
+      // Reset bars data and clear graph
+      if (reset) {
+        this.bars.forEach((bar, i) => {
+          bar = this.chartGroup.selectAll(`rect.pic-bars-${i}`).data([])
+          bar.exit().remove()
+          bar = undefined
+        })
+        this.bars = []
+      }
 
-    // Iterate through config value keys
-    values.forEach(({ rgbColor, name }, i) => {
-      // const barOffset = barType === 'side' ? barWidth * i : 0
-      const barOffset = barWidth * i
-      // Add bars for each value
-      if (this.bars[i] === undefined) {
-        // Bind bars data
-        this.bars[i] = this.chartGroup
+      // Iterate through config value keys
+      values.forEach(({ rgbColor, name }, i) => {
+        // const barOffset = barType === 'side' ? barWidth * i : 0
+        const barOffset = barWidth * i
+        // Add bars for each value
+        if (this.bars[i] === undefined) {
+          // Bind bars data
+          this.bars[i] = this.chartGroup
+            .selectAll(`rect.pic-bars-${i}`)
+            .data(data)
+          // Add new rect elements and set base attributes
+          this.bars[i]
+            .enter()
+            .append('rect')
+            .on('mousemove', (e: MouseEvent, d: TableItem) => {
+              this.tooltip.ping([d.label, name, String(d.values[i])], e)
+            })
+            .on('mouseover', ({ target }: MouseEvent) => {
+              select(target as HTMLElement).attr(
+                'fill',
+                darkerColor(rgbColor as RGBColor).formatHex()
+              )
+            })
+            // .on('mousedown', (e: MouseEvent, d: TableItem) => {
+            //   this.clickCallback(e, d)
+            // })
+            .on('mouseout', ({ target }: MouseEvent) => {
+              this.tooltip.hide()
+              select(target as Element).attr(
+                'fill',
+                (rgbColor as RGBColor).formatHex()
+              )
+            })
+            .attr('class', `pic-bars pic-bars-${i}`)
+            .attr('fill', (rgbColor as RGBColor).formatHex())
+            .attr('y', innerHeight + padding.t)
+            .attr('height', 0)
+        }
+
+        // Update the bars to match the latest data
+        let bars = this.chartGroup
           .selectAll(`rect.pic-bars-${i}`)
           .data(data)
-        // Add new rect elements and set base attributes
-        this.bars[i]
-          .enter()
-          .append('rect')
-          .on('mousemove', (e: MouseEvent, d: TableItem) => {
-            this.tooltip.ping([d.label, name, String(d.values[i])], e)
-          })
-          .on('mouseover', ({ target }: MouseEvent) => {
-            select(target as HTMLElement).attr(
-              'fill',
-              darkerColor(rgbColor as RGBColor).formatHex()
-            )
-          })
-          // .on('mousedown', (e: MouseEvent, d: TableItem) => {
-          //   this.clickCallback(e, d)
-          // })
-          .on('mouseout', ({ target }: MouseEvent) => {
-            this.tooltip.hide()
-            select(target as Element).attr(
-              'fill',
-              (rgbColor as RGBColor).formatHex()
-            )
-          })
-          .attr('class', `pic-bars pic-bars-${i}`)
-          .attr('fill', (rgbColor as RGBColor).formatHex())
-          .attr('y', innerHeight + padding.t)
-          .attr('height', 0)
-      }
+          .attr('x', (d: TableItem) => Number(scaleX(d.label)) + barOffset)
+          .attr('width', barWidth)
 
-      // Update the bars to match the latest data
-      let bars = this.chartGroup
-        .selectAll(`rect.pic-bars-${i}`)
-        .data(data)
-        .attr('x', (d: TableItem) => Number(scaleX(d.label)) + barOffset)
-        .attr('width', barWidth)
+        if (typeof bars.transition === 'function') {
+          bars = bars
+            .transition()
+            .ease(easeLinear)
+            .duration(transitionTime) as any
+        }
 
-      if (typeof bars.transition === 'function') {
-        bars = bars
-          .transition()
-          .ease(easeLinear)
-          .duration(transitionTime) as any
-      }
-
-      bars
-        .attr('y', (d: TableItem) => {
-          let value = d.values[i]
-          value = value < 0 ? Math.abs(value) : 0
-          return scaleY(d.values[i] + value)
-        })
-        .attr('height', (d: TableItem) => {
-          const modifier = minValue < 0 ? Math.abs(maxValue) : 0
-          const scaleValue = Math.abs(d.values[i]) - modifier
-          return innerHeight - scaleY(scaleValue) + padding.t
-        })
-    })
-  }
+        bars
+          .attr('y', (d: TableItem) => {
+            let value = d.values[i]
+            value = value < 0 ? Math.abs(value) : 0
+            return scaleY(d.values[i] + value)
+          })
+          .attr('height', (d: TableItem) => {
+            const modifier = minValue < 0 ? Math.abs(maxValue) : 0
+            const scaleValue = Math.abs(d.values[i]) - modifier
+            return innerHeight - scaleY(scaleValue) + padding.t
+          })
+      })
+    }
+  )
 }

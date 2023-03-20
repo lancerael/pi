@@ -54,7 +54,7 @@ importers:
       typescript: ^4.9.5
     devDependencies:
       '@pi-lib/button': link:src/components/atoms/Button
-      '@pi-lib/charts': link:src/libs/Charts
+      '@pi-lib/charts': 0.8.1_v34rfvob3tjutbc4dmcqx3sy34
       '@pi-lib/config': link:src/config
       '@pi-lib/constants': link:src/constants
       '@pi-lib/loader': link:src/components/atoms/Loader
@@ -100,7 +100,7 @@ importers:
   src/apps/sandbox:
     specifiers:
       '@pi-lib/button': ^1.0.3
-      '@pi-lib/candlestick-chart': ^1.0.3
+      '@pi-lib/charts': '*'
       '@pi-lib/styles': ^1.0.3
       '@types/react': ^18.0.26
       '@types/react-dom': ^18.0.9
@@ -111,7 +111,7 @@ importers:
       vite: ^4.0.0
     dependencies:
       '@pi-lib/button': link:../../components/atoms/Button
-      '@pi-lib/candlestick-chart': link:../../components/molecules/CandlestickChart
+      '@pi-lib/charts': link:../../libs/Charts
       '@pi-lib/styles': link:../../components/theming/Styles
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
@@ -229,7 +229,7 @@ importers:
 
   src/components/charts/BarChart:
     specifiers:
-      '@pi-lib/charts': ^0.8.1
+      '@pi-lib/charts': ^0.9.0
       '@pi-lib/config': ^0.2.6
       '@pi-lib/constants': ^0.1.2
       '@pi-lib/types': ^0.1.0
@@ -2768,6 +2768,26 @@ packages:
     dependencies:
       node-addon-api: 3.2.1
       node-gyp-build: 4.6.0
+    dev: true
+
+  /@pi-lib/charts/0.8.1_v34rfvob3tjutbc4dmcqx3sy34:
+    resolution: {integrity: sha512-ViiTLO+yYvvjnmbBouWmZadnDXpBSZv/TiMwvFPYpZxlQPOox1ArTySIy4OKEZtbWFwShFsnsxuEbOYVc4WF7A==}
+    peerDependencies:
+      d3-array: '>=3.2.2'
+      d3-axis: '>=3.0.0'
+      d3-color: '>=3.1.0'
+      d3-ease: '>=3.0.1'
+      d3-scale: '>=4.0.2'
+      d3-selection: '>=3.0.0'
+      d3-transition: '>=3.0.1'
+    dependencies:
+      d3-array: 3.2.2
+      d3-axis: 3.0.0
+      d3-color: 3.1.0
+      d3-ease: 3.0.1
+      d3-scale: 4.0.2
+      d3-selection: 3.0.0
+      d3-transition: 3.0.1_d3-selection@3.0.0
     dev: true
 
   /@pmmmwh/react-refresh-webpack-plugin/0.5.10_aa5jjcyl5ihwp54i3h5tcikeei:
