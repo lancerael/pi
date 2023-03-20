@@ -9,13 +9,13 @@ importers:
 
   .:
     specifiers:
-      '@pi-lib/button': ^1.0.3
-      '@pi-lib/charts': ^0.8.1
-      '@pi-lib/config': ^0.2.6
-      '@pi-lib/constants': ^0.1.2
-      '@pi-lib/loader': ^2.0.3
-      '@pi-lib/styles': ^1.0.3
-      '@pi-lib/tooltip': ^1.0.3
+      '@pi-lib/button': '*'
+      '@pi-lib/charts': '*'
+      '@pi-lib/config': '*'
+      '@pi-lib/constants': '*'
+      '@pi-lib/loader': '*'
+      '@pi-lib/styles': '*'
+      '@pi-lib/tooltip': '*'
       '@storybook/addon-actions': ^6.5.16
       '@storybook/addon-essentials': ^6.5.16
       '@storybook/addon-interactions': ^6.5.16
@@ -54,7 +54,7 @@ importers:
       typescript: ^4.9.5
     devDependencies:
       '@pi-lib/button': link:src/components/atoms/Button
-      '@pi-lib/charts': 0.8.1_v34rfvob3tjutbc4dmcqx3sy34
+      '@pi-lib/charts': link:src/libs/Charts
       '@pi-lib/config': link:src/config
       '@pi-lib/constants': link:src/constants
       '@pi-lib/loader': link:src/components/atoms/Loader
@@ -2768,26 +2768,6 @@ packages:
     dependencies:
       node-addon-api: 3.2.1
       node-gyp-build: 4.6.0
-    dev: true
-
-  /@pi-lib/charts/0.8.1_v34rfvob3tjutbc4dmcqx3sy34:
-    resolution: {integrity: sha512-ViiTLO+yYvvjnmbBouWmZadnDXpBSZv/TiMwvFPYpZxlQPOox1ArTySIy4OKEZtbWFwShFsnsxuEbOYVc4WF7A==}
-    peerDependencies:
-      d3-array: '>=3.2.2'
-      d3-axis: '>=3.0.0'
-      d3-color: '>=3.1.0'
-      d3-ease: '>=3.0.1'
-      d3-scale: '>=4.0.2'
-      d3-selection: '>=3.0.0'
-      d3-transition: '>=3.0.1'
-    dependencies:
-      d3-array: 3.2.2
-      d3-axis: 3.0.0
-      d3-color: 3.1.0
-      d3-ease: 3.0.1
-      d3-scale: 4.0.2
-      d3-selection: 3.0.0
-      d3-transition: 3.0.1_d3-selection@3.0.0
     dev: true
 
   /@pmmmwh/react-refresh-webpack-plugin/0.5.10_aa5jjcyl5ihwp54i3h5tcikeei:
