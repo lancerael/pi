@@ -1,5 +1,6 @@
 import { max, min } from 'd3-array'
 import { select } from 'd3-selection'
+import ResizeObserver from 'resize-observer-polyfill'
 import { Tooltip, Axis, Scale, Bars, Key } from '../'
 import {
   addColorsToConfig,
@@ -411,7 +412,7 @@ export class Chart {
         setTimeout(() => this.visuals.set(keyName, new Bars(params)))
       }
     }
-    setTimeout(this.draw, transitionTime)
+    this.draw()
     return this
   }
 
@@ -482,7 +483,7 @@ export class Chart {
    *
    * @method draw
    */
-  private readonly draw = (): void => {
+  private readonly draw = throttle((): void => {
     this.updateDimensions()
     this.renderChart()
     this.scales.forEach((chartScales: ChartScales) =>
@@ -491,18 +492,11 @@ export class Chart {
     this.axes.forEach((axis: Axis) => axis.render())
     this.keys.forEach((key: Key) => key.render())
     this.visuals.forEach((visual: Visual) => visual.render({ reset: true }))
-  }
-
-  /**
-   * Redraw the chart
-   *
-   * @method redraw
-   */
-  private readonly redraw = throttle(this.draw)
+  })
 
   /**
    * Watcher for the resize event
    *
    */
-  private readonly resizeWatcher = new ResizeObserver(this.redraw)
+  private readonly resizeWatcher = new ResizeObserver(this.draw)
 }

@@ -1,6 +1,6 @@
+import { jsx as t, jsxs as a } from "react/jsx-runtime";
 import i, { css as l, keyframes as s } from "styled-components";
 import { box as h } from "@pi-lib/styles";
-import { jsx as t, jsxs as a } from "react/jsx-runtime";
 const x = {
   default: "#444444",
   pending: "blue",
@@ -28,14 +28,17 @@ const x = {
   minWidth: c = "220px",
   margin: p = "10px",
   ...u
-}) => /* @__PURE__ */ t(f, {
-  status: n,
-  ...u,
-  minWidth: c,
-  margin: p,
-  "data-selector": o,
-  children: e
-}), y = s`
+}) => /* @__PURE__ */ t(
+  f,
+  {
+    status: n,
+    ...u,
+    minWidth: c,
+    margin: p,
+    "data-selector": o,
+    children: e
+  }
+), y = s`
   to {
     rotate: 360deg;
   }
@@ -80,31 +83,20 @@ const x = {
 
     ${e ? "animation-delay: 0.3s;" : ""}
   `
-), S = () => /* @__PURE__ */ t(m, {
-  title: "Loading...",
-  "data-selector": "pi-lib-loader",
-  children: /* @__PURE__ */ a(v, {
-    children: [/* @__PURE__ */ a(d, {
-      children: [/* @__PURE__ */ t(r, {
-        delay: !0
-      }), /* @__PURE__ */ t(r, {})]
-    }), /* @__PURE__ */ a(d, {
-      children: [/* @__PURE__ */ t(r, {}), /* @__PURE__ */ t(r, {
-        delay: !0
-      })]
-    })]
-  })
-}), w = i.div``, B = ({
+), S = () => /* @__PURE__ */ t(m, { title: "Loading...", "data-selector": "pi-lib-loader", children: /* @__PURE__ */ a(v, { children: [
+  /* @__PURE__ */ a(d, { children: [
+    /* @__PURE__ */ t(r, { delay: !0 }),
+    /* @__PURE__ */ t(r, {})
+  ] }),
+  /* @__PURE__ */ a(d, { children: [
+    /* @__PURE__ */ t(r, {}),
+    /* @__PURE__ */ t(r, { delay: !0 })
+  ] })
+] }) }), w = i.div``, B = ({
   isLoading: e,
   buttonProps: n,
   children: o
-}) => /* @__PURE__ */ t(w, {
-  children: /* @__PURE__ */ t(b, {
-    status: e ? "pending" : "default",
-    ...n,
-    children: e ? /* @__PURE__ */ t(S, {}) : o
-  })
-});
+}) => /* @__PURE__ */ t(w, { children: /* @__PURE__ */ t(b, { status: e ? "pending" : "default", ...n, children: e ? /* @__PURE__ */ t(S, {}) : o }) });
 export {
   B as default
 };

@@ -158,10 +158,10 @@ const p = {
   }
 }, h = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  pebble: p,
-  rose: n,
+  avocado: x,
   electron: g,
-  avocado: x
+  pebble: p,
+  rose: n
 }, Symbol.toStringTag, { value: "Module" })), u = {
   fonts: ["sans-serif", "Roboto"],
   fontSizes: {
@@ -178,18 +178,11 @@ const p = {
   theme: a = r(t)
 }) => {
   const f = d(a);
-  return /* @__PURE__ */ i(l, {
-    theme: a,
-    children: [/* @__PURE__ */ o(f, {
-      theme: a
-    }), e]
-  });
-}, w = (e, t) => (a) => /* @__PURE__ */ o(k, {
-  themeName: t,
-  children: /* @__PURE__ */ o(e, {
-    ...a
-  })
-}), c = (e) => Object.entries(e).reduce(
+  return /* @__PURE__ */ i(l, { theme: a, children: [
+    /* @__PURE__ */ o(f, { theme: a }),
+    e
+  ] });
+}, w = (e, t) => (a) => /* @__PURE__ */ o(k, { themeName: t, children: /* @__PURE__ */ o(e, { ...a }) }), c = (e) => Object.entries(e).reduce(
   (t, [a, f]) => `${t} --${a}: ${f};`,
   ""
 ), d = ({ colors: { light: e, dark: t = e }, fonts: a, fontSizes: f } = r()) => s`

@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@pi-lib/button": "^1.0.3",
-    "@pi-lib/candlestick-chart": "^1.0.3",
+    "@pi-lib/charts": "*",
     "@pi-lib/styles": "^1.0.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"

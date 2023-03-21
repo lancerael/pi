@@ -1,5 +1,5 @@
-import t, { keyframes as o, css as d } from "styled-components";
 import { jsx as i, jsxs as n } from "react/jsx-runtime";
+import t, { keyframes as o, css as d } from "styled-components";
 const r = o`
   to {
     rotate: 360deg;
@@ -45,21 +45,16 @@ const r = o`
 
     ${l ? "animation-delay: 0.3s;" : ""}
   `
-), y = () => /* @__PURE__ */ i(c, {
-  title: "Loading...",
-  "data-selector": "pi-lib-loader",
-  children: /* @__PURE__ */ n(p, {
-    children: [/* @__PURE__ */ n(a, {
-      children: [/* @__PURE__ */ i(e, {
-        delay: !0
-      }), /* @__PURE__ */ i(e, {})]
-    }), /* @__PURE__ */ n(a, {
-      children: [/* @__PURE__ */ i(e, {}), /* @__PURE__ */ i(e, {
-        delay: !0
-      })]
-    })]
-  })
-});
+), y = () => /* @__PURE__ */ i(c, { title: "Loading...", "data-selector": "pi-lib-loader", children: /* @__PURE__ */ n(p, { children: [
+  /* @__PURE__ */ n(a, { children: [
+    /* @__PURE__ */ i(e, { delay: !0 }),
+    /* @__PURE__ */ i(e, {})
+  ] }),
+  /* @__PURE__ */ n(a, { children: [
+    /* @__PURE__ */ i(e, {}),
+    /* @__PURE__ */ i(e, { delay: !0 })
+  ] })
+] }) });
 export {
   y as default
 };

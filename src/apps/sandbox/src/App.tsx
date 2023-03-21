@@ -1,15 +1,23 @@
-import React from 'react'
-
-import CandlestickChart from '@pi-lib/candlestick-chart'
-import { useFakeApi } from '../../../components/molecules/CandlestickChart/src/hooks'
+import React, { useEffect, useRef } from 'react'
+import { Chart, randomData } from '@pi-lib/charts'
 
 function App() {
-  const chartData = useFakeApi(390)
+  const divRef = useRef(null)
+  const chartRef = useRef<Chart>()
+
+  useEffect(() => {
+    if (divRef.current && !chartRef.current) {
+      chartRef.current = new Chart({
+        container: divRef.current,
+        ...randomData(),
+      }).addDefaults()
+    }
+  }, [divRef.current])
 
   return (
-    <div style={{ width: '800px', height: '500px' }}>
-      <CandlestickChart data={chartData} />
-    </div>
+    <>
+      <div ref={divRef} style={{ height: '350px' }}></div>
+    </>
   )
 }
 

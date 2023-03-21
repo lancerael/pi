@@ -1,6 +1,6 @@
 export interface Theme {
-  text: string
-  background: string
+  piChartText: string
+  piChartBackground: string
 }
 
 export interface ThemeList {

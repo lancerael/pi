@@ -1,4 +1,4 @@
-import { truthy } from '../../helpers'
+import { throttle, truthy } from '../../helpers'
 import { ValueConfig, KeyParams, D3Svg, Dimensions } from '../../types/'
 
 export const totalMargin = (values: ValueConfig[], i = 0): number =>
@@ -58,7 +58,7 @@ export class Key {
    * @method render
    * @chainable
    */
-  render(): void {
+  public render = throttle((): void => {
     const { innerWidth, height, padding } = this.dimensions
     let iGroupOffset = 0
     const offsetX = innerWidth / 2 + padding.l
@@ -105,5 +105,5 @@ export class Key {
     /* Group position */
     iGroupOffset = offsetX - iGroupOffset / 2
     d3KeyGroup.attr('transform', `translate(${iGroupOffset},${offsetY})`)
-  }
+  })
 }
