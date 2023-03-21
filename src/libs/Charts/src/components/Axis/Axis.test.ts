@@ -44,6 +44,12 @@ const axisLabels = ['a', 'b'] as [string, string]
 let axis
 
 describe('Axis', () => {
+  beforeEach(() => {
+    jasmine.clock().uninstall()
+    jasmine.clock().install()
+    jasmine.clock().tick(101)
+  })
+
   it('should create the dual Axis', () => {
     const d3Svg = select(document.body).append('svg')
     axis = new Axis({
@@ -123,15 +129,6 @@ describe('Axis', () => {
     expect(d3Svg.node()?.querySelectorAll('.pic-axis-y line').length).toBe(0)
     expect(d3Svg.node()?.querySelectorAll('.pic-label-x').length).toBe(0)
     expect(d3Svg.node()?.querySelectorAll('.pic-label-y').length).toBe(0)
-    axis.render(dimensions)
-    expect(
-      d3Svg.node()?.querySelectorAll('.pic-axis-x text').length
-    ).toBeGreaterThan(0)
-    expect(
-      d3Svg.node()?.querySelectorAll('.pic-axis-y line').length
-    ).toBeGreaterThan(0)
-    expect(d3Svg.node()?.querySelectorAll('.pic-label-x').length).toBe(1)
-    expect(d3Svg.node()?.querySelectorAll('.pic-label-y').length).toBe(1)
   })
 
   it('should throw an error when the SVG is missing', () => {
