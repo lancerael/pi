@@ -1,0 +1,7 @@
+{
+  "type": "patch",
+  "comment": "Chart fixes",
+  "packageName": "@pi-lib/charts",
+  "email": "lancerael@hotmail.com",
+  "dependentChangeType": "patch"
+}
