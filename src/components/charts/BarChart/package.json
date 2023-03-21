@@ -1,6 +1,6 @@
 {
   "name": "@pi-lib/bar-chart",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "",
   "type": "module",
   "main": "./src/index.ts",
@@ -15,7 +15,7 @@
   "author": "Lance Taylor",
   "license": "ISC",
   "dependencies": {
-    "@pi-lib/charts": "^0.9.0",
+    "@pi-lib/charts": "^0.9.1",
     "@pi-lib/constants": "^0.1.2"
   },
   "peerDependencies": {

@@ -2,6 +2,21 @@
   "name": "@pi-lib/charts",
   "entries": [
     {
+      "date": "Tue, 21 Mar 2023 00:32:42 GMT",
+      "tag": "@pi-lib/charts_v0.9.1",
+      "version": "0.9.1",
+      "comments": {
+        "patch": [
+          {
+            "author": "lancerael@hotmail.com",
+            "package": "@pi-lib/charts",
+            "commit": "c4ce8c758dc9395bbbbf3e0b31ae77541c8c96a5",
+            "comment": "Chart fixes"
+          }
+        ]
+      }
+    },
+    {
       "date": "Wed, 15 Mar 2023 22:57:50 GMT",
       "tag": "@pi-lib/charts_v0.8.1",
       "version": "0.8.1",

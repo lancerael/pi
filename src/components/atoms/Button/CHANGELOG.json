@@ -2,6 +2,21 @@
   "name": "@pi-lib/button",
   "entries": [
     {
+      "date": "Tue, 21 Mar 2023 00:32:42 GMT",
+      "tag": "@pi-lib/button_v1.0.3",
+      "version": "1.0.3",
+      "comments": {
+        "none": [
+          {
+            "author": "lancerael@hotmail.com",
+            "package": "@pi-lib/button",
+            "commit": "c4ce8c758dc9395bbbbf3e0b31ae77541c8c96a5",
+            "comment": "Test fixes & linting"
+          }
+        ]
+      }
+    },
+    {
       "date": "Wed, 15 Mar 2023 22:57:50 GMT",
       "tag": "@pi-lib/button_v1.0.3",
       "version": "1.0.3",
