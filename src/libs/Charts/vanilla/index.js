@@ -1,6 +1,6 @@
-import { rgb as B } from "d3-color";
+import { rgb as F } from "d3-color";
 import { min as H, max as N } from "d3-array";
-import { select as T } from "d3-selection";
+import { select as S } from "d3-selection";
 import { axisBottom as it, axisLeft as st } from "d3-axis";
 import { scaleBand as rt, scaleLinear as nt } from "d3-scale";
 import { easeLinear as ot } from "d3-ease";
@@ -32,17 +32,17 @@ const at = (e, t) => e.length > t ? `${e.slice(0, t)}[...]` : e, y = (e = 0, t =
   let s;
   for (; s === void 0 || !ct(s, e, t); )
     s = i();
-  return B(...s);
-}, Jt = (e = 10) => O(e, () => K()), ut = (e) => e.darker(0.5), ft = (e, t = !0) => e.map(
+  return F(...s);
+}, ee = (e = 10) => O(e, () => K()), ut = (e) => e.darker(0.5), ft = (e, t = !0) => e.map(
   ({
     color: i = K().formatHex(),
     ...s
   }) => ({
     color: i,
-    rgbColor: t && B(i),
+    rgbColor: t && F(i),
     ...s
   })
-), Qt = (e, t = 3, i = 50) => {
+), ie = (e, t = 3, i = 50) => {
   if (e.length < t)
     throw new Error("Data set is too short to sample.");
   if (e.length === t)
@@ -55,7 +55,7 @@ const at = (e, t) => e.length > t ? `${e.slice(0, t)}[...]` : e, y = (e = 0, t =
     n + (s ? r : i - t)
   );
   return e.slice(o, a);
-}, Zt = (e = y(3, 10), t = y(1, 4), i = y(1, 50), s = y(i, 200)) => ({
+}, se = (e = y(3, 10), t = y(1, 4), i = y(1, 50), s = y(i, 200)) => ({
   label: "Random Chart Data",
   config: {
     axisLabels: ["Y Axis", "X Axis"],
@@ -74,7 +74,7 @@ const at = (e, t) => e.length > t ? `${e.slice(0, t)}[...]` : e, y = (e = 0, t =
       values: O(t, () => y(i, s))
     })
   )
-}), te = () => ({
+}), re = () => ({
   label: "",
   config: {
     axisLabels: ["", ""],
@@ -87,7 +87,7 @@ const at = (e, t) => e.length > t ? `${e.slice(0, t)}[...]` : e, y = (e = 0, t =
     return i.values[r];
   const o = parseInt(i[s ?? ""]);
   return isNaN(o) ? 0 : o;
-}), Array.isArray(e.axisKeys) && typeof i.label != "string" && (i.label = i[e.axisKeys[0]], typeof i.label != "string" && (i.label = "AXIS KEY MISMATCH")), i)), ee = (e, t) => {
+}), Array.isArray(e.axisKeys) && typeof i.label != "string" && (i.label = i[e.axisKeys[0]], typeof i.label != "string" && (i.label = "AXIS KEY MISMATCH")), i)), ne = (e, t) => {
   const i = document.createEvent("MouseEvents");
   return i.initEvent(t, !0, !0), e.dispatchEvent(i), i;
 };
@@ -137,7 +137,7 @@ var P = function() {
       }, t;
     }()
   );
-}(), z = typeof window < "u" && typeof document < "u" && window.document === document, M = function() {
+}(), k = typeof window < "u" && typeof document < "u" && window.document === document, M = function() {
   return typeof global < "u" && global.Math === Math ? global : typeof self < "u" && self.Math === Math ? self : typeof window < "u" && window.Math === Math ? window : Function("return this")();
 }(), vt = function() {
   return typeof requestAnimationFrame == "function" ? requestAnimationFrame.bind(M) : function(e) {
@@ -188,14 +188,14 @@ var gt = 20, yt = ["top", "right", "bottom", "left", "width", "height", "size", 
         return i.broadcastActive();
       }), t.length > 0;
     }, e.prototype.connect_ = function() {
-      !z || this.connected_ || (document.addEventListener("transitionend", this.onTransitionEnd_), window.addEventListener("resize", this.refresh), wt ? (this.mutationsObserver_ = new MutationObserver(this.refresh), this.mutationsObserver_.observe(document, {
+      !k || this.connected_ || (document.addEventListener("transitionend", this.onTransitionEnd_), window.addEventListener("resize", this.refresh), wt ? (this.mutationsObserver_ = new MutationObserver(this.refresh), this.mutationsObserver_.observe(document, {
         attributes: !0,
         childList: !0,
         characterData: !0,
         subtree: !0
       })) : (document.addEventListener("DOMSubtreeModified", this.refresh), this.mutationEventsAdded_ = !0), this.connected_ = !0);
     }, e.prototype.disconnect_ = function() {
-      !z || !this.connected_ || (document.removeEventListener("transitionend", this.onTransitionEnd_), window.removeEventListener("resize", this.refresh), this.mutationsObserver_ && this.mutationsObserver_.disconnect(), this.mutationEventsAdded_ && document.removeEventListener("DOMSubtreeModified", this.refresh), this.mutationsObserver_ = null, this.mutationEventsAdded_ = !1, this.connected_ = !1);
+      !k || !this.connected_ || (document.removeEventListener("transitionend", this.onTransitionEnd_), window.removeEventListener("resize", this.refresh), this.mutationsObserver_ && this.mutationsObserver_.disconnect(), this.mutationEventsAdded_ && document.removeEventListener("DOMSubtreeModified", this.refresh), this.mutationsObserver_ = null, this.mutationEventsAdded_ = !1, this.connected_ = !1);
     }, e.prototype.onTransitionEnd_ = function(t) {
       var i = t.propertyName, s = i === void 0 ? "" : i, r = yt.some(function(o) {
         return !!~s.indexOf(o);
@@ -219,39 +219,39 @@ var gt = 20, yt = ["top", "right", "bottom", "left", "width", "height", "size", 
 }, E = function(e) {
   var t = e && e.ownerDocument && e.ownerDocument.defaultView;
   return t || M;
-}, X = $(0, 0, 0, 0);
-function R(e) {
+}, X = R(0, 0, 0, 0);
+function C(e) {
   return parseFloat(e) || 0;
 }
-function V(e) {
+function B(e) {
   for (var t = [], i = 1; i < arguments.length; i++)
     t[i - 1] = arguments[i];
   return t.reduce(function(s, r) {
     var o = e["border-" + r + "-width"];
-    return s + R(o);
+    return s + C(o);
   }, 0);
 }
 function _t(e) {
   for (var t = ["top", "right", "bottom", "left"], i = {}, s = 0, r = t; s < r.length; s++) {
     var o = r[s], n = e["padding-" + o];
-    i[o] = R(n);
+    i[o] = C(n);
   }
   return i;
 }
 function Et(e) {
   var t = e.getBBox();
-  return $(0, 0, t.width, t.height);
+  return R(0, 0, t.width, t.height);
 }
 function Ot(e) {
   var t = e.clientWidth, i = e.clientHeight;
   if (!t && !i)
     return X;
-  var s = E(e).getComputedStyle(e), r = _t(s), o = r.left + r.right, n = r.top + r.bottom, a = R(s.width), h = R(s.height);
-  if (s.boxSizing === "border-box" && (Math.round(a + o) !== t && (a -= V(s, "left", "right") + o), Math.round(h + n) !== i && (h -= V(s, "top", "bottom") + n)), !St(e)) {
+  var s = E(e).getComputedStyle(e), r = _t(s), o = r.left + r.right, n = r.top + r.bottom, a = C(s.width), h = C(s.height);
+  if (s.boxSizing === "border-box" && (Math.round(a + o) !== t && (a -= B(s, "left", "right") + o), Math.round(h + n) !== i && (h -= B(s, "top", "bottom") + n)), !Tt(e)) {
     var l = Math.round(a + o) - t, c = Math.round(h + n) - i;
     Math.abs(l) !== 1 && (a -= l), Math.abs(c) !== 1 && (h -= c);
   }
-  return $(r.left, r.top, a, h);
+  return R(r.left, r.top, a, h);
 }
 var At = function() {
   return typeof SVGGraphicsElement < "u" ? function(e) {
@@ -260,11 +260,11 @@ var At = function() {
     return e instanceof E(e).SVGElement && typeof e.getBBox == "function";
   };
 }();
-function St(e) {
+function Tt(e) {
   return e === E(e).document.documentElement;
 }
-function Tt(e) {
-  return z ? At(e) ? Et(e) : Ot(e) : X;
+function St(e) {
+  return k ? At(e) ? Et(e) : Ot(e) : X;
 }
 function Mt(e) {
   var t = e.x, i = e.y, s = e.width, r = e.height, o = typeof DOMRectReadOnly < "u" ? DOMRectReadOnly : Object, n = Object.create(o.prototype);
@@ -279,24 +279,24 @@ function Mt(e) {
     left: t
   }), n;
 }
-function $(e, t, i, s) {
+function R(e, t, i, s) {
   return { x: e, y: t, width: i, height: s };
 }
-var Rt = (
+var Ct = (
   /** @class */
   function() {
     function e(t) {
-      this.broadcastWidth = 0, this.broadcastHeight = 0, this.contentRect_ = $(0, 0, 0, 0), this.target = t;
+      this.broadcastWidth = 0, this.broadcastHeight = 0, this.contentRect_ = R(0, 0, 0, 0), this.target = t;
     }
     return e.prototype.isActive = function() {
-      var t = Tt(this.target);
+      var t = St(this.target);
       return this.contentRect_ = t, t.width !== this.broadcastWidth || t.height !== this.broadcastHeight;
     }, e.prototype.broadcastRect = function() {
       var t = this.contentRect_;
       return this.broadcastWidth = t.width, this.broadcastHeight = t.height, t;
     }, e;
   }()
-), $t = (
+), Rt = (
   /** @class */
   function() {
     function e(t, i) {
@@ -305,7 +305,7 @@ var Rt = (
     }
     return e;
   }()
-), Ct = (
+), $t = (
   /** @class */
   function() {
     function e(t, i, s) {
@@ -320,7 +320,7 @@ var Rt = (
         if (!(t instanceof E(t).Element))
           throw new TypeError('parameter 1 is not of type "Element".');
         var i = this.observations_;
-        i.has(t) || (i.set(t, new Rt(t)), this.controller_.addObserver(this), this.controller_.refresh());
+        i.has(t) || (i.set(t, new Ct(t)), this.controller_.addObserver(this), this.controller_.refresh());
       }
     }, e.prototype.unobserve = function(t) {
       if (!arguments.length)
@@ -341,7 +341,7 @@ var Rt = (
     }, e.prototype.broadcastActive = function() {
       if (this.hasActive()) {
         var t = this.callbackCtx_, i = this.activeObservations_.map(function(s) {
-          return new $t(s.target, s.broadcastRect());
+          return new Rt(s.target, s.broadcastRect());
         });
         this.callback_.call(t, i, t), this.clearActive();
       }
@@ -359,7 +359,7 @@ var Rt = (
         throw new TypeError("Cannot call a class as a function.");
       if (!arguments.length)
         throw new TypeError("1 argument required, but only 0 present.");
-      var i = xt.getInstance(), s = new Ct(t, i, this);
+      var i = xt.getInstance(), s = new $t(t, i, this);
       q.set(this, s);
     }
     return e;
@@ -378,20 +378,20 @@ var Rt = (
 var Dt = function() {
   return typeof M.ResizeObserver < "u" ? M.ResizeObserver : U;
 }();
-const zt = {
-  "pi-chart-text": "#A8D4FF",
-  "pi-chart-background": "#000E1A"
-}, kt = {
-  "pi-chart-text": "#003A73",
-  "pi-chart-background": "#F0F8FF"
-}, k = { dark: zt, light: kt }, J = (e, t, i) => {
+const kt = "#A8D4FF", zt = "#000E1A", Wt = {
+  piChartText: kt,
+  piChartBackground: zt
+}, Gt = "#003A73", Lt = "#F0F8FF", Ht = {
+  piChartText: Gt,
+  piChartBackground: Lt
+}, z = { dark: Wt, light: Ht }, J = (e, t, i) => {
   const s = (o) => lt(ht(o));
   let r = document.querySelector(`[data-selector=${e}]`);
   r === null && (r = j("style", "", document.head), r.setAttribute("data-selector", e)), s(r.innerHTML).match(s(t)) === null && (r.innerHTML = I(
     `${w(i) ? "" : r.innerHTML} ${t}`
   ));
-}, ie = (e, t) => k[e] = t, se = (e) => k[e], Wt = (e) => {
-  let t = Object.entries(k[e]).map(([i, s]) => `--${i}: ${s};`).join("");
+}, oe = (e, t) => z[e] = t, ae = (e) => z[e], Nt = (e) => {
+  let t = Object.entries(z[e]).map(([i, s]) => `--${i}: ${s};`).join("");
   return t = `:root { ${t} }`, J("pic-variables", t, !0), t;
 }, W = (e, ...t) => {
   const i = e.map((s, r) => `${s}${t[r] ?? ""}`).join("");
@@ -401,11 +401,11 @@ const zt = {
   `
   border-radius: 5px;
   box-shadow: 3px 3px 6px -4px rgba(0, 0, 0, 0.45);
-  color: var(--pi-chart-text);
-  border: 1px solid var(--pi-chart-text);
-  background-color: var(--pi-chart-background);
+  color: var(--piChartText);
+  border: 1px solid var(--piChartText);
+  background-color: var(--piChartBackground);
 `
-), Gt = () => {
+), Bt = () => {
   W`
     .pic-svg {
       ${Q}
@@ -422,7 +422,7 @@ const zt = {
     }
   `;
 };
-class re {
+class he {
   /**
    * Constructor function that sets up the local object.
    *
@@ -478,7 +478,7 @@ class re {
         Object.entries(n).reduce(
           (c, [p, d]) => ({
             ...c,
-            [p]: new Ft({
+            [p]: new Kt({
               scaleType: d,
               dataSet: this.dataSets.get(h),
               dimensions: this.dimensions
@@ -494,7 +494,7 @@ class re {
         throw new Error("No valid config provided for axis.");
       return this.axes.set(
         n,
-        new Vt({
+        new It({
           d3Svg: this.d3Svg,
           tooltip: this.tooltip,
           dimensions: this.dimensions,
@@ -509,7 +509,7 @@ class re {
         throw new Error("No valid config provided for key.");
       return this.keys.set(
         n,
-        new Bt({
+        new Pt({
           d3Svg: this.d3Svg,
           values: (h == null ? void 0 : h.values) ?? [],
           dimensions: this.dimensions
@@ -530,7 +530,7 @@ class re {
       };
       switch (c) {
         default:
-          setTimeout(() => this.visuals.set(n, new jt(x)));
+          setTimeout(() => this.visuals.set(n, new Yt(x)));
       }
       return this.draw(), this;
     }, this.deleteMapItem = (n, a) => {
@@ -554,10 +554,10 @@ class re {
       ), this.axes.forEach((n) => n.render()), this.keys.forEach((n) => n.render()), this.visuals.forEach((n) => n.render({ reset: !0 }));
     }), this.resizeWatcher = new Dt(this.draw), this.label = t, this.container = this.setContainer(
       typeof i == "string" ? document.querySelector(i) : i
-    ), this.title = T(this.container).append("div").attr("class", "pic-title"), this.d3Svg = T(this.container).append("svg").attr("class", "pic-svg").attr("width", "100%").attr("height", "100%"), this.resizeWatcher.observe(this.container), this.tooltip = new Ht(this.container), this.draw(), this.initialWidth = this.dimensions.width, s !== void 0 && this.setConfig(s), r !== void 0 && this.setData(r), Wt(o), Gt();
+    ), this.title = S(this.container).append("div").attr("class", "pic-title"), this.d3Svg = S(this.container).append("svg").attr("class", "pic-svg").attr("width", "100%").attr("height", "100%"), this.resizeWatcher.observe(this.container), this.tooltip = new Ft(this.container), this.draw(), this.initialWidth = this.dimensions.width, s !== void 0 && this.setConfig(s), r !== void 0 && this.setData(r), Nt(o), Bt();
   }
 }
-const Lt = () => {
+const Vt = () => {
   W`
     .pic-tooltip {
       transition: opacity 0.5s;
@@ -569,7 +569,7 @@ const Lt = () => {
     }
   `;
 };
-class Ht {
+class Ft {
   /**
    * Constructor function that sets up the local object.
    *
@@ -594,10 +594,10 @@ class Ht {
       this.showTimeout !== void 0 && clearTimeout(this.showTimeout), this.hideTimeout !== void 0 && clearTimeout(this.hideTimeout);
     }, !w(t.nodeName))
       throw new Error("The tooltip has no valid container element.");
-    this.container = t, this.tooltip = j("div", "pic-tooltip", t), Lt();
+    this.container = t, this.tooltip = j("div", "pic-tooltip", t), Vt();
   }
 }
-const Nt = () => {
+const jt = () => {
   W`
     .pic-axis {
       font-size: 0.8em;
@@ -608,7 +608,7 @@ const Nt = () => {
     }
   `;
 };
-class Vt {
+class It {
   /**
    * Constructor function which sets up the local object.
    *
@@ -633,7 +633,7 @@ class Vt {
       a !== void 0 && (this.dimensions = a), this.dimensions !== void 0 && (this.renderAxisX(), this.renderAxisY(), this.renderLabels());
     }), !w(t))
       throw new Error("No SVG provided to Axis constructor.");
-    this.dimensions = s, this.d3Svg = t, this.tooltip = i, this.truncate = r, this.axisLabels = o ?? ["", ""], this.scales = n, this.axisGroupX = t.append("g").attr("class", "pic-axis pic-axis-x"), this.axisGroupY = t.append("g").attr("class", "pic-axis pic-axis-y"), this.render(), Nt();
+    this.dimensions = s, this.d3Svg = t, this.tooltip = i, this.truncate = r, this.axisLabels = o ?? ["", ""], this.scales = n, this.axisGroupX = t.append("g").attr("class", "pic-axis pic-axis-x"), this.axisGroupY = t.append("g").attr("class", "pic-axis pic-axis-y"), this.render(), jt();
   }
   /**
    * Render the x axis
@@ -670,7 +670,7 @@ const D = {
   band: () => rt().padding(0.2),
   linear: () => nt()
 };
-class Ft {
+class Kt {
   constructor({
     scaleType: t = "band",
     dataSet: i,
@@ -698,8 +698,8 @@ class Ft {
     }, this.scaleType = t, this.axisScale = (r = D[t]) == null ? void 0 : r.call(D), this.dimensions = s, this.dataSet = i, this.dataSet !== void 0 && this.render();
   }
 }
-const F = (e, t = 0) => e.slice(0, t).reduce((i, { labelWidth: s = 0 }) => i + s, 0);
-class Bt {
+const V = (e, t = 0) => e.slice(0, t).reduce((i, { labelWidth: s = 0 }) => i + s, 0);
+class Pt {
   /**
    * Constructor function that sets up the local object.
    *
@@ -718,13 +718,13 @@ class Bt {
       c.selectAll("text.pic-key-label").data(this.values).enter().append("text").text(({ name: u }) => u).each((u, f, m) => {
         const x = m[f].getBoundingClientRect().width + 22;
         this.values[f].labelWidth = x, a += x - 2;
-      }).attr("class", "pic-key-label").attr("x", (u, f) => F(this.values, f)).attr("y", 10).attr("width", 12).attr("height", 12).attr("font-family", "sans-serif").attr("font-size", "12px").attr("fill", "#222222"), c.selectAll("rect.pic-key").data(this.values).enter().append("rect").attr("class", "pic-key").attr("fill", ({ color: u }) => u).attr("x", (u, f) => F(this.values, f) - 16).attr("y", 0).attr("width", 12).attr("height", 12), a = h - a / 2, c.attr("transform", `translate(${a},${l})`);
+      }).attr("class", "pic-key-label").attr("x", (u, f) => V(this.values, f)).attr("y", 10).attr("width", 12).attr("height", 12).attr("font-family", "sans-serif").attr("font-size", "12px").attr("fill", "#222222"), c.selectAll("rect.pic-key").data(this.values).enter().append("rect").attr("class", "pic-key").attr("fill", ({ color: u }) => u).attr("x", (u, f) => V(this.values, f) - 16).attr("y", 0).attr("width", 12).attr("height", 12), a = h - a / 2, c.attr("transform", `translate(${a},${l})`);
     }), ![t, i, s].every(w))
       throw new Error("Incorrect parameters provided to Key constructor.");
     this.d3Svg = t, this.values = [...i], this.dimensions = s, this.render();
   }
 }
-class jt {
+class Yt {
   /**
    * Optional callback for clicking on the chart
    *
@@ -750,25 +750,25 @@ class jt {
         if (this.scales.x === void 0 || this.scales.y === void 0)
           return;
         const { data: c, minValue: p, maxValue: d } = this.dataSet, { values: u } = this.config, { innerHeight: f, padding: m } = this.dimensions, x = this.scales.x.axisScale, G = this.scales.y.axisScale, L = x.bandwidth() / u.length, Z = l ? this.transitionTime : 0;
-        h && (this.bars.forEach((_, C) => {
-          _ = this.chartGroup.selectAll(`rect.pic-bars-${C}`).data([]), _.exit().remove(), _ = void 0;
-        }), this.bars = []), u.forEach(({ rgbColor: _, name: C }, b) => {
+        h && (this.bars.forEach((_, $) => {
+          _ = this.chartGroup.selectAll(`rect.pic-bars-${$}`).data([]), _.exit().remove(), _ = void 0;
+        }), this.bars = []), u.forEach(({ rgbColor: _, name: $ }, b) => {
           const tt = L * b;
           this.bars[b] === void 0 && (this.bars[b] = this.chartGroup.selectAll(`rect.pic-bars-${b}`).data(c), this.bars[b].enter().append("rect").on("mousemove", (v, g) => {
-            this.tooltip.ping([g.label, C, String(g.values[b])], v);
+            this.tooltip.ping([g.label, $, String(g.values[b])], v);
           }).on("mouseover", ({ target: v }) => {
-            T(v).attr(
+            S(v).attr(
               "fill",
               ut(_).formatHex()
             );
           }).on("mouseout", ({ target: v }) => {
-            this.tooltip.hide(), T(v).attr(
+            this.tooltip.hide(), S(v).attr(
               "fill",
               _.formatHex()
             );
           }).attr("class", `pic-bars pic-bars-${b}`).attr("fill", _.formatHex()).attr("y", f + m.t).attr("height", 0));
-          let S = this.chartGroup.selectAll(`rect.pic-bars-${b}`).data(c).attr("x", (v) => Number(x(v.label)) + tt).attr("width", L);
-          typeof S.transition == "function" && (S = S.transition().ease(ot).duration(Z)), S.attr("y", (v) => {
+          let T = this.chartGroup.selectAll(`rect.pic-bars-${b}`).data(c).attr("x", (v) => Number(x(v.label)) + tt).attr("width", L);
+          typeof T.transition == "function" && (T = T.transition().ease(ot).duration(Z)), T.attr("y", (v) => {
             let g = v.values[b];
             return g = g < 0 ? Math.abs(g) : 0, G(v.values[b] + g);
           }).attr("height", (v) => {
@@ -783,36 +783,36 @@ class jt {
   }
 }
 export {
-  Vt as Axis,
-  jt as Bars,
-  re as Chart,
-  Bt as Key,
-  Ft as Scale,
-  Ht as Tooltip,
+  It as Axis,
+  Yt as Bars,
+  he as Chart,
+  Pt as Key,
+  Kt as Scale,
+  Ft as Tooltip,
   ft as addColorsToConfig,
   J as addStyleToDom,
-  ie as addTheme,
+  oe as addTheme,
   Q as box,
   ct as colorFilter,
   ht as compress,
   j as createNode,
   W as css,
   ut as darkerColor,
-  ee as dispatchEvent,
-  te as emptyTable,
+  ne as dispatchEvent,
+  re as emptyTable,
   I as flatten,
-  se as getTheme,
+  ae as getTheme,
   O as newArray,
-  Wt as publishTheme,
+  Nt as publishTheme,
   dt as random256,
   K as randomColor,
-  Zt as randomData,
+  se as randomData,
   y as randomNumber,
-  Jt as randomPalette,
+  ee as randomPalette,
   lt as sanitise,
-  Qt as sliceSampleData,
+  ie as sliceSampleData,
   A as throttle,
-  F as totalMargin,
+  V as totalMargin,
   pt as transformDataKeys,
   at as truncateString,
   w as truthy
