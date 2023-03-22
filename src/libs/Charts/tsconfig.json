@@ -1,3 +1,6 @@
 {
-  "extends": "@pi-lib/config/tsconfig.json"
+  "extends": "@pi-lib/config/tsconfig.json",
+  "compilerOptions": {
+    "types": []
+  }
 }
