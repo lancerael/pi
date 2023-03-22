@@ -14,7 +14,7 @@ const defaultProps = {
 describe('AdvancedButton', () => {
   it('should render a AdvancedButton', () => {
     render(<AdvancedButton {...defaultProps} />)
-    expect(screen.getAllByRole('Button')).toHaveLength(1)
+    expect(screen.getAllByRole('button')).toHaveLength(1)
   })
 
   it('should not fail any accessibility tests', async () => {
