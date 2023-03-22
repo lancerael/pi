@@ -2,6 +2,21 @@
   "name": "@pi-lib/charts",
   "entries": [
     {
+      "date": "Wed, 22 Mar 2023 00:44:58 GMT",
+      "tag": "@pi-lib/charts_v0.9.1",
+      "version": "0.9.1",
+      "comments": {
+        "none": [
+          {
+            "author": "lancerael@hotmail.com",
+            "package": "@pi-lib/charts",
+            "commit": "24e32c94de2da63ed7ac16509f23b15d7c4220a1",
+            "comment": "Added geomap"
+          }
+        ]
+      }
+    },
+    {
       "date": "Tue, 21 Mar 2023 00:32:42 GMT",
       "tag": "@pi-lib/charts_v0.9.1",
       "version": "0.9.1",
