@@ -1,0 +1,6 @@
+{
+  "extends": "@pi-lib/config/tsconfig.json",
+  "compilerOptions": {
+    "types": []
+  }
+}
