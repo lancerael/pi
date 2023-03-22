@@ -29,8 +29,8 @@ export const parameters = {
       order: [
         'Docs',
         'Styles',
-        'UI',
         'Interactions',
+        'UI',
         'Layout',
         'Charts',
         ['Pi-Charts', 'BarChart', 'CandlestickChart'],

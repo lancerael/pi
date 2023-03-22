@@ -1343,7 +1343,7 @@ function fo(t, n) {
   };
 }
 function ho(t, n) {
-  var e = new Date();
+  var e = /* @__PURE__ */ new Date();
   return t = +t, n = +n, function(r) {
     return e.setTime(t * (1 - r) + n * r), e;
   };
@@ -2072,7 +2072,7 @@ const { abs: Vs, round: Vn } = Math, Bs = (t, n, e) => {
   var n;
   return (n = t.toISOString().split("T")) == null ? void 0 : n[0];
 }, Ws = (t = "") => new Date(t).toLocaleDateString("en-UK"), nt = (t = 0, n = 1e4) => Math.floor(Math.random() * (t - n - 1)) + n + 1, Bn = (t, n = 100) => Math.abs(t + (t - nt(t - n, t + n))), Us = (t, n) => {
-  let r = new Date();
+  let r = /* @__PURE__ */ new Date();
   r.setDate(r.getDate() - t);
   const i = n ? Bn(n.close, 3) : nt(100, 400), o = Bn(i, 50), s = nt(Math.max(i, o), Math.max(i, o) + 20), u = nt(
     Math.abs(Math.min(i, o) - 20),

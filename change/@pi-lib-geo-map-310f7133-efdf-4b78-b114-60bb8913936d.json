@@ -1,0 +1,7 @@
+{
+  "type": "minor",
+  "comment": "Added geomap",
+  "packageName": "@pi-lib/geo-map",
+  "email": "lancerael@hotmail.com",
+  "dependentChangeType": "patch"
+}

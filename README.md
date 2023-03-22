@@ -1,8 +1,8 @@
+[![Storybook](https://cdn.jsdelivr.net/gh/storybookjs/brand@main/badge/badge-storybook.svg)](https://main.d3nmdhmk6s7nee.amplifyapp.com)
+
 # pi-lib
 
 Monorepo of mainly React UI components, but also contains supporting libraries and utilities. It supports theming and comes with some starter themes. Check this link for example usage and props.
-
-- [DEMO & Docs](https://main.d3nmdhmk6s7nee.amplifyapp.com)
 
 All packages prefixed with `@pi-lib/...` can be installed individually as npm modules. They designed for use with TypeScript, but they are also bundled in vanilla JS if you want to install your own dependencies. In this case import from the package name with a suffix of `/vanilla`
 
