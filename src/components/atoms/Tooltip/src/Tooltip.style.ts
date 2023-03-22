@@ -1,4 +1,3 @@
-import { STATUS_COLOURS } from '@pi-lib/constants'
 import { box } from '@pi-lib/styles'
 import styled, { css } from 'styled-components'
 import { StyledTooltipProps } from './Tooltip.style.types'

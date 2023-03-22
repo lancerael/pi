@@ -1,8 +1,9 @@
-import React, { ReactComponentElement, ReactElement } from 'react'
+import React from 'react'
 import { ThemeProvider } from 'styled-components'
 import { getGlobalStyle } from './styles'
 import * as themes from './themes'
 import { ThemeType } from './themes'
+import { ITheme, IThemeProps } from './theme.types'
 
 export const baseTheme = {
   fonts: ['sans-serif', 'Roboto'],
@@ -11,29 +12,65 @@ export const baseTheme = {
     medium: '2em',
     large: '3em',
   },
+  chartBackground: `linear-gradient(
+    135deg,
+    var(--bg) 0%,
+    var(--subtle) 50%,
+    var(--border) 51%,
+    var(--bg) 100%
+  )`,
 }
 
-export const getTheme = (themeName: ThemeType = 'pebble') => ({
-  colors: themes[themeName],
+export const statusColors = {
+  light: {
+    pending: '#232c75',
+    error: '#752323',
+    success: '#237528',
+  },
+  dark: {
+    pending: '#5db0f4',
+    error: '#f97c7f',
+    success: '#60aa3d',
+  },
+}
+
+export const mergeColours = (
+  brightness: 'dark' | 'light',
+  themeName: ThemeType
+) => ({
+  ...statusColors[brightness],
+  ...themes[themeName][brightness],
+})
+
+export const getTheme = (
+  themeName: ThemeType = 'andro',
+  themeOverrides?: ITheme
+): ITheme => ({
+  colors: {
+    light: mergeColours('light', themeName),
+    dark: mergeColours('dark', themeName),
+  },
   ...baseTheme,
+  ...themeOverrides,
 })
 
 export const Theme = ({
   children,
-  themeName = 'pebble',
-  theme = getTheme(themeName),
-}: any) => {
+  themeName = 'andro',
+  themeOverrides,
+  theme = getTheme(themeName, themeOverrides),
+}: IThemeProps) => {
   const GlobalStyle = getGlobalStyle(theme)
   return (
-    <ThemeProvider theme={theme}>
-      <GlobalStyle theme={theme} />
+    <ThemeProvider {...{ theme }}>
+      <GlobalStyle {...{ theme }} />
       {children}
     </ThemeProvider>
   )
 }
 
 export const withTheme =
-  (Component: React.JSXElementConstructor<any>, themeName: string) =>
+  (Component: React.JSXElementConstructor<any>, themeName: ThemeType) =>
   (props: any) =>
     (
       <Theme {...{ themeName }}>

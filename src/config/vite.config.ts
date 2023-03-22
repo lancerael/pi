@@ -1,10 +1,16 @@
 /// <reference types="vitest" />
-import { defineConfig } from 'vite'
+import { defineConfig, UserConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import { RollupOptions } from 'rollup'
 
-export default (libName: string, customRollup?: RollupOptions) =>
-  defineConfig({
+import type { InlineConfig } from 'vitest'
+
+interface VitestConfigExport extends UserConfig {
+  test: InlineConfig
+}
+
+export default (libName: string, customRollup?: RollupOptions) => {
+  return defineConfig({
     test: {
       globals: true,
       watch: false,
@@ -37,4 +43,5 @@ export default (libName: string, customRollup?: RollupOptions) =>
       },
     },
     plugins: [react()],
-  })
+  } as VitestConfigExport)
+}

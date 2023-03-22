@@ -42,6 +42,7 @@ importers:
       '@typescript-eslint/parser': ^5.55.0
       '@vitejs/plugin-react': ^3.1.0
       beachball: ^2.31.12
+      cross-env: ^7.0.3
       d3-axis: ^3.0.0
       d3-geo: ^3.1.0
       d3-scale: ^4.0.2
@@ -94,6 +95,7 @@ importers:
       '@typescript-eslint/parser': 5.55.0_vgl77cfdswitgr47lm5swmv43m
       '@vitejs/plugin-react': 3.1.0_vite@4.2.1
       beachball: 2.31.12
+      cross-env: 7.0.3
       d3-axis: 3.0.0
       d3-geo: 3.1.0
       d3-scale: 4.0.2
@@ -278,7 +280,64 @@ importers:
       vite: 4.1.4
       vitest: 0.29.3_jsdom@21.1.1
 
-  src/components/charts/GeoMap:
+  src/components/charts/CandlestickChart:
+    specifiers:
+      '@pi-lib/button': ^1.0.3
+      '@pi-lib/config': ^0.2.6
+      '@pi-lib/constants': ^0.1.2
+      '@pi-lib/loader': ^2.0.3
+      '@pi-lib/styles': ^1.0.3
+      '@pi-lib/tooltip': ^1.0.3
+      '@pi-lib/types': ^0.1.0
+      '@testing-library/react': ^14.0.0
+      '@types/d3-axis': ^3.0.2
+      '@types/d3-scale': ^4.0.3
+      '@types/d3-selection': ^3.0.4
+      '@types/d3-transition': ^3.0.3
+      '@vitejs/plugin-react': ^3.1.0
+      '@vitest/coverage-istanbul': ^0.29.3
+      d3-axis: ^3.0.0
+      d3-scale: ^4.0.2
+      d3-selection: ^3.0.0
+      d3-transition: ^3.0.1
+      jest-axe: ^7.0.0
+      jsdom: ^21.1.1
+      lodash.throttle: ^4.1.1
+      prettier: ^2.8.4
+      react: ^18.2.0
+      rimraf: ^4.4.0
+      styled-components: ^5.3.5
+      vitest: ^0.29.3
+    dependencies:
+      '@pi-lib/button': link:../../atoms/Button
+      '@pi-lib/constants': link:../../../constants
+      '@pi-lib/loader': link:../../atoms/Loader
+      '@pi-lib/styles': link:../../theming/Styles
+      '@pi-lib/tooltip': link:../../atoms/Tooltip
+      '@types/d3-axis': 3.0.2
+      '@types/d3-scale': 4.0.3
+      d3-axis: 3.0.0
+      d3-scale: 4.0.2
+      d3-selection: 3.0.0
+      d3-transition: 3.0.1_d3-selection@3.0.0
+      lodash.throttle: 4.1.1
+      react: 18.2.0
+      styled-components: 5.3.9_7i5myeigehqah43i5u7wbekgba
+    devDependencies:
+      '@pi-lib/config': link:../../../config
+      '@pi-lib/types': link:../../../types
+      '@testing-library/react': 14.0.0_biqbaboplfbrettd7655fr4n2y
+      '@types/d3-selection': 3.0.4
+      '@types/d3-transition': 3.0.3
+      '@vitejs/plugin-react': 3.1.0_vite@4.2.1
+      '@vitest/coverage-istanbul': 0.29.3_vitest@0.29.3
+      jest-axe: 7.0.0
+      jsdom: 21.1.1
+      prettier: 2.8.4
+      rimraf: 4.4.0
+      vitest: 0.29.3_jsdom@21.1.1
+
+  src/components/charts/WorldMap:
     specifiers:
       '@pi-lib/config': ^0.*.*
       '@pi-lib/constants': ^0.*.*
@@ -354,63 +413,6 @@ importers:
       rimraf: 4.4.0
       typescript: 4.9.5
       vite: 4.1.4
-      vitest: 0.29.3_jsdom@21.1.1
-
-  src/components/molecules/CandlestickChart:
-    specifiers:
-      '@pi-lib/button': ^1.0.3
-      '@pi-lib/config': ^0.2.6
-      '@pi-lib/constants': ^0.1.2
-      '@pi-lib/loader': ^2.0.3
-      '@pi-lib/styles': ^1.0.3
-      '@pi-lib/tooltip': ^1.0.3
-      '@pi-lib/types': ^0.1.0
-      '@testing-library/react': ^14.0.0
-      '@types/d3-axis': ^3.0.2
-      '@types/d3-scale': ^4.0.3
-      '@types/d3-selection': ^3.0.4
-      '@types/d3-transition': ^3.0.3
-      '@vitejs/plugin-react': ^3.1.0
-      '@vitest/coverage-istanbul': ^0.29.3
-      d3-axis: ^3.0.0
-      d3-scale: ^4.0.2
-      d3-selection: ^3.0.0
-      d3-transition: ^3.0.1
-      jest-axe: ^7.0.0
-      jsdom: ^21.1.1
-      lodash.throttle: ^4.1.1
-      prettier: ^2.8.4
-      react: ^18.2.0
-      rimraf: ^4.4.0
-      styled-components: ^5.3.5
-      vitest: ^0.29.3
-    dependencies:
-      '@pi-lib/button': link:../../atoms/Button
-      '@pi-lib/constants': link:../../../constants
-      '@pi-lib/loader': link:../../atoms/Loader
-      '@pi-lib/styles': link:../../theming/Styles
-      '@pi-lib/tooltip': link:../../atoms/Tooltip
-      '@types/d3-axis': 3.0.2
-      '@types/d3-scale': 4.0.3
-      d3-axis: 3.0.0
-      d3-scale: 4.0.2
-      d3-selection: 3.0.0
-      d3-transition: 3.0.1_d3-selection@3.0.0
-      lodash.throttle: 4.1.1
-      react: 18.2.0
-      styled-components: 5.3.9_7i5myeigehqah43i5u7wbekgba
-    devDependencies:
-      '@pi-lib/config': link:../../../config
-      '@pi-lib/types': link:../../../types
-      '@testing-library/react': 14.0.0_biqbaboplfbrettd7655fr4n2y
-      '@types/d3-selection': 3.0.4
-      '@types/d3-transition': 3.0.3
-      '@vitejs/plugin-react': 3.1.0_vite@4.2.1
-      '@vitest/coverage-istanbul': 0.29.3_vitest@0.29.3
-      jest-axe: 7.0.0
-      jsdom: 21.1.1
-      prettier: 2.8.4
-      rimraf: 4.4.0
       vitest: 0.29.3_jsdom@21.1.1
 
   src/components/molecules/Table:
@@ -5042,7 +5044,7 @@ packages:
       '@babel/plugin-transform-react-jsx-source': 7.19.6_@babel+core@7.21.3
       magic-string: 0.27.0
       react-refresh: 0.14.0
-      vite: 4.2.1_@types+node@18.15.3
+      vite: 4.2.1
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -9029,7 +9031,7 @@ packages:
       fs.realpath: 1.0.0
       inflight: 1.0.6
       inherits: 2.0.4
-      minimatch: 3.0.5
+      minimatch: 3.1.2
       once: 1.4.0
       path-is-absolute: 1.0.1
     dev: true
@@ -14363,7 +14365,7 @@ packages:
       mlly: 1.2.0
       pathe: 1.1.0
       picocolors: 1.0.0
-      vite: 4.1.4_@types+node@18.15.3
+      vite: 4.2.1_@types+node@18.15.3
     transitivePeerDependencies:
       - '@types/node'
       - less
@@ -14501,6 +14503,39 @@ packages:
     dependencies:
       '@types/node': 18.15.3
       esbuild: 0.16.17
+      postcss: 8.4.21
+      resolve: 1.22.1
+      rollup: 3.19.1
+    optionalDependencies:
+      fsevents: 2.3.2
+    dev: true
+
+  /vite/4.2.1:
+    resolution: {integrity: sha512-7MKhqdy0ISo4wnvwtqZkjke6XN4taqQ2TBaTccLIpOKv7Vp2h4Y+NpmWCnGDeSvvn45KxvWgGyb0MkHvY1vgbg==}
+    engines: {node: ^14.18.0 || >=16.0.0}
+    hasBin: true
+    peerDependencies:
+      '@types/node': '>= 14'
+      less: '*'
+      sass: '*'
+      stylus: '*'
+      sugarss: '*'
+      terser: ^5.4.0
+    peerDependenciesMeta:
+      '@types/node':
+        optional: true
+      less:
+        optional: true
+      sass:
+        optional: true
+      stylus:
+        optional: true
+      sugarss:
+        optional: true
+      terser:
+        optional: true
+    dependencies:
+      esbuild: 0.17.12
       postcss: 8.4.21
       resolve: 1.22.1
       rollup: 3.19.1
@@ -14669,7 +14704,7 @@ packages:
       tinybench: 2.4.0
       tinypool: 0.3.1
       tinyspy: 1.1.1
-      vite: 4.1.4_@types+node@18.15.3
+      vite: 4.2.1_@types+node@18.15.3
       vite-node: 0.29.3_@types+node@18.15.3
       why-is-node-running: 2.2.2
     transitivePeerDependencies:

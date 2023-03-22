@@ -1,8 +1,3 @@
 {
-  "extends": "@pi-lib/config/tsconfig.shared.json",
-  "include": ["./**/*"],
-  "exclude": ["./src/*.*.tsx", "vite.config.ts", "./dist/src/*"],
-  "compilerOptions": {
-    "outDir": "./dist"
-  }
+  "extends": "@pi-lib/config/tsconfig.shared.json"
 }

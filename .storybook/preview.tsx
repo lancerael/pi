@@ -27,13 +27,13 @@ export const parameters = {
   options: {
     storySort: {
       order: [
-        'Docs',
-        'Styles',
+        'Theme',
+        ['Themes', 'Docs', 'Custom'],
         'Interactions',
         'UI',
         'Layout',
         'Charts',
-        ['Pi-Charts', 'BarChart', 'CandlestickChart'],
+        ['WorldMap', 'BarChart', 'CandlestickChart'],
       ],
     },
   },
@@ -47,6 +47,7 @@ export const globalTypes = {
     toolbar: {
       icon: 'circle',
       items: [
+        { value: 'andro', icon: 'circlehollow', title: 'Andro' },
         { value: 'avocado', icon: 'circlehollow', title: 'Avocado' },
         { value: 'electron', icon: 'circlehollow', title: 'Electron' },
         { value: 'pebble', icon: 'circlehollow', title: 'Pebble' },

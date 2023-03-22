@@ -6,7 +6,7 @@ export const box = ({
   const colorVar = isSpecial ? 'specialText' : 'textSoft'
   const backgroundVar = isSpecial ? 'specialBg' : 'subtle'
   return `
-    border: 3px solid var(--${borderVar});
+    border: 2px solid var(--${borderVar});
     color: ${color ? color : `var(--${colorVar})`};
     background-color: var(--${backgroundVar});
     border-radius: 6px;

@@ -6,7 +6,7 @@ const defaultProps = {
   headers: ['One', 'Two', 'Three'],
   tableRows: [
     { cols: ['a', 'b', 'c'] },
-    { cols: ['1', '2', '3'], expandedContent: <>EXPANDED</> },
+    { cols: ['Expand me...=', '2', '3'], expandedContent: <>EXPANDED</> },
     { cols: ['x', 'y', 'z'] },
   ],
 }

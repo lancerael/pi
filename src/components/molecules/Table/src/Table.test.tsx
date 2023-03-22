@@ -8,7 +8,7 @@ const defaultProps = {
   headers: ['One', 'Two', 'Three'],
   tableRows: [
     { cols: ['a', 'b', 'c'] },
-    { cols: ['1', '2', '3'], expandedContent: <>EXPANDED</> },
+    { cols: ['1test', '2', '3'], expandedContent: <>EXPANDED</> },
     { cols: ['x', 'y', 'z'] },
   ],
 }
@@ -16,7 +16,7 @@ const defaultProps = {
 describe('Table', () => {
   it.skip('should render a Table', () => {
     render(<Table {...defaultProps} />)
-    expect(screen.getAllByTitle('')).toHaveLength(1)
+    expect(screen.getAllByText('1test')).toHaveLength(1)
   })
 
   it('should not fail any accessibility tests', async () => {

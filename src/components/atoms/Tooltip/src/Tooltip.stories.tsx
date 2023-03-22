@@ -1,4 +1,3 @@
-import React from 'react'
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 import { Tooltip } from './Tooltip'
 import { TooltipProps } from './Tooltip.types'
@@ -15,7 +14,7 @@ const Template: ComponentStory<typeof Tooltip> = (args: TooltipProps) => (
 export const Default = Template.bind({})
 Default.args = {
   children: 'Tooltip',
-  isVisible: 'default',
+  isVisible: true,
   x: 50,
   y: 20,
 }
