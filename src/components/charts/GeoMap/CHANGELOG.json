@@ -1,0 +1,38 @@
+{
+  "name": "@pi-lib/geo-map",
+  "entries": [
+    {
+      "date": "Wed, 22 Mar 2023 00:44:58 GMT",
+      "tag": "@pi-lib/geo-map_v0.1.0",
+      "version": "0.1.0",
+      "comments": {
+        "minor": [
+          {
+            "author": "lancerael@hotmail.com",
+            "package": "@pi-lib/geo-map",
+            "commit": "24e32c94de2da63ed7ac16509f23b15d7c4220a1",
+            "comment": "Added geomap"
+          },
+          {
+            "author": "beachball",
+            "package": "@pi-lib/geo-map",
+            "comment": "Bump @pi-lib/constants to v0.1.2",
+            "commit": "24e32c94de2da63ed7ac16509f23b15d7c4220a1"
+          },
+          {
+            "author": "beachball",
+            "package": "@pi-lib/geo-map",
+            "comment": "Bump @pi-lib/config to v0.2.6",
+            "commit": "24e32c94de2da63ed7ac16509f23b15d7c4220a1"
+          },
+          {
+            "author": "beachball",
+            "package": "@pi-lib/geo-map",
+            "comment": "Bump @pi-lib/types to v0.1.0",
+            "commit": "24e32c94de2da63ed7ac16509f23b15d7c4220a1"
+          }
+        ]
+      }
+    }
+  ]
+}
