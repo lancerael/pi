@@ -6,12 +6,12 @@ import { axe } from 'jest-axe'
 
 describe('GeoMap', () => {
   it('should render a GeoMap', () => {
-    render(<GeoMap />)
-    expect(screen.getAllByTitle('')).toHaveLength(1)
+    render(<GeoMap country="USA" label="Location" />)
+    expect(screen.getAllByText('Location: USA')).toHaveLength(1)
   })
 
   it('should not fail any accessibility tests', async () => {
-    const { container } = render(<GeoMap />)
+    const { container } = render(<GeoMap country="USA" label="Location" />)
     expect(await axe(container)).toHaveNoViolations()
   })
 })
