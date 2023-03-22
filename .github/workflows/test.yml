@@ -23,7 +23,9 @@ jobs:
         uses: ./.github/actions/pnpm-setup
 
       - name: Lint
+        shell: bash
         run: pnpm lint
 
       - name: Test
+        shell: bash
         run: pnpm test
