@@ -9,7 +9,7 @@
     "publish": "npx beachball publish",
     "lint": "npx prettier -c . && npx eslint",
     "lint:fix": "npx prettier -w . && npx eslint --fix",
-    "test": "npx nx affected --target=test",
+    "test": "npx nx run-many --target=test",
     "generate": "node ./bin/generate.js",
     "sb": "cross-env NODE_OPTIONS=--openssl-legacy-provider start-storybook -p 6006",
     "build-storybook": "build-storybook"
