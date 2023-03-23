@@ -3,7 +3,7 @@ import {
   Key,
   totalMargin,
   //@ts-ignore
-} from '../../../vanilla/index.js'
+} from '../../../js/index.js'
 
 import { select } from 'd3-selection'
 import jsdom from 'jsdom'

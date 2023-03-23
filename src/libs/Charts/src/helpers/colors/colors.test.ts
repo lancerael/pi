@@ -7,7 +7,7 @@ import {
   addColorsToConfig,
   randomData,
   //@ts-ignore
-} from '../../../vanilla/index.js'
+} from '../../../js/index.js'
 import { RGBColor } from 'd3-color'
 
 const verifyColor = (newColor: RGBColor): void => {

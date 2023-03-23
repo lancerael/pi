@@ -6,7 +6,7 @@ import {
   randomNumber,
   newArray,
   //@ts-ignore
-} from '../../../vanilla/index.js'
+} from '../../../js/index.js'
 import { TableConfig } from '../../types'
 
 describe('sliceSampleData', () => {
