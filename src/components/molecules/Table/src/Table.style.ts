@@ -10,6 +10,10 @@ export const StyledTable = styled.table`
     padding: 8px;
     text-align: left;
   }
+
+  & * {
+    transition: all 0.2s;
+  }
 `
 export const StyledTableHead = styled.thead`
   background: var(--dark);

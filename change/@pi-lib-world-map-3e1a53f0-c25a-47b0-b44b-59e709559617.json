@@ -1,0 +1,7 @@
+{
+  "type": "minor",
+  "comment": "Code cleanup",
+  "packageName": "@pi-lib/world-map",
+  "email": "lancerael@hotmail.com",
+  "dependentChangeType": "patch"
+}

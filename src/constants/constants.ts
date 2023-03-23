@@ -4,10 +4,3 @@ export const STATUS_MAP = {
   500: 'error',
   404: 'error',
 }
-
-export const STATUS_COLOURS = {
-  default: '#444444',
-  pending: 'blue',
-  error: 'red',
-  success: 'green',
-}

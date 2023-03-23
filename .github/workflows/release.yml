@@ -4,6 +4,8 @@ on:
   pull_request:
     types:
       - closed
+    branches: [main]
+
 jobs:
   if_merged:
     if: github.event.pull_request.merged == true
@@ -20,7 +22,15 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 18.x
-      - uses: ecraig12345/beachball-actions/install-beachball@v1
+
+      - name: Set up pnpm
+        uses: ./.github/actions/pnpm-setup
+
+      - name: Build for vanilla dist
+        run: pnpm build
+
+      - name: Setup beachball
+        uses: ecraig12345/beachball-actions/install-beachball@v1
 
       - name: Publish packages
         run: npm run publish -- -n ${{ secrets.PI_PUB }} -yes

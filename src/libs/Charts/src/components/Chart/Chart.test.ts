@@ -3,7 +3,7 @@ import {
   Chart,
   randomData,
   //@ts-ignore
-} from '../../../vanilla/index.js'
+} from '../../../js/index.js'
 
 import { ChartParams, TableData } from '../../types'
 import { JSDOM } from 'jsdom'

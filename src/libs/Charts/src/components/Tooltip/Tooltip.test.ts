@@ -3,7 +3,7 @@ import {
   Tooltip,
   dispatchEvent,
   //@ts-ignore
-} from '../../../vanilla/index.js'
+} from '../../../js/index.js'
 import { JSDOM } from 'jsdom'
 import { readFileSync } from 'fs'
 import 'jasmine'

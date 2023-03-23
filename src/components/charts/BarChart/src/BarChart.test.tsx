@@ -3,6 +3,7 @@ import { render, screen } from '@testing-library/react'
 import { expect, vi } from 'vitest'
 import { axe } from 'jest-axe'
 import { randomData } from '@pi-lib/charts'
+import React from 'react'
 
 describe('BarChart', () => {
   it('should render a BarChart', () => {

@@ -5,12 +5,13 @@
   "scripts": {
     "sandbox": "pnpm --filter sandbox dev",
     "build": "npx nx affected --target=build",
-    "change": "pnpm i && beachball sync && pnpm build && beachball change",
+    "change": "pnpm i && beachball sync && beachball change",
     "publish": "npx beachball publish",
-    "lint": "npx prettier -w . && npx eslint --fix",
-    "test": "npx nx affected --target=test",
+    "lint": "npx prettier -c . && npx eslint",
+    "lint:fix": "npx prettier -w . && npx eslint --fix",
+    "test": "npx nx run-many --target=test",
     "generate": "node ./bin/generate.js",
-    "sb": "start-storybook -p 6006",
+    "sb": "cross-env NODE_OPTIONS=--openssl-legacy-provider start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
   "repository": {
@@ -57,6 +58,7 @@
     "@typescript-eslint/parser": "^5.55.0",
     "@vitejs/plugin-react": "^3.1.0",
     "beachball": "^2.31.12",
+    "cross-env": "^7.0.3",
     "d3-axis": "^3.0.0",
     "d3-geo": "^3.1.0",
     "d3-scale": "^4.0.2",

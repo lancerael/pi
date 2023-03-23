@@ -3,7 +3,7 @@ import {
   Scale,
   randomData,
   //@ts-ignore
-} from '../../../vanilla/index.js'
+} from '../../../js/index.js'
 import 'jasmine'
 
 const { data: dataSet } = randomData()

@@ -7,7 +7,7 @@ import {
   addColorsToConfig,
   dispatchEvent,
   //@ts-ignore
-} from '../../../vanilla/index.js'
+} from '../../../js/index.js'
 import { select } from 'd3-selection'
 import { JSDOM } from 'jsdom'
 import { readFileSync } from 'fs'

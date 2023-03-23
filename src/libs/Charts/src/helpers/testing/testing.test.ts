@@ -1,7 +1,7 @@
 import {
   dispatchEvent,
   //@ts-ignore
-} from '../../../vanilla/index.js'
+} from '../../../js/index.js'
 
 describe('dispatchEvent', () => {
   it('should dispatch an event', () => {

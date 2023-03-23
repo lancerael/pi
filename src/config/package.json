@@ -3,10 +3,10 @@
   "description": "Shared Pi config",
   "version": "0.2.6",
   "license": "ISC",
-  "main": "./vanilla/vite.config.js",
+  "main": "./js/vite.config.js",
   "type": "module",
   "scripts": {
-    "build": "rimraf vanilla && npx tsc"
+    "build": "rimraf js && npx tsc"
   },
   "devDependencies": {
     "@types/jest": "^29.4.4",

@@ -1,1 +1,1 @@
-export type ThemeType = 'pebble' | 'rose' | 'electron' | 'avocado'
+export type ThemeType = 'pebble' | 'rose' | 'electron' | 'avocado' | 'andro'

@@ -3,27 +3,23 @@
     "default": {
       "runner": "nx/tasks-runners/default",
       "options": {
-        "cacheableOperations": ["build", "test:coverage"]
+        "cacheableOperations": ["build", "test"]
       }
     }
   },
   "namedInputs": {
-    "dist": ["!{projectRoot}/**/dist/**"]
+    "vanilla": ["!{projectRoot}/**/vanilla/**"]
   },
   "targetDefaults": {
     "build": {
-      "inputs": ["dist", "^dist"],
-      "dependsOn": ["^build"]
+      "inputs": ["vanilla", "^vanilla"],
+      "dependsOn": ["^lint:fix"]
     },
     "test": {
-      "dependsOn": ["^build"],
       "inputs": ["default", "^default"]
     },
-    "test:coverage": {
-      "dependsOn": ["^build"]
-    },
     "dev": {
-      "dependsOn": ["^build"]
+      "dependsOn": ["^lint:fix"]
     }
   }
 }

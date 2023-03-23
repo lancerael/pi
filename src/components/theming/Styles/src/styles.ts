@@ -10,19 +10,15 @@ const getVars = (scheme: any) =>
 export const getGlobalStyle = (
   { colors: { light, dark = light }, fonts, fontSizes }: any = getTheme()
 ) => createGlobalStyle`
-  :root {
+  body {
     ${getVars(light)}
     font-family: ${fonts.join(', ')};
     background-color: var(--bg);
     color: var(--text);
-    
-    & * {
-      transition: all 0.2s;
-    }
   }
 
   @media (prefers-color-scheme: dark) {
-    :root {
+    body {
       ${getVars(dark)}
     }
   }

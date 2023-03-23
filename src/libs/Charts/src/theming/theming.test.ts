@@ -6,7 +6,7 @@ import {
   css,
   compress,
   //@ts-ignore
-} from '../../vanilla/index.js'
+} from '../../js/index.js'
 import jsdom from 'jsdom'
 import fs from 'fs'
 

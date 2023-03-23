@@ -1,8 +1,8 @@
-import React from 'react'
 import Button from './Button'
 import { render, screen } from '@testing-library/react'
 import { expect, vi } from 'vitest'
 import { axe } from 'jest-axe'
+import React from 'react'
 
 const defaultProps = {
   onClick: vi.fn(),

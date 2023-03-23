@@ -15,7 +15,7 @@ export const StyledRow = styled.tr(
     css`
       cursor: pointer;
       &:hover {
-        background: var(--shadow);
+        background: var(--subtle);
       }
     `}
 
