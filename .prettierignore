@@ -4,3 +4,4 @@ coverage
 dist
 storybook-static
 pnpm-lock.yaml
+js
