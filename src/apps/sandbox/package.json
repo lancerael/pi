@@ -9,9 +9,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@pi-lib/button": "^1.0.3",
+    "@pi-lib/button": "^1.1.0",
     "@pi-lib/charts": "*",
-    "@pi-lib/styles": "^1.0.3",
+    "@pi-lib/styles": "^1.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },

@@ -1,8 +1,19 @@
 # Change Log - @pi-lib/world-map
 
-This log was last generated on Wed, 22 Mar 2023 00:44:58 GMT and should not be manually modified.
+This log was last generated on Thu, 23 Mar 2023 00:53:35 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 0.2.0
+
+Thu, 23 Mar 2023 00:53:35 GMT
+
+### Minor changes
+
+- Code cleanup (lancerael@hotmail.com)
+- Bump @pi-lib/constants to v0.2.0
+- Bump @pi-lib/config to v0.3.0
+- Bump @pi-lib/types to v0.1.0
 
 ## 0.1.0
 

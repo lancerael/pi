@@ -1,8 +1,16 @@
 # Change Log - @pi-lib/config
 
-This log was last generated on Wed, 15 Mar 2023 22:33:31 GMT and should not be manually modified.
+This log was last generated on Thu, 23 Mar 2023 00:53:35 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 0.3.0
+
+Thu, 23 Mar 2023 00:53:35 GMT
+
+### Minor changes
+
+- Fixed tests (lancerael@hotmail.com)
 
 ## 0.2.6
 

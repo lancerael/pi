@@ -1,8 +1,19 @@
 # Change Log - @pi-lib/bar-chart
 
-This log was last generated on Tue, 21 Mar 2023 00:32:42 GMT and should not be manually modified.
+This log was last generated on Thu, 23 Mar 2023 00:53:35 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 0.1.0
+
+Thu, 23 Mar 2023 00:53:35 GMT
+
+### Minor changes
+
+- Code cleanup (lancerael@hotmail.com)
+- Bump @pi-lib/charts to v0.10.0
+- Bump @pi-lib/constants to v0.2.0
+- Bump @pi-lib/config to v0.3.0
 
 ## 0.0.2
 
