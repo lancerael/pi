@@ -1,4 +1,3 @@
-import { STATUS_COLOURS } from '@pi-lib/constants'
 import { box } from '@pi-lib/styles'
 import styled from 'styled-components'
 

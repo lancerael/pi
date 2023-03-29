@@ -15,7 +15,6 @@
   "author": "Lance Taylor",
   "license": "ISC",
   "dependencies": {
-    "@pi-lib/charts": "^0.10.0",
     "@pi-lib/constants": "^0.2.0"
   },
   "peerDependencies": {
