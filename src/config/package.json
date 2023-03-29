@@ -1,7 +1,7 @@
 {
   "name": "@pi-lib/config",
   "description": "Shared Pi config",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "license": "ISC",
   "main": "./js/vite.config.js",
   "type": "module",

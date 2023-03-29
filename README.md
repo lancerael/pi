@@ -30,7 +30,7 @@ _@pi-lib/loader_ - A simple themed loading spinner.
 
 #### Tooltip
 
-_@pi-lib/loader_ - A themed tooltip.
+_@pi-lib/tooltip_ - A themed tooltip.
 
 ## _Interactions_
 
@@ -41,6 +41,12 @@ _@pi-lib/button_ - A simple button, styled via Pi theme.
 #### AdvancedButton
 
 _@pi-lib/advanced-button_ - An advanced button, with a loader.
+
+## _Layout_
+
+#### Table
+
+_@pi-lib/table_ - An expandable table, styled via Pi theme.
 
 ## Develpoment
 
