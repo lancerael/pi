@@ -4,7 +4,7 @@
   "description": "Monorepo of React UI components and supporting utilities.",
   "scripts": {
     "sandbox": "pnpm --filter sandbox dev",
-    "build": "npx nx affected --target=build",
+    "build": "npx nx run-many --target=build",
     "change": "pnpm i && beachball sync && beachball change",
     "publish": "npx beachball publish",
     "lint": "npx prettier -c . && npx eslint",
@@ -28,7 +28,6 @@
     "@pi-lib/button": "*",
     "@pi-lib/charts": "*",
     "@pi-lib/config": "*",
-    "@pi-lib/constants": "*",
     "@pi-lib/loader": "*",
     "@pi-lib/styles": "*",
     "@pi-lib/tooltip": "*",
