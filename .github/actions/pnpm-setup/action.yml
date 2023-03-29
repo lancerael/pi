@@ -27,3 +27,7 @@ runs:
     - name: Install dependencies
       shell: bash
       run: pnpm i
+
+    - name: Build config
+      shell: bash
+      run: pnpm --filter @pi-lib/config prebuild

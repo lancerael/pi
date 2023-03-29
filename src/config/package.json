@@ -6,7 +6,7 @@
   "main": "./js/vite.config.js",
   "type": "module",
   "scripts": {
-    "build": "rimraf js && npx tsc"
+    "prebuild": "rimraf js && npx tsc"
   },
   "devDependencies": {
     "@types/jest": "^29.4.4",
