@@ -2,6 +2,21 @@
   "name": "@pi-lib/config",
   "entries": [
     {
+      "date": "Thu, 23 Mar 2023 00:53:35 GMT",
+      "tag": "@pi-lib/config_v0.3.0",
+      "version": "0.3.0",
+      "comments": {
+        "minor": [
+          {
+            "author": "lancerael@hotmail.com",
+            "package": "@pi-lib/config",
+            "commit": "c1fa602dbe93c2c19d3ee8f7f17c8124cf6ec909",
+            "comment": "Fixed tests"
+          }
+        ]
+      }
+    },
+    {
       "date": "Wed, 15 Mar 2023 22:57:50 GMT",
       "tag": "@pi-lib/config_v0.2.6",
       "version": "0.2.6",

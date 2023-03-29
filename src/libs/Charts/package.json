@@ -1,6 +1,6 @@
 {
   "name": "@pi-lib/charts",
-  "version": "0.9.1",
+  "version": "0.10.0",
   "description": "Simple charting solution driven by d3 and TS",
   "main": "./src/index.ts",
   "repository": "https://github.com/lancerael/pi-charts",
@@ -25,7 +25,7 @@
   },
   "devDependencies": {
     "@istanbuljs/nyc-config-typescript": "^1.0.2",
-    "@pi-lib/config": "^0.2.6",
+    "@pi-lib/config": "^0.3.0",
     "@types/d3-array": "^3.0.4",
     "@types/d3-axis": "^3.0.2",
     "@types/d3-color": "^3.1.0",

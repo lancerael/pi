@@ -1,7 +1,0 @@
-{
-  "type": "minor",
-  "comment": "Fixed tests",
-  "packageName": "@pi-lib/config",
-  "email": "lancerael@hotmail.com",
-  "dependentChangeType": "patch"
-}

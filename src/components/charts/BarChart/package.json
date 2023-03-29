@@ -1,6 +1,6 @@
 {
   "name": "@pi-lib/bar-chart",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "",
   "type": "module",
   "main": "./src/index.ts",
@@ -15,14 +15,14 @@
   "author": "Lance Taylor",
   "license": "ISC",
   "dependencies": {
-    "@pi-lib/charts": "^0.9.1"
+    "@pi-lib/constants": "^0.2.0"
   },
   "peerDependencies": {
     "react": "^18.2.0",
     "styled-components": "^5.3.5"
   },
   "devDependencies": {
-    "@pi-lib/config": "^0.2.6",
+    "@pi-lib/config": "^0.3.0",
     "@pi-lib/types": "^0.1.0",
     "@testing-library/react": "^14.0.0",
     "@vitejs/plugin-react": "^3.1.0",
