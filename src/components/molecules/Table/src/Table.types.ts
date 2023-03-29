@@ -1,7 +1,13 @@
-import { RowProps } from './components/Row/Row.types'
+export type CellContent = JSX.Element | string
+
+export interface RowProps {
+  cols: CellContent[]
+  i: number
+  expandedContent?: JSX.Element
+}
 
 export interface TableProps {
   headers?: string[]
-  tableRows: Omit<RowProps, 'i'>[]
-  fixedWidths?: { [key: string]: { width: string } }
+  rows: Omit<RowProps, 'i'>[]
+  fixedWidths?: { [key: number]: { width: string } }
 }

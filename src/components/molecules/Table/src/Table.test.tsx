@@ -6,7 +6,7 @@ import { axe } from 'jest-axe'
 
 const defaultProps = {
   headers: ['One', 'Two', 'Three'],
-  tableRows: [
+  rows: [
     { cols: ['a', 'b', 'c'] },
     { cols: ['1test', '2', '3'], expandedContent: <>EXPANDED</> },
     { cols: ['x', 'y', 'z'] },

@@ -37,7 +37,7 @@ const StyleDemo = ({ themeName }: { themeName: ThemeType }) => {
       </Title>
       <Table
         headers={['Variable', 'Light', 'Dark']}
-        tableRows={keys.map((key) => ({
+        rows={keys.map((key) => ({
           cols: [key, color(theme.light[key]), color(theme.dark[key])],
         }))}
       />

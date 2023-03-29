@@ -4,7 +4,7 @@ import { Table } from './Table'
 
 const defaultProps = {
   headers: ['One', 'Two', 'Three'],
-  tableRows: [
+  rows: [
     { cols: ['a', 'b', 'c'] },
     { cols: ['Expand me...=', '2', '3'], expandedContent: <>EXPANDED</> },
     { cols: ['x', 'y', 'z'] },
