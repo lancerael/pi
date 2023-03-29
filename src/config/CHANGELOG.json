@@ -2,6 +2,21 @@
   "name": "@pi-lib/config",
   "entries": [
     {
+      "date": "Wed, 29 Mar 2023 13:13:57 GMT",
+      "tag": "@pi-lib/config_v0.3.0",
+      "version": "0.3.0",
+      "comments": {
+        "none": [
+          {
+            "author": "lancerael@hotmail.com",
+            "package": "@pi-lib/config",
+            "commit": "903a907c18cff74aa76e85b816af13bb4e1f3080",
+            "comment": "Clean up constants"
+          }
+        ]
+      }
+    },
+    {
       "date": "Thu, 23 Mar 2023 00:53:35 GMT",
       "tag": "@pi-lib/config_v0.3.0",
       "version": "0.3.0",
