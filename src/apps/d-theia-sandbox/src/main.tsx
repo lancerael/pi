@@ -10,7 +10,7 @@ import store from './state'
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
-    <Theme themeName="electron">
+    <Theme themeName="andro">
       <Provider store={store}>
         <Sandbox />
       </Provider>

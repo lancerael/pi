@@ -61,12 +61,12 @@ importers:
       styled-components: ^5.3.9
       typescript: ^4.9.5
     devDependencies:
-      '@pi-lib/button': 1.1.1_hsvf4mq4wiyrkiyc3wzg6vdhxa
-      '@pi-lib/charts': 0.10.1_v34rfvob3tjutbc4dmcqx3sy34
-      '@pi-lib/config': 0.3.2
-      '@pi-lib/loader': 2.1.1_hsvf4mq4wiyrkiyc3wzg6vdhxa
-      '@pi-lib/styles': 1.1.1_hsvf4mq4wiyrkiyc3wzg6vdhxa
-      '@pi-lib/tooltip': 1.1.1_hsvf4mq4wiyrkiyc3wzg6vdhxa
+      '@pi-lib/button': link:src/components/atoms/Button
+      '@pi-lib/charts': link:src/libs/Charts
+      '@pi-lib/config': link:src/config
+      '@pi-lib/loader': link:src/components/atoms/Loader
+      '@pi-lib/styles': link:src/components/theming/Styles
+      '@pi-lib/tooltip': link:src/components/atoms/Tooltip
       '@storybook/addon-actions': 6.5.16_biqbaboplfbrettd7655fr4n2y
       '@storybook/addon-backgrounds': 6.5.16_biqbaboplfbrettd7655fr4n2y
       '@storybook/addon-docs': 6.5.16_qnzzke7coapcoepiecmc336hzi
@@ -136,8 +136,8 @@ importers:
       vite: ^4.2.0
       vitest: ^0.22.1
     dependencies:
-      '@pi-lib/styles': 1.1.1_hsvf4mq4wiyrkiyc3wzg6vdhxa
-      '@pi-lib/table': 1.1.1_hsvf4mq4wiyrkiyc3wzg6vdhxa
+      '@pi-lib/styles': link:../../components/theming/Styles
+      '@pi-lib/table': link:../../components/molecules/Table
       '@reduxjs/toolkit': 1.9.3_7ozmmenbreubqajvpxb2pmuuau
       d-theia: 3.0.5
       react: 18.2.0
@@ -160,9 +160,9 @@ importers:
 
   src/apps/sandbox:
     specifiers:
-      '@pi-lib/button': ^1.1.0
+      '@pi-lib/button': ^1.1.1
       '@pi-lib/charts': '*'
-      '@pi-lib/styles': ^1.1.0
+      '@pi-lib/styles': ^1.1.1
       '@types/react': ^18.0.26
       '@types/react-dom': ^18.0.9
       '@vitejs/plugin-react': ^3.0.0
@@ -171,9 +171,9 @@ importers:
       typescript: ^4.9.3
       vite: ^4.0.0
     dependencies:
-      '@pi-lib/button': 1.1.1_hsvf4mq4wiyrkiyc3wzg6vdhxa
-      '@pi-lib/charts': 0.10.1_v34rfvob3tjutbc4dmcqx3sy34
-      '@pi-lib/styles': 1.1.1_hsvf4mq4wiyrkiyc3wzg6vdhxa
+      '@pi-lib/button': link:../../components/atoms/Button
+      '@pi-lib/charts': link:../../libs/Charts
+      '@pi-lib/styles': link:../../components/theming/Styles
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
     devDependencies:
@@ -185,8 +185,8 @@ importers:
 
   src/components/atoms/Button:
     specifiers:
-      '@pi-lib/config': ^0.3.1
-      '@pi-lib/styles': ^1.1.0
+      '@pi-lib/config': ^0.3.2
+      '@pi-lib/styles': ^1.1.1
       '@pi-lib/types': ^0.1.0
       '@testing-library/react': ^14.0.0
       '@vitejs/plugin-react': ^3.1.0
@@ -200,9 +200,9 @@ importers:
       vite: ^4.1.4
       vitest: ^0.29.3
     dependencies:
-      '@pi-lib/styles': 1.1.1_hsvf4mq4wiyrkiyc3wzg6vdhxa
+      '@pi-lib/styles': link:../../theming/Styles
     devDependencies:
-      '@pi-lib/config': 0.3.2
+      '@pi-lib/config': link:../../../config
       '@pi-lib/types': link:../../../types
       '@testing-library/react': 14.0.0_biqbaboplfbrettd7655fr4n2y
       '@vitejs/plugin-react': 3.1.0_vite@4.1.4
@@ -218,7 +218,7 @@ importers:
 
   src/components/atoms/Loader:
     specifiers:
-      '@pi-lib/config': ^0.3.1
+      '@pi-lib/config': ^0.3.2
       '@pi-lib/types': ^0.1.0
       '@testing-library/react': ^14.0.0
       '@vitejs/plugin-react': ^3.1.0
@@ -235,7 +235,7 @@ importers:
       react: 18.2.0
       styled-components: 5.3.9_7i5myeigehqah43i5u7wbekgba
     devDependencies:
-      '@pi-lib/config': 0.3.2
+      '@pi-lib/config': link:../../../config
       '@pi-lib/types': link:../../../types
       '@testing-library/react': 14.0.0_biqbaboplfbrettd7655fr4n2y
       '@vitejs/plugin-react': 3.1.0_vite@4.1.4
@@ -249,8 +249,8 @@ importers:
 
   src/components/atoms/Tooltip:
     specifiers:
-      '@pi-lib/config': ^0.3.1
-      '@pi-lib/styles': ^1.1.0
+      '@pi-lib/config': ^0.3.2
+      '@pi-lib/styles': ^1.1.1
       '@pi-lib/types': ^0.1.0
       '@testing-library/react': ^14.0.0
       '@vitejs/plugin-react': ^3.1.0
@@ -265,12 +265,12 @@ importers:
       vite: ^4.1.4
       vitest: ^0.29.3
     dependencies:
-      '@pi-lib/styles': 1.1.1_hsvf4mq4wiyrkiyc3wzg6vdhxa
+      '@pi-lib/styles': link:../../theming/Styles
       lodash.throttle: 4.1.1
       react: 18.2.0
       styled-components: 5.3.9_7i5myeigehqah43i5u7wbekgba
     devDependencies:
-      '@pi-lib/config': 0.3.2
+      '@pi-lib/config': link:../../../config
       '@pi-lib/types': link:../../../types
       '@testing-library/react': 14.0.0_biqbaboplfbrettd7655fr4n2y
       '@vitejs/plugin-react': 3.1.0_vite@4.1.4
@@ -284,7 +284,7 @@ importers:
 
   src/components/charts/BarChart:
     specifiers:
-      '@pi-lib/config': ^0.3.1
+      '@pi-lib/config': ^0.3.2
       '@pi-lib/constants': ^0.2.0
       '@pi-lib/types': ^0.1.0
       '@testing-library/react': ^14.0.0
@@ -303,7 +303,7 @@ importers:
       react: 18.2.0
       styled-components: 5.3.9_7i5myeigehqah43i5u7wbekgba
     devDependencies:
-      '@pi-lib/config': 0.3.2
+      '@pi-lib/config': link:../../../config
       '@pi-lib/types': link:../../../types
       '@testing-library/react': 14.0.0_biqbaboplfbrettd7655fr4n2y
       '@vitejs/plugin-react': 3.1.0_vite@4.1.4
@@ -317,11 +317,11 @@ importers:
 
   src/components/charts/CandlestickChart:
     specifiers:
-      '@pi-lib/button': ^1.1.0
-      '@pi-lib/config': ^0.3.1
-      '@pi-lib/loader': ^2.1.0
-      '@pi-lib/styles': ^1.1.0
-      '@pi-lib/tooltip': ^1.1.0
+      '@pi-lib/button': ^1.1.1
+      '@pi-lib/config': ^0.3.2
+      '@pi-lib/loader': ^2.1.1
+      '@pi-lib/styles': ^1.1.1
+      '@pi-lib/tooltip': ^1.1.1
       '@pi-lib/types': ^0.1.0
       '@testing-library/react': ^14.0.0
       '@types/d3-axis': ^3.0.2
@@ -344,10 +344,10 @@ importers:
       vite: ^4.1.4
       vitest: ^0.29.3
     dependencies:
-      '@pi-lib/button': 1.1.1_hsvf4mq4wiyrkiyc3wzg6vdhxa
-      '@pi-lib/loader': 2.1.1_hsvf4mq4wiyrkiyc3wzg6vdhxa
-      '@pi-lib/styles': 1.1.1_hsvf4mq4wiyrkiyc3wzg6vdhxa
-      '@pi-lib/tooltip': 1.1.1_hsvf4mq4wiyrkiyc3wzg6vdhxa
+      '@pi-lib/button': link:../../atoms/Button
+      '@pi-lib/loader': link:../../atoms/Loader
+      '@pi-lib/styles': link:../../theming/Styles
+      '@pi-lib/tooltip': link:../../atoms/Tooltip
       '@types/d3-axis': 3.0.2
       '@types/d3-scale': 4.0.3
       d3-axis: 3.0.0
@@ -358,7 +358,7 @@ importers:
       react: 18.2.0
       styled-components: 5.3.9_7i5myeigehqah43i5u7wbekgba
     devDependencies:
-      '@pi-lib/config': 0.3.2
+      '@pi-lib/config': link:../../../config
       '@pi-lib/types': link:../../../types
       '@testing-library/react': 14.0.0_biqbaboplfbrettd7655fr4n2y
       '@types/d3-selection': 3.0.4
@@ -374,7 +374,7 @@ importers:
 
   src/components/charts/WorldMap:
     specifiers:
-      '@pi-lib/config': ^0.3.1
+      '@pi-lib/config': ^0.3.2
       '@pi-lib/types': ^0.*.*
       '@testing-library/react': ^13.3.0
       '@types/d3-geo': ^3.0.3
@@ -397,7 +397,7 @@ importers:
       react: 18.2.0
       styled-components: 5.3.9_7i5myeigehqah43i5u7wbekgba
     devDependencies:
-      '@pi-lib/config': 0.3.2
+      '@pi-lib/config': link:../../../config
       '@pi-lib/types': link:../../../types
       '@testing-library/react': 13.4.0_biqbaboplfbrettd7655fr4n2y
       '@types/d3-geo': 3.0.3
@@ -413,9 +413,9 @@ importers:
 
   src/components/molecules/AdvancedButton:
     specifiers:
-      '@pi-lib/button': ^1.1.0
-      '@pi-lib/config': ^0.3.1
-      '@pi-lib/loader': ^2.1.0
+      '@pi-lib/button': ^1.1.1
+      '@pi-lib/config': ^0.3.2
+      '@pi-lib/loader': ^2.1.1
       '@pi-lib/types': ^0.1.0
       '@testing-library/react': ^14.0.0
       '@vitejs/plugin-react': ^3.1.0
@@ -429,12 +429,12 @@ importers:
       vite: ^4.1.4
       vitest: ^0.29.3
     dependencies:
-      '@pi-lib/button': 1.1.1_hsvf4mq4wiyrkiyc3wzg6vdhxa
-      '@pi-lib/loader': 2.1.1_hsvf4mq4wiyrkiyc3wzg6vdhxa
+      '@pi-lib/button': link:../../atoms/Button
+      '@pi-lib/loader': link:../../atoms/Loader
       react: 18.2.0
       styled-components: 5.3.9_7i5myeigehqah43i5u7wbekgba
     devDependencies:
-      '@pi-lib/config': 0.3.2
+      '@pi-lib/config': link:../../../config
       '@pi-lib/types': link:../../../types
       '@testing-library/react': 14.0.0_biqbaboplfbrettd7655fr4n2y
       '@vitejs/plugin-react': 3.1.0_vite@4.1.4
@@ -448,8 +448,8 @@ importers:
 
   src/components/molecules/Table:
     specifiers:
-      '@pi-lib/config': ^0.3.1
-      '@pi-lib/styles': ^1.1.0
+      '@pi-lib/config': ^0.3.2
+      '@pi-lib/styles': ^1.1.1
       '@pi-lib/types': ^0.1.0
       '@testing-library/react': ^14.0.0
       '@vitejs/plugin-react': ^3.1.0
@@ -466,8 +466,8 @@ importers:
       react: 18.2.0
       styled-components: 5.3.9_7i5myeigehqah43i5u7wbekgba
     devDependencies:
-      '@pi-lib/config': 0.3.2
-      '@pi-lib/styles': 1.1.1_hsvf4mq4wiyrkiyc3wzg6vdhxa
+      '@pi-lib/config': link:../../../config
+      '@pi-lib/styles': link:../../theming/Styles
       '@pi-lib/types': link:../../../types
       '@testing-library/react': 14.0.0_biqbaboplfbrettd7655fr4n2y
       '@vitejs/plugin-react': 3.1.0_vite@4.1.4
@@ -481,7 +481,7 @@ importers:
 
   src/components/theming/Styles:
     specifiers:
-      '@pi-lib/config': ^0.3.1
+      '@pi-lib/config': ^0.3.2
       '@pi-lib/types': ^0.1.0
       '@testing-library/react': ^14.0.0
       '@vitejs/plugin-react': ^3.1.0
@@ -498,7 +498,7 @@ importers:
       react: 18.2.0
       styled-components: 5.3.9_7i5myeigehqah43i5u7wbekgba
     devDependencies:
-      '@pi-lib/config': 0.3.2
+      '@pi-lib/config': link:../../../config
       '@pi-lib/types': link:../../../types
       '@testing-library/react': 14.0.0_biqbaboplfbrettd7655fr4n2y
       '@vitejs/plugin-react': 3.1.0_vite@4.1.4
@@ -540,7 +540,7 @@ importers:
   src/libs/Charts:
     specifiers:
       '@istanbuljs/nyc-config-typescript': ^1.0.2
-      '@pi-lib/config': ^0.3.1
+      '@pi-lib/config': ^0.3.2
       '@types/d3-array': ^3.0.4
       '@types/d3-axis': ^3.0.2
       '@types/d3-color': ^3.1.0
@@ -577,7 +577,7 @@ importers:
       vite: ^4.1.4
     devDependencies:
       '@istanbuljs/nyc-config-typescript': 1.0.2_nyc@15.1.0
-      '@pi-lib/config': 0.3.2
+      '@pi-lib/config': link:../../config
       '@types/d3-array': 3.0.4
       '@types/d3-axis': 3.0.2
       '@types/d3-color': 3.1.0
@@ -3091,78 +3091,6 @@ packages:
       node-addon-api: 3.2.1
       node-gyp-build: 4.6.0
     dev: true
-
-  /@pi-lib/button/1.1.1_hsvf4mq4wiyrkiyc3wzg6vdhxa:
-    resolution: {integrity: sha512-Wa+A4tYni9p8z60hT9y68R86eOnFDwHyAEQSY50jO4tloXOIDeRonc6U975JmkRNOW7ySd3WP6bGynI/203ypA==}
-    peerDependencies:
-      react: ^18.2.0
-      styled-components: ^5.3.5
-    dependencies:
-      '@pi-lib/styles': 1.1.1_hsvf4mq4wiyrkiyc3wzg6vdhxa
-      react: 18.2.0
-      styled-components: 5.3.9_7i5myeigehqah43i5u7wbekgba
-
-  /@pi-lib/charts/0.10.1_v34rfvob3tjutbc4dmcqx3sy34:
-    resolution: {integrity: sha512-LdrvAbwuIH+CikHbbYmsam+c5fClT63vKysZjaWb408A1yuLMlaHdH1zHGDyFR3X+uLwlgJK2kiXB7bYb3Cl6w==}
-    peerDependencies:
-      d3-array: '>=3.2.2'
-      d3-axis: '>=3.0.0'
-      d3-color: '>=3.1.0'
-      d3-ease: '>=3.0.1'
-      d3-scale: '>=4.0.2'
-      d3-selection: '>=3.0.0'
-      d3-transition: '>=3.0.1'
-    dependencies:
-      d3-array: 3.2.2
-      d3-axis: 3.0.0
-      d3-color: 3.1.0
-      d3-ease: 3.0.1
-      d3-scale: 4.0.2
-      d3-selection: 3.0.0
-      d3-transition: 3.0.1_d3-selection@3.0.0
-
-  /@pi-lib/config/0.3.2:
-    resolution: {integrity: sha512-a5yZM2N8R874uBQ5yKqBx1w19r8t0Q0iKr/MKqaq4bcQ4XCKoECxTKk9tY88achek6gFlrB+AMaG1kxROtT8TA==}
-    dev: true
-
-  /@pi-lib/loader/2.1.1_hsvf4mq4wiyrkiyc3wzg6vdhxa:
-    resolution: {integrity: sha512-jDF6Kl170vl3S8ZcUSBmfMnHU4NCoSLaWKVLJnEAXnb+wWtOksso8wGyVEZllN+sEp1q9I/aQ5JjKcTbIhTphw==}
-    peerDependencies:
-      react: ^18.2.0
-      styled-components: ^5.3.5
-    dependencies:
-      react: 18.2.0
-      styled-components: 5.3.9_7i5myeigehqah43i5u7wbekgba
-
-  /@pi-lib/styles/1.1.1_hsvf4mq4wiyrkiyc3wzg6vdhxa:
-    resolution: {integrity: sha512-txg76/UuNWZvt2xeuftCPFJsELIe9Y1UN+KOzm7NPtv3jnW2HXg87nSMubyPDPxRHdrKa7xkkdjh2Bc3M/ZLeA==}
-    peerDependencies:
-      react: ^18.2.0
-      styled-components: ^5.3.5
-    dependencies:
-      react: 18.2.0
-      styled-components: 5.3.9_7i5myeigehqah43i5u7wbekgba
-
-  /@pi-lib/table/1.1.1_hsvf4mq4wiyrkiyc3wzg6vdhxa:
-    resolution: {integrity: sha512-nWCX1RSAcdEp1+PeD2LaNd0hn1gvnNY8Cpl/cFLDo1mXY8s7XcWpVQFgLf/XDcKPidqba5f2vbkfeVWAWEBKGA==}
-    peerDependencies:
-      react: ^18.2.0
-      styled-components: ^5.3.5
-    dependencies:
-      react: 18.2.0
-      styled-components: 5.3.9_7i5myeigehqah43i5u7wbekgba
-    dev: false
-
-  /@pi-lib/tooltip/1.1.1_hsvf4mq4wiyrkiyc3wzg6vdhxa:
-    resolution: {integrity: sha512-vVWvB3pXv1Z6y1SsJxCAqGSsgrpe7DEsqS1k2Y05MRWYp1M1a6xJqQzs5CQwq84FktZbr5kH3ygRkES2JbYhbg==}
-    peerDependencies:
-      react: ^18.2.0
-      styled-components: ^5.3.5
-    dependencies:
-      '@pi-lib/styles': 1.1.1_hsvf4mq4wiyrkiyc3wzg6vdhxa
-      lodash.throttle: 4.1.1
-      react: 18.2.0
-      styled-components: 5.3.9_7i5myeigehqah43i5u7wbekgba
 
   /@pmmmwh/react-refresh-webpack-plugin/0.5.10_aa5jjcyl5ihwp54i3h5tcikeei:
     resolution: {integrity: sha512-j0Ya0hCFZPd4x40qLzbhGsh9TMtdb+CJQiso+WxLOPNasohq9cc5SNUcwsZaRH6++Xh91Xkm/xHCkuIiIu0LUA==}

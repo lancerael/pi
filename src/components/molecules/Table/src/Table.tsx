@@ -12,10 +12,9 @@ export const Table = ({
     {!!headers?.length && (
       <StyledTableHead>
         <tr>
-          dddd
           {headers.map((content: CellContent, i) => (
             <th key={i} style={{ ...fixedWidths[i] }}>
-              {content}dddd
+              {content}
             </th>
           ))}
         </tr>

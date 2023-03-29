@@ -1,49 +1,36 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+import { useDispatch } from 'react-redux'
+import { updateLabel, updateValue } from '../../state/reducers/chartDataReducer'
 
-import { DataRowHandlerProps } from './../../sharedPropTypes/handlers'
+const DataRow = ({ oDataItem, i1 }: any) => {
+  const dispatch = useDispatch()
 
-const DataRow = () => {
-  const aValueInputs = oDataItem.aValues.map((iValue, i) => (
-    <td key={`data-item${i}`}>
-      <input
-        type="number"
-        value={iValue.toString()}
-        onChange={hnChangeValue.bind(this, iIndex.toString(), i.toString())}
-        title="Change the value of this data item."
-        className="dt-value-input"
-      />
-    </td>
-  ))
-  return (
-    <tr className="dt-data-row">
-      <td>
+  return [
+    <input
+      type="text"
+      value={oDataItem.sLabel}
+      onChange={({ target: { value } }: any) =>
+        dispatch(updateLabel({ value, i1 } as any))
+      }
+      title="Change the label of this data group."
+    />,
+    {
+      ...oDataItem.aValues.map((iValue: number, i2: number) => (
         <input
-          type="text"
-          value={oDataItem.sLabel}
-          onChange={hnChangeLabel.bind(this, iIndex.toString())}
-          title="Change the label of this data group."
-          className="dt-label-input"
+          key={i2}
+          type="number"
+          value={iValue.toString()}
+          onChange={({ target: { value } }: any) =>
+            dispatch(updateValue({ value, i1, i2 } as any))
+          }
+          title="Change the value of this data item."
         />
-      </td>
-      {aValueInputs}
-      <td>
-        <button
-          className="dt-delete-row-btn"
-          onClick={hnDeleteRow.bind(this, iIndex)}
-          title="Delete this row."
-        >
-          x
-        </button>
-      </td>
-    </tr>
-  )
-}
-
-DataRow.propTypes = {
-  oDataItem: PropTypes.object.isRequired,
-  iIndex: PropTypes.number.isRequired,
-  ...DataRowHandlerProps,
+      )),
+    },
+    <button onClick={() => dispatch(updateValue(i1))} title="Delete this row.">
+      x
+    </button>,
+  ]
 }
 
 export default DataRow

@@ -7,10 +7,10 @@ const chartConfigSlice = createSlice({
   initialState,
   reducers: {
     updateType(state: any, { payload }: any) {
-      state.aValues[payload.i1].sName = payload.val
+      state.aValues[payload.i].sName = payload.value
     },
     updateColor(state: any, { payload }: any) {
-      state.aValues[payload.i1].sColor = payload.val
+      state.aValues[payload.i].sColor = payload.value
     },
     changeTitle(state: any, { payload }: any) {
       state.sTitle = payload

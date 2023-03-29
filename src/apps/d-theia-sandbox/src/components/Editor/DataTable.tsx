@@ -3,39 +3,27 @@ import { useDispatch, useSelector } from 'react-redux'
 import Table from '@pi-lib/table'
 
 import DataRow from './DataRow'
-import { switchTrim, updateType } from '../../state/reducers/chartConfigReducer'
+import {
+  switchTrim,
+  updateColor,
+  updateType,
+} from '../../state/reducers/chartConfigReducer'
+import {
+  deleteRow,
+  updateLabel,
+  updateValue,
+} from '../../state/reducers/chartDataReducer'
 
 const DataTable = () => {
   const { aValues, bTrim } = useSelector(({ jConfig }: any) => jConfig)
-  const { aData } = useSelector(({ aData }: any) => aData)
+  const aData = useSelector(({ aData }: any) => aData)
   const dispatch = useDispatch()
 
-  // const aKeyNames = aValues.map((oItem, i) => (
-  //   <td key={`header${i}`}>
-  //     <input
-  //       type="text"
-  //       value={oItem.sName}
-  //       onChange={hnChangeType.bind(this, i.toString())}
-  //       title="Change the name of this key value."
-  //       className="dt-key-input"
-  //     />
-  //   </td>
+  console.log(aData)
+
+  // const aDataRows = aData.map((oDataItem: any, i: number) => (
+  //   <DataRow key={i} {...{ oDataItem, i }} />
   // ))
-  // const aColors = aValues.map((oItem, i) => (
-  //   <td key={`color${i}`}>
-  //     <input
-  //       type="color"
-  //       value={oItem.sColor}
-  //       onChange={hnChangeColor.bind(this, i.toString())}
-  //       title="Change colour of this key value."
-  //       className="dt-color-input"
-  //     />
-  //   </td>
-  // ))
-  // const aDataRows = aData.map(
-  //   (oDataItem, i) => 'a'
-  //   // <DataRow key={`data-row${i}`} oDataItem={oDataItem} iIndex={i} {...{hnChangeLabel, hnChangeValue, hnDeleteRow}} />
-  // )
   // const aFinalRow = aValues.map((oItem, i) => (
   //   <td key={`color${i}`}>
   //     <button
@@ -55,22 +43,77 @@ const DataTable = () => {
           <input
             type="checkbox"
             checked={bTrim}
-            onChange={(e: any) => dispatch(switchTrim(e.target.value))}
+            onChange={(e: any) => dispatch(switchTrim(e.target.checked))}
             name="dt-trim"
           />
         </div>,
-        ...aValues.map((oItem: any, i: number) => (
+        ...aValues.map(({ sName }: any, i: number) => (
           <input
             key={i}
-            style={{ maxWidth: '100px' }}
+            style={{ width: 'calc(100% - 8px)', height: '22px' }}
             type="text"
-            value={oItem.sName}
-            onChange={(e: any) => dispatch(updateType(e.target.value))}
+            value={sName}
+            onChange={({ target: { value } }: any) =>
+              dispatch(updateType({ value, i } as any))
+            }
             title="Change the name of this key value."
           />
         )),
+        '',
       ]}
-      tableRows={[]}
+      rows={[
+        {
+          cols: [
+            '',
+            ...aValues.map(({ sColor }: any, i: number) => (
+              <div style={{ textAlign: 'center' }}>
+                <input
+                  style={{ width: '100%', height: '30px' }}
+                  type="color"
+                  value={sColor}
+                  onChange={({ target: { value } }: any) =>
+                    dispatch(updateColor({ value, i } as any))
+                  }
+                  title="Change colour of this key value."
+                />
+              </div>
+            )),
+            '',
+          ],
+        },
+        ...aData.map((oDataItem: any, i1: number) => ({
+          cols: [
+            <input
+              style={{ width: 'calc(100% - 8px)', height: '22px' }}
+              type="text"
+              value={oDataItem.sLabel}
+              onChange={({ target: { value } }: any) =>
+                dispatch(updateLabel({ value, i1 } as any))
+              }
+              title="Change the label of this data group."
+            />,
+            ...oDataItem.aValues.map((iValue: number, i2: number) => (
+              <input
+                style={{ width: 'calc(100% - 8px)', height: '22px' }}
+                key={i2}
+                type="number"
+                value={iValue.toString()}
+                onChange={({ target: { value } }: any) =>
+                  dispatch(updateValue({ value, i1, i2 } as any))
+                }
+                title="Change the value of this data item."
+              />
+            )),
+            ,
+            <button
+              onClick={() => dispatch(deleteRow(i1 as any))}
+              title="Delete this row."
+            >
+              x
+            </button>,
+          ],
+        })),
+      ]}
     />
   )
 }
