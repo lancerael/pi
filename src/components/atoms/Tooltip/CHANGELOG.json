@@ -2,6 +2,33 @@
   "name": "@pi-lib/tooltip",
   "entries": [
     {
+      "date": "Wed, 29 Mar 2023 13:32:18 GMT",
+      "tag": "@pi-lib/tooltip_v1.1.1",
+      "version": "1.1.1",
+      "comments": {
+        "patch": [
+          {
+            "author": "lancerael@hotmail.com",
+            "package": "@pi-lib/tooltip",
+            "commit": "ef4d4b56b3782671b1c961bf7cb9b66710bf75cf",
+            "comment": "Docs"
+          },
+          {
+            "author": "beachball",
+            "package": "@pi-lib/tooltip",
+            "comment": "Bump @pi-lib/styles to v1.1.1",
+            "commit": "ef4d4b56b3782671b1c961bf7cb9b66710bf75cf"
+          },
+          {
+            "author": "beachball",
+            "package": "@pi-lib/tooltip",
+            "comment": "Bump @pi-lib/config to v0.3.2",
+            "commit": "ef4d4b56b3782671b1c961bf7cb9b66710bf75cf"
+          }
+        ]
+      }
+    },
+    {
       "date": "Wed, 29 Mar 2023 13:13:57 GMT",
       "tag": "@pi-lib/tooltip_v1.1.0",
       "version": "1.1.0",
