@@ -1,5 +1,6 @@
 import { createGlobalStyle } from 'styled-components'
 import { getTheme } from './theme'
+import { Contrast } from './theme.types'
 
 const getVars = (scheme: any) =>
   Object.entries(scheme).reduce(
@@ -8,10 +9,11 @@ const getVars = (scheme: any) =>
   )
 
 export const getGlobalStyle = (
-  { colors: { light, dark = light }, fonts, fontSizes }: any = getTheme()
+  { colors: { light, dark = light }, fonts, fontSizes }: any = getTheme(),
+  contrast?: Contrast
 ) => createGlobalStyle`
   body {
-    ${getVars(light)}
+    ${getVars(contrast === 'dark' ? dark : light)}
     font-family: ${fonts.join(', ')};
     background-color: var(--bg);
     color: var(--text);
@@ -19,7 +21,7 @@ export const getGlobalStyle = (
 
   @media (prefers-color-scheme: dark) {
     body {
-      ${getVars(dark)}
+      ${getVars(contrast === 'light' ? light : dark)}
     }
   }
 `

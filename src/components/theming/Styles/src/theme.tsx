@@ -59,8 +59,9 @@ export const Theme = ({
   themeName = 'andro',
   themeOverrides,
   theme = getTheme(themeName, themeOverrides),
+  contrast,
 }: IThemeProps) => {
-  const GlobalStyle = getGlobalStyle(theme)
+  const GlobalStyle = getGlobalStyle(theme, contrast)
   return (
     <ThemeProvider {...{ theme }}>
       <GlobalStyle {...{ theme }} />

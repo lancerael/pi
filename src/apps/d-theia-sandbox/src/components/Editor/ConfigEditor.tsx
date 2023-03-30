@@ -34,7 +34,6 @@ const ConfigEditor = () => {
         minWidth: '180px',
       }}
     >
-      <h1>dTheia React Sandbox</h1>
       <div>
         <StyledInputRow>
           <label htmlFor="title">Title:</label>

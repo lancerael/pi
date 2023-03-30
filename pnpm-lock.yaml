@@ -115,6 +115,7 @@ importers:
 
   src/apps/d-theia-sandbox:
     specifiers:
+      '@pi-lib/select': workspace:^0.0.0
       '@pi-lib/styles': ^1.1.1
       '@pi-lib/table': ^1.1.1
       '@reduxjs/toolkit': ^1.9.3
@@ -136,6 +137,7 @@ importers:
       vite: ^4.2.0
       vitest: ^0.22.1
     dependencies:
+      '@pi-lib/select': link:../../components/inputs/Select
       '@pi-lib/styles': link:../../components/theming/Styles
       '@pi-lib/table': link:../../components/molecules/Table
       '@reduxjs/toolkit': 1.9.3_7ozmmenbreubqajvpxb2pmuuau
@@ -402,6 +404,35 @@ importers:
       '@testing-library/react': 13.4.0_biqbaboplfbrettd7655fr4n2y
       '@types/d3-geo': 3.0.3
       '@types/d3-selection': 3.0.4
+      '@vitejs/plugin-react': 2.2.0_vite@3.2.5
+      '@vitest/coverage-istanbul': 0.23.4_jsdom@20.0.3
+      jest-axe: 6.0.1
+      jsdom: 20.0.3
+      rimraf: 3.0.2
+      typescript: 4.9.5
+      vite: 3.2.5
+      vitest: 0.22.1_jsdom@20.0.3
+
+  src/components/inputs/Select:
+    specifiers:
+      '@pi-lib/config': ^0.*.*
+      '@testing-library/react': ^13.3.0
+      '@vitejs/plugin-react': ^2.0.1
+      '@vitest/coverage-istanbul': ^0.23.1
+      jest-axe: ^6.0.0
+      jsdom: ^20.0.0
+      react: ^18.2.0
+      rimraf: ^3.0.2
+      styled-components: ^5.3.5
+      typescript: ^4.7.4
+      vite: ^3.0.9
+      vitest: ^0.22.1
+    dependencies:
+      react: 18.2.0
+      styled-components: 5.3.9_7i5myeigehqah43i5u7wbekgba
+    devDependencies:
+      '@pi-lib/config': link:../../../config
+      '@testing-library/react': 13.4.0_biqbaboplfbrettd7655fr4n2y
       '@vitejs/plugin-react': 2.2.0_vite@3.2.5
       '@vitest/coverage-istanbul': 0.23.4_jsdom@20.0.3
       jest-axe: 6.0.1
