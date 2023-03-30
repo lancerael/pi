@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components'
 export const StyledTable = styled.table`
   width: 100%;
   border-collapse: collapse;
-  border: 1px solid var(--border);
+  border: 1px solid var(--special);
 
   & th,
   & td {
@@ -16,9 +16,9 @@ export const StyledTable = styled.table`
   }
 `
 export const StyledTableHead = styled.thead`
-  background: var(--dark);
+  background: var(--textSoft);
   font-variant: all-small-caps;
-  color: var(--light);
+  color: var(--border);
 
   & th:not(:last-of-type) {
     border-right: 1px solid var(--special);

@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { formInput } from '@pi-lib/styles'
 
 export const StyledSelect = styled.div`
   font-size: 1.2em;
@@ -6,9 +7,6 @@ export const StyledSelect = styled.div`
 
   select {
     min-width: 80px;
-    height: 22px;
-    background: var(--text);
-    color: var(--bg);
-    border-color: var(--shadow);
+    ${formInput({})}
   }
 `

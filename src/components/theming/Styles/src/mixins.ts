@@ -1,3 +1,5 @@
+import { css } from 'styled-components'
+
 export const box = ({
   color,
   isSpecial,
@@ -5,12 +7,23 @@ export const box = ({
   const borderVar = isSpecial ? 'special' : 'border'
   const colorVar = isSpecial ? 'specialText' : 'textSoft'
   const backgroundVar = isSpecial ? 'specialBg' : 'subtle'
-  return `
+  return css`
     border: 2px solid var(--${borderVar});
     color: ${color ? color : `var(--${colorVar})`};
     background-color: var(--${backgroundVar});
     border-radius: 6px;
     padding: 8px;
     box-shadow: 2px 2px 2px 0px rgb(61 61 61 / 20%);
+  `
+}
+
+export const formInput = ({}) => {
+  return css`
+    height: 22px;
+    background: var(--bg);
+    color: var(--text);
+    border: 1px solid var(--text);
+    border-radius: 4px;
+    padding: 0 4px;
   `
 }

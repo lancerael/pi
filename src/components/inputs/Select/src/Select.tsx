@@ -11,9 +11,14 @@ export const Select: FC<SelectProps> = ({
   <StyledSelect>
     {!!label && <label htmlFor={name}>{label}: </label>}
     <select {...{ name, onChange }}>
-      {options.map(({ content, value }) => (
-        <option value={value ?? content.toLowerCase()}>{content}</option>
-      ))}
+      {options.map(({ content, value }) => {
+        const key = content.toLowerCase()
+        return (
+          <option key={key} value={value ?? key}>
+            {content}
+          </option>
+        )
+      })}
     </select>
   </StyledSelect>
 )
