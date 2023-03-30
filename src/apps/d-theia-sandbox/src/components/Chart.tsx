@@ -32,7 +32,7 @@ const Chart = ({ sId, sType }: any) => {
     <div
       id={sId}
       ref={chartContainer}
-      style={{ height: '40%', position: 'relative' }}
+      style={{ flexGrow: '1', position: 'relative' }}
     />
   )
 }

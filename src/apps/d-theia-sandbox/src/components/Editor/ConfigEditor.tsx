@@ -29,8 +29,6 @@ const ConfigEditor = () => {
     <div
       style={{
         padding: '5%',
-        background: 'var(--border)',
-        color: 'var(--textSoft)',
         minWidth: '180px',
       }}
     >
