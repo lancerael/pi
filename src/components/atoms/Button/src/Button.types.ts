@@ -3,7 +3,7 @@ import { Status } from '@pi-lib/types'
 export interface ButtonProps
   extends Pick<
     React.HTMLProps<HTMLButtonElement>,
-    'onClick' | 'onMouseOver' | 'onMouseOut' | 'disabled' | 'children'
+    'onClick' | 'onMouseOver' | 'onMouseOut' | 'disabled' | 'children' | 'title'
   > {
   /**
    * The data-selector for the button
@@ -21,4 +21,5 @@ export interface ButtonProps
    * Set the margin for the button
    */
   margin?: string
+  isCompact?: boolean
 }

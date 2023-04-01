@@ -1,3 +1,6 @@
+import Banner from '@pi-lib/banner'
+import IconButton from '@pi-lib/icon-button'
+
 const gallery = Object.values(
   import.meta.glob('../images/*.svg', { eager: true, as: 'url' })
 )
@@ -31,37 +34,21 @@ const URLS: { [key: string]: string } = {
 
 export const Footer = () => {
   return (
-    <div
-      style={{
-        background: 'var(--dark)',
-        color: 'var(--light)',
-        display: 'flex',
-        padding: '8px 16px',
-        justifyContent: 'space-evenly',
-        alignItems: 'center',
-      }}
-    >
+    <Banner isCentered>
       {gallery.map((src, i) => {
         const title = getName(src)
         return (
           !!title && (
-            <a href={URLS[title]} target="_blank">
-              <img
-                {...{ src, title }}
-                key={src}
-                width="24px"
-                height="24px"
-                style={{
-                  background: 'var(--specialText)',
-                  borderRadius: '15%',
-                  padding: '4px',
-                }}
-              />
-            </a>
+            <IconButton
+              key={src}
+              isExternal
+              href={URLS[title]}
+              {...{ src, title }}
+            />
           )
         )
       })}
-    </div>
+    </Banner>
   )
 }
 export default Footer

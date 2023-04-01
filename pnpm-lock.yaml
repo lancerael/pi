@@ -113,8 +113,11 @@ importers:
       styled-components: 5.3.9_7i5myeigehqah43i5u7wbekgba
       typescript: 4.9.5
 
-  src/apps/d-theia-sandbox:
+  src/apps/chart-sandbox:
     specifiers:
+      '@pi-lib/banner': workspace:^0.0.0
+      '@pi-lib/button': workspace:^1.1.1
+      '@pi-lib/icon-button': workspace:^0.0.0
       '@pi-lib/select': workspace:^0.0.0
       '@pi-lib/styles': ^1.1.1
       '@pi-lib/table': ^1.1.1
@@ -137,6 +140,9 @@ importers:
       vite: ^4.2.0
       vitest: ^0.22.1
     dependencies:
+      '@pi-lib/banner': link:../../components/atoms/Banner
+      '@pi-lib/button': link:../../components/atoms/Button
+      '@pi-lib/icon-button': link:../../components/atoms/IconButton
       '@pi-lib/select': link:../../components/inputs/Select
       '@pi-lib/styles': link:../../components/theming/Styles
       '@pi-lib/table': link:../../components/molecules/Table
@@ -160,30 +166,34 @@ importers:
       vite: 4.2.1
       vitest: 0.22.1
 
-  src/apps/sandbox:
+  src/components/atoms/Banner:
     specifiers:
-      '@pi-lib/button': ^1.1.1
-      '@pi-lib/charts': '*'
-      '@pi-lib/styles': ^1.1.1
-      '@types/react': ^18.0.26
-      '@types/react-dom': ^18.0.9
-      '@vitejs/plugin-react': ^3.0.0
+      '@pi-lib/config': ^0.*.*
+      '@testing-library/react': ^13.3.0
+      '@vitejs/plugin-react': ^2.0.1
+      '@vitest/coverage-istanbul': ^0.23.1
+      jest-axe: ^6.0.0
+      jsdom: ^20.0.0
       react: ^18.2.0
-      react-dom: ^18.2.0
-      typescript: ^4.9.3
-      vite: ^4.0.0
+      rimraf: ^3.0.2
+      styled-components: ^5.3.5
+      typescript: ^4.7.4
+      vite: ^3.0.9
+      vitest: ^0.22.1
     dependencies:
-      '@pi-lib/button': link:../../components/atoms/Button
-      '@pi-lib/charts': link:../../libs/Charts
-      '@pi-lib/styles': link:../../components/theming/Styles
       react: 18.2.0
-      react-dom: 18.2.0_react@18.2.0
+      styled-components: 5.3.9_7i5myeigehqah43i5u7wbekgba
     devDependencies:
-      '@types/react': 18.0.28
-      '@types/react-dom': 18.0.11
-      '@vitejs/plugin-react': 3.1.0_vite@4.1.4
+      '@pi-lib/config': link:../../../config
+      '@testing-library/react': 13.4.0_biqbaboplfbrettd7655fr4n2y
+      '@vitejs/plugin-react': 2.2.0_vite@3.2.5
+      '@vitest/coverage-istanbul': 0.23.4_jsdom@20.0.3
+      jest-axe: 6.0.1
+      jsdom: 20.0.3
+      rimraf: 3.0.2
       typescript: 4.9.5
-      vite: 4.1.4
+      vite: 3.2.5
+      vitest: 0.22.1_jsdom@20.0.3
 
   src/components/atoms/Button:
     specifiers:
@@ -217,6 +227,35 @@ importers:
       typescript: 4.9.5
       vite: 4.1.4
       vitest: 0.29.3_jsdom@21.1.1
+
+  src/components/atoms/IconButton:
+    specifiers:
+      '@pi-lib/config': ^0.*.*
+      '@testing-library/react': ^13.3.0
+      '@vitejs/plugin-react': ^2.0.1
+      '@vitest/coverage-istanbul': ^0.23.1
+      jest-axe: ^6.0.0
+      jsdom: ^20.0.0
+      react: ^18.2.0
+      rimraf: ^3.0.2
+      styled-components: ^5.3.5
+      typescript: ^4.7.4
+      vite: ^3.0.9
+      vitest: ^0.22.1
+    dependencies:
+      react: 18.2.0
+      styled-components: 5.3.9_7i5myeigehqah43i5u7wbekgba
+    devDependencies:
+      '@pi-lib/config': link:../../../config
+      '@testing-library/react': 13.4.0_biqbaboplfbrettd7655fr4n2y
+      '@vitejs/plugin-react': 2.2.0_vite@3.2.5
+      '@vitest/coverage-istanbul': 0.23.4_jsdom@20.0.3
+      jest-axe: 6.0.1
+      jsdom: 20.0.3
+      rimraf: 3.0.2
+      typescript: 4.9.5
+      vite: 3.2.5
+      vitest: 0.22.1_jsdom@20.0.3
 
   src/components/atoms/Loader:
     specifiers:

@@ -1,8 +1,8 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import Table from '@pi-lib/table'
+import Button from '@pi-lib/button'
 
-import DataRow from './DataRow'
 import {
   switchTrim,
   updateColor,
@@ -104,12 +104,14 @@ const DataTable = () => {
                 />
               )),
               ,
-              <button
+              <Button
                 onClick={() => dispatch(deleteRow(i1 as any))}
                 title="Delete this row."
+                status="error"
+                isCompact
               >
                 x
-              </button>,
+              </Button>,
             ],
           })),
         ]}

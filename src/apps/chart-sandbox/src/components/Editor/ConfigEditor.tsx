@@ -20,7 +20,7 @@ const StyledInputRow = styled.div`
   & input {
     flex-grow: 1;
 
-    ${formInput({})}
+    ${formInput()}
   }
 `
 

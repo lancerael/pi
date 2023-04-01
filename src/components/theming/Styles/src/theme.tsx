@@ -24,7 +24,7 @@ export const baseTheme = {
 export const statusColors = {
   light: {
     pending: '#232c75',
-    error: '#752323',
+    error: '#b10808',
     success: '#237528',
   },
   dark: {
@@ -35,11 +35,11 @@ export const statusColors = {
 }
 
 export const mergeColours = (
-  brightness: 'dark' | 'light',
+  contrast: 'dark' | 'light',
   themeName: ThemeType
 ) => ({
-  ...statusColors[brightness],
-  ...themes[themeName][brightness],
+  ...statusColors[contrast],
+  ...themes[themeName][contrast],
 })
 
 export const getTheme = (

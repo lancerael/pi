@@ -17,7 +17,7 @@ export const box = ({
   `
 }
 
-export const formInput = ({}) => {
+export const formInput = ({} = {}) => {
   return css`
     height: 22px;
     background: var(--bg);

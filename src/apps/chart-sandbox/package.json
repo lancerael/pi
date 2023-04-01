@@ -14,6 +14,9 @@
     "e2e": "npx cypress open"
   },
   "dependencies": {
+    "@pi-lib/banner": "workspace:^0.0.0",
+    "@pi-lib/button": "workspace:^1.1.1",
+    "@pi-lib/icon-button": "workspace:^0.0.0",
     "@pi-lib/select": "workspace:^0.0.0",
     "@pi-lib/styles": "^1.1.1",
     "@pi-lib/table": "^1.1.1",

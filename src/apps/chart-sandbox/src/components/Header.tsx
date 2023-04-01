@@ -1,4 +1,5 @@
 import Select from '@pi-lib/select'
+import Banner from '@pi-lib/banner'
 import { useDispatch } from 'react-redux'
 
 import { updateContrast, updateTheme } from '../state/reducers/themingReducer'
@@ -6,16 +7,7 @@ import { updateContrast, updateTheme } from '../state/reducers/themingReducer'
 export const Header = () => {
   const dispatch = useDispatch()
   return (
-    <div
-      style={{
-        background: 'var(--dark)',
-        color: 'var(--light)',
-        display: 'flex',
-        padding: '0 16px',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-      }}
-    >
+    <Banner>
       <h1 style={{ display: 'inline-block' }}>Chart Sandbox</h1>
       <div style={{ padding: '16px', display: 'inline-block' }}>
         <Select
@@ -41,7 +33,7 @@ export const Header = () => {
           ]}
         />
       </div>
-    </div>
+    </Banner>
   )
 }
 export default Header
