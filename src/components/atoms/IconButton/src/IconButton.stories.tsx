@@ -7,6 +7,8 @@ export default {
   component: IconButton,
 } as ComponentMeta<typeof IconButton>
 
-const Template: ComponentStory<typeof IconButton> = () => <IconButton src="" />
+const Template: ComponentStory<typeof IconButton> = () => (
+  <IconButton src="https://cdn.svgporn.com/logos/github-icon.svg" />
+)
 
 export const Default = Template.bind({})

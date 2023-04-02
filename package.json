@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "Monorepo of React UI components and supporting utilities.",
   "scripts": {
-    "sandbox": "pnpm --filter sandbox dev",
+    "sandbox": "pnpm --filter @pi-lib/chart-sandbox dev",
     "build": "npx nx run-many --target=build",
     "change": "pnpm i && beachball sync && beachball change",
     "publish": "npx beachball publish",

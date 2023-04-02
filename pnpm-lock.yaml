@@ -231,6 +231,7 @@ importers:
   src/components/atoms/IconButton:
     specifiers:
       '@pi-lib/config': ^0.*.*
+      '@pi-lib/styles': ^1.1.1
       '@testing-library/react': ^13.3.0
       '@vitejs/plugin-react': ^2.0.1
       '@vitest/coverage-istanbul': ^0.23.1
@@ -243,6 +244,7 @@ importers:
       vite: ^3.0.9
       vitest: ^0.22.1
     dependencies:
+      '@pi-lib/styles': link:../../theming/Styles
       react: 18.2.0
       styled-components: 5.3.9_7i5myeigehqah43i5u7wbekgba
     devDependencies:

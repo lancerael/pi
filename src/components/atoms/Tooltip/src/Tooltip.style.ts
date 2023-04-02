@@ -15,12 +15,12 @@ export const StyledTooltip = styled.div(
       width: 10px;
       height: 10px;
       position: absolute;
-      border-bottom: 3px solid var(--border);
-      border-right: 3px solid var(--border);
-      background: var(--subtle);
+      border-bottom: 2px solid var(--textSoft);
+      border-right: 2px solid var(--textSoft);
+      background: var(--border);
       rotate: -135deg;
       left: calc(50% - 5px);
-      top: -8px;
+      top: -7px;
       clip-path: polygon(80% 0, 100% 0, 100% 100%, 0 100%, 0 80%);
     }
   `

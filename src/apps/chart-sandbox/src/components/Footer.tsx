@@ -34,7 +34,7 @@ const URLS: { [key: string]: string } = {
 
 export const Footer = () => {
   return (
-    <Banner isCentered>
+    <Banner isCentered isBottom>
       {gallery.map((src, i) => {
         const title = getName(src)
         return (

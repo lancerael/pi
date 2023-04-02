@@ -12,11 +12,11 @@ export const StyledButton = styled.button(
       cursor: pointer;
       &:hover:not([disabled]) {
         background-color: var(--subtle);
-        border-color: var(--shadow);
+        border-color: var(--outline);
       }
       &:disabled {
         background-color: var(--shadow);
-        border-color: var(--outline);
+        border-color: var(--shadow);
         color: var(--textSoft);
         cursor: default;
       }
