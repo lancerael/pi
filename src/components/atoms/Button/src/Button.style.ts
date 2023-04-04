@@ -11,7 +11,7 @@ export const StyledButton = styled.button(
       margin: ${isCompact ? '0' : margin};
       cursor: pointer;
       &:hover:not([disabled]) {
-        background-color: var(--subtle);
+        background-color: var(--border);
         border-color: var(--outline);
       }
       &:disabled {

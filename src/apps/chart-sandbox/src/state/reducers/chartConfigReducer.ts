@@ -22,7 +22,10 @@ const chartConfigSlice = createSlice({
       state.aAxisLabels[0] = payload
     },
     addConfigColumn(state: any) {
-      state.aValues.push({ sName: '', sColor: '#000000' })
+      state.aValues.push({
+        sName: `Col ${state.aValues.length + 1}`,
+        sColor: '#000000',
+      })
     },
     deleteConfigColumn(state: any, { payload }: any) {
       state.aValues.splice(payload, 1)
@@ -31,7 +34,7 @@ const chartConfigSlice = createSlice({
       state.bTrim = payload
     },
     replaceConfig(state: any, { payload }: any) {
-      state = payload
+      return structuredClone(payload)
     },
   },
 })

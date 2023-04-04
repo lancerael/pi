@@ -2,7 +2,7 @@ import Banner from '@pi-lib/banner'
 import IconButton from '@pi-lib/icon-button'
 
 const gallery = Object.values(
-  import.meta.glob('../images/*.svg', { eager: true, as: 'url' })
+  import.meta.glob('../images/tech/*.svg', { eager: true, as: 'url' })
 )
 
 const getName = (src: string) =>
@@ -16,7 +16,6 @@ const URLS: { [key: string]: string } = {
   'GITHUB ACTIONS': 'https://github.com/features/actions',
   'GITHUB': 'https://www.github..com',
   'HTML 5': 'https://html.spec.whatwg.org/',
-  'JEST': 'https://jestjs.io/',
   'NODE': 'https://nodejs.org/',
   'NPM': 'https://www.npmjs.com/',
   'NX': 'https://nx.dev/',

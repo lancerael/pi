@@ -4,7 +4,7 @@ export const box = ({
   color,
   isSpecial,
 }: { color?: string; isSpecial?: boolean } = {}) => {
-  const borderVar = isSpecial ? 'special' : 'border'
+  const borderVar = isSpecial ? 'special' : 'special'
   const colorVar = isSpecial ? 'specialText' : 'text'
   const backgroundVar = isSpecial ? 'specialBg' : 'subtle'
   return css`
@@ -13,7 +13,7 @@ export const box = ({
     background-color: var(--${backgroundVar});
     border-radius: 6px;
     padding: 8px;
-    box-shadow: 2px 2px 2px 0px rgb(61 61 61 / 20%);
+    box-shadow: 2px 2px 2px 0px rgb(61 61 61 / 10%);
   `
 }
 

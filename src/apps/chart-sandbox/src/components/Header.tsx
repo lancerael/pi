@@ -3,12 +3,15 @@ import Banner from '@pi-lib/banner'
 import { useDispatch } from 'react-redux'
 
 import { updateContrast, updateTheme } from '../state/reducers/themingReducer'
+import { Logo } from '../images/logo'
 
 export const Header = () => {
   const dispatch = useDispatch()
   return (
     <Banner>
-      <h1 style={{ display: 'inline-block' }}>Chart Sandbox</h1>
+      <h1 style={{ display: 'inline-block' }}>
+        <Logo size={42} fill="var(--outline)" /> Chart Sandbox
+      </h1>
       <div style={{ padding: '16px', display: 'inline-block' }}>
         <Select
           label="Contrast"

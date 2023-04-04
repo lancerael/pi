@@ -7,6 +7,7 @@ import {
   changeTitle,
 } from '../../state/reducers/chartConfigReducer'
 import { formInput } from '@pi-lib/styles'
+import TextInput from '@pi-lib/text-input'
 
 const StyledInputRow = styled.div`
   font-size: 1.4em;
@@ -38,16 +39,12 @@ const ConfigEditor = () => {
         gap: '1rem',
       }}
     >
-      <StyledInputRow>
-        <label htmlFor="title">Title:</label>
-        <input
-          name="title"
-          type="text"
-          title="Change the title of the chart."
-          value={sTitle}
-          onChange={(e: any) => dispatch(changeTitle(e.target.value))}
-        />
-      </StyledInputRow>
+      <TextInput
+        title="Title"
+        longTitle="Change the title of the chart."
+        value={sTitle}
+        onChange={(e: any) => dispatch(changeTitle(e.target.value))}
+      />
       <StyledInputRow>
         <label htmlFor="x-axis">X Axis:</label>
         <input

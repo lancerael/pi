@@ -22,11 +22,8 @@ const Chart = ({ sId, sType }: any) => {
 
   useEffect(() => {
     !skipUpdate && dtChart.current?.updateData(aData)
-  }, [aData])
-
-  useEffect(() => {
     !skipUpdate && dtChart.current?.updateConfig(jConfig)
-  }, [jConfig])
+  }, [aData, jConfig])
 
   return (
     <div

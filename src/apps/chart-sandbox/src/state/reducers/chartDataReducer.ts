@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-const initialState = {}
+const initialState: any[] = []
 
 const chartDataSlice = createSlice({
   name: 'chartData',
@@ -14,7 +14,7 @@ const chartDataSlice = createSlice({
     },
     addRow(state: any) {
       state.push({
-        sLabel: '',
+        sLabel: `Row ${state.length + 1}`,
         aValues: state[0] ? state[0].aValues.map(() => 0) : [],
       })
     },
@@ -32,7 +32,7 @@ const chartDataSlice = createSlice({
       })
     },
     replaceData(state: any, { payload }: any) {
-      state = payload
+      return structuredClone(payload)
     },
   },
 })

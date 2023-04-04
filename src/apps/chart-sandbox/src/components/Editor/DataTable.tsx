@@ -19,20 +19,6 @@ const DataTable = () => {
   const aData = useSelector(({ aData }: any) => aData)
   const dispatch = useDispatch()
 
-  // const aDataRows = aData.map((oDataItem: any, i: number) => (
-  //   <DataRow key={i} {...{ oDataItem, i }} />
-  // ))
-  // const aFinalRow = aValues.map((oItem, i) => (
-  //   <td key={`color${i}`}>
-  //     <button
-  //       onClick={hnDeleteColumn.bind(this, i)}
-  //       className="dt-delete-col-btn"
-  //       title="Delete this column."
-  //     >
-  //       x
-  //     </button>
-  //   </td>
-  // ))
   return (
     <div style={{ padding: '0 16px' }}>
       <Table
@@ -114,6 +100,22 @@ const DataTable = () => {
               </Button>,
             ],
           })),
+          {
+            cols: [
+              '',
+              ...aValues.map((oItem: any, i: number) => (
+                <Button
+                  onClick={() => dispatch(deleteRow(i as any))}
+                  title="Delete this column."
+                  status="error"
+                  isCompact
+                >
+                  x
+                </Button>
+              )),
+              '',
+            ],
+          },
         ]}
       />
     </div>

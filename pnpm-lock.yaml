@@ -115,12 +115,13 @@ importers:
 
   src/apps/chart-sandbox:
     specifiers:
-      '@pi-lib/banner': workspace:^0.0.0
-      '@pi-lib/button': workspace:^1.1.1
-      '@pi-lib/icon-button': workspace:^0.0.0
-      '@pi-lib/select': workspace:^0.0.0
-      '@pi-lib/styles': ^1.1.1
-      '@pi-lib/table': ^1.1.1
+      '@pi-lib/banner': '*'
+      '@pi-lib/button': '*'
+      '@pi-lib/icon-button': '*'
+      '@pi-lib/select': '*'
+      '@pi-lib/styles': '*'
+      '@pi-lib/table': '*'
+      '@pi-lib/text-input': workspace:^0.0.0
       '@reduxjs/toolkit': ^1.9.3
       '@types/react': ^18.0.28
       '@types/react-dom': ^18.0.11
@@ -128,7 +129,7 @@ importers:
       '@types/styled-components': ^5.1.26
       '@vitejs/plugin-react': ^3.1.0
       cypress: ^3.0.2
-      d-theia: ^3.0.5
+      d-theia: ^3.0.9
       react: ^18.2.0
       react-dom: ^18.2.0
       react-is: ^18.2.0
@@ -146,8 +147,9 @@ importers:
       '@pi-lib/select': link:../../components/inputs/Select
       '@pi-lib/styles': link:../../components/theming/Styles
       '@pi-lib/table': link:../../components/molecules/Table
+      '@pi-lib/text-input': link:../../components/inputs/TextInput
       '@reduxjs/toolkit': 1.9.3_7ozmmenbreubqajvpxb2pmuuau
-      d-theia: 3.0.5
+      d-theia: 3.1.2
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
       react-redux: 7.2.9_biqbaboplfbrettd7655fr4n2y
@@ -469,6 +471,37 @@ importers:
       vite: ^3.0.9
       vitest: ^0.22.1
     dependencies:
+      react: 18.2.0
+      styled-components: 5.3.9_7i5myeigehqah43i5u7wbekgba
+    devDependencies:
+      '@pi-lib/config': link:../../../config
+      '@testing-library/react': 13.4.0_biqbaboplfbrettd7655fr4n2y
+      '@vitejs/plugin-react': 2.2.0_vite@3.2.5
+      '@vitest/coverage-istanbul': 0.23.4_jsdom@20.0.3
+      jest-axe: 6.0.1
+      jsdom: 20.0.3
+      rimraf: 3.0.2
+      typescript: 4.9.5
+      vite: 3.2.5
+      vitest: 0.22.1_jsdom@20.0.3
+
+  src/components/inputs/TextInput:
+    specifiers:
+      '@pi-lib/config': ^0.*.*
+      '@pi-lib/styles': ^1.1.1
+      '@testing-library/react': ^13.3.0
+      '@vitejs/plugin-react': ^2.0.1
+      '@vitest/coverage-istanbul': ^0.23.1
+      jest-axe: ^6.0.0
+      jsdom: ^20.0.0
+      react: ^18.2.0
+      rimraf: ^3.0.2
+      styled-components: ^5.3.5
+      typescript: ^4.7.4
+      vite: ^3.0.9
+      vitest: ^0.22.1
+    dependencies:
+      '@pi-lib/styles': link:../../theming/Styles
       react: 18.2.0
       styled-components: 5.3.9_7i5myeigehqah43i5u7wbekgba
     devDependencies:
@@ -7398,12 +7431,12 @@ packages:
       yauzl: 2.10.0
     dev: true
 
-  /d-theia/3.0.5:
-    resolution: {integrity: sha512-CE7N4J7W3tWY8z4cClAqh0FZdk1HvN7VyrfAgTO2FkWt+NiX3Px15mTl4VWiyajD9xFmfim/GgCYkcBvGG0usQ==}
+  /d-theia/3.1.2:
+    resolution: {integrity: sha512-3UUWBsdhH9qrorG/JQZRwlEGyhs504cOzIfNQlcU5q5IryFaCeDVbCQS/IYLIKDVAXd1di8j97tFZ1mh3wT8vQ==}
     dependencies:
       d3-array: 1.2.4
       d3-axis: 1.0.12
-      d3-color: 1.4.1
+      d3-color: 3.1.0
       d3-ease: 1.0.7
       d3-fetch: 1.2.0
       d3-force: 1.2.1
