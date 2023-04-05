@@ -17,13 +17,13 @@ export const box = ({
   `
 }
 
-export const formInput = ({} = {}) => {
+export const formInput = (isExpanded?: boolean) => {
   return css`
-    height: 22px;
+    height: ${isExpanded ? '26px' : '22px'};
     background: var(--bg);
     color: var(--text);
     border: 1px solid var(--text);
     border-radius: 4px;
-    padding: 0 4px;
+    padding: 0 ${isExpanded ? '2px' : '4px'};
   `
 }

@@ -1,6 +1,3 @@
-export interface StyledTextInputProps {
-  /**
-   * The description of the prop
-   */
-  prop?: any
-}
+import { TextInputProps } from './TextInput.types'
+
+export type StyledTextInputProps = Pick<TextInputProps, 'type'>

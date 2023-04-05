@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { formInput } from '@pi-lib/styles'
+import { StyledTextInputProps } from './TextInput.style.types'
 
 export const StyledTextInput = styled.div`
   font-size: 1.4em;
@@ -11,8 +12,9 @@ export const StyledTextInput = styled.div`
   }
 
   & input {
+    width: 100%;
     flex-grow: 1;
 
-    ${formInput()}
+    ${({ type }: StyledTextInputProps) => formInput(type === 'color')}
   }
 `

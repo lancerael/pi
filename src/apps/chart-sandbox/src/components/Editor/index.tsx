@@ -6,11 +6,11 @@ import EditorActions from './EditorActions'
 const Editor = () => (
   <div
     style={{
-      height: '100%',
       flexGrow: 1,
       background: 'var(--shadow)',
       color: 'var(--textSoft)',
       borderRight: '1px solid var(--specialBg)',
+      padding: '16px',
     }}
   >
     <ConfigEditor />

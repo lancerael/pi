@@ -42,7 +42,7 @@ export const EditorActions = () => {
   }
 
   return (
-    <div className="dt-editor-actions dt-section-body">
+    <div style={{ display: 'flex', gap: '4px', marginTop: '16px' }}>
       <Button
         onClick={() => dispatch(addRow())}
         title="Add a new row to the data"

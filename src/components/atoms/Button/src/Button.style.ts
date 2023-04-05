@@ -7,9 +7,10 @@ export const StyledButton = styled.button(
   ({ status, minWidth, margin, isCompact }: StyledButtonProps) => {
     return css`
       ${box({ color: status === 'default' ? '' : `var(--${status})` })}
-      min-width: ${isCompact ? 'auto' : minWidth};
-      margin: ${isCompact ? '0' : margin};
+      width: 100%;
+      padding: ${isCompact ? '3px 4px 4px 4px' : 'auto'};
       cursor: pointer;
+      display: inline-block;
       &:hover:not([disabled]) {
         background-color: var(--border);
         border-color: var(--outline);

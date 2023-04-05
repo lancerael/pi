@@ -7,17 +7,13 @@ export const TextInput = ({
   longTitle,
   value,
   onChange,
+  type = 'text',
 }: TextInputProps) => {
-  const name = title.toLowerCase().split(' ').join()
+  const name = title?.toLowerCase().split(' ').join()
   return (
-    <StyledTextInput>
+    <StyledTextInput {...{ type }}>
       {title && <label htmlFor={name}>{title}:</label>}
-      <input
-        name={name}
-        type="text"
-        title={longTitle ?? title}
-        {...{ onChange, value }}
-      />
+      <input title={longTitle ?? title} {...{ onChange, value, name, type }} />
     </StyledTextInput>
   )
 }

@@ -3,12 +3,12 @@ import styled, { css } from 'styled-components'
 export const StyledTable = styled.table`
   width: 100%;
   border-collapse: collapse;
-  border: 1px solid var(--mark);
+  border: 1px solid var(--special);
 
   & th,
   & td {
-    padding: 8px;
-    text-align: left;
+    padding: 6px;
+    text-align: center;
   }
 
   & * {
