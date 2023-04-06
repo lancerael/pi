@@ -1,11 +1,29 @@
+import { box } from '@pi-lib/styles'
 import Theia from 'd-theia'
 import React, { useEffect, useRef } from 'react'
 import { useSelector } from 'react-redux'
+import styled from 'styled-components'
 
 interface IChart {
   updateData: (...args: any) => void
   updateConfig: (...args: any) => void
 }
+
+const StyledChartContainer = styled.div`
+  flex-grow: 1;
+  position: relative;
+
+  & svg {
+    /* ${box()} */
+    background: var(--subtle); //${({ theme }) => theme.chartBackground};
+    border: 1px solid var(--border);
+    padding: 0;
+  }
+  & g.key text.label {
+    fill: var(--text) !important;
+    border: 1px solid green;
+  }
+`
 
 const Chart = ({ sId, sType }: any) => {
   const chartContainer = useRef(null)
@@ -25,13 +43,7 @@ const Chart = ({ sId, sType }: any) => {
     !skipUpdate && dtChart.current?.updateConfig(jConfig)
   }, [aData, jConfig])
 
-  return (
-    <div
-      id={sId}
-      ref={chartContainer}
-      style={{ flexGrow: '1', position: 'relative' }}
-    />
-  )
+  return <StyledChartContainer id={sId} ref={chartContainer} />
 }
 
 export default Chart

@@ -129,7 +129,7 @@ importers:
       '@types/styled-components': ^5.1.26
       '@vitejs/plugin-react': ^3.1.0
       cypress: ^3.0.2
-      d-theia: ^3.1.2
+      d-theia: ^3.1.3
       react: ^18.2.0
       react-dom: ^18.2.0
       react-is: ^18.2.0
@@ -149,7 +149,7 @@ importers:
       '@pi-lib/table': link:../../components/molecules/Table
       '@pi-lib/text-input': link:../../components/inputs/TextInput
       '@reduxjs/toolkit': 1.9.3_7ozmmenbreubqajvpxb2pmuuau
-      d-theia: 3.1.2
+      d-theia: 3.1.3
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
       react-redux: 7.2.9_biqbaboplfbrettd7655fr4n2y
@@ -7431,8 +7431,8 @@ packages:
       yauzl: 2.10.0
     dev: true
 
-  /d-theia/3.1.2:
-    resolution: {integrity: sha512-3UUWBsdhH9qrorG/JQZRwlEGyhs504cOzIfNQlcU5q5IryFaCeDVbCQS/IYLIKDVAXd1di8j97tFZ1mh3wT8vQ==}
+  /d-theia/3.1.3:
+    resolution: {integrity: sha512-V/2Wn5Sa5J0WeOq9dw91YJ0MTw8h8oyTQoChk+gQ35gK+X0d57py+npT2ghVHPdKZvvyoioOEBHnV9al0IrVdg==}
     dependencies:
       d3-array: 1.2.4
       d3-axis: 1.0.12

@@ -7,9 +7,9 @@ const Editor = () => (
   <div
     style={{
       flexGrow: 1,
-      background: 'var(--shadow)',
+      background: 'var(--subtle)',
       color: 'var(--textSoft)',
-      borderRight: '1px solid var(--specialBg)',
+      borderRight: '1px solid var(--border)',
       padding: '16px',
     }}
   >
