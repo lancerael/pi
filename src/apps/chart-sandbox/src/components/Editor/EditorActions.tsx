@@ -11,6 +11,19 @@ import {
   replaceConfig,
   addConfigColumn,
 } from '../../state/reducers/chartConfigReducer'
+import styled from 'styled-components'
+
+const StyledActionWrapper = styled.div`
+  display: flex;
+  gap: 4px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  & button {
+    width: auto;
+  }
+`
 
 export const EditorActions = () => {
   const jConfig = useSelector(({ jConfig }: any) => jConfig)
@@ -42,7 +55,7 @@ export const EditorActions = () => {
   }
 
   return (
-    <div style={{ display: 'flex', gap: '4px', marginTop: '16px' }}>
+    <StyledActionWrapper>
       <Button
         onClick={() => dispatch(addRow())}
         title="Add a new row to the data"
@@ -64,12 +77,17 @@ export const EditorActions = () => {
       >
         RANDOMISE
       </Button>
-      <br />
       <Button
         onClick={() => exportRef?.current?.click()}
         title="Export this chart as JSON"
       >
         EXPORT
+      </Button>
+      <Button
+        title="Import JSON for this chart."
+        onClick={() => importRef?.current?.click()}
+      >
+        IMPORT
       </Button>
       <input
         style={{ display: 'none' }}
@@ -78,12 +96,6 @@ export const EditorActions = () => {
         accept="application/json"
         onChange={importChange}
       />
-      <Button
-        title="Import JSON for this chart."
-        onClick={() => importRef?.current?.click()}
-      >
-        IMPORT
-      </Button>
       <a
         style={{ display: 'none' }}
         href={`data:text/json;charset=utf-8,${encodeURIComponent(
@@ -92,7 +104,7 @@ export const EditorActions = () => {
         ref={exportRef}
         download="sandbox-export.json"
       ></a>
-    </div>
+    </StyledActionWrapper>
   )
 }
 

@@ -10,7 +10,7 @@ const chartDataSlice = createSlice({
       state[payload.i1].sLabel = payload.value
     },
     updateValue(state: any, { payload }: any) {
-      state[payload.i1].aValues[payload.i2] = payload.value
+      state[payload.i1].aValues[payload.i2] = +payload.value
     },
     addRow(state: any) {
       state.push({

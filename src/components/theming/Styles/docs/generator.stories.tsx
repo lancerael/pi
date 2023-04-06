@@ -84,13 +84,17 @@ const ThemeDocs = () => {
       <div>
         Once converted, copy the output and save it. You can then pass this to
         your imported <CodeFormat>@pi-lib/styles/Theme</CodeFormat> provider as
-        a prop.
+        a prop. Make sure to also make a `GlobalStyle` component with your theme
+        so that all of your colours are available to the theme as CSS variables.
         <br />
         <PreFormat>
           {`
 import customTheme from './local/myThemes/customTheme'
+import { getGlobalStyle } from '@pi-lib/styles'
+const GlobalStyle = getGlobalStyle(customTheme)
 /.../
-<Theme themeName="customTheme" theme={customTheme}>
+<Theme theme={customTheme}>
+  <GlobalStyle />
   <App/>
 </Theme>
           `}

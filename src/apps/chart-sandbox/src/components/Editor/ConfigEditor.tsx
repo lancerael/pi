@@ -35,7 +35,7 @@ const ConfigEditor = () => {
         display: 'flex',
         flexDirection: 'column',
         gap: '12px',
-        padding: '8px',
+        padding: '8px 2px',
         marginBottom: '12px',
       }}
     >

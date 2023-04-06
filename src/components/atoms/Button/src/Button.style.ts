@@ -8,9 +8,10 @@ export const StyledButton = styled.button(
     return css`
       ${box({ color: status === 'default' ? '' : `var(--${status})` })}
       width: 100%;
-      padding: ${isCompact ? '3px 4px 4px 4px' : 'auto'};
+      padding: ${isCompact ? '2px 2px 3px 2px' : 'auto'};
       cursor: pointer;
       display: inline-block;
+      font-weight: bold;
       &:hover:not([disabled]) {
         background-color: var(--border);
         border-color: var(--outline);

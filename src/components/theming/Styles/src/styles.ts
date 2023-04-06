@@ -1,6 +1,15 @@
-import { createGlobalStyle } from 'styled-components'
+import {
+  DefaultTheme,
+  GlobalStyleComponent,
+  createGlobalStyle,
+} from 'styled-components'
 import { getTheme } from './theme'
 import { Contrast } from './theme.types'
+import { ThemeType } from './themes'
+
+export const themeList = Object.values(
+  import.meta.glob('./themes/*.tsx', { eager: true, as: 'url' })
+).map((item) => item.split('/').pop()?.split('.')[0]) as ThemeType[]
 
 const getVars = (scheme: any) =>
   Object.entries(scheme).reduce(
@@ -26,4 +35,19 @@ export const getGlobalStyle = (
   }
 `
 
-export const GlobalStyle = getGlobalStyle()
+type ContrastMap = { [key in Contrast]: GlobalStyleComponent<{}, DefaultTheme> }
+type ThemeMap = { [key in ThemeType]: ContrastMap }
+
+export const globalStyles: ThemeMap = themeList.reduce(
+  (accStyles, themeName: ThemeType) => {
+    return {
+      ...accStyles,
+      [themeName]: {
+        'light': getGlobalStyle(getTheme(themeName), 'light'),
+        'dark': getGlobalStyle(getTheme(themeName), 'dark'),
+        '': getGlobalStyle(getTheme(themeName)),
+      },
+    }
+  },
+  {} as ThemeMap
+)

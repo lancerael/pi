@@ -9,10 +9,10 @@ export const Header = () => {
   const dispatch = useDispatch()
   return (
     <Banner>
-      <h1 style={{ display: 'inline-block' }}>
+      <h1 style={{ display: 'inline-block', paddingLeft: '4px' }}>
         <Logo size={42} fill="var(--outline)" /> Chart Sandbox
       </h1>
-      <div style={{ padding: '16px', display: 'inline-block' }}>
+      <div style={{ display: 'inline-block', textAlign: 'right' }}>
         <Select
           label="Contrast"
           name="contrast"

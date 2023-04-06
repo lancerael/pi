@@ -11,7 +11,7 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "react-jsx",
-    "types": ["react", "vitest/globals"],
+    "types": ["react", "vitest/globals", "vite/client"],
     "composite": true,
     "esModuleInterop": true,
     "noEmit": true

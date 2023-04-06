@@ -1,6 +1,6 @@
 import React from 'react'
 import { ThemeProvider } from 'styled-components'
-import { getGlobalStyle } from './styles'
+import { getGlobalStyle, globalStyles } from './styles'
 import * as themes from './themes'
 import { ThemeType } from './themes'
 import { ITheme, IThemeProps } from './theme.types'
@@ -59,12 +59,12 @@ export const Theme = ({
   themeName = 'andro',
   themeOverrides,
   theme = getTheme(themeName, themeOverrides),
-  contrast,
+  contrast = 'light',
 }: IThemeProps) => {
-  const GlobalStyle = getGlobalStyle(theme, contrast)
+  const GlobalStyle = globalStyles[themeName]?.[contrast] ?? <></>
   return (
     <ThemeProvider {...{ theme }}>
-      <GlobalStyle {...{ theme }} />
+      <GlobalStyle />
       {children}
     </ThemeProvider>
   )

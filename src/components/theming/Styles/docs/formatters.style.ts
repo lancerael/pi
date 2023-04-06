@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 const format = `
   background-color: var(--input);
-  color: var(--specialText);
+  color: var(--text);
 `
 
 export const Title = styled.h3`
