@@ -1,6 +1,6 @@
 import React from 'react'
 import { ThemeProvider } from 'styled-components'
-import { getGlobalStyle } from './styles'
+import { getGlobalStyle, globalStyles } from './styles'
 import * as themes from './themes'
 import { ThemeType } from './themes'
 import { ITheme, IThemeProps } from './theme.types'
@@ -24,7 +24,7 @@ export const baseTheme = {
 export const statusColors = {
   light: {
     pending: '#232c75',
-    error: '#752323',
+    error: '#b10808',
     success: '#237528',
   },
   dark: {
@@ -35,11 +35,11 @@ export const statusColors = {
 }
 
 export const mergeColours = (
-  brightness: 'dark' | 'light',
+  contrast: 'dark' | 'light',
   themeName: ThemeType
 ) => ({
-  ...statusColors[brightness],
-  ...themes[themeName][brightness],
+  ...statusColors[contrast],
+  ...themes[themeName][contrast],
 })
 
 export const getTheme = (
@@ -59,11 +59,12 @@ export const Theme = ({
   themeName = 'andro',
   themeOverrides,
   theme = getTheme(themeName, themeOverrides),
+  contrast = 'light',
 }: IThemeProps) => {
-  const GlobalStyle = getGlobalStyle(theme)
+  const GlobalStyle = globalStyles[themeName]?.[contrast] ?? <></>
   return (
     <ThemeProvider {...{ theme }}>
-      <GlobalStyle {...{ theme }} />
+      <GlobalStyle />
       {children}
     </ThemeProvider>
   )

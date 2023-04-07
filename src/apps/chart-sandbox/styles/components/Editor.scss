@@ -1,0 +1,85 @@
+.dt-panel {
+  min-width: 200px;
+  @include panel;
+  padding: 5px;
+
+  .dt-data-row {
+    margin-bottom: 10px;
+    td {
+      text-align: center;
+    }
+    button {
+      margin: 0;
+      padding: 1px 4px 2px 4px;
+      color: #ee0000;
+    }
+  }
+
+  .dt-data-row input[type='number'],
+  .dt-data-row input[type='color'] {
+    width: 50px;
+  }
+
+  .dt-data-row input[type='text'] {
+    width: 80px;
+  }
+}
+
+.dt-section-header {
+  @include panel;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.2em;
+  margin-bottom: 10px;
+  color: $base-dark;
+  border-radius: 5px;
+  padding: 5px;
+  background: $lighter;
+  box-shadow: 1px 1px 2px $dark;
+}
+
+.dt-editor-label {
+  display: inline-block;
+  text-align: right;
+  padding: 10px 5px 10px 10px;
+  font-weight: bold;
+}
+
+.dt-section-body {
+  text-align: center;
+  .dt-editor-input {
+    width: 100px;
+    margin-right: 10px;
+  }
+  .dt-editor-title-input {
+    width: 130px;
+  }
+}
+
+.dt-section-inline {
+  display: inline-block;
+}
+
+.dt-editor-table {
+  margin: 10px auto;
+  background: $base-lighter;
+  box-shadow: 1px 1px 2px $dark;
+  border-collapse: collapse;
+  td {
+    padding: 3px;
+    background: $lighter;
+    border: 1px solid $dark;
+  }
+  tr:nth-child(odd) td {
+    background: $light;
+  }
+}
+
+.dt-editor-actions {
+  .dt-file-import-input {
+    display: none;
+  }
+  button {
+    margin: 5px;
+  }
+}

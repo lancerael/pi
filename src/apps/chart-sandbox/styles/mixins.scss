@@ -1,0 +1,33 @@
+@mixin panel {
+  background-color: $base-light;
+  background: linear-gradient($base-light, white);
+  border: 1px solid $base;
+  box-shadow: 2px 2px 5px $dark;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+@mixin button {
+  @include panel;
+  font-weight: bold;
+  color: $base-dark;
+  padding: 5px;
+  font-size: 0.9em;
+  cursor: pointer;
+  border-radius: 5px;
+
+  &:hover {
+    color: $base-light;
+    background: $base-dark;
+  }
+  &:active {
+    color: $light;
+    background: $darkest;
+    box-shadow: none;
+  }
+  &:disabled {
+    background: $dark;
+    color: $lightest;
+    cursor: default;
+  }
+}

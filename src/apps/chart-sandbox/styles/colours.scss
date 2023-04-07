@@ -1,0 +1,12 @@
+$base: #6f9bfc;
+$dark: #aaaaaa;
+$light: #f0f0f0;
+$darker: darken($dark, 5%);
+$darkest: darken($darker, 25%);
+$lighter: lighten($light, 5%);
+$lightest: lighten($lighter, 5%);
+
+$base-light: lighten($base, 25%);
+$base-lighter: lighten($base-light, 25%);
+$base-dark: darken($base, 50%);
+$base-darker: darken($base-dark, 50%);

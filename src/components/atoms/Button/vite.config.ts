@@ -1,3 +1,3 @@
-import createConfig from './node_modules/@pi-lib/config/js/vite.config.js'
+import createConfig from '@pi-lib/config'
 
 export default createConfig('button')

@@ -6,4 +6,5 @@ export interface StyledButtonProps {
   status: Status
   minWidth: string
   margin: string
+  isCompact?: boolean
 }

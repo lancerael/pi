@@ -21,7 +21,10 @@ export interface ThemedComponent {
 
 export type ThemedComponentWithChildren = ThemedComponent & PropsWithChildren
 
+export type Contrast = 'light' | 'dark' | ''
+
 export interface IThemeProps extends Partial<ThemedComponentWithChildren> {
   themeName: ThemeType
   themeOverrides?: ITheme
+  contrast?: Contrast
 }

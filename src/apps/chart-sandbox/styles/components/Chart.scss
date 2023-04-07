@@ -1,0 +1,94 @@
+/* containers */
+.dt-chart-container {
+  height: 320px;
+  margin-bottom: 15px;
+  min-width: 350px;
+  position: relative;
+}
+
+.dt-charts-row .dt-chart-container:first-of-type {
+  margin-right: 15px;
+}
+
+@media only screen and (max-width: 800px) {
+  .dt-charts-row .dt-chart-container {
+    max-width: 100%;
+    margin-right: 0 !important;
+  }
+}
+
+/* Chart */
+
+.x-labels {
+  cursor: default;
+}
+
+.y-axis .tick line {
+  opacity: 0.2;
+}
+
+.title {
+  position: absolute;
+  text-align: center;
+  width: 96%;
+  margin-top: 5px;
+  color: grey;
+}
+
+.labels,
+.title {
+  fill: grey;
+  font-weight: bold;
+  font-size: 10px;
+}
+
+.tooltip {
+  padding: 5px;
+  border-radius: 5px;
+  position: absolute;
+  opacity: 0.9;
+  -webkit-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+  @include panel;
+}
+
+.is-transparent {
+  opacity: 0;
+}
+
+.is-hidden {
+  visibility: hidden;
+}
+
+svg.chart {
+  width: 100%;
+  height: 100%;
+  @include panel;
+}
+
+g.key {
+  border: 1px solid red;
+}
+
+.bars,
+.circles {
+  -webkit-transition: fill 0.2s;
+  transition: fill 0.2s;
+}
+
+path.line {
+  fill: none;
+  stroke-width: 2px;
+}
+
+.bars:hover,
+.circles:hover {
+  /* fill: #444444; */
+  cursor: pointer;
+}
+
+.bar {
+  width: 10px;
+  background-color: red;
+  float: left;
+}

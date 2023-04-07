@@ -1,16 +1,28 @@
+import { css } from 'styled-components'
+
 export const box = ({
   color,
   isSpecial,
 }: { color?: string; isSpecial?: boolean } = {}) => {
-  const borderVar = isSpecial ? 'special' : 'border'
   const colorVar = isSpecial ? 'specialText' : 'textSoft'
   const backgroundVar = isSpecial ? 'specialBg' : 'subtle'
-  return `
-    border: 2px solid var(--${borderVar});
+  return css`
+    border: 1px solid var(--special);
     color: ${color ? color : `var(--${colorVar})`};
     background-color: var(--${backgroundVar});
     border-radius: 6px;
     padding: 8px;
-    box-shadow: 2px 2px 2px 0px rgb(61 61 61 / 20%);
+    box-shadow: 2px 2px 2px 0px rgb(61 61 61 / 10%);
+  `
+}
+
+export const formInput = (isExpanded?: boolean) => {
+  return css`
+    height: ${isExpanded ? '26px' : '22px'};
+    background: var(--bg);
+    color: var(--text);
+    border: 1px solid var(--text);
+    border-radius: 4px;
+    padding: 0 ${isExpanded ? '2px' : '4px'};
   `
 }

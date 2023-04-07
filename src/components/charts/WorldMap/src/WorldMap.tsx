@@ -52,8 +52,6 @@ export const WorldMap = ({ label, country }: WorldMapProps) => {
     return () => window.removeEventListener('resize', resize)
   }, [])
 
-  console.log(dimensions)
-
   return (
     <StyledWorldMapContainer ref={outerRef}>
       <div>

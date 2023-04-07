@@ -1,27 +1,27 @@
 import React from 'react'
 import Row from './components/Row'
 import { StyledTable, StyledTableHead } from './Table.style'
-import { TableProps } from './Table.types'
+import { CellContent, TableProps } from './Table.types'
 
 export const Table = ({
   headers = [],
-  tableRows = [],
+  rows = [],
   fixedWidths = {},
 }: TableProps) => (
   <StyledTable>
     {!!headers?.length && (
       <StyledTableHead>
         <tr>
-          {headers.map((label: string) => (
-            <th key={label} style={{ ...fixedWidths[label] }}>
-              {label}
+          {headers.map((content: CellContent, i) => (
+            <th key={i} style={{ ...fixedWidths[i] }}>
+              {content}
             </th>
           ))}
         </tr>
       </StyledTableHead>
     )}
     <tbody>
-      {tableRows.map(({ cols, expandedContent }, i) => (
+      {rows.map(({ cols, expandedContent }, i) => (
         <Row key={i} {...{ cols, i, expandedContent }} />
       ))}
     </tbody>

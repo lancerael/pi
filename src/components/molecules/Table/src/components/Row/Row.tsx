@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
+import { RowProps } from '../../Table.types'
 import { StyledDetails, StyledRow } from './Row.styles'
-import { RowProps } from './Row.types'
 
 export const Row = ({ cols, i, expandedContent }: RowProps) => {
   const [isItemActive, setIsItemActive] = useState(false)

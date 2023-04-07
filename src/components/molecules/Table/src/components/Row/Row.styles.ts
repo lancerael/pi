@@ -7,7 +7,7 @@ export const StyledRow = styled.tr(
     & td {
       font-size: 1em;
       &:not(:last-of-type) {
-        border-right: 1px solid var(--special);
+        border-right: 1px solid var(--mark);
       }
     }
 

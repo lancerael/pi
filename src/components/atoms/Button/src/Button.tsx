@@ -8,10 +8,11 @@ export const Button: FC<ButtonProps> = ({
   dataSelector = 'pi-lib-button',
   minWidth = '220px',
   margin = '10px',
+  isCompact,
   ...buttonProps
 }) => (
   <StyledButton
-    {...{ status, ...buttonProps, minWidth, margin }}
+    {...{ status, ...buttonProps, minWidth, margin, isCompact }}
     data-selector={dataSelector}
   >
     {children}
