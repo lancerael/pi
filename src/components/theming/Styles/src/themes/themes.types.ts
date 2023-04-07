@@ -1,1 +1,9 @@
-export type ThemeType = 'pebble' | 'rose' | 'electron' | 'avocado' | 'andro'
+export const themeList = [
+  'pebble',
+  'rose',
+  'electron',
+  'avocado',
+  'andro',
+] as const
+
+export type ThemeType = (typeof themeList)[number]

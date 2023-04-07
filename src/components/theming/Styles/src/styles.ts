@@ -5,11 +5,7 @@ import {
 } from 'styled-components'
 import { getTheme } from './theme'
 import { Contrast } from './theme.types'
-import { ThemeType } from './themes'
-
-export const themeList = Object.values(
-  import.meta.glob('./themes/*.tsx', { eager: true, as: 'url' })
-).map((item) => item.split('/').pop()?.split('.')[0]) as ThemeType[]
+import { ThemeType, themeList } from './themes'
 
 const getVars = (scheme: any) =>
   Object.entries(scheme).reduce(
