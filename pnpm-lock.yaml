@@ -267,7 +267,7 @@ importers:
         version: 5.3.9(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)
     devDependencies:
       '@pi-lib/config':
-        specifier: ^0.*.*
+        specifier: ^0.4.0
         version: link:../../../config
       '@testing-library/react':
         specifier: ^13.3.0
@@ -300,11 +300,11 @@ importers:
   src/components/atoms/Button:
     dependencies:
       '@pi-lib/styles':
-        specifier: ^1.1.1
+        specifier: ^1.2.0
         version: link:../../theming/Styles
     devDependencies:
       '@pi-lib/config':
-        specifier: ^0.3.2
+        specifier: ^0.4.0
         version: link:../../../config
       '@pi-lib/types':
         specifier: ^0.1.0
@@ -346,7 +346,7 @@ importers:
   src/components/atoms/IconButton:
     dependencies:
       '@pi-lib/styles':
-        specifier: ^1.1.1
+        specifier: ^1.2.0
         version: link:../../theming/Styles
       react:
         specifier: ^18.2.0
@@ -356,7 +356,7 @@ importers:
         version: 5.3.9(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)
     devDependencies:
       '@pi-lib/config':
-        specifier: ^0.*.*
+        specifier: ^0.4.0
         version: link:../../../config
       '@testing-library/react':
         specifier: ^13.3.0
@@ -396,7 +396,7 @@ importers:
         version: 5.3.9(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)
     devDependencies:
       '@pi-lib/config':
-        specifier: ^0.3.2
+        specifier: ^0.4.0
         version: link:../../../config
       '@pi-lib/types':
         specifier: ^0.1.0
@@ -432,7 +432,7 @@ importers:
   src/components/atoms/Tooltip:
     dependencies:
       '@pi-lib/styles':
-        specifier: ^1.1.1
+        specifier: ^1.2.0
         version: link:../../theming/Styles
       lodash.throttle:
         specifier: ^4.1.1
@@ -445,7 +445,7 @@ importers:
         version: 5.3.9(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)
     devDependencies:
       '@pi-lib/config':
-        specifier: ^0.3.2
+        specifier: ^0.4.0
         version: link:../../../config
       '@pi-lib/types':
         specifier: ^0.1.0
@@ -491,7 +491,7 @@ importers:
         version: 5.3.9(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)
     devDependencies:
       '@pi-lib/config':
-        specifier: ^0.3.2
+        specifier: ^0.4.0
         version: link:../../../config
       '@pi-lib/types':
         specifier: ^0.1.0
@@ -527,16 +527,16 @@ importers:
   src/components/charts/CandlestickChart:
     dependencies:
       '@pi-lib/button':
-        specifier: ^1.1.1
+        specifier: ^1.2.0
         version: link:../../atoms/Button
       '@pi-lib/loader':
-        specifier: ^2.1.1
+        specifier: ^2.2.0
         version: link:../../atoms/Loader
       '@pi-lib/styles':
-        specifier: ^1.1.1
+        specifier: ^1.2.0
         version: link:../../theming/Styles
       '@pi-lib/tooltip':
-        specifier: ^1.1.1
+        specifier: ^1.2.0
         version: link:../../atoms/Tooltip
       '@types/d3-axis':
         specifier: ^3.0.2
@@ -567,7 +567,7 @@ importers:
         version: 5.3.9(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)
     devDependencies:
       '@pi-lib/config':
-        specifier: ^0.3.2
+        specifier: ^0.4.0
         version: link:../../../config
       '@pi-lib/types':
         specifier: ^0.1.0
@@ -622,7 +622,7 @@ importers:
         version: 5.3.9(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)
     devDependencies:
       '@pi-lib/config':
-        specifier: ^0.3.2
+        specifier: ^0.4.0
         version: link:../../../config
       '@pi-lib/types':
         specifier: ^0.*.*
@@ -671,7 +671,7 @@ importers:
         version: 5.3.9(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)
     devDependencies:
       '@pi-lib/config':
-        specifier: ^0.*.*
+        specifier: ^0.4.0
         version: link:../../../config
       '@testing-library/react':
         specifier: ^13.3.0
@@ -704,7 +704,7 @@ importers:
   src/components/inputs/TextInput:
     dependencies:
       '@pi-lib/styles':
-        specifier: ^1.1.1
+        specifier: ^1.2.0
         version: link:../../theming/Styles
       react:
         specifier: ^18.2.0
@@ -714,7 +714,7 @@ importers:
         version: 5.3.9(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)
     devDependencies:
       '@pi-lib/config':
-        specifier: ^0.*.*
+        specifier: ^0.4.0
         version: link:../../../config
       '@testing-library/react':
         specifier: ^13.3.0
@@ -747,10 +747,10 @@ importers:
   src/components/molecules/AdvancedButton:
     dependencies:
       '@pi-lib/button':
-        specifier: ^1.1.1
+        specifier: ^1.2.0
         version: link:../../atoms/Button
       '@pi-lib/loader':
-        specifier: ^2.1.1
+        specifier: ^2.2.0
         version: link:../../atoms/Loader
       react:
         specifier: ^18.2.0
@@ -760,7 +760,7 @@ importers:
         version: 5.3.9(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)
     devDependencies:
       '@pi-lib/config':
-        specifier: ^0.3.2
+        specifier: ^0.4.0
         version: link:../../../config
       '@pi-lib/types':
         specifier: ^0.1.0
@@ -803,10 +803,10 @@ importers:
         version: 5.3.9(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)
     devDependencies:
       '@pi-lib/config':
-        specifier: ^0.3.2
+        specifier: ^0.4.0
         version: link:../../../config
       '@pi-lib/styles':
-        specifier: ^1.1.1
+        specifier: ^1.2.0
         version: link:../../theming/Styles
       '@pi-lib/types':
         specifier: ^0.1.0
@@ -849,7 +849,7 @@ importers:
         version: 5.3.9(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)
     devDependencies:
       '@pi-lib/config':
-        specifier: ^0.3.2
+        specifier: ^0.4.0
         version: link:../../../config
       '@pi-lib/types':
         specifier: ^0.1.0
@@ -923,7 +923,7 @@ importers:
         specifier: ^1.0.2
         version: 1.0.2(nyc@15.1.0)
       '@pi-lib/config':
-        specifier: ^0.3.2
+        specifier: ^0.4.0
         version: link:../../config
       '@types/d3-array':
         specifier: ^3.0.4
