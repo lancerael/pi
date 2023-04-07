@@ -1,0 +1,7 @@
+{
+  "type": "minor",
+  "comment": "Added d-theia sandbox",
+  "packageName": "@pi-lib/styles",
+  "email": "lancerael@hotmail.com",
+  "dependentChangeType": "patch"
+}
