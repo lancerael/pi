@@ -1,5 +1,5 @@
 import React, { useRef } from 'react'
-import Button from '@pi-lib/Button'
+import Button from '@pi-lib/button'
 import Theia from 'd-theia'
 import { useDispatch, useSelector } from 'react-redux'
 import {
