@@ -1,15 +1,11 @@
 import Banner from '@pi-lib/banner'
 import IconButton from '@pi-lib/icon-button'
 
-const gallery = Object.values(
-  import.meta.glob('../images/tech/*.svg', { eager: true, as: 'url' })
-)
+const S3 = 'https://pi-lib-assets.s3.eu-west-2.amazonaws.com/'
 
-const getName = (src: string) =>
-  src.split('/').pop()?.split('.')[0].toUpperCase().split('-').join(' ')
-
-const URLS: { [key: string]: string } = {
+const ICONS: { [key: string]: string } = {
   'AWS AMPLIFY': 'https://aws.amazon.com/amplify',
+  'AWS S3': 'https://aws.amazon.com/s3',
   'CSS 3': 'https://www.w3.org/TR/CSS',
   'CYPRESS': 'https://www.cypress.io',
   'D3': 'https://d3js.org',
@@ -34,16 +30,11 @@ const URLS: { [key: string]: string } = {
 export const Footer = () => {
   return (
     <Banner isList isBottom>
-      {gallery.map((src, i) => {
-        const title = getName(src)
+      {Object.entries(ICONS).map(([title, href], i) => {
+        const src = `${S3}${title.split(' ').join('-').toLowerCase()}.svg`
         return (
           !!title && (
-            <IconButton
-              key={src}
-              isExternal
-              href={URLS[title]}
-              {...{ src, title }}
-            />
+            <IconButton key={title} isExternal {...{ src, href, title }} />
           )
         )
       })}
