@@ -9,7 +9,7 @@
     "preview": "vite preview",
     "lint": "npx prettier -c . && npx eslint",
     "lint:fix": "npx prettier -w . && npx eslint --fix",
-    "test": "vitest",
+    "test-": "vitest",
     "test:coverage": "vitest --coverage",
     "e2e": "npx cypress open"
   },

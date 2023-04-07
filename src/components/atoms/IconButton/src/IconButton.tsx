@@ -13,7 +13,13 @@ export const IconButton: FC<IconButtonProps> = ({
     {...{ href, onClick }}
     target={isExternal ? '_blank' : undefined}
   >
-    <img {...{ src, title }} key={src} width="24px" height="24px" />
+    <img
+      {...{ src, title }}
+      key={src}
+      width="24px"
+      height="24px"
+      alt={title ?? `image button ${src}`}
+    />
   </StyledIconButton>
 )
 

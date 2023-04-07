@@ -1,5 +1,4 @@
 .dt-panel {
-
   min-width: 200px;
   @include panel;
   padding: 5px;
@@ -12,18 +11,18 @@
     button {
       margin: 0;
       padding: 1px 4px 2px 4px;
-      color: #EE0000;
+      color: #ee0000;
     }
   }
 
-  .dt-data-row input[type=number], .dt-data-row input[type=color] {
+  .dt-data-row input[type='number'],
+  .dt-data-row input[type='color'] {
     width: 50px;
   }
 
-  .dt-data-row input[type=text] {
+  .dt-data-row input[type='text'] {
     width: 80px;
   }
-
 }
 
 .dt-section-header {
@@ -48,7 +47,7 @@
 
 .dt-section-body {
   text-align: center;
-  .dt-editor-input{
+  .dt-editor-input {
     width: 100px;
     margin-right: 10px;
   }
@@ -60,7 +59,6 @@
 .dt-section-inline {
   display: inline-block;
 }
-
 
 .dt-editor-table {
   margin: 10px auto;
@@ -78,7 +76,7 @@
 }
 
 .dt-editor-actions {
-  .dt-file-import-input{
+  .dt-file-import-input {
     display: none;
   }
   button {

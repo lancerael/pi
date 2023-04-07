@@ -13,7 +13,11 @@ export const TextInput = ({
   return (
     <StyledTextInput {...{ type }}>
       {title && <label htmlFor={name}>{title}:</label>}
-      <input title={longTitle ?? title} {...{ onChange, value, name, type }} />
+      <input
+        title={longTitle ?? title}
+        id={name}
+        {...{ onChange, value, name, type }}
+      />
     </StyledTextInput>
   )
 }

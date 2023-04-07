@@ -35,7 +35,8 @@
   color: grey;
 }
 
-.labels, .title {
+.labels,
+.title {
   fill: grey;
   font-weight: bold;
   font-size: 10px;
@@ -69,7 +70,8 @@ g.key {
   border: 1px solid red;
 }
 
-.bars, .circles {
+.bars,
+.circles {
   -webkit-transition: fill 0.2s;
   transition: fill 0.2s;
 }
@@ -79,7 +81,8 @@ path.line {
   stroke-width: 2px;
 }
 
-.bars:hover, .circles:hover {
+.bars:hover,
+.circles:hover {
   /* fill: #444444; */
   cursor: pointer;
 }

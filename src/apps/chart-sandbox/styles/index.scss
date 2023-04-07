@@ -1,6 +1,5 @@
-@import "./colours.scss";
-@import "./mixins.scss";
-
+@import './colours.scss';
+@import './mixins.scss';
 
 body {
   background-color: $light;
@@ -13,7 +12,8 @@ button {
   @include button;
 }
 
-input[type=text], input[type=number] {
+input[type='text'],
+input[type='number'] {
   border-radius: 3px;
   background: white;
   padding: 2px;
@@ -21,7 +21,6 @@ input[type=text], input[type=number] {
 }
 
 #dtsr {
-
   .dt-loader {
     width: 32px;
     height: 32px;
@@ -29,16 +28,19 @@ input[type=text], input[type=number] {
     position: absolute;
     left: calc(50% - 16px);
     top: calc(50% - 16px);
-  	animation:spin 2s linear infinite;
+    animation: spin 2s linear infinite;
   }
 
-  @keyframes spin{
-  	from{transform:rotate(0deg)}
-  	to{transform:rotate(360deg)}
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
   }
 
-  @import "./components/Sandbox.scss";
-  @import "./components/Chart.scss";
-  @import "./components/Editor.scss";
-
+  @import './components/Sandbox.scss';
+  @import './components/Chart.scss';
+  @import './components/Editor.scss';
 }
