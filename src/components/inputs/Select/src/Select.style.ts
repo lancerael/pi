@@ -7,6 +7,6 @@ export const StyledSelect = styled.div`
 
   select {
     min-width: 80px;
-    ${formInput({})}
+    ${formInput()}
   }
 `

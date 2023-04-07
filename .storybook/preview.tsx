@@ -43,6 +43,7 @@ export const parameters = {
 export const globalTypes = {
   themeName: {
     name: 'Theme',
+    title: 'Theme',
     description: 'Global theme for components',
     defaultValue: 'pebble',
     toolbar: {
@@ -54,11 +55,11 @@ export const globalTypes = {
         { value: 'pebble', icon: 'circlehollow', title: 'Pebble' },
         { value: 'rose', icon: 'circlehollow', title: 'Rose' },
       ],
-      showName: true,
     },
   },
   contrast: {
     name: 'Contrast',
+    title: 'Contrast',
     description: 'Global contrast for theme',
     defaultValue: 'light',
     toolbar: {
@@ -68,7 +69,6 @@ export const globalTypes = {
         { value: 'dark', icon: 'circlehollow', title: 'Dark' },
         { value: '', icon: 'circlehollow', title: 'Device default' },
       ],
-      showName: true,
     },
   },
 }

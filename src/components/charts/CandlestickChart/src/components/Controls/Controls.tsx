@@ -85,6 +85,7 @@ export const Controls = ({
     <StyledControls>
       <Button
         {...buttonStyle}
+        isCompact
         onClick={panBack}
         disabled={visibleRange.first <= 0}
       >
@@ -92,6 +93,7 @@ export const Controls = ({
       </Button>
       <Button
         {...buttonStyle}
+        isCompact
         onClick={zoomOut}
         disabled={zoomLevel < zoomSpeed}
       >
@@ -99,6 +101,7 @@ export const Controls = ({
       </Button>
       <Button
         {...buttonStyle}
+        isCompact
         onClick={zoomIn}
         disabled={zoomLevel >= zoomSpeed * 10}
       >
@@ -106,6 +109,7 @@ export const Controls = ({
       </Button>
       <Button
         {...buttonStyle}
+        isCompact
         onClick={panForward}
         disabled={
           visibleRange.last >= length - 1 ||

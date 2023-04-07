@@ -12,16 +12,17 @@ export const StyledTooltip = styled.div(
 
     ::after {
       content: '';
+      ${box()}
       width: 10px;
       height: 10px;
       position: absolute;
-      border-bottom: 2px solid var(--textSoft);
-      border-right: 2px solid var(--textSoft);
-      background: var(--border);
+      border-width: 2px;
+      border-radius: 0;
+      padding: 0;
       rotate: -135deg;
       left: calc(50% - 5px);
       top: -7px;
-      clip-path: polygon(80% 0, 100% 0, 100% 100%, 0 100%, 0 80%);
+      clip-path: polygon(92% 0, 100% 0, 100% 100%, 0 100%, 0 92%);
     }
   `
 )

@@ -3,7 +3,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react'
 import { TextInput } from './TextInput'
 
 export default {
-  title: 'TextInput',
+  title: 'Inputs/TextInput',
   component: TextInput,
 } as ComponentMeta<typeof TextInput>
 
