@@ -190,7 +190,7 @@ importers:
         specifier: '*'
         version: link:../../components/molecules/Table
       '@pi-lib/text-input':
-        specifier: workspace:^0.0.0
+        specifier: '*'
         version: link:../../components/inputs/TextInput
       '@reduxjs/toolkit':
         specifier: ^1.9.3

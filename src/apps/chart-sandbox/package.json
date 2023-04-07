@@ -20,7 +20,7 @@
     "@pi-lib/select": "*",
     "@pi-lib/styles": "*",
     "@pi-lib/table": "*",
-    "@pi-lib/text-input": "workspace:^0.0.0",
+    "@pi-lib/text-input": "*",
     "@reduxjs/toolkit": "^1.9.3",
     "d-theia": "^3.2.0",
     "react": "^18.2.0",
