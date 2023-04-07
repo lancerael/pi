@@ -1,8 +1,16 @@
 # Change Log - @pi-lib/config
 
-This log was last generated on Wed, 29 Mar 2023 13:32:18 GMT and should not be manually modified.
+This log was last generated on Fri, 07 Apr 2023 22:16:26 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 0.4.0
+
+Fri, 07 Apr 2023 22:16:26 GMT
+
+### Minor changes
+
+- Added d-theia sandbox (lancerael@hotmail.com)
 
 ## 0.3.2
 

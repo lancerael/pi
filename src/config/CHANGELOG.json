@@ -2,6 +2,21 @@
   "name": "@pi-lib/config",
   "entries": [
     {
+      "date": "Fri, 07 Apr 2023 22:16:26 GMT",
+      "tag": "@pi-lib/config_v0.4.0",
+      "version": "0.4.0",
+      "comments": {
+        "minor": [
+          {
+            "author": "lancerael@hotmail.com",
+            "package": "@pi-lib/config",
+            "commit": "907fad13c37ae914492e80b1548355eb9366169e",
+            "comment": "Added d-theia sandbox"
+          }
+        ]
+      }
+    },
+    {
       "date": "Wed, 29 Mar 2023 13:32:18 GMT",
       "tag": "@pi-lib/config_v0.3.2",
       "version": "0.3.2",

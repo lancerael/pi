@@ -2,6 +2,27 @@
   "name": "@pi-lib/loader",
   "entries": [
     {
+      "date": "Fri, 07 Apr 2023 22:16:26 GMT",
+      "tag": "@pi-lib/loader_v2.2.0",
+      "version": "2.2.0",
+      "comments": {
+        "minor": [
+          {
+            "author": "lancerael@hotmail.com",
+            "package": "@pi-lib/loader",
+            "commit": "907fad13c37ae914492e80b1548355eb9366169e",
+            "comment": "Added d-theia sandbox"
+          },
+          {
+            "author": "beachball",
+            "package": "@pi-lib/loader",
+            "comment": "Bump @pi-lib/config to v0.4.0",
+            "commit": "907fad13c37ae914492e80b1548355eb9366169e"
+          }
+        ]
+      }
+    },
+    {
       "date": "Wed, 29 Mar 2023 13:32:18 GMT",
       "tag": "@pi-lib/loader_v2.1.1",
       "version": "2.1.1",

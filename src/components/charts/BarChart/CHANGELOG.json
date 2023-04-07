@@ -2,6 +2,21 @@
   "name": "@pi-lib/bar-chart",
   "entries": [
     {
+      "date": "Fri, 07 Apr 2023 22:16:26 GMT",
+      "tag": "@pi-lib/bar-chart_v0.1.2",
+      "version": "0.1.2",
+      "comments": {
+        "patch": [
+          {
+            "author": "beachball",
+            "package": "@pi-lib/bar-chart",
+            "comment": "Bump @pi-lib/config to v0.4.0",
+            "commit": "907fad13c37ae914492e80b1548355eb9366169e"
+          }
+        ]
+      }
+    },
+    {
       "date": "Wed, 29 Mar 2023 13:32:18 GMT",
       "tag": "@pi-lib/bar-chart_v0.1.1",
       "version": "0.1.1",

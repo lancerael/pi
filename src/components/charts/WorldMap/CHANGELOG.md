@@ -1,8 +1,18 @@
 # Change Log - @pi-lib/world-map
 
-This log was last generated on Wed, 29 Mar 2023 13:32:18 GMT and should not be manually modified.
+This log was last generated on Fri, 07 Apr 2023 22:16:26 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 0.3.0
+
+Fri, 07 Apr 2023 22:16:26 GMT
+
+### Minor changes
+
+- Added d-theia sandbox (lancerael@hotmail.com)
+- Bump @pi-lib/config to v0.4.0
+- Bump @pi-lib/types to v0.1.0
 
 ## 0.2.1
 

@@ -1,6 +1,6 @@
 {
   "name": "@pi-lib/bar-chart",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "",
   "type": "module",
   "main": "./src/index.ts",
@@ -22,7 +22,7 @@
     "styled-components": "^5.3.5"
   },
   "devDependencies": {
-    "@pi-lib/config": "^0.3.2",
+    "@pi-lib/config": "^0.4.0",
     "@pi-lib/types": "^0.1.0",
     "@testing-library/react": "^14.0.0",
     "@vitejs/plugin-react": "^3.1.0",
