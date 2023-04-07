@@ -73,7 +73,7 @@ export const EditorActions = () => {
       </Button>
       <Button
         onClick={() => updateData(Theia.getDataOps().getRandomData())}
-        title="Reset the chart and generate new random data"
+        title="Reset the chart and generate random data"
       >
         RANDOMISE
       </Button>
