@@ -55,7 +55,7 @@ export const WorldMap = ({ label, country }: WorldMapProps) => {
   return (
     <StyledWorldMapContainer ref={outerRef}>
       <div>
-        {label}: {country}c
+        {label}: {country}
       </div>
       <svg ref={svgRef} {...dimensions} />
     </StyledWorldMapContainer>
