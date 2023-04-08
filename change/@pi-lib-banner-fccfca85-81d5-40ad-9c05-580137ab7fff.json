@@ -1,0 +1,7 @@
+{
+  "type": "minor",
+  "comment": "Style tweaks",
+  "packageName": "@pi-lib/banner",
+  "email": "lancerael@hotmail.com",
+  "dependentChangeType": "patch"
+}

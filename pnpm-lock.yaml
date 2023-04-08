@@ -196,8 +196,8 @@ importers:
         specifier: ^1.9.3
         version: 1.9.3(react-redux@7.2.9)(react@18.2.0)
       d-theia:
-        specifier: ^3.2.0
-        version: 3.2.0
+        specifier: ^3.2.1
+        version: 3.2.1
       react:
         specifier: ^18.2.0
         version: 18.2.0
@@ -7746,8 +7746,8 @@ packages:
       yauzl: 2.10.0
     dev: true
 
-  /d-theia@3.2.0:
-    resolution: {integrity: sha512-hqN3rvzYYpFAkjzgv/krM8Ym7epJ3X+7nd+xgAa+vLLql0RSy18x0Kdl2ppDizBCvFZUsWJLLomQDFQLEBiF0w==}
+  /d-theia@3.2.1:
+    resolution: {integrity: sha512-xD+87h3bRpgyZ9y6uQdpfYi52XDmLaCrds79Cmf2LW8PhWBhejzBnZiPebzNlTbyGIqiUUxC0kddfJ3o0Nvmhw==}
     dependencies:
       d3-array: 3.2.3
       d3-axis: 3.0.0

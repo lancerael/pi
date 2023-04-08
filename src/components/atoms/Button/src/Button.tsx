@@ -6,13 +6,12 @@ export const Button: FC<ButtonProps> = ({
   children,
   status = 'default',
   dataSelector = 'pi-lib-button',
-  minWidth = '220px',
-  margin = '10px',
   isCompact,
+  isSpecial,
   ...buttonProps
 }) => (
   <StyledButton
-    {...{ status, ...buttonProps, minWidth, margin, isCompact }}
+    {...{ status, ...buttonProps, isCompact, isSpecial }}
     data-selector={dataSelector}
   >
     {children}

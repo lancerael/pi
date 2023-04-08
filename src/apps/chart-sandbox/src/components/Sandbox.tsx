@@ -21,6 +21,10 @@ const StyledColumn = styled.div<any>`
   display: flex;
   flex-direction: column;
 
+  & * {
+    transition: all 0.51s;
+  }
+
   @media (max-width: 800px) {
     height: auto;
     ${({ isCollapsible }: any) => !!isCollapsible && 'max-width: 100%;'}
@@ -28,7 +32,7 @@ const StyledColumn = styled.div<any>`
 `
 
 const StyledRow = styled.div<any>`
-  height: 100%;
+  flex: 1;
   display: flex;
   flex-direction: column;
 
@@ -46,7 +50,7 @@ const StyledChartContainer = styled.div<any>`
   gap: 16px;
 
   @media (max-width: 800px) {
-    height: calc(125px + 80vw);
+    height: calc(225px + 80vw);
   }
 `
 

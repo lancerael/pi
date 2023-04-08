@@ -13,13 +13,7 @@ export interface ButtonProps
    * It denotes the status of the button
    */
   status?: Status
-  /**
-   * Set the min width for the button
-   */
-  minWidth?: string
-  /**
-   * Set the margin for the button
-   */
   margin?: string
   isCompact?: boolean
+  isSpecial?: boolean
 }

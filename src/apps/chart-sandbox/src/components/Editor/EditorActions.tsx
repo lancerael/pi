@@ -18,7 +18,7 @@ const StyledActionWrapper = styled.div`
   gap: 4px;
   margin-top: 16px;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-around;
 
   & button {
     width: auto;
