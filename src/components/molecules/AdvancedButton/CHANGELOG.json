@@ -2,6 +2,27 @@
   "name": "@pi-lib/advanced-button",
   "entries": [
     {
+      "date": "Sat, 08 Apr 2023 23:11:05 GMT",
+      "tag": "@pi-lib/advanced-button_v0.5.0",
+      "version": "0.5.0",
+      "comments": {
+        "minor": [
+          {
+            "author": "lancerael@hotmail.com",
+            "package": "@pi-lib/advanced-button",
+            "commit": "6e8ec8b6ec82532d31d23c7f65ed5e8a45f8c4d9",
+            "comment": "triggering bb"
+          },
+          {
+            "author": "beachball",
+            "package": "@pi-lib/advanced-button",
+            "comment": "Bump @pi-lib/button to v1.3.0",
+            "commit": "6e8ec8b6ec82532d31d23c7f65ed5e8a45f8c4d9"
+          }
+        ]
+      }
+    },
+    {
       "date": "Wed, 14 Dec 2022 12:25:37 GMT",
       "tag": "@pi-lib/advanced-button_v0.4.5",
       "version": "0.4.5",

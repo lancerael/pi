@@ -2,6 +2,21 @@
   "name": "@pi-lib/icon-button",
   "entries": [
     {
+      "date": "Sat, 08 Apr 2023 23:11:05 GMT",
+      "tag": "@pi-lib/icon-button_v0.1.1",
+      "version": "0.1.1",
+      "comments": {
+        "patch": [
+          {
+            "author": "beachball",
+            "package": "@pi-lib/icon-button",
+            "comment": "Bump @pi-lib/styles to v1.3.0",
+            "commit": "6e8ec8b6ec82532d31d23c7f65ed5e8a45f8c4d9"
+          }
+        ]
+      }
+    },
+    {
       "date": "Fri, 07 Apr 2023 22:16:26 GMT",
       "tag": "@pi-lib/icon-button_v0.1.0",
       "version": "0.1.0",

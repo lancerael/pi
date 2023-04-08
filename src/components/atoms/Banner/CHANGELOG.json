@@ -2,6 +2,21 @@
   "name": "@pi-lib/banner",
   "entries": [
     {
+      "date": "Sat, 08 Apr 2023 23:11:05 GMT",
+      "tag": "@pi-lib/banner_v0.2.0",
+      "version": "0.2.0",
+      "comments": {
+        "minor": [
+          {
+            "author": "lancerael@hotmail.com",
+            "package": "@pi-lib/banner",
+            "commit": "6e8ec8b6ec82532d31d23c7f65ed5e8a45f8c4d9",
+            "comment": "Style tweaks"
+          }
+        ]
+      }
+    },
+    {
       "date": "Fri, 07 Apr 2023 22:16:26 GMT",
       "tag": "@pi-lib/banner_v0.1.0",
       "version": "0.1.0",
