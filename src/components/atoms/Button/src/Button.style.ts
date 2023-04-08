@@ -4,16 +4,19 @@ import { box } from '@pi-lib/styles'
 import { StyledButtonProps } from './Button.style.types'
 
 export const StyledButton = styled.button(
-  ({ status, minWidth, margin, isCompact }: StyledButtonProps) => {
+  ({ status, isCompact, isSpecial }: StyledButtonProps) => {
     return css`
-      ${box({ color: status === 'default' ? '' : `var(--${status})` })}
+      ${box({
+        color: status === 'default' ? '' : `var(--${status})`,
+        isSpecial,
+      })}
       width: 100%;
       padding: ${isCompact ? '2px 2px 3px 2px' : 'auto'};
       cursor: pointer;
       display: inline-block;
       font-weight: bold;
       &:hover:not([disabled]) {
-        background-color: var(--border);
+        background-color: var(--subtle);
         border-color: var(--outline);
       }
       &:disabled {

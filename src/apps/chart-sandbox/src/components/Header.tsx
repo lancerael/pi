@@ -4,15 +4,41 @@ import { useDispatch } from 'react-redux'
 
 import { updateContrast, updateTheme } from '../state/reducers/themingReducer'
 import { Logo } from '../images/logo'
+import styled from 'styled-components'
+
+const StyledHeader = styled.h1`
+  display: inline-block;
+  padding-left: 4px;
+
+  @media (max-width: 540px) {
+    font-size: 1.5em;
+    max-width: 140px;
+    line-height: 24px;
+
+    svg {
+      padding-top: 12px;
+    }
+  }
+`
+
+const StyledToolbar = styled.div`
+  display: flex;
+  text-align: right;
+  gap: 16px;
+  @media (max-width: 580px) {
+    flex-direction: column;
+    gap: 4px;
+  }
+`
 
 export const Header = () => {
   const dispatch = useDispatch()
   return (
     <Banner>
-      <h1 style={{ display: 'inline-block', paddingLeft: '4px' }}>
+      <StyledHeader>
         <Logo size={42} fill="var(--outline)" /> Chart Sandbox
-      </h1>
-      <div style={{ display: 'inline-block', textAlign: 'right' }}>
+      </StyledHeader>
+      <StyledToolbar>
         <Select
           label="Contrast"
           name="contrast"
@@ -35,7 +61,7 @@ export const Header = () => {
             { content: 'Rose' },
           ]}
         />
-      </div>
+      </StyledToolbar>
     </Banner>
   )
 }

@@ -3,12 +3,14 @@ import styled, { css } from 'styled-components'
 export const StyledTable = styled.table`
   width: 100%;
   border-collapse: collapse;
-  border: 2px solid var(--border);
 
   & th,
   & td {
     padding: 6px;
     text-align: center;
+    &:not(:last-of-type) {
+      border-right: 2px solid var(--mark);
+    }
   }
 
   & * {
@@ -16,11 +18,9 @@ export const StyledTable = styled.table`
   }
 `
 export const StyledTableHead = styled.thead`
-  background: var(--textSoft);
+  background: var(--dark);
   font-variant: all-small-caps;
-  color: var(--border);
-
-  & th:not(:last-of-type) {
-    border-right: 1px solid var(--special);
-  }
+  color: var(--light);
+  border: 1px solid var(--dark);
+  border-width: 0 1px;
 `

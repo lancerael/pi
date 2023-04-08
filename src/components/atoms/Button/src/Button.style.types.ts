@@ -4,7 +4,6 @@ import { Status } from '@pi-lib/types'
 export interface StyledButtonProps {
   theme: ITheme
   status: Status
-  minWidth: string
-  margin: string
   isCompact?: boolean
+  isSpecial?: boolean
 }

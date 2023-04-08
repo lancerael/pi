@@ -6,24 +6,7 @@ import {
   changeAxisY,
   changeTitle,
 } from '../../state/reducers/chartConfigReducer'
-import { formInput } from '@pi-lib/styles'
 import TextInput from '@pi-lib/text-input'
-
-const StyledInputRow = styled.div`
-  font-size: 1.4em;
-  display: flex;
-
-  & label {
-    display: inline-block;
-    min-width: 20%;
-  }
-
-  & input {
-    flex-grow: 1;
-
-    ${formInput()}
-  }
-`
 
 const ConfigEditor = () => {
   const { sTitle, aAxisLabels } = useSelector(({ jConfig }: any) => jConfig)
@@ -55,7 +38,7 @@ const ConfigEditor = () => {
         title="Y Axis"
         longTitle="Change the title of the Y axis"
         value={aAxisLabels[0]}
-        onChange={(e: any) => dispatch(changeTitle(e.target.value))}
+        onChange={(e: any) => dispatch(changeAxisY(e.target.value))}
       />
     </div>
   )

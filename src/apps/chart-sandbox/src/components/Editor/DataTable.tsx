@@ -4,12 +4,14 @@ import Table from '@pi-lib/table'
 import Button from '@pi-lib/button'
 
 import {
+  deleteConfigColumn,
   switchTrim,
   updateColor,
   updateType,
 } from '../../state/reducers/chartConfigReducer'
 import {
   deleteRow,
+  deleteDataColumn,
   updateLabel,
   updateValue,
 } from '../../state/reducers/chartDataReducer'
@@ -19,6 +21,11 @@ const DataTable = () => {
   const { aValues, bTrim } = useSelector(({ jConfig }: any) => jConfig)
   const aData = useSelector(({ aData }: any) => aData)
   const dispatch = useDispatch()
+
+  const deleteColumn = (i: number) => {
+    dispatch(deleteDataColumn(i as any))
+    dispatch(deleteConfigColumn(i as any))
+  }
 
   return (
     <Table
@@ -97,9 +104,9 @@ const DataTable = () => {
         {
           cols: [
             '',
-            ...aValues.map((oItem: any, i: number) => (
+            ...aValues.map((oItem: any, i1: number) => (
               <Button
-                onClick={() => dispatch(deleteRow(i as any))}
+                onClick={() => deleteColumn(i1)}
                 title="Delete this column"
                 status="error"
                 isCompact

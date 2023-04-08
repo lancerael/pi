@@ -3,13 +3,8 @@ import styled, { css } from 'styled-components'
 export const StyledRow = styled.tr(
   ({ isOdd, isExpandable }: { isOdd: boolean; isExpandable: boolean }) => css`
     background: var(--subtle);
-
-    & td {
-      font-size: 1em;
-      &:not(:last-of-type) {
-        border-right: 1px solid var(--mark);
-      }
-    }
+    border: 1px solid var(--border);
+    border-width: 0 1px;
 
     ${isExpandable &&
     css`
