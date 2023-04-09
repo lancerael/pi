@@ -303,7 +303,7 @@ importers:
   src/components/atoms/Button:
     dependencies:
       '@pi-lib/styles':
-        specifier: ^1.3.0
+        specifier: ^1.4.0
         version: link:../../theming/Styles
     devDependencies:
       '@pi-lib/config':
@@ -349,7 +349,7 @@ importers:
   src/components/atoms/IconButton:
     dependencies:
       '@pi-lib/styles':
-        specifier: ^1.3.0
+        specifier: ^1.4.0
         version: link:../../theming/Styles
       react:
         specifier: ^18.2.0
@@ -392,7 +392,7 @@ importers:
   src/components/atoms/Link:
     dependencies:
       '@pi-lib/styles':
-        specifier: ^1.1.1
+        specifier: ^1.4.0
         version: link:../../theming/Styles
       react:
         specifier: ^18.2.0
@@ -478,7 +478,7 @@ importers:
   src/components/atoms/Tooltip:
     dependencies:
       '@pi-lib/styles':
-        specifier: ^1.3.0
+        specifier: ^1.4.0
         version: link:../../theming/Styles
       lodash.throttle:
         specifier: ^4.1.1
@@ -573,16 +573,16 @@ importers:
   src/components/charts/CandlestickChart:
     dependencies:
       '@pi-lib/button':
-        specifier: ^1.3.0
+        specifier: ^1.3.1
         version: link:../../atoms/Button
       '@pi-lib/loader':
         specifier: ^2.2.0
         version: link:../../atoms/Loader
       '@pi-lib/styles':
-        specifier: ^1.3.0
+        specifier: ^1.4.0
         version: link:../../theming/Styles
       '@pi-lib/tooltip':
-        specifier: ^1.2.1
+        specifier: ^1.2.2
         version: link:../../atoms/Tooltip
       '@types/d3-axis':
         specifier: ^3.0.2
@@ -710,7 +710,7 @@ importers:
   src/components/inputs/Input:
     dependencies:
       '@pi-lib/styles':
-        specifier: ^1.3.0
+        specifier: ^1.4.0
         version: link:../../theming/Styles
       react:
         specifier: ^18.2.0
@@ -793,7 +793,7 @@ importers:
   src/components/molecules/AdvancedButton:
     dependencies:
       '@pi-lib/button':
-        specifier: ^1.3.0
+        specifier: ^1.3.1
         version: link:../../atoms/Button
       '@pi-lib/loader':
         specifier: ^2.2.0
@@ -852,7 +852,7 @@ importers:
         specifier: ^0.4.0
         version: link:../../../config
       '@pi-lib/styles':
-        specifier: ^1.3.0
+        specifier: ^1.4.0
         version: link:../../theming/Styles
       '@pi-lib/types':
         specifier: ^0.1.0
