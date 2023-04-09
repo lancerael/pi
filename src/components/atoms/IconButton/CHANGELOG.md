@@ -1,8 +1,17 @@
 # Change Log - @pi-lib/icon-button
 
-This log was last generated on Sat, 08 Apr 2023 23:11:05 GMT and should not be manually modified.
+This log was last generated on Sun, 09 Apr 2023 16:16:33 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 0.2.0
+
+Sun, 09 Apr 2023 16:16:33 GMT
+
+### Minor changes
+
+- Style enhancements & refactoring (lancerael@hotmail.com)
+- Bump @pi-lib/styles to v1.4.0
 
 ## 0.1.1
 

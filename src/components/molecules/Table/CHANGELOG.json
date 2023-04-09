@@ -2,6 +2,27 @@
   "name": "@pi-lib/table",
   "entries": [
     {
+      "date": "Sun, 09 Apr 2023 16:16:32 GMT",
+      "tag": "@pi-lib/table_v1.4.0",
+      "version": "1.4.0",
+      "comments": {
+        "minor": [
+          {
+            "author": "lancerael@hotmail.com",
+            "package": "@pi-lib/table",
+            "commit": "480175be17194128dddf9681f5f635afe9833103",
+            "comment": "Style enhancements & refactoring"
+          },
+          {
+            "author": "beachball",
+            "package": "@pi-lib/table",
+            "comment": "Bump @pi-lib/styles to v1.4.0",
+            "commit": "7f6552ef472cb9f114d23f17fda19d70faba3dc2"
+          }
+        ]
+      }
+    },
+    {
       "date": "Sat, 08 Apr 2023 23:11:05 GMT",
       "tag": "@pi-lib/table_v1.3.0",
       "version": "1.3.0",

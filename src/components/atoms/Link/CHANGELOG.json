@@ -1,0 +1,32 @@
+{
+  "name": "@pi-lib/link",
+  "entries": [
+    {
+      "date": "Sun, 09 Apr 2023 16:16:33 GMT",
+      "tag": "@pi-lib/link_v0.1.0",
+      "version": "0.1.0",
+      "comments": {
+        "minor": [
+          {
+            "author": "lancerael@hotmail.com",
+            "package": "@pi-lib/link",
+            "commit": "480175be17194128dddf9681f5f635afe9833103",
+            "comment": "Style enhancements & refactoring"
+          },
+          {
+            "author": "beachball",
+            "package": "@pi-lib/link",
+            "comment": "Bump @pi-lib/config to v0.4.0",
+            "commit": "7f6552ef472cb9f114d23f17fda19d70faba3dc2"
+          },
+          {
+            "author": "beachball",
+            "package": "@pi-lib/link",
+            "comment": "Bump @pi-lib/styles to v1.4.0",
+            "commit": "7f6552ef472cb9f114d23f17fda19d70faba3dc2"
+          }
+        ]
+      }
+    }
+  ]
+}

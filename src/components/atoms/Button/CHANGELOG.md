@@ -1,8 +1,16 @@
 # Change Log - @pi-lib/button
 
-This log was last generated on Sat, 08 Apr 2023 23:11:05 GMT and should not be manually modified.
+This log was last generated on Sun, 09 Apr 2023 16:16:33 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 1.3.1
+
+Sun, 09 Apr 2023 16:16:33 GMT
+
+### Patches
+
+- Bump @pi-lib/styles to v1.4.0
 
 ## 1.3.0
 
