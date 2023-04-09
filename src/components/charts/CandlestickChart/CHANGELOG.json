@@ -2,6 +2,33 @@
   "name": "@pi-lib/candlestick-chart",
   "entries": [
     {
+      "date": "Sun, 09 Apr 2023 16:26:18 GMT",
+      "tag": "@pi-lib/candlestick-chart_v1.2.3",
+      "version": "1.2.3",
+      "comments": {
+        "patch": [
+          {
+            "author": "beachball",
+            "package": "@pi-lib/candlestick-chart",
+            "comment": "Bump @pi-lib/button to v1.3.2",
+            "commit": "6bef4d6636af3812f5e0b7a3e8652b064e21e811"
+          },
+          {
+            "author": "beachball",
+            "package": "@pi-lib/candlestick-chart",
+            "comment": "Bump @pi-lib/styles to v1.5.0",
+            "commit": "6bef4d6636af3812f5e0b7a3e8652b064e21e811"
+          },
+          {
+            "author": "beachball",
+            "package": "@pi-lib/candlestick-chart",
+            "comment": "Bump @pi-lib/tooltip to v1.2.3",
+            "commit": "6bef4d6636af3812f5e0b7a3e8652b064e21e811"
+          }
+        ]
+      }
+    },
+    {
       "date": "Sun, 09 Apr 2023 16:16:33 GMT",
       "tag": "@pi-lib/candlestick-chart_v1.2.2",
       "version": "1.2.2",

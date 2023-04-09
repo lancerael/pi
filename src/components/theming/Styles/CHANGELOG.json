@@ -2,6 +2,21 @@
   "name": "@pi-lib/styles",
   "entries": [
     {
+      "date": "Sun, 09 Apr 2023 16:26:18 GMT",
+      "tag": "@pi-lib/styles_v1.5.0",
+      "version": "1.5.0",
+      "comments": {
+        "minor": [
+          {
+            "author": "lancerael@hotmail.com",
+            "package": "@pi-lib/styles",
+            "commit": "6bef4d6636af3812f5e0b7a3e8652b064e21e811",
+            "comment": "Style enhancements & refactoring"
+          }
+        ]
+      }
+    },
+    {
       "date": "Sun, 09 Apr 2023 16:16:32 GMT",
       "tag": "@pi-lib/styles_v1.4.0",
       "version": "1.4.0",

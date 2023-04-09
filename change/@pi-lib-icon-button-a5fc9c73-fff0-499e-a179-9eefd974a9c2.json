@@ -1,7 +1,0 @@
-{
-  "type": "minor",
-  "comment": "Style enhancements & refactoring",
-  "packageName": "@pi-lib/icon-button",
-  "email": "lancerael@hotmail.com",
-  "dependentChangeType": "patch"
-}
