@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import { FC } from 'react'
 import { StyledLink } from './Link.style'
 import { LinkProps } from './Link.types'
 

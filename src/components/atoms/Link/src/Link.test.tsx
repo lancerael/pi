@@ -1,4 +1,3 @@
-import React from 'react'
 import Link from './Link'
 import { render, screen } from '@testing-library/react'
 import { expect, vi } from 'vitest'
