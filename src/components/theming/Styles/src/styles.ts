@@ -24,6 +24,17 @@ export const getGlobalStyle = (
     color: var(--text);
   }
 
+  & div,
+  & button,
+  & a,
+  & td,
+  & tr,
+  & table,
+  & select,
+  & input {
+    transition: all 0.5s;
+  }
+
   @media (prefers-color-scheme: dark) {
     body {
       ${getVars(contrast === 'light' ? light : dark)}

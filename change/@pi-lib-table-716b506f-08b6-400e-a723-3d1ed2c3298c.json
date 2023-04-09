@@ -1,0 +1,7 @@
+{
+  "type": "minor",
+  "comment": "Style enhancements & refactoring",
+  "packageName": "@pi-lib/table",
+  "email": "lancerael@hotmail.com",
+  "dependentChangeType": "patch"
+}

@@ -21,10 +21,6 @@ const StyledColumn = styled.div<any>`
   display: flex;
   flex-direction: column;
 
-  & * {
-    transition: all 0.51s;
-  }
-
   @media (max-width: 800px) {
     height: auto;
     ${({ isCollapsible }: any) => !!isCollapsible && 'max-width: 100%;'}

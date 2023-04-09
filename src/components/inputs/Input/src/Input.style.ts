@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { formInput } from '@pi-lib/styles'
-import { StyledTextInputProps } from './TextInput.style.types'
+import { StyledTextInputProps } from './Input.style.types'
 
 export const StyledTextInput = styled.div`
   font-size: 1.4em;

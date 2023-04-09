@@ -1,4 +1,4 @@
-# Change Log - @pi-lib/text-input
+# Change Log - @pi-lib/input
 
 This log was last generated on Sat, 08 Apr 2023 23:11:05 GMT and should not be manually modified.
 

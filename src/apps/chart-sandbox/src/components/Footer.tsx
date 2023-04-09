@@ -1,6 +1,6 @@
 import Banner from '@pi-lib/banner'
 import IconButton from '@pi-lib/icon-button'
-import styled from 'styled-components'
+import Link from '@pi-lib/link'
 
 const S3 = 'https://pi-lib-assets.s3.eu-west-2.amazonaws.com/'
 
@@ -28,15 +28,6 @@ const ICONS: { [key: string]: string } = {
   'VITEST': 'https://vitest.dev/',
 }
 
-const StyledLink = styled.a`
-  color: var(--outline);
-
-  &:hover {
-    color: var(--specialText);
-    background: var(--specialShadow);
-  }
-`
-
 export const Footer = () => {
   return (
     <Banner isList isBottom>
@@ -58,26 +49,23 @@ export const Footer = () => {
         }}
       >
         <div>
-          Tech Demo 2023 by{' '}
-          <StyledLink
+          Tech Demo by{' '}
+          <Link
             href="https://www.linkedin.com/in/lance-taylor-47b85b40"
-            target="_blank"
+            isExternal
           >
             Lance Taylor
-          </StyledLink>
+          </Link>
         </div>
         <div>
           Pi Lib:{' '}
-          <StyledLink href="https://github.com/lancerael/pi" target="_blank">
+          <Link href="https://github.com/lancerael/pi" isExternal>
             Github Monorepo
-          </StyledLink>{' '}
+          </Link>{' '}
           /{' '}
-          <StyledLink
-            href="https://main.d3nmdhmk6s7nee.amplifyapp.com"
-            target="_blank"
-          >
+          <Link href="https://main.d3nmdhmk6s7nee.amplifyapp.com" isExternal>
             Storybook Docs
-          </StyledLink>
+          </Link>
         </div>
       </div>
     </Banner>

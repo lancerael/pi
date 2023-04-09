@@ -12,16 +12,81 @@ interface IChart {
 const StyledChartContainer = styled.div`
   flex-grow: 1;
   position: relative;
+  background: var(--subtle);
+  border: 1px solid var(--border);
 
   & svg {
-    /* ${box()} */
-    background: var(--subtle); //${({ theme }) => theme.chartBackground};
-    border: 1px solid var(--border);
-    padding: 0;
+    /* padding: 0; */
+
+    & rect,
+    & line,
+    & text {
+      transition: all 0.2s !important;
+    }
   }
-  & g.key text.label {
-    fill: var(--text) !important;
-    border: 1px solid green;
+
+  .y-axis .tick line {
+    opacity: 0.2;
+  }
+
+  .labels:first-of-type {
+    padding-left: 8px;
+  }
+
+  .title {
+    position: absolute;
+    text-align: center;
+    width: 96%;
+    margin-top: 8px;
+    color: var(--textSoft);
+    font-size: 12px;
+    font-weight: bold;
+  }
+
+  line,
+  path:not(.line) {
+    stroke: var(--special);
+  }
+
+  .tick text,
+  .key text {
+    font-size: 10px;
+  }
+
+  text {
+    fill: var(--textStrong) !important;
+    font-weight: bold;
+    font-size: 12px;
+  }
+
+  .tooltip {
+    ${box()}
+    position: absolute;
+    opacity: 0.9;
+    transition: all 0.2s !important;
+  }
+
+  .is-transparent {
+    opacity: 0;
+  }
+
+  .is-hidden {
+    visibility: hidden;
+  }
+
+  svg.chart {
+    width: 100%;
+    height: 100%;
+  }
+
+  .bars,
+  .circles {
+    cursor: pointer;
+  }
+
+  path.line {
+    fill: none;
+    stroke-width: 2px;
   }
 `
 
@@ -32,6 +97,8 @@ const Chart = ({ sId, sType }: any) => {
   const jConfig = useSelector(({ jConfig }: any) => jConfig)
   const skipUpdate =
     !dtChart.current || aData[0].aValues.length !== jConfig.aValues.length
+
+  console.log(jConfig.bTrim)
 
   useEffect(() => {
     if (!chartContainer.current || dtChart.current) return
