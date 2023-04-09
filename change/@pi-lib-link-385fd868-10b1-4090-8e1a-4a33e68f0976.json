@@ -1,0 +1,7 @@
+{
+  "type": "minor",
+  "comment": "Style enhancements & refactoring",
+  "packageName": "@pi-lib/link",
+  "email": "lancerael@hotmail.com",
+  "dependentChangeType": "patch"
+}
