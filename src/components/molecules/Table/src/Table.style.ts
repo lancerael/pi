@@ -13,6 +13,10 @@ export const StyledTable = styled.table`
     }
   }
 
+  & tr:last-of-type {
+    border-bottom: 2px solid var(--mark);
+  }
+
   & * {
     transition: all 0.2s;
   }

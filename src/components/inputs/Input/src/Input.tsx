@@ -1,8 +1,8 @@
 import React, { FC } from 'react'
-import { StyledTextInput } from './TextInput.style'
-import { TextInputProps } from './TextInput.types'
+import { StyledTextInput } from './Input.style'
+import { TextInputProps } from './Input.types'
 
-export const TextInput = ({
+export const Input = ({
   title,
   longTitle,
   value,
@@ -22,4 +22,4 @@ export const TextInput = ({
   )
 }
 
-export default TextInput
+export default Input

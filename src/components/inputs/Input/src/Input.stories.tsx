@@ -1,11 +1,11 @@
 import React from 'react'
 import { ComponentMeta, ComponentStory } from '@storybook/react'
-import { TextInput } from './TextInput'
+import { Input } from './Input'
 
 export default {
-  title: 'Inputs/TextInput',
-  component: TextInput,
-} as ComponentMeta<typeof TextInput>
+  title: 'Inputs/Input',
+  component: Input,
+} as ComponentMeta<typeof Input>
 
 export const props = {
   title: 'Title',
@@ -13,8 +13,6 @@ export const props = {
   onChange: () => console.log('clicked'),
 }
 
-const Template: ComponentStory<typeof TextInput> = () => (
-  <TextInput {...props} />
-)
+const Template: ComponentStory<typeof Input> = () => <Input {...props} />
 
 export const Default = Template.bind({})

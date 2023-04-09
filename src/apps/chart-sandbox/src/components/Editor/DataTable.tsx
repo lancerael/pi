@@ -15,7 +15,7 @@ import {
   updateLabel,
   updateValue,
 } from '../../state/reducers/chartDataReducer'
-import TextInput from '@pi-lib/text-input'
+import Input from '@pi-lib/input'
 
 const DataTable = () => {
   const { aValues, bTrim } = useSelector(({ jConfig }: any) => jConfig)
@@ -40,7 +40,7 @@ const DataTable = () => {
           />
         </div>,
         ...aValues.map(({ sName }: any, i: number) => (
-          <TextInput
+          <Input
             key={i}
             longTitle="Change the name of this column"
             value={sName}
@@ -56,7 +56,7 @@ const DataTable = () => {
           cols: [
             '',
             ...aValues.map(({ sColor }: any, i: number) => (
-              <TextInput
+              <Input
                 key={i}
                 type="color"
                 longTitle="Change colour of this column"
@@ -71,7 +71,7 @@ const DataTable = () => {
         },
         ...aData.map((oDataItem: any, i1: number) => ({
           cols: [
-            <TextInput
+            <Input
               key={i1}
               longTitle="Change the label of this data group"
               value={oDataItem.sLabel}
@@ -80,7 +80,7 @@ const DataTable = () => {
               }
             />,
             ...oDataItem.aValues.map((iValue: number, i2: number) => (
-              <TextInput
+              <Input
                 key={i2}
                 type="number"
                 longTitle="Change the value of this data item"

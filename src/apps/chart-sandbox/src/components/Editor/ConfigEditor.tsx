@@ -6,7 +6,7 @@ import {
   changeAxisY,
   changeTitle,
 } from '../../state/reducers/chartConfigReducer'
-import TextInput from '@pi-lib/text-input'
+import Input from '@pi-lib/input'
 
 const ConfigEditor = () => {
   const { sTitle, aAxisLabels } = useSelector(({ jConfig }: any) => jConfig)
@@ -22,19 +22,19 @@ const ConfigEditor = () => {
         marginBottom: '12px',
       }}
     >
-      <TextInput
+      <Input
         title="Title"
         longTitle="Change the title of the chart"
         value={sTitle}
         onChange={(e: any) => dispatch(changeTitle(e.target.value))}
       />
-      <TextInput
+      <Input
         title="X Axis"
         longTitle="Change the title of the X axis"
         value={aAxisLabels[1]}
         onChange={(e: any) => dispatch(changeAxisX(e.target.value))}
       />
-      <TextInput
+      <Input
         title="Y Axis"
         longTitle="Change the title of the Y axis"
         value={aAxisLabels[0]}

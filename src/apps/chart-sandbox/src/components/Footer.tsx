@@ -58,7 +58,7 @@ export const Footer = () => {
         }}
       >
         <div>
-          Tech Demo 2023 by{' '}
+          Tech Demo by{' '}
           <StyledLink
             href="https://www.linkedin.com/in/lance-taylor-47b85b40"
             target="_blank"
