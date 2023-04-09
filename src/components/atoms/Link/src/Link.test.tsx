@@ -6,12 +6,12 @@ import { axe } from 'jest-axe'
 
 describe('Link', () => {
   it('should render a Link', () => {
-    render(<Link />)
-    expect(screen.getAllByTitle('')).toHaveLength(1)
+    render(<Link href="">Test</Link>)
+    expect(screen.getAllByText('Test')).toHaveLength(1)
   })
 
   it('should not fail any accessibility tests', async () => {
-    const { container } = render(<Link />)
+    const { container } = render(<Link href="">Test</Link>)
     expect(await axe(container)).toHaveNoViolations()
   })
 })

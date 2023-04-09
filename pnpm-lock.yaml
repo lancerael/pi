@@ -183,6 +183,9 @@ importers:
       '@pi-lib/input':
         specifier: '*'
         version: link:../../components/inputs/Input
+      '@pi-lib/link':
+        specifier: workspace:^
+        version: link:../../components/atoms/Link
       '@pi-lib/select':
         specifier: '*'
         version: link:../../components/inputs/Select

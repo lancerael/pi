@@ -1,6 +1,9 @@
-export interface LinkProps {
+import { PropsWithChildren } from 'react'
+
+export interface LinkProps extends PropsWithChildren {
   /**
    * The description of the prop
    */
-  prop?: any
+  href: string
+  isExternal?: boolean
 }
