@@ -26,15 +26,15 @@ const StyledActionWrapper = styled.div`
 `
 
 export const EditorActions = () => {
-  const jConfig = useSelector(({ jConfig }: any) => jConfig)
-  const aData = useSelector(({ aData }: any) => aData)
+  const chartConfig = useSelector(({ chartConfig }: any) => chartConfig)
+  const chartData = useSelector(({ chartData }: any) => chartData)
   const importRef = useRef<any>(null)
   const exportRef = useRef<any>(null)
   const dispatch = useDispatch()
 
-  const updateData = ({ jConfig, aData }: any) => {
-    dispatch(replaceConfig(jConfig))
-    dispatch(replaceData(aData))
+  const updateData = ({ chartConfig, chartData }: any) => {
+    dispatch(replaceConfig(chartConfig))
+    dispatch(replaceData(chartData))
   }
 
   const addColumn = () => {
@@ -99,7 +99,7 @@ export const EditorActions = () => {
       <a
         style={{ display: 'none' }}
         href={`data:text/json;charset=utf-8,${encodeURIComponent(
-          JSON.stringify({ jConfig, aData })
+          JSON.stringify({ chartConfig, chartData })
         )}`}
         ref={exportRef}
         download="sandbox-export.json"

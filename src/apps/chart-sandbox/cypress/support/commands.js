@@ -25,12 +25,12 @@
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
 
 Cypress.Commands.add('compareInputs', (sInputSelector, sValueSelector) => {
-  let aValues = []
+  let itemValues = []
   cy.get(sValueSelector).each(($element) => {
-    aValues.push($element[0].textContent)
+    itemValues.push($element[0].textContent)
   })
   cy.get(sInputSelector).each(($element, i) => {
-    expect($element[0].value).to.eq(aValues[i])
+    expect($element[0].value).to.eq(itemValues[i])
   })
 })
 

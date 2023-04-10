@@ -58,13 +58,13 @@ describe('LineChart', () => {
   })
 
   it('displays the correct values', () => {
-    let aValues = []
+    let itemValues = []
     let iColorLength = 0
     cy.get('.dt-color-input').each(() => {
       iColorLength++
     })
     cy.get('.dt-value-input').each(($element) => {
-      aValues.push($element[0].value)
+      itemValues.push($element[0].value)
     })
     cy.get('#container-line-test circle.circles').each(
       ($bar, i, $collection) => {
@@ -72,7 +72,7 @@ describe('LineChart', () => {
         let iGroupCount = Math.floor(i / iDataLength)
         let iItemIndex =
           (i - iGroupCount * iDataLength) * iColorLength + iGroupCount
-        cy.checkTooltipValue($bar, aValues[iItemIndex])
+        cy.checkTooltipValue($bar, itemValues[iItemIndex])
       }
     )
   })

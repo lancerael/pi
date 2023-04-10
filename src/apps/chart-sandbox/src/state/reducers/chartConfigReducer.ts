@@ -7,31 +7,31 @@ const chartConfigSlice = createSlice({
   initialState,
   reducers: {
     updateType(state: any, { payload }: any) {
-      state.aValues[payload.i].sName = payload.value
+      state.itemValues[payload.i].name = payload.value
     },
     updateColor(state: any, { payload }: any) {
-      state.aValues[payload.i].sColor = payload.value
+      state.itemValues[payload.i].color = payload.value
     },
     changeTitle(state: any, { payload }: any) {
-      state.sTitle = payload
+      state.title = payload
     },
     changeAxisX(state: any, { payload }: any) {
-      state.aAxisLabels[1] = payload
+      state.axisLabels[1] = payload
     },
     changeAxisY(state: any, { payload }: any) {
-      state.aAxisLabels[0] = payload
+      state.axisLabels[0] = payload
     },
     addConfigColumn(state: any) {
-      state.aValues.push({
-        sName: `Col ${state.aValues.length + 1}`,
-        sColor: '#000000',
+      state.itemValues.push({
+        name: `Col ${state.itemValues.length + 1}`,
+        color: '#000000',
       })
     },
     deleteConfigColumn(state: any, { payload }: any) {
-      state.aValues.splice(payload, 1)
+      state.itemValues.splice(payload, 1)
     },
     switchTrim(state: any, { payload }: any) {
-      state.bTrim = payload
+      state.doTrim = payload
     },
     replaceConfig(state: any, { payload }: any) {
       return structuredClone(payload)
