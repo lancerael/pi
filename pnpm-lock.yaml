@@ -199,8 +199,8 @@ importers:
         specifier: ^1.9.3
         version: 1.9.3(react-redux@7.2.9)(react@18.2.0)
       d-theia:
-        specifier: ^3.3.0
-        version: 3.3.0
+        specifier: ^3.4.0
+        version: 3.4.0
       react:
         specifier: ^18.2.0
         version: 18.2.0
@@ -303,7 +303,7 @@ importers:
   src/components/atoms/Button:
     dependencies:
       '@pi-lib/styles':
-        specifier: ^1.4.0
+        specifier: ^1.5.0
         version: link:../../theming/Styles
     devDependencies:
       '@pi-lib/config':
@@ -349,7 +349,7 @@ importers:
   src/components/atoms/IconButton:
     dependencies:
       '@pi-lib/styles':
-        specifier: ^1.4.0
+        specifier: ^1.5.0
         version: link:../../theming/Styles
       react:
         specifier: ^18.2.0
@@ -392,7 +392,7 @@ importers:
   src/components/atoms/Link:
     dependencies:
       '@pi-lib/styles':
-        specifier: ^1.4.0
+        specifier: ^1.5.0
         version: link:../../theming/Styles
       react:
         specifier: ^18.2.0
@@ -478,7 +478,7 @@ importers:
   src/components/atoms/Tooltip:
     dependencies:
       '@pi-lib/styles':
-        specifier: ^1.4.0
+        specifier: ^1.5.0
         version: link:../../theming/Styles
       lodash.throttle:
         specifier: ^4.1.1
@@ -573,16 +573,16 @@ importers:
   src/components/charts/CandlestickChart:
     dependencies:
       '@pi-lib/button':
-        specifier: ^1.3.1
+        specifier: ^1.3.2
         version: link:../../atoms/Button
       '@pi-lib/loader':
         specifier: ^2.2.0
         version: link:../../atoms/Loader
       '@pi-lib/styles':
-        specifier: ^1.4.0
+        specifier: ^1.5.0
         version: link:../../theming/Styles
       '@pi-lib/tooltip':
-        specifier: ^1.2.2
+        specifier: ^1.2.3
         version: link:../../atoms/Tooltip
       '@types/d3-axis':
         specifier: ^3.0.2
@@ -710,7 +710,7 @@ importers:
   src/components/inputs/Input:
     dependencies:
       '@pi-lib/styles':
-        specifier: ^1.4.0
+        specifier: ^1.5.0
         version: link:../../theming/Styles
       react:
         specifier: ^18.2.0
@@ -793,7 +793,7 @@ importers:
   src/components/molecules/AdvancedButton:
     dependencies:
       '@pi-lib/button':
-        specifier: ^1.3.1
+        specifier: ^1.3.2
         version: link:../../atoms/Button
       '@pi-lib/loader':
         specifier: ^2.2.0
@@ -852,7 +852,7 @@ importers:
         specifier: ^0.4.0
         version: link:../../../config
       '@pi-lib/styles':
-        specifier: ^1.4.0
+        specifier: ^1.5.0
         version: link:../../theming/Styles
       '@pi-lib/types':
         specifier: ^0.1.0
@@ -7792,8 +7792,8 @@ packages:
       yauzl: 2.10.0
     dev: true
 
-  /d-theia@3.3.0:
-    resolution: {integrity: sha512-L7c1Pyk+LTut9gzE6XIrD9zDYs8kmbURTtXISGCjRUbh6yUY/eNaPpZ/T5fQ8Wsa7P4I+GAj702D5NeqA2bs7A==}
+  /d-theia@3.4.0:
+    resolution: {integrity: sha512-xzc1CMSOxjQ2VK8+tum8ZiHtPeNp43Vs9qXp3t4TdEZ6dV8saxc65AkzWMwpsz1LKtM7PoRcXnd2hg5FZFh1cA==}
     dependencies:
       d3-array: 3.2.3
       d3-axis: 3.0.0

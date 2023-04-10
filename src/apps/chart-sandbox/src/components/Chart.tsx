@@ -98,8 +98,6 @@ const Chart = ({ sId, sType }: any) => {
   const skipUpdate =
     !dtChart.current || aData[0].aValues.length !== jConfig.aValues.length
 
-  console.log(jConfig.bTrim)
-
   useEffect(() => {
     if (!chartContainer.current || dtChart.current) return
     dtChart.current = Theia.chart(sId, sType, { aData, jConfig }) as IChart

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import Table from '@pi-lib/table'
 import Button from '@pi-lib/button'
@@ -26,6 +26,11 @@ const DataTable = () => {
     dispatch(deleteDataColumn(i as any))
     dispatch(deleteConfigColumn(i as any))
   }
+
+  useEffect(() => {
+    dispatch(switchTrim(false as any))
+    dispatch(switchTrim(true as any))
+  }, [])
 
   return (
     <Table
