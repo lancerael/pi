@@ -1,6 +1,6 @@
 import React, { useRef } from 'react'
 import Button from '@pi-lib/button'
-import Theia from 'd-theia'
+import { getEmptyData, getRandomData } from 'd-theia'
 import { useDispatch, useSelector } from 'react-redux'
 import {
   addRow,
@@ -66,13 +66,13 @@ export const EditorActions = () => {
         ADD COLUMN
       </Button>
       <Button
-        onClick={() => updateData(Theia.getDataOps().getEmptyData())}
+        onClick={() => updateData(getEmptyData())}
         title="Reset the chart and remove all data"
       >
         CLEAR
       </Button>
       <Button
-        onClick={() => updateData(Theia.getDataOps().getRandomData())}
+        onClick={() => updateData(getRandomData())}
         title="Reset the chart and generate random data"
       >
         RANDOMISE
