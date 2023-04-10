@@ -60,11 +60,11 @@ export const Footer = () => {
         <div>
           Pi Lib:{' '}
           <Link href="https://github.com/lancerael/pi" isExternal>
-            Github Monorepo
+            Monorepo
           </Link>{' '}
           /{' '}
           <Link href="https://main.d3nmdhmk6s7nee.amplifyapp.com" isExternal>
-            Storybook Docs
+            Storybook
           </Link>
         </div>
       </div>

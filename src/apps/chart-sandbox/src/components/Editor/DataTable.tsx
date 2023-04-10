@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import Table from '@pi-lib/table'
 import Button from '@pi-lib/button'
@@ -18,14 +18,21 @@ import {
 import Input from '@pi-lib/input'
 
 const DataTable = () => {
-  const { aValues, bTrim } = useSelector(({ jConfig }: any) => jConfig)
-  const aData = useSelector(({ aData }: any) => aData)
+  const { itemValues, doTrim } = useSelector(
+    ({ chartConfig }: any) => chartConfig
+  )
+  const chartData = useSelector(({ chartData }: any) => chartData)
   const dispatch = useDispatch()
 
   const deleteColumn = (i: number) => {
     dispatch(deleteDataColumn(i as any))
     dispatch(deleteConfigColumn(i as any))
   }
+
+  useEffect(() => {
+    dispatch(switchTrim(false as any))
+    dispatch(switchTrim(true as any))
+  }, [])
 
   return (
     <Table
@@ -34,16 +41,16 @@ const DataTable = () => {
           <label htmlFor="dt-trim">Trim:</label>
           <input
             type="checkbox"
-            checked={bTrim}
+            checked={doTrim}
             onChange={(e: any) => dispatch(switchTrim(e.target.checked))}
             name="dt-trim"
           />
         </div>,
-        ...aValues.map(({ sName }: any, i: number) => (
+        ...itemValues.map(({ name }: any, i: number) => (
           <Input
             key={i}
             longTitle="Change the name of this column"
-            value={sName}
+            value={name}
             onChange={({ target: { value } }: any) =>
               dispatch(updateType({ value, i } as any))
             }
@@ -55,12 +62,12 @@ const DataTable = () => {
         {
           cols: [
             '',
-            ...aValues.map(({ sColor }: any, i: number) => (
+            ...itemValues.map(({ color }: any, i: number) => (
               <Input
                 key={i}
                 type="color"
                 longTitle="Change colour of this column"
-                value={sColor}
+                value={color}
                 onChange={({ target: { value } }: any) =>
                   dispatch(updateColor({ value, i } as any))
                 }
@@ -69,17 +76,17 @@ const DataTable = () => {
             '',
           ],
         },
-        ...aData.map((oDataItem: any, i1: number) => ({
+        ...chartData.map((dataItem: any, i1: number) => ({
           cols: [
             <Input
               key={i1}
               longTitle="Change the label of this data group"
-              value={oDataItem.sLabel}
+              value={dataItem.itemLabel}
               onChange={({ target: { value } }: any) =>
                 dispatch(updateLabel({ value, i1 } as any))
               }
             />,
-            ...oDataItem.aValues.map((iValue: number, i2: number) => (
+            ...dataItem.itemValues.map((iValue: number, i2: number) => (
               <Input
                 key={i2}
                 type="number"
@@ -104,7 +111,7 @@ const DataTable = () => {
         {
           cols: [
             '',
-            ...aValues.map((oItem: any, i1: number) => (
+            ...itemValues.map((oItem: any, i1: number) => (
               <Button
                 onClick={() => deleteColumn(i1)}
                 title="Delete this column"

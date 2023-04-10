@@ -13,7 +13,7 @@ describe('SandboxContainer', () => {
   it('Initialises with correct props', () => {
     const defaultProps = wrapper.props()
     expect(defaultProps.sState).toEqual('data')
-    expect(defaultProps.oChart.aData.length).toEqual(8)
-    expect(defaultProps.oChart.jConfig.sTitle).toEqual('Random Chart Data')
+    expect(defaultProps.oChart.chartData.length).toEqual(8)
+    expect(defaultProps.oChart.chartConfig.title).toEqual('Random Chart Data')
   })
 })

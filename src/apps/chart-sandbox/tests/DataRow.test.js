@@ -5,8 +5,8 @@ import DataRow from './../src/components/Editor/DataRow'
 describe('DataRow', () => {
   let wrapper = {}
   const dataItem = {
-    sLabel: 'Item 1',
-    aValues: [46, 48],
+    itemLabel: 'Item 1',
+    itemValues: [46, 48],
   }
   const handlers = {
     hnChangeValue: jest.fn(),
@@ -16,16 +16,16 @@ describe('DataRow', () => {
   let labelInput, valueInput1, valueInput2
 
   beforeAll(() => {
-    wrapper = shallow(<DataRow oDataItem={dataItem} iIndex={0} {...handlers} />)
+    wrapper = shallow(<DataRow dataItem={dataItem} iIndex={0} {...handlers} />)
     labelInput = wrapper.find('.dt-label-input')
     valueInput1 = wrapper.find('.dt-value-input').first()
     valueInput2 = wrapper.find('.dt-value-input').at(1)
   })
 
   it('Renders with the correct values in the inputs', () => {
-    expect(labelInput.props().value).toEqual(dataItem.sLabel)
-    expect(parseInt(valueInput1.props().value)).toEqual(dataItem.aValues[0])
-    expect(parseInt(valueInput2.props().value)).toEqual(dataItem.aValues[1])
+    expect(labelInput.props().value).toEqual(dataItem.itemLabel)
+    expect(parseInt(valueInput1.props().value)).toEqual(dataItem.itemValues[0])
+    expect(parseInt(valueInput2.props().value)).toEqual(dataItem.itemValues[1])
   })
 
   it('Called correct handlers when inputs are changed', () => {

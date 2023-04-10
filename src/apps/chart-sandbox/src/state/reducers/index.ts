@@ -4,7 +4,7 @@ import chartConfigReducer from './chartConfigReducer'
 import themingReducer from './themingReducer'
 
 export default combineReducers({
-  aData: chartDataReducer,
-  jConfig: chartConfigReducer,
+  chartData: chartDataReducer,
+  chartConfig: chartConfigReducer,
   theming: themingReducer,
 })

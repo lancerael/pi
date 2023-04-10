@@ -5,7 +5,7 @@ import DataTable from './../src/components/Editor/DataTable'
 describe('DataTable', () => {
   let wrapper = {}
   const oChart = JSON.parse(
-    '{"aData":[{"sLabel":"Item 1","aValues":[46]}],"jConfig":{"sTitle":"Random Chart Data","aAxisLabels":["Y Axis","X Axis"],"aValues":[{"sName":"Type 1","sColor":"#c8425c","oColor":{"r":200,"g":66,"b":92,"opacity":1},"iLabelWidth":51.015625}],"bTrim":true}}'
+    '{"chartData":[{"label":"Item 1","itemValues":[46]}],"chartConfig":{"title":"Random Chart Data","axisLabels":["Y Axis","X Axis"],"itemValues":[{"name":"Type 1","color":"#c8425c","oColor":{"r":200,"g":66,"b":92,"opacity":1},"iLabelWidth":51.015625}],"doTrim":true}}'
   )
   const handlers = {
     hnChangeLabel: jest.fn(),

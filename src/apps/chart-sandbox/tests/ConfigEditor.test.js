@@ -4,7 +4,7 @@ import ConfigEditor from './../src/components/Editor/ConfigEditor'
 
 describe('ConfigEditor', () => {
   let wrapper = {}
-  const props = { sTitle: 'title', sAxisX: 'x', sAxisY: 'y' }
+  const props = { title: 'title', sAxisX: 'x', sAxisY: 'y' }
   const handlers = {
     hnChangeTitle: jest.fn(),
     hnChangeAxisX: jest.fn(),
@@ -20,7 +20,7 @@ describe('ConfigEditor', () => {
   })
 
   it('Renders with the correct values in the inputs', () => {
-    expect(titleInput.props().value).toEqual(props.sTitle)
+    expect(titleInput.props().value).toEqual(props.title)
     expect(xInput.props().value).toEqual(props.sAxisX)
     expect(yInput.props().value).toEqual(props.sAxisY)
   })

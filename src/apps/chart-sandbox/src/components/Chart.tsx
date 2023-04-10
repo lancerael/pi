@@ -93,22 +93,24 @@ const StyledChartContainer = styled.div`
 const Chart = ({ sId, sType }: any) => {
   const chartContainer = useRef(null)
   const dtChart = useRef<IChart>()
-  const aData = useSelector(({ aData }: any) => aData)
-  const jConfig = useSelector(({ jConfig }: any) => jConfig)
+  const chartData = useSelector(({ chartData }: any) => chartData)
+  const chartConfig = useSelector(({ chartConfig }: any) => chartConfig)
   const skipUpdate =
-    !dtChart.current || aData[0].aValues.length !== jConfig.aValues.length
-
-  console.log(jConfig.bTrim)
+    !dtChart.current ||
+    chartData[0].itemValues.length !== chartConfig.itemValues.length
 
   useEffect(() => {
     if (!chartContainer.current || dtChart.current) return
-    dtChart.current = Theia.chart(sId, sType, { aData, jConfig }) as IChart
+    dtChart.current = Theia.chart(sId, sType, {
+      chartData,
+      chartConfig,
+    }) as IChart
   }, [chartContainer.current])
 
   useEffect(() => {
-    !skipUpdate && dtChart.current?.updateData(aData)
-    !skipUpdate && dtChart.current?.updateConfig(jConfig)
-  }, [aData, jConfig])
+    !skipUpdate && dtChart.current?.updateData(chartData)
+    !skipUpdate && dtChart.current?.updateConfig(chartConfig)
+  }, [chartData, chartConfig])
 
   return <StyledChartContainer id={sId} ref={chartContainer} />
 }

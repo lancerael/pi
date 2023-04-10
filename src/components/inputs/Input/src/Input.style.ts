@@ -3,8 +3,8 @@ import { formInput } from '@pi-lib/styles'
 import { StyledTextInputProps } from './Input.style.types'
 
 export const StyledTextInput = styled.div`
-  font-size: 1.4em;
   display: flex;
+  align-items: center;
 
   & label {
     display: inline-block;

@@ -23,7 +23,7 @@
     "@pi-lib/styles": "*",
     "@pi-lib/table": "*",
     "@reduxjs/toolkit": "^1.9.3",
-    "d-theia": "^3.3.0",
+    "d-theia": "^3.4.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-redux": "^7.1.1",

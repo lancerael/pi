@@ -1,6 +1,5 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import styled from 'styled-components'
 import {
   changeAxisX,
   changeAxisY,
@@ -9,7 +8,9 @@ import {
 import Input from '@pi-lib/input'
 
 const ConfigEditor = () => {
-  const { sTitle, aAxisLabels } = useSelector(({ jConfig }: any) => jConfig)
+  const { title, axisLabels } = useSelector(
+    ({ chartConfig }: any) => chartConfig
+  )
   const dispatch = useDispatch()
 
   return (
@@ -25,19 +26,19 @@ const ConfigEditor = () => {
       <Input
         title="Title"
         longTitle="Change the title of the chart"
-        value={sTitle}
+        value={title}
         onChange={(e: any) => dispatch(changeTitle(e.target.value))}
       />
       <Input
         title="X Axis"
         longTitle="Change the title of the X axis"
-        value={aAxisLabels[1]}
+        value={axisLabels[1]}
         onChange={(e: any) => dispatch(changeAxisX(e.target.value))}
       />
       <Input
         title="Y Axis"
         longTitle="Change the title of the Y axis"
-        value={aAxisLabels[0]}
+        value={axisLabels[0]}
         onChange={(e: any) => dispatch(changeAxisY(e.target.value))}
       />
     </div>
