@@ -7,9 +7,18 @@ export default {
   title: 'Interactions/Button',
   component: Button,
   argTypes: {
+    status: {
+      options: ['default', 'pending', 'error', 'success'],
+      control: 'select',
+    },
     disabled: {
-      options: [true, false],
-      control: { type: 'radio' },
+      control: 'boolean',
+    },
+    isCompact: {
+      control: 'boolean',
+    },
+    isSpecial: {
+      control: 'boolean',
     },
   },
 } as ComponentMeta<typeof Button>
@@ -46,4 +55,16 @@ export const Disabled = Template.bind({})
 Disabled.args = {
   children: 'Disabled',
   disabled: true,
+}
+
+export const Special = Template.bind({})
+Special.args = {
+  children: 'Special',
+  isSpecial: true,
+}
+
+export const Compact = Template.bind({})
+Compact.args = {
+  children: 'Compact',
+  isCompact: true,
 }

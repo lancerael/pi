@@ -1,9 +1,10 @@
-import { PropsWithChildren } from 'react'
-
-export interface LinkProps extends PropsWithChildren {
+export interface LinkProps
+  extends Pick<
+    React.HTMLProps<HTMLAnchorElement>,
+    'onClick' | 'onMouseOver' | 'onMouseOut' | 'children' | 'title' | 'href'
+  > {
   /**
-   * The description of the prop
+   * Is it an external link?
    */
-  href: string
   isExternal?: boolean
 }

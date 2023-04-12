@@ -17,7 +17,7 @@ export const StyledButton = styled.button(
       font-weight: bold;
       font-size: 0.7em;
       &:hover:not([disabled]) {
-        background-color: var(--subtle);
+        background-color: var(--${isSpecial ? 'specialShadow' : 'subtle'});
         border-color: var(--outline);
       }
       &:disabled {

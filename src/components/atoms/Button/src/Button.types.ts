@@ -10,10 +10,15 @@ export interface ButtonProps
    */
   dataSelector?: string
   /**
-   * It denotes the status of the button
+   * It denotes the status of the button (sucess, error, pending or default)
    */
   status?: Status
-  margin?: string
+  /**
+   * Show a compact version of the button
+   */
   isCompact?: boolean
+  /**
+   * Show a special version of the button
+   */
   isSpecial?: boolean
 }
