@@ -1,10 +1,20 @@
-export interface TextInputProps {
+export interface InputProps
+  extends Pick<
+    React.HTMLProps<HTMLInputElement>,
+    | 'onChange'
+    | 'onClick'
+    | 'onMouseOver'
+    | 'onMouseOut'
+    | 'title'
+    | 'value'
+    | 'name'
+  > {
   /**
-   * The description of the prop
+   * A longer title for the browser tooltip
    */
-  title?: string
   longTitle?: string
-  value: string
+  /**
+   * A type for the input
+   */
   type?: 'text' | 'number' | 'color'
-  onChange: (args: any) => void
 }

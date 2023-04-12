@@ -3,7 +3,10 @@ import Input from './Input'
 import { render, screen } from '@testing-library/react'
 import { expect, vi } from 'vitest'
 import { axe } from 'jest-axe'
-import { props } from './Input.stories'
+
+const props = {
+  title: 'Title',
+}
 
 describe('Input', () => {
   it('should render a Input', () => {

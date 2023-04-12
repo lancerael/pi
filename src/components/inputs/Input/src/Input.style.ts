@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { formInput } from '@pi-lib/styles'
 import { StyledTextInputProps } from './Input.style.types'
 
-export const StyledTextInput = styled.div`
+export const StyledInput = styled.div`
   display: flex;
   align-items: center;
 

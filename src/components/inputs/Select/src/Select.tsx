@@ -4,9 +4,9 @@ import { SelectProps } from './Select.types'
 
 export const Select: FC<SelectProps> = ({
   label,
-  name,
-  onChange,
   options,
+  name,
+  ...selectProps
 }: SelectProps) => {
   const title =
     label ??
@@ -17,7 +17,7 @@ export const Select: FC<SelectProps> = ({
       {!!label && <label htmlFor={name}>{label}: </label>}
       <select
         aria-label={!label ? title : undefined}
-        {...{ name, title, onChange }}
+        {...{ name, ...selectProps }}
       >
         {options.map(({ content, value }) => {
           const key = content.toLowerCase()

@@ -3,14 +3,13 @@ import { StyledIconButton } from './IconButton.style'
 import { IconButtonProps } from './IconButton.types'
 
 export const IconButton: FC<IconButtonProps> = ({
-  href,
   src,
   title = `image button ${src}`,
   isExternal = false,
-  onClick,
+  ...iconButtonProps
 }: any) => (
   <StyledIconButton
-    {...{ href, onClick }}
+    {...iconButtonProps}
     target={isExternal ? '_blank' : undefined}
     role="button"
   >

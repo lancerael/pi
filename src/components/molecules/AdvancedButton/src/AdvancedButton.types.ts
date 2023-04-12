@@ -1,13 +1,8 @@
-import { ButtonProps } from '@pi-lib/button/dist/src/Button.types'
-import { PropsWithChildren } from 'react'
+import { ButtonProps } from '@pi-lib/button/src/Button.types'
 
-export interface AdvancedButtonProps extends PropsWithChildren {
+export interface AdvancedButtonProps extends ButtonProps {
   /**
    * Whether the button is in a loading state
    */
   isLoading?: boolean
-  /**
-   * Any props to be passed to the internal button
-   */
-  buttonProps?: ButtonProps
 }

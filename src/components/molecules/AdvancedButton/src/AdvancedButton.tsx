@@ -6,8 +6,8 @@ import { AdvancedButtonProps } from './AdvancedButton.types'
 
 export const AdvancedButton: FC<AdvancedButtonProps> = ({
   isLoading,
-  buttonProps,
   children,
+  ...buttonProps
 }) => (
   <StyledAdvancedButton>
     <Button status={isLoading ? 'pending' : 'default'} {...buttonProps}>

@@ -1,24 +1,22 @@
-import React, { FC } from 'react'
-import { StyledTextInput } from './Input.style'
-import { TextInputProps } from './Input.types'
+import { StyledInput } from './Input.style'
+import { InputProps } from './Input.types'
 
 export const Input = ({
-  title,
   longTitle,
-  value,
-  onChange,
+  title,
   type = 'text',
-}: TextInputProps) => {
-  const name = title?.toLowerCase().split(' ').join()
+  name = title?.toLowerCase().split(' ').join(),
+  ...inputProps
+}: InputProps) => {
   return (
-    <StyledTextInput {...{ type }}>
+    <StyledInput {...{ type }}>
       {title && <label htmlFor={name}>{title}:</label>}
       <input
         title={longTitle ?? title}
         id={name}
-        {...{ onChange, value, name, type }}
+        {...{ ...inputProps, name, type }}
       />
-    </StyledTextInput>
+    </StyledInput>
   )
 }
 

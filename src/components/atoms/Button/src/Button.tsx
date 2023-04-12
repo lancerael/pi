@@ -11,7 +11,7 @@ export const Button: FC<ButtonProps> = ({
   ...buttonProps
 }) => (
   <StyledButton
-    {...{ status, ...buttonProps, isCompact, isSpecial }}
+    {...{ status, isCompact, isSpecial, ...buttonProps }}
     data-selector={dataSelector}
   >
     {children}

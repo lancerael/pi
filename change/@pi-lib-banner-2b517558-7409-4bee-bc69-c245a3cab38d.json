@@ -1,0 +1,7 @@
+{
+  "type": "minor",
+  "comment": "Updating component documentation",
+  "packageName": "@pi-lib/banner",
+  "email": "lancerael@hotmail.com",
+  "dependentChangeType": "none"
+}

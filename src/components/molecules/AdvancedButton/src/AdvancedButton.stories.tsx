@@ -8,8 +8,7 @@ export default {
   component: AdvancedButton,
   argTypes: {
     isLoading: {
-      options: [true, false],
-      control: { type: 'radio' },
+      control: 'boolean',
     },
   },
 } as ComponentMeta<typeof AdvancedButton>

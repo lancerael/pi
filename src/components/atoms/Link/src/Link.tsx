@@ -3,11 +3,11 @@ import { StyledLink } from './Link.style'
 import { LinkProps } from './Link.types'
 
 export const Link: FC<LinkProps> = ({
-  href,
   isExternal,
   children,
+  ...linkProps
 }: LinkProps) => (
-  <StyledLink {...{ href }} target={isExternal ? '_blank' : undefined}>
+  <StyledLink {...linkProps} target={isExternal ? '_blank' : undefined}>
     {children}{' '}
   </StyledLink>
 )

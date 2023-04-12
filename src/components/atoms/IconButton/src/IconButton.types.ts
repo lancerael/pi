@@ -1,22 +1,14 @@
-export interface IconButtonProps {
+export interface IconButtonProps
+  extends Pick<
+    React.HTMLProps<HTMLAnchorElement>,
+    'onClick' | 'onMouseOver' | 'onMouseOut' | 'href' | 'title'
+  > {
   /**
-   * The url to link to
-   */
-  href?: string
-  /**
-   * The source of the image
+   * The source path/URL for the image
    */
   src: string
   /**
-   * The title for the tooltip
-   */
-  title?: string
-  /**
-   * Should it open in an ew window
+   * Should it open in an new window
    */
   isExternal?: boolean
-  /**
-   * The click handler
-   */
-  onClick?: (e: any) => void
 }
