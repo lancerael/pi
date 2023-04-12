@@ -2,6 +2,21 @@
   "name": "@pi-lib/loader",
   "entries": [
     {
+      "date": "Wed, 12 Apr 2023 23:03:41 GMT",
+      "tag": "@pi-lib/loader_v2.3.0",
+      "version": "2.3.0",
+      "comments": {
+        "minor": [
+          {
+            "author": "lancerael@hotmail.com",
+            "package": "@pi-lib/loader",
+            "commit": "047bd7276853327cdfb74d96125a8ba20cdfff15",
+            "comment": "Updating component documentation"
+          }
+        ]
+      }
+    },
+    {
       "date": "Fri, 07 Apr 2023 22:16:26 GMT",
       "tag": "@pi-lib/loader_v2.2.0",
       "version": "2.2.0",

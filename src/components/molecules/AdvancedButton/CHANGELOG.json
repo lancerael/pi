@@ -2,6 +2,33 @@
   "name": "@pi-lib/advanced-button",
   "entries": [
     {
+      "date": "Wed, 12 Apr 2023 23:03:41 GMT",
+      "tag": "@pi-lib/advanced-button_v0.6.0",
+      "version": "0.6.0",
+      "comments": {
+        "minor": [
+          {
+            "author": "lancerael@hotmail.com",
+            "package": "@pi-lib/advanced-button",
+            "commit": "047bd7276853327cdfb74d96125a8ba20cdfff15",
+            "comment": "Updating component documentation"
+          },
+          {
+            "author": "beachball",
+            "package": "@pi-lib/advanced-button",
+            "comment": "Bump @pi-lib/button to v1.4.0",
+            "commit": "047bd7276853327cdfb74d96125a8ba20cdfff15"
+          },
+          {
+            "author": "beachball",
+            "package": "@pi-lib/advanced-button",
+            "comment": "Bump @pi-lib/loader to v2.3.0",
+            "commit": "047bd7276853327cdfb74d96125a8ba20cdfff15"
+          }
+        ]
+      }
+    },
+    {
       "date": "Sun, 09 Apr 2023 16:26:18 GMT",
       "tag": "@pi-lib/advanced-button_v0.5.2",
       "version": "0.5.2",

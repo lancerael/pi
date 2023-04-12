@@ -2,6 +2,21 @@
   "name": "@pi-lib/icon-button",
   "entries": [
     {
+      "date": "Wed, 12 Apr 2023 23:03:41 GMT",
+      "tag": "@pi-lib/icon-button_v0.4.0",
+      "version": "0.4.0",
+      "comments": {
+        "minor": [
+          {
+            "author": "lancerael@hotmail.com",
+            "package": "@pi-lib/icon-button",
+            "commit": "047bd7276853327cdfb74d96125a8ba20cdfff15",
+            "comment": "Updating component documentation"
+          }
+        ]
+      }
+    },
+    {
       "date": "Sun, 09 Apr 2023 16:26:18 GMT",
       "tag": "@pi-lib/icon-button_v0.3.0",
       "version": "0.3.0",

@@ -2,6 +2,21 @@
   "name": "@pi-lib/button",
   "entries": [
     {
+      "date": "Wed, 12 Apr 2023 23:03:41 GMT",
+      "tag": "@pi-lib/button_v1.4.0",
+      "version": "1.4.0",
+      "comments": {
+        "minor": [
+          {
+            "author": "lancerael@hotmail.com",
+            "package": "@pi-lib/button",
+            "commit": "047bd7276853327cdfb74d96125a8ba20cdfff15",
+            "comment": "Updating component documentation"
+          }
+        ]
+      }
+    },
+    {
       "date": "Sun, 09 Apr 2023 16:26:18 GMT",
       "tag": "@pi-lib/button_v1.3.2",
       "version": "1.3.2",

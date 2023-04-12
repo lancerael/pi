@@ -2,6 +2,27 @@
   "name": "@pi-lib/link",
   "entries": [
     {
+      "date": "Wed, 12 Apr 2023 23:03:41 GMT",
+      "tag": "@pi-lib/link_v0.3.0",
+      "version": "0.3.0",
+      "comments": {
+        "minor": [
+          {
+            "author": "lancerael@hotmail.com",
+            "package": "@pi-lib/link",
+            "commit": "047bd7276853327cdfb74d96125a8ba20cdfff15",
+            "comment": "Updating component documentation"
+          },
+          {
+            "author": "beachball",
+            "package": "@pi-lib/link",
+            "comment": "Bump @pi-lib/config to v0.4.0",
+            "commit": "047bd7276853327cdfb74d96125a8ba20cdfff15"
+          }
+        ]
+      }
+    },
+    {
       "date": "Tue, 11 Apr 2023 22:26:17 GMT",
       "tag": "@pi-lib/link_v0.2.0",
       "version": "0.2.0",
