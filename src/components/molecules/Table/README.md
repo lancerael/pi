@@ -1,6 +1,5 @@
 # Table
 
-
 NPM: [@pi-lib/table](https://www.npmjs.com/package/@pi-lib/table)
 
 An expandable table, styled via Pi theme.

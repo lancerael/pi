@@ -2,7 +2,7 @@
 
 NPM: [@pi-lib/icon-button](https://www.npmjs.com/package/@pi-lib/icon-button)
 
-A React button icon component, styled via Pi theme. Use it for SVG icon actions.  Is uses an anchor under the hood.
+A React button icon component, styled via Pi theme. Use it for SVG icon actions. Is uses an anchor under the hood.
 
 Takes these HTML/React props:
 

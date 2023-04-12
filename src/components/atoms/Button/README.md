@@ -27,4 +27,4 @@ And these additional custom React props:
    * Show a special version of the button
    */
   isSpecial?: boolean
-  ```
+```
