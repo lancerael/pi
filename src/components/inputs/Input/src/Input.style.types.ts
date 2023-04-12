@@ -1,3 +1,3 @@
-import { TextInputProps } from './Input.types'
+import { InputProps } from './Input.types'
 
-export type StyledTextInputProps = Pick<TextInputProps, 'type'>
+export type StyledTextInputProps = Pick<InputProps, 'type'>
