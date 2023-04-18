@@ -4,7 +4,7 @@
     "target": "ES2017",
     "lib": ["ES2019"],
     "rootDir": "src",
-    "declaration": false, 
+    "declaration": false,
     "sourceMap": false,
     "inlineSources": false,
     "types": ["node"],
