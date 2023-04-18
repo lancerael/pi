@@ -1,6 +1,7 @@
-import React, { useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import Button from '@pi-lib/button'
-import { getEmptyData, getRandomData } from 'd-theia'
+import PageLoader from '@pi-lib/page-loader'
+import { getEmptyData } from 'd-theia'
 import { useDispatch, useSelector } from 'react-redux'
 import {
   addRow,
@@ -26,6 +27,7 @@ const StyledActionWrapper = styled.div`
 `
 
 export const EditorActions = () => {
+  const [isLoading, setIsLoading] = useState(false)
   const chartConfig = useSelector(({ chartConfig }: any) => chartConfig)
   const chartData = useSelector(({ chartData }: any) => chartData)
   const importRef = useRef<any>(null)
@@ -54,8 +56,27 @@ export const EditorActions = () => {
     }
   }
 
+  const getRandomData = async () => {
+    setIsLoading(true)
+    try {
+      const response = await fetch(
+        'https://3ce64aq6e3.execute-api.eu-west-2.amazonaws.com/default/chartRandom'
+      )
+      const randomChart = await response.json()
+      updateData(randomChart)
+    } catch (e) {
+      console.error(e)
+    }
+    setIsLoading(false)
+  }
+
+  useEffect(() => {
+    getRandomData()
+  }, [])
+
   return (
     <StyledActionWrapper>
+      <PageLoader isActive={isLoading} />
       <Button
         onClick={() => dispatch(addRow())}
         title="Add a new row to the data"
@@ -72,7 +93,7 @@ export const EditorActions = () => {
         CLEAR
       </Button>
       <Button
-        onClick={() => updateData(getRandomData())}
+        onClick={() => getRandomData()}
         title="Reset the chart and generate random data"
       >
         RANDOMISE

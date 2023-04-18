@@ -6,6 +6,9 @@ const S3 = 'https://pi-lib-assets.s3.eu-west-2.amazonaws.com/'
 
 const ICONS: { [key: string]: string } = {
   'AWS AMPLIFY': 'https://aws.amazon.com/amplify',
+  'AWS API GATEWAY': 'https://aws.amazon.com/api-gateway',
+  'AWS CLOUDWATCH': 'https://aws.amazon.com/cloudwatch',
+  'AWS LAMBDA': 'https://aws.amazon.com/lambda',
   'AWS S3': 'https://aws.amazon.com/s3',
   'CSS 3': 'https://www.w3.org/TR/CSS',
   'CYPRESS': 'https://www.cypress.io',

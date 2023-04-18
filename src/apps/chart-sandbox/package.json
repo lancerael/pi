@@ -19,6 +19,7 @@
     "@pi-lib/icon-button": "*",
     "@pi-lib/input": "*",
     "@pi-lib/link": "workspace:^",
+    "@pi-lib/page-loader": "workspace:^",
     "@pi-lib/select": "*",
     "@pi-lib/styles": "*",
     "@pi-lib/table": "*",

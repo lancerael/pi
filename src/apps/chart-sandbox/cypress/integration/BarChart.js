@@ -2,7 +2,7 @@ import { fnRgbTohex } from './../support/helpers'
 
 describe('BarChart', () => {
   before(() => {
-    cy.visit('http://localhost:8081/')
+    cy.visit('http://localhost:5173/')
     cy.wait(1000) // allow bars to transition into view
   })
 
