@@ -1,8 +1,15 @@
 import { configureStore } from '@reduxjs/toolkit'
-import { getEmptyData } from 'd-theia'
 import rootReducer from './reducers'
 
-const { chartData, chartConfig } = await getEmptyData()
+const { chartData, chartConfig } = {
+  chartConfig: {
+    title: '',
+    axisLabels: ['', ''],
+    itemValues: [],
+    doTrim: true,
+  },
+  chartData: [{ itemLabel: '', itemValues: [] }],
+}
 
 const theming = { themeName: 'andro', contrast: '' }
 
