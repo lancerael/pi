@@ -696,7 +696,7 @@ importers:
         specifier: ^1.4.0
         version: link:../../atoms/Button
       '@pi-lib/loader':
-        specifier: ^2.3.0
+        specifier: ^2.4.0
         version: link:../../atoms/Loader
       '@pi-lib/styles':
         specifier: ^1.5.0
@@ -916,7 +916,7 @@ importers:
         specifier: ^1.4.0
         version: link:../../atoms/Button
       '@pi-lib/loader':
-        specifier: ^2.3.0
+        specifier: ^2.4.0
         version: link:../../atoms/Loader
       react:
         specifier: ^18.2.0
