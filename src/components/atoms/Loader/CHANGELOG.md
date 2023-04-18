@@ -1,8 +1,16 @@
 # Change Log - @pi-lib/loader
 
-This log was last generated on Wed, 12 Apr 2023 23:03:41 GMT and should not be manually modified.
+This log was last generated on Tue, 18 Apr 2023 22:15:59 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 2.4.0
+
+Tue, 18 Apr 2023 22:15:59 GMT
+
+### Minor changes
+
+- Added chart sandbox Lambda API, background screen and page loader components. (122271901+lancerael-undo@users.noreply.github.com)
 
 ## 2.3.0
 

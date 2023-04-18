@@ -2,6 +2,21 @@
   "name": "@pi-lib/loader",
   "entries": [
     {
+      "date": "Tue, 18 Apr 2023 22:15:59 GMT",
+      "tag": "@pi-lib/loader_v2.4.0",
+      "version": "2.4.0",
+      "comments": {
+        "minor": [
+          {
+            "author": "122271901+lancerael-undo@users.noreply.github.com",
+            "package": "@pi-lib/loader",
+            "commit": "22a0b11482f86977e3c56771e8366cfcf8f286af",
+            "comment": "Added chart sandbox Lambda API, background screen and page loader components."
+          }
+        ]
+      }
+    },
+    {
       "date": "Wed, 12 Apr 2023 23:03:41 GMT",
       "tag": "@pi-lib/loader_v2.3.0",
       "version": "2.3.0",

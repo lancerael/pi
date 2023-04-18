@@ -1,0 +1,20 @@
+{
+  "name": "@pi-lib/link",
+  "entries": [
+    {
+      "date": "Tue, 18 Apr 2023 22:15:59 GMT",
+      "tag": "@pi-lib/link_v0.3.1",
+      "version": "0.3.1",
+      "comments": {
+        "undefined": [
+          {
+            "author": "beachball",
+            "package": "@pi-lib/link",
+            "comment": "Bump @pi-lib/config to v0.4.0",
+            "commit": "22a0b11482f86977e3c56771e8366cfcf8f286af"
+          }
+        ]
+      }
+    }
+  ]
+}
