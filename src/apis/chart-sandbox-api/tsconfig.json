@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "ES2017",
+    "lib": ["ES2019"],
+    "rootDir": "src",
+    "declaration": false,
+    "sourceMap": false,
+    "inlineSources": false,
+    "types": ["node"],
+    "outDir": "vanilla",
+    "esModuleInterop": true
+  },
+  "include": ["src/lambda.ts"]
+}

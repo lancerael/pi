@@ -8,11 +8,7 @@ import {
 import { LoaderProps } from './Loader.types'
 
 export const Loader: FC<LoaderProps> = ({ isLarge = false }) => (
-  <StyledLoader
-    title="Loading..."
-    data-selector="pi-lib-loader"
-    {...{ isLarge }}
-  >
+  <StyledLoader title="Loading..." data-testid="pi-lib-loader" {...{ isLarge }}>
     <StyledLoaderInner>
       <StyledCircleRow>
         <StyledCircle delay {...{ isLarge }} />

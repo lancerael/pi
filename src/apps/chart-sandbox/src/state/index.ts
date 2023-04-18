@@ -1,8 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit'
-import { getRandomData } from 'd-theia'
+import { getEmptyData } from 'd-theia'
 import rootReducer from './reducers'
 
-const { chartData, chartConfig } = getRandomData(8, 4)
+const { chartData, chartConfig } = await getEmptyData()
 
 const theming = { themeName: 'andro', contrast: '' }
 
