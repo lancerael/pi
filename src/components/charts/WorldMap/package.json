@@ -1,6 +1,6 @@
 {
   "name": "@pi-lib/world-map",
-  "version": "0.3.5",
+  "version": "0.3.6",
   "description": "",
   "type": "module",
   "main": "./vanilla/index.ts",

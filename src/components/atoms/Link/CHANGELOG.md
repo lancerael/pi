@@ -4,7 +4,7 @@ This log was last generated on Wed, 12 Apr 2023 23:03:41 GMT and should not be m
 
 <!-- Start content -->
 
-## 0.3.0
+## 0.3.1
 
 Wed, 12 Apr 2023 23:03:41 GMT
 
