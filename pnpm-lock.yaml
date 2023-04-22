@@ -337,6 +337,100 @@ importers:
         specifier: ^0.22.1
         version: 0.22.1(jsdom@20.0.3)
 
+  src/apps/tech-demo:
+    dependencies:
+      '@pi-lib/banner':
+        specifier: '*'
+        version: link:../../components/atoms/Banner
+      '@pi-lib/button':
+        specifier: '*'
+        version: link:../../components/atoms/Button
+      '@pi-lib/icon-button':
+        specifier: '*'
+        version: link:../../components/atoms/IconButton
+      '@pi-lib/input':
+        specifier: '*'
+        version: link:../../components/inputs/Input
+      '@pi-lib/link':
+        specifier: workspace:^
+        version: link:../../components/atoms/Link
+      '@pi-lib/page-loader':
+        specifier: workspace:^
+        version: link:../../components/molecules/PageLoader
+      '@pi-lib/select':
+        specifier: '*'
+        version: link:../../components/inputs/Select
+      '@pi-lib/styles':
+        specifier: '*'
+        version: link:../../components/theming/Styles
+      '@pi-lib/table':
+        specifier: '*'
+        version: link:../../components/molecules/Table
+      '@reduxjs/toolkit':
+        specifier: ^1.9.3
+        version: 1.9.3(react-redux@7.2.9)(react@18.2.0)
+      d-theia:
+        specifier: ^3.4.5
+        version: 3.4.5
+      react:
+        specifier: ^18.2.0
+        version: 18.2.0
+      react-dom:
+        specifier: ^18.2.0
+        version: 18.2.0(react@18.2.0)
+      react-redux:
+        specifier: ^7.1.1
+        version: 7.2.9(react-dom@18.2.0)(react@18.2.0)
+      redux:
+        specifier: ^4.0.0
+        version: 4.2.1
+      styled-components:
+        specifier: ^5.3.9
+        version: 5.3.9(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)
+    devDependencies:
+      '@types/d3-fetch':
+        specifier: ^3.0.2
+        version: 3.0.2
+      '@types/d3-force':
+        specifier: ^3.0.4
+        version: 3.0.4
+      '@types/d3-shape':
+        specifier: ^3.1.1
+        version: 3.1.1
+      '@types/react':
+        specifier: ^18.0.28
+        version: 18.0.28
+      '@types/react-dom':
+        specifier: ^18.0.11
+        version: 18.0.11
+      '@types/react-redux':
+        specifier: ^7.1.25
+        version: 7.1.25
+      '@types/styled-components':
+        specifier: ^5.1.26
+        version: 5.1.26
+      '@vitejs/plugin-react':
+        specifier: ^3.1.0
+        version: 3.1.0(vite@4.2.1)
+      cypress:
+        specifier: ^3.0.2
+        version: 3.8.3
+      react-is:
+        specifier: ^18.2.0
+        version: 18.2.0
+      rimraf:
+        specifier: ^3.0.2
+        version: 3.0.2
+      typescript:
+        specifier: ^4.9.3
+        version: 4.9.5
+      vite:
+        specifier: ^4.2.0
+        version: 4.2.1(@types/node@18.15.3)
+      vitest:
+        specifier: ^0.22.1
+        version: 0.22.1(jsdom@20.0.3)
+
   src/components/atoms/BackgroundScreen:
     dependencies:
       '@pi-lib/styles':
