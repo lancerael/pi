@@ -42,7 +42,7 @@ export const Header = () => {
   return (
     <Banner>
       <StyledHeader>
-        <Logo size={48} fill="var(--outline)" /> Chart Sandbox
+        <Logo size={48} fill="var(--outline)" /> Pi Tech Demo
       </StyledHeader>
       <StyledToolbar>
         <Select

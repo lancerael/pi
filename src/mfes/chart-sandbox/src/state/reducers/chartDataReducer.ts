@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-const initialState: any[] = []
+const initialState: any[] = [{ itemLabel: '', itemValues: [] }]
 
 const chartDataSlice = createSlice({
   name: 'chartData',

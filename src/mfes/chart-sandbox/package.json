@@ -4,9 +4,9 @@
   "version": "0.1.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --port 5001 --strictPort",
     "build": "tsc && vite build",
-    "preview": "vite preview",
+    "preview": "vite preview --port 5001 --strictPort",
     "lint": "npx prettier -c . && npx eslint",
     "lint:fix": "npx prettier -w . && npx eslint --fix",
     "test-": "vitest",
@@ -14,13 +14,10 @@
     "e2e": "npx cypress open"
   },
   "dependencies": {
-    "@pi-lib/banner": "*",
+    "@originjs/vite-plugin-federation": "^1.2.2",
     "@pi-lib/button": "*",
-    "@pi-lib/icon-button": "*",
     "@pi-lib/input": "*",
-    "@pi-lib/link": "workspace:^",
     "@pi-lib/page-loader": "workspace:^",
-    "@pi-lib/select": "*",
     "@pi-lib/styles": "*",
     "@pi-lib/table": "*",
     "@reduxjs/toolkit": "^1.9.3",

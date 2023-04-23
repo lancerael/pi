@@ -2,14 +2,20 @@
   "name": "@pi-lib/chart-sandbox-api",
   "private": false,
   "version": "0.1.0",
-  "type": "module",
   "scripts": {
-    "build": "vite build"
+    "build": "vite build",
+    "compress": "npx bestzip deploy.zip ./index.mjs",
+    "aws": "cross-env AWS_PAGER='' aws lambda update-function-code --function-name=chartRandom --zip-file=fileb://deploy.zip",
+    "cleanup": "rimraf index.mjs && rimraf deploy.zip",
+    "release": "pnpm build && pnpm compress && pnpm aws && pnpm cleanup"
   },
   "devDependencies": {
     "@types/aws-lambda": "^8.10.114",
+    "bestzip": "^2.2.1",
+    "cross-env": "^7.0.3",
     "fsevents": "^2.3.2",
     "nodemon": "^2.0.20",
+    "rimraf": "^3.0.2",
     "vite": "^4.0.4"
   },
   "dependencies": {

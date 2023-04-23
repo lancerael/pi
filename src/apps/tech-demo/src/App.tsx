@@ -6,6 +6,8 @@ import { useSelector } from 'react-redux'
 
 import Header from './components/Header'
 import Footer from './components/Footer'
+//@ts-ignore
+import Sandbox from 'remoteApp/Sandbox'
 import styled from 'styled-components'
 
 export interface ITheming {
@@ -35,7 +37,7 @@ const StyledRow = styled.div<any>`
   }
 `
 
-const Sandbox = () => {
+const App = () => {
   const theming: ITheming = useSelector(
     ({ theming }: { theming: ITheming }) => theming
   )
@@ -43,11 +45,11 @@ const Sandbox = () => {
     <Theme {...theming}>
       <StyledColumn>
         <Header />
-        <StyledRow>PAGECONTENT</StyledRow>
+        <Sandbox />
         <Footer />
       </StyledColumn>
     </Theme>
   )
 }
 
-export default Sandbox
+export default App

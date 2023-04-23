@@ -1,16 +1,18 @@
 {
-  "name": "@pi-lib/chart-sandbox",
+  "name": "@pi-lib/tech-demo",
   "private": true,
   "version": "0.1.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "dev:local": "cross-env NODE_ENV=development vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
     "lint": "npx prettier -c . && npx eslint",
     "lint:fix": "npx prettier -w . && npx eslint --fix"
   },
   "dependencies": {
+    "@originjs/vite-plugin-federation": "^1.2.2",
     "@pi-lib/banner": "*",
     "@pi-lib/button": "*",
     "@pi-lib/icon-button": "*",
@@ -37,6 +39,7 @@
     "@types/react-redux": "^7.1.25",
     "@types/styled-components": "^5.1.26",
     "@vitejs/plugin-react": "^3.1.0",
+    "cross-env": "^7.0.3",
     "cypress": "^3.0.2",
     "react-is": "^18.2.0",
     "rimraf": "^3.0.2",

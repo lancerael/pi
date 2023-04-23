@@ -6,8 +6,6 @@ import { useSelector } from 'react-redux'
 
 import Chart from './Chart'
 import Editor from './Editor'
-import Header from './Header'
-import Footer from './Footer'
 import styled, { css } from 'styled-components'
 
 export interface iTheming {
@@ -51,23 +49,16 @@ const StyledChartContainer = styled.div<any>`
 `
 
 const Sandbox = () => {
-  const theming: iTheming = useSelector(({ theming }: any) => theming)
   return (
-    <Theme {...theming}>
-      <StyledColumn>
-        <Header />
-        <StyledRow>
-          <StyledColumn maxWidth="38%" isCollapsible={true}>
-            <Editor />
-          </StyledColumn>
-          <StyledChartContainer>
-            <Chart sId="container-bar-test" sType="bar" />
-            <Chart sId="container-line-test" sType="line" />
-          </StyledChartContainer>
-        </StyledRow>
-        <Footer />
+    <StyledRow>
+      <StyledColumn maxWidth="38%" isCollapsible={true}>
+        <Editor />
       </StyledColumn>
-    </Theme>
+      <StyledChartContainer>
+        <Chart sId="container-bar-test" sType="bar" />
+        <Chart sId="container-line-test" sType="line" />
+      </StyledChartContainer>
+    </StyledRow>
   )
 }
 
