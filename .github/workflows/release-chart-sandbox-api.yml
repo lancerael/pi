@@ -1,0 +1,43 @@
+name: Release Packages
+
+on:
+  pull_request:
+    types:
+      - closed
+    branches: [main]
+
+jobs:
+  if_merged:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 18.x
+
+      - name: Changed files
+        id: changed-files
+        uses: tj-actions/changed-files@v35
+        with:
+          files: ./src/apis/chart-sandbox-api/**
+
+      - name: List of changes
+        shell: bash
+        run: echo "Changes = ${{ steps.changed-files.outputs.all_changed_files }}"
+
+      - name: Configure AWS Credentials
+        if: steps.changed-files.outputs.any_changed == 'true'
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: eu-west-2
+
+      - name: Set up pnpm
+        if: steps.changed-files.outputs.any_changed == 'true'
+        uses: ./.github/actions/pnpm-setup
+
+      - name: Release to AWS
+        if: steps.changed-files.outputs.any_changed == 'true'
+        run: pnpm release

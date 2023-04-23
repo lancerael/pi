@@ -8,6 +8,6 @@ export default defineConfig({
       name: `@pi-lib/chart-sandbox-api`,
       fileName: 'index',
     },
-    outDir: 'vanilla',
+    outDir: './',
   },
 })

@@ -1,6 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-const initialState = {}
+const initialState = {
+  title: '',
+  axisLabels: ['', ''],
+  itemValues: [],
+  doTrim: true,
+}
 
 const chartConfigSlice = createSlice({
   name: 'chartConfig',
