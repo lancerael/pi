@@ -1,6 +1,8 @@
 name: Release Demo MFEs
 
 on:
+  push:
+    branches: [main]
   pull_request:
     types:
       - closed
@@ -20,7 +22,7 @@ jobs:
         id: changed-files
         uses: tj-actions/changed-files@v35
         with:
-          files: ./src/apis/chart-sandbox-api/**
+          files: ./src/mfes/chart-sandbox/**
 
       - name: List of changes
         shell: bash
