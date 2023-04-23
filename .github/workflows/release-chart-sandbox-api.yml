@@ -1,6 +1,8 @@
 name: Release Chart Sandbox API
 
 on:
+  push:
+    branches: [main]
   pull_request:
     types:
       - closed
@@ -28,7 +30,7 @@ jobs:
 
       - name: Configure AWS Credentials
         if: steps.changed-files.outputs.any_changed == 'true'
-        uses: aws-actions/configure-aws-credentials@v1
+        uses: aws-actions/configure-aws-credentials@v2
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
