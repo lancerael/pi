@@ -1,4 +1,4 @@
-name: Release Packages
+name: Release Chart Sandbox API
 
 on:
   pull_request:

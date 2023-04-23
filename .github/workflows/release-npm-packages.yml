@@ -11,26 +11,42 @@ jobs:
     if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 18.x
+
+      - name: Changed files
+        id: changed-files
+        uses: tj-actions/changed-files@v35
+        with:
+          files: ./src/components/**
+
+      - name: List of changes
+        shell: bash
+        run: echo "Changes = ${{ steps.changed-files.outputs.all_changed_files }}"
+
       - uses: oleksiyrudenko/gha-git-credentials@v2.1
+        if: steps.changed-files.outputs.any_changed == 'true'
         with:
           global: true
           name: 'Lance Rael'
           email: 'lancerael@outlook.com'
           actor: 'LanceRael'
           token: '${{ secrets.PI_PUBLISH }}'
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v1
-        with:
-          node-version: 18.x
 
       - name: Set up pnpm
+        if: steps.changed-files.outputs.any_changed == 'true'
         uses: ./.github/actions/pnpm-setup
 
       - name: Build for vanilla dist
+        if: steps.changed-files.outputs.any_changed == 'true'
         run: pnpm build
 
       - name: Setup beachball
+        if: steps.changed-files.outputs.any_changed == 'true'
         uses: ecraig12345/beachball-actions/install-beachball@v1
 
       - name: Publish packages
+        if: steps.changed-files.outputs.any_changed == 'true'
         run: npm run publish -- -n ${{ secrets.PI_PUB }} -yes

@@ -1,4 +1,4 @@
-name: Release Packages
+name: Release Demo MFEs
 
 on:
   pull_request:
