@@ -1,6 +1,6 @@
 {
   "name": "@pi-lib/chart-sandbox-api",
-  "private": false,
+  "private": true,
   "version": "0.1.0",
   "scripts": {
     "build": "vite build",
