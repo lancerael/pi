@@ -27,19 +27,11 @@ jobs:
         shell: bash
         run: echo "Changes = ${{ steps.changed-files.outputs.all_changed_files }}"
 
-      - name: Configure AWS Credentials
-        if: steps.changed-files.outputs.any_changed == 'true'
-        uses: aws-actions/configure-aws-credentials@v2
-        with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: eu-west-2
-
       - name: Set up pnpm
         if: steps.changed-files.outputs.any_changed == 'true'
         uses: ./.github/actions/pnpm-setup
 
-      - name: Release to AWS
+      - name: Build for AWS
         if: steps.changed-files.outputs.any_changed == 'true'
         run: pnpm sandbox:build
 
@@ -47,8 +39,10 @@ jobs:
         if: steps.changed-files.outputs.any_changed == 'true'
         uses: jakejarvis/s3-sync-action@master
         with:
-          args: --acl public-read --delete
-          source_dir: src/mfes/chart-sandbox/dist
-          bucket_url: s3://pi-lib-mfes
+          args: --acl public-read --follow-symlinks --delete
         env:
-          AWS_S3_BUCKET: s3://pi-lib-mfes
+          AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_REGION: 'us-west-2'
+          SOURCE_DIR: 'src/mfes/chart-sandbox/dist'
