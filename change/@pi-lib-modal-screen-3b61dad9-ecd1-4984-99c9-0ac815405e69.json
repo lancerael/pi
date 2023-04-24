@@ -1,0 +1,7 @@
+{
+  "type": "minor",
+  "comment": "Fix path",
+  "packageName": "@pi-lib/modal-screen",
+  "email": "122271901+lancerael-undo@users.noreply.github.com",
+  "dependentChangeType": "patch"
+}
