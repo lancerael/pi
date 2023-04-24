@@ -44,6 +44,7 @@ jobs:
         run: pnpm sandbox:build
 
       - name: Deploy to S3 bucket
+        if: steps.changed-files.outputs.any_changed == 'true'
         uses: jakejarvis/s3-sync-action@master
         with:
           args: --acl public-read --delete
