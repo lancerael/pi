@@ -18,6 +18,7 @@
     "sandbox:dev": "pnpm --filter @pi-lib/chart-sandbox dev",
     "sandbox:build": "pnpm --filter @pi-lib/chart-sandbox build",
     "sandbox:preview": "pnpm --filter @pi-lib/chart-sandbox preview",
+    "sandbox:api-deploy": "pnpm --filter @pi-lib/chart-sandbox-api release",
     "tech-demo:dev": "pnpm --filter @pi-lib/tech-demo dev",
     "demo": "pnpm sandbox:build && concurrently \"pnpm sandbox:preview\" \"pnpm tech-demo:dev\""
   },
