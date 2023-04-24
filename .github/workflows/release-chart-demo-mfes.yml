@@ -50,3 +50,5 @@ jobs:
           args: --acl public-read --delete
           source_dir: src/mfes/chart-sandbox/dist
           bucket_url: s3://pi-lib-mfes
+        env:
+          AWS_S3_BUCKET: s3://pi-lib-mfes
