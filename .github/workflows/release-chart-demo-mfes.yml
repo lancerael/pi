@@ -41,4 +41,11 @@ jobs:
 
       - name: Release to AWS
         if: steps.changed-files.outputs.any_changed == 'true'
-        run: pnpm release
+        run: pnpm sandbox:build
+
+      - name: Deploy to S3 bucket
+        uses: jakejarvis/s3-sync-action@master
+        with:
+          args: --acl public-read --delete
+          source_dir: src/mfes/chart-sandbox/dist
+          bucket_url: s3://pi-lib-mfes
