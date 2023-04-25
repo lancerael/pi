@@ -2,6 +2,27 @@
   "name": "@pi-lib/world-map",
   "entries": [
     {
+      "date": "Tue, 25 Apr 2023 06:49:46 GMT",
+      "tag": "@pi-lib/world-map_v0.4.0",
+      "version": "0.4.0",
+      "comments": {
+        "minor": [
+          {
+            "author": "122271901+lancerael-undo@users.noreply.github.com",
+            "package": "@pi-lib/world-map",
+            "commit": "98169a05e7edd2efb3a1f74f8917ae5c1547e278",
+            "comment": "Updated readmes"
+          },
+          {
+            "author": "beachball",
+            "package": "@pi-lib/world-map",
+            "comment": "Bump @pi-lib/types to v0.1.0",
+            "commit": "a36173847d3e44719979d06cae1c6c1540cb12c8"
+          }
+        ]
+      }
+    },
+    {
       "date": "Tue, 18 Apr 2023 22:15:59 GMT",
       "tag": "@pi-lib/world-map_v0.3.6",
       "version": "0.3.6",

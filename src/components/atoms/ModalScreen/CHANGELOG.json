@@ -2,6 +2,33 @@
   "name": "@pi-lib/modal-screen",
   "entries": [
     {
+      "date": "Tue, 25 Apr 2023 06:49:46 GMT",
+      "tag": "@pi-lib/modal-screen_v0.2.0",
+      "version": "0.2.0",
+      "comments": {
+        "minor": [
+          {
+            "author": "122271901+lancerael-undo@users.noreply.github.com",
+            "package": "@pi-lib/modal-screen",
+            "commit": "b94fa83253ea5a8a47ea88890cedba9c9eb3087c",
+            "comment": "Fix path"
+          },
+          {
+            "author": "beachball",
+            "package": "@pi-lib/modal-screen",
+            "comment": "Bump @pi-lib/config to v0.4.0",
+            "commit": "a36173847d3e44719979d06cae1c6c1540cb12c8"
+          },
+          {
+            "author": "beachball",
+            "package": "@pi-lib/modal-screen",
+            "comment": "Bump @pi-lib/styles to v1.5.0",
+            "commit": "a36173847d3e44719979d06cae1c6c1540cb12c8"
+          }
+        ]
+      }
+    },
+    {
       "date": "Tue, 18 Apr 2023 22:15:59 GMT",
       "tag": "@pi-lib/modal-screen_v0.1.0",
       "version": "0.1.0",
