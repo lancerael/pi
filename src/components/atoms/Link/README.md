@@ -1,6 +1,6 @@
 # Link
 
-_@pi-lib/link_ - A simple React link component, styled via Pi theme.
+_@pi-lib/link_ - A simple React link component styled via Pi theme.
 
 Takes these HTML/React props:
 
