@@ -4,10 +4,14 @@ import { LinkProps } from './Link.types'
 
 export const Link: FC<LinkProps> = ({
   isExternal,
+  isMain,
   children,
   ...linkProps
 }: LinkProps) => (
-  <StyledLink {...linkProps} target={isExternal ? '_blank' : undefined}>
+  <StyledLink
+    {...{ ...linkProps, isMain }}
+    target={isExternal ? '_blank' : undefined}
+  >
     {children}{' '}
   </StyledLink>
 )

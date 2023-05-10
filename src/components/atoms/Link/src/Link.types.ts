@@ -7,4 +7,8 @@ export interface LinkProps
    * Is it an external link?
    */
   isExternal?: boolean
+  /**
+   * Is it main navigation link?
+   */
+  isMain?: boolean
 }

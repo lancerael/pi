@@ -7,7 +7,7 @@ export default defineConfig({
     react(),
     federation({
       name: 'remote_app',
-      filename: 'remoteEntry.js',
+      filename: 'remoteSandbox.js',
       exposes: {
         './Sandbox': './src/components/Sandbox',
         './chartConfigReducer': './src/state/reducers/chartConfigReducer',

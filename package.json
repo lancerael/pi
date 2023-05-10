@@ -15,12 +15,15 @@
     "sb": "cross-env NODE_OPTIONS=--openssl-legacy-provider start-storybook -p 6006",
     "build-storybook": "cross-env NODE_OPTIONS=--openssl-legacy-provider build-storybook",
     "------DEMO-------": "------------------------",
-    "sandbox:dev": "pnpm --filter @pi-lib/chart-sandbox dev",
-    "sandbox:build": "pnpm --filter @pi-lib/chart-sandbox build",
-    "sandbox:preview": "pnpm --filter @pi-lib/chart-sandbox preview",
     "sandbox:api-deploy": "pnpm --filter @pi-lib/chart-sandbox-api release",
+    "sandbox:start": "pnpm --filter @pi-lib/chart-sandbox-mfe start",
+    "candlestick:start": "pnpm --filter @pi-lib/candlestick-chart-mfe start",
+    "sandbox:dev": "pnpm --filter @pi-lib/chart-sandbox-mfe dev",
+    "candlestick:dev": "pnpm --filter @pi-lib/candlestick-chart-mfe dev",
     "tech-demo:dev": "pnpm --filter @pi-lib/tech-demo dev",
-    "demo": "pnpm sandbox:build && concurrently \"pnpm sandbox:preview\" \"pnpm tech-demo:dev\""
+    "mfes:dev": "concurrently \"pnpm sandbox:dev\" \"pnpm candlestick:dev\"",
+    "mfes": "concurrently \"pnpm sandbox:start\" \"pnpm candlestick:start\"",
+    "demo": "pnpm tech-demo:dev"
   },
   "repository": {
     "type": "git",
@@ -52,6 +55,8 @@
     "@storybook/client-logger": "^6.5.16",
     "@storybook/react": "^6.5.16",
     "@storybook/testing-library": "0.0.13",
+    "@types/react-redux": "^7.1.25",
+    "@types/d3-fetch": "^3.0.2",
     "@types/d3-axis": "^3.0.2",
     "@types/d3-force": "^3.0.4",
     "@types/d3-scale": "^4.0.3",

@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux'
 //@ts-ignore
-import chartDataReducer from 'remoteApp/chartDataReducer'
+import chartDataReducer from 'remoteSandbox/chartDataReducer'
 //@ts-ignore
-import chartConfigReducer from 'remoteApp/chartConfigReducer'
+import chartConfigReducer from 'remoteSandbox/chartConfigReducer'
 import themingReducer from './themingReducer'
 
 export default combineReducers({

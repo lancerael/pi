@@ -1,6 +1,6 @@
 export interface StyledLinkProps {
   /**
-   * The description of the prop
+   * Is it main navigation link?
    */
-  prop?: any
+  isMain?: boolean
 }

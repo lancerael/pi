@@ -38,6 +38,8 @@ export interface Dimensions {
   sizes: {
     width: number
     height: number
+    left: number
+    top: number
   }
 }
 
@@ -71,6 +73,8 @@ export interface Scaling {
 }
 
 export type SvgRef = React.RefObject<SVGSVGElement>
+
+export type ContainerRef = React.RefObject<HTMLDivElement>
 
 export type IAxis = Selection<SVGGElement, unknown, null, undefined>
 

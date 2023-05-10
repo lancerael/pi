@@ -32,6 +32,7 @@ export const useCandles = (
   } = scaling
   const {
     visibleRange: { offset },
+    sizes: { left, top },
   } = dimensions
   const groups = useRef<{ [key: string]: SVGSelection }>({})
   const isActive = useRef<boolean>(false)
@@ -107,8 +108,8 @@ export const useCandles = (
             setActiveItem({
               item: d,
               position: {
-                x: x(d) + xScale.bandwidth() + CHART_PADDING,
-                y: y2(d) + 8,
+                x: x(d) + xScale.bandwidth() + CHART_PADDING + left - 16,
+                y: y2(d) + top,
               },
             })
           })
@@ -140,8 +141,10 @@ export const useCandles = (
   // Initialise the canvas with groups for wicks and candles
   // and add reset listener
   useEffect(() => {
-    getGroup('wicks')
-    getGroup('candles')
+    setTimeout(() => {
+      getGroup('wicks')
+      getGroup('candles')
+    })
     const resetSelection = ({ target }: UIEvent) => {
       if ((target as SVGElement)?.nodeName !== 'rect') {
         getSvg().selectAll('rect').classed('is-active', false)

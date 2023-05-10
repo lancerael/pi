@@ -1,6 +1,9 @@
 import Banner from '@pi-lib/banner'
 import IconButton from '@pi-lib/icon-button'
 import Link from '@pi-lib/link'
+import Select from '@pi-lib/select'
+import { useDispatch } from 'react-redux'
+import { updateContrast, updateTheme } from '../state/reducers/themingReducer'
 
 const S3 = 'https://pi-lib-assets.s3.eu-west-2.amazonaws.com/'
 
@@ -32,6 +35,7 @@ const ICONS: { [key: string]: string } = {
 }
 
 export const Footer = () => {
+  const dispatch = useDispatch()
   return (
     <Banner isList isBottom>
       {Object.entries(ICONS).map(([title, href], i) => {
@@ -52,15 +56,6 @@ export const Footer = () => {
         }}
       >
         <div>
-          Tech Demo by{' '}
-          <Link
-            href="https://www.linkedin.com/in/lance-taylor-47b85b40"
-            isExternal
-          >
-            Lance Taylor
-          </Link>
-        </div>
-        <div>
           Pi Lib:{' '}
           <Link href="https://github.com/lancerael/pi" isExternal>
             Monorepo
@@ -69,6 +64,30 @@ export const Footer = () => {
           <Link href="https://main.d3nmdhmk6s7nee.amplifyapp.com" isExternal>
             Storybook
           </Link>
+        </div>
+        <div>
+          <Select
+            label="Contrast"
+            name="contrast"
+            onChange={(e: any) => dispatch(updateContrast(e.target.value))}
+            options={[
+              { value: '', content: 'Default' },
+              { content: 'Dark' },
+              { content: 'Light' },
+            ]}
+          />{' '}
+          <Select
+            label="Theme"
+            name="theme"
+            onChange={(e: any) => dispatch(updateTheme(e.target.value))}
+            options={[
+              { content: 'Andro' },
+              { content: 'Avocado' },
+              { content: 'Electron' },
+              { content: 'Pebble' },
+              { content: 'Rose' },
+            ]}
+          />
         </div>
       </div>
     </Banner>

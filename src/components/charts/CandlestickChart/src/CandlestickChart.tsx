@@ -15,10 +15,12 @@ import { IControls } from './components/Controls/Controls.types'
 
 export const CandlestickChart: FC<CandlestickChartProps> = ({ data = [] }) => {
   const svgRef = useRef<SVGSVGElement>(null)
+  const containerRef = useRef<HTMLDivElement>(null)
   const [controls, setControls] = useState<IControls>(DEFAULT_CONTROLS)
-  const dimensions = useDimensions(svgRef, data.length, controls)
+  const dimensions = useDimensions(svgRef, containerRef, data.length, controls)
   const scaling = useScaling(data, dimensions)
   useAxes(svgRef, data, scaling.scales, dimensions)
+  useTouch(svgRef, setControls)
   const candles = useCandles(
     svgRef,
     data,
@@ -26,13 +28,12 @@ export const CandlestickChart: FC<CandlestickChartProps> = ({ data = [] }) => {
     scaling,
     controls.transition ?? false
   )
-  useTouch(svgRef, setControls)
 
   return (
-    <StyledContainer>
+    <StyledContainer ref={containerRef}>
       {!data?.length ? (
         <StyledLoaderContainer>
-          <Loader />
+          <Loader isLarge />
         </StyledLoaderContainer>
       ) : (
         <Controls
@@ -52,8 +53,12 @@ export const CandlestickChart: FC<CandlestickChartProps> = ({ data = [] }) => {
       {data.length && (
         <CurrentIndicator
           value={data[data.length - 1].close}
-          x={dimensions.sizes.width}
-          y={scaling.scales.yScale(data[data.length - 1].close)}
+          x={dimensions.sizes.width + dimensions.sizes.left - 15}
+          y={
+            scaling.scales.yScale(data[data.length - 1].close) +
+            +dimensions.sizes.top -
+            15
+          }
         />
       )}
     </StyledContainer>
