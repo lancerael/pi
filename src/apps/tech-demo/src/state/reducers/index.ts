@@ -3,10 +3,10 @@ import { combineReducers } from 'redux'
 import chartDataReducer from 'remoteSandbox/chartDataReducer'
 //@ts-ignore
 import chartConfigReducer from 'remoteSandbox/chartConfigReducer'
-import themingReducer from './themingReducer'
+import settingsReducer from './settingsReducer'
 
 export default combineReducers({
   chartData: chartDataReducer,
   chartConfig: chartConfigReducer,
-  theming: themingReducer,
+  settings: settingsReducer,
 })

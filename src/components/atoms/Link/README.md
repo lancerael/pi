@@ -12,5 +12,5 @@ And these additional react props:
   /**
    * Is it an external link?
    */
-  isExternal?: boolean
+  $isExternal?: boolean
 ```

@@ -1,7 +1,7 @@
 import Select from '@pi-lib/select'
 import Banner from '@pi-lib/banner'
-import { useDispatch } from 'react-redux'
-import { updateContrast, updateTheme } from '../state/reducers/themingReducer'
+import { useDispatch, useSelector } from 'react-redux'
+import { SettingsState, updatePage } from '../state/reducers/settingsReducer'
 import { Logo } from '../images/logo'
 import styled from 'styled-components'
 import Link from '@pi-lib/link'
@@ -66,6 +66,8 @@ const StyledCredit = styled.div`
 `
 
 export const Header = () => {
+  const dispatch = useDispatch()
+  const { page } = useSelector(({ settings }: any) => settings)
   return (
     <Banner>
       <StyledHeader>
@@ -74,7 +76,7 @@ export const Header = () => {
           by{' '}
           <Link
             href="https://www.linkedin.com/in/lance-taylor-47b85b40"
-            isExternal
+            $isExternal
           >
             Lance Taylor
           </Link>
@@ -82,10 +84,20 @@ export const Header = () => {
       </StyledHeader>
       <StyledToolbar>
         <StyledLinks>
-          <Link href="/" isMain>
+          <Link
+            to="/"
+            onClick={() => dispatch(updatePage('/'))}
+            $isMain
+            $isInactive={page === '/'}
+          >
             Sandbox
           </Link>
-          <Link href="/candlestick" isMain>
+          <Link
+            to="/candlestick"
+            onClick={() => dispatch(updatePage('/candlestick'))}
+            $isMain
+            $isInactive={page === '/candlestick'}
+          >
             Candlestick
           </Link>
         </StyledLinks>

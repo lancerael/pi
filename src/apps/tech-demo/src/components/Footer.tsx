@@ -3,7 +3,7 @@ import IconButton from '@pi-lib/icon-button'
 import Link from '@pi-lib/link'
 import Select from '@pi-lib/select'
 import { useDispatch } from 'react-redux'
-import { updateContrast, updateTheme } from '../state/reducers/themingReducer'
+import { updateContrast, updateTheme } from '../state/reducers/settingsReducer'
 
 const S3 = 'https://pi-lib-assets.s3.eu-west-2.amazonaws.com/'
 
@@ -42,7 +42,7 @@ export const Footer = () => {
         const src = `${S3}${title.split(' ').join('-').toLowerCase()}.svg`
         return (
           !!title && (
-            <IconButton key={title} isExternal {...{ src, href, title }} />
+            <IconButton key={title} _isExternal {...{ src, href, title }} />
           )
         )
       })}
@@ -57,11 +57,11 @@ export const Footer = () => {
       >
         <div>
           Pi Lib:{' '}
-          <Link href="https://github.com/lancerael/pi" isExternal>
+          <Link href="https://github.com/lancerael/pi" $isExternal>
             Monorepo
           </Link>{' '}
           /{' '}
-          <Link href="https://main.d3nmdhmk6s7nee.amplifyapp.com" isExternal>
+          <Link href="https://main.d3nmdhmk6s7nee.amplifyapp.com" $isExternal>
             Storybook
           </Link>
         </div>

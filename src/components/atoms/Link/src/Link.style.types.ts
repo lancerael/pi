@@ -1,6 +1,4 @@
-export interface StyledLinkProps {
-  /**
-   * Is it main navigation link?
-   */
-  isMain?: boolean
-}
+import { LinkProps } from './Link.types'
+
+export interface StyledLinkProps
+  extends Pick<LinkProps, '$isMain' | '$isInactive'> {}

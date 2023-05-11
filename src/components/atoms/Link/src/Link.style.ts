@@ -1,9 +1,13 @@
 import styled, { css } from 'styled-components'
 import { StyledLinkProps } from './Link.style.types'
+import { Link } from 'react-router-dom'
 
-export const StyledLink = styled.a(({ isMain }: StyledLinkProps) => {
+export const getStyledLink = ($isInactive: boolean) =>
+  $isInactive ? StyledSpan : StyledLink
+
+const getLinkStyle = ({ $isMain, $isInactive }: StyledLinkProps) => {
   return css`
-    ${isMain &&
+    ${$isMain &&
     css`
       text-decoration: none;
       text-transform: uppercase;
@@ -13,13 +17,24 @@ export const StyledLink = styled.a(({ isMain }: StyledLinkProps) => {
 
     color: var(--outline);
 
-    &:active {
+    ${$isInactive &&
+    css`
       color: var(--shadow);
-    }
+      cursor: default;
+    `}
 
-    &:hover {
-      color: var(--specialText);
-      text-shadow: 2px 2px 3px rgb(0 0 0 / 40%);
-    }
+    ${!$isInactive &&
+    css`
+      &:hover {
+        filter: brightness(85%);
+        text-shadow: 1px 1px 2px rgb(0 0 0 / 40%);
+      }
+    `}
   `
-})
+}
+
+export const StyledRouterLink = styled(Link)`
+  ${(props: StyledLinkProps) => getLinkStyle(props)}
+`
+export const StyledLink = styled.a(getLinkStyle)
+export const StyledSpan = styled.span(getLinkStyle)
