@@ -1,10 +1,15 @@
 import Select from '@pi-lib/select'
 import Banner from '@pi-lib/banner'
-import { useDispatch, useSelector } from 'react-redux'
-import { SettingsState, updatePage } from '../state/reducers/settingsReducer'
-import { Logo } from '../images/logo'
 import styled from 'styled-components'
+import { useDispatch, useSelector } from 'react-redux'
+import {
+  updatePage,
+  updateContrast,
+  updateTheme,
+} from '../state/reducers/settingsReducer'
+import { Logo } from '../images/logo'
 import Link from '@pi-lib/link'
+import CollapsibleMenu from '@pi-lib/collapsible-menu'
 
 const StyledHeader = styled.h1`
   display: inline-block;
@@ -72,15 +77,6 @@ export const Header = () => {
     <Banner>
       <StyledHeader>
         <Logo size={48} fill="var(--outline)" /> Pi Tech Demo
-        <StyledCredit>
-          by{' '}
-          <Link
-            href="https://www.linkedin.com/in/lance-taylor-47b85b40"
-            $isExternal
-          >
-            Lance Taylor
-          </Link>
-        </StyledCredit>
       </StyledHeader>
       <StyledToolbar>
         <StyledLinks>
@@ -100,6 +96,33 @@ export const Header = () => {
           >
             Candlestick
           </Link>
+          <CollapsibleMenu
+            isSettings
+            items={[
+              <Select
+                label="Contrast"
+                name="contrast"
+                onChange={(e: any) => dispatch(updateContrast(e.target.value))}
+                options={[
+                  { value: '', content: 'Default' },
+                  { content: 'Dark' },
+                  { content: 'Light' },
+                ]}
+              />,
+              <Select
+                label="Theme"
+                name="theme"
+                onChange={(e: any) => dispatch(updateTheme(e.target.value))}
+                options={[
+                  { content: 'Andro' },
+                  { content: 'Avocado' },
+                  { content: 'Electron' },
+                  { content: 'Pebble' },
+                  { content: 'Rose' },
+                ]}
+              />,
+            ]}
+          />
         </StyledLinks>
       </StyledToolbar>
     </Banner>

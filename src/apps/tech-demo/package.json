@@ -16,6 +16,7 @@
     "@originjs/vite-plugin-federation": "^1.2.2",
     "@pi-lib/banner": "*",
     "@pi-lib/button": "*",
+    "@pi-lib/collapsible-menu": "workspace:^",
     "@pi-lib/icon-button": "*",
     "@pi-lib/input": "*",
     "@pi-lib/link": "workspace:^",
