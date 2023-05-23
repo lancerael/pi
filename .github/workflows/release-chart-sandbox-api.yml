@@ -1,8 +1,6 @@
 name: Release Chart Sandbox API
 
 on:
-  push:
-    branches: [main]
   pull_request:
     types:
       - closed
@@ -10,6 +8,7 @@ on:
 
 jobs:
   release:
+    if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
