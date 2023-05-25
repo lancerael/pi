@@ -10,33 +10,39 @@ export const StyledContainer = styled.div`
   width: 32px;
 `
 
-export const StyledOpener = styled.div(
-  ({ isCollapsed }: any) => css`
+export const StyledOpener = styled.button(
+  ({ isOpen }: any) => css`
+    border: 0;
+    padding: 0;
+    background: none;
     cursor: pointer;
     position: absolute;
     z-index: 9999;
     right: 0;
     transition-delay: 0.05s;
-    ${!isCollapsed &&
+    border-radius: 15px;
+    ${isOpen &&
     css`
       ${box()}
       padding: 0 0 0 2px;
       border-bottom: 0;
       box-shadow: none;
-      svg,
-      path {
+      svg {
         fill: var(--text) !important;
       }
+      path {
+        stroke: var(--text) !important;
+      }
+      border-radius: 15px 15px 0 0;
     `}
-    border-radius: 15px 15px 0 0;
   `
 )
 
 export const StyledCollapsibleMenu = styled.div(
-  ({ isCollapsed }: any) => css`
+  ({ isOpen }: any) => css`
     ${box()}
     border-radius: 5px 0 5px 5px;
-    opacity: ${isCollapsed ? 0 : 1};
+    opacity: ${isOpen ? 1 : 0};
     position: absolute;
     top: 36px;
     right: 0;
@@ -46,8 +52,8 @@ export const StyledCollapsibleMenu = styled.div(
 )
 
 export const StyledMenuInner = styled.div(
-  ({ isCollapsed }: any) => css`
-    margin-top: ${isCollapsed ? '-200px' : '-4px'};
+  ({ isOpen }: any) => css`
+    margin-top: ${isOpen ? '-4px' : '-200px'};
     margin-bottom: -4px;
     display: flex;
     flex-direction: column;

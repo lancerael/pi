@@ -1,4 +1,7 @@
 import React, { FC, useEffect, useRef, useState } from 'react'
+import { useMenuTrigger } from 'react-aria'
+import { useMenuTriggerState } from 'react-stately'
+import { useWindowClick } from '@pi-lib/utils'
 import {
   StyledCollapsibleMenu,
   StyledContainer,
@@ -12,28 +15,27 @@ import { Hamburger, Cog } from './assets'
 export const CollapsibleMenu: FC<CollapsibleMenuProps> = ({
   items,
   isSettings,
+  menutriggerProps = {},
 }) => {
   const containerRef = useRef<HTMLDivElement>(null)
-  const [isCollapsed, setIsCollapsed] = useState(true)
+  const openerRef = useRef<HTMLButtonElement>(null)
+  // const [isOpen, setIsOpen] = useState(true)
+  let menuState = useMenuTriggerState(menutriggerProps)
+  let { menuTriggerProps, menuProps } = useMenuTrigger({}, menuState, openerRef)
+  const { isOpen, setOpen } = menuState
+  useWindowClick(() => setOpen(false), containerRef)
 
-  useEffect(() => {
-    const onWindowClick = ({ target }: MouseEvent) => {
-      if (!!target && !containerRef.current?.contains(target as Node))
-        setIsCollapsed(true)
-    }
-    document.body.addEventListener('click', onWindowClick)
-    return () => document.body.removeEventListener('click', onWindowClick)
-  }, [])
   return (
     <StyledContainer ref={containerRef}>
       <StyledOpener
-        {...{ isCollapsed }}
-        onClick={() => setIsCollapsed((isCollapsed) => !isCollapsed)}
+        {...{ isOpen, ...menuTriggerProps }}
+        ref={openerRef}
+        onClick={() => setOpen(!isOpen)}
       >
         {isSettings ? <Cog /> : <Hamburger />}
       </StyledOpener>
-      <StyledCollapsibleMenu {...{ isCollapsed }}>
-        <StyledMenuInner {...{ isCollapsed }}>
+      <StyledCollapsibleMenu {...{ isOpen }}>
+        <StyledMenuInner {...{ isOpen, ...menuProps }}>
           {items?.map((item, i) => (
             <StyledMenuItem key={i}>{item}</StyledMenuItem>
           ))}
