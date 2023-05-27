@@ -9,6 +9,7 @@ import Header from './components/Header'
 import Footer from './components/Footer'
 //@ts-ignore
 import styled from 'styled-components'
+import { SettingsState } from './state/reducers/settingsReducer'
 
 export interface ITheming {
   themeName: ThemeType
@@ -28,11 +29,11 @@ const StyledColumn = styled.div<any>`
 `
 
 const App = () => {
-  const theming: ITheming = useSelector(
-    ({ theming }: { theming: ITheming }) => theming
+  const { contrast, themeName } = useSelector(
+    ({ settings }: { settings: SettingsState }) => settings
   )
   return (
-    <Theme {...theming}>
+    <Theme {...{ contrast, themeName }}>
       <StyledColumn>
         <Header />
         <Outlet />

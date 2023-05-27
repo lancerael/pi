@@ -19,7 +19,6 @@ export const CollapsibleMenu: FC<CollapsibleMenuProps> = ({
 }) => {
   const containerRef = useRef<HTMLDivElement>(null)
   const openerRef = useRef<HTMLButtonElement>(null)
-  // const [isOpen, setIsOpen] = useState(true)
   let menuState = useMenuTriggerState(menutriggerProps)
   let { menuTriggerProps, menuProps } = useMenuTrigger({}, menuState, openerRef)
   const { isOpen, setOpen } = menuState
@@ -27,11 +26,7 @@ export const CollapsibleMenu: FC<CollapsibleMenuProps> = ({
 
   return (
     <StyledContainer ref={containerRef}>
-      <StyledOpener
-        {...{ isOpen, ...menuTriggerProps }}
-        ref={openerRef}
-        onClick={() => setOpen(!isOpen)}
-      >
+      <StyledOpener {...{ isOpen, ...menuTriggerProps }} ref={openerRef}>
         {isSettings ? <Cog /> : <Hamburger />}
       </StyledOpener>
       <StyledCollapsibleMenu {...{ isOpen }}>

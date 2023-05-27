@@ -6,6 +6,7 @@ import {
   updatePage,
   updateContrast,
   updateTheme,
+  SettingsState,
 } from '../state/reducers/settingsReducer'
 import { Logo } from '../images/logo'
 import Link from '@pi-lib/link'
@@ -72,7 +73,9 @@ const StyledCredit = styled.div`
 
 export const Header = () => {
   const dispatch = useDispatch()
-  const { page } = useSelector(({ settings }: any) => settings)
+  const { page } = useSelector(
+    ({ settings }: { settings: SettingsState }) => settings
+  )
   return (
     <Banner>
       <StyledHeader>

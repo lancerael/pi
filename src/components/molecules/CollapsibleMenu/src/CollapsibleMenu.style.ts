@@ -1,4 +1,6 @@
 import styled, { css } from 'styled-components'
+import { Button } from 'react-aria-components'
+
 import { box } from '@pi-lib/styles'
 
 export const StyledContainer = styled.div`
@@ -10,18 +12,18 @@ export const StyledContainer = styled.div`
   width: 32px;
 `
 
-export const StyledOpener = styled.button(
-  ({ isOpen }: any) => css`
-    border: 0;
-    padding: 0;
-    background: none;
-    cursor: pointer;
-    position: absolute;
-    z-index: 9999;
-    right: 0;
-    transition-delay: 0.05s;
-    border-radius: 15px;
-    ${isOpen &&
+export const StyledOpener = styled(Button)`
+  border: 0;
+  padding: 0;
+  background: none;
+  cursor: pointer;
+  position: absolute;
+  z-index: 9999;
+  right: 0;
+  transition-delay: 0.05s;
+  border-radius: 5px;
+  ${({ isOpen }: any) =>
+    isOpen &&
     css`
       ${box()}
       padding: 0 0 0 2px;
@@ -30,13 +32,12 @@ export const StyledOpener = styled.button(
       svg {
         fill: var(--text) !important;
       }
-      path {
+      .hamburger path {
         stroke: var(--text) !important;
       }
-      border-radius: 15px 15px 0 0;
+      border-radius: 5px 5px 0 0;
     `}
-  `
-)
+`
 
 export const StyledCollapsibleMenu = styled.div(
   ({ isOpen }: any) => css`
