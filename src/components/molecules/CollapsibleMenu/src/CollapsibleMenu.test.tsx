@@ -6,12 +6,14 @@ import { axe } from 'jest-axe'
 
 describe('CollapsibleMenu', () => {
   it('should render a CollapsibleMenu', () => {
-    render(<CollapsibleMenu />)
-    expect(screen.getAllByTitle('')).toHaveLength(1)
+    render(<CollapsibleMenu items={[<span>TEST ME</span>]} />)
+    expect(screen.getAllByTitle('TEST ME')).toHaveLength(1)
   })
 
   it('should not fail any accessibility tests', async () => {
-    const { container } = render(<CollapsibleMenu />)
+    const { container } = render(
+      <CollapsibleMenu items={[<span>TEST ME</span>]} />
+    )
     expect(await axe(container)).toHaveNoViolations()
   })
 })
