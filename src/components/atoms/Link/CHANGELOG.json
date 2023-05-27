@@ -2,6 +2,27 @@
   "name": "@pi-lib/link",
   "entries": [
     {
+      "date": "Sat, 27 May 2023 23:26:23 GMT",
+      "tag": "@pi-lib/link_v0.5.0",
+      "version": "0.5.0",
+      "comments": {
+        "minor": [
+          {
+            "author": "122271901+lancerael-undo@users.noreply.github.com",
+            "package": "@pi-lib/link",
+            "commit": "e07726c36df96d861d1c157cd54add35caa5ddda",
+            "comment": "Added support for react router"
+          },
+          {
+            "author": "beachball",
+            "package": "@pi-lib/link",
+            "comment": "Bump @pi-lib/config to v0.4.0",
+            "commit": "91896a7ecfdfad7995114c9454a1a6b095213cbb"
+          }
+        ]
+      }
+    },
+    {
       "date": "Tue, 25 Apr 2023 06:49:46 GMT",
       "tag": "@pi-lib/link_v0.4.0",
       "version": "0.4.0",

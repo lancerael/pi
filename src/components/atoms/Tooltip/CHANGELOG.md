@@ -1,8 +1,16 @@
 # Change Log - @pi-lib/tooltip
 
-This log was last generated on Wed, 12 Apr 2023 23:03:41 GMT and should not be manually modified.
+This log was last generated on Sat, 27 May 2023 23:26:23 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 1.3.1
+
+Sat, 27 May 2023 23:26:23 GMT
+
+### Patches
+
+- Fixed theming in demo (122271901+lancerael-undo@users.noreply.github.com)
 
 ## 1.3.0
 

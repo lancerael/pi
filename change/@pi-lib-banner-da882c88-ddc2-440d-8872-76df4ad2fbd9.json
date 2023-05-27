@@ -1,7 +1,0 @@
-{
-  "type": "patch",
-  "comment": "Fixed theming in demo",
-  "packageName": "@pi-lib/banner",
-  "email": "122271901+lancerael-undo@users.noreply.github.com",
-  "dependentChangeType": "patch"
-}

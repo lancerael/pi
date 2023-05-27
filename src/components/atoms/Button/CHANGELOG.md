@@ -1,8 +1,16 @@
 # Change Log - @pi-lib/button
 
-This log was last generated on Wed, 12 Apr 2023 23:03:41 GMT and should not be manually modified.
+This log was last generated on Sat, 27 May 2023 23:26:23 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 1.5.0
+
+Sat, 27 May 2023 23:26:23 GMT
+
+### Minor changes
+
+- Fixed theming in demo (122271901+lancerael-undo@users.noreply.github.com)
 
 ## 1.4.0
 

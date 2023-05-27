@@ -1,8 +1,17 @@
 # Change Log - @pi-lib/link
 
-This log was last generated on Tue, 25 Apr 2023 06:49:46 GMT and should not be manually modified.
+This log was last generated on Sat, 27 May 2023 23:26:23 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 0.5.0
+
+Sat, 27 May 2023 23:26:23 GMT
+
+### Minor changes
+
+- Added support for react router (122271901+lancerael-undo@users.noreply.github.com)
+- Bump @pi-lib/config to v0.4.0
 
 ## 0.4.0
 
