@@ -26,7 +26,11 @@ export const CollapsibleMenu: FC<CollapsibleMenuProps> = ({
 
   return (
     <StyledContainer ref={containerRef}>
-      <StyledOpener {...{ isOpen, ...menuTriggerProps }} ref={openerRef}>
+      <StyledOpener
+        aria-label="expandable menu trigger"
+        {...{ isOpen, ...menuTriggerProps }}
+        ref={openerRef}
+      >
         {isSettings ? <Cog /> : <Hamburger />}
       </StyledOpener>
       <StyledCollapsibleMenu {...{ isOpen }}>
