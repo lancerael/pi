@@ -1,5 +1,5 @@
 {
-  "name": "@pi-lib/chart-sandbox",
+  "name": "@pi-lib/chart-sandbox-mfe",
   "private": true,
   "version": "0.1.0",
   "type": "module",
@@ -11,12 +11,14 @@
     "lint:fix": "npx prettier -w . && npx eslint --fix",
     "test-": "vitest",
     "test:coverage": "vitest --coverage",
-    "e2e": "npx cypress open"
+    "e2e": "npx cypress open",
+    "start": "pnpm build && pnpm preview"
   },
   "dependencies": {
     "@originjs/vite-plugin-federation": "^1.2.2",
     "@pi-lib/button": "*",
     "@pi-lib/input": "*",
+    "@pi-lib/page-content": "workspace:^",
     "@pi-lib/page-loader": "workspace:^",
     "@pi-lib/styles": "*",
     "@pi-lib/table": "*",

@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef, useCallback } from 'react'
+import { useEffect, useState } from 'react'
 import {
   AXIS_OFFSETS,
   CANDLE_PADDING,
@@ -6,21 +6,24 @@ import {
   CHART_PADDING,
 } from '../CandlestickChart.constants'
 import throttle from 'lodash.throttle'
-import { SvgRef } from '../CandlestickChart.types'
+import { ContainerRef, Dimensions, SvgRef } from '../CandlestickChart.types'
 
 const { abs, round } = Math
 
 export const useDimensions = (
   svgRef: SvgRef,
+  containerRef: ContainerRef,
   length: number,
   controls: {
     zoomLevel: number
     panLevel: number
   }
-) => {
+): Dimensions => {
   const [sizes, setDimensions] = useState({
     width: 0,
     height: 0,
+    left: 0,
+    top: 0,
   })
   const [visibleRange, setVisibleRange] = useState({
     first: 0,
@@ -35,7 +38,18 @@ export const useDimensions = (
     const updateSVG = throttle(() => {
       const { clientWidth: width = 0, clientHeight: height = 0 } =
         svgRef?.current ?? {}
-      setDimensions({ width, height })
+      const {
+        offsetLeft: left = 0,
+        offsetTop: top = 0,
+        style,
+      } = containerRef?.current ?? {}
+
+      setDimensions({
+        width,
+        height,
+        left,
+        top,
+      })
     }, 200)
 
     updateSVG()

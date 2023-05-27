@@ -11,13 +11,15 @@ export const Tooltip: FC<TooltipProps> = ({
 }) => {
   const containerRef = useRef<HTMLDivElement>(null)
   const [position, setPosition] = useState({ x, y })
+  const [isRendered, setIsRendered] = useState(false)
+  const displayTimeout = useRef<NodeJS.Timeout>()
 
   // Update the tooltip to the correct position
   const updatePosition = useCallback(
     (xPos: number, yPos: number) =>
       setPosition({
         x: xPos - (containerRef.current?.clientWidth ?? 0) / 2,
-        y: yPos + 24,
+        y: yPos + (isRendered ? 24 : 16),
       }),
     [containerRef.current]
   )
@@ -42,12 +44,23 @@ export const Tooltip: FC<TooltipProps> = ({
     return removeListener
   }, [x, y])
 
+  useEffect(() => {
+    if (isVisible) {
+      setIsRendered(true)
+      clearTimeout(displayTimeout.current)
+      return
+    }
+    displayTimeout.current = setTimeout(() => setIsRendered(false), 200)
+  }, [isVisible])
+
   return (
     <StyledTooltip
       ref={containerRef}
-      {...{ isVisible, children }}
+      {...{ isVisible, isRendered }}
       style={{ left: position.x, top: position.y }}
-    />
+    >
+      {isRendered && children}
+    </StyledTooltip>
   )
 }
 

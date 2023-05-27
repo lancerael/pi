@@ -1,4 +1,4 @@
-import React, { FC, PropsWithChildren } from 'react'
+import React, { FC } from 'react'
 import { StyledBanner } from './Banner.style'
 import { BannerProps } from './Banner.types'
 

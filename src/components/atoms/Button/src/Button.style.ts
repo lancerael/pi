@@ -11,7 +11,7 @@ export const StyledButton = styled.button(
         isSpecial,
       })}
       width: 100%;
-      padding: ${isCompact ? '2px 2px 3px 2px' : '8px 16px'};
+      padding: ${isCompact ? '4px' : '8px 16px'};
       cursor: pointer;
       display: inline-block;
       font-weight: bold;

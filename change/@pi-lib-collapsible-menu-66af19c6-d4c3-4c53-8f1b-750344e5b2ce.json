@@ -1,0 +1,7 @@
+{
+  "type": "minor",
+  "comment": "Added collapsibe menu component",
+  "packageName": "@pi-lib/collapsible-menu",
+  "email": "122271901+lancerael-undo@users.noreply.github.com",
+  "dependentChangeType": "patch"
+}

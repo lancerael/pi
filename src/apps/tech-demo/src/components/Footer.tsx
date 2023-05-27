@@ -52,22 +52,22 @@ export const Footer = () => {
         }}
       >
         <div>
-          Tech Demo by{' '}
-          <Link
-            href="https://www.linkedin.com/in/lance-taylor-47b85b40"
-            isExternal
-          >
-            Lance Taylor
-          </Link>
-        </div>
-        <div>
           Pi Lib:{' '}
-          <Link href="https://github.com/lancerael/pi" isExternal>
+          <Link href="https://github.com/lancerael/pi" $isExternal>
             Monorepo
           </Link>{' '}
           /{' '}
-          <Link href="https://main.d3nmdhmk6s7nee.amplifyapp.com" isExternal>
+          <Link href="https://main.d3nmdhmk6s7nee.amplifyapp.com" $isExternal>
             Storybook
+          </Link>
+        </div>
+        <div>
+          by{' '}
+          <Link
+            href="https://www.linkedin.com/in/lance-taylor-47b85b40"
+            $isExternal
+          >
+            Lance Taylor
           </Link>
         </div>
       </div>

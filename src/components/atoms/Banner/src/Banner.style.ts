@@ -8,11 +8,11 @@ export const StyledBanner = styled.div(
     display: flex;
     gap: 4px;
     padding: 8px 16px;
+    position: relative;
     justify-content: space-between;
     align-items: center;
     border-top: ${isBottom ? '1px' : '0'} solid var(--shadow);
     border-bottom: ${isBottom ? '0' : '1px'} solid var(--shadow);
-    justify-content: ${!!isList ? 'space-around' : 'space-between'};
     ${!!isList && 'flex-wrap: wrap;'};
   `
 )

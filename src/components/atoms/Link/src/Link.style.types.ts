@@ -1,6 +1,4 @@
-export interface StyledLinkProps {
-  /**
-   * The description of the prop
-   */
-  prop?: any
-}
+import { LinkProps } from './Link.types'
+
+export interface StyledLinkProps
+  extends Pick<LinkProps, '$isMain' | '$isInactive'> {}

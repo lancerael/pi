@@ -132,4 +132,6 @@ export const useAxes = (
         .attr('x1', -1)
     })
   }, [xScale, yScale])
+
+  return [axisX, axisY]
 }

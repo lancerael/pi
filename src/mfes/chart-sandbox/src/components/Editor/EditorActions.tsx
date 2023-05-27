@@ -34,9 +34,9 @@ export const EditorActions = () => {
   const exportRef = useRef<any>(null)
   const dispatch = useDispatch()
 
-  const updateData = ({ chartConfig, chartData }: any) => {
-    dispatch(replaceConfig(chartConfig))
-    dispatch(replaceData(chartData))
+  const updateChart = (chart: any) => {
+    dispatch(replaceConfig(chart.chartConfig))
+    dispatch(replaceData(chart.chartData))
   }
 
   const addColumn = () => {
@@ -49,7 +49,7 @@ export const EditorActions = () => {
     const aFileNameSplit = aFiles.length ? aFiles[0].name.split('.') : []
     if (aFiles.length && aFileNameSplit[aFileNameSplit.length - 1] === 'json') {
       const fr = new FileReader()
-      fr.onload = ({ target }: any) => updateData(JSON.parse(target.result))
+      fr.onload = ({ target }: any) => updateChart(JSON.parse(target.result))
       fr.readAsText(aFiles.item(0))
     } else {
       return false
@@ -63,7 +63,7 @@ export const EditorActions = () => {
         'https://3ce64aq6e3.execute-api.eu-west-2.amazonaws.com/default/chartRandom'
       )
       const randomChart = await response.json()
-      updateData(randomChart)
+      updateChart(randomChart)
     } catch (e) {
       console.error(e)
     }
@@ -71,7 +71,7 @@ export const EditorActions = () => {
   }
 
   useEffect(() => {
-    getRandomData()
+    if (!chartData?.[0]?.itemValues?.length) getRandomData()
   }, [])
 
   return (
@@ -87,7 +87,7 @@ export const EditorActions = () => {
         ADD COLUMN
       </Button>
       <Button
-        onClick={() => updateData(getEmptyData())}
+        onClick={() => updateChart(getEmptyData())}
         title="Reset the chart and remove all data"
       >
         CLEAR

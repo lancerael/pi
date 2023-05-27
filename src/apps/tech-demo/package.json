@@ -16,6 +16,7 @@
     "@originjs/vite-plugin-federation": "^1.2.2",
     "@pi-lib/banner": "*",
     "@pi-lib/button": "*",
+    "@pi-lib/collapsible-menu": "workspace:^",
     "@pi-lib/icon-button": "*",
     "@pi-lib/input": "*",
     "@pi-lib/link": "workspace:^",
@@ -28,6 +29,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-redux": "^7.1.1",
+    "react-router-dom": "^6.10.0",
     "redux": "^4.0.0",
     "styled-components": "^5.3.9"
   },

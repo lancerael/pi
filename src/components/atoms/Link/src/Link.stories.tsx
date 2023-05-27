@@ -9,7 +9,7 @@ export default {
     href: {
       control: 'text',
     },
-    isExternal: {
+    $isExternal: {
       control: 'boolean',
     },
   },
@@ -23,5 +23,20 @@ export const Default = Template.bind({})
 
 Default.args = {
   href: 'https://www.google.com',
-  isExternal: true,
+  $isExternal: true,
+}
+
+export const Inactive = Template.bind({})
+
+Inactive.args = {
+  href: 'https://www.google.com',
+  $isInactive: true,
+}
+
+export const Main = Template.bind({})
+
+Main.args = {
+  href: 'https://www.google.com',
+  $isMain: true,
+  $isExternal: true,
 }
