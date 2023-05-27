@@ -18,10 +18,6 @@
     "sandbox:api-deploy": "pnpm --filter @pi-lib/chart-sandbox-api release",
     "sandbox:start": "pnpm --filter @pi-lib/chart-sandbox-mfe start",
     "candlestick:start": "pnpm --filter @pi-lib/candlestick-chart-mfe start",
-    "sandbox:dev": "pnpm --filter @pi-lib/chart-sandbox-mfe dev",
-    "candlestick:dev": "pnpm --filter @pi-lib/candlestick-chart-mfe dev",
-    "tech-demo:dev": "pnpm --filter @pi-lib/tech-demo dev",
-    "mfes:dev": "concurrently \"pnpm sandbox:dev\" \"pnpm candlestick:dev\"",
     "mfes": "concurrently \"pnpm sandbox:start\" \"pnpm candlestick:start\"",
     "demo": "pnpm tech-demo:dev"
   },
