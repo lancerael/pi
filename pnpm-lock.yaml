@@ -949,7 +949,7 @@ importers:
   src/components/molecules/CollapsibleMenu:
     dependencies:
       '@pi-lib/link':
-        specifier: workspace:^*
+        specifier: workspace:^0.4.0
         version: link:../../atoms/Link
       '@pi-lib/styles':
         specifier: ^1.1.1
