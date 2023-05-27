@@ -9,7 +9,7 @@ export default {
 
 const Template: ComponentStory<typeof WorldMap> = () => (
   <div style={{ width: '80%', height: '40vw' }}>
-    <WorldMap country="USA" label="Location" />
+    <WorldMap country="USA" label="Locale" />
   </div>
 )
 
