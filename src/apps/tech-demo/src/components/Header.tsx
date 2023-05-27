@@ -56,21 +56,6 @@ const StyledLinks = styled.div`
   }
 `
 
-const StyledCredit = styled.div`
-  text-align: center;
-  position: absolute;
-  bottom: -8px;
-  right: 0px;
-  font-size: 14px;
-  @media (max-width: 550px) {
-    width: 100vw;
-    top: 64pxpx;
-    left: -20px;
-    bottom: auto;
-    text-align: center;
-  }
-`
-
 export const Header = () => {
   const dispatch = useDispatch()
   const { page } = useSelector(
