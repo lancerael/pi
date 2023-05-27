@@ -32,7 +32,7 @@
     "vitest": "^0.22.1"
   },
   "dependencies": {
-    "@pi-lib/link": "workspace:^*",
+    "@pi-lib/link": "workspace:^0.4.0",
     "@pi-lib/utils": "workspace:^",
     "react-aria": "^3.25.0",
     "react-aria-components": "1.0.0-alpha.4",

@@ -22,7 +22,7 @@ const GlobalStyle = createGlobalStyle`
 const Template: ComponentStory<typeof ModalScreen> = ({ isActive }) => (
   <>
     <GlobalStyle />
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ex
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque exi
     urna, dignissim in ullamcorper a, blandit id magna. Vivamus orci lectus,
     tincidunt vel ornare sed, ultricies euismod neque. Nullam bibendum
     pellentesque accumsan. Praesent maximus odio ac mauris dictum sollicitudin.
