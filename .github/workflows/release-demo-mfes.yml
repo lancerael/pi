@@ -50,4 +50,4 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_REGION: 'eu-west-2'
           SOURCE_DIR: 'src/mfes/${{ matrix.mfe-name }}/dist'
-          DEST_DIR: '/${{ matrix.mfe-name }}'
+          DEST_DIR: '${{ matrix.mfe-name }}'

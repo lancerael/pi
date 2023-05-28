@@ -16,7 +16,7 @@ export const Sidebar = () => {
       </p>
       <p style={subStyles}>Today's Trading</p>
       <p style={rowStyles}>
-        Previous close <span style={{ float: 'right' }}>4.02</span>
+        Previous close <span style={{ float: 'right' }}>4.03</span>
       </p>
       <p style={rowStyles}>
         Today's open <span style={{ float: 'right' }}>4.40</span>

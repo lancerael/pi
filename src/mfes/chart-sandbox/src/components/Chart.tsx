@@ -16,8 +16,6 @@ const StyledChartContainer = styled.div`
   border: 1px solid var(--border);
 
   & svg {
-    /* padding: 0; */
-
     & rect,
     & line,
     & text {
