@@ -90,7 +90,7 @@ const StyledChartContainer = styled.div`
   }
 `
 
-const Chart = ({ sId, sType }: any) => {
+const Chart = ({ chartId, chartType }: any) => {
   const chartContainer = useRef(null)
   const dtChart = useRef<IChart>()
   const chartData = useSelector(({ chartData }: any) => chartData)
@@ -101,7 +101,7 @@ const Chart = ({ sId, sType }: any) => {
 
   useEffect(() => {
     if (!chartContainer.current || dtChart.current) return
-    dtChart.current = Theia.chart(sId, sType, {
+    dtChart.current = Theia.chart(chartId, chartType, {
       chartData,
       chartConfig,
     }) as IChart
@@ -112,7 +112,7 @@ const Chart = ({ sId, sType }: any) => {
     !skipUpdate && dtChart.current?.updateConfig(chartConfig)
   }, [chartData, chartConfig])
 
-  return <StyledChartContainer id={sId} ref={chartContainer} />
+  return <StyledChartContainer id={chartId} ref={chartContainer} />
 }
 
 export default Chart

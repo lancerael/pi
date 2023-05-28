@@ -10,6 +10,11 @@ jobs:
   release:
     if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        mfe-name: [chart-sandbox, candlestick-chart]
+
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v2
@@ -20,7 +25,7 @@ jobs:
         id: changed-files
         uses: tj-actions/changed-files@v35
         with:
-          files: ./src/mfes/candlestick-chart/**
+          files: ./src/mfes/${{ matrix.mfe-name }}/**
 
       - name: List of changes
         shell: bash
@@ -43,5 +48,5 @@ jobs:
           AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          AWS_REGION: 'us-west-2'
-          SOURCE_DIR: 'src/mfes/candlestick-chart/dist'
+          AWS_REGION: 'eu-west-2'
+          SOURCE_DIR: 'src/mfes/${{ matrix.mfe-name }}/dist'
