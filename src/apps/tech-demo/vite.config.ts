@@ -2,9 +2,15 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import federation from '@originjs/vite-plugin-federation'
 
+const portMap = {
+  'chart-sandbox': 5001,
+  'candlestick-chart': 5002,
+}
+
 const IS_DEV = process.env.NODE_ENV === 'development'
 const ASSET_PATH = 'https://pi-lib-mfes.s3.eu-west-2.amazonaws.com'
-const getPath = (port) => (IS_DEV ? `http://localhost:${port}` : ASSET_PATH)
+const getPath = (id) =>
+  IS_DEV ? `http://localhost:${portMap[id]}` : `${ASSET_PATH}/${id}`
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -13,8 +19,10 @@ export default defineConfig({
     federation({
       name: 'app',
       remotes: {
-        remoteSandbox: `${getPath(5001)}/assets/remoteSandbox.js`,
-        remoteCandlestick: `${getPath(5002)}/assets/remoteCandlestick.js`,
+        remoteSandbox: `${getPath('chart-sandbox')}/assets/remoteSandbox.js`,
+        remoteCandlestick: `${getPath(
+          'candlestick-chart'
+        )}/assets/remoteCandlestick.js`,
       },
       shared: [
         'react',
