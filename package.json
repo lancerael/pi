@@ -38,7 +38,7 @@
     "@pi-lib/loader": "*",
     "@pi-lib/styles": "*",
     "@pi-lib/tooltip": "*",
-    "@pi-lib/utils": "workspace:^",
+    "@pi-lib/utils": "*",
     "@storybook/addon-actions": "^6.5.16",
     "@storybook/addon-backgrounds": "^6.5.16",
     "@storybook/addon-docs": "^6.5.16",
