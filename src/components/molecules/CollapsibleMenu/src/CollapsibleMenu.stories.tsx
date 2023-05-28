@@ -1,7 +1,6 @@
 import React from 'react'
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 import { CollapsibleMenu } from './CollapsibleMenu'
-import Link from '@pi-lib/link'
 
 export default {
   title: 'UI/CollapsibleMenu',
@@ -14,15 +13,9 @@ const BaseMenu = ({ isSettings }: any) => (
       <CollapsibleMenu
         {...{ isSettings }}
         items={[
-          <Link href="https://www.google.com" $isMain $isExternal>
-            Item 1
-          </Link>,
-          <Link href="https://www.google.com" $isMain $isExternal>
-            Item 2
-          </Link>,
-          <Link href="https://www.google.com" $isMain $isExternal>
-            Item 3
-          </Link>,
+          <a href="https://www.google.com">Item 1</a>,
+          <a href="https://www.google.com">Item 2</a>,
+          <a href="https://www.google.com">Item 3</a>,
         ]}
       />
     </div>
