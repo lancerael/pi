@@ -27,6 +27,9 @@ importers:
       '@pi-lib/tooltip':
         specifier: '*'
         version: link:src/components/atoms/Tooltip
+      '@pi-lib/utils':
+        specifier: workspace:^
+        version: link:src/utils
       '@storybook/addon-actions':
         specifier: ^6.5.16
         version: 6.5.16(react-dom@18.2.0)(react@18.2.0)
@@ -957,9 +960,6 @@ importers:
 
   src/components/molecules/CollapsibleMenu:
     dependencies:
-      '@pi-lib/link':
-        specifier: workspace:^0.5.0
-        version: link:../../atoms/Link
       '@pi-lib/styles':
         specifier: ^1.1.1
         version: link:../../theming/Styles
