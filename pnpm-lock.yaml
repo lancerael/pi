@@ -18,9 +18,15 @@ importers:
       '@pi-lib/config':
         specifier: '*'
         version: link:src/config
+      '@pi-lib/link':
+        specifier: '*'
+        version: link:src/components/atoms/Link
       '@pi-lib/loader':
         specifier: '*'
         version: link:src/components/atoms/Loader
+      '@pi-lib/modal-screen':
+        specifier: '*'
+        version: link:src/components/atoms/ModalScreen
       '@pi-lib/styles':
         specifier: '*'
         version: link:src/components/theming/Styles
@@ -28,7 +34,7 @@ importers:
         specifier: '*'
         version: link:src/components/atoms/Tooltip
       '@pi-lib/utils':
-        specifier: workspace:^
+        specifier: '*'
         version: link:src/utils
       '@storybook/addon-actions':
         specifier: ^6.5.16
