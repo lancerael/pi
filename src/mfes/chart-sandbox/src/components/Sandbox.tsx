@@ -14,8 +14,8 @@ export interface iTheming {
 const Sandbox = () => {
   return (
     <PageContent sidebar={<Editor />}>
-      <Chart chartId="container-bar-test" chartType="bar" />
-      <Chart chartId="container-line-test" chartType="line" />
+      <Chart chartId="container-bar" chartType="bar" />
+      <Chart chartId="container-line" chartType="line" />
     </PageContent>
   )
 }

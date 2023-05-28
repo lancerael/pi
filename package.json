@@ -19,7 +19,7 @@
     "sandbox:start": "pnpm --filter @pi-lib/chart-sandbox-mfe start",
     "candlestick:start": "pnpm --filter @pi-lib/candlestick-chart-mfe start",
     "mfes": "concurrently \"pnpm sandbox:start\" \"pnpm candlestick:start\"",
-    "demo": "pnpm tech-demo:dev"
+    "demo": "pnpm --filter @pi-lib/tech-demo dev"
   },
   "repository": {
     "type": "git",
