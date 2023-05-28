@@ -1,7 +1,0 @@
-# Ignore artifacts:
-build
-coverage
-dist
-storybook-static
-pnpm-lock.yaml
-js
