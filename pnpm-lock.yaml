@@ -28,7 +28,7 @@ importers:
         specifier: '*'
         version: link:src/components/atoms/Tooltip
       '@pi-lib/utils':
-        specifier: workspace:^
+        specifier: '*'
         version: link:src/utils
       '@storybook/addon-actions':
         specifier: ^6.5.16
