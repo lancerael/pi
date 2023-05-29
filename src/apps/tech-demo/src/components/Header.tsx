@@ -14,13 +14,13 @@ import CollapsibleMenu from '@pi-lib/collapsible-menu'
 
 const StyledHeader = styled.h1`
   display: inline-block;
-  font-size: 1.8em;
+  font-size: 1.6em;
   padding-left: 4px;
   text-shadow: 1px 1px rgb(0 0 0 / 30%);
   position: relative;
 
   svg {
-    padding-top: 2px;
+    padding-top: 6px;
   }
 
   @media (max-width: 540px) {
@@ -36,23 +36,22 @@ const StyledHeader = styled.h1`
 
 const StyledToolbar = styled.div`
   display: flex;
-  text-align: right;
   gap: 16px;
-  @media (max-width: 650px) {
-    flex-direction: column;
-    gap: 4px;
-    & a {
-      font-size: 1.3em;
-    }
-  }
+  min-height: 32px;
+  align-items: center;
 `
 
 const StyledLinks = styled.div`
   display: flex;
   gap: 16px;
-  @media (max-width: 650px) {
-    flex-direction: column;
-    gap: 4px;
+  @media (max-width: 700px) {
+    display: none;
+  }
+`
+
+const StyledMenu = styled.div`
+  @media (min-width: 701px) {
+    display: none;
   }
 `
 
@@ -61,29 +60,39 @@ export const Header = () => {
   const { page } = useSelector(
     ({ settings }: { settings: SettingsState }) => settings
   )
+
+  const links = [
+    <Link
+      to="/"
+      onClick={() => dispatch(updatePage('/'))}
+      $isMain
+      $isInactive={page === '/'}
+      key="sandbox"
+    >
+      Sandbox
+    </Link>,
+    <Link
+      to="/candlestick"
+      onClick={() => dispatch(updatePage('/candlestick'))}
+      $isMain
+      $isInactive={page === '/candlestick'}
+      key="candlestick"
+    >
+      Candlestick
+    </Link>,
+  ]
+
   return (
     <Banner>
       <StyledHeader>
-        <Logo size={48} fill="var(--outline)" /> Pi Tech Demo
+        <Logo size={34} fill="var(--outline)" /> Pi Tech Demo
       </StyledHeader>
       <StyledToolbar>
-        <StyledLinks>
-          <Link
-            to="/"
-            onClick={() => dispatch(updatePage('/'))}
-            $isMain
-            $isInactive={page === '/'}
-          >
-            Sandbox
-          </Link>
-          <Link
-            to="/candlestick"
-            onClick={() => dispatch(updatePage('/candlestick'))}
-            $isMain
-            $isInactive={page === '/candlestick'}
-          >
-            Candlestick
-          </Link>
+        <StyledLinks>{links}</StyledLinks>
+        <StyledMenu>
+          <CollapsibleMenu items={links} />
+        </StyledMenu>
+        <div>
           <CollapsibleMenu
             isSettings
             items={[
@@ -111,7 +120,7 @@ export const Header = () => {
               />,
             ]}
           />
-        </StyledLinks>
+        </div>
       </StyledToolbar>
     </Banner>
   )

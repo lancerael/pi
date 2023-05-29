@@ -7,15 +7,15 @@ export const getStyledLink = ($isInactive: boolean) =>
 
 const getLinkStyle = ({ $isMain, $isInactive }: StyledLinkProps) => {
   return css`
+    text-decoration: none;
+    color: var(--outline);
+
     ${$isMain &&
     css`
-      text-decoration: none;
       text-transform: uppercase;
       font-weight: bold;
-      font-size: 1.6em;
+      font-size: 1.4em;
     `}
-
-    color: var(--outline);
 
     ${$isInactive
       ? css`
