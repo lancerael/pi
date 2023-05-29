@@ -12,7 +12,7 @@ const getLinkStyle = ({ $isMain, $isInactive }: StyledLinkProps) => {
       text-decoration: none;
       text-transform: uppercase;
       font-weight: bold;
-      font-size: 1.6em;
+      font-size: 1.4em;
     `}
 
     color: var(--outline);

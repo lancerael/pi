@@ -5,11 +5,11 @@ import { box } from '@pi-lib/styles'
 
 export const StyledContainer = styled.div`
   width: auto;
-  display: inline-block;
   text-align: right;
   position: relative;
   white-space: nowrap;
   width: 32px;
+  height: 32px;
 `
 
 export const StyledOpener = styled(Button)`
@@ -20,13 +20,14 @@ export const StyledOpener = styled(Button)`
   position: absolute;
   z-index: 9999;
   right: 0;
+  top: 0;
   transition-delay: 0.05s;
   border-radius: 5px;
   ${({ isOpen }: any) =>
     isOpen &&
     css`
       ${box()}
-      padding: 0 0 0 2px;
+      padding: 0;
       border-bottom: 0;
       box-shadow: none;
       svg {
@@ -62,8 +63,12 @@ export const StyledMenuInner = styled.div(
   `
 )
 
-export const StyledMenuItem = styled.div`
-  a {
-    color: var(--text);
-  }
+export const StyledMenu = styled.ul`
+  margin: 0;
+  padding: 0;
+`
+
+export const StyledMenuItem = styled.li`
+  margin: 0;
+  padding: 4px;
 `

@@ -21,13 +21,13 @@ export const StyledSidebar = styled.div`
     flexgrow: 1;
     background: var(--subtle);
     color: var(--textSoft);
-    borderright: 1px solid var(--border);
+    border-right: 1px solid var(--border);
     padding: 16px;
 
     @media (max-width: 800px) {
       height: auto;
-      borderright: none;
-      borderbottom: 1px solid var(--border);
+      border-right: none;
+      border-bottom: 1px solid var(--border);
       ${!!isCollapsible && 'max-width: 100%;'}
     }
   `}

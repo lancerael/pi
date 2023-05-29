@@ -8,6 +8,7 @@ import {
   StyledOpener,
   StyledMenuInner,
   StyledMenuItem,
+  StyledMenu,
 } from './CollapsibleMenu.style'
 import { CollapsibleMenuProps } from './CollapsibleMenu.types'
 import { Hamburger, Cog } from './assets'
@@ -35,9 +36,11 @@ export const CollapsibleMenu: FC<CollapsibleMenuProps> = ({
       </StyledOpener>
       <StyledCollapsibleMenu {...{ isOpen }}>
         <StyledMenuInner {...{ isOpen, ...menuProps }}>
-          {items?.map((item, i) => (
-            <StyledMenuItem key={i}>{item}</StyledMenuItem>
-          ))}
+          <StyledMenu>
+            {items?.map((item, i) => (
+              <StyledMenuItem key={i}>{item}</StyledMenuItem>
+            ))}
+          </StyledMenu>
         </StyledMenuInner>
       </StyledCollapsibleMenu>
     </StyledContainer>
