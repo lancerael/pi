@@ -11,4 +11,8 @@ export interface IconButtonProps
    * Should it open in an new window
    */
   isExternal?: boolean
+  /**
+   * Should it show a small version of the button
+   */
+  isSmall?: boolean
 }

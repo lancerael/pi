@@ -1,6 +1,6 @@
 export interface StyledCollapsibleMenuProps {
   /**
-   * The menu is collapsed
+   * The menu is collapsed or open
    */
-  isCollapsed?: boolean
+  isOpen?: boolean
 }

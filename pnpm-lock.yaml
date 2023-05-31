@@ -248,7 +248,7 @@ importers:
         specifier: workspace:^
         version: link:../../components/molecules/CollapsibleMenu
       '@pi-lib/icon-button':
-        specifier: '*'
+        specifier: ^0.4.0
         version: link:../../components/atoms/IconButton
       '@pi-lib/input':
         specifier: '*'
@@ -256,6 +256,9 @@ importers:
       '@pi-lib/link':
         specifier: workspace:^
         version: link:../../components/atoms/Link
+      '@pi-lib/modal-screen':
+        specifier: workspace:^
+        version: link:../../components/atoms/ModalScreen
       '@pi-lib/page-loader':
         specifier: workspace:^
         version: link:../../components/molecules/PageLoader
@@ -268,6 +271,9 @@ importers:
       '@pi-lib/table':
         specifier: '*'
         version: link:../../components/molecules/Table
+      '@pi-lib/utils':
+        specifier: workspace:^
+        version: link:../../utils
       '@reduxjs/toolkit':
         specifier: ^1.9.3
         version: 1.9.3(react-redux@7.2.9)(react@18.2.0)

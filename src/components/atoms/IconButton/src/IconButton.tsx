@@ -6,14 +6,21 @@ export const IconButton: FC<IconButtonProps> = ({
   src,
   title = `image button ${src}`,
   isExternal = false,
+  isSmall = false,
   ...iconButtonProps
-}: any) => (
+}) => (
   <StyledIconButton
-    {...iconButtonProps}
+    {...{ ...iconButtonProps, isSmall }}
     target={isExternal ? '_blank' : undefined}
     role="button"
   >
-    <img {...{ src, title }} key={src} width="24px" height="24px" alt={title} />
+    <img
+      {...{ src, title }}
+      key={src}
+      width={isSmall ? '16px' : '24px'}
+      height={isSmall ? '16px' : '24px'}
+      alt={title}
+    />
   </StyledIconButton>
 )
 
