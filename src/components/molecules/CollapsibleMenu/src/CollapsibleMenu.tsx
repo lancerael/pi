@@ -1,4 +1,4 @@
-import React, { FC, useRef } from 'react'
+import React, { FC, useEffect, useRef, useState } from 'react'
 import { useMenuTrigger } from 'react-aria'
 import { useMenuTriggerState } from 'react-stately'
 import { useWindowClick } from '@pi-lib/utils'
@@ -34,7 +34,7 @@ export const CollapsibleMenu: FC<CollapsibleMenuProps> = ({
       >
         {isSettings ? <Cog /> : <Hamburger />}
       </StyledOpener>
-      <StyledCollapsibleMenu {...{ isOpen }}>
+      <StyledCollapsibleMenu {...{ isOpen }} aria-hidden={!isOpen}>
         <StyledMenuInner {...{ isOpen, ...menuProps }}>
           <StyledMenu>
             {items?.map((item, i) => (

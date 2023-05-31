@@ -11,6 +11,11 @@ import {
 import { Logo } from '../images/logo'
 import Link from '@pi-lib/link'
 import CollapsibleMenu from '@pi-lib/collapsible-menu'
+import { useRef, useState } from 'react'
+import { useWindowClick } from '@pi-lib/utils'
+import ModalScreen from '@pi-lib/modal-screen'
+import { box } from '@pi-lib/styles'
+import IconButton from '@pi-lib/icon-button'
 
 const StyledHeader = styled.h1`
   display: inline-block;
@@ -55,6 +60,10 @@ const StyledMenu = styled.div`
   }
 `
 
+const StyledImg = styled.img`
+  ${box({ bgColor: 'var(--light)' })}
+`
+
 export const Header = () => {
   const dispatch = useDispatch()
   const { page } = useSelector(
@@ -82,6 +91,11 @@ export const Header = () => {
     </Link>,
   ]
 
+  const arcTitle = 'Demo architecture diagram'
+  const settingsRef = useRef<HTMLDivElement>(null)
+  const [isActive, setIsActive] = useState(false)
+  useWindowClick(() => setIsActive(false), settingsRef)
+
   return (
     <Banner>
       <StyledHeader>
@@ -92,10 +106,16 @@ export const Header = () => {
         <StyledMenu>
           <CollapsibleMenu items={links} />
         </StyledMenu>
-        <div>
+        <div ref={settingsRef}>
           <CollapsibleMenu
             isSettings
             items={[
+              <IconButton
+                onClick={() => setIsActive(true)}
+                isSmall
+                src="https://pi-lib-assets.s3.eu-west-2.amazonaws.com/info.svg"
+                title="View tech demo architectural diagram"
+              />,
               <Select
                 label="Contrast"
                 name="contrast"
@@ -122,6 +142,15 @@ export const Header = () => {
           />
         </div>
       </StyledToolbar>
+
+      <ModalScreen {...{ isActive }}>
+        <StyledImg
+          src="https://pi-lib-assets.s3.eu-west-2.amazonaws.com/architecture.svg"
+          alt={arcTitle}
+          title={arcTitle}
+          style={{ maxWidth: '100%' }}
+        />
+      </ModalScreen>
     </Banner>
   )
 }

@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 
 export const useWindowClick = (
   callback: () => void,
-  containerRef?: React.RefObject<HTMLDivElement>
+  containerRef?: React.RefObject<HTMLElement>
 ) => {
   useEffect(() => {
     const onWindowClick = ({ target }: MouseEvent) => {

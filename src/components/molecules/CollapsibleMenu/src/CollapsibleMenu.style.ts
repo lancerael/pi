@@ -2,6 +2,7 @@ import styled, { css } from 'styled-components'
 import { Button } from 'react-aria-components'
 
 import { box } from '@pi-lib/styles'
+import { StyledCollapsibleMenuProps } from './CollapsibleMenu.style.types'
 
 export const StyledContainer = styled.div`
   width: auto;
@@ -13,48 +14,49 @@ export const StyledContainer = styled.div`
 `
 
 export const StyledOpener = styled(Button)`
-  border: 0;
-  padding: 0;
   background: none;
   cursor: pointer;
   position: absolute;
-  z-index: 9999;
+  z-index: 999;
   right: 0;
   top: 0;
-  transition-delay: 0.05s;
   border-radius: 5px;
-  ${({ isOpen }: any) =>
+  border: 1px solid rgba(0, 0, 0, 0%);
+  transition-delay: 0.05s;
+  ${({ isOpen }: StyledCollapsibleMenuProps) =>
     isOpen &&
     css`
       ${box()}
-      padding: 0;
-      border-bottom: 0;
       box-shadow: none;
+      border-radius: 5px 5px 0 0;
+      border-bottom: 1px solid var(--border);
       svg {
         fill: var(--text) !important;
       }
       .hamburger path {
         stroke: var(--text) !important;
       }
-      border-radius: 5px 5px 0 0;
     `}
+  padding: 0;
+  margin: 0;
 `
 
 export const StyledCollapsibleMenu = styled.div(
-  ({ isOpen }: any) => css`
+  ({ isOpen }: StyledCollapsibleMenuProps) => css`
     ${box()}
     border-radius: 5px 0 5px 5px;
     opacity: ${isOpen ? 1 : 0};
     position: absolute;
-    top: 36px;
+    top: 35px;
     right: 0;
     overflow: hidden;
-    z-index: 9998;
+    z-index: 998;
+    visibility: ${isOpen ? 'visible' : 'hidden'};
   `
 )
 
 export const StyledMenuInner = styled.div(
-  ({ isOpen }: any) => css`
+  ({ isOpen }: StyledCollapsibleMenuProps) => css`
     margin-top: ${isOpen ? '-4px' : '-200px'};
     margin-bottom: -4px;
     display: flex;

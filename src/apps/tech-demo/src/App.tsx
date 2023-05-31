@@ -18,7 +18,7 @@ export interface ITheming {
 
 const StyledColumn = styled.div<any>`
   max-width: ${({ maxWidth }: any) => maxWidth ?? '100%'};
-  height: 100%;
+  min-height: 100%;
   display: flex;
   flex-direction: column;
 
