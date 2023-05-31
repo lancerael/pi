@@ -2,6 +2,21 @@
   "name": "@pi-lib/advanced-button",
   "entries": [
     {
+      "date": "Wed, 31 May 2023 18:55:40 GMT",
+      "tag": "@pi-lib/advanced-button_v0.6.3",
+      "version": "0.6.3",
+      "comments": {
+        "patch": [
+          {
+            "author": "beachball",
+            "package": "@pi-lib/advanced-button",
+            "comment": "Bump @pi-lib/button to v1.5.1",
+            "commit": "fea4389c4adf2d7c6f5636b8577da584eccd7bc4"
+          }
+        ]
+      }
+    },
+    {
       "date": "Sat, 27 May 2023 23:26:23 GMT",
       "tag": "@pi-lib/advanced-button_v0.6.2",
       "version": "0.6.2",

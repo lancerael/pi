@@ -2,6 +2,21 @@
   "name": "@pi-lib/styles",
   "entries": [
     {
+      "date": "Wed, 31 May 2023 18:55:40 GMT",
+      "tag": "@pi-lib/styles_v1.6.0",
+      "version": "1.6.0",
+      "comments": {
+        "minor": [
+          {
+            "author": "122271901+lancerael-undo@users.noreply.github.com",
+            "package": "@pi-lib/styles",
+            "commit": "e999322c90b76acf8272e27cb934b5081b3129a6",
+            "comment": "Added architecture to menu"
+          }
+        ]
+      }
+    },
+    {
       "date": "Sun, 09 Apr 2023 16:26:18 GMT",
       "tag": "@pi-lib/styles_v1.5.0",
       "version": "1.5.0",

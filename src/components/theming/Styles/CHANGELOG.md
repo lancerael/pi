@@ -1,8 +1,16 @@
 # Change Log - @pi-lib/styles
 
-This log was last generated on Sun, 09 Apr 2023 16:26:18 GMT and should not be manually modified.
+This log was last generated on Wed, 31 May 2023 18:55:40 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 1.6.0
+
+Wed, 31 May 2023 18:55:40 GMT
+
+### Minor changes
+
+- Added architecture to menu (122271901+lancerael-undo@users.noreply.github.com)
 
 ## 1.5.0
 

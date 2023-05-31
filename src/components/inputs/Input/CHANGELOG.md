@@ -1,8 +1,16 @@
 # Change Log - @pi-lib/input
 
-This log was last generated on Wed, 12 Apr 2023 23:03:41 GMT and should not be manually modified.
+This log was last generated on Wed, 31 May 2023 18:55:40 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 0.4.1
+
+Wed, 31 May 2023 18:55:40 GMT
+
+### Patches
+
+- Bump @pi-lib/styles to v1.6.0
 
 ## 0.4.0
 

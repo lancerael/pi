@@ -1,8 +1,16 @@
 # Change Log - @pi-lib/advanced-button
 
-This log was last generated on Sat, 27 May 2023 23:26:23 GMT and should not be manually modified.
+This log was last generated on Wed, 31 May 2023 18:55:40 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 0.6.3
+
+Wed, 31 May 2023 18:55:40 GMT
+
+### Patches
+
+- Bump @pi-lib/button to v1.5.1
 
 ## 0.6.2
 

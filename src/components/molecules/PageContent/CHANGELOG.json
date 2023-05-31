@@ -2,6 +2,27 @@
   "name": "@pi-lib/page-content",
   "entries": [
     {
+      "date": "Wed, 31 May 2023 18:55:40 GMT",
+      "tag": "@pi-lib/page-content_v0.1.1",
+      "version": "0.1.1",
+      "comments": {
+        "patch": [
+          {
+            "author": "beachball",
+            "package": "@pi-lib/page-content",
+            "comment": "Bump @pi-lib/config to v0.4.0",
+            "commit": "fea4389c4adf2d7c6f5636b8577da584eccd7bc4"
+          },
+          {
+            "author": "beachball",
+            "package": "@pi-lib/page-content",
+            "comment": "Bump @pi-lib/styles to v1.6.0",
+            "commit": "fea4389c4adf2d7c6f5636b8577da584eccd7bc4"
+          }
+        ]
+      }
+    },
+    {
       "date": "Mon, 29 May 2023 23:53:17 GMT",
       "tag": "@pi-lib/page-content_v0.1.0",
       "version": "0.1.0",

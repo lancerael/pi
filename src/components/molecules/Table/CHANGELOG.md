@@ -1,8 +1,16 @@
 # Change Log - @pi-lib/table
 
-This log was last generated on Wed, 12 Apr 2023 23:03:41 GMT and should not be manually modified.
+This log was last generated on Wed, 31 May 2023 18:55:40 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 1.6.1
+
+Wed, 31 May 2023 18:55:40 GMT
+
+### Patches
+
+- Bump @pi-lib/styles to v1.6.0
 
 ## 1.6.0
 

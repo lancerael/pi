@@ -1,8 +1,17 @@
 # Change Log - @pi-lib/page-loader
 
-This log was last generated on Tue, 25 Apr 2023 06:49:46 GMT and should not be manually modified.
+This log was last generated on Wed, 31 May 2023 18:55:40 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 0.2.3
+
+Wed, 31 May 2023 18:55:40 GMT
+
+### Patches
+
+- Bump @pi-lib/config to v0.4.0
+- Bump @pi-lib/styles to v1.6.0
 
 ## 0.2.0
 
