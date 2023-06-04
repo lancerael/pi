@@ -37,7 +37,7 @@ const StyledChartContainer = styled.div`
     width: 96%;
     margin-top: 8px;
     color: var(--textSoft);
-    font-size: 12px;
+    font-size: 0.8em;
     font-weight: bold;
   }
 
@@ -48,13 +48,17 @@ const StyledChartContainer = styled.div`
 
   .tick text,
   .key text {
-    font-size: 10px;
+    font-size: 0.8em;
+  }
+
+  .x-labels {
+    font-size: 0.7rem;
   }
 
   text {
     fill: var(--textStrong) !important;
     font-weight: bold;
-    font-size: 12px;
+    font-size: 0.8em;
   }
 
   .tooltip {

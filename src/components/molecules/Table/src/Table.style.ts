@@ -9,12 +9,12 @@ export const StyledTable = styled.table`
     padding: 6px;
     text-align: center;
     &:not(:last-of-type) {
-      border-right: 2px solid var(--mark);
+      border-right: 1px solid var(--mark);
     }
   }
 
   & tr:last-of-type {
-    border-bottom: 2px solid var(--mark);
+    border-bottom: 1px solid var(--mark);
   }
 
   & * {

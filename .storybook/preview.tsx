@@ -7,9 +7,10 @@ window.jest = jest
 
 const withTheme: DecoratorFn = (StoryFn, context) => {
   const themeName = context.parameters.themeName ?? context.globals.themeName
-  const contrast = context.parameters.contrast ?? context.globals.contrast
+  const scheme = context.parameters.scheme ?? context.globals.scheme
+  const fontSize = context.parameters.fontSize ?? context.globals.fontSize
   return (
-    <Theme {...{ themeName, contrast }}>
+    <Theme {...{ themeName, scheme, fontSize }}>
       <StoryFn />
     </Theme>
   )
@@ -58,9 +59,9 @@ export const globalTypes = {
       title: 'Theme',
     },
   },
-  contrast: {
+  scheme: {
     name: 'Contrast',
-    description: 'Global contrast for theme',
+    description: 'Global scheme for theme',
     defaultValue: 'light',
     toolbar: {
       icon: 'circle',
@@ -70,6 +71,19 @@ export const globalTypes = {
         { value: '', icon: 'circlehollow', title: 'Device default' },
       ],
       title: 'Contrast',
+    },
+  },
+  fontSize: {
+    name: 'Font size',
+    description: 'Global font size',
+    defaultValue: 'small',
+    toolbar: {
+      icon: 'circle',
+      items: [
+        { value: 'small', icon: 'circlehollow', title: 'Small' },
+        { value: 'large', icon: 'circlehollow', title: 'Large' },
+      ],
+      title: 'Font size',
     },
   },
 }

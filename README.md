@@ -1,12 +1,76 @@
-[![Storybook](https://cdn.jsdelivr.net/gh/storybookjs/brand@main/badge/badge-storybook.svg)](https://main.d3nmdhmk6s7nee.amplifyapp.com)
+[![Storybook](https://cdn.jsdelivr.net/gh/storybookjs/brand@main/badge/badge-storybook.svg)](https://pi.lance-taylor.com)
 
 # pi-lib
 
-Monorepo of mainly React UI components, but also contains supporting libraries and utilities. It supports theming and comes with some starter themes. Check this link for example usage and props.
+Monorepo of mainly React UI components, but also contains supporting libraries and utilities. It supports theming and comes with some starter themes. Check the Storybook link above for example usage and props.
 
 All packages prefixed with `@pi-lib/...` can be installed individually as npm modules. They designed for use with TypeScript, but they are also bundled in vanilla JS if you want to install your own dependencies. In this case import from the package name with a suffix of `/vanilla`
 
+
+
+## _Interactions_
+
+#### Button
+
+_@pi-lib/button_ - A simple button, styled via Pi theme.
+
+#### IconButton
+
+_@pi-lib/icon-button_ - A button with an icon, styled via Pi theme.
+
+#### Link
+
+_@pi-lib/link_ - A simple link, styled via Pi theme.
+
+#### AdvancedButton
+
+_@pi-lib/advanced-button_ - An advanced button, with a loader.
+
+
+
+## _UI_
+
+#### CollapsibleMenu
+
+_@pi-lib/collapsible-menu_ - A themed dropdown menu for page navigation.
+
+#### PageLoader
+
+_@pi-lib/page-loader_ - A themed full scrteen loader.
+
+#### Loader
+
+_@pi-lib/loader_ - A simple themed loading spinner.
+
+#### Tooltip
+
+_@pi-lib/tooltip_ - A themed tooltip.
+
+
+
+## _Layout_
+
+#### Banner
+
+_@pi-lib/banner_ - A banner used for header or footer, styled via Pi theme.
+
+#### ModalScreen
+
+_@pi-lib/modal-screen_ - A screen used for modals, styled via Pi theme.
+
+#### Table
+
+_@pi-lib/table_ - An expandable table, styled via Pi theme.
+
+#### PageContent
+
+_@pi-lib/page-content_ - A page layout with a sidebar, styled via Pi theme.
+
+
+
 ## _Charts_
+
+#### Charts
 
 _@pi-lib/charts_ is not a React component, but a standalone charting library that can be used in any framework.
 
@@ -22,31 +86,23 @@ _@pi-lib/candlestick-chart_ - A React candlestick chart used to show the market 
 
 [Candlestick Chart Docs](https://github.com/lancerael/pi/blob/main/src/components/molecules/CandlestickChart/README.md)
 
-## _UI_
+#### WorldMap
 
-#### Loader
+_@pi-lib/world-map_ - A React component that uses d3 to make a simple world map chart.
 
-_@pi-lib/loader_ - A simple themed loading spinner.
 
-#### Tooltip
 
-_@pi-lib/tooltip_ - A themed tooltip.
+## _Inputs_
 
-## _Interactions_
+#### Input
 
-#### Button
+_@pi-lib/input_ - A form input component, styled via Pi theme.
 
-_@pi-lib/button_ - A simple button, styled via Pi theme.
+#### Select
 
-#### AdvancedButton
+_@pi-lib/select_ - A select dropdown, styled via Pi theme.
 
-_@pi-lib/advanced-button_ - An advanced button, with a loader.
 
-## _Layout_
-
-#### Table
-
-_@pi-lib/table_ - An expandable table, styled via Pi theme.
 
 ## Develpoment
 

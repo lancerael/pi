@@ -1,21 +1,25 @@
-import Select from '@pi-lib/select'
-import Banner from '@pi-lib/banner'
+import { useRef, useState } from 'react'
 import styled from 'styled-components'
 import { useDispatch, useSelector } from 'react-redux'
+import { ReactSVG } from 'react-svg'
 import {
   updatePage,
-  updateContrast,
+  updateScheme,
   updateTheme,
+  updateFontSize,
   SettingsState,
 } from '../state/reducers/settingsReducer'
 import { Logo } from '../images/logo'
 import Link from '@pi-lib/link'
 import CollapsibleMenu from '@pi-lib/collapsible-menu'
-import { useRef, useState } from 'react'
 import { useWindowClick } from '@pi-lib/utils'
 import ModalScreen from '@pi-lib/modal-screen'
 import { box } from '@pi-lib/styles'
+import Select from '@pi-lib/select'
+import Banner from '@pi-lib/banner'
+
 import IconButton from '@pi-lib/icon-button'
+import TechList from './TechList'
 
 const StyledHeader = styled.h1`
   display: inline-block;
@@ -26,16 +30,6 @@ const StyledHeader = styled.h1`
 
   svg {
     padding-top: 6px;
-  }
-
-  @media (max-width: 540px) {
-    font-size: 1.5em;
-    max-width: 160px;
-    line-height: 24px;
-
-    svg {
-      padding-top: 10px;
-    }
   }
 `
 
@@ -60,15 +54,36 @@ const StyledMenu = styled.div`
   }
 `
 
-const StyledImg = styled.img`
+const StyledInfo = styled.div`
+  display: flex;
+  flex-direction: column;
+
   ${box({ bgColor: 'var(--light)' })}
+
+  p {
+    color: var(--dark);
+    padding: 8px;
+    margin: 0;
+    font-size: 1.3rem;
+  }
+`
+
+const StyledPalette = styled(ReactSVG)`
+  svg {
+    fill: var(--textSoft);
+    width: 1em;
+    height: 1em;
+    margin-top: 1px;
+  }
 `
 
 export const Header = () => {
   const dispatch = useDispatch()
-  const { page } = useSelector(
+  const { page, scheme, fontSize } = useSelector(
     ({ settings }: { settings: SettingsState }) => settings
   )
+  const altScheme = scheme === 'dark' ? 'light' : 'dark'
+  const altFontSize = fontSize === 'large' ? 'small' : 'large'
 
   const links = [
     <Link
@@ -91,6 +106,29 @@ export const Header = () => {
     </Link>,
   ]
 
+  const Actions = (
+    <div style={{ display: 'flex', gap: '8px', justifyContent: 'flex-end' }}>
+      <IconButton
+        onClick={() => dispatch(updateFontSize(altFontSize))}
+        isSmall
+        src={`https://pi-lib-assets.s3.eu-west-2.amazonaws.com/font-${fontSize}.svg`}
+        title={`Switch to ${altFontSize} font`}
+      />
+      <IconButton
+        onClick={() => dispatch(updateScheme(altScheme))}
+        isSmall
+        src={`https://pi-lib-assets.s3.eu-west-2.amazonaws.com/moon-${scheme}.svg`}
+        title={`Switch to ${altScheme} mode`}
+      />
+      <IconButton
+        onClick={() => setIsActive(true)}
+        isSmall
+        src="https://pi-lib-assets.s3.eu-west-2.amazonaws.com/info.svg"
+        title="View tech demo architectural diagram"
+      />
+    </div>
+  )
+
   const arcTitle = 'Demo architecture diagram'
   const settingsRef = useRef<HTMLDivElement>(null)
   const [isActive, setIsActive] = useState(false)
@@ -99,7 +137,7 @@ export const Header = () => {
   return (
     <Banner>
       <StyledHeader>
-        <Logo size={34} fill="var(--outline)" /> Pi Tech Demo
+        <Logo size={'1.2em'} fill="var(--outline)" /> Pi Tech Demo
       </StyledHeader>
       <StyledToolbar>
         <StyledLinks>{links}</StyledLinks>
@@ -110,46 +148,53 @@ export const Header = () => {
           <CollapsibleMenu
             isSettings
             items={[
-              <IconButton
-                onClick={() => setIsActive(true)}
-                isSmall
-                src="https://pi-lib-assets.s3.eu-west-2.amazonaws.com/info.svg"
-                title="View tech demo architectural diagram"
-              />,
-              <Select
-                label="Contrast"
-                name="contrast"
-                onChange={(e: any) => dispatch(updateContrast(e.target.value))}
-                options={[
-                  { value: '', content: 'Default' },
-                  { content: 'Dark' },
-                  { content: 'Light' },
-                ]}
-              />,
-              <Select
-                label="Theme"
-                name="theme"
-                onChange={(e: any) => dispatch(updateTheme(e.target.value))}
-                options={[
-                  { content: 'Andro' },
-                  { content: 'Avocado' },
-                  { content: 'Electron' },
-                  { content: 'Pebble' },
-                  { content: 'Rose' },
-                ]}
-              />,
+              Actions,
+              <div
+                style={{
+                  display: 'flex',
+                  gap: '8px',
+                  justifyContent: 'flex-end',
+                  fill: 'var(--outline)',
+                }}
+                title="Choose theme palette"
+              >
+                <StyledPalette src="https://pi-lib-assets.s3.eu-west-2.amazonaws.com/palette.svg" />
+                <Select
+                  name="theme"
+                  onChange={(e: any) => dispatch(updateTheme(e.target.value))}
+                  options={[
+                    { content: 'Andro' },
+                    { content: 'Avocado' },
+                    { content: 'Electron' },
+                    { content: 'Pebble' },
+                    { content: 'Rose' },
+                  ]}
+                  title="Choose theme palette"
+                />
+              </div>,
             ]}
           />
         </div>
       </StyledToolbar>
 
       <ModalScreen {...{ isActive }}>
-        <StyledImg
-          src="https://pi-lib-assets.s3.eu-west-2.amazonaws.com/architecture.svg"
-          alt={arcTitle}
-          title={arcTitle}
-          style={{ maxWidth: '100%' }}
-        />
+        <StyledInfo>
+          <img
+            src="https://pi-lib-assets.s3.eu-west-2.amazonaws.com/architecture.svg"
+            alt={arcTitle}
+            title={arcTitle}
+            style={{ maxWidth: '100%' }}
+          />
+          <div
+            style={{
+              display: 'flex',
+              flexWrap: 'wrap',
+              gap: '8px',
+            }}
+          >
+            <TechList />
+          </div>
+        </StyledInfo>
       </ModalScreen>
     </Banner>
   )

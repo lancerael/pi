@@ -4,21 +4,21 @@ import {
   createGlobalStyle,
 } from 'styled-components'
 import { getTheme } from './theme'
-import { Contrast } from './theme.types'
+import { Scheme, FontSize, SizeMap, ThemeMap } from './theme.types'
 import { ThemeType, themeList } from './themes'
 
-const getVars = (scheme: any) =>
+const getVars = (scheme: Scheme) =>
   Object.entries(scheme).reduce(
     (acc, [key, val]) => `${acc} --${key}: ${val};`,
     ''
   )
 
 export const getGlobalStyle = (
-  { colors: { light, dark = light }, fonts, fontSizes }: any = getTheme(),
-  contrast?: Contrast
+  { colors: { light, dark = light }, fonts }: any = getTheme(),
+  scheme?: Scheme
 ) => createGlobalStyle`
   body {
-    ${getVars(contrast === 'dark' ? dark : light)}
+    ${getVars(scheme === 'dark' ? dark : light)}
     font-family: ${fonts.join(', ')};
     background-color: var(--bg);
     color: var(--text);
@@ -37,24 +37,31 @@ export const getGlobalStyle = (
 
   @media (prefers-color-scheme: dark) {
     body {
-      ${getVars(contrast === 'light' ? light : dark)}
+      ${getVars(scheme === 'light' ? light : dark)}
     }
   }
 `
 
-type ContrastMap = { [key in Contrast]: GlobalStyleComponent<{}, DefaultTheme> }
-type ThemeMap = { [key in ThemeType]: ContrastMap }
+const getGlobalFontSize = (size: FontSize) => createGlobalStyle`
+  :root {
+    font-size: ${size === 'large' ? '24px' : '16px'};
+  }
+`
 
 export const globalStyles: ThemeMap = themeList.reduce(
   (accStyles, themeName: ThemeType) => {
     return {
       ...accStyles,
       [themeName]: {
-        'light': getGlobalStyle(getTheme(themeName), 'light'),
-        'dark': getGlobalStyle(getTheme(themeName), 'dark'),
-        '': getGlobalStyle(getTheme(themeName)),
+        light: getGlobalStyle(getTheme(themeName), 'light'),
+        dark: getGlobalStyle(getTheme(themeName), 'dark'),
       },
     }
   },
   {} as ThemeMap
 )
+
+export const globalFontSizes: SizeMap = {
+  small: getGlobalFontSize('small'),
+  large: getGlobalFontSize('large'),
+}

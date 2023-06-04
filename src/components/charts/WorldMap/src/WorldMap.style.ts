@@ -15,7 +15,7 @@ export const StyledWorldMapContainer = styled.div(
         font-weight: bold;
         bottom: 4px;
         text-align: center;
-        font-size: 0.8em;
+        font-size: 0.8rem;
         width: 100%;
       }
     `

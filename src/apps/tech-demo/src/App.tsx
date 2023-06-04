@@ -1,6 +1,6 @@
 import React from 'react'
 import { Theme } from '@pi-lib/styles'
-import { Contrast } from '@pi-lib/styles/src/theme.types'
+import { Scheme } from '@pi-lib/styles/src/theme.types'
 import { ThemeType } from '@pi-lib/styles/src/themes'
 import { useSelector } from 'react-redux'
 import { Outlet } from 'react-router-dom'
@@ -13,7 +13,7 @@ import { SettingsState } from './state/reducers/settingsReducer'
 
 export interface ITheming {
   themeName: ThemeType
-  contrast: Contrast
+  scheme: Scheme
 }
 
 const StyledColumn = styled.div<any>`
@@ -29,11 +29,11 @@ const StyledColumn = styled.div<any>`
 `
 
 const App = () => {
-  const { contrast, themeName } = useSelector(
+  const themeProps = useSelector(
     ({ settings }: { settings: SettingsState }) => settings
   )
   return (
-    <Theme {...{ contrast, themeName }}>
+    <Theme {...themeProps}>
       <StyledColumn>
         <Header />
         <Outlet />

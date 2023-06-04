@@ -1,4 +1,7 @@
-export const Hamburger = ({ size = 32, color = 'var(--outline)' }) => {
+export const Hamburger = ({
+  size = 'calc(20px + 0.6rem)',
+  color = 'var(--outline)',
+}) => {
   const pathProps: React.SVGProps<SVGPathElement> = {
     stroke: color,
     strokeWidth: 2,
@@ -6,8 +9,8 @@ export const Hamburger = ({ size = 32, color = 'var(--outline)' }) => {
   }
   return (
     <svg
-      width={`${size}px`}
-      height={`${size}px`}
+      width={size}
+      height={size}
       viewBox="0 0 24 24"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

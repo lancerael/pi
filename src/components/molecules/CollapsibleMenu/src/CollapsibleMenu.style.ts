@@ -9,8 +9,8 @@ export const StyledContainer = styled.div`
   text-align: right;
   position: relative;
   white-space: nowrap;
-  width: 32px;
-  height: 32px;
+  width: calc(20px + 0.6rem);
+  height: calc(20px + 0.6rem);
 `
 
 export const StyledOpener = styled(Button)`
@@ -19,7 +19,7 @@ export const StyledOpener = styled(Button)`
   position: absolute;
   z-index: 999;
   right: 0;
-  top: 0;
+  top: -2px;
   border-radius: 5px;
   border: 1px solid rgba(0, 0, 0, 0%);
   transition-delay: 0.05s;
