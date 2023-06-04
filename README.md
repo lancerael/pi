@@ -6,8 +6,6 @@ Monorepo of mainly React UI components, but also contains supporting libraries a
 
 All packages prefixed with `@pi-lib/...` can be installed individually as npm modules. They designed for use with TypeScript, but they are also bundled in vanilla JS if you want to install your own dependencies. In this case import from the package name with a suffix of `/vanilla`
 
-
-
 ## _Interactions_
 
 #### Button
@@ -25,8 +23,6 @@ _@pi-lib/link_ - A simple link, styled via Pi theme.
 #### AdvancedButton
 
 _@pi-lib/advanced-button_ - An advanced button, with a loader.
-
-
 
 ## _UI_
 
@@ -46,8 +42,6 @@ _@pi-lib/loader_ - A simple themed loading spinner.
 
 _@pi-lib/tooltip_ - A themed tooltip.
 
-
-
 ## _Layout_
 
 #### Banner
@@ -65,8 +59,6 @@ _@pi-lib/table_ - An expandable table, styled via Pi theme.
 #### PageContent
 
 _@pi-lib/page-content_ - A page layout with a sidebar, styled via Pi theme.
-
-
 
 ## _Charts_
 
@@ -90,8 +82,6 @@ _@pi-lib/candlestick-chart_ - A React candlestick chart used to show the market 
 
 _@pi-lib/world-map_ - A React component that uses d3 to make a simple world map chart.
 
-
-
 ## _Inputs_
 
 #### Input
@@ -101,8 +91,6 @@ _@pi-lib/input_ - A form input component, styled via Pi theme.
 #### Select
 
 _@pi-lib/select_ - A select dropdown, styled via Pi theme.
-
-
 
 ## Develpoment
 
