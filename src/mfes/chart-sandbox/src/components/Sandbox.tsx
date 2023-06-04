@@ -1,5 +1,5 @@
 import React from 'react'
-import { Contrast } from '@pi-lib/styles/src/theme.types'
+import { Scheme } from '@pi-lib/styles/src/theme.types'
 import { ThemeType } from '@pi-lib/styles/src/themes'
 import PageContent from '@pi-lib/page-content'
 
@@ -8,7 +8,7 @@ import Editor from './Editor'
 
 export interface iTheming {
   themeName: ThemeType
-  contrast: Contrast
+  scheme: Scheme
 }
 
 const Sandbox = () => {

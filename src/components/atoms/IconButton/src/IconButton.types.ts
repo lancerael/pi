@@ -15,4 +15,8 @@ export interface IconButtonProps
    * Should it show a small version of the button
    */
   isSmall?: boolean
+  /**
+   * Set a specific size for the image
+   */
+  size?: string
 }

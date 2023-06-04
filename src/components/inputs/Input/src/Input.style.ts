@@ -8,7 +8,7 @@ export const StyledInput = styled.div`
 
   & label {
     display: inline-block;
-    min-width: 20%;
+    min-width: calc(15% + 2em);
   }
 
   & input {

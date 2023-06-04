@@ -1,3 +1,4 @@
+import { DefaultTheme, GlobalStyleComponent } from 'styled-components'
 import { ThemeType } from './themes'
 import { PropsWithChildren } from 'react'
 
@@ -21,10 +22,18 @@ export interface ThemedComponent {
 
 export type ThemedComponentWithChildren = ThemedComponent & PropsWithChildren
 
-export type Contrast = 'light' | 'dark' | ''
+export type Scheme = 'light' | 'dark' | ''
 
 export interface IThemeProps extends Partial<ThemedComponentWithChildren> {
   themeName: ThemeType
   themeOverrides?: ITheme
-  contrast?: Contrast
+  scheme?: Scheme
+  fontSize?: FontSize
 }
+
+export type ContrastMap = {
+  [key in Scheme]: GlobalStyleComponent<{}, DefaultTheme>
+}
+export type ThemeMap = { [key in ThemeType]: ContrastMap }
+export type FontSize = 'small' | 'large'
+export type SizeMap = Record<FontSize, GlobalStyleComponent<{}, DefaultTheme>>

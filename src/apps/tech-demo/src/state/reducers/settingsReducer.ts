@@ -1,10 +1,11 @@
-import { Contrast } from '@pi-lib/styles/src/theme.types'
+import { Scheme } from '@pi-lib/styles/src/theme.types'
 import { ThemeType } from '@pi-lib/styles/src/themes'
 import { createSlice } from '@reduxjs/toolkit'
 
 export interface SettingsState {
   themeName: ThemeType
-  contrast: Contrast
+  fontSize: 'small' | 'large'
+  scheme: Scheme
   page: string
 }
 
@@ -14,7 +15,10 @@ interface Payload {
 
 const initialState: SettingsState = {
   themeName: 'andro',
-  contrast: '',
+  scheme: !!matchMedia('(prefers-color-scheme: dark)').matches
+    ? 'dark'
+    : 'light',
+  fontSize: 'small',
   page: '/',
 }
 
@@ -25,8 +29,14 @@ const settingsSlice = createSlice({
     updateTheme(state: SettingsState, { payload }: { payload: ThemeType }) {
       state.themeName = payload
     },
-    updateContrast(state: SettingsState, { payload }: { payload: Contrast }) {
-      state.contrast = payload
+    updateScheme(state: SettingsState, { payload }: { payload: Scheme }) {
+      state.scheme = payload
+    },
+    updateFontSize(
+      state: SettingsState,
+      { payload }: { payload: SettingsState['fontSize'] }
+    ) {
+      state.fontSize = payload
     },
     updatePage(state: SettingsState, { payload }: Payload) {
       state.page = payload
@@ -34,6 +44,7 @@ const settingsSlice = createSlice({
   },
 })
 
-export const { updateTheme, updateContrast, updatePage } = settingsSlice.actions
+export const { updateTheme, updateScheme, updateFontSize, updatePage } =
+  settingsSlice.actions
 
 export default settingsSlice.reducer

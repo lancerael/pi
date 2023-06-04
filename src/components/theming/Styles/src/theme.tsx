@@ -1,6 +1,6 @@
 import React from 'react'
 import { ThemeProvider } from 'styled-components'
-import { getGlobalStyle, globalStyles } from './styles'
+import { globalFontSizes, globalStyles } from './styles'
 import * as themes from './themes'
 import { ThemeType } from './themes'
 import { ITheme, IThemeProps } from './theme.types'
@@ -35,11 +35,11 @@ export const statusColors = {
 }
 
 export const mergeColours = (
-  contrast: 'dark' | 'light',
+  scheme: 'dark' | 'light',
   themeName: ThemeType
 ) => ({
-  ...statusColors[contrast],
-  ...themes[themeName][contrast],
+  ...statusColors[scheme],
+  ...themes[themeName][scheme],
 })
 
 export const getTheme = (
@@ -59,12 +59,18 @@ export const Theme = ({
   themeName = 'andro',
   themeOverrides,
   theme = getTheme(themeName, themeOverrides),
-  contrast = 'light',
+  scheme = 'light',
+  fontSize = 'small',
 }: IThemeProps) => {
-  const GlobalStyle = globalStyles[themeName]?.[contrast] ?? <></>
+  const defaultTheme = !!matchMedia('(prefers-color-scheme: dark)').matches
+    ? 'dark'
+    : 'light'
+  const GlobalStyle = globalStyles[themeName]?.[scheme || defaultTheme] ?? <></>
+  const SizeStyle = globalFontSizes[fontSize]
   return (
     <ThemeProvider {...{ theme }}>
       <GlobalStyle />
+      <SizeStyle />
       {children}
     </ThemeProvider>
   )

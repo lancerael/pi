@@ -1,0 +1,7 @@
+{
+  "type": "minor",
+  "comment": "Enhancements to header and footer",
+  "packageName": "@pi-lib/styles",
+  "email": "122271901+lancerael-undo@users.noreply.github.com",
+  "dependentChangeType": "patch"
+}
