@@ -1,8 +1,16 @@
 # Change Log - @pi-lib/charts
 
-This log was last generated on Fri, 07 Apr 2023 22:16:26 GMT and should not be manually modified.
+This log was last generated on Sun, 04 Jun 2023 23:47:21 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 0.11.0
+
+Sun, 04 Jun 2023 23:47:21 GMT
+
+### Minor changes
+
+- Enhancements to header and footer (122271901+lancerael-undo@users.noreply.github.com)
 
 ## 0.10.2
 

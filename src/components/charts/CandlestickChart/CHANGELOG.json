@@ -2,6 +2,39 @@
   "name": "@pi-lib/candlestick-chart",
   "entries": [
     {
+      "date": "Sun, 04 Jun 2023 23:47:21 GMT",
+      "tag": "@pi-lib/candlestick-chart_v1.3.0",
+      "version": "1.3.0",
+      "comments": {
+        "minor": [
+          {
+            "author": "122271901+lancerael-undo@users.noreply.github.com",
+            "package": "@pi-lib/candlestick-chart",
+            "commit": "7383298db69bcdfd26533fb6c025bcc00e4d9e38",
+            "comment": "Enhancements to header and footer"
+          },
+          {
+            "author": "beachball",
+            "package": "@pi-lib/candlestick-chart",
+            "comment": "Bump @pi-lib/button to v1.5.2",
+            "commit": "9e30dba78519ae6006f8a643dfafca35f9b94adb"
+          },
+          {
+            "author": "beachball",
+            "package": "@pi-lib/candlestick-chart",
+            "comment": "Bump @pi-lib/styles to v1.7.0",
+            "commit": "9e30dba78519ae6006f8a643dfafca35f9b94adb"
+          },
+          {
+            "author": "beachball",
+            "package": "@pi-lib/candlestick-chart",
+            "comment": "Bump @pi-lib/tooltip to v1.3.3",
+            "commit": "9e30dba78519ae6006f8a643dfafca35f9b94adb"
+          }
+        ]
+      }
+    },
+    {
       "date": "Wed, 31 May 2023 18:55:40 GMT",
       "tag": "@pi-lib/candlestick-chart_v1.2.7",
       "version": "1.2.7",

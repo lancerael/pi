@@ -2,6 +2,27 @@
   "name": "@pi-lib/page-loader",
   "entries": [
     {
+      "date": "Sun, 04 Jun 2023 23:47:21 GMT",
+      "tag": "@pi-lib/page-loader_v0.2.4",
+      "version": "0.2.4",
+      "comments": {
+        "patch": [
+          {
+            "author": "beachball",
+            "package": "@pi-lib/page-loader",
+            "comment": "Bump @pi-lib/config to v0.4.0",
+            "commit": "9e30dba78519ae6006f8a643dfafca35f9b94adb"
+          },
+          {
+            "author": "beachball",
+            "package": "@pi-lib/page-loader",
+            "comment": "Bump @pi-lib/styles to v1.7.0",
+            "commit": "9e30dba78519ae6006f8a643dfafca35f9b94adb"
+          }
+        ]
+      }
+    },
+    {
       "date": "Wed, 31 May 2023 18:55:40 GMT",
       "tag": "@pi-lib/page-loader_v0.2.3",
       "version": "0.2.3",

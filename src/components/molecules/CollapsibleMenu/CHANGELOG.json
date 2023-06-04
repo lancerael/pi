@@ -2,6 +2,33 @@
   "name": "@pi-lib/collapsible-menu",
   "entries": [
     {
+      "date": "Sun, 04 Jun 2023 23:47:21 GMT",
+      "tag": "@pi-lib/collapsible-menu_v0.4.0",
+      "version": "0.4.0",
+      "comments": {
+        "minor": [
+          {
+            "author": "122271901+lancerael-undo@users.noreply.github.com",
+            "package": "@pi-lib/collapsible-menu",
+            "commit": "7383298db69bcdfd26533fb6c025bcc00e4d9e38",
+            "comment": "Enhancements to header and footer"
+          },
+          {
+            "author": "beachball",
+            "package": "@pi-lib/collapsible-menu",
+            "comment": "Bump @pi-lib/config to v0.4.0",
+            "commit": "9e30dba78519ae6006f8a643dfafca35f9b94adb"
+          },
+          {
+            "author": "beachball",
+            "package": "@pi-lib/collapsible-menu",
+            "comment": "Bump @pi-lib/styles to v1.7.0",
+            "commit": "9e30dba78519ae6006f8a643dfafca35f9b94adb"
+          }
+        ]
+      }
+    },
+    {
       "date": "Wed, 31 May 2023 18:55:40 GMT",
       "tag": "@pi-lib/collapsible-menu_v0.3.0",
       "version": "0.3.0",

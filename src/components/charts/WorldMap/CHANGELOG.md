@@ -1,8 +1,17 @@
 # Change Log - @pi-lib/world-map
 
-This log was last generated on Tue, 25 Apr 2023 06:49:46 GMT and should not be manually modified.
+This log was last generated on Sun, 04 Jun 2023 23:47:21 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 0.5.0
+
+Sun, 04 Jun 2023 23:47:21 GMT
+
+### Minor changes
+
+- Enhancements to header and footer (122271901+lancerael-undo@users.noreply.github.com)
+- Bump @pi-lib/types to v0.1.0
 
 ## 0.4.0
 

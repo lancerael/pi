@@ -2,6 +2,21 @@
   "name": "@pi-lib/charts",
   "entries": [
     {
+      "date": "Sun, 04 Jun 2023 23:47:21 GMT",
+      "tag": "@pi-lib/charts_v0.11.0",
+      "version": "0.11.0",
+      "comments": {
+        "minor": [
+          {
+            "author": "122271901+lancerael-undo@users.noreply.github.com",
+            "package": "@pi-lib/charts",
+            "commit": "7383298db69bcdfd26533fb6c025bcc00e4d9e38",
+            "comment": "Enhancements to header and footer"
+          }
+        ]
+      }
+    },
+    {
       "date": "Fri, 07 Apr 2023 22:16:26 GMT",
       "tag": "@pi-lib/charts_v0.10.2",
       "version": "0.10.2",
