@@ -28,3 +28,11 @@ Default.args = {
   src: 'https://cdn.svgporn.com/logos/github-icon.svg',
   isExternal: true,
 }
+
+export const Small = Template.bind({})
+Small.args = {
+  href: 'https://www.google.com',
+  src: 'https://cdn.svgporn.com/logos/github-icon.svg',
+  isExternal: true,
+  isSmall: true,
+}
