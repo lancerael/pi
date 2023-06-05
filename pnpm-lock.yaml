@@ -248,7 +248,7 @@ importers:
         specifier: workspace:^
         version: link:../../components/molecules/CollapsibleMenu
       '@pi-lib/icon-button':
-        specifier: ^0.6.0
+        specifier: ^0.6.1
         version: link:../../components/atoms/IconButton
       '@pi-lib/input':
         specifier: '*'
