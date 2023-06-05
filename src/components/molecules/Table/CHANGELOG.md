@@ -1,8 +1,16 @@
 # Change Log - @pi-lib/table
 
-This log was last generated on Sun, 04 Jun 2023 23:47:21 GMT and should not be manually modified.
+This log was last generated on Mon, 05 Jun 2023 23:43:38 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 1.7.1
+
+Mon, 05 Jun 2023 23:43:38 GMT
+
+### Patches
+
+- Demo settings enhancements (122271901+lancerael-undo@users.noreply.github.com)
 
 ## 1.7.0
 

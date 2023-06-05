@@ -1,6 +1,6 @@
 {
   "name": "@pi-lib/icon-button",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "description": "",
   "type": "module",
   "main": "./src/index.ts",

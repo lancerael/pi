@@ -2,6 +2,21 @@
   "name": "@pi-lib/link",
   "entries": [
     {
+      "date": "Mon, 05 Jun 2023 23:43:38 GMT",
+      "tag": "@pi-lib/link_v0.6.3",
+      "version": "0.6.3",
+      "comments": {
+        "undefined": [
+          {
+            "author": "beachball",
+            "package": "@pi-lib/link",
+            "comment": "Bump @pi-lib/config to v0.4.0",
+            "commit": "358123d86ff55a9a63363fdf6f102e3c99eaf98b"
+          }
+        ]
+      }
+    },
+    {
       "date": "Sun, 04 Jun 2023 23:47:21 GMT",
       "tag": "@pi-lib/link_v0.6.2",
       "version": "0.6.2",
