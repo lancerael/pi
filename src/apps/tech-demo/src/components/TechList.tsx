@@ -1,4 +1,5 @@
 import IconButton from '@pi-lib/icon-button'
+import { ItemList } from './ItemList'
 
 const S3 = 'https://pi-lib-assets.s3.eu-west-2.amazonaws.com/'
 
@@ -31,16 +32,18 @@ const ICONS: { [key: string]: string } = {
 
 export const Footer = () => {
   return (
-    <>
-      {Object.entries(ICONS).map(([title, href], i) => {
-        const src = `${S3}${title.split(' ').join('-').toLowerCase()}.svg`
-        return (
-          !!title && (
-            <IconButton key={title} isExternal {...{ src, href, title }} />
+    <div style={{ padding: '12px' }}>
+      <ItemList wrap>
+        {Object.entries(ICONS).map(([title, href], i) => {
+          const src = `${S3}${title.split(' ').join('-').toLowerCase()}.svg`
+          return (
+            !!title && (
+              <IconButton key={title} isExternal {...{ src, href, title }} />
+            )
           )
-        )
-      })}
-    </>
+        })}
+      </ItemList>
+    </div>
   )
 }
 export default Footer

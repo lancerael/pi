@@ -20,6 +20,7 @@ import Banner from '@pi-lib/banner'
 
 import IconButton from '@pi-lib/icon-button'
 import TechList from './TechList'
+import { ItemList } from './ItemList'
 
 const StyledHeader = styled.h1`
   display: inline-block;
@@ -57,6 +58,8 @@ const StyledMenu = styled.div`
 const StyledInfo = styled.div`
   display: flex;
   flex-direction: column;
+  max-height: 100%;
+  overflow-x: auto;
 
   ${box({ bgColor: 'var(--light)' })}
 
@@ -106,29 +109,6 @@ export const Header = () => {
     </Link>,
   ]
 
-  const Actions = (
-    <div style={{ display: 'flex', gap: '8px', justifyContent: 'flex-end' }}>
-      <IconButton
-        onClick={() => dispatch(updateFontSize(altFontSize))}
-        isSmall
-        src={`https://pi-lib-assets.s3.eu-west-2.amazonaws.com/font-${fontSize}.svg`}
-        title={`Switch to ${altFontSize} font`}
-      />
-      <IconButton
-        onClick={() => dispatch(updateScheme(altScheme))}
-        isSmall
-        src={`https://pi-lib-assets.s3.eu-west-2.amazonaws.com/moon-${scheme}.svg`}
-        title={`Switch to ${altScheme} mode`}
-      />
-      <IconButton
-        onClick={() => setIsActive(true)}
-        isSmall
-        src="https://pi-lib-assets.s3.eu-west-2.amazonaws.com/info.svg"
-        title="View tech demo architectural diagram"
-      />
-    </div>
-  )
-
   const arcTitle = 'Demo architecture diagram'
   const settingsRef = useRef<HTMLDivElement>(null)
   const [isActive, setIsActive] = useState(false)
@@ -148,16 +128,27 @@ export const Header = () => {
           <CollapsibleMenu
             isSettings
             items={[
-              Actions,
-              <div
-                style={{
-                  display: 'flex',
-                  gap: '8px',
-                  justifyContent: 'flex-end',
-                  fill: 'var(--outline)',
-                }}
-                title="Choose theme palette"
-              >
+              <ItemList>
+                <IconButton
+                  onClick={() => dispatch(updateFontSize(altFontSize))}
+                  isSmall
+                  src={`https://pi-lib-assets.s3.eu-west-2.amazonaws.com/font-${fontSize}.svg`}
+                  title={`Switch to ${altFontSize} font`}
+                />
+                <IconButton
+                  onClick={() => dispatch(updateScheme(altScheme))}
+                  isSmall
+                  src={`https://pi-lib-assets.s3.eu-west-2.amazonaws.com/scheme-${altScheme}.svg`}
+                  title={`Switch to ${altScheme} mode`}
+                />
+                <IconButton
+                  onClick={() => setIsActive(true)}
+                  isSmall
+                  src="https://pi-lib-assets.s3.eu-west-2.amazonaws.com/info.svg"
+                  title="View tech demo architectural diagram"
+                />
+              </ItemList>,
+              <ItemList title="Choose theme palette">
                 <StyledPalette src="https://pi-lib-assets.s3.eu-west-2.amazonaws.com/palette.svg" />
                 <Select
                   name="theme"
@@ -171,7 +162,7 @@ export const Header = () => {
                   ]}
                   title="Choose theme palette"
                 />
-              </div>,
+              </ItemList>,
             ]}
           />
         </div>
@@ -185,15 +176,7 @@ export const Header = () => {
             title={arcTitle}
             style={{ maxWidth: '100%' }}
           />
-          <div
-            style={{
-              display: 'flex',
-              flexWrap: 'wrap',
-              gap: '8px',
-            }}
-          >
-            <TechList />
-          </div>
+          <TechList />
         </StyledInfo>
       </ModalScreen>
     </Banner>
