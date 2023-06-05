@@ -47,7 +47,7 @@ export const StyledCollapsibleMenu = styled.div(
     border-radius: 5px 0 5px 5px;
     opacity: ${isOpen ? 1 : 0};
     position: absolute;
-    top: 35px;
+    top: calc(22px + 0.6rem);
     right: 0;
     overflow: hidden;
     z-index: 998;

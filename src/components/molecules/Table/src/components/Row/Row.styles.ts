@@ -10,13 +10,13 @@ export const StyledRow = styled.tr(
     css`
       cursor: pointer;
       &:hover {
-        background: var(--subtle);
+        background: var(--border);
       }
     `}
 
     ${isOdd &&
     css`
-      background: var(--border);
+      background: var(--mark);
     `}
   `
 )

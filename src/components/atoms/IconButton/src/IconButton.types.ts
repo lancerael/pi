@@ -20,3 +20,5 @@ export interface IconButtonProps
    */
   size?: string
 }
+
+export type StyledIconButtonProps = Pick<IconButtonProps, 'size'>
