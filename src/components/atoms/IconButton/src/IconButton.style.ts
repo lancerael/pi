@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components'
 import { box } from '@pi-lib/styles'
 import { StyledIconButtonProps } from './IconButton.types'
 
-export const StyledIconButton = styled.div(
+export const StyledIconButton = styled.a(
   ({ size }: StyledIconButtonProps) => css`
     ${box()}
     cursor: pointer;
