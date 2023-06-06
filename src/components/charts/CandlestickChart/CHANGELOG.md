@@ -1,8 +1,16 @@
 # Change Log - @pi-lib/candlestick-chart
 
-This log was last generated on Sun, 04 Jun 2023 23:47:21 GMT and should not be manually modified.
+This log was last generated on Tue, 06 Jun 2023 23:54:31 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 1.4.0
+
+Tue, 06 Jun 2023 23:54:31 GMT
+
+### Minor changes
+
+- Added AxisChart (122271901+lancerael-undo@users.noreply.github.com)
 
 ## 1.3.0
 
