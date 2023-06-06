@@ -46,11 +46,14 @@ export const CandlestickChart: FC<CandlestickChartProps> = ({ data = [] }) => {
           }}
         />
       )}
-      <StyledCandlestickChart ref={svgRef}>
+      <StyledCandlestickChart
+        ref={svgRef}
+        style={{ visibility: !data?.length ? 'hidden' : 'visible' }}
+      >
         <ClipPaths {...dimensions.sizes} />
       </StyledCandlestickChart>
       <CandleTooltip {...candles} />
-      {data.length && (
+      {!!data?.length && (
         <CurrentIndicator
           value={data[data.length - 1].close}
           x={dimensions.sizes.width + dimensions.sizes.left - 15}

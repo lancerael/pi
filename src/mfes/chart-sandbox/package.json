@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "@originjs/vite-plugin-federation": "^1.2.2",
+    "@pi-lib/axis-chart": "workspace:^",
     "@pi-lib/button": "*",
     "@pi-lib/input": "*",
     "@pi-lib/page-content": "workspace:^",

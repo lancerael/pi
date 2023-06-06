@@ -2,20 +2,28 @@ import React from 'react'
 import { Scheme } from '@pi-lib/styles/src/theme.types'
 import { ThemeType } from '@pi-lib/styles/src/themes'
 import PageContent from '@pi-lib/page-content'
+import { useSelector } from 'react-redux'
 
-import Chart from './Chart'
+import AxisChart from '@pi-lib/axis-chart'
 import Editor from './Editor'
+import { ChartConfig, DataItem, Hash } from 'd-theia/src/types'
 
 export interface iTheming {
   themeName: ThemeType
   scheme: Scheme
 }
 
+export interface ChartValues {
+  chartConfig: ChartConfig
+  chartData: (DataItem & Hash)[]
+}
+
 const Sandbox = () => {
+  const chartValues = useSelector((state) => state as ChartValues)
   return (
     <PageContent sidebar={<Editor />}>
-      <Chart chartId="container-bar" chartType="bar" />
-      <Chart chartId="container-line" chartType="line" />
+      <AxisChart chartId="container-bar" chartType="bar" {...chartValues} />
+      <AxisChart chartId="container-line" chartType="line" {...chartValues} />
     </PageContent>
   )
 }
