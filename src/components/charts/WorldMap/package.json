@@ -24,7 +24,7 @@
   },
   "devDependencies": {
     "@pi-lib/config": "^0.4.0",
-    "@pi-lib/types": "^0.*.*",
+    "@pi-lib/types": "^0.1.0",
     "@testing-library/react": "^13.3.0",
     "@types/d3-geo": "^3.0.3",
     "@types/d3-selection": "^3.0.4",
