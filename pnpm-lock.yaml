@@ -493,7 +493,7 @@ importers:
         version: 5.3.9(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)
     devDependencies:
       '@pi-lib/config':
-        specifier: ^0.*.*
+        specifier: ^0.4.0
         version: link:../../../config
       '@testing-library/react':
         specifier: ^13.3.0
@@ -579,7 +579,7 @@ importers:
         version: 5.3.9(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)
     devDependencies:
       '@pi-lib/config':
-        specifier: ^0.*.*
+        specifier: ^0.4.0
         version: link:../../../config
       '@testing-library/react':
         specifier: ^13.3.0
@@ -854,7 +854,7 @@ importers:
         specifier: ^0.4.0
         version: link:../../../config
       '@pi-lib/types':
-        specifier: ^0.*.*
+        specifier: ^0.1.0
         version: link:../../../types
       '@testing-library/react':
         specifier: ^13.3.0
@@ -1047,7 +1047,7 @@ importers:
         version: 5.3.9(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)
     devDependencies:
       '@pi-lib/config':
-        specifier: ^0.*.*
+        specifier: ^0.4.0
         version: link:../../../config
       '@testing-library/react':
         specifier: ^13.3.0
@@ -1090,7 +1090,7 @@ importers:
         version: 5.3.9(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)
     devDependencies:
       '@pi-lib/config':
-        specifier: ^0.*.*
+        specifier: ^0.4.0
         version: link:../../../config
       '@testing-library/react':
         specifier: ^13.3.0
