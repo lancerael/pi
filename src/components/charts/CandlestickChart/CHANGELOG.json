@@ -2,6 +2,21 @@
   "name": "@pi-lib/candlestick-chart",
   "entries": [
     {
+      "date": "Tue, 06 Jun 2023 23:54:31 GMT",
+      "tag": "@pi-lib/candlestick-chart_v1.4.0",
+      "version": "1.4.0",
+      "comments": {
+        "minor": [
+          {
+            "author": "122271901+lancerael-undo@users.noreply.github.com",
+            "package": "@pi-lib/candlestick-chart",
+            "commit": "c50f4afad4fd0404409ca1ded95a99c58340250e",
+            "comment": "Added AxisChart"
+          }
+        ]
+      }
+    },
+    {
       "date": "Sun, 04 Jun 2023 23:47:21 GMT",
       "tag": "@pi-lib/candlestick-chart_v1.3.0",
       "version": "1.3.0",
