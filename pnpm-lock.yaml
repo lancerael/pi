@@ -134,7 +134,7 @@ importers:
         version: 7.0.3
       d-theia:
         specifier: ^3.4.5
-        version: 3.4.5
+        version: 3.5.1
       d3-axis:
         specifier: ^3.0.0
         version: 3.0.0
@@ -205,8 +205,8 @@ importers:
   src/apis/chart-sandbox-api:
     dependencies:
       d-theia:
-        specifier: ^3.4.5
-        version: 3.4.5
+        specifier: ^3.5.1
+        version: 3.5.1
       ts-node:
         specifier: ^10.9.1
         version: 10.9.1(@types/node@18.15.3)(typescript@4.9.5)
@@ -280,9 +280,6 @@ importers:
       '@reduxjs/toolkit':
         specifier: ^1.9.3
         version: 1.9.3(react-redux@7.2.9)(react@18.2.0)
-      d-theia:
-        specifier: ^3.4.5
-        version: 3.4.5
       react:
         specifier: ^18.2.0
         version: 18.2.0
@@ -667,8 +664,8 @@ importers:
         specifier: ^1.1.1
         version: link:../../theming/Styles
       d-theia:
-        specifier: ^3.4.5
-        version: 3.4.5
+        specifier: ^3.5.1
+        version: 3.5.1
       lodash.throttle:
         specifier: ^4.1.1
         version: 4.1.1
@@ -1483,8 +1480,8 @@ importers:
         specifier: ^1.9.3
         version: 1.9.3(react-redux@7.2.9)(react@18.2.0)
       d-theia:
-        specifier: ^3.4.5
-        version: 3.4.5
+        specifier: ^3.5.1
+        version: 3.5.1
       react:
         specifier: ^18.2.0
         version: 18.2.0
@@ -9346,8 +9343,8 @@ packages:
       yauzl: 2.10.0
     dev: true
 
-  /d-theia@3.4.5:
-    resolution: {integrity: sha512-xEoAUXeMuJ/wAuFXggEFSzC0NBER2PSGeiKPzaqNVIZbjS1/IvpUFnScq5daZSZpXHwpvN9L/n3n4d3OlD/J/Q==}
+  /d-theia@3.5.1:
+    resolution: {integrity: sha512-bL164YYWOP3A5e4FofQSzVYr0cKdSeaxlf0FRZETvF67qNw1yt81Cc1mBUqg1ID4OoKn5OG0aBjzpAoCtQ5XyA==}
     dependencies:
       d3-array: 3.2.3
       d3-axis: 3.0.0
@@ -9359,6 +9356,8 @@ packages:
       d3-selection: 3.0.0
       d3-shape: 3.2.0
       d3-transition: 3.0.1(d3-selection@3.0.0)
+      lodash.debounce: 4.0.8
+      lodash.throttle: 4.1.1
 
   /d3-array@3.2.2:
     resolution: {integrity: sha512-yEEyEAbDrF8C6Ob2myOBLjwBLck1Z89jMGFee0oPsn95GqjerpaOA4ch+vc2l0FNFFwMD5N7OCSEN5eAlsUbgQ==}
@@ -13213,7 +13212,6 @@ packages:
 
   /lodash.debounce@4.0.8:
     resolution: {integrity: sha512-FT1yDzDYEoYWhnSGnpE/4Kj1fLZkDFyqRb7fNt6FdYOSxlUWAtp42Eh6Wb0rGIv/m9Bgo7x4GhQbm5Ys4SG5ow==}
-    dev: true
 
   /lodash.defaults@4.2.0:
     resolution: {integrity: sha512-qjxPLHd3r5DnsdGacqOMU6pb/avJzdh9tFX2ymgoZE27BmjXrNy/y4LoaiTeAb+O3gL8AfpJGtqfX/ae2leYYQ==}

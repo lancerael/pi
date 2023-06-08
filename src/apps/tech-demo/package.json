@@ -27,7 +27,6 @@
     "@pi-lib/table": "*",
     "@pi-lib/utils": "workspace:^",
     "@reduxjs/toolkit": "^1.9.3",
-    "d-theia": "^3.4.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-redux": "^7.1.1",
