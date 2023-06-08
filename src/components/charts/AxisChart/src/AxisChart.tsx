@@ -1,8 +1,8 @@
-import React, { useEffect, useRef, FC } from 'react'
+import React, { useEffect, useRef, FC, useCallback } from 'react'
 import Theia from 'd-theia'
-import throttle from 'lodash.throttle'
 import { StyledAxisChart } from './AxisChart.style'
-import { AxisChartProps, IChart } from './AxisChart.types'
+import { AxisChartProps } from './AxisChart.types'
+import Chart from 'd-theia/src/components/Chart'
 
 export const AxisChart: FC<AxisChartProps> = ({
   chartId,
@@ -11,7 +11,7 @@ export const AxisChart: FC<AxisChartProps> = ({
   chartConfig,
 }) => {
   const chartContainer = useRef(null)
-  const dtChart = useRef<IChart>()
+  const dtChart = useRef<Chart>()
   const skipUpdate =
     !dtChart.current ||
     chartData[0].itemValues.length !== chartConfig.itemValues.length
@@ -22,7 +22,7 @@ export const AxisChart: FC<AxisChartProps> = ({
     dtChart.current = Theia.chart(chartId, chartType, {
       chartData,
       chartConfig,
-    }) as IChart
+    })
   }, [chartContainer.current])
 
   // Update chart
@@ -30,21 +30,6 @@ export const AxisChart: FC<AxisChartProps> = ({
     !skipUpdate && dtChart.current?.updateData(chartData)
     !skipUpdate && dtChart.current?.updateConfig(chartConfig)
   }, [chartData, chartConfig])
-
-  // Resize chart
-  useEffect(() => {
-    let updateTimeout: NodeJS.Timeout
-    const updateDimensions = throttle(() => {
-      updateTimeout = setTimeout(() => {
-        dtChart.current?.updateData(chartData)
-      }, 500)
-    }, 200)
-    addEventListener('resize', updateDimensions)
-    return () => {
-      removeEventListener('resize', updateDimensions)
-      clearTimeout(updateTimeout)
-    }
-  }, [])
 
   return <StyledAxisChart id={chartId} ref={chartContainer} />
 }
