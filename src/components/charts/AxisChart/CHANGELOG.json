@@ -2,6 +2,41 @@
   "name": "@pi-lib/axis-chart",
   "entries": [
     {
+      "date": "Sat, 10 Jun 2023 22:11:59 GMT",
+      "tag": "@pi-lib/axis-chart_v0.2.0",
+      "version": "0.2.0",
+      "comments": {
+        "patch": [
+          {
+            "author": "122271901+lancerael-undo@users.noreply.github.com",
+            "package": "@pi-lib/axis-chart",
+            "commit": "45da143fc1701ee9787f8f1dfa51558677cba8eb",
+            "comment": "Bump d-theia"
+          }
+        ],
+        "minor": [
+          {
+            "author": "122271901+lancerael-undo@users.noreply.github.com",
+            "package": "@pi-lib/axis-chart",
+            "commit": "fb71f2e82a6fcb93e8d42425637c7c5c1de108e4",
+            "comment": "Fixed chart resize issue"
+          },
+          {
+            "author": "beachball",
+            "package": "@pi-lib/axis-chart",
+            "comment": "Bump @pi-lib/config to v0.4.0",
+            "commit": "e8b08cb9190f5879831b2998532e7ee34e2b71c4"
+          },
+          {
+            "author": "beachball",
+            "package": "@pi-lib/axis-chart",
+            "comment": "Bump @pi-lib/styles to v1.7.0",
+            "commit": "e8b08cb9190f5879831b2998532e7ee34e2b71c4"
+          }
+        ]
+      }
+    },
+    {
       "date": "Tue, 06 Jun 2023 23:54:31 GMT",
       "tag": "@pi-lib/axis-chart_v0.1.0",
       "version": "0.1.0",
