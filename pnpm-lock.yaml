@@ -133,8 +133,8 @@ importers:
         specifier: ^7.0.3
         version: 7.0.3
       d-theia:
-        specifier: ^3.5.2
-        version: 3.5.2
+        specifier: ^3.6.0
+        version: 3.6.0
       d3-axis:
         specifier: ^3.0.0
         version: 3.0.0
@@ -205,8 +205,8 @@ importers:
   src/apis/chart-sandbox-api:
     dependencies:
       d-theia:
-        specifier: ^3.5.2
-        version: 3.5.2
+        specifier: ^3.6.0
+        version: 3.6.0
       ts-node:
         specifier: ^10.9.1
         version: 10.9.1(@types/node@18.15.3)(typescript@4.9.5)
@@ -664,8 +664,8 @@ importers:
         specifier: ^1.1.1
         version: link:../../theming/Styles
       d-theia:
-        specifier: ^3.5.2
-        version: 3.5.2
+        specifier: ^3.6.0
+        version: 3.6.0
       lodash.throttle:
         specifier: ^4.1.1
         version: 4.1.1
@@ -1480,8 +1480,8 @@ importers:
         specifier: ^1.9.3
         version: 1.9.3(react-redux@7.2.9)(react@18.2.0)
       d-theia:
-        specifier: ^3.5.2
-        version: 3.5.2
+        specifier: ^3.6.0
+        version: 3.6.0
       react:
         specifier: ^18.2.0
         version: 18.2.0
@@ -9343,8 +9343,8 @@ packages:
       yauzl: 2.10.0
     dev: true
 
-  /d-theia@3.5.2:
-    resolution: {integrity: sha512-x+S4a+4p9DExWnKjkqALgjY+ahR+Fn3BwC8YPaX7CERHSoJuHswr0GKNoOPtp6YyfZ/h6iJR3Pfm3Jnafd0KMQ==}
+  /d-theia@3.6.0:
+    resolution: {integrity: sha512-5d/gOwZSnpuUbU+d1SYNNcz1rQaP+HyVNLNidV83XTm1hvaRKFq+xrFZkx7/PD2hx/rh363UY4ToW/La51LKbA==}
     dependencies:
       d3-array: 3.2.3
       d3-axis: 3.0.0
@@ -9356,8 +9356,6 @@ packages:
       d3-selection: 3.0.0
       d3-shape: 3.2.0
       d3-transition: 3.0.1(d3-selection@3.0.0)
-      lodash.debounce: 4.0.8
-      lodash.throttle: 4.1.1
 
   /d3-array@3.2.2:
     resolution: {integrity: sha512-yEEyEAbDrF8C6Ob2myOBLjwBLck1Z89jMGFee0oPsn95GqjerpaOA4ch+vc2l0FNFFwMD5N7OCSEN5eAlsUbgQ==}
@@ -13212,6 +13210,7 @@ packages:
 
   /lodash.debounce@4.0.8:
     resolution: {integrity: sha512-FT1yDzDYEoYWhnSGnpE/4Kj1fLZkDFyqRb7fNt6FdYOSxlUWAtp42Eh6Wb0rGIv/m9Bgo7x4GhQbm5Ys4SG5ow==}
+    dev: true
 
   /lodash.defaults@4.2.0:
     resolution: {integrity: sha512-qjxPLHd3r5DnsdGacqOMU6pb/avJzdh9tFX2ymgoZE27BmjXrNy/y4LoaiTeAb+O3gL8AfpJGtqfX/ae2leYYQ==}
