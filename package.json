@@ -73,7 +73,7 @@
     "beachball": "^2.31.12",
     "concurrently": "^7.6.0",
     "cross-env": "^7.0.3",
-    "d-theia": "^3.5.2",
+    "d-theia": "^3.6.0",
     "d3-axis": "^3.0.0",
     "d3-geo": "^3.1.0",
     "d3-scale": "^4.0.2",
