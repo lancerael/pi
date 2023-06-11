@@ -1,20 +1,23 @@
-import {
-  DefaultTheme,
-  GlobalStyleComponent,
-  createGlobalStyle,
-} from 'styled-components'
+import { createGlobalStyle } from 'styled-components'
 import { getTheme } from './theme'
-import { Scheme, FontSize, SizeMap, ThemeMap } from './theme.types'
+import {
+  Scheme,
+  FontSize,
+  SizeMap,
+  ThemeMap,
+  ITheme,
+  SchemeValues,
+} from './theme.types'
 import { ThemeType, themeList } from './themes'
 
-const getVars = (scheme: Scheme) =>
-  Object.entries(scheme).reduce(
+const getVars = (schemeValues: SchemeValues) =>
+  Object.entries(schemeValues).reduce(
     (acc, [key, val]) => `${acc} --${key}: ${val};`,
     ''
   )
 
 export const getGlobalStyle = (
-  { colors: { light, dark = light }, fonts }: any = getTheme(),
+  { colors: { light, dark = light }, fonts }: ITheme = getTheme(),
   scheme?: Scheme
 ) => createGlobalStyle`
   body {

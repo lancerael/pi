@@ -9,11 +9,9 @@ import {
   addRow,
   addDataColumn,
   replaceData,
-} from '../../state/reducers/chartDataReducer'
-import {
   replaceConfig,
   addConfigColumn,
-} from '../../state/reducers/chartConfigReducer'
+} from '../../state'
 import styled from 'styled-components'
 
 const StyledActionWrapper = styled.div`
@@ -154,32 +152,34 @@ export const EditorActions = () => {
   ]
 
   return (
-    <CollapsibleMenu
-      isSettings
-      items={[
-        <StyledActionWrapper>
-          <PageLoader isActive={isLoading} />
-          {actions.map((actionProps, i) => (
-            <Action key={i} {...actionProps} />
-          ))}
-          <input
-            style={{ display: 'none' }}
-            type="file"
-            ref={importRef}
-            accept="application/json"
-            onChange={importChange}
-          />
-          <a
-            style={{ display: 'none' }}
-            href={`data:text/json;charset=utf-8,${encodeURIComponent(
-              JSON.stringify({ chartConfig, chartData })
-            )}`}
-            ref={exportRef}
-            download="sandbox-export.json"
-          ></a>
-        </StyledActionWrapper>,
-      ]}
-    />
+    <>
+      <PageLoader isActive={isLoading} />
+      <CollapsibleMenu
+        icon="chevron"
+        items={[
+          <StyledActionWrapper>
+            {actions.map((actionProps, i) => (
+              <Action key={i} {...actionProps} />
+            ))}
+            <input
+              style={{ display: 'none' }}
+              type="file"
+              ref={importRef}
+              accept="application/json"
+              onChange={importChange}
+            />
+            <a
+              style={{ display: 'none' }}
+              href={`data:text/json;charset=utf-8,${encodeURIComponent(
+                JSON.stringify({ chartConfig, chartData })
+              )}`}
+              ref={exportRef}
+              download="sandbox-export.json"
+            ></a>
+          </StyledActionWrapper>,
+        ]}
+      />
+    </>
   )
 }
 

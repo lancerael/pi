@@ -1,38 +1,40 @@
-import React, { useEffect } from 'react'
+import React, { SyntheticEvent, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import Table from '@pi-lib/table'
 import Button from '@pi-lib/button'
-
+import Input from '@pi-lib/input'
 import {
+  ChartConfigState,
   deleteConfigColumn,
   switchTrim,
   updateColor,
   updateType,
-} from '../../state/reducers/chartConfigReducer'
-import {
   deleteRow,
   deleteDataColumn,
   updateLabel,
   updateValue,
-} from '../../state/reducers/chartDataReducer'
-import Input from '@pi-lib/input'
+  ChartDataState,
+  ChartDataItem,
+} from '../../state'
 import EditorActions from './EditorActions'
 
 const DataTable = () => {
   const { itemValues, doTrim } = useSelector(
-    ({ chartConfig }: any) => chartConfig
+    ({ chartConfig }: { chartConfig: ChartConfigState }) => chartConfig
   )
-  const chartData = useSelector(({ chartData }: any) => chartData)
+  const chartData = useSelector(
+    ({ chartData }: { chartData: ChartDataState }) => chartData
+  )
   const dispatch = useDispatch()
 
   const deleteColumn = (i: number) => {
-    dispatch(deleteDataColumn(i as any))
-    dispatch(deleteConfigColumn(i as any))
+    dispatch(deleteDataColumn(i))
+    dispatch(deleteConfigColumn(i))
   }
 
   useEffect(() => {
-    dispatch(switchTrim(false as any))
-    dispatch(switchTrim(true as any))
+    dispatch(switchTrim(false))
+    dispatch(switchTrim(true))
   }, [])
 
   return (
@@ -43,17 +45,21 @@ const DataTable = () => {
           <input
             type="checkbox"
             checked={doTrim}
-            onChange={(e: any) => dispatch(switchTrim(e.target.checked))}
+            onChange={(e: SyntheticEvent<HTMLInputElement>) =>
+              dispatch(switchTrim(e.currentTarget.checked))
+            }
             name="dt-trim"
           />
         </div>,
-        ...itemValues.map(({ name }: any, i: number) => (
+        ...itemValues.map(({ name }: { name: string }, i: number) => (
           <Input
             key={i}
             longTitle="Change the name of this column"
             value={name}
-            onChange={({ target: { value } }: any) =>
-              dispatch(updateType({ value, i } as any))
+            onChange={({
+              currentTarget: { value },
+            }: SyntheticEvent<HTMLInputElement>) =>
+              dispatch(updateType({ value, i }))
             }
           />
         )),
@@ -63,44 +69,49 @@ const DataTable = () => {
         {
           cols: [
             '',
-            ...itemValues.map(({ color }: any, i: number) => (
+            ...itemValues.map(({ color }: { color: string }, i: number) => (
               <Input
                 key={i}
                 type="color"
                 longTitle="Change colour of this column"
                 value={color}
-                onChange={({ target: { value } }: any) =>
-                  dispatch(updateColor({ value, i } as any))
+                onChange={({
+                  currentTarget: { value },
+                }: SyntheticEvent<HTMLInputElement>) =>
+                  dispatch(updateColor({ value, i }))
                 }
               />
             )),
             '',
           ],
         },
-        ...chartData.map((dataItem: any, i1: number) => ({
+        ...chartData.map((dataItem: ChartDataItem, i1: number) => ({
           cols: [
             <Input
               key={i1}
               longTitle="Change the label of this data group"
               value={dataItem.itemLabel}
-              onChange={({ target: { value } }: any) =>
-                dispatch(updateLabel({ value, i1 } as any))
+              onChange={({
+                currentTarget: { value },
+              }: SyntheticEvent<HTMLInputElement>) =>
+                dispatch(updateLabel({ value, i1 }))
               }
             />,
-            ...dataItem.itemValues.map((iValue: number, i2: number) => (
+            ...dataItem.itemValues.map((value: number, i2: number) => (
               <Input
                 key={i2}
                 type="number"
                 longTitle="Change the value of this data item"
-                value={iValue.toString()}
-                onChange={({ target: { value } }: any) =>
-                  dispatch(updateValue({ value, i1, i2 } as any))
+                value={value.toString()}
+                onChange={({
+                  currentTarget: { value },
+                }: SyntheticEvent<HTMLInputElement>) =>
+                  dispatch(updateValue({ value, i1, i2 }))
                 }
               />
             )),
-            ,
             <Button
-              onClick={() => dispatch(deleteRow(i1 as any))}
+              onClick={() => dispatch(deleteRow(i1))}
               title="Delete this row"
               status="error"
               isCompact
@@ -112,7 +123,7 @@ const DataTable = () => {
         {
           cols: [
             '',
-            ...itemValues.map((oItem: any, i1: number) => (
+            ...itemValues.map((item: any, i1: number) => (
               <Button
                 onClick={() => deleteColumn(i1)}
                 title="Delete this column"

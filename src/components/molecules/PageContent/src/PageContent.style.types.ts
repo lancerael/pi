@@ -2,9 +2,9 @@ export interface StyledSidebarProps {
   /**
    * The max width of the sidebar
    */
-  maxWidth?: any
+  maxWidth?: string
   /**
    * Should the sidebar collapse responsively
    */
-  isCollapsible?: any
+  isCollapsible?: boolean
 }

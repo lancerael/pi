@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { FormEventHandler, SyntheticEvent } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import {
+  ChartConfigState,
   changeAxisX,
   changeAxisY,
   changeTitle,
@@ -9,7 +10,7 @@ import Input from '@pi-lib/input'
 
 const ConfigEditor = () => {
   const { title, axisLabels } = useSelector(
-    ({ chartConfig }: any) => chartConfig
+    ({ chartConfig }: { chartConfig: ChartConfigState }) => chartConfig
   )
   const dispatch = useDispatch()
 
@@ -27,19 +28,25 @@ const ConfigEditor = () => {
         title="Title"
         longTitle="Change the title of the chart"
         value={title}
-        onChange={(e: any) => dispatch(changeTitle(e.target.value))}
+        onChange={(e: SyntheticEvent<HTMLInputElement>) =>
+          dispatch(changeTitle(e.currentTarget?.value))
+        }
       />
       <Input
         title="X Axis"
         longTitle="Change the title of the X axis"
         value={axisLabels[1]}
-        onChange={(e: any) => dispatch(changeAxisX(e.target.value))}
+        onChange={(e: SyntheticEvent<HTMLInputElement>) =>
+          dispatch(changeAxisX(e.currentTarget.value))
+        }
       />
       <Input
         title="Y Axis"
         longTitle="Change the title of the Y axis"
         value={axisLabels[0]}
-        onChange={(e: any) => dispatch(changeAxisY(e.target.value))}
+        onChange={(e: SyntheticEvent<HTMLInputElement>) =>
+          dispatch(changeAxisY(e.currentTarget.value))
+        }
       />
     </div>
   )

@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useRef, useState } from 'react'
+import React, { FC, useRef } from 'react'
 import { useMenuTrigger } from 'react-aria'
 import { useMenuTriggerState } from 'react-stately'
 import { useWindowClick } from '@pi-lib/utils'
@@ -11,11 +11,17 @@ import {
   StyledMenu,
 } from './CollapsibleMenu.style'
 import { CollapsibleMenuProps } from './CollapsibleMenu.types'
-import { Hamburger, Cog } from './assets'
+import { Hamburger, Cog, Chevron } from './assets'
+
+const icons = {
+  hamburger: Hamburger,
+  cog: Cog,
+  chevron: Chevron,
+}
 
 export const CollapsibleMenu: FC<CollapsibleMenuProps> = ({
   items,
-  isSettings,
+  icon = 'hamburger',
   menutriggerProps = {},
 }) => {
   const containerRef = useRef<HTMLDivElement>(null)
@@ -24,7 +30,7 @@ export const CollapsibleMenu: FC<CollapsibleMenuProps> = ({
   let { menuTriggerProps, menuProps } = useMenuTrigger({}, menuState, openerRef)
   const { isOpen, setOpen } = menuState
   useWindowClick(() => setOpen(false), containerRef)
-
+  const Icon = icons[icon]
   return (
     <StyledContainer ref={containerRef}>
       <StyledOpener
@@ -32,7 +38,7 @@ export const CollapsibleMenu: FC<CollapsibleMenuProps> = ({
         {...{ isOpen, ...menuTriggerProps }}
         ref={openerRef}
       >
-        {isSettings ? <Cog /> : <Hamburger />}
+        <Icon />
       </StyledOpener>
       <StyledCollapsibleMenu {...{ isOpen }} aria-hidden={!isOpen}>
         <StyledMenuInner {...{ isOpen, ...menuProps }}>

@@ -33,7 +33,8 @@ export const StyledOpener = styled(Button)`
       svg {
         fill: var(--text) !important;
       }
-      .hamburger path {
+      .strokes path,
+      .strokes polyline {
         stroke: var(--text) !important;
       }
     `}

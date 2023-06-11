@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react'
+import { SyntheticEvent, useRef, useState } from 'react'
 import styled from 'styled-components'
 import { useDispatch, useSelector } from 'react-redux'
 import { ReactSVG } from 'react-svg'
@@ -21,6 +21,7 @@ import Banner from '@pi-lib/banner'
 import IconButton from '@pi-lib/icon-button'
 import TechList from './TechList'
 import { ItemList } from './ItemList'
+import { ThemeType } from '@pi-lib/styles/src/themes'
 
 const StyledHeader = styled.h1`
   display: inline-block;
@@ -126,7 +127,7 @@ export const Header = () => {
         </StyledMenu>
         <div ref={settingsRef}>
           <CollapsibleMenu
-            isSettings
+            icon="cog"
             items={[
               <ItemList>
                 <IconButton
@@ -152,7 +153,9 @@ export const Header = () => {
                 <StyledPalette src="https://pi-lib-assets.s3.eu-west-2.amazonaws.com/palette.svg" />
                 <Select
                   name="theme"
-                  onChange={(e: any) => dispatch(updateTheme(e.target.value))}
+                  onChange={(e: SyntheticEvent<HTMLSelectElement>) =>
+                    dispatch(updateTheme(e.currentTarget.value as ThemeType))
+                  }
                   options={[
                     { content: 'Andro' },
                     { content: 'Avocado' },

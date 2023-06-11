@@ -2,6 +2,8 @@ import { DefaultTheme, GlobalStyleComponent } from 'styled-components'
 import { ThemeType } from './themes'
 import { PropsWithChildren } from 'react'
 
+export type SchemeValues = { [key: string]: string }
+
 export interface ITheme {
   fonts: string[]
   fontSizes: {
@@ -10,8 +12,8 @@ export interface ITheme {
     large: string
   }
   colors: {
-    light: { [key: string]: string }
-    dark: { [key: string]: string }
+    light: SchemeValues
+    dark: SchemeValues
   }
   chartBackground: string
 }

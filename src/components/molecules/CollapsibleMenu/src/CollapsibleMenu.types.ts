@@ -6,9 +6,9 @@ export interface CollapsibleMenuProps {
    */
   items: any[]
   /**
-   * Use special style fof settings menu
+   * Define a special icon to use
    */
-  isSettings?: boolean
+  icon?: 'hamburger' | 'cog' | 'chevron'
   /**
    * Default props for the menu state
    */
