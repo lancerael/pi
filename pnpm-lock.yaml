@@ -1461,6 +1461,12 @@ importers:
       '@pi-lib/button':
         specifier: '*'
         version: link:../../components/atoms/Button
+      '@pi-lib/collapsible-menu':
+        specifier: workspace:^
+        version: link:../../components/molecules/CollapsibleMenu
+      '@pi-lib/icon-button':
+        specifier: workspace:^0.6.1
+        version: link:../../components/atoms/IconButton
       '@pi-lib/input':
         specifier: '*'
         version: link:../../components/inputs/Input
