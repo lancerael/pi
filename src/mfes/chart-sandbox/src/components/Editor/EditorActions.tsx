@@ -1,6 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react'
 import Button from '@pi-lib/button'
 import PageLoader from '@pi-lib/page-loader'
+import IconButton from '@pi-lib/icon-button'
+import CollapsibleMenu from '@pi-lib/collapsible-menu'
 import { getEmptyData } from 'd-theia'
 import { useDispatch, useSelector } from 'react-redux'
 import {
@@ -17,12 +19,31 @@ import styled from 'styled-components'
 const StyledActionWrapper = styled.div`
   display: flex;
   gap: 4px;
-  margin-top: 16px;
-  flex-wrap: wrap;
   justify-content: space-around;
 
+  @media (max-width: 801px) {
+    flex-direction: column;
+  }
+
   & button {
-    width: auto;
+    width: 100%;
+  }
+`
+
+const StyledAction = styled.div`
+  width: 100%;
+`
+
+const StyledIconButton = styled.div`
+  @media (max-width: 801px) {
+    display: none;
+  }
+`
+
+const StyledButton = styled.div`
+  width: !100%;
+  @media (min-width: 800px) {
+    display: none;
   }
 `
 
@@ -74,58 +95,91 @@ export const EditorActions = () => {
     if (!chartData?.[0]?.itemValues?.length) getRandomData()
   }, [])
 
+  const Action = ({
+    title,
+    label,
+    onClick,
+  }: {
+    title: string
+    label: string
+    onClick: (args: unknown) => unknown
+  }) => {
+    const iconPath = `https://pi-lib-assets.s3.eu-west-2.amazonaws.com/${label
+      .toLowerCase()
+      .split(' ')
+      .join('-')}.svg`
+    return (
+      <StyledAction>
+        <StyledIconButton>
+          <IconButton {...{ title, onClick }} isSmall src={iconPath} />
+        </StyledIconButton>
+        <StyledButton>
+          <Button {...{ title, onClick }}>{label}</Button>
+        </StyledButton>
+      </StyledAction>
+    )
+  }
+
+  const actions = [
+    {
+      label: 'Add row',
+      title: 'Add a new row to the data',
+      onClick: () => dispatch(addRow()),
+    },
+    {
+      label: 'Add column',
+      title: 'Add a new column to the data',
+      onClick: addColumn,
+    },
+    {
+      label: 'Clear',
+      title: 'Reset the chart and remove all data',
+      onClick: () => updateChart(getEmptyData()),
+    },
+    {
+      label: 'Randomise',
+      title: 'Reset the chart and generate random data',
+      onClick: () => getRandomData(),
+    },
+    {
+      label: 'Export',
+      title: 'Export this chart as JSON',
+      onClick: () => exportRef?.current?.click(),
+    },
+    {
+      label: 'Import',
+      title: 'Import JSON for this chart',
+      onClick: () => importRef?.current?.click(),
+    },
+  ]
+
   return (
-    <StyledActionWrapper>
-      <PageLoader isActive={isLoading} />
-      <Button
-        onClick={() => dispatch(addRow())}
-        title="Add a new row to the data"
-      >
-        ADD ROW
-      </Button>
-      <Button onClick={addColumn} title="Add a new column to the data">
-        ADD COLUMN
-      </Button>
-      <Button
-        onClick={() => updateChart(getEmptyData())}
-        title="Reset the chart and remove all data"
-      >
-        CLEAR
-      </Button>
-      <Button
-        onClick={() => getRandomData()}
-        title="Reset the chart and generate random data"
-      >
-        RANDOMISE
-      </Button>
-      <Button
-        onClick={() => exportRef?.current?.click()}
-        title="Export this chart as JSON"
-      >
-        EXPORT
-      </Button>
-      <Button
-        title="Import JSON for this chart."
-        onClick={() => importRef?.current?.click()}
-      >
-        IMPORT
-      </Button>
-      <input
-        style={{ display: 'none' }}
-        type="file"
-        ref={importRef}
-        accept="application/json"
-        onChange={importChange}
-      />
-      <a
-        style={{ display: 'none' }}
-        href={`data:text/json;charset=utf-8,${encodeURIComponent(
-          JSON.stringify({ chartConfig, chartData })
-        )}`}
-        ref={exportRef}
-        download="sandbox-export.json"
-      ></a>
-    </StyledActionWrapper>
+    <CollapsibleMenu
+      isSettings
+      items={[
+        <StyledActionWrapper>
+          <PageLoader isActive={isLoading} />
+          {actions.map((actionProps, i) => (
+            <Action key={i} {...actionProps} />
+          ))}
+          <input
+            style={{ display: 'none' }}
+            type="file"
+            ref={importRef}
+            accept="application/json"
+            onChange={importChange}
+          />
+          <a
+            style={{ display: 'none' }}
+            href={`data:text/json;charset=utf-8,${encodeURIComponent(
+              JSON.stringify({ chartConfig, chartData })
+            )}`}
+            ref={exportRef}
+            download="sandbox-export.json"
+          ></a>
+        </StyledActionWrapper>,
+      ]}
+    />
   )
 }
 

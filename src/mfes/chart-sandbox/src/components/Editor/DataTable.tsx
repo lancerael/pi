@@ -16,6 +16,7 @@ import {
   updateValue,
 } from '../../state/reducers/chartDataReducer'
 import Input from '@pi-lib/input'
+import EditorActions from './EditorActions'
 
 const DataTable = () => {
   const { itemValues, doTrim } = useSelector(
@@ -56,7 +57,7 @@ const DataTable = () => {
             }
           />
         )),
-        '',
+        <EditorActions />,
       ]}
       rows={[
         {
