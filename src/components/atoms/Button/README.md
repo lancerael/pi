@@ -8,7 +8,7 @@ Takes these standard HTML/React props:
 
     'onPointerUp' | 'onMouseOver' | 'onMouseOut' | 'disabled' | 'children' | 'title'
 
-And these additional custom React props:
+And also these additional custom React props:
 
 ```
   /**
