@@ -19,7 +19,7 @@ export interface TableProps {
   /**
    * An array of headers for the table
    */
-  headers?: string[]
+  headers?: CellContent[]
   /**
    * An array of rows containing columns and content
    */

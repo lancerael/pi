@@ -1,5 +1,5 @@
 import { axisBottom, axisRight, AxisScale } from 'd3-axis'
-import { select, Selection } from 'd3-selection'
+import { BaseType, select, Selection } from 'd3-selection'
 import { useEffect, useState } from 'react'
 import { CHART_PADDING } from '../CandlestickChart.constants'
 import {

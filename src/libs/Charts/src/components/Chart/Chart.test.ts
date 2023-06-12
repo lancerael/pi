@@ -143,6 +143,7 @@ describe('Chart', () => {
       container: document.createElement('div'),
       label,
     } as any)
+    //@ts-ignore
     delete config.values
     expect(() => chart.setConfig(config, 'myConfig')).toThrow(
       new Error('No valid configuration provided for chart.')

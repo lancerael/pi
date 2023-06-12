@@ -78,7 +78,7 @@ export const Theme = ({
 
 export const withTheme =
   (Component: React.JSXElementConstructor<any>, themeName: ThemeType) =>
-  (props: any) =>
+  (props: unknown[]) =>
     (
       <Theme {...{ themeName }}>
         <Component {...props} />

@@ -15,6 +15,7 @@
     "sb": "cross-env NODE_OPTIONS=--openssl-legacy-provider start-storybook -p 6006",
     "build-storybook": "cross-env NODE_OPTIONS=--openssl-legacy-provider build-storybook",
     "------DEMO-------": "------------------------",
+    "sandbox": "pnpm --filter @pi-lib/chart-sandbox-mfe dev",
     "sandbox:api-deploy": "pnpm --filter @pi-lib/chart-sandbox-api release",
     "sandbox:start": "pnpm --filter @pi-lib/chart-sandbox-mfe start",
     "candlestick:start": "pnpm --filter @pi-lib/candlestick-chart-mfe start",

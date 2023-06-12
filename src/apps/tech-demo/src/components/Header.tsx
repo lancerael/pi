@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react'
+import { SyntheticEvent, useRef, useState } from 'react'
 import styled from 'styled-components'
 import { useDispatch, useSelector } from 'react-redux'
 import { ReactSVG } from 'react-svg'
@@ -21,6 +21,7 @@ import Banner from '@pi-lib/banner'
 import IconButton from '@pi-lib/icon-button'
 import TechList from './TechList'
 import { ItemList } from './ItemList'
+import { ThemeType } from '@pi-lib/styles/src/themes'
 
 const StyledHeader = styled.h1`
   display: inline-block;
@@ -126,23 +127,27 @@ export const Header = () => {
         </StyledMenu>
         <div ref={settingsRef}>
           <CollapsibleMenu
-            isSettings
+            icon="cog"
             items={[
               <ItemList>
                 <IconButton
-                  onClick={() => dispatch(updateFontSize(altFontSize))}
+                  onPointerUp={() =>
+                    setTimeout(() => dispatch(updateFontSize(altFontSize)))
+                  }
                   isSmall
                   src={`https://pi-lib-assets.s3.eu-west-2.amazonaws.com/font-${fontSize}.svg`}
                   title={`Switch to ${altFontSize} font`}
                 />
                 <IconButton
-                  onClick={() => dispatch(updateScheme(altScheme))}
+                  onPointerUp={() =>
+                    setTimeout(() => dispatch(updateScheme(altScheme)))
+                  }
                   isSmall
                   src={`https://pi-lib-assets.s3.eu-west-2.amazonaws.com/scheme-${altScheme}.svg`}
                   title={`Switch to ${altScheme} mode`}
                 />
                 <IconButton
-                  onClick={() => setIsActive(true)}
+                  onPointerUp={() => setIsActive(true)}
                   isSmall
                   src="https://pi-lib-assets.s3.eu-west-2.amazonaws.com/info.svg"
                   title="View tech demo architectural diagram"
@@ -152,7 +157,9 @@ export const Header = () => {
                 <StyledPalette src="https://pi-lib-assets.s3.eu-west-2.amazonaws.com/palette.svg" />
                 <Select
                   name="theme"
-                  onChange={(e: any) => dispatch(updateTheme(e.target.value))}
+                  onChange={(e: SyntheticEvent<HTMLSelectElement>) =>
+                    dispatch(updateTheme(e.currentTarget.value as ThemeType))
+                  }
                   options={[
                     { content: 'Andro' },
                     { content: 'Avocado' },

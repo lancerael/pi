@@ -20,6 +20,6 @@ export interface AxisChartProps {
 }
 
 export interface IChart {
-  updateData: (...args: any) => void
-  updateConfig: (...args: any) => void
+  updateData: (...args: unknown[]) => void
+  updateConfig: (...args: unknown[]) => void
 }

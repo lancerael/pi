@@ -8,7 +8,7 @@ import { Outlet } from 'react-router-dom'
 import Header from './components/Header'
 import Footer from './components/Footer'
 //@ts-ignore
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import { SettingsState } from './state/reducers/settingsReducer'
 
 export interface ITheming {
@@ -16,17 +16,26 @@ export interface ITheming {
   scheme: Scheme
 }
 
-const StyledColumn = styled.div<any>`
-  max-width: ${({ maxWidth }: any) => maxWidth ?? '100%'};
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
+export interface StyledColumnProps {
+  maxWidth?: string
+  isCollapsible?: boolean
+}
 
-  @media (max-width: 800px) {
-    height: auto;
-    ${({ isCollapsible }: any) => !!isCollapsible && 'max-width: 100%;'}
+const StyledColumn = styled.div(
+  ({ maxWidth, isCollapsible }: StyledColumnProps) => {
+    return css`
+      max-width: ${maxWidth ?? '100%'};
+      min-height: 100%;
+      display: flex;
+      flex-direction: column;
+
+      @media (max-width: 800px) {
+        height: auto;
+        ${!!isCollapsible && 'max-width: 100%;'}
+      }
+    `
   }
-`
+)
 
 const App = () => {
   const themeProps = useSelector(

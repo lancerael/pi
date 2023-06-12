@@ -8,14 +8,15 @@ export const Button: FC<ButtonProps> = ({
   dataSelector = 'pi-lib-button',
   isCompact,
   isSpecial,
-  ...buttonProps
-}) => (
-  <StyledButton
-    {...{ status, isCompact, isSpecial, ...buttonProps }}
-    data-selector={dataSelector}
-  >
-    {children}
-  </StyledButton>
-)
-
+  ...props
+}) => {
+  return (
+    <StyledButton
+      {...{ status, isCompact, isSpecial, ...props }}
+      data-selector={dataSelector}
+    >
+      {children}
+    </StyledButton>
+  )
+}
 export default Button

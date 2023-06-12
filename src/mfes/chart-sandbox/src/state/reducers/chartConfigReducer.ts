@@ -1,6 +1,18 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-const initialState = {
+export interface ChartConfigItem {
+  name: string
+  color: string
+}
+
+export interface ChartConfigState {
+  title: string
+  axisLabels: [string, string]
+  itemValues: ChartConfigItem[]
+  doTrim: boolean
+}
+
+const initialState: ChartConfigState = {
   title: '',
   axisLabels: ['', ''],
   itemValues: [],
@@ -11,34 +23,46 @@ const chartConfigSlice = createSlice({
   name: 'chartConfig',
   initialState,
   reducers: {
-    updateType(state: any, { payload }: any) {
+    updateType(
+      state: ChartConfigState,
+      { payload }: { payload: { i: number; value: string } }
+    ) {
       state.itemValues[payload.i].name = payload.value
     },
-    updateColor(state: any, { payload }: any) {
+    updateColor(
+      state: ChartConfigState,
+      { payload }: { payload: { i: number; value: string } }
+    ) {
       state.itemValues[payload.i].color = payload.value
     },
-    changeTitle(state: any, { payload }: any) {
+    changeTitle(state: ChartConfigState, { payload }: { payload: string }) {
       state.title = payload
     },
-    changeAxisX(state: any, { payload }: any) {
+    changeAxisX(state: ChartConfigState, { payload }: { payload: string }) {
       state.axisLabels[1] = payload
     },
-    changeAxisY(state: any, { payload }: any) {
+    changeAxisY(state: ChartConfigState, { payload }: { payload: string }) {
       state.axisLabels[0] = payload
     },
-    addConfigColumn(state: any) {
+    addConfigColumn(state: ChartConfigState) {
       state.itemValues.push({
         name: `Col ${state.itemValues.length + 1}`,
         color: '#000000',
       })
     },
-    deleteConfigColumn(state: any, { payload }: any) {
+    deleteConfigColumn(
+      state: ChartConfigState,
+      { payload }: { payload: number }
+    ) {
       state.itemValues.splice(payload, 1)
     },
-    switchTrim(state: any, { payload }: any) {
+    switchTrim(state: ChartConfigState, { payload }: { payload: boolean }) {
       state.doTrim = payload
     },
-    replaceConfig(state: any, { payload }: any) {
+    replaceConfig(
+      state: ChartConfigState,
+      { payload }: { payload: ChartConfigState }
+    ) {
       return structuredClone(payload)
     },
   },
