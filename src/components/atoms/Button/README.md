@@ -6,7 +6,7 @@ A simple React button component, styled via Pi theme.
 
 Takes these standard HTML/React props:
 
-    'onClick' | 'onMouseOver' | 'onMouseOut' | 'disabled' | 'children' | 'title'
+    'onPointerUp' | 'onMouseOver' | 'onMouseOut' | 'disabled' | 'children' | 'title'
 
 And these additional custom React props:
 

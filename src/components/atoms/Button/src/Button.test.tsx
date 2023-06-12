@@ -5,7 +5,7 @@ import { axe } from 'jest-axe'
 import React from 'react'
 
 const defaultProps = {
-  onClick: vi.fn(),
+  onPointerUp: vi.fn(),
   onMouseOver: vi.fn(),
   onMouseOut: vi.fn(),
   disabled: false,

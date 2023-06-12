@@ -96,11 +96,11 @@ export const EditorActions = () => {
   const Action = ({
     title,
     label,
-    onClick,
+    onPointerUp,
   }: {
     title: string
     label: string
-    onClick: (args: unknown) => unknown
+    onPointerUp: (args: unknown) => unknown
   }) => {
     const iconPath = `https://pi-lib-assets.s3.eu-west-2.amazonaws.com/${label
       .toLowerCase()
@@ -109,10 +109,10 @@ export const EditorActions = () => {
     return (
       <StyledAction>
         <StyledIconButton>
-          <IconButton {...{ title, onClick }} isSmall src={iconPath} />
+          <IconButton {...{ title, onPointerUp }} isSmall src={iconPath} />
         </StyledIconButton>
         <StyledButton>
-          <Button {...{ title, onClick }}>{label.toUpperCase()}</Button>
+          <Button {...{ title, onPointerUp }}>{label.toUpperCase()}</Button>
         </StyledButton>
       </StyledAction>
     )
@@ -122,32 +122,32 @@ export const EditorActions = () => {
     {
       label: 'Add row',
       title: 'Add a new row to the data',
-      onClick: () => dispatch(addRow()),
+      onPointerUp: () => dispatch(addRow()),
     },
     {
       label: 'Add column',
       title: 'Add a new column to the data',
-      onClick: addColumn,
+      onPointerUp: addColumn,
     },
     {
       label: 'Clear',
       title: 'Reset the chart and remove all data',
-      onClick: () => updateChart(getEmptyData()),
+      onPointerUp: () => updateChart(getEmptyData()),
     },
     {
       label: 'Randomise',
       title: 'Reset the chart and generate random data',
-      onClick: () => getRandomData(),
+      onPointerUp: () => getRandomData(),
     },
     {
       label: 'Export',
       title: 'Export this chart as JSON',
-      onClick: () => exportRef?.current?.click(),
+      onPointerUp: () => exportRef?.current?.click(),
     },
     {
       label: 'Import',
       title: 'Import JSON for this chart',
-      onClick: () => importRef?.current?.click(),
+      onPointerUp: () => importRef?.current?.click(),
     },
   ]
 

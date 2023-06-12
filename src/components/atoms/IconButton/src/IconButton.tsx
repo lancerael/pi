@@ -1,7 +1,7 @@
-import React, { FC, useRef } from 'react'
-import { useButton, useKeyboard } from 'react-aria'
+import React, { FC } from 'react'
 import { StyledIconButton } from './IconButton.style'
 import { IconButtonProps } from './IconButton.types'
+import { useButtonProps } from '@pi-lib/utils'
 
 export const IconButton: FC<IconButtonProps> = ({
   src,
@@ -9,22 +9,17 @@ export const IconButton: FC<IconButtonProps> = ({
   isExternal = false,
   isSmall = false,
   size = isSmall ? '1em' : '1.5em',
+  onPointerUp,
   ...props
 }) => {
-  const buttonRef = useRef<HTMLAnchorElement>(null)
-  let { buttonProps } = useButton(
-    {
-      ...props,
-      elementType: 'a',
-    },
-    buttonRef
+  const { buttonRef, buttonProps } = useButtonProps<HTMLAnchorElement>(
+    props,
+    'a',
+    onPointerUp
   )
-  const { keyboardProps } = useKeyboard({
-    onKeyUp: (e) => e.key === 'Enter' && buttonRef.current?.click(),
-  })
   return (
     <StyledIconButton
-      {...{ ...props, ...buttonProps, ...keyboardProps, size }}
+      {...{ ...props, ...buttonProps, size, onPointerUp }}
       target={isExternal ? '_blank' : undefined}
       ref={buttonRef}
     >

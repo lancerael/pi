@@ -2,7 +2,7 @@ export interface InputProps
   extends Pick<
     React.HTMLProps<HTMLInputElement>,
     | 'onChange'
-    | 'onClick'
+    | 'onPointerUp'
     | 'onMouseOver'
     | 'onMouseOut'
     | 'title'

@@ -393,6 +393,9 @@ importers:
       '@pi-lib/styles':
         specifier: ^1.7.0
         version: link:../../theming/Styles
+      '@pi-lib/utils':
+        specifier: workspace:^
+        version: link:../../../utils
     devDependencies:
       '@pi-lib/config':
         specifier: ^0.4.0
@@ -439,6 +442,9 @@ importers:
       '@pi-lib/styles':
         specifier: ^1.7.0
         version: link:../../theming/Styles
+      '@pi-lib/utils':
+        specifier: workspace:^
+        version: link:../../../utils
       react:
         specifier: ^18.2.0
         version: 18.2.0

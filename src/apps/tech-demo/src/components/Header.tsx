@@ -92,7 +92,7 @@ export const Header = () => {
   const links = [
     <Link
       to="/"
-      onClick={() => dispatch(updatePage('/'))}
+      onPointerUp={() => dispatch(updatePage('/'))}
       $isMain
       $isInactive={page === '/'}
       key="sandbox"
@@ -101,7 +101,7 @@ export const Header = () => {
     </Link>,
     <Link
       to="/candlestick"
-      onClick={() => dispatch(updatePage('/candlestick'))}
+      onPointerUp={() => dispatch(updatePage('/candlestick'))}
       $isMain
       $isInactive={page === '/candlestick'}
       key="candlestick"

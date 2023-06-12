@@ -6,7 +6,7 @@ A simple React select component, styled via Pi theme.
 
 Takes these HTML/React props:
 
-    'onChange' | 'onClick' | 'onMouseOver' | 'onMouseOut' | 'title' | 'value' | 'name'
+    'onChange' | 'onPointerUp' | 'onMouseOver' | 'onMouseOut' | 'title' | 'value' | 'name'
 
 And these additional react props:
 

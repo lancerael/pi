@@ -6,7 +6,7 @@ A React button icon component, styled via Pi theme. Use it for SVG icon actions.
 
 Takes these HTML/React props:
 
-    'onClick' | 'onMouseOver' | 'onMouseOut' | 'href' | 'title'
+    'onPointerUp' | 'onMouseOver' | 'onMouseOut' | 'href' | 'title'
 
 And these additional react props:
 
