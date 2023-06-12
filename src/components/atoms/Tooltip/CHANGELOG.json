@@ -2,6 +2,21 @@
   "name": "@pi-lib/tooltip",
   "entries": [
     {
+      "date": "Mon, 12 Jun 2023 23:42:41 GMT",
+      "tag": "@pi-lib/tooltip_v1.3.4",
+      "version": "1.3.4",
+      "comments": {
+        "patch": [
+          {
+            "author": "beachball",
+            "package": "@pi-lib/tooltip",
+            "comment": "Bump @pi-lib/styles to v1.7.1",
+            "commit": "44e3f50c32895f50a690012ba41612c822873319"
+          }
+        ]
+      }
+    },
+    {
       "date": "Sun, 04 Jun 2023 23:47:21 GMT",
       "tag": "@pi-lib/tooltip_v1.3.3",
       "version": "1.3.3",

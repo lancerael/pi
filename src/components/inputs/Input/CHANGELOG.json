@@ -2,6 +2,21 @@
   "name": "@pi-lib/input",
   "entries": [
     {
+      "date": "Mon, 12 Jun 2023 23:42:41 GMT",
+      "tag": "@pi-lib/input_v0.5.1",
+      "version": "0.5.1",
+      "comments": {
+        "patch": [
+          {
+            "author": "beachball",
+            "package": "@pi-lib/input",
+            "comment": "Bump @pi-lib/styles to v1.7.1",
+            "commit": "44e3f50c32895f50a690012ba41612c822873319"
+          }
+        ]
+      }
+    },
+    {
       "date": "Sun, 04 Jun 2023 23:47:21 GMT",
       "tag": "@pi-lib/input_v0.5.0",
       "version": "0.5.0",

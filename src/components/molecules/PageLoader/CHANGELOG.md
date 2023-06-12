@@ -1,8 +1,16 @@
 # Change Log - @pi-lib/page-loader
 
-This log was last generated on Sun, 04 Jun 2023 23:47:21 GMT and should not be manually modified.
+This log was last generated on Mon, 12 Jun 2023 23:42:41 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 0.2.6
+
+Mon, 12 Jun 2023 23:42:41 GMT
+
+### Patches
+
+- Bump @pi-lib/styles to v1.7.1
 
 ## 0.2.4
 

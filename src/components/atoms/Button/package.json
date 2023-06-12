@@ -1,6 +1,6 @@
 {
   "name": "@pi-lib/button",
-  "version": "1.5.2",
+  "version": "1.5.3",
   "description": "Basic button component",
   "type": "module",
   "main": "./src/index.ts",
@@ -19,7 +19,7 @@
     "react": "^18.2.0",
     "styled-components": "^5.3.5",
     "@pi-lib/utils": "workspace:^",
-    "@pi-lib/styles": "^1.7.0"
+    "@pi-lib/styles": "^1.7.1"
   },
   "devDependencies": {
     "@pi-lib/config": "^0.4.0",

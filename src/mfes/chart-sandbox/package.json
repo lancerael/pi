@@ -19,7 +19,7 @@
     "@pi-lib/axis-chart": "workspace:^",
     "@pi-lib/button": "*",
     "@pi-lib/collapsible-menu": "workspace:^",
-    "@pi-lib/icon-button": "workspace:^0.6.1",
+    "@pi-lib/icon-button": "workspace:^0.6.2",
     "@pi-lib/input": "*",
     "@pi-lib/page-content": "workspace:^",
     "@pi-lib/page-loader": "workspace:^",

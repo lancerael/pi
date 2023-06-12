@@ -1,8 +1,17 @@
 # Change Log - @pi-lib/collapsible-menu
 
-This log was last generated on Mon, 05 Jun 2023 23:43:38 GMT and should not be manually modified.
+This log was last generated on Mon, 12 Jun 2023 23:42:41 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 0.4.2
+
+Mon, 12 Jun 2023 23:42:41 GMT
+
+### Patches
+
+- Improved typings and collapsible menu (122271901+lancerael-undo@users.noreply.github.com)
+- Bump @pi-lib/styles to v1.7.1
 
 ## 0.4.1
 

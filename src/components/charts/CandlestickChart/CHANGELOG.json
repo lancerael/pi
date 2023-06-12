@@ -2,6 +2,39 @@
   "name": "@pi-lib/candlestick-chart",
   "entries": [
     {
+      "date": "Mon, 12 Jun 2023 23:42:41 GMT",
+      "tag": "@pi-lib/candlestick-chart_v1.4.1",
+      "version": "1.4.1",
+      "comments": {
+        "patch": [
+          {
+            "author": "122271901+lancerael-undo@users.noreply.github.com",
+            "package": "@pi-lib/candlestick-chart",
+            "commit": "9513ba666b518896cf938b5b6febb72428c71d29",
+            "comment": "Improved typings and collapsible menu"
+          },
+          {
+            "author": "beachball",
+            "package": "@pi-lib/candlestick-chart",
+            "comment": "Bump @pi-lib/button to v1.5.3",
+            "commit": "44e3f50c32895f50a690012ba41612c822873319"
+          },
+          {
+            "author": "beachball",
+            "package": "@pi-lib/candlestick-chart",
+            "comment": "Bump @pi-lib/styles to v1.7.1",
+            "commit": "44e3f50c32895f50a690012ba41612c822873319"
+          },
+          {
+            "author": "beachball",
+            "package": "@pi-lib/candlestick-chart",
+            "comment": "Bump @pi-lib/tooltip to v1.3.4",
+            "commit": "44e3f50c32895f50a690012ba41612c822873319"
+          }
+        ]
+      }
+    },
+    {
       "date": "Tue, 06 Jun 2023 23:54:31 GMT",
       "tag": "@pi-lib/candlestick-chart_v1.4.0",
       "version": "1.4.0",

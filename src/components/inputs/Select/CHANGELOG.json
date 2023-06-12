@@ -2,6 +2,21 @@
   "name": "@pi-lib/select",
   "entries": [
     {
+      "date": "Mon, 12 Jun 2023 23:42:41 GMT",
+      "tag": "@pi-lib/select_v0.2.1",
+      "version": "0.2.1",
+      "comments": {
+        "patch": [
+          {
+            "author": "122271901+lancerael-undo@users.noreply.github.com",
+            "package": "@pi-lib/select",
+            "commit": "9513ba666b518896cf938b5b6febb72428c71d29",
+            "comment": "Improved typings and collapsible menu"
+          }
+        ]
+      }
+    },
+    {
       "date": "Wed, 12 Apr 2023 23:03:41 GMT",
       "tag": "@pi-lib/select_v0.2.0",
       "version": "0.2.0",
