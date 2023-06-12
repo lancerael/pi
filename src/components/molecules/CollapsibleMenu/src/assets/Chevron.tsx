@@ -15,9 +15,9 @@ export const Chevron = ({
           fill="none"
           points="5 8.5 12 15.5 19 8.5"
           stroke={color}
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
         />
       </g>
     </g>

@@ -24,13 +24,17 @@ export const CollapsibleMenu: FC<CollapsibleMenuProps> = ({
   icon = 'hamburger',
   menutriggerProps = {},
 }) => {
+  const Icon = icons[icon]
+
   const containerRef = useRef<HTMLDivElement>(null)
   const openerRef = useRef<HTMLButtonElement>(null)
+
   let menuState = useMenuTriggerState(menutriggerProps)
   let { menuTriggerProps, menuProps } = useMenuTrigger({}, menuState, openerRef)
   const { isOpen, setOpen } = menuState
+
   useWindowClick(() => setOpen(false), containerRef)
-  const Icon = icons[icon]
+
   return (
     <StyledContainer ref={containerRef}>
       <StyledOpener

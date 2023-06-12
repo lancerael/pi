@@ -33,7 +33,7 @@ const ICONS: { [key: string]: string } = {
 export const Footer = () => {
   return (
     <div style={{ padding: '12px' }}>
-      <ItemList wrap>
+      <ItemList doWrap>
         {Object.entries(ICONS).map(([title, href], i) => {
           const src = `${S3}${title.split(' ').join('-').toLowerCase()}.svg`
           return (

@@ -1,7 +1,7 @@
 export interface IconButtonProps
   extends Pick<
     React.HTMLProps<HTMLAnchorElement>,
-    'onClick' | 'onMouseOver' | 'onMouseOut' | 'href' | 'title'
+    'onPointerUp' | 'onMouseOver' | 'onMouseOut' | 'href' | 'title'
   > {
   /**
    * The source path/URL for the image

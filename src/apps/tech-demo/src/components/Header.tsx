@@ -131,19 +131,23 @@ export const Header = () => {
             items={[
               <ItemList>
                 <IconButton
-                  onClick={() => dispatch(updateFontSize(altFontSize))}
+                  onPointerUp={() =>
+                    setTimeout(() => dispatch(updateFontSize(altFontSize)))
+                  }
                   isSmall
                   src={`https://pi-lib-assets.s3.eu-west-2.amazonaws.com/font-${fontSize}.svg`}
                   title={`Switch to ${altFontSize} font`}
                 />
                 <IconButton
-                  onClick={() => dispatch(updateScheme(altScheme))}
+                  onPointerUp={() =>
+                    setTimeout(() => dispatch(updateScheme(altScheme)))
+                  }
                   isSmall
                   src={`https://pi-lib-assets.s3.eu-west-2.amazonaws.com/scheme-${altScheme}.svg`}
                   title={`Switch to ${altScheme} mode`}
                 />
                 <IconButton
-                  onClick={() => setIsActive(true)}
+                  onPointerUp={() => setIsActive(true)}
                   isSmall
                   src="https://pi-lib-assets.s3.eu-west-2.amazonaws.com/info.svg"
                   title="View tech demo architectural diagram"

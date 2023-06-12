@@ -29,7 +29,8 @@ export const StyledOpener = styled(Button)`
       ${box()}
       box-shadow: none;
       border-radius: 5px 5px 0 0;
-      border-bottom: 1px solid var(--border);
+      border-bottom: 1px solid var(--subtle);
+      background-color: var(--subtle);
       svg {
         fill: var(--text) !important;
       }
@@ -46,6 +47,7 @@ export const StyledCollapsibleMenu = styled.div(
   ({ isOpen }: StyledCollapsibleMenuProps) => css`
     ${box()}
     border-radius: 5px 0 5px 5px;
+    background-color: var(--subtle);
     opacity: ${isOpen ? 1 : 0};
     position: absolute;
     top: calc(22px + 0.6rem);

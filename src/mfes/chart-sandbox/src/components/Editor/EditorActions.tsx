@@ -112,7 +112,7 @@ export const EditorActions = () => {
           <IconButton {...{ title, onClick }} isSmall src={iconPath} />
         </StyledIconButton>
         <StyledButton>
-          <Button {...{ title, onClick }}>{label}</Button>
+          <Button {...{ title, onClick }}>{label.toUpperCase()}</Button>
         </StyledButton>
       </StyledAction>
     )
