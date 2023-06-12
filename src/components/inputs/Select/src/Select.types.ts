@@ -13,7 +13,7 @@ export interface SelectProps
   extends Pick<
     React.HTMLProps<HTMLSelectElement>,
     | 'onChange'
-    | 'onClick'
+    | 'onPointerUp'
     | 'onMouseOver'
     | 'onMouseOut'
     | 'title'

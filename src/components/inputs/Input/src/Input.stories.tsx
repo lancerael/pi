@@ -31,7 +31,7 @@ Text.args = {
   type: 'text',
   title: 'text label',
   value: 'text',
-  onClick: () => console.log('clicked text input'),
+  onPointerUp: () => console.log('clicked text input'),
 }
 
 export const Number = Template.bind({})
@@ -39,7 +39,7 @@ Number.args = {
   type: 'number',
   title: 'number label',
   value: 12345,
-  onClick: () => console.log('clicked number input'),
+  onPointerUp: () => console.log('clicked number input'),
 }
 
 export const Color = Template.bind({})
@@ -47,5 +47,5 @@ Color.args = {
   type: 'color',
   title: 'color label',
   value: '#336600',
-  onClick: () => console.log('clicked color input'),
+  onPointerUp: () => console.log('clicked color input'),
 }

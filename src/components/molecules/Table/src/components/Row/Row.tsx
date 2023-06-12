@@ -15,7 +15,7 @@ export const Row = ({ cols, i, expandedContent }: RowProps) => {
       <StyledRow
         isOdd={!!(i % 2)}
         isExpandable={!!expandedContent}
-        onClick={() =>
+        onPointerUp={() =>
           !!expandedContent && setIsItemActive((isActive) => !isActive)
         }
       >

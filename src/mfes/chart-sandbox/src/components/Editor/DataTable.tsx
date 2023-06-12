@@ -111,7 +111,7 @@ const DataTable = () => {
               />
             )),
             <Button
-              onClick={() => dispatch(deleteRow(i1))}
+              onPointerUp={() => dispatch(deleteRow(i1))}
               title="Delete this row"
               status="error"
               isCompact
@@ -125,7 +125,7 @@ const DataTable = () => {
             '',
             ...itemValues.map((item: any, i1: number) => (
               <Button
-                onClick={() => deleteColumn(i1)}
+                onPointerUp={() => deleteColumn(i1)}
                 title="Delete this column"
                 status="error"
                 isCompact

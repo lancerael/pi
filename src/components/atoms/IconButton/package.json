@@ -17,6 +17,7 @@
   "peerDependencies": {
     "react": "^18.2.0",
     "styled-components": "^5.3.5",
+    "@pi-lib/utils": "workspace:^",
     "@pi-lib/styles": "^1.7.0"
   },
   "devDependencies": {

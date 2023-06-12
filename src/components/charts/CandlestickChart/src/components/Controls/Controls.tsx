@@ -86,7 +86,7 @@ export const Controls = ({
       <Button
         {...buttonStyle}
         isCompact
-        onClick={panBack}
+        onPointerUp={panBack}
         disabled={visibleRange.first <= 0}
       >
         <StyledEmoji rotate={-90}>🔺</StyledEmoji>
@@ -94,7 +94,7 @@ export const Controls = ({
       <Button
         {...buttonStyle}
         isCompact
-        onClick={zoomOut}
+        onPointerUp={zoomOut}
         disabled={zoomLevel < zoomSpeed}
       >
         ➖
@@ -102,7 +102,7 @@ export const Controls = ({
       <Button
         {...buttonStyle}
         isCompact
-        onClick={zoomIn}
+        onPointerUp={zoomIn}
         disabled={zoomLevel >= zoomSpeed * 10}
       >
         ➕
@@ -110,7 +110,7 @@ export const Controls = ({
       <Button
         {...buttonStyle}
         isCompact
-        onClick={panForward}
+        onPointerUp={panForward}
         disabled={
           visibleRange.last >= length - 1 ||
           visibleRange.last - visibleRange.first > length
