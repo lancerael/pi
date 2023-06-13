@@ -10,8 +10,8 @@ export const useWindowClick = (
         callback()
       }
     }
-    const onEscapePress = ({ keyCode }) => {
-      if (keyCode === 27) callback()
+    const onEscapePress = ({ key }: KeyboardEvent) => {
+      if (key === 'Escape') callback()
     }
     document.addEventListener('click', onWindowClick)
     document.addEventListener('keydown', onEscapePress)
