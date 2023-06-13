@@ -251,7 +251,7 @@ importers:
         specifier: workspace:^
         version: link:../../components/molecules/CollapsibleMenu
       '@pi-lib/icon-button':
-        specifier: ^0.6.2
+        specifier: ^0.6.3
         version: link:../../components/atoms/IconButton
       '@pi-lib/input':
         specifier: '*'
@@ -762,10 +762,10 @@ importers:
   src/components/charts/CandlestickChart:
     dependencies:
       '@pi-lib/button':
-        specifier: ^1.5.3
+        specifier: ^1.5.4
         version: link:../../atoms/Button
       '@pi-lib/loader':
-        specifier: ^2.4.0
+        specifier: ^2.4.1
         version: link:../../atoms/Loader
       '@pi-lib/styles':
         specifier: ^1.7.1
@@ -982,10 +982,10 @@ importers:
   src/components/molecules/AdvancedButton:
     dependencies:
       '@pi-lib/button':
-        specifier: ^1.5.3
+        specifier: ^1.5.4
         version: link:../../atoms/Button
       '@pi-lib/loader':
-        specifier: ^2.4.0
+        specifier: ^2.4.1
         version: link:../../atoms/Loader
       react:
         specifier: ^18.2.0
@@ -1471,7 +1471,7 @@ importers:
         specifier: workspace:^
         version: link:../../components/molecules/CollapsibleMenu
       '@pi-lib/icon-button':
-        specifier: workspace:^0.6.2
+        specifier: workspace:^0.6.3
         version: link:../../components/atoms/IconButton
       '@pi-lib/input':
         specifier: '*'
