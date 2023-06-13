@@ -10,7 +10,14 @@ export const useWindowClick = (
         callback()
       }
     }
-    document.body.addEventListener('click', onWindowClick)
-    return () => document.body.removeEventListener('click', onWindowClick)
+    const onEscapePress = ({ keyCode }) => {
+      if (keyCode === 27) callback()
+    }
+    document.addEventListener('click', onWindowClick)
+    document.addEventListener('keydown', onEscapePress)
+    return () => {
+      document.removeEventListener('click', onWindowClick)
+      document.removeEventListener('keydown', onEscapePress)
+    }
   }, [])
 }

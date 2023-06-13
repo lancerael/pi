@@ -147,7 +147,7 @@ export const Header = () => {
                   title={`Switch to ${altScheme} mode`}
                 />
                 <IconButton
-                  onPointerUp={() => setIsActive(true)}
+                  onPointerUp={() => setTimeout(() => setIsActive(true), 100)}
                   isSmall
                   src="https://pi-lib-assets.s3.eu-west-2.amazonaws.com/info.svg"
                   title="View tech demo architectural diagram"

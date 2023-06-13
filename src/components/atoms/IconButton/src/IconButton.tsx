@@ -9,19 +9,14 @@ export const IconButton: FC<IconButtonProps> = ({
   isExternal = false,
   isSmall = false,
   size = isSmall ? '1em' : '1.5em',
-  onPointerUp,
+  dataSelector = 'pi-lib-icon-button',
   ...props
 }) => {
-  const { buttonRef, buttonProps } = useButtonProps<HTMLAnchorElement>(
-    props,
-    'a',
-    onPointerUp
-  )
+  const { buttonProps } = useButtonProps<HTMLAnchorElement>(props, 'a')
   return (
     <StyledIconButton
-      {...{ ...props, ...buttonProps, size, onPointerUp }}
+      {...{ ...props, ...buttonProps, size }}
       target={isExternal ? '_blank' : undefined}
-      ref={buttonRef}
     >
       <img
         {...{ src, title }}

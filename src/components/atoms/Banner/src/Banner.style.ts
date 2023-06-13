@@ -3,7 +3,11 @@ import { BannerProps } from './Banner.types'
 
 export const StyledBanner = styled.div(
   ({ isList, isBottom }: Pick<BannerProps, 'isList' | 'isBottom'>) => css`
-    background: var(--dark);
+    background: linear-gradient(
+      to ${isBottom ? 'bottom' : 'top'},
+      var(--dark),
+      var(--specialShadow)
+    );
     color: var(--light);
     display: flex;
     gap: 4px;
