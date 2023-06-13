@@ -2,6 +2,33 @@
   "name": "@pi-lib/advanced-button",
   "entries": [
     {
+      "date": "Tue, 13 Jun 2023 00:07:57 GMT",
+      "tag": "@pi-lib/advanced-button_v0.6.6",
+      "version": "0.6.6",
+      "comments": {
+        "patch": [
+          {
+            "author": "122271901+lancerael-undo@users.noreply.github.com",
+            "package": "@pi-lib/advanced-button",
+            "commit": "64feda01a945812056abac6525b7d77e06814916",
+            "comment": "Improved accessibility across devices"
+          },
+          {
+            "author": "beachball",
+            "package": "@pi-lib/advanced-button",
+            "comment": "Bump @pi-lib/button to v1.5.4",
+            "commit": "461ed2a5fa1db7499f16199a683c7294a9692ade"
+          },
+          {
+            "author": "beachball",
+            "package": "@pi-lib/advanced-button",
+            "comment": "Bump @pi-lib/loader to v2.4.1",
+            "commit": "461ed2a5fa1db7499f16199a683c7294a9692ade"
+          }
+        ]
+      }
+    },
+    {
       "date": "Mon, 12 Jun 2023 23:42:41 GMT",
       "tag": "@pi-lib/advanced-button_v0.6.5",
       "version": "0.6.5",

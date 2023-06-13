@@ -1,6 +1,6 @@
 {
   "name": "@pi-lib/button",
-  "version": "1.5.3",
+  "version": "1.5.4",
   "description": "Basic button component",
   "type": "module",
   "main": "./src/index.ts",

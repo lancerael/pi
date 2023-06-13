@@ -2,6 +2,21 @@
   "name": "@pi-lib/button",
   "entries": [
     {
+      "date": "Tue, 13 Jun 2023 00:07:57 GMT",
+      "tag": "@pi-lib/button_v1.5.4",
+      "version": "1.5.4",
+      "comments": {
+        "patch": [
+          {
+            "author": "122271901+lancerael-undo@users.noreply.github.com",
+            "package": "@pi-lib/button",
+            "commit": "64feda01a945812056abac6525b7d77e06814916",
+            "comment": "Improved accessibility across devices"
+          }
+        ]
+      }
+    },
+    {
       "date": "Mon, 12 Jun 2023 23:42:41 GMT",
       "tag": "@pi-lib/button_v1.5.3",
       "version": "1.5.3",

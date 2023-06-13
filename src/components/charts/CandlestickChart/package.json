@@ -1,6 +1,6 @@
 {
   "name": "@pi-lib/candlestick-chart",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "description": "",
   "type": "module",
   "main": "./src/index.ts",
@@ -17,8 +17,8 @@
   "author": "Lance Taylor",
   "license": "ISC",
   "dependencies": {
-    "@pi-lib/button": "^1.5.3",
-    "@pi-lib/loader": "^2.4.0",
+    "@pi-lib/button": "^1.5.4",
+    "@pi-lib/loader": "^2.4.1",
     "@pi-lib/styles": "^1.7.1",
     "@pi-lib/tooltip": "^1.3.4",
     "@types/d3-axis": "^3.0.2",

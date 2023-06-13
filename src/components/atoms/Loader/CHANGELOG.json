@@ -2,6 +2,21 @@
   "name": "@pi-lib/loader",
   "entries": [
     {
+      "date": "Tue, 13 Jun 2023 00:07:57 GMT",
+      "tag": "@pi-lib/loader_v2.4.1",
+      "version": "2.4.1",
+      "comments": {
+        "patch": [
+          {
+            "author": "122271901+lancerael-undo@users.noreply.github.com",
+            "package": "@pi-lib/loader",
+            "commit": "64feda01a945812056abac6525b7d77e06814916",
+            "comment": "Improved accessibility across devices"
+          }
+        ]
+      }
+    },
+    {
       "date": "Tue, 18 Apr 2023 22:15:59 GMT",
       "tag": "@pi-lib/loader_v2.4.0",
       "version": "2.4.0",

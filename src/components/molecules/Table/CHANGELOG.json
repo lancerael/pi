@@ -2,6 +2,21 @@
   "name": "@pi-lib/table",
   "entries": [
     {
+      "date": "Tue, 13 Jun 2023 00:07:57 GMT",
+      "tag": "@pi-lib/table_v1.7.3",
+      "version": "1.7.3",
+      "comments": {
+        "patch": [
+          {
+            "author": "122271901+lancerael-undo@users.noreply.github.com",
+            "package": "@pi-lib/table",
+            "commit": "64feda01a945812056abac6525b7d77e06814916",
+            "comment": "Improved accessibility across devices"
+          }
+        ]
+      }
+    },
+    {
       "date": "Mon, 12 Jun 2023 23:42:41 GMT",
       "tag": "@pi-lib/table_v1.7.2",
       "version": "1.7.2",

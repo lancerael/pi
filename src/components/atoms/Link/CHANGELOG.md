@@ -1,8 +1,16 @@
 # Change Log - @pi-lib/link
 
-This log was last generated on Mon, 12 Jun 2023 23:42:41 GMT and should not be manually modified.
+This log was last generated on Tue, 13 Jun 2023 00:07:57 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 0.6.5
+
+Tue, 13 Jun 2023 00:07:57 GMT
+
+### Patches
+
+- Improved accessibility across devices (122271901+lancerael-undo@users.noreply.github.com)
 
 ## 0.6.4
 

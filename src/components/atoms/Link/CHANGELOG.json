@@ -2,6 +2,21 @@
   "name": "@pi-lib/link",
   "entries": [
     {
+      "date": "Tue, 13 Jun 2023 00:07:57 GMT",
+      "tag": "@pi-lib/link_v0.6.5",
+      "version": "0.6.5",
+      "comments": {
+        "patch": [
+          {
+            "author": "122271901+lancerael-undo@users.noreply.github.com",
+            "package": "@pi-lib/link",
+            "commit": "64feda01a945812056abac6525b7d77e06814916",
+            "comment": "Improved accessibility across devices"
+          }
+        ]
+      }
+    },
+    {
       "date": "Mon, 12 Jun 2023 23:42:41 GMT",
       "tag": "@pi-lib/link_v0.6.4",
       "version": "0.6.4",

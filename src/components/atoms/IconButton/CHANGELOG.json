@@ -2,6 +2,21 @@
   "name": "@pi-lib/icon-button",
   "entries": [
     {
+      "date": "Tue, 13 Jun 2023 00:07:57 GMT",
+      "tag": "@pi-lib/icon-button_v0.6.3",
+      "version": "0.6.3",
+      "comments": {
+        "patch": [
+          {
+            "author": "122271901+lancerael-undo@users.noreply.github.com",
+            "package": "@pi-lib/icon-button",
+            "commit": "64feda01a945812056abac6525b7d77e06814916",
+            "comment": "Improved accessibility across devices"
+          }
+        ]
+      }
+    },
+    {
       "date": "Mon, 12 Jun 2023 23:42:41 GMT",
       "tag": "@pi-lib/icon-button_v0.6.2",
       "version": "0.6.2",

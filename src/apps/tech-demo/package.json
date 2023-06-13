@@ -17,7 +17,7 @@
     "@pi-lib/banner": "*",
     "@pi-lib/button": "*",
     "@pi-lib/collapsible-menu": "workspace:^",
-    "@pi-lib/icon-button": "^0.6.2",
+    "@pi-lib/icon-button": "^0.6.3",
     "@pi-lib/input": "*",
     "@pi-lib/link": "workspace:^",
     "@pi-lib/modal-screen": "workspace:^",

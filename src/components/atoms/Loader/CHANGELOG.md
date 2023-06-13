@@ -1,8 +1,16 @@
 # Change Log - @pi-lib/loader
 
-This log was last generated on Tue, 18 Apr 2023 22:15:59 GMT and should not be manually modified.
+This log was last generated on Tue, 13 Jun 2023 00:07:57 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 2.4.1
+
+Tue, 13 Jun 2023 00:07:57 GMT
+
+### Patches
+
+- Improved accessibility across devices (122271901+lancerael-undo@users.noreply.github.com)
 
 ## 2.4.0
 
