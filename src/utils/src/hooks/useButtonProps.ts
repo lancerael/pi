@@ -2,16 +2,20 @@ import { DOMAttributes, ElementType, useRef, RefObject } from 'react'
 import { useButton, useKeyboard } from 'react-aria'
 
 export interface UseButtonProps<T> {
-  buttonRef: React.RefObject<T>
-  buttonProps: DOMAttributes<HTMLElement>
+  buttonProps: DOMAttributes<HTMLElement> & {
+    buttonRef: React.RefObject<T>
+  }
 }
 
 export const useButtonProps = <T>(
-  props: { [key: string]: unknown },
-  elementType: ElementType = 'button',
-  onPointerUp?: (e: any) => unknown
+  props: {
+    onPointerUp?: (e: any) => unknown
+    [key: string]: unknown
+  },
+  elementType: ElementType = 'button'
 ): UseButtonProps<T> => {
   const buttonRef = useRef<T>(null)
+  const { onPointerUp } = props
   let { buttonProps } = useButton(
     {
       ...props,
@@ -23,7 +27,6 @@ export const useButtonProps = <T>(
     onKeyUp: (e) => [' ', 'Enter'].includes(e.key) && onPointerUp?.(e),
   })
   return {
-    buttonRef,
-    buttonProps: { ...buttonProps, ...keyboardProps, onPointerUp },
+    buttonProps: { ...buttonProps, ...keyboardProps, onPointerUp, buttonRef },
   }
 }

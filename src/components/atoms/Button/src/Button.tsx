@@ -6,17 +6,12 @@ import { StyledButton } from './Button.style'
 export const Button: FC<ButtonProps> = ({
   children,
   status = 'default',
-  dataSelector = 'pi-lib-button',
   isCompact,
   isSpecial,
-  onPointerUp,
+  dataSelector = 'pi-lib-button',
   ...props
 }) => {
-  const { buttonRef, buttonProps } = useButtonProps<HTMLButtonElement>(
-    props,
-    'button',
-    onPointerUp
-  )
+  const { buttonProps } = useButtonProps<HTMLButtonElement>(props, 'button')
   return (
     <StyledButton
       {...{
@@ -27,7 +22,6 @@ export const Button: FC<ButtonProps> = ({
         ...props,
       }}
       data-selector={dataSelector}
-      ref={buttonRef}
     >
       {children}
     </StyledButton>

@@ -1,8 +1,11 @@
+import { SelectorProp } from '@pi-lib/types'
+
 export interface IconButtonProps
   extends Pick<
-    React.HTMLProps<HTMLAnchorElement>,
-    'onPointerUp' | 'onMouseOver' | 'onMouseOut' | 'href' | 'title'
-  > {
+      React.HTMLProps<HTMLAnchorElement>,
+      'onPointerUp' | 'onMouseOver' | 'onMouseOut' | 'href' | 'title'
+    >,
+    SelectorProp {
   /**
    * The source path/URL for the image
    */

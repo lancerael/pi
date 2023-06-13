@@ -1,19 +1,16 @@
-import { Status } from '@pi-lib/types'
+import { SelectorProp, Status } from '@pi-lib/types'
 
 export interface ButtonProps
   extends Pick<
-    React.HTMLProps<HTMLButtonElement>,
-    | 'onPointerUp'
-    | 'onMouseOver'
-    | 'onMouseOut'
-    | 'disabled'
-    | 'children'
-    | 'title'
-  > {
-  /**
-   * The data-selector for the button
-   */
-  dataSelector?: string
+      React.HTMLProps<HTMLButtonElement>,
+      | 'onPointerUp'
+      | 'onMouseOver'
+      | 'onMouseOut'
+      | 'disabled'
+      | 'children'
+      | 'title'
+    >,
+    SelectorProp {
   /**
    * It denotes the status of the button (sucess, error, pending or default)
    */

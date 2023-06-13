@@ -15,13 +15,14 @@
   "author": "Lance Taylor",
   "license": "ISC",
   "peerDependencies": {
-    "react": "^18.2.0",
-    "styled-components": "^5.3.5",
+    "@pi-lib/styles": "workspace:^",
     "@pi-lib/utils": "workspace:^",
-    "@pi-lib/styles": "^1.7.1"
+    "react": "^18.2.0",
+    "styled-components": "^5.3.5"
   },
   "devDependencies": {
-    "@pi-lib/config": "^0.4.0",
+    "@pi-lib/config": "workspace:^",
+    "@pi-lib/types": "workspace:^",
     "@testing-library/react": "^13.3.0",
     "@vitejs/plugin-react": "^2.0.1",
     "@vitest/coverage-istanbul": "^0.23.1",
