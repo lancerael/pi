@@ -8,7 +8,7 @@
       "comments": {
         "patch": [
           {
-            "author": "122271901+lancerael-undo@users.noreply.github.com",
+            "author": "beachball",
             "package": "@pi-lib/axis-chart",
             "commit": "9513ba666b518896cf938b5b6febb72428c71d29",
             "comment": "Improved typings and collapsible menu"
