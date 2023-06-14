@@ -2,9 +2,9 @@
 
 # pi-lib
 
-Monorepo of mainly React UI components, but also contains supporting libraries and utilities. It supports theming and comes with some starter themes. Check the Storybook link above for example usage and props.
+Monorepo of React UI components and supporting utilities. It supports theming and comes with some starter themes. Check the Storybook link above for example usage and props.
 
-All packages prefixed with `@pi-lib/...` can be installed individually as npm modules. They designed for use with TypeScript, but they are also bundled in vanilla JS if you want to install your own dependencies. In this case import from the package name with a suffix of `/vanilla`
+All packages prefixed with `@pi-lib/...` are standalone npm modules. They designed for use with TypeScript, but they are also bundled in vanilla JS if you import from the package name with a suffix of `/vanilla`
 
 ## _Interactions_
 
