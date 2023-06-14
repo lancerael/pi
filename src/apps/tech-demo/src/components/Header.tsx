@@ -21,7 +21,7 @@ import Banner from '@pi-lib/banner'
 import IconButton from '@pi-lib/icon-button'
 import TechList from './TechList'
 import { ItemList } from './ItemList'
-import { ThemeType } from '@pi-lib/styles/src/themes'
+import { ThemeType, themeList } from '@pi-lib/styles/src/themes'
 
 const StyledHeader = styled.h1`
   display: inline-block;
@@ -160,13 +160,9 @@ export const Header = () => {
                   onChange={(e: SyntheticEvent<HTMLSelectElement>) =>
                     dispatch(updateTheme(e.currentTarget.value as ThemeType))
                   }
-                  options={[
-                    { content: 'Andro' },
-                    { content: 'Avocado' },
-                    { content: 'Electron' },
-                    { content: 'Pebble' },
-                    { content: 'Rose' },
-                  ]}
+                  options={themeList.map((theme) => ({
+                    content: theme.charAt(0).toUpperCase() + theme.slice(1),
+                  }))}
                   title="Choose theme palette"
                 />
               </ItemList>,

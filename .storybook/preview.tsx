@@ -1,6 +1,6 @@
 import React, { DecoratorFn } from '@storybook/react'
 import * as jest from 'jest-mock'
-import { Theme } from '@pi-lib/styles'
+import { Theme, themeList } from '@pi-lib/styles'
 
 //@ts-ignore
 window.jest = jest
@@ -49,13 +49,11 @@ export const globalTypes = {
     defaultValue: 'pebble',
     toolbar: {
       icon: 'circle',
-      items: [
-        { value: 'andro', icon: 'circlehollow', title: 'Andro' },
-        { value: 'avocado', icon: 'circlehollow', title: 'Avocado' },
-        { value: 'electron', icon: 'circlehollow', title: 'Electron' },
-        { value: 'pebble', icon: 'circlehollow', title: 'Pebble' },
-        { value: 'rose', icon: 'circlehollow', title: 'Rose' },
-      ],
+      items: themeList.map((theme) => ({
+        value: theme,
+        icon: 'circlehollow',
+        title: theme.charAt(0).toUpperCase() + theme.slice(1),
+      })),
       title: 'Theme',
     },
   },

@@ -1,6 +1,6 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react'
+import { ComponentMeta, ComponentStory, storiesOf } from '@storybook/react'
 import * as themes from '../src/themes'
-import { ThemeType } from '../src/themes'
+import { ThemeType, themeList } from '../src/themes'
 //@ts-ignore
 import Table from '../../../molecules/Table/src/Table'
 import React from 'react'
@@ -54,32 +54,9 @@ const Template: ComponentStory<typeof StyleDemo> = (args) => (
   <StyleDemo {...args} />
 )
 
-export const Andro = Template.bind({})
-Andro.args = {
-  themeName: 'andro',
-}
-Andro.parameters = Andro.args
-
-export const Avocado = Template.bind({})
-Avocado.args = {
-  themeName: 'avocado',
-}
-Avocado.parameters = Avocado.args
-
-export const Electron = Template.bind({})
-Electron.args = {
-  themeName: 'electron',
-}
-Electron.parameters = Electron.args
-
-export const Pebble = Template.bind({})
-Pebble.args = {
-  themeName: 'pebble',
-}
-Pebble.parameters = Pebble.args
-
-export const Rose = Template.bind({})
-Rose.args = {
-  themeName: 'rose',
-}
-Rose.parameters = Rose.args
+const stories = storiesOf('Theme/Themes', StyleDemo as unknown as NodeModule)
+themeList.forEach((themeName: any) => {
+  stories.add(themeName.charAt(0).toUpperCase() + themeName.slice(1), () => (
+    <Template {...{ themeName }} />
+  ))
+})

@@ -6,7 +6,7 @@ export const StyledBanner = styled.div(
     background: linear-gradient(
       to ${isBottom ? 'bottom' : 'top'},
       var(--dark),
-      var(--specialShadow)
+      var(--specialBg)
     );
     color: var(--light);
     display: flex;
@@ -15,8 +15,7 @@ export const StyledBanner = styled.div(
     position: relative;
     justify-content: space-between;
     align-items: center;
-    border-top: ${isBottom ? '1px' : '0'} solid var(--shadow);
-    border-bottom: ${isBottom ? '0' : '1px'} solid var(--shadow);
+    border-${isBottom ? 'top' : 'bottom'}: 1px solid var(--shadow);
     ${!!isList && 'flex-wrap: wrap;'};
   `
 )

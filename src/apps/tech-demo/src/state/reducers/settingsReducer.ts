@@ -13,14 +13,18 @@ interface Payload {
   payload: string
 }
 
+const pageParts = window.location.href.split('/')
+
 const initialState: SettingsState = {
   themeName: 'andro',
   scheme: !!matchMedia('(prefers-color-scheme: dark)').matches
     ? 'dark'
     : 'light',
   fontSize: 'small',
-  page: '/',
+  page: `/${pageParts[pageParts.length - 1]}`,
 }
+
+console.log(pageParts, pageParts[pageParts.length - 1], initialState.page)
 
 const settingsSlice = createSlice({
   name: 'theming',
