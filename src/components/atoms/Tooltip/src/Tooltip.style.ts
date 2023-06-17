@@ -8,6 +8,7 @@ export const StyledTooltip = styled.div(
     transition: all 0.2s;
     opacity: ${isVisible ? 0.9 : 0};
     visibility: ${isRendered ? 'visible' : 'hidden'};
+    z-index: 999;
     ${box()}
     padding: ${isRendered ? '4px' : '0px'};
 

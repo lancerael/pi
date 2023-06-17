@@ -1,5 +1,5 @@
 import { useRef, useState } from 'react'
-import { ComponentMeta, ComponentStory } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react'
 import { CodeFormat, PreFormat, Title } from './formatters.style'
 import React from 'react'
 
@@ -108,11 +108,11 @@ const GlobalStyle = getGlobalStyle(customTheme)
   )
 }
 
-export default {
+const meta: Meta<typeof ThemeDocs> = {
   title: 'Theme/Custom Themes',
   component: ThemeDocs,
-} as ComponentMeta<typeof ThemeDocs>
+}
 
-const Template: ComponentStory<typeof ThemeDocs> = () => <ThemeDocs />
+export default meta
 
-export const ThemeGeneration = Template.bind({})
+export const ThemeGeneration: StoryObj<typeof ThemeDocs> = {}

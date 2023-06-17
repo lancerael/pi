@@ -1,8 +1,8 @@
 import React from 'react'
-import { ComponentMeta, ComponentStory } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react'
 import { IconButton } from './IconButton'
 
-export default {
+const meta: Meta<typeof IconButton> = {
   title: 'Interactions/IconButton',
   component: IconButton,
   argTypes: {
@@ -16,23 +16,24 @@ export default {
       control: 'boolean',
     },
   },
-} as ComponentMeta<typeof IconButton>
-
-const Template: ComponentStory<typeof IconButton> = (props) => (
-  <IconButton {...props} />
-)
-
-export const Default = Template.bind({})
-Default.args = {
-  href: 'https://www.google.com',
-  src: 'https://cdn.svgporn.com/logos/github-icon.svg',
-  isExternal: true,
+  tags: ['autodocs'],
 }
 
-export const Small = Template.bind({})
-Small.args = {
-  href: 'https://www.google.com',
-  src: 'https://cdn.svgporn.com/logos/github-icon.svg',
-  isExternal: true,
-  isSmall: true,
+export const Default: StoryObj<typeof IconButton> = {
+  args: {
+    href: 'https://www.google.com',
+    src: 'https://cdn.svgporn.com/logos/github-icon.svg',
+    isExternal: true,
+  },
 }
+
+export const Small: StoryObj<typeof IconButton> = {
+  args: {
+    href: 'https://www.google.com',
+    src: 'https://cdn.svgporn.com/logos/github-icon.svg',
+    isExternal: true,
+    isSmall: true,
+  },
+}
+
+export default meta

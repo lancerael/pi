@@ -1,6 +1,6 @@
-import { ComponentMeta, ComponentStory, storiesOf } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react'
 import * as themes from '../src/themes'
-import { ThemeType, themeList } from '../src/themes'
+import { ThemeType } from '../src/themes'
 //@ts-ignore
 import Table from '../../../molecules/Table/src/Table'
 import React from 'react'
@@ -45,18 +45,59 @@ const StyleDemo = ({ themeName }: { themeName: ThemeType }) => {
   )
 }
 
-export default {
+const meta: Meta<typeof StyleDemo> = {
   title: 'Theme/Themes',
   component: StyleDemo,
-} as ComponentMeta<typeof StyleDemo>
+}
 
-const Template: ComponentStory<typeof StyleDemo> = (args) => (
-  <StyleDemo {...args} />
-)
+export default meta
 
-const stories = storiesOf('Theme/Themes', StyleDemo as unknown as NodeModule)
-themeList.forEach((themeName: any) => {
-  stories.add(themeName.charAt(0).toUpperCase() + themeName.slice(1), () => (
-    <Template {...{ themeName }} />
-  ))
-})
+/* generated content below */
+    
+export const Andro: StoryObj<typeof StyleDemo> = {
+  args: {
+    themeName: 'andro',
+  },
+}
+
+export const Avocado: StoryObj<typeof StyleDemo> = {
+  args: {
+    themeName: 'avocado',
+  },
+}
+
+export const Candy: StoryObj<typeof StyleDemo> = {
+  args: {
+    themeName: 'candy',
+  },
+}
+
+export const Earth: StoryObj<typeof StyleDemo> = {
+  args: {
+    themeName: 'earth',
+  },
+}
+
+export const Electron: StoryObj<typeof StyleDemo> = {
+  args: {
+    themeName: 'electron',
+  },
+}
+
+export const Pebble: StoryObj<typeof StyleDemo> = {
+  args: {
+    themeName: 'pebble',
+  },
+}
+
+export const Retro: StoryObj<typeof StyleDemo> = {
+  args: {
+    themeName: 'retro',
+  },
+}
+
+export const Rose: StoryObj<typeof StyleDemo> = {
+  args: {
+    themeName: 'rose',
+  },
+}

@@ -1,5 +1,5 @@
 import { SyntheticEvent, useRef, useState } from 'react'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import { useDispatch, useSelector } from 'react-redux'
 import { ReactSVG } from 'react-svg'
 import {
@@ -21,7 +21,9 @@ import Banner from '@pi-lib/banner'
 import IconButton from '@pi-lib/icon-button'
 import TechList from './TechList'
 import { ItemList } from './ItemList'
-import { ThemeType, themeList } from '@pi-lib/styles/src/themes'
+import { ThemeType, themeList } from '@pi-lib/styles'
+import * as themes from '@pi-lib/styles/src/themes'
+import { Scheme } from '@pi-lib/styles/src/theme.types'
 
 const StyledHeader = styled.h1`
   display: inline-block;
@@ -80,6 +82,18 @@ const StyledPalette = styled(ReactSVG)`
     margin-top: 1px;
   }
 `
+
+const StyledSelect = styled.div(({ scheme }: { scheme: Scheme }) =>
+  themeList.map((theme, i) => {
+    const { subtle, specialBg } = themes[theme][scheme]
+    return css`
+      option:nth-of-type(${i + 1}) {
+        background-color: ${subtle};
+        color: ${specialBg};
+      }
+    `
+  })
+)
 
 export const Header = () => {
   const dispatch = useDispatch()
@@ -155,16 +169,18 @@ export const Header = () => {
               </ItemList>,
               <ItemList title="Choose theme palette">
                 <StyledPalette src="https://pi-lib-assets.s3.eu-west-2.amazonaws.com/palette.svg" />
-                <Select
-                  name="theme"
-                  onChange={(e: SyntheticEvent<HTMLSelectElement>) =>
-                    dispatch(updateTheme(e.currentTarget.value as ThemeType))
-                  }
-                  options={themeList.map((theme) => ({
-                    content: theme.charAt(0).toUpperCase() + theme.slice(1),
-                  }))}
-                  title="Choose theme palette"
-                />
+                <StyledSelect {...{ scheme }}>
+                  <Select
+                    name="theme"
+                    onChange={(e: SyntheticEvent<HTMLSelectElement>) =>
+                      dispatch(updateTheme(e.currentTarget.value as ThemeType))
+                    }
+                    options={themeList.map((theme) => ({
+                      content: theme.charAt(0).toUpperCase() + theme.slice(1),
+                    }))}
+                    title="Choose theme palette"
+                  />
+                </StyledSelect>
               </ItemList>,
             ]}
           />

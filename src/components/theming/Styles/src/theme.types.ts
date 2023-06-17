@@ -24,7 +24,7 @@ export interface ThemedComponent {
 
 export type ThemedComponentWithChildren = ThemedComponent & PropsWithChildren
 
-export type Scheme = 'light' | 'dark' | ''
+export type Scheme = 'light' | 'dark'
 
 export interface IThemeProps extends Partial<ThemedComponentWithChildren> {
   themeName: ThemeType

@@ -6,8 +6,8 @@ import { StyledButton } from './Button.style'
 export const Button: FC<ButtonProps> = ({
   children,
   status = 'default',
-  isCompact,
-  isSpecial,
+  isCompact = false,
+  isSpecial = false,
   dataSelector = 'pi-lib-button',
   ...props
 }) => {

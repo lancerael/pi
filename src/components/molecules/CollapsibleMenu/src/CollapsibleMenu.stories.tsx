@@ -1,14 +1,9 @@
 import React from 'react'
-import { ComponentMeta, ComponentStory } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react'
 import { CollapsibleMenu } from './CollapsibleMenu'
 import { CollapsibleMenuProps } from './CollapsibleMenu.types'
 
-export default {
-  title: 'UI/CollapsibleMenu',
-  component: CollapsibleMenu,
-} as ComponentMeta<typeof CollapsibleMenu>
-
-const BaseMenu = (props: CollapsibleMenuProps) => (
+const render = (props: CollapsibleMenuProps) => (
   <div style={{ width: '100%', display: 'flex', justifyContent: 'flex-end' }}>
     <div style={{ display: 'inline-block' }}>
       <CollapsibleMenu
@@ -23,18 +18,28 @@ const BaseMenu = (props: CollapsibleMenuProps) => (
   </div>
 )
 
-const Template: ComponentStory<typeof CollapsibleMenu> = (props) => (
-  <BaseMenu {...props} />
-)
-
-export const Default = Template.bind({})
-
-export const Settings = Template.bind({})
-Settings.args = {
-  icon: 'cog',
+const meta: Meta<typeof CollapsibleMenu> = {
+  title: 'UI/CollapsibleMenu',
+  component: CollapsibleMenu,
+  tags: ['autodocs'],
 }
 
-export const Chevron = Template.bind({})
-Chevron.args = {
-  icon: 'chevron',
+export const Default: StoryObj<typeof CollapsibleMenu> = {
+  render,
 }
+
+export const Settings: StoryObj<typeof CollapsibleMenu> = {
+  args: {
+    icon: 'cog',
+  },
+  render,
+}
+
+export const Chevron: StoryObj<typeof CollapsibleMenu> = {
+  args: {
+    icon: 'chevron',
+  },
+  render,
+}
+
+export default meta

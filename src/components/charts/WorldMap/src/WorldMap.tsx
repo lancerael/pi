@@ -37,7 +37,7 @@ export const WorldMap = ({ label, country }: WorldMapProps) => {
       .style('stroke', (d: WorldMapFeature) =>
         d.id === country ? 'var(--subtle)' : 'var(--specialText)'
       )
-  }, [projection])
+  }, [projection, country])
 
   useEffect(() => {
     const resize = () => {

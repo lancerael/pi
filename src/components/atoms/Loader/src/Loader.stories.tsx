@@ -1,26 +1,28 @@
 import React from 'react'
-import { ComponentMeta, ComponentStory } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react'
 import { Loader } from './Loader'
-import { LoaderProps } from './Loader.types'
 
-export default {
+const meta: Meta<typeof Loader> = {
   title: 'UI/Loader',
   component: Loader,
   argTypes: {
     isLarge: {
-      options: [true, false],
-      control: { type: 'radio' },
+      control: { type: 'boolean' },
     },
   },
-} as ComponentMeta<typeof Loader>
-
-const Template: ComponentStory<typeof Loader> = (args: LoaderProps) => (
-  <Loader {...args} />
-)
-
-export const Default = Template.bind({})
-
-export const Large = Template.bind({})
-Large.args = {
-  isLarge: true,
+  tags: ['autodocs'],
 }
+
+export const Default: StoryObj<typeof Loader> = {
+  args: {
+    isLarge: false,
+  },
+}
+
+export const Large: StoryObj<typeof Loader> = {
+  args: {
+    isLarge: true,
+  },
+}
+
+export default meta

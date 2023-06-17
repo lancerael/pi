@@ -1,8 +1,19 @@
 import React from 'react'
-import { ComponentMeta, ComponentStory } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react'
 import { Banner } from './Banner'
+import { BannerProps } from './Banner.types'
 
-export default {
+const render = (props: BannerProps) => (
+  <Banner {...props}>
+    <div>Content 1</div>
+    <div>Content 2</div>
+    <div>Content 3</div>
+    <div>Content 4</div>
+    <div>Content 5</div>
+  </Banner>
+)
+
+const meta: Meta<typeof Banner> = {
   title: 'Layout/Banner',
   component: Banner,
   argTypes: {
@@ -13,21 +24,15 @@ export default {
       control: 'boolean',
     },
   },
-} as ComponentMeta<typeof Banner>
-
-const Template: ComponentStory<typeof Banner> = (props) => (
-  <Banner {...props}>
-    <div>Content 1</div>
-    <div>Content 2</div>
-    <div>Content 3</div>
-    <div>Content 4</div>
-    <div>Content 5</div>
-  </Banner>
-)
-
-export const Default = Template.bind({})
-
-Default.args = {
-  isList: true,
-  isBottom: true,
+  tags: ['autodocs'],
 }
+
+export const Default: StoryObj<typeof Banner> = {
+  args: {
+    isList: true,
+    isBottom: true,
+  },
+  render,
+}
+
+export default meta

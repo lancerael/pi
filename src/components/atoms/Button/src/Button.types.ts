@@ -12,7 +12,7 @@ export interface ButtonProps
     >,
     SelectorProp {
   /**
-   * It denotes the status of the button (sucess, error, pending or default)
+   * Use styles for special states
    */
   status?: Status
   /**

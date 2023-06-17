@@ -1,16 +1,34 @@
 import React from 'react'
-import { ComponentMeta, ComponentStory } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react'
 import { WorldMap } from './WorldMap'
+import { WorldMapProps } from './WorldMap.types'
 
-export default {
-  title: 'Charts/WorldMap',
-  component: WorldMap,
-} as ComponentMeta<typeof WorldMap>
-
-const Template: ComponentStory<typeof WorldMap> = () => (
+const StoryTemplate = (props: WorldMapProps) => (
   <div style={{ width: '80%', height: '40vw' }}>
-    <WorldMap country="USA" label="Locale" />
+    <WorldMap {...props} />
   </div>
 )
 
-export const Default = Template.bind({})
+const meta: Meta<typeof StoryTemplate> = {
+  title: 'Charts/WorldMap',
+  component: StoryTemplate,
+  argTypes: {
+    country: {
+      control: { type: 'radio' },
+      options: ['USA', 'GBR', 'FRA'],
+    },
+  },
+  tags: ['autodocs'],
+}
+
+export const Default: StoryObj<typeof StoryTemplate> = {
+  args: {
+    country: 'GBR',
+    label: 'Locale',
+  },
+  parameters: {
+    country: 'GBR',
+  },
+}
+
+export default meta

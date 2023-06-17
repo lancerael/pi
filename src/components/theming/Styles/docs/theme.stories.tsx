@@ -1,4 +1,4 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react'
 import styled from 'styled-components'
 import { CodeFormat, PreFormat, Title } from './formatters.style'
 
@@ -122,11 +122,11 @@ export const StyledDiv = styled.div\`
   )
 }
 
-export default {
+const meta: Meta<typeof ThemeDocs> = {
   title: 'Theme/Docs',
   component: ThemeDocs,
-} as ComponentMeta<typeof ThemeDocs>
+}
 
-const Template: ComponentStory<typeof ThemeDocs> = () => <ThemeDocs />
+export default meta
 
-export const ThemeUse = Template.bind({})
+export const ThemeUse: StoryObj<typeof ThemeDocs> = {}

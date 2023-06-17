@@ -1,9 +1,9 @@
 import React from 'react'
-import { ComponentMeta, ComponentStory } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react'
 import { CandlestickChart } from './CandlestickChart'
 import { useFakeApi } from './hooks'
 
-const CandlestickContainer = ({ length }: { length: number }) => {
+const StoryTemplate = ({ length }: { length: number }) => {
   const chartData = useFakeApi(length, 1)
 
   return (
@@ -13,16 +13,16 @@ const CandlestickContainer = ({ length }: { length: number }) => {
   )
 }
 
-export default {
+const meta: Meta<typeof StoryTemplate> = {
   title: 'Charts/CandlestickChart',
-  component: CandlestickChart,
-} as ComponentMeta<typeof CandlestickChart>
-
-const Template: ComponentStory<typeof CandlestickContainer> = (props) => (
-  <CandlestickContainer {...props} />
-)
-
-export const Default = Template.bind({})
-Default.args = {
-  length: 400,
+  component: StoryTemplate,
+  tags: ['autodocs'],
 }
+
+export const Default: StoryObj<typeof StoryTemplate> = {
+  args: {
+    length: 400,
+  },
+}
+
+export default meta

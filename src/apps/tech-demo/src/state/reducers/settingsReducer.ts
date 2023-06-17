@@ -24,8 +24,6 @@ const initialState: SettingsState = {
   page: `/${pageParts[pageParts.length - 1]}`,
 }
 
-console.log(pageParts, pageParts[pageParts.length - 1], initialState.page)
-
 const settingsSlice = createSlice({
   name: 'theming',
   initialState,

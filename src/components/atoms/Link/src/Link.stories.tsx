@@ -1,8 +1,8 @@
 import React from 'react'
-import { ComponentMeta, ComponentStory } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react'
 import { Link } from './Link'
 
-export default {
+const meta: Meta<typeof Link> = {
   title: 'Interactions/Link',
   component: Link,
   argTypes: {
@@ -13,30 +13,32 @@ export default {
       control: 'boolean',
     },
   },
-} as ComponentMeta<typeof Link>
-
-const Template: ComponentStory<typeof Link> = (props) => (
-  <Link {...props}>Link</Link>
-)
-
-export const Default = Template.bind({})
-
-Default.args = {
-  href: 'https://www.google.com',
-  $isExternal: true,
+  tags: ['autodocs'],
 }
 
-export const Inactive = Template.bind({})
-
-Inactive.args = {
-  href: 'https://www.google.com',
-  $isInactive: true,
+export const Default: StoryObj<typeof Link> = {
+  args: {
+    href: 'https://www.google.com',
+    $isExternal: true,
+    children: 'Link',
+  },
 }
 
-export const Main = Template.bind({})
-
-Main.args = {
-  href: 'https://www.google.com',
-  $isMain: true,
-  $isExternal: true,
+export const Inactive: StoryObj<typeof Link> = {
+  args: {
+    href: 'https://www.google.com',
+    $isInactive: true,
+    children: 'Link',
+  },
 }
+
+export const Main: StoryObj<typeof Link> = {
+  args: {
+    href: 'https://www.google.com',
+    $isMain: true,
+    $isExternal: true,
+    children: 'Link',
+  },
+}
+
+export default meta
