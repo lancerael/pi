@@ -2,24 +2,25 @@
   "name": "@pi-lib/charts",
   "version": "0.11.1",
   "description": "Simple charting solution driven by d3 and TS",
-  "main": "./src/index.ts",
-  "repository": "https://github.com/lancerael/pi-charts",
-  "author": "Lance Taylor",
-  "license": "MIT",
-  "private": false,
-  "type": "module",
   "keywords": [
+    "pi",
     "charts"
   ],
-  "publishConfig": {
-    "access": "public"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lancerael/pi.git",
+    "directory": "src/libs/Charts"
   },
+  "license": "MIT",
+  "author": "Lance Taylor",
+  "type": "module",
+  "main": "./src/index.ts",
   "scripts": {
-    "dev": "vite",
     "build": "vite build",
-    "prettier": "prettier -w ./src/**/*.ts",
+    "dev": "vite",
     "eslint": "eslint --ext .ts",
     "lint": "npm run prettier && npm run eslint",
+    "prettier": "prettier -w ./src/**/*.ts",
     "test": "cross-env NODE_OPTIONS=--loader=ts-node/esm jasmine --config=jasmine.json",
     "test:full": "npm run lint && npm run test"
   },

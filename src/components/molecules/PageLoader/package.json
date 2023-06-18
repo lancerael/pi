@@ -1,23 +1,30 @@
 {
   "name": "@pi-lib/page-loader",
   "version": "0.2.7",
-  "description": "",
+  "description": "A React component for a page blocking loader",
+  "keywords": [
+    "pi",
+    "react",
+    "component",
+    "molecule",
+    "ui",
+    "page",
+    "loader"
+  ],
+  "homepage": "https://pi.lance-taylor.com/?path=/story/ui-pageloader",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lancerael/pi.git",
+    "directory": "src/components/molecules/PageLoader"
+  },
+  "license": "ISC",
+  "author": "Lance Taylor",
   "type": "module",
   "main": "./src/index.ts",
   "scripts": {
+    "build": "rimraf vanilla && vite build",
     "test": "vitest",
-    "test:coverage": "vitest --coverage",
-    "build": "rimraf vanilla && vite build"
-  },
-  "keywords": [
-    "react"
-  ],
-  "author": "Lance Taylor",
-  "license": "ISC",
-  "peerDependencies": {
-    "@pi-lib/styles": "^1.7.1",
-    "react": "^18.2.0",
-    "styled-components": "^5.3.5"
+    "test:coverage": "vitest --coverage"
   },
   "devDependencies": {
     "@pi-lib/config": "^0.4.0",
@@ -31,8 +38,11 @@
     "vite": "^3.0.9",
     "vitest": "^0.22.1"
   },
-  "dependencies": {
+  "peerDependencies": {
     "@pi-lib/loader": "workspace:^",
-    "@pi-lib/modal-screen": "workspace:^"
+    "@pi-lib/modal-screen": "workspace:^",
+    "@pi-lib/styles": "^1.7.1",
+    "react": "^18.2.0",
+    "styled-components": "^5.3.5"
   }
 }

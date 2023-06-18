@@ -1,25 +1,29 @@
 {
   "name": "@pi-lib/button",
   "version": "1.5.4",
-  "description": "Basic button component",
+  "description": "A React button component",
+  "keywords": [
+    "pi",
+    "react",
+    "component",
+    "atom",
+    "interactions",
+    "button"
+  ],
+  "homepage": "https://pi.lance-taylor.com/?path=/story/interactions-button",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lancerael/pi.git",
+    "directory": "src/components/atoms/Button"
+  },
+  "license": "ISC",
+  "author": "Lance Taylor",
   "type": "module",
   "main": "./src/index.ts",
   "scripts": {
+    "build": "rimraf vanilla && vite build",
     "test": "vitest",
-    "test:coverage": "vitest --coverage",
-    "build": "rimraf vanilla && vite build"
-  },
-  "keywords": [
-    "react",
-    "button"
-  ],
-  "author": "Lance Taylor",
-  "license": "ISC",
-  "peerDependencies": {
-    "react": "^18.2.0",
-    "styled-components": "^5.3.5",
-    "@pi-lib/utils": "workspace:^",
-    "@pi-lib/styles": "^1.7.1"
+    "test:coverage": "vitest --coverage"
   },
   "devDependencies": {
     "@pi-lib/config": "^0.4.0",
@@ -35,5 +39,11 @@
     "typescript": "^4.9.5",
     "vite": "^4.1.4",
     "vitest": "^0.29.3"
+  },
+  "peerDependencies": {
+    "@pi-lib/styles": "^1.7.1",
+    "@pi-lib/utils": "workspace:^",
+    "react": "^18.2.0",
+    "styled-components": "^5.3.5"
   }
 }

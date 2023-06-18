@@ -1,23 +1,29 @@
 {
   "name": "@pi-lib/link",
   "version": "0.6.5",
-  "description": "",
+  "description": "A React component for a router optional link",
+  "keywords": [
+    "pi",
+    "react",
+    "component",
+    "atom",
+    "interactions",
+    "link"
+  ],
+  "homepage": "https://pi.lance-taylor.com/?path=/story/interactions-link",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lancerael/pi.git",
+    "directory": "src/components/atoms/Link"
+  },
+  "license": "ISC",
+  "author": "Lance Taylor",
   "type": "module",
   "main": "./src/index.ts",
   "scripts": {
+    "build": "rimraf vanilla && vite build",
     "test": "vitest",
-    "test:coverage": "vitest --coverage",
-    "build": "rimraf vanilla && vite build"
-  },
-  "keywords": [
-    "react"
-  ],
-  "author": "Lance Taylor",
-  "license": "ISC",
-  "peerDependencies": {
-    "@pi-lib/styles": "^1.7.1",
-    "react": "^18.2.0",
-    "styled-components": "^5.3.5"
+    "test:coverage": "vitest --coverage"
   },
   "devDependencies": {
     "@pi-lib/config": "^0.4.0",
@@ -31,7 +37,10 @@
     "vite": "^3.0.9",
     "vitest": "^0.22.1"
   },
-  "dependencies": {
-    "react-router-dom": "^6.10.0"
+  "peerDependencies": {
+    "@pi-lib/styles": "^1.7.1",
+    "react": "^18.2.0",
+    "react-router-dom": "^6.10.0",
+    "styled-components": "^5.3.5"
   }
 }

@@ -1,27 +1,33 @@
 {
   "name": "@pi-lib/tooltip",
   "version": "1.3.4",
-  "description": "",
+  "description": "A React component used to position a tooltip containing content",
+  "keywords": [
+    "pi",
+    "react",
+    "component",
+    "atom",
+    "ui",
+    "tooltip"
+  ],
+  "homepage": "https://pi.lance-taylor.com/?path=/story/ui-tooltip",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lancerael/pi.git",
+    "directory": "src/components/atoms/Tooltip"
+  },
+  "license": "ISC",
+  "author": "Lance Taylor",
   "type": "module",
   "main": "./src/index.ts",
   "scripts": {
+    "build": "rimraf vanilla && vite build",
     "test": "vitest",
-    "test:coverage": "vitest --coverage",
-    "build": "rimraf vanilla && vite build"
+    "test:coverage": "vitest --coverage"
   },
-  "keywords": [
-    "react",
-    "tooltip"
-  ],
-  "author": "Lance Taylor",
-  "license": "ISC",
   "dependencies": {
     "@pi-lib/styles": "^1.7.1",
     "lodash.throttle": "^4.1.1"
-  },
-  "peerDependencies": {
-    "react": "^18.2.0",
-    "styled-components": "^5.3.5"
   },
   "devDependencies": {
     "@pi-lib/config": "^0.4.0",
@@ -35,5 +41,9 @@
     "typescript": "^4.9.5",
     "vite": "^4.1.4",
     "vitest": "^0.29.3"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "styled-components": "^5.3.5"
   }
 }

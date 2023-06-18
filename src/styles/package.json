@@ -1,20 +1,24 @@
 {
   "name": "@pi-lib/styles",
   "version": "1.7.1",
-  "description": "",
+  "description": "React theming utility for use with Pi and styled-components",
+  "keywords": [
+    "pi",
+    "react",
+    "theming"
+  ],
+  "homepage": "https://pi.lance-taylor.com/?path=/story/theme-docs",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lancerael/pi.git",
+    "directory": "src/styles"
+  },
+  "license": "ISC",
+  "author": "Lance Taylor",
   "type": "module",
   "main": "./src/index.ts",
   "scripts": {
     "build": "rimraf vanilla && vite build"
-  },
-  "keywords": [
-    "react"
-  ],
-  "author": "Lance Taylor",
-  "license": "ISC",
-  "peerDependencies": {
-    "react": "^18.2.0",
-    "styled-components": "^5.3.5"
   },
   "devDependencies": {
     "@pi-lib/config": "^0.4.0",
@@ -28,5 +32,9 @@
     "typescript": "^4.9.5",
     "vite": "^4.1.4",
     "vitest": "^0.29.3"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "styled-components": "^5.3.5"
   }
 }
