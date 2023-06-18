@@ -2,11 +2,20 @@
   "name": "pi-lib",
   "version": "0.1.0",
   "description": "Monorepo of React UI components and supporting utilities.",
+  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lancerael/pi.git"
+  },
+  "license": "ISC",
+  "author": "Lance Taylor",
   "scripts": {
     "build": "npx nx run-many --target=build",
     "change": "pnpm i && beachball sync && beachball change",
     "publish": "npx beachball publish",
-    "generate": "node ./bin/generate.js",
+    "------SCRIPTS-------": "------------------------",
+    "generate": "node ./bin/generate.ts",
+    "readmeGen": "node ./bin/readmeGen.ts",
     "styleDocs": "node ./bin/styleDocGen.ts",
     "------QUALITY-------": "------------------------",
     "lint": "npx prettier -c . && npx eslint",
@@ -22,16 +31,6 @@
     "candlestick:start": "pnpm --filter @pi-lib/candlestick-chart-mfe start",
     "mfes": "concurrently \"pnpm sandbox:start\" \"pnpm candlestick:start\"",
     "demo": "pnpm --filter @pi-lib/tech-demo dev"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/lancerael/pi.git"
-  },
-  "keywords": [],
-  "author": "Lance Taylor",
-  "license": "ISC",
-  "beachball": {
-    "access": "public"
   },
   "devDependencies": {
     "@pi-lib/button": "*",
@@ -101,6 +100,9 @@
     "storybook": "7.0.21",
     "styled-components": "^5.3.9",
     "typescript": "^4.9.5"
+  },
+  "beachball": {
+    "access": "public"
   },
   "pnpm": {
     "overrides": {

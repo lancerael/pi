@@ -1,6 +1,6 @@
-const fs = require('fs-extra')
-const fileName = './src/components/theming/Styles/docs/styles.stories.tsx'
-const themeFile = './src/components/theming/Styles/src/themes/themes.types.ts'
+const fsExtra = require('fs-extra')
+const fileName = './src/styles/docs/styles.stories.tsx'
+const themeFile = './src/styles/src/themes/themes.types.ts'
 
 const template = (name) => `
 export const ${
@@ -13,10 +13,10 @@ export const ${
 `
 
 const styleDocGen = async () => {
-  const themeContents = await fs.readFile(themeFile, 'utf8')
+  const themeContents = await fsExtra.readFile(themeFile, 'utf8')
   const themeList = themeContents.match(/'[a-z]+'/g)
 
-  const fileContents = await fs.readFile(fileName, 'utf8')
+  const fileContents = await fsExtra.readFile(fileName, 'utf8')
 
   const contentPieces = fileContents.split(`/* generated content below */`)
 
@@ -24,7 +24,7 @@ const styleDocGen = async () => {
     return `${themeStories}${template(theme.replace(/\'/g, ''))}`
   }, '')
 
-  await fs.writeFile(
+  await fsExtra.writeFile(
     fileName,
     contentPieces.join(`/* generated content below */
     `)

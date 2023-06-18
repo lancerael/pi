@@ -1,9 +1,9 @@
 const fs = require('fs-extra')
 
-const [node, location, path, name] = process.argv
-const lcName = name.replace(/([a-z0–9])([A-Z])/g, '$1-$2').toLowerCase()
+const [node, _location, destinationPath, id] = process.argv
+const lcName = id.replace(/([a-z0–9])([A-Z])/g, '$1-$2').toLowerCase()
 const source = './generator'
-const destination = `./${path}/${name}`
+const destination = `./${destinationPath}/${id}`
 const files = ['package.json', 'tsconfig.json', 'vite.config.ts']
 const subFiles = [
   '_NAME_.stories.tsx',
@@ -26,7 +26,7 @@ const generate = async () => {
         )
         await fs.writeFile(
           `${destination}/${fileName}`,
-          fileContents.replace(/_LC_NAME_/g, lcName).replace(/_NAME_/g, name)
+          fileContents.replace(/_LC_NAME_/g, lcName).replace(/_NAME_/g, id)
         )
       }
     }
@@ -34,10 +34,10 @@ const generate = async () => {
       const oldFileName = `${destination}/src/${fileName}`
       const newFileName = `${destination}/src/${fileName.replace(
         /_NAME_/g,
-        oldFileName.match('index') ? '' : name
+        oldFileName.match('index') ? '' : id
       )}`
       const fileContents = await fs.readFile(oldFileName, 'utf8')
-      await fs.writeFile(newFileName, fileContents.replace(/_NAME_/g, name))
+      await fs.writeFile(newFileName, fileContents.replace(/_NAME_/g, id))
       await fs.unlink(oldFileName)
     }
     console.log('Success!')

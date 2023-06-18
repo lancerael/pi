@@ -6,6 +6,8 @@ Monorepo of React UI components and supporting utilities. It supports theming an
 
 All packages prefixed with `@pi-lib/...` are standalone npm modules. They designed for use with TypeScript, but they are also bundled in vanilla JS if you import from the package name with a suffix of `/vanilla`
 
+<!--- readmeGen --->
+
 ## _Interactions_
 
 #### Button
@@ -92,7 +94,9 @@ _@pi-lib/input_ - A form input component, styled via Pi theme.
 
 _@pi-lib/select_ - A select dropdown, styled via Pi theme.
 
-## Develpoment
+<!--- readmeGen --->
+
+## Development
 
 Pi uses `PNPM` to manage the monorepo, with some performance enhancements from `nx`. If you want to contribute, it is highly recommended you use `pnpm` and not `yarn` or `npm`.
 
