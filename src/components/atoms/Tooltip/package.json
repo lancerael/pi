@@ -26,7 +26,7 @@
     "test:coverage": "vitest --coverage"
   },
   "devDependencies": {
-   "@pi-lib/config": "workspace:^",
+    "@pi-lib/config": "workspace:^",
     "@pi-lib/types": "^0.1.0",
     "@testing-library/react": "^14.0.0",
     "@vitejs/plugin-react": "^3.1.0",

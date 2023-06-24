@@ -28,7 +28,7 @@
     "test:coverage": "vitest --coverage"
   },
   "devDependencies": {
-   "@pi-lib/config": "workspace:^",
+    "@pi-lib/config": "workspace:^",
     "@testing-library/react": "^13.3.0",
     "@vitejs/plugin-react": "^2.0.1",
     "@vitest/coverage-istanbul": "^0.23.1",
