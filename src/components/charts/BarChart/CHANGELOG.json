@@ -2,6 +2,33 @@
   "name": "@pi-lib/bar-chart",
   "entries": [
     {
+      "date": "Sat, 24 Jun 2023 21:27:44 GMT",
+      "tag": "@pi-lib/bar-chart_v1.0.0",
+      "version": "1.0.0",
+      "comments": {
+        "major": [
+          {
+            "author": "122271901+lancerael-undo@users.noreply.github.com",
+            "package": "@pi-lib/bar-chart",
+            "commit": "cccff744c29975036c54c26949413b882242ff5a",
+            "comment": "* Improved docs/docgen * Cleanup * Added cloudfront"
+          },
+          {
+            "author": "beachball",
+            "package": "@pi-lib/bar-chart",
+            "comment": "Bump @pi-lib/constants to v2.0.0",
+            "commit": "af08d2c958b964c7bed2b0b73a016b807f2e4169"
+          },
+          {
+            "author": "beachball",
+            "package": "@pi-lib/bar-chart",
+            "comment": "Bump @pi-lib/types to v0.2.0",
+            "commit": "af08d2c958b964c7bed2b0b73a016b807f2e4169"
+          }
+        ]
+      }
+    },
+    {
       "date": "Tue, 06 Jun 2023 23:54:31 GMT",
       "tag": "@pi-lib/bar-chart_v0.2.0",
       "version": "0.2.0",

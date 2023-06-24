@@ -2,6 +2,33 @@
   "name": "@pi-lib/button",
   "entries": [
     {
+      "date": "Sat, 24 Jun 2023 21:27:44 GMT",
+      "tag": "@pi-lib/button_v1.6.0",
+      "version": "1.6.0",
+      "comments": {
+        "minor": [
+          {
+            "author": "122271901+lancerael-undo@users.noreply.github.com",
+            "package": "@pi-lib/button",
+            "commit": "5a6d885e18714f3e68f3f82b02f18eb7c4f8a5de",
+            "comment": "Improved event handler hooks"
+          },
+          {
+            "author": "beachball",
+            "package": "@pi-lib/button",
+            "comment": "Bump @pi-lib/types to v0.2.0",
+            "commit": "af08d2c958b964c7bed2b0b73a016b807f2e4169"
+          },
+          {
+            "author": "beachball",
+            "package": "@pi-lib/button",
+            "comment": "Bump @pi-lib/styles to v2.0.0",
+            "commit": "af08d2c958b964c7bed2b0b73a016b807f2e4169"
+          }
+        ]
+      }
+    },
+    {
       "date": "Tue, 13 Jun 2023 00:07:57 GMT",
       "tag": "@pi-lib/button_v1.5.4",
       "version": "1.5.4",

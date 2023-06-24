@@ -1,6 +1,6 @@
 {
   "name": "@pi-lib/tooltip",
-  "version": "1.3.4",
+  "version": "2.0.0",
   "description": "A React component used to position a tooltip containing content",
   "keywords": [
     "pi",
@@ -27,7 +27,7 @@
   },
   "devDependencies": {
     "@pi-lib/config": "workspace:^",
-    "@pi-lib/types": "^0.1.0",
+    "@pi-lib/types": "^0.2.0",
     "@testing-library/react": "^14.0.0",
     "@vitejs/plugin-react": "^3.1.0",
     "@vitest/coverage-istanbul": "^0.29.3",

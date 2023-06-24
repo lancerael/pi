@@ -1,8 +1,16 @@
 # Change Log - @pi-lib/utils
 
-This log was last generated on Tue, 13 Jun 2023 00:07:57 GMT and should not be manually modified.
+This log was last generated on Sat, 24 Jun 2023 21:27:44 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 0.3.0
+
+Sat, 24 Jun 2023 21:27:44 GMT
+
+### Minor changes
+
+- Improved event handler hooks (122271901+lancerael-undo@users.noreply.github.com)
 
 ## 0.2.2
 

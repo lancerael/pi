@@ -1,6 +1,6 @@
 {
   "name": "@pi-lib/select",
-  "version": "0.2.2",
+  "version": "1.0.0",
   "description": "A React component for a themeable select input",
   "keywords": [
     "pi",

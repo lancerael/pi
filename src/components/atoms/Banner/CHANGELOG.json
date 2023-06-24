@@ -2,6 +2,21 @@
   "name": "@pi-lib/banner",
   "entries": [
     {
+      "date": "Sat, 24 Jun 2023 21:27:44 GMT",
+      "tag": "@pi-lib/banner_v0.4.0",
+      "version": "0.4.0",
+      "comments": {
+        "minor": [
+          {
+            "author": "122271901+lancerael-undo@users.noreply.github.com",
+            "package": "@pi-lib/banner",
+            "commit": "cccff744c29975036c54c26949413b882242ff5a",
+            "comment": "* Improved docs/docgen * Cleanup * Added cloudfront"
+          }
+        ]
+      }
+    },
+    {
       "date": "Sat, 27 May 2023 23:26:23 GMT",
       "tag": "@pi-lib/banner_v0.3.1",
       "version": "0.3.1",

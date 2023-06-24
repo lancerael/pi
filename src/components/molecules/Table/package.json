@@ -1,6 +1,6 @@
 {
   "name": "@pi-lib/table",
-  "version": "1.7.3",
+  "version": "2.0.0",
   "description": "A React component for a table with expandable rows",
   "keywords": [
     "pi",

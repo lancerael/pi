@@ -2,6 +2,27 @@
   "name": "@pi-lib/loader",
   "entries": [
     {
+      "date": "Sat, 24 Jun 2023 21:27:44 GMT",
+      "tag": "@pi-lib/loader_v3.0.0",
+      "version": "3.0.0",
+      "comments": {
+        "major": [
+          {
+            "author": "122271901+lancerael-undo@users.noreply.github.com",
+            "package": "@pi-lib/loader",
+            "commit": "cccff744c29975036c54c26949413b882242ff5a",
+            "comment": "* Improved docs/docgen * Cleanup * Added cloudfront"
+          },
+          {
+            "author": "beachball",
+            "package": "@pi-lib/loader",
+            "comment": "Bump @pi-lib/types to v0.2.0",
+            "commit": "af08d2c958b964c7bed2b0b73a016b807f2e4169"
+          }
+        ]
+      }
+    },
+    {
       "date": "Tue, 13 Jun 2023 00:07:57 GMT",
       "tag": "@pi-lib/loader_v2.4.1",
       "version": "2.4.1",

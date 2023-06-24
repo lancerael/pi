@@ -2,6 +2,21 @@
   "name": "@pi-lib/constants",
   "entries": [
     {
+      "date": "Sat, 24 Jun 2023 21:27:44 GMT",
+      "tag": "@pi-lib/constants_v2.0.0",
+      "version": "2.0.0",
+      "comments": {
+        "major": [
+          {
+            "author": "122271901+lancerael-undo@users.noreply.github.com",
+            "package": "@pi-lib/constants",
+            "commit": "cccff744c29975036c54c26949413b882242ff5a",
+            "comment": "* Improved docs/docgen * Cleanup * Added cloudfront"
+          }
+        ]
+      }
+    },
+    {
       "date": "Thu, 23 Mar 2023 00:53:35 GMT",
       "tag": "@pi-lib/constants_v0.2.0",
       "version": "0.2.0",

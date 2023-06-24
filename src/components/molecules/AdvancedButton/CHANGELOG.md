@@ -1,8 +1,19 @@
 # Change Log - @pi-lib/advanced-button
 
-This log was last generated on Tue, 13 Jun 2023 00:07:57 GMT and should not be manually modified.
+This log was last generated on Sat, 24 Jun 2023 21:27:44 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 1.0.0
+
+Sat, 24 Jun 2023 21:27:44 GMT
+
+### Major changes
+
+- * Improved docs/docgen * Cleanup * Added cloudfront (122271901+lancerael-undo@users.noreply.github.com)
+- Bump @pi-lib/types to v0.2.0
+- Bump @pi-lib/button to v1.6.0
+- Bump @pi-lib/loader to v3.0.0
 
 ## 0.6.6
 

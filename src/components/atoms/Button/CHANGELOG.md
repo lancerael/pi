@@ -1,8 +1,18 @@
 # Change Log - @pi-lib/button
 
-This log was last generated on Tue, 13 Jun 2023 00:07:57 GMT and should not be manually modified.
+This log was last generated on Sat, 24 Jun 2023 21:27:44 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 1.6.0
+
+Sat, 24 Jun 2023 21:27:44 GMT
+
+### Minor changes
+
+- Improved event handler hooks (122271901+lancerael-undo@users.noreply.github.com)
+- Bump @pi-lib/types to v0.2.0
+- Bump @pi-lib/styles to v2.0.0
 
 ## 1.5.4
 

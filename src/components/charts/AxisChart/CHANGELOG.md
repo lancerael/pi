@@ -1,8 +1,16 @@
 # Change Log - @pi-lib/axis-chart
 
-This log was last generated on Mon, 12 Jun 2023 23:42:41 GMT and should not be manually modified.
+This log was last generated on Sat, 24 Jun 2023 21:27:44 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 1.0.0
+
+Sat, 24 Jun 2023 21:27:44 GMT
+
+### Major changes
+
+- * Improved docs/docgen * Cleanup * Added cloudfront (122271901+lancerael-undo@users.noreply.github.com)
 
 ## 0.2.1
 

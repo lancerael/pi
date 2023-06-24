@@ -1,6 +1,6 @@
 {
   "name": "@pi-lib/page-loader",
-  "version": "0.2.7",
+  "version": "1.0.0",
   "description": "A React component for a page blocking loader",
   "keywords": [
     "pi",

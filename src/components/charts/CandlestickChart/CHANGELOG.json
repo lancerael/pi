@@ -2,6 +2,27 @@
   "name": "@pi-lib/candlestick-chart",
   "entries": [
     {
+      "date": "Sat, 24 Jun 2023 21:27:44 GMT",
+      "tag": "@pi-lib/candlestick-chart_v2.0.0",
+      "version": "2.0.0",
+      "comments": {
+        "major": [
+          {
+            "author": "122271901+lancerael-undo@users.noreply.github.com",
+            "package": "@pi-lib/candlestick-chart",
+            "commit": "cccff744c29975036c54c26949413b882242ff5a",
+            "comment": "* Improved docs/docgen * Cleanup * Added cloudfront"
+          },
+          {
+            "author": "beachball",
+            "package": "@pi-lib/candlestick-chart",
+            "comment": "Bump @pi-lib/types to v0.2.0",
+            "commit": "af08d2c958b964c7bed2b0b73a016b807f2e4169"
+          }
+        ]
+      }
+    },
+    {
       "date": "Tue, 13 Jun 2023 00:07:57 GMT",
       "tag": "@pi-lib/candlestick-chart_v1.4.2",
       "version": "1.4.2",

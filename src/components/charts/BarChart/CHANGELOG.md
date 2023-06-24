@@ -1,8 +1,18 @@
 # Change Log - @pi-lib/bar-chart
 
-This log was last generated on Tue, 06 Jun 2023 23:54:31 GMT and should not be manually modified.
+This log was last generated on Sat, 24 Jun 2023 21:27:44 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 1.0.0
+
+Sat, 24 Jun 2023 21:27:44 GMT
+
+### Major changes
+
+- * Improved docs/docgen * Cleanup * Added cloudfront (122271901+lancerael-undo@users.noreply.github.com)
+- Bump @pi-lib/constants to v2.0.0
+- Bump @pi-lib/types to v0.2.0
 
 ## 0.2.0
 

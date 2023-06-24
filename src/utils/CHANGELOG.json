@@ -2,6 +2,21 @@
   "name": "@pi-lib/utils",
   "entries": [
     {
+      "date": "Sat, 24 Jun 2023 21:27:44 GMT",
+      "tag": "@pi-lib/utils_v0.3.0",
+      "version": "0.3.0",
+      "comments": {
+        "minor": [
+          {
+            "author": "122271901+lancerael-undo@users.noreply.github.com",
+            "package": "@pi-lib/utils",
+            "commit": "5a6d885e18714f3e68f3f82b02f18eb7c4f8a5de",
+            "comment": "Improved event handler hooks"
+          }
+        ]
+      }
+    },
+    {
       "date": "Tue, 13 Jun 2023 00:07:57 GMT",
       "tag": "@pi-lib/utils_v0.2.2",
       "version": "0.2.2",

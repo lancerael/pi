@@ -1,8 +1,16 @@
 # Change Log - @pi-lib/banner
 
-This log was last generated on Sat, 27 May 2023 23:26:23 GMT and should not be manually modified.
+This log was last generated on Sat, 24 Jun 2023 21:27:44 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 0.4.0
+
+Sat, 24 Jun 2023 21:27:44 GMT
+
+### Minor changes
+
+- * Improved docs/docgen * Cleanup * Added cloudfront (122271901+lancerael-undo@users.noreply.github.com)
 
 ## 0.3.1
 
