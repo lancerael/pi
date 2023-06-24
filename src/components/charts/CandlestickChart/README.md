@@ -1,6 +1,6 @@
 ### @pi-lib/candlestick-chart
 
-**CandlestickChart** _v1.4.2_
+**CandlestickChart**
 
 A candlestick chart React component used to show the movement of traded assets.
 
@@ -10,8 +10,8 @@ A candlestick chart React component used to show the movement of traded assets.
   <tbody>
     <tr>
       <td><a href="https://pi.lance-taylor.com/?path=/story/charts-candlestickchart" target="_blank">Docs</a></td>
-      <td><a href="https://www.npmjs.com/package/@pi-lib/candlestick-chart" target="_blank">NPM</a></td>
-      <td><a href="https://github.com/lancerael/pi/tree/main/src/src/components/charts/CandlestickChart" target="_blank">Github</a></td>
+      <td><a href="https://www.npmjs.com/package/@pi-lib/candlestick-chart?activeTab=readme" target="_blank">NPM</a></td>
+      <td><a href="https://github.com/lancerael/pi/tree/main/src/components/charts/CandlestickChart" target="_blank">Github</a></td>
     </tr>
   </tbody>
 </table>
