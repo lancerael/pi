@@ -361,7 +361,7 @@ importers:
         version: 5.3.11(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)
     devDependencies:
       '@pi-lib/config':
-        specifier: ^0.4.0
+        specifier: workspace:^
         version: link:../../../config
       '@testing-library/react':
         specifier: ^13.3.0
@@ -401,7 +401,7 @@ importers:
         version: link:../../../utils
     devDependencies:
       '@pi-lib/config':
-        specifier: ^0.4.0
+        specifier: workspace:^
         version: link:../../../config
       '@pi-lib/types':
         specifier: ^0.1.0
@@ -502,7 +502,7 @@ importers:
         version: 6.10.0(react-dom@18.2.0)(react@18.2.0)
     devDependencies:
       '@pi-lib/config':
-        specifier: ^0.4.0
+        specifier: workspace:^
         version: link:../../../config
       '@testing-library/react':
         specifier: ^13.3.0
@@ -542,7 +542,7 @@ importers:
         version: 5.3.11(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)
     devDependencies:
       '@pi-lib/config':
-        specifier: ^0.4.0
+        specifier: workspace:^
         version: link:../../../config
       '@pi-lib/types':
         specifier: ^0.1.0
@@ -585,7 +585,7 @@ importers:
         version: 18.2.0
     devDependencies:
       '@pi-lib/config':
-        specifier: ^0.4.0
+        specifier: workspace:^
         version: link:../../../config
       '@testing-library/react':
         specifier: ^13.3.0
@@ -628,7 +628,7 @@ importers:
         version: 18.2.0
     devDependencies:
       '@pi-lib/config':
-        specifier: ^0.4.0
+        specifier: workspace:^
         version: link:../../../config
       '@pi-lib/types':
         specifier: ^0.1.0
@@ -723,7 +723,7 @@ importers:
         version: 5.3.11(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)
     devDependencies:
       '@pi-lib/config':
-        specifier: ^0.4.0
+        specifier: workspace:^
         version: link:../../../config
       '@pi-lib/constants':
         specifier: ^0.2.0
@@ -793,7 +793,7 @@ importers:
         version: 18.2.0
     devDependencies:
       '@pi-lib/config':
-        specifier: ^0.4.0
+        specifier: workspace:^
         version: link:../../../config
       '@pi-lib/types':
         specifier: ^0.1.0
@@ -857,7 +857,7 @@ importers:
         version: 5.3.11(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)
     devDependencies:
       '@pi-lib/config':
-        specifier: ^0.4.0
+        specifier: workspace:^
         version: link:../../../config
       '@pi-lib/types':
         specifier: ^0.1.0
@@ -906,7 +906,7 @@ importers:
         version: 18.2.0
     devDependencies:
       '@pi-lib/config':
-        specifier: ^0.4.0
+        specifier: workspace:^
         version: link:../../../config
       '@testing-library/react':
         specifier: ^13.3.0
@@ -946,7 +946,7 @@ importers:
         version: 5.3.11(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)
     devDependencies:
       '@pi-lib/config':
-        specifier: ^0.4.0
+        specifier: workspace:^
         version: link:../../../config
       '@testing-library/react':
         specifier: ^13.3.0
@@ -992,7 +992,7 @@ importers:
         version: 5.3.11(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)
     devDependencies:
       '@pi-lib/config':
-        specifier: ^0.4.0
+        specifier: workspace:^
         version: link:../../../config
       '@pi-lib/types':
         specifier: ^0.1.0
@@ -1047,7 +1047,7 @@ importers:
         version: 3.23.0(react@18.2.0)
     devDependencies:
       '@pi-lib/config':
-        specifier: ^0.4.0
+        specifier: workspace:^
         version: link:../../../config
       '@testing-library/react':
         specifier: ^13.3.0
@@ -1087,7 +1087,7 @@ importers:
         version: 18.2.0
     devDependencies:
       '@pi-lib/config':
-        specifier: ^0.4.0
+        specifier: workspace:^
         version: link:../../../config
       '@testing-library/react':
         specifier: ^13.3.0
@@ -1133,7 +1133,7 @@ importers:
         version: 18.2.0
     devDependencies:
       '@pi-lib/config':
-        specifier: ^0.4.0
+        specifier: workspace:^
         version: link:../../../config
       '@testing-library/react':
         specifier: ^13.3.0
@@ -1247,7 +1247,7 @@ importers:
         specifier: ^1.0.2
         version: 1.0.2(nyc@15.1.0)
       '@pi-lib/config':
-        specifier: ^0.4.0
+        specifier: workspace:^
         version: link:../../config
       '@types/d3-array':
         specifier: ^3.0.4
@@ -1502,7 +1502,7 @@ importers:
         version: 5.3.11(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)
     devDependencies:
       '@pi-lib/config':
-        specifier: ^0.4.0
+        specifier: workspace:^
         version: link:../config
       '@pi-lib/types':
         specifier: ^0.1.0
