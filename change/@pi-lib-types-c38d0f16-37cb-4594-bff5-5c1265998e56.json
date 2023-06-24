@@ -1,7 +1,0 @@
-{
-  "type": "major",
-  "comment": "* Improved docs/docgen * Cleanup * Added cloudfront",
-  "packageName": "@pi-lib/types",
-  "email": "122271901+lancerael-undo@users.noreply.github.com",
-  "dependentChangeType": "patch"
-}
