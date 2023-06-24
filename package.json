@@ -19,7 +19,7 @@
     "demo:sandbox": "pnpm --filter @pi-lib/chart-sandbox-mfe dev",
     "demo:sandbox:api-deploy": "pnpm --filter @pi-lib/chart-sandbox-api release",
     "demo:sandbox:start": "pnpm --filter @pi-lib/chart-sandbox-mfe start",
-    "docs": "pnpm docs:readmeGen && pnpm docs:styleDocs && pnpm lint:fix",
+    "docs:gen": "pnpm docs:readmeGen && pnpm docs:styleDocs && pnpm lint:fix",
     "docs:readmeGen": "node ./bin/readmeGen.ts",
     "docs:styleDocs": "node ./bin/styleDocGen.ts",
     "generate": "node ./bin/generate.ts",

@@ -39,14 +39,7 @@
    */
   const readmeTemplate = (
     componentName,
-    {
-      name,
-      version,
-      description,
-      homepage,
-      repository: { directory },
-      peerDependencies,
-    }
+    { name, description, homepage, repository: { directory }, peerDependencies }
   ) => {
     return `### ${name}
 
