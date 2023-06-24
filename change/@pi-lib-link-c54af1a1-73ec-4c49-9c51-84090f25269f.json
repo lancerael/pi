@@ -1,7 +1,0 @@
-{
-  "type": "patch",
-  "comment": "Updated docGen to fix links",
-  "packageName": "@pi-lib/link",
-  "email": "122271901+lancerael-undo@users.noreply.github.com",
-  "dependentChangeType": "patch"
-}

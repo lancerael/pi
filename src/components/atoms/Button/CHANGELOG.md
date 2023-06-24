@@ -1,8 +1,18 @@
 # Change Log - @pi-lib/button
 
-This log was last generated on Sat, 24 Jun 2023 21:27:44 GMT and should not be manually modified.
+This log was last generated on Sat, 24 Jun 2023 22:13:58 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 1.6.1
+
+Sat, 24 Jun 2023 22:13:58 GMT
+
+### Patches
+
+- Updated docGen to fix links (122271901+lancerael-undo@users.noreply.github.com)
+- Bump @pi-lib/types to v0.2.1
+- Bump @pi-lib/styles to v2.0.1
 
 ## 1.6.0
 

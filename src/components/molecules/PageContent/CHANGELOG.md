@@ -1,8 +1,16 @@
 # Change Log - @pi-lib/page-content
 
-This log was last generated on Sat, 24 Jun 2023 21:27:44 GMT and should not be manually modified.
+This log was last generated on Sat, 24 Jun 2023 22:13:58 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 1.0.1
+
+Sat, 24 Jun 2023 22:13:58 GMT
+
+### Patches
+
+- Updated docGen to fix links (122271901+lancerael-undo@users.noreply.github.com)
 
 ## 1.0.0
 

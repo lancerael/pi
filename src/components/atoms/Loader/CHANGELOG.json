@@ -2,6 +2,27 @@
   "name": "@pi-lib/loader",
   "entries": [
     {
+      "date": "Sat, 24 Jun 2023 22:13:58 GMT",
+      "tag": "@pi-lib/loader_v3.0.1",
+      "version": "3.0.1",
+      "comments": {
+        "patch": [
+          {
+            "author": "122271901+lancerael-undo@users.noreply.github.com",
+            "package": "@pi-lib/loader",
+            "commit": "a06a3c941f5f034a411f39a97632a7d7afb773d9",
+            "comment": "Updated docGen to fix links"
+          },
+          {
+            "author": "beachball",
+            "package": "@pi-lib/loader",
+            "comment": "Bump @pi-lib/types to v0.2.1",
+            "commit": "ed3c3e13b2fe6b6eff5ff9f4656a4daa7ae7cfac"
+          }
+        ]
+      }
+    },
+    {
       "date": "Sat, 24 Jun 2023 21:27:44 GMT",
       "tag": "@pi-lib/loader_v3.0.0",
       "version": "3.0.0",

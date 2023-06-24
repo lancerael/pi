@@ -1,6 +1,6 @@
 {
   "name": "@pi-lib/bar-chart",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A React component for a bar chart",
   "keywords": [
     "pi",
@@ -27,8 +27,8 @@
   },
   "devDependencies": {
     "@pi-lib/config": "workspace:^",
-    "@pi-lib/constants": "^2.0.0",
-    "@pi-lib/types": "^0.2.0",
+    "@pi-lib/constants": "^2.0.1",
+    "@pi-lib/types": "^0.2.1",
     "@testing-library/react": "^14.0.0",
     "@vitejs/plugin-react": "^3.1.0",
     "@vitest/coverage-istanbul": "^0.29.3",
