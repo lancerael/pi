@@ -394,7 +394,7 @@ importers:
   src/components/atoms/Button:
     dependencies:
       '@pi-lib/styles':
-        specifier: ^1.7.1
+        specifier: ^2.0.0
         version: link:../../../styles
       '@pi-lib/utils':
         specifier: workspace:^
@@ -404,7 +404,7 @@ importers:
         specifier: workspace:^
         version: link:../../../config
       '@pi-lib/types':
-        specifier: ^0.1.0
+        specifier: ^0.2.0
         version: link:../../../types
       '@testing-library/react':
         specifier: ^14.0.0
@@ -545,7 +545,7 @@ importers:
         specifier: workspace:^
         version: link:../../../config
       '@pi-lib/types':
-        specifier: ^0.1.0
+        specifier: ^0.2.0
         version: link:../../../types
       '@testing-library/react':
         specifier: ^14.0.0
@@ -631,7 +631,7 @@ importers:
         specifier: workspace:^
         version: link:../../../config
       '@pi-lib/types':
-        specifier: ^0.1.0
+        specifier: ^0.2.0
         version: link:../../../types
       '@testing-library/react':
         specifier: ^14.0.0
@@ -726,10 +726,10 @@ importers:
         specifier: workspace:^
         version: link:../../../config
       '@pi-lib/constants':
-        specifier: ^0.2.0
-        version: 0.2.0
+        specifier: ^2.0.0
+        version: link:../../../constants
       '@pi-lib/types':
-        specifier: ^0.1.0
+        specifier: ^0.2.0
         version: link:../../../types
       '@testing-library/react':
         specifier: ^14.0.0
@@ -796,7 +796,7 @@ importers:
         specifier: workspace:^
         version: link:../../../config
       '@pi-lib/types':
-        specifier: ^0.1.0
+        specifier: ^0.2.0
         version: link:../../../types
       '@testing-library/react':
         specifier: ^14.0.0
@@ -860,7 +860,7 @@ importers:
         specifier: workspace:^
         version: link:../../../config
       '@pi-lib/types':
-        specifier: ^0.1.0
+        specifier: ^0.2.0
         version: link:../../../types
       '@testing-library/react':
         specifier: ^13.3.0
@@ -979,10 +979,10 @@ importers:
   src/components/molecules/AdvancedButton:
     dependencies:
       '@pi-lib/button':
-        specifier: ^1.5.4
+        specifier: ^1.6.0
         version: link:../../atoms/Button
       '@pi-lib/loader':
-        specifier: ^2.4.1
+        specifier: ^3.0.0
         version: link:../../atoms/Loader
       react:
         specifier: ^18.2.0
@@ -995,7 +995,7 @@ importers:
         specifier: workspace:^
         version: link:../../../config
       '@pi-lib/types':
-        specifier: ^0.1.0
+        specifier: ^0.2.0
         version: link:../../../types
       '@testing-library/react':
         specifier: ^14.0.0
@@ -1505,7 +1505,7 @@ importers:
         specifier: workspace:^
         version: link:../config
       '@pi-lib/types':
-        specifier: ^0.1.0
+        specifier: ^0.2.0
         version: link:../types
       '@testing-library/react':
         specifier: ^14.0.0
@@ -3940,10 +3940,6 @@ packages:
     dependencies:
       node-addon-api: 3.2.1
       node-gyp-build: 4.6.0
-    dev: true
-
-  /@pi-lib/constants@0.2.0:
-    resolution: {integrity: sha512-YxItvhTWjs9h2ZFTJ3GjKLWN/FTpx9vkrAW2+S4hUY1kfT77fuzibCdUhS78vZVinYCGpr4kBr5q9d32ZyaKUQ==}
     dev: true
 
   /@react-aria/breadcrumbs@3.5.2(react@18.2.0):
