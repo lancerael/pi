@@ -1,6 +1,6 @@
 ### @pi-lib/config
 
-**config** _v1.0.1_
+**config** _v2.0.0_
 
 Shared Pi config
 
