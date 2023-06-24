@@ -8,11 +8,11 @@ const portMap = {
 }
 
 const IS_DEV = process.env.NODE_ENV === 'development'
-const ASSET_PATH = 'https://pi-lib-mfes.s3.eu-west-2.amazonaws.com'
+const ASSET_PATH = process.env.MFE_ASSET_PATH
+
 const getPath = (id) =>
   IS_DEV ? `http://localhost:${portMap[id]}` : `${ASSET_PATH}/${id}`
 
-// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
     react(),

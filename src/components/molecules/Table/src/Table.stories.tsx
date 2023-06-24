@@ -1,20 +1,39 @@
 import React from 'react'
-import { ComponentMeta, ComponentStory } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react'
 import { Table } from './Table'
 
-export default {
+const meta: Meta<typeof Table> = {
   title: 'Layout/Table',
   component: Table,
-} as ComponentMeta<typeof Table>
-
-const Template: ComponentStory<typeof Table> = (args) => <Table {...args} />
-
-export const Default = Template.bind({})
-Default.args = {
-  headers: ['One', 'Two', 'Three'],
-  rows: [
-    { cols: ['a', 'b', 'c'] },
-    { cols: ['Expand me...=', '2', '3'], expandedContent: <>EXPANDED</> },
-    { cols: ['x', 'y', 'z'] },
-  ],
+  tags: ['autodocs'],
 }
+
+/**
+ * The default state for the table
+ */
+export const Default: StoryObj<typeof Table> = {
+  args: {
+    headers: ['One', 'Two', 'Three'],
+    rows: [
+      { cols: ['a', 'b', 'c'] },
+      { cols: ['1', '2', '3'] },
+      { cols: ['x', 'y', 'z'] },
+    ],
+  },
+}
+
+/**
+ * A table with an expandable row
+ */
+export const Expandable: StoryObj<typeof Table> = {
+  args: {
+    headers: ['One', 'Two', 'Three'],
+    rows: [
+      { cols: ['a', 'b', 'c'] },
+      { cols: ['Expand me...', '2', '3'], expandedContent: <>EXPANDED</> },
+      { cols: ['x', 'y', 'z'] },
+    ],
+  },
+}
+
+export default meta

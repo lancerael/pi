@@ -1,23 +1,29 @@
 {
   "name": "@pi-lib/axis-chart",
   "version": "0.2.1",
-  "description": "",
+  "description": "A React component used to display a bar ot line chart",
+  "keywords": [
+    "pi",
+    "react",
+    "component",
+    "chart",
+    "charts",
+    "axis"
+  ],
+  "homepage": "https://pi.lance-taylor.com/?path=/story/charts-axischart",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lancerael/pi.git",
+    "directory": "src/components/charts/AxisChart"
+  },
+  "license": "ISC",
+  "author": "Lance Taylor",
   "type": "module",
   "main": "./src/index.ts",
   "scripts": {
+    "build": "rimraf vanilla && vite build",
     "test": "vitest",
-    "test:coverage": "vitest --coverage",
-    "build": "rimraf vanilla && vite build"
-  },
-  "keywords": [
-    "react"
-  ],
-  "author": "Lance Taylor",
-  "license": "ISC",
-  "peerDependencies": {
-    "@pi-lib/styles": "^1.7.1",
-    "react": "^18.2.0",
-    "styled-components": "^5.3.5"
+    "test:coverage": "vitest --coverage"
   },
   "devDependencies": {
     "@pi-lib/config": "workspace:^",
@@ -31,8 +37,12 @@
     "vite": "^3.0.9",
     "vitest": "^0.22.1"
   },
-  "dependencies": {
+  "peerDependencies": {
+    "@pi-lib/styles": "workspace:^",
+    "@pi-lib/utils": "workspace:^",
     "d-theia": "^3.6.0",
-    "lodash.throttle": "^4.1.1"
+    "lodash.throttle": "^4.1.1",
+    "react": "^18.2.0",
+    "styled-components": "^5.3.11"
   }
 }

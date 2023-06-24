@@ -1,37 +1,36 @@
 {
   "name": "@pi-lib/chart-sandbox-mfe",
-  "private": true,
   "version": "0.1.0",
+  "private": true,
   "type": "module",
   "scripts": {
-    "dev": "vite --port 5001 --strictPort",
     "build": "tsc && vite build",
-    "preview": "vite preview --port 5001 --strictPort",
+    "dev": "vite --port 5001 --strictPort",
+    "e2e": "npx cypress open",
     "lint": "npx prettier -c . && npx eslint",
     "lint:fix": "npx prettier -w . && npx eslint --fix",
+    "preview": "vite preview --port 5001 --strictPort",
+    "start": "pnpm build && pnpm preview",
     "test-": "vitest",
-    "test:coverage": "vitest --coverage",
-    "e2e": "npx cypress open",
-    "start": "pnpm build && pnpm preview"
+    "test:coverage": "vitest --coverage"
   },
   "dependencies": {
     "@originjs/vite-plugin-federation": "^1.2.2",
     "@pi-lib/axis-chart": "workspace:^",
-    "@pi-lib/button": "*",
+    "@pi-lib/button": "workspace:^",
     "@pi-lib/collapsible-menu": "workspace:^",
-    "@pi-lib/icon-button": "workspace:^0.6.3",
-    "@pi-lib/input": "*",
+    "@pi-lib/icon-button": "workspace:^",
+    "@pi-lib/input": "workspace:^",
     "@pi-lib/page-content": "workspace:^",
     "@pi-lib/page-loader": "workspace:^",
-    "@pi-lib/styles": "*",
-    "@pi-lib/table": "*",
+    "@pi-lib/table": "workspace:^",
     "@reduxjs/toolkit": "^1.9.3",
     "d-theia": "^3.6.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-redux": "^7.1.1",
     "redux": "^4.0.0",
-    "styled-components": "^5.3.9"
+    "styled-components": "^5.3.11"
   },
   "devDependencies": {
     "@types/d3-fetch": "^3.0.2",

@@ -1,0 +1,7 @@
+{
+  "type": "major",
+  "comment": "* Improved docs/docgen * Cleanup * Added cloudfront",
+  "packageName": "@pi-lib/advanced-button",
+  "email": "122271901+lancerael-undo@users.noreply.github.com",
+  "dependentChangeType": "patch"
+}

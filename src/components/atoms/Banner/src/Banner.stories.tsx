@@ -1,33 +1,56 @@
 import React from 'react'
-import { ComponentMeta, ComponentStory } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react'
 import { Banner } from './Banner'
+import { BannerProps } from './Banner.types'
 
-export default {
-  title: 'Layout/Banner',
-  component: Banner,
-  argTypes: {
-    isList: {
-      control: 'boolean',
-    },
-    isBottom: {
-      control: 'boolean',
-    },
-  },
-} as ComponentMeta<typeof Banner>
-
-const Template: ComponentStory<typeof Banner> = (props) => (
+const render = (props: BannerProps) => (
   <Banner {...props}>
     <div>Content 1</div>
     <div>Content 2</div>
     <div>Content 3</div>
     <div>Content 4</div>
     <div>Content 5</div>
+    <div>Content 6</div>
+    <div>Content 7</div>
+    <div>Content 8</div>
+    <div>Content 9</div>
   </Banner>
 )
 
-export const Default = Template.bind({})
-
-Default.args = {
-  isList: true,
-  isBottom: true,
+const meta: Meta<typeof Banner> = {
+  title: 'Layout/Banner',
+  component: Banner,
+  argTypes: {
+    wrapItems: {
+      control: 'boolean',
+    },
+    invertGradient: {
+      control: 'boolean',
+    },
+  },
+  tags: ['autodocs'],
 }
+
+/**
+ * The default state for the component
+ */
+export const Default: StoryObj<typeof Banner> = {
+  args: {
+    wrapItems: false,
+    invertGradient: false,
+  },
+  render,
+}
+
+/**
+ * An alternative view of the banner with wrapped responsive children and inverted gradient
+ */
+export const Inverted: StoryObj<typeof Banner> = {
+  args: {
+    wrapItems: true,
+    invertGradient: true,
+  },
+  render,
+}
+
+export default meta

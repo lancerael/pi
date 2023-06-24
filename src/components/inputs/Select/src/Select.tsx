@@ -2,6 +2,9 @@ import React, { FC } from 'react'
 import { StyledSelect } from './Select.style'
 import { SelectProps } from './Select.types'
 
+/**
+ * A React component for a themeable select input
+ */
 export const Select: FC<SelectProps> = ({
   label,
   options,

@@ -1,5 +1,4 @@
-import { Scheme } from '@pi-lib/styles/src/theme.types'
-import { ThemeType } from '@pi-lib/styles/src/themes'
+import { Scheme, ThemeType } from '@pi-lib/styles'
 import { createSlice } from '@reduxjs/toolkit'
 
 export interface SettingsState {
@@ -13,13 +12,15 @@ interface Payload {
   payload: string
 }
 
+const pageParts = window.location.href.split('/')
+
 const initialState: SettingsState = {
   themeName: 'andro',
   scheme: !!matchMedia('(prefers-color-scheme: dark)').matches
     ? 'dark'
     : 'light',
   fontSize: 'small',
-  page: '/',
+  page: `/${pageParts[pageParts.length - 1]}`,
 }
 
 const settingsSlice = createSlice({

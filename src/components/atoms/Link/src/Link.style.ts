@@ -19,7 +19,7 @@ const getLinkStyle = ({ $isMain, $isInactive }: StyledLinkProps) => {
 
     ${$isInactive
       ? css`
-          color: var(--shadow);
+          color: var(--special);
           cursor: default;
         `
       : css`

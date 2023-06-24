@@ -1,8 +1,19 @@
 import React, { useState } from 'react'
-import { ComponentMeta, ComponentStory } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react'
 import { Input } from './Input'
+import { InputProps } from './Input.types'
 
-export default {
+const render = (props: InputProps) => {
+  const [value, setValue] = useState(props.value ?? '')
+  return (
+    <Input
+      {...{ ...props, value }}
+      onChange={({ target }) => setValue((target as HTMLInputElement).value)}
+    />
+  )
+}
+
+const meta: Meta<typeof Input> = {
   title: 'Inputs/Input',
   component: Input,
   argTypes: {
@@ -13,39 +24,45 @@ export default {
       options: ['text', 'number', 'color'],
       control: 'select',
     },
+    onPointerUp: { action: 'clicked' },
   },
-} as ComponentMeta<typeof Input>
-
-const Template: ComponentStory<typeof Input> = (props) => {
-  const [value, setValue] = useState(props.value ?? '')
-  return (
-    <Input
-      {...{ ...props, value }}
-      onChange={({ target }) => setValue((target as HTMLInputElement).value)}
-    />
-  )
+  tags: ['autodocs'],
 }
 
-export const Text = Template.bind({})
-Text.args = {
-  type: 'text',
-  title: 'text label',
-  value: 'text',
-  onPointerUp: () => console.log('clicked text input'),
+/**
+ * The default state for the Text input
+ */
+export const Text: StoryObj<typeof Input> = {
+  args: {
+    type: 'text',
+    title: 'text label',
+    value: 'text',
+    onPointerUp: () => console.log('clicked text input'),
+  },
 }
 
-export const Number = Template.bind({})
-Number.args = {
-  type: 'number',
-  title: 'number label',
-  value: 12345,
-  onPointerUp: () => console.log('clicked number input'),
+/**
+ * The default state for the Number input
+ */
+export const Number: StoryObj<typeof Input> = {
+  args: {
+    type: 'number',
+    title: 'number label',
+    value: 12345,
+    onPointerUp: () => console.log('clicked number input'),
+  },
 }
 
-export const Color = Template.bind({})
-Color.args = {
-  type: 'color',
-  title: 'color label',
-  value: '#336600',
-  onPointerUp: () => console.log('clicked color input'),
+/**
+ * The default state for the Color input
+ */
+export const Color: StoryObj<typeof Input> = {
+  args: {
+    type: 'color',
+    title: 'color label',
+    value: '#336600',
+    onPointerUp: () => console.log('clicked color input'),
+  },
 }
+
+export default meta

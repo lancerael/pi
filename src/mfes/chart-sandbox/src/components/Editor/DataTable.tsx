@@ -40,7 +40,10 @@ const DataTable = () => {
   return (
     <Table
       headers={[
-        <div title="Trim extremes of the chart values">
+        <div
+          style={{ display: 'flex', justifyContent: 'flex-end' }}
+          title="Trim extremes of the chart values"
+        >
           <label htmlFor="dt-trim">Trim:</label>
           <input
             type="checkbox"

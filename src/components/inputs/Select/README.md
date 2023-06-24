@@ -1,31 +1,17 @@
-# Select
+### @pi-lib/select
 
-NPM: [@pi-lib/select](https://www.npmjs.com/package/@pi-lib/select)
+**Select** _v0.2.2_
 
-A simple React select component, styled via Pi theme.
+A React component for a themeable select input
 
-Takes these HTML/React props:
+**Dependencies:** react, styled-components
 
-    'onChange' | 'onPointerUp' | 'onMouseOver' | 'onMouseOut' | 'title' | 'value' | 'name'
-
-And these additional react props:
-
-```
-  /**
-   * A label for the select input
-   */
-  label?: string
-  /**
-   * A list of options
-   */
-  options: {
-    /**
-     * Visible content for the option
-     */
-    content: string
-    /**
-     * A value for the option
-     */
-    value?: string
-  }
-```
+<table>
+  <tbody>
+    <tr>
+      <td><a href="https://pi.lance-taylor.com/?path=/story/inputs-select" target="_blank">Docs</a></td>
+      <td><a href="https://www.npmjs.com/package/@pi-lib/select" target="_blank">NPM</a></td>
+      <td><a href="https://github.com/lancerael/pi/tree/main/src/src/components/inputs/Select" target="_blank">Github</a></td>
+    </tr>
+  </tbody>
+</table>

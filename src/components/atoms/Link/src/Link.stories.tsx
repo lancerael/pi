@@ -1,8 +1,8 @@
 import React from 'react'
-import { ComponentMeta, ComponentStory } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react'
 import { Link } from './Link'
 
-export default {
+const meta: Meta<typeof Link> = {
   title: 'Interactions/Link',
   component: Link,
   argTypes: {
@@ -12,31 +12,50 @@ export default {
     $isExternal: {
       control: 'boolean',
     },
+    $isMain: {
+      control: 'boolean',
+    },
+    $isInactive: {
+      control: 'boolean',
+    },
   },
-} as ComponentMeta<typeof Link>
-
-const Template: ComponentStory<typeof Link> = (props) => (
-  <Link {...props}>Link</Link>
-)
-
-export const Default = Template.bind({})
-
-Default.args = {
-  href: 'https://www.google.com',
-  $isExternal: true,
+  tags: ['autodocs'],
 }
 
-export const Inactive = Template.bind({})
-
-Inactive.args = {
-  href: 'https://www.google.com',
-  $isInactive: true,
+/**
+ * The default state for the component
+ */
+export const Default: StoryObj<typeof Link> = {
+  args: {
+    href: 'https://www.google.com',
+    $isExternal: true,
+    children: 'Link',
+    $isMain: false,
+    $isInactive: false,
+  },
 }
 
-export const Main = Template.bind({})
-
-Main.args = {
-  href: 'https://www.google.com',
-  $isMain: true,
-  $isExternal: true,
+/**
+ * An inactive link
+ */
+export const Inactive: StoryObj<typeof Link> = {
+  args: {
+    href: 'https://www.google.com',
+    $isInactive: true,
+    children: 'Link',
+  },
 }
+
+/**
+ * The main navigation version of the link
+ */
+export const Main: StoryObj<typeof Link> = {
+  args: {
+    href: 'https://www.google.com',
+    $isMain: true,
+    $isExternal: true,
+    children: 'Link',
+  },
+}
+
+export default meta

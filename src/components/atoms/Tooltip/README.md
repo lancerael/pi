@@ -1,20 +1,17 @@
-# Tooltip
+### @pi-lib/tooltip
 
-_@pi-lib/tooltip_ - A themed tooltip. Can be shown/hidden and moved around the page.
+**Tooltip** _v1.3.4_
 
-Takes these react props:
+A React component used to position a tooltip containing content
 
-```
-  /**
-   * The visibility of the tooltip
-   */
-  isVisible?: boolean
-  /**
-   * The x position of the tooltip
-   */
-  x?: number
-  /**
-   * The y position of the tooltip
-   */
-  y?: number
-```
+**Dependencies:** @pi-lib/styles, lodash.throttle, react
+
+<table>
+  <tbody>
+    <tr>
+      <td><a href="https://pi.lance-taylor.com/?path=/story/ui-tooltip" target="_blank">Docs</a></td>
+      <td><a href="https://www.npmjs.com/package/@pi-lib/tooltip" target="_blank">NPM</a></td>
+      <td><a href="https://github.com/lancerael/pi/tree/main/src/src/components/atoms/Tooltip" target="_blank">Github</a></td>
+    </tr>
+  </tbody>
+</table>

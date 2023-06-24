@@ -1,0 +1,42 @@
+{
+  "name": "@pi-lib/styles",
+  "version": "1.7.1",
+  "description": "React theming utility for use with Pi and styled-components",
+  "keywords": [
+    "pi",
+    "react",
+    "theming",
+    "theme",
+    "styles"
+  ],
+  "homepage": "http://pi.lance-tayor.com/?path=/story/theming-getting-started",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lancerael/pi.git",
+    "directory": "src/styles"
+  },
+  "license": "ISC",
+  "author": "Lance Taylor",
+  "type": "module",
+  "main": "./src/index.ts",
+  "scripts": {
+    "build": "rimraf vanilla && vite build"
+  },
+  "devDependencies": {
+    "@pi-lib/config": "^0.4.0",
+    "@pi-lib/types": "^0.1.0",
+    "@testing-library/react": "^14.0.0",
+    "@vitejs/plugin-react": "^3.1.0",
+    "@vitest/coverage-istanbul": "^0.29.3",
+    "jest-axe": "^7.0.0",
+    "jsdom": "^21.1.1",
+    "rimraf": "^4.4.0",
+    "typescript": "^4.9.5",
+    "vite": "^4.1.4",
+    "vitest": "^0.29.3"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "styled-components": "^5.3.11"
+  }
+}

@@ -1,16 +1,17 @@
-# Link
+### @pi-lib/link
 
-_@pi-lib/link_ - A simple React link component styled via Pi theme.
+**Link** _v0.6.5_
 
-Takes these HTML/React props:
+A React component for a router optional link
 
-    'onPointerUp' | 'onMouseOver' | 'onMouseOut' | 'children' | 'title' | 'href'
+**Dependencies:** @pi-lib/styles, react, react-router-dom
 
-And these additional react props:
-
-```
-  /**
-   * Is it an external link?
-   */
-  $isExternal?: boolean
-```
+<table>
+  <tbody>
+    <tr>
+      <td><a href="https://pi.lance-taylor.com/?path=/story/interactions-link" target="_blank">Docs</a></td>
+      <td><a href="https://www.npmjs.com/package/@pi-lib/link" target="_blank">NPM</a></td>
+      <td><a href="https://github.com/lancerael/pi/tree/main/src/src/components/atoms/Link" target="_blank">Github</a></td>
+    </tr>
+  </tbody>
+</table>

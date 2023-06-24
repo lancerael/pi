@@ -1,22 +1,29 @@
 {
   "name": "@pi-lib/select",
   "version": "0.2.2",
-  "description": "",
+  "description": "A React component for a themeable select input",
+  "keywords": [
+    "pi",
+    "react",
+    "component",
+    "input",
+    "inputs",
+    "select"
+  ],
+  "homepage": "https://pi.lance-taylor.com/?path=/story/inputs-select",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lancerael/pi.git",
+    "directory": "src/components/inputs/Select"
+  },
+  "license": "ISC",
+  "author": "Lance Taylor",
   "type": "module",
   "main": "./src/index.ts",
   "scripts": {
+    "build": "rimraf vanilla && vite build",
     "test": "vitest",
-    "test:coverage": "vitest --coverage",
-    "build": "rimraf vanilla && vite build"
-  },
-  "keywords": [
-    "react"
-  ],
-  "author": "Lance Taylor",
-  "license": "ISC",
-  "peerDependencies": {
-    "react": "^18.2.0",
-    "styled-components": "^5.3.5"
+    "test:coverage": "vitest --coverage"
   },
   "devDependencies": {
     "@pi-lib/config": "^0.4.0",
@@ -29,5 +36,9 @@
     "typescript": "^4.7.4",
     "vite": "^3.0.9",
     "vitest": "^0.22.1"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "styled-components": "^5.3.11"
   }
 }

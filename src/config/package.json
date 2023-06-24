@@ -1,10 +1,21 @@
 {
   "name": "@pi-lib/config",
-  "description": "Shared Pi config",
   "version": "0.4.0",
+  "description": "Shared Pi config",
+  "keywords": [
+    "pi",
+    "vite",
+    "config",
+    "utilities"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lancerael/pi.git",
+    "directory": "src/config"
+  },
   "license": "ISC",
-  "main": "./js/vite.config.js",
   "type": "module",
+  "main": "./js/vite.config.js",
   "scripts": {
     "prebuild": "rimraf js && npx tsc"
   },

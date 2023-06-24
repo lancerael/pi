@@ -1,9 +1,8 @@
 import React from 'react'
-import { ComponentMeta, ComponentStory } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react'
 import { AdvancedButton } from './AdvancedButton'
-import { AdvancedButtonProps } from './AdvancedButton.types'
 
-export default {
+const meta: Meta<typeof AdvancedButton> = {
   title: 'Interactions/AdvancedButton',
   component: AdvancedButton,
   argTypes: {
@@ -11,19 +10,26 @@ export default {
       control: 'boolean',
     },
   },
-} as ComponentMeta<typeof AdvancedButton>
-
-const Template: ComponentStory<typeof AdvancedButton> = (
-  args: AdvancedButtonProps
-) => <AdvancedButton {...args} />
-
-export const Default = Template.bind({})
-Default.args = {
-  children: 'Default',
+  tags: ['autodocs'],
 }
 
-export const Loading = Template.bind({})
-Loading.args = {
-  children: 'Loading',
-  isLoading: true,
+/**
+ * The default state for the advanced button
+ */
+export const Default: StoryObj<typeof AdvancedButton> = {
+  args: {
+    children: 'Default',
+  },
 }
+
+/**
+ * The loading state for the advanced button
+ */
+export const Loading: StoryObj<typeof AdvancedButton> = {
+  args: {
+    children: 'Loading',
+    isLoading: true,
+  },
+}
+
+export default meta

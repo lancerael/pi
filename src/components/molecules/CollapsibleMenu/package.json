@@ -1,24 +1,32 @@
 {
   "name": "@pi-lib/collapsible-menu",
   "version": "0.4.3",
-  "description": "",
+  "description": "A React component for an expanding/collapsing menu with icons",
+  "keywords": [
+    "pi",
+    "react",
+    "component",
+    "molecule",
+    "ui",
+    "collapsible",
+    "menu"
+  ],
+  "homepage": "https://pi.lance-taylor.com/?path=/story/ui-collapsiblemenu",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lancerael/pi.git",
+    "directory": "src/components/molecules/CollapsibleMenu"
+  },
+  "license": "ISC",
+  "author": "Lance Taylor",
   "type": "module",
   "main": "./src/index.ts",
   "scripts": {
+    "build": "rimraf vanilla && vite build",
     "test": "vitest",
-    "test:coverage": "vitest --coverage",
-    "build": "rimraf vanilla && vite build"
+    "test:coverage": "vitest --coverage"
   },
-  "keywords": [
-    "react"
-  ],
-  "author": "Lance Taylor",
-  "license": "ISC",
-  "peerDependencies": {
-    "@pi-lib/styles": "^1.7.1",
-    "react": "^18.2.0",
-    "styled-components": "^5.3.5"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@pi-lib/config": "^0.4.0",
     "@testing-library/react": "^13.3.0",
@@ -31,8 +39,10 @@
     "vite": "^3.0.9",
     "vitest": "^0.22.1"
   },
-  "dependencies": {
+  "peerDependencies": {
+    "@pi-lib/styles": "workspace:^",
     "@pi-lib/utils": "workspace:^",
+    "react": "^18.2.0",
     "react-aria": "^3.25.0",
     "react-aria-components": "1.0.0-alpha.4",
     "react-stately": "^3.23.0"

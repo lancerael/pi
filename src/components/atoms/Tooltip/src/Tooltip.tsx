@@ -3,6 +3,9 @@ import throttle from 'lodash.throttle'
 import { StyledTooltip } from './Tooltip.style'
 import { TooltipProps } from './Tooltip.types'
 
+/**
+ * A React component used to position a tooltip containing content
+ */
 export const Tooltip: FC<TooltipProps> = ({
   children,
   isVisible = false,

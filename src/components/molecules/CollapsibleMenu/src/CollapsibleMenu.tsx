@@ -11,17 +11,15 @@ import {
   StyledMenu,
 } from './CollapsibleMenu.style'
 import { CollapsibleMenuProps } from './CollapsibleMenu.types'
-import { Hamburger, Cog, Chevron } from './assets'
+import * as icons from './assets'
 
-const icons = {
-  hamburger: Hamburger,
-  cog: Cog,
-  chevron: Chevron,
-}
-
+/**
+ * A React component for an expanding/collapsing menu with icons
+ */
 export const CollapsibleMenu: FC<CollapsibleMenuProps> = ({
   items,
-  icon = 'hamburger',
+  title = 'Expandable menu',
+  icon = 'Hamburger',
   menutriggerProps = {},
 }) => {
   const Icon = icons[icon]
@@ -38,7 +36,7 @@ export const CollapsibleMenu: FC<CollapsibleMenuProps> = ({
   return (
     <StyledContainer ref={containerRef}>
       <StyledOpener
-        aria-label="expandable menu trigger"
+        aria-label={title}
         {...{ isOpen, ...menuTriggerProps }}
         ref={openerRef}
       >

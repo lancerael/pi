@@ -1,37 +1,17 @@
-# CandlestickChart
+### @pi-lib/candlestick-chart
 
-NPM: [@pi-lib/candlestick-chart](https://www.npmjs.com/package/@pi-lib/candlestick-chart)
+**CandlestickChart** _v1.4.2_
 
-A React candlestick chart used to show the market forces acting on a traded asset.
+A candlestick chart React component used to show the movement of traded assets.
 
-## Usage
+**Dependencies:** @pi-lib/button, @pi-lib/loader, @pi-lib/styles, @pi-lib/tooltip, d3-axis, d3-scale, d3-selection, d3-transition, lodash.throttle, react
 
-- Install `@pi-lib/candlestick-chart`.
-- `import { CandlestickChart } from '@pi-lib/candlestick-chart'`
-- Pass `data` prop with the following structure:
-
-```
-const data = [
-  {
-    date: 'YYYY-MM-DD',
-    open: 10,
-    high: 25,
-    low: 5,
-    close: 20,
-  }
-]
-```
-
-Data can be updated dynamically as required.
-
-## FEATURES
-
-- Created using d3 and React (with hooks)
-- Randomised data tools
-- Current day's data fluctuates to simulate market forces
-- Candles and axes
-- Scales adjust to visible data
-- Pan and zoom controls
-- Keyboard/mouse/touch controls
-- Tooltips on hover and select
-- Fully responsive layout
+<table>
+  <tbody>
+    <tr>
+      <td><a href="https://pi.lance-taylor.com/?path=/story/charts-candlestickchart" target="_blank">Docs</a></td>
+      <td><a href="https://www.npmjs.com/package/@pi-lib/candlestick-chart" target="_blank">NPM</a></td>
+      <td><a href="https://github.com/lancerael/pi/tree/main/src/src/components/charts/CandlestickChart" target="_blank">Github</a></td>
+    </tr>
+  </tbody>
+</table>

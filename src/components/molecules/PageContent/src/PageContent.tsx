@@ -6,6 +6,9 @@ import {
 } from './PageContent.style'
 import { PageContentProps } from './PageContent.types'
 
+/**
+ * A React component for a page layout with a sidebar
+ */
 export const PageContent: FC<PageContentProps> = ({
   sidebar,
   children,
@@ -13,7 +16,7 @@ export const PageContent: FC<PageContentProps> = ({
   isCollapsible = true,
 }) => {
   return (
-    <StyledPageContent>
+    <StyledPageContent {...{ isCollapsible }}>
       {!!sidebar && (
         <StyledSidebar {...{ maxWidth, isCollapsible }}>
           {sidebar}

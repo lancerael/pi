@@ -2,8 +2,17 @@
   "name": "@pi-lib/types",
   "version": "0.1.0",
   "description": "Global types for Pi",
-  "main": "index.ts",
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "keywords": [
+    "pi",
+    "types",
+    "utilities"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lancerael/pi.git",
+    "directory": "src/types"
+  },
+  "license": "ISC",
+  "author": "Lance Taylor",
+  "main": "index.ts"
 }

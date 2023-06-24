@@ -45,6 +45,14 @@ const StyledButton = styled.div`
   }
 `
 
+interface ActionProps {
+  title: string
+  label: string
+  $isStroked?: boolean
+  $isFilled?: boolean
+  onPointerUp: (args: unknown) => unknown
+}
+
 export const EditorActions = () => {
   const [isLoading, setIsLoading] = useState(false)
   const chartConfig = useSelector(({ chartConfig }: any) => chartConfig)
@@ -97,11 +105,9 @@ export const EditorActions = () => {
     title,
     label,
     onPointerUp,
-  }: {
-    title: string
-    label: string
-    onPointerUp: (args: unknown) => unknown
-  }) => {
+    $isStroked = false,
+    $isFilled = false,
+  }: ActionProps) => {
     const iconPath = `https://pi-lib-assets.s3.eu-west-2.amazonaws.com/${label
       .toLowerCase()
       .split(' ')
@@ -109,7 +115,11 @@ export const EditorActions = () => {
     return (
       <StyledAction>
         <StyledIconButton>
-          <IconButton {...{ title, onPointerUp }} isSmall src={iconPath} />
+          <IconButton
+            {...{ title, onPointerUp, $isStroked, $isFilled }}
+            isSmall
+            src={iconPath}
+          />
         </StyledIconButton>
         <StyledButton>
           <Button {...{ title, onPointerUp }}>{label.toUpperCase()}</Button>
@@ -122,31 +132,37 @@ export const EditorActions = () => {
     {
       label: 'Add row',
       title: 'Add a new row to the data',
+      $isStroked: true,
       onPointerUp: () => dispatch(addRow()),
     },
     {
       label: 'Add column',
       title: 'Add a new column to the data',
+      $isStroked: true,
       onPointerUp: addColumn,
     },
     {
       label: 'Clear',
       title: 'Reset the chart and remove all data',
+      $isStroked: true,
       onPointerUp: () => updateChart(getEmptyData()),
     },
     {
       label: 'Randomise',
       title: 'Reset the chart and generate random data',
+      $isFilled: true,
       onPointerUp: () => getRandomData(),
     },
     {
       label: 'Export',
       title: 'Export this chart as JSON',
+      $isFilled: true,
       onPointerUp: () => exportRef?.current?.click(),
     },
     {
       label: 'Import',
       title: 'Import JSON for this chart',
+      $isFilled: true,
       onPointerUp: () => importRef?.current?.click(),
     },
   ]
@@ -155,7 +171,8 @@ export const EditorActions = () => {
     <>
       <PageLoader isActive={isLoading} />
       <CollapsibleMenu
-        icon="chevron"
+        title="Table actions menu"
+        icon="Ellipsis"
         items={[
           <StyledActionWrapper>
             {actions.map((actionProps, i) => (

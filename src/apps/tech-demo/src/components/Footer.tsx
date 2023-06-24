@@ -4,7 +4,7 @@ import { ItemList } from './ItemList'
 
 export const Footer = () => {
   return (
-    <Banner isList isBottom>
+    <Banner wrapItems invertGradient>
       <ItemList>
         <IconButton
           isExternal

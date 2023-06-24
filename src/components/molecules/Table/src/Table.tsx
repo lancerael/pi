@@ -3,6 +3,9 @@ import Row from './components/Row'
 import { StyledTable, StyledTableHead } from './Table.style'
 import { CellContent, TableProps } from './Table.types'
 
+/**
+ * A React component for a table with expandable rows
+ */
 export const Table = ({
   headers = [],
   rows = [],

@@ -1,11 +1,10 @@
-import { box } from '@pi-lib/styles'
+import { box, chartContainer } from '@pi-lib/styles'
 import styled from 'styled-components'
 
 export const StyledAxisChart = styled.div`
+  ${chartContainer()}
   flex-grow: 1;
   position: relative;
-  background: var(--subtle);
-  border: 1px solid var(--border);
   height: 100%;
 
   & svg {
@@ -18,10 +17,6 @@ export const StyledAxisChart = styled.div`
 
   .y-axis .tick line {
     opacity: 0.2;
-  }
-
-  .labels:first-of-type {
-    padding-left: 8px;
   }
 
   .title {
@@ -41,7 +36,7 @@ export const StyledAxisChart = styled.div`
 
   .tick text,
   .key text {
-    font-size: 0.8em;
+    font-size: 0.6rem;
   }
 
   .x-labels {

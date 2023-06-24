@@ -1,15 +1,14 @@
 import React from 'react'
-import { ComponentMeta, ComponentStory } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react'
 import Button from './Button'
-import { ButtonProps } from './Button.types'
 
-export default {
+const meta: Meta<typeof Button> = {
   title: 'Interactions/Button',
   component: Button,
   argTypes: {
     status: {
       options: ['default', 'pending', 'error', 'success'],
-      control: 'select',
+      control: 'radio',
     },
     disabled: {
       control: 'boolean',
@@ -20,51 +19,83 @@ export default {
     isSpecial: {
       control: 'boolean',
     },
+    onPointerUp: { action: 'clicked' },
   },
-} as ComponentMeta<typeof Button>
-
-const Template: ComponentStory<typeof Button> = (args: ButtonProps) => (
-  <Button {...args} />
-)
-
-export const Default = Template.bind({})
-Default.args = {
-  children: 'Default',
-  status: 'default',
+  tags: ['autodocs'],
 }
 
-export const Pending = Template.bind({})
-Pending.args = {
-  children: 'Pending',
-  status: 'pending',
+/**
+ * The default state for the button
+ */
+export const Default: StoryObj<typeof Button> = {
+  args: {
+    children: 'Default',
+    status: 'default',
+    isCompact: false,
+    isSpecial: false,
+    disabled: false,
+    dataSelector: 'pi-lib-button',
+  },
 }
 
-export const Error = Template.bind({})
-Error.args = {
-  children: 'Error',
-  status: 'error',
+/**
+ * The pending state for the button
+ */
+export const Pending: StoryObj<typeof Button> = {
+  args: {
+    children: 'Pending',
+    status: 'pending',
+  },
 }
 
-export const Success = Template.bind({})
-Success.args = {
-  children: 'Success',
-  status: 'success',
+/**
+ * The success state for the button
+ */
+export const Success: StoryObj<typeof Button> = {
+  args: {
+    children: 'Success',
+    status: 'success',
+  },
 }
 
-export const Disabled = Template.bind({})
-Disabled.args = {
-  children: 'Disabled',
-  disabled: true,
+/**
+ * The error state for the button
+ */
+export const Error: StoryObj<typeof Button> = {
+  args: {
+    children: 'Error',
+    status: 'error',
+  },
 }
 
-export const Special = Template.bind({})
-Special.args = {
-  children: 'Special',
-  isSpecial: true,
+/**
+ * The disabled state for the button
+ */
+export const Disabled: StoryObj<typeof Button> = {
+  args: {
+    children: 'Disabled',
+    disabled: true,
+  },
 }
 
-export const Compact = Template.bind({})
-Compact.args = {
-  children: 'Compact',
-  isCompact: true,
+/**
+ * The special version of the button
+ */
+export const Special: StoryObj<typeof Button> = {
+  args: {
+    children: 'Special',
+    isSpecial: true,
+  },
 }
+
+/**
+ * The compact version of the button
+ */
+export const Compact: StoryObj<typeof Button> = {
+  args: {
+    children: 'Compact',
+    isCompact: true,
+  },
+}
+
+export default meta

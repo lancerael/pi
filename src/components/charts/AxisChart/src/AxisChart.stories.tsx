@@ -1,29 +1,49 @@
 import React from 'react'
-import { ComponentMeta, ComponentStory } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react'
 import { AxisChart } from './AxisChart'
 import { getRandomData } from 'd-theia'
+import { AxisChartProps } from './AxisChart.types'
 
-export const { chartData, chartConfig } = getRandomData() as any
+const baseProps = getRandomData() as Pick<
+  AxisChartProps,
+  'chartConfig' | 'chartData'
+>
 
-export default {
+const render = (props: AxisChartProps) => {
+  return (
+    <div style={{ width: '80%', height: '40vw' }}>
+      <AxisChart {...props} />
+    </div>
+  )
+}
+
+const meta: Meta<typeof AxisChart> = {
   title: 'Charts/AxisChart',
   component: AxisChart,
-} as ComponentMeta<typeof AxisChart>
-
-const Template: ComponentStory<typeof AxisChart> = (props: any) => (
-  <div style={{ width: '80%', height: '40vw' }}>
-    <AxisChart {...{ chartData, chartConfig, ...props }} />
-  </div>
-)
-
-export const Bar = Template.bind({})
-Bar.args = {
-  chartId: 'test',
-  chartType: 'bar',
 }
 
-export const Line = Template.bind({})
-Line.args = {
-  chartId: 'test2',
-  chartType: 'line',
+/**
+ * The axis chart in bar form
+ */
+export const Bar: StoryObj<typeof AxisChart> = {
+  args: {
+    chartId: 'test',
+    chartType: 'bar',
+    ...baseProps,
+  },
+  render,
 }
+
+/**
+ * The axis chart in line form
+ */
+export const Line: StoryObj<typeof AxisChart> = {
+  args: {
+    chartId: 'test2',
+    chartType: 'line',
+    ...baseProps,
+  },
+  render,
+}
+
+export default meta

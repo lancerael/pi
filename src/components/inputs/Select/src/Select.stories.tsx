@@ -1,8 +1,8 @@
 import React from 'react'
-import { ComponentMeta, ComponentStory } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react'
 import { Select } from './Select'
 
-export default {
+const meta: Meta<typeof Select> = {
   title: 'Inputs/Select',
   component: Select,
   argTypes: {
@@ -10,15 +10,17 @@ export default {
       control: 'text',
     },
   },
-} as ComponentMeta<typeof Select>
-
-const Template: ComponentStory<typeof Select> = (props) => <Select {...props} />
-
-export const Default = Template.bind({})
-Default.args = {
-  label: 'Select label',
-  options: [
-    { content: 'Option 1', value: '1' },
-    { content: 'Option 2', value: '2' },
-  ],
+  tags: ['autodocs'],
 }
+
+export const Default: StoryObj<typeof Select> = {
+  args: {
+    label: 'Select label',
+    options: [
+      { content: 'Option 1', value: '1' },
+      { content: 'Option 2', value: '2' },
+    ],
+  },
+}
+
+export default meta

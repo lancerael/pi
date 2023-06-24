@@ -2,8 +2,13 @@ import React, { FC } from 'react'
 import { StyledBanner } from './Banner.style'
 import { BannerProps } from './Banner.types'
 
-export const Banner: FC<BannerProps> = ({ children, isList, isBottom }) => (
-  <StyledBanner {...{ isList, isBottom }}>{children}</StyledBanner>
-)
+/**
+ * A banner React component that can be used for header or footer
+ */
+export const Banner: FC<BannerProps> = ({
+  children,
+  wrapItems = false,
+  invertGradient = false,
+}) => <StyledBanner {...{ wrapItems, invertGradient }}>{children}</StyledBanner>
 
 export default Banner
