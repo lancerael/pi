@@ -1,6 +1,6 @@
 ### @pi-lib/advanced-button
 
-**AdvancedButton** _v0.6.6_
+**AdvancedButton** _v1.0.0_
 
 A React component for an advanced button with a built in loader
 
@@ -10,8 +10,9 @@ A React component for an advanced button with a built in loader
   <tbody>
     <tr>
       <td><a href="https://pi.lance-taylor.com/?path=/story/interactions-advancedbutton" target="_blank">Docs</a></td>
-      <td><a href="https://www.npmjs.com/package/@pi-lib/advanced-button" target="_blank">NPM</a></td>
-      <td><a href="https://github.com/lancerael/pi/tree/main/src/src/components/molecules/AdvancedButton" target="_blank">Github</a></td>
+      <td><a href="https://www.npmjs.com/package/@pi-lib/advanced-button?activeTab=readme" target="_blank">NPM</a></td>
+      <td><a href="https://github.com/lancerael/pi/tree/main/src/components/molecules/AdvancedButton" target="_blank">Github</a></td>
     </tr>
   </tbody>
 </table>
+

@@ -1,6 +1,6 @@
 ### @pi-lib/modal-screen
 
-**ModalScreen** _v0.2.6_
+**ModalScreen** _v1.0.0_
 
 A React component used to block out the screen with modal content
 
@@ -10,8 +10,9 @@ A React component used to block out the screen with modal content
   <tbody>
     <tr>
       <td><a href="https://pi.lance-taylor.com/?path=/story/layout-modalscreen" target="_blank">Docs</a></td>
-      <td><a href="https://www.npmjs.com/package/@pi-lib/modal-screen" target="_blank">NPM</a></td>
-      <td><a href="https://github.com/lancerael/pi/tree/main/src/src/components/atoms/ModalScreen" target="_blank">Github</a></td>
+      <td><a href="https://www.npmjs.com/package/@pi-lib/modal-screen?activeTab=readme" target="_blank">NPM</a></td>
+      <td><a href="https://github.com/lancerael/pi/tree/main/src/components/atoms/ModalScreen" target="_blank">Github</a></td>
     </tr>
   </tbody>
 </table>
+

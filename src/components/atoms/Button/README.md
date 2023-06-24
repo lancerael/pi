@@ -1,6 +1,6 @@
 ### @pi-lib/button
 
-**Button** _v1.5.4_
+**Button** _v1.6.0_
 
 A React button component
 
@@ -10,8 +10,9 @@ A React button component
   <tbody>
     <tr>
       <td><a href="https://pi.lance-taylor.com/?path=/story/interactions-button" target="_blank">Docs</a></td>
-      <td><a href="https://www.npmjs.com/package/@pi-lib/button" target="_blank">NPM</a></td>
-      <td><a href="https://github.com/lancerael/pi/tree/main/src/src/components/atoms/Button" target="_blank">Github</a></td>
+      <td><a href="https://www.npmjs.com/package/@pi-lib/button?activeTab=readme" target="_blank">NPM</a></td>
+      <td><a href="https://github.com/lancerael/pi/tree/main/src/components/atoms/Button" target="_blank">Github</a></td>
     </tr>
   </tbody>
 </table>
+
