@@ -93,6 +93,7 @@
     "react-aria-components": "1.0.0-alpha.4",
     "react-dom": "^18.2.0",
     "react-stately": "^3.23.0",
+    "react-svg": "^16.1.15",
     "resize-observer-polyfill": "^1.5.1",
     "storybook": "7.0.21",
     "styled-components": "^5.3.11",
