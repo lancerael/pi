@@ -1,5 +1,5 @@
 {
-  "type": "major",
+  "type": "minor",
   "comment": "* Improved docs/docgen * Cleanup * Added cloudfront",
   "packageName": "@pi-lib/charts",
   "email": "122271901+lancerael-undo@users.noreply.github.com",
