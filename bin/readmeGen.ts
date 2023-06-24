@@ -50,7 +50,7 @@
   ) => {
     return `### ${name}
 
-**${componentName}** _v${version}_
+**${componentName}**
 
 ${description}
 
@@ -68,8 +68,8 @@ ${
       <td><a href="${homepage}" target="_blank">Docs</a></td>`
         : ''
     }
-      <td><a href="https://www.npmjs.com/package/${name}" target="_blank">NPM</a></td>
-      <td><a href="https://github.com/lancerael/pi/tree/main/src/${directory}" target="_blank">Github</a></td>
+      <td><a href="https://www.npmjs.com/package/${name}?activeTab=readme" target="_blank">NPM</a></td>
+      <td><a href="https://github.com/lancerael/pi/tree/main/${directory}" target="_blank">Github</a></td>
     </tr>
   </tbody>
 </table>

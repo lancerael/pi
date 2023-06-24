@@ -40,4 +40,4 @@ jobs:
 
       - name: Release to AWS
         if: steps.changed-files.outputs.any_changed == 'true'
-        run: pnpm sandbox:api-deploy
+        run: pnpm demo:sandbox:api-deploy

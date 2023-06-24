@@ -10,7 +10,7 @@ Sat, 24 Jun 2023 21:27:44 GMT
 
 ### Major changes
 
-- * Improved docs/docgen * Cleanup * Added cloudfront (122271901+lancerael-undo@users.noreply.github.com)
+- - Improved docs/docgen _ Cleanup _ Added cloudfront (122271901+lancerael-undo@users.noreply.github.com)
 
 ## 0.2.6
 

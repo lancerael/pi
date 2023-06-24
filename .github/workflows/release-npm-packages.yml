@@ -49,4 +49,4 @@ jobs:
 
       - name: Publish packages
         if: steps.changed-files.outputs.any_changed == 'true'
-        run: npm run publish -- -n ${{ secrets.PI_PUB }} -yes
+        run: npm run bb:publish -- -n ${{ secrets.PI_PUB }} -yes
