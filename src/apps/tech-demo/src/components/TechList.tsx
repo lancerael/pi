@@ -1,7 +1,7 @@
 import IconButton from '@pi-lib/icon-button'
 import { ItemList } from './ItemList'
 
-const source = 'https://d3bjzq1zo2el1w.cloudfront.net'
+const source = 'https://d3bjzq1zo2el1w.cloudfront.net/'
 
 const ICONS: { [key: string]: string } = {
   'AWS AMPLIFY': 'https://aws.amazon.com/amplify',
