@@ -50,7 +50,7 @@
   ) => {
     return `### ${name}
 
-**${componentName}** _v${version}_
+**${componentName}**
 
 ${description}
 
