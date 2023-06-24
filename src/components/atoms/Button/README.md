@@ -15,4 +15,3 @@ A React button component
     </tr>
   </tbody>
 </table>
-

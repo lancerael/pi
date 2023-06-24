@@ -15,4 +15,3 @@ A React component to handle various types of form input
     </tr>
   </tbody>
 </table>
-

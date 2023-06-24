@@ -15,4 +15,3 @@ A React component used to display a bar ot line chart
     </tr>
   </tbody>
 </table>
-

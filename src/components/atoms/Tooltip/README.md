@@ -15,4 +15,3 @@ A React component used to position a tooltip containing content
     </tr>
   </tbody>
 </table>
-

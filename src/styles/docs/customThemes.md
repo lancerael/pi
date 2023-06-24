@@ -49,6 +49,6 @@ export const themeName = {
 
 You can also generate themes by using the converter below.
 
-Visit the style generator at <a href="https://theme.numl.design/" target="_blank">https://theme.numl.design/</a> to generate your theme. When you are done, select <em>Colors</em> from the output and download the JSON. You can then paste the JSON here to generate a new theme.  Paste the JSON into the `INPUT` and take the theme from the `output`
+Visit the style generator at <a href="https://theme.numl.design/" target="_blank">https://theme.numl.design/</a> to generate your theme. When you are done, select <em>Colors</em> from the output and download the JSON. You can then paste the JSON here to generate a new theme. Paste the JSON into the `INPUT` and take the theme from the `output`
 
-All existing themes are made using this process.  
+All existing themes are made using this process.

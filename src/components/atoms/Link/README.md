@@ -15,4 +15,3 @@ A React component for a router optional link
     </tr>
   </tbody>
 </table>
-

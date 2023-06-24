@@ -15,4 +15,3 @@ A React component used to block out the screen with modal content
     </tr>
   </tbody>
 </table>
-

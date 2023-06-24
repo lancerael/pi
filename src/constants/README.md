@@ -4,8 +4,6 @@
 
 Shared Pi constants
 
-
-
 <table>
   <tbody>
     <tr>
@@ -14,4 +12,3 @@ Shared Pi constants
     </tr>
   </tbody>
 </table>
-

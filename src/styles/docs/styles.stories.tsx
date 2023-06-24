@@ -52,7 +52,7 @@ const meta: Meta<typeof StyleDemo> = {
 export default meta
 
 /* generated content below */
-    
+
 export const Andro: StoryObj<typeof StyleDemo> = {
   args: {
     themeName: 'andro',

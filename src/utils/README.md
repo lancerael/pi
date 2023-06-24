@@ -4,8 +4,6 @@
 
 Utilities for use with Pi
 
-
-
 <table>
   <tbody>
     <tr>
@@ -14,4 +12,3 @@ Utilities for use with Pi
     </tr>
   </tbody>
 </table>
-

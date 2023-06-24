@@ -15,4 +15,3 @@ Basic loading spinner React component
     </tr>
   </tbody>
 </table>
-

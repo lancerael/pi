@@ -1,7 +1,6 @@
-
 ### Using your theme
 
-Once converted, copy the output and save it. You can then pass this to your imported `@pi-lib/styles/Theme` provider as a prop. 
+Once converted, copy the output and save it. You can then pass this to your imported `@pi-lib/styles/Theme` provider as a prop.
 
 ```
 import customTheme from './local/myThemes/customTheme'

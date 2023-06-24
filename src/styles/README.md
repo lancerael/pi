@@ -15,4 +15,3 @@ React theming utility for use with Pi and styled-components
     </tr>
   </tbody>
 </table>
-

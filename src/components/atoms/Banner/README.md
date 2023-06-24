@@ -15,4 +15,3 @@ A banner React component that can be used for header or footer
     </tr>
   </tbody>
 </table>
-

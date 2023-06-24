@@ -15,4 +15,3 @@ A React component for a bar chart
     </tr>
   </tbody>
 </table>
-
