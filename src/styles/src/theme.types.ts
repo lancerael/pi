@@ -15,7 +15,6 @@ export interface ITheme {
     light: SchemeValues
     dark: SchemeValues
   }
-  chartBackground: string
 }
 
 export interface ThemedComponent {
@@ -26,7 +25,7 @@ export type ThemedComponentWithChildren = ThemedComponent & PropsWithChildren
 
 export type Scheme = 'light' | 'dark'
 
-export interface IThemeProps extends Partial<ThemedComponentWithChildren> {
+export interface ThemeProps extends Partial<ThemedComponentWithChildren> {
   themeName: ThemeType
   themeOverrides?: ITheme
   scheme?: Scheme

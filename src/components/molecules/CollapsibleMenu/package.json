@@ -40,12 +40,11 @@
     "vitest": "^0.22.1"
   },
   "peerDependencies": {
-    "@pi-lib/styles": "^1.7.1",
+    "@pi-lib/styles": "workspace:^",
     "@pi-lib/utils": "workspace:^",
     "react": "^18.2.0",
     "react-aria": "^3.25.0",
     "react-aria-components": "1.0.0-alpha.4",
-    "react-stately": "^3.23.0",
-    "styled-components": "^5.3.5"
+    "react-stately": "^3.23.0"
   }
 }

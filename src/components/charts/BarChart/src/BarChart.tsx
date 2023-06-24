@@ -3,6 +3,9 @@ import { StyledBarChart } from './BarChart.style'
 import { BarChartProps } from './BarChart.types'
 import { Chart } from '@pi-lib/charts'
 
+/**
+ * A React component for a bar chart
+ */
 export const BarChart: FC<BarChartProps> = ({ config, theme, data, label }) => {
   const divRef = useRef(null)
   const chart = useRef<Chart>()

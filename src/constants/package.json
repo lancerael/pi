@@ -4,7 +4,8 @@
   "description": "Shared Pi constants",
   "keywords": [
     "pi",
-    "constants"
+    "constants",
+    "utilities"
   ],
   "repository": {
     "type": "git",

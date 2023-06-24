@@ -1,27 +1,25 @@
-import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
 import { WorldMap } from './WorldMap'
 import { WorldMapProps } from './WorldMap.types'
 
-const StoryTemplate = (props: WorldMapProps) => (
+const render = (props: WorldMapProps) => (
   <div style={{ width: '80%', height: '40vw' }}>
     <WorldMap {...props} />
   </div>
 )
 
-const meta: Meta<typeof StoryTemplate> = {
+const meta: Meta<typeof WorldMap> = {
   title: 'Charts/WorldMap',
-  component: StoryTemplate,
+  component: WorldMap,
   argTypes: {
     country: {
       control: { type: 'radio' },
       options: ['USA', 'GBR', 'FRA'],
     },
   },
-  tags: ['autodocs'],
 }
 
-export const Default: StoryObj<typeof StoryTemplate> = {
+export const Default: StoryObj<typeof WorldMap> = {
   args: {
     country: 'GBR',
     label: 'Locale',
@@ -29,6 +27,7 @@ export const Default: StoryObj<typeof StoryTemplate> = {
   parameters: {
     country: 'GBR',
   },
+  render,
 }
 
 export default meta

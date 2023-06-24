@@ -5,7 +5,8 @@
   "keywords": [
     "pi",
     "vite",
-    "config"
+    "config",
+    "utilities"
   ],
   "repository": {
     "type": "git",

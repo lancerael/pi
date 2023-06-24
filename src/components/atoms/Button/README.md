@@ -1,30 +1,18 @@
-# Button
+### @pi-lib/button
 
-NPM: [@pi-lib/button](https://www.npmjs.com/package/@pi-lib/button)
+**Button** _v1.5.4_
 
-A simple React button component, styled via Pi theme.
+A React button component
 
-Takes these standard HTML/React props:
+**Dependencies:** @pi-lib/styles, @pi-lib/utils, react
 
-    'onPointerUp' | 'onMouseOver' | 'onMouseOut' | 'disabled' | 'children' | 'title'
+<table>
+  <tbody>
+    <tr>
+      <td><a href="https://pi.lance-taylor.com/?path=/story/interactions-button" target="_blank">Docs</a></td>
+      <td><a href="https://www.npmjs.com/package/@pi-lib/button" target="_blank">NPM</a></td>
+      <td><a href="https://github.com/lancerael/pi/tree/main/src/src/components/atoms/Button" target="_blank">Github</a></td>
+    </tr>
+  </tbody>
+</table>
 
-And also these additional custom React props:
-
-```
-  /**
-   * The data-selector for the button
-   */
-  dataSelector?: string
-  /**
-   * It denotes the status of the button (sucess, error, pending or default)
-   */
-  status?: Status
-  /**
-   * Show a compact version of the button
-   */
-  isCompact?: boolean
-  /**
-   * Show a special version of the button
-   */
-  isSpecial?: boolean
-```

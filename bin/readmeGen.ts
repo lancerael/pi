@@ -1,86 +1,142 @@
-const fsX = require('fs-extra')
-const path = require('path')
+{
+  const fs = require('fs-extra')
+  const path = require('path')
 
-const monorepoPath = './src'
+  const customReadmes = ['@pi-lib/charts']
+  const nonComponents = [
+    '@pi-lib/config',
+    '@pi-lib/constants',
+    '@pi-lib/utils',
+    '@pi-lib/styles',
+    '@pi-lib/charts',
+    '@pi-lib/types',
+  ]
 
-const customReadmes = ['@pi-lib/charts']
-
-const getPackageJsonFiles = async () => {
-  const packageJsonFiles = []
-
-  const searchForPackageJsonFiles = async (dirPath) => {
-    const files = await fsX.readdir(dirPath)
-
-    for (const file of files) {
-      const filePath = path.join(dirPath, file)
-
-      if (!filePath.includes('node_modules')) {
-        if (file === 'package.json') {
-          packageJsonFiles.push(filePath.replace(/\\/g, '/'))
-        } else if ((await fsX.stat(filePath)).isDirectory()) {
-          await searchForPackageJsonFiles(filePath)
+  /**
+   * Get a list of all the package JSON files for documentation
+   */
+  const getPackageJsonFiles = async () => {
+    const packageJsonFiles = []
+    const searchForPackageJsonFiles = async (dirPath) => {
+      const files = await fs.readdir(dirPath)
+      for (const file of files) {
+        const filePath = path.join(dirPath, file)
+        if (!filePath.includes('node_modules')) {
+          if (file === 'package.json') {
+            packageJsonFiles.push(filePath.replace(/\\/g, '/'))
+          } else if ((await fs.stat(filePath)).isDirectory()) {
+            await searchForPackageJsonFiles(filePath)
+          }
         }
       }
     }
+    await searchForPackageJsonFiles('./src')
+    return packageJsonFiles
   }
 
-  await searchForPackageJsonFiles(monorepoPath)
+  /**
+   * Generate the readme template
+   */
+  const readmeTemplate = (
+    componentName,
+    {
+      name,
+      version,
+      description,
+      homepage,
+      repository: { directory },
+      peerDependencies,
+    }
+  ) => {
+    return `### ${name}
 
-  return packageJsonFiles
-}
-
-const readmeTemplate = (
-  filePath,
-  {
-    name,
-    version,
-    description,
-    keywords,
-    homepage,
-    repository: { directory },
-    peerDependencies,
-  }
-) => {
-  const fileParts = filePath.split('/')
-  const label = fileParts[fileParts.length - 2]
-  return `
-#### ${label}
-
-#${name}# _${version}_
+**${componentName}** _v${version}_
 
 ${description}
-Keywords: ${keywords.join(', ')}
-${
-  !!homepage
-    ? `
-Docs: ${homepage}`
-    : ''
-}
-NPM: https://www.npmjs.com/package/${name}
-Github: https://github.com/lancerael/pi/${directory}
+
 ${
   !!peerDependencies
-    ? `
-Dependencies: ${Object.keys(peerDependencies).join(', ')}`
+    ? `**Dependencies:** ${Object.keys(peerDependencies).join(', ')}`
     : ''
 }
+
+<table>
+  <tbody>
+    <tr>${
+      !!homepage
+        ? `
+      <td><a href="${homepage}" target="_blank">Docs</a></td>`
+        : ''
+    }
+      <td><a href="https://www.npmjs.com/package/${name}" target="_blank">NPM</a></td>
+      <td><a href="https://github.com/lancerael/pi/tree/main/src/${directory}" target="_blank">Github</a></td>
+    </tr>
+  </tbody>
+</table>
+
 `
-}
+  }
 
-const updateReadmes = async () => {
-  const mainReadme = ''
-  const packageJsonFiles = await getPackageJsonFiles()
-  packageJsonFiles.forEach(async (filePath) => {
-    const fileContents = await fsX.readFile(filePath, 'utf8')
-    const parsedContents = JSON.parse(fileContents)
-    if (parsedContents.private) return
-    const componentReadme = readmeTemplate(filePath, parsedContents)
-    await fsExtra.writeFile(
-      filePath.split('/package.json')[0],
-      readmeTemplate(filePath, parsedContents)
-    )
-    ;('<!--- readmeGen --->')
-  })
-}
+  /**
+   * Update all the readmes
+   */
+  const updateReadmes = async () => {
+    const allReadmes = {
+      Theming: [],
+      Interactions: [],
+      Inputs: [],
+      UI: [],
+      Layout: [],
+      Utilities: [],
+    }
+    const packageJsonFiles = await getPackageJsonFiles()
+    // Update individual readmes
+    packageJsonFiles.forEach(async (filePath) => {
+      const location = filePath.split('/package.json')[0]
+      const fileContents = await fs.readFile(filePath, 'utf8')
+      const parsedContents = JSON.parse(fileContents)
+      const componentName = location.split('/').pop()
+      if (parsedContents.private || customReadmes.includes(parsedContents.name))
+        return
+      const componentReadme = readmeTemplate(componentName, parsedContents)
+      Object.keys(allReadmes).forEach((readmeKey) => {
+        if (parsedContents.keywords?.includes(readmeKey.toLowerCase())) {
+          allReadmes[readmeKey].push(componentReadme)
+        }
+      })
 
-updateReadmes()
+      // Update readme
+      await fs.writeFile(`${location}/README.md`, componentReadme)
+
+      // Update component comment
+      if (!nonComponents.includes(parsedContents.name)) {
+        const componentPath = `${location}/src/${componentName}.tsx`
+        const componentContents = await fs.readFile(componentPath, 'utf8')
+        await fs.writeFile(
+          componentPath,
+          componentContents.replace(
+            /\/\*\*\r?\n\s+\*[^]*?\r?\n\s+\*\//,
+            `/**
+ * ${parsedContents.description}
+ */`
+          )
+        )
+      }
+    })
+
+    // Updade main readme
+    const splitter = '<!--- readmeGen --->'
+    const mainContents = await fs.readFile('./README.md', 'utf8')
+    const contentPieces = mainContents.split(splitter)
+    contentPieces[1] = Object.entries(allReadmes)
+      .map(([thisSection, sectionReadmes]) => {
+        return `
+## ${thisSection}
+${sectionReadmes.sort().join(`\r\n\r\n`)}`
+      }, '')
+      .join('')
+    await fs.writeFile('./README.md', contentPieces.join(splitter))
+  }
+
+  updateReadmes()
+}

@@ -25,10 +25,6 @@
     "test": "vitest",
     "test:coverage": "vitest --coverage"
   },
-  "dependencies": {
-    "@pi-lib/styles": "^1.7.1",
-    "lodash.throttle": "^4.1.1"
-  },
   "devDependencies": {
     "@pi-lib/config": "^0.4.0",
     "@pi-lib/types": "^0.1.0",
@@ -43,7 +39,8 @@
     "vitest": "^0.29.3"
   },
   "peerDependencies": {
-    "react": "^18.2.0",
-    "styled-components": "^5.3.5"
+    "@pi-lib/styles": "workspace:^",
+    "lodash.throttle": "^4.1.1",
+    "react": "^18.2.0"
   }
 }

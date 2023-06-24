@@ -1,22 +1,18 @@
-# IconButton
+### @pi-lib/icon-button
 
-NPM: [@pi-lib/icon-button](https://www.npmjs.com/package/@pi-lib/icon-button)
+**IconButton** _v0.6.3_
 
-A React button icon component, styled via Pi theme. Use it for SVG icon actions. Is uses an anchor under the hood.
+A React component for a special button with an icon
 
-Takes these HTML/React props:
+**Dependencies:** @pi-lib/styles, @pi-lib/utils, react, react-svg
 
-    'onPointerUp' | 'onMouseOver' | 'onMouseOut' | 'href' | 'title'
+<table>
+  <tbody>
+    <tr>
+      <td><a href="https://pi.lance-taylor.com/?path=/story/interactions-iconbutton" target="_blank">Docs</a></td>
+      <td><a href="https://www.npmjs.com/package/@pi-lib/icon-button" target="_blank">NPM</a></td>
+      <td><a href="https://github.com/lancerael/pi/tree/main/src/src/components/atoms/IconButton" target="_blank">Github</a></td>
+    </tr>
+  </tbody>
+</table>
 
-And these additional react props:
-
-```
-  /**
-   * The source path/URL for the image
-   */
-  src: boolean
-  /**
-   * Should it open in an new window
-   */
-  isExternal?: boolean
-```

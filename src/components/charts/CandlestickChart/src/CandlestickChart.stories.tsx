@@ -1,10 +1,9 @@
-import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
 import { CandlestickChart } from './CandlestickChart'
 import { useFakeApi } from './hooks'
 
-const StoryTemplate = ({ length }: { length: number }) => {
-  const chartData = useFakeApi(length, 1)
+const render = () => {
+  const chartData = useFakeApi(400, 1)
 
   return (
     <div style={{ width: '80%', height: '40vw' }}>
@@ -13,16 +12,13 @@ const StoryTemplate = ({ length }: { length: number }) => {
   )
 }
 
-const meta: Meta<typeof StoryTemplate> = {
+const meta: Meta<typeof CandlestickChart> = {
   title: 'Charts/CandlestickChart',
-  component: StoryTemplate,
-  tags: ['autodocs'],
+  component: CandlestickChart,
 }
 
-export const Default: StoryObj<typeof StoryTemplate> = {
-  args: {
-    length: 400,
-  },
+export const Default: StoryObj<typeof CandlestickChart> = {
+  render,
 }
 
 export default meta

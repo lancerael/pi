@@ -38,10 +38,11 @@
     "vitest": "^0.22.1"
   },
   "peerDependencies": {
-    "@pi-lib/styles": "^1.7.1",
+    "@pi-lib/styles": "workspace:^",
+    "@pi-lib/utils": "workspace:^",
     "d-theia": "^3.6.0",
     "lodash.throttle": "^4.1.1",
     "react": "^18.2.0",
-    "styled-components": "^5.3.5"
+    "styled-components": "^5.3.11"
   }
 }

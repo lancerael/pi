@@ -8,14 +8,27 @@ export interface CandlestickDayData {
   high: number
   low: number
   close: number
-  volume: number
-  trades: number
+  volume?: number
+  trades?: number
   width?: number
 }
 
 export interface CandlestickChartProps {
   /**
    * The candlestick chart data
+   *
+   * ```
+   * data: [
+   *   {
+   *    date: 'YYYY-MM-DD',
+   *     open: 10,
+   *     high: 25,
+   *     low: 5,
+   *     close: 20,
+   *   },
+   * ],
+   * ```
+   *
    */
   data?: CandlestickDayData[]
 }

@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { Input } from './Input'
 import { InputProps } from './Input.types'
 
-const StoryTemplate = (props: InputProps) => {
+const render = (props: InputProps) => {
   const [value, setValue] = useState(props.value ?? '')
   return (
     <Input
@@ -13,9 +13,9 @@ const StoryTemplate = (props: InputProps) => {
   )
 }
 
-const meta: Meta<typeof StoryTemplate> = {
+const meta: Meta<typeof Input> = {
   title: 'Inputs/Input',
-  component: StoryTemplate,
+  component: Input,
   argTypes: {
     title: {
       control: 'text',
@@ -24,11 +24,15 @@ const meta: Meta<typeof StoryTemplate> = {
       options: ['text', 'number', 'color'],
       control: 'select',
     },
+    onPointerUp: { action: 'clicked' },
   },
   tags: ['autodocs'],
 }
 
-export const Text: StoryObj<typeof StoryTemplate> = {
+/**
+ * The default state for the Text input
+ */
+export const Text: StoryObj<typeof Input> = {
   args: {
     type: 'text',
     title: 'text label',
@@ -37,7 +41,10 @@ export const Text: StoryObj<typeof StoryTemplate> = {
   },
 }
 
-export const Number: StoryObj<typeof StoryTemplate> = {
+/**
+ * The default state for the Number input
+ */
+export const Number: StoryObj<typeof Input> = {
   args: {
     type: 'number',
     title: 'number label',
@@ -46,7 +53,10 @@ export const Number: StoryObj<typeof StoryTemplate> = {
   },
 }
 
-export const Color: StoryObj<typeof StoryTemplate> = {
+/**
+ * The default state for the Color input
+ */
+export const Color: StoryObj<typeof Input> = {
   args: {
     type: 'color',
     title: 'color label',

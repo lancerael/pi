@@ -3,6 +3,9 @@ import { useButtonProps } from '@pi-lib/utils'
 import { ButtonProps } from './Button.types'
 import { StyledButton } from './Button.style'
 
+/**
+ * A React button component
+ */
 export const Button: FC<ButtonProps> = ({
   children,
   status = 'default',

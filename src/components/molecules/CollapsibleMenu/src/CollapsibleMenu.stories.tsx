@@ -24,20 +24,42 @@ const meta: Meta<typeof CollapsibleMenu> = {
   tags: ['autodocs'],
 }
 
+/**
+ * The default state for the collapsible menu with the Hamburger icon
+ */
 export const Default: StoryObj<typeof CollapsibleMenu> = {
-  render,
-}
-
-export const Settings: StoryObj<typeof CollapsibleMenu> = {
   args: {
-    icon: 'cog',
+    icon: 'Hamburger',
   },
   render,
 }
 
+/**
+ * The collapsible menu with a cog icon
+ */
+export const Settings: StoryObj<typeof CollapsibleMenu> = {
+  args: {
+    icon: 'Cog',
+  },
+  render,
+}
+
+/**
+ * The collapsible menu with a chevron icon
+ */
 export const Chevron: StoryObj<typeof CollapsibleMenu> = {
   args: {
-    icon: 'chevron',
+    icon: 'Chevron',
+  },
+  render,
+}
+
+/**
+ * The collapsible menu with an Ellipsis icon
+ */
+export const Ellipsis: StoryObj<typeof CollapsibleMenu> = {
+  args: {
+    icon: 'Ellipsis',
   },
   render,
 }

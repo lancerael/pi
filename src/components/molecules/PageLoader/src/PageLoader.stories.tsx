@@ -92,6 +92,9 @@ const meta: Meta<typeof PageLoader> = {
   tags: ['autodocs'],
 }
 
+/**
+ * The default state for the page loader
+ */
 export const Default: StoryObj<typeof PageLoader> = {
   args: {
     isActive: false,
@@ -99,6 +102,9 @@ export const Default: StoryObj<typeof PageLoader> = {
   render,
 }
 
+/**
+ * The active state for the page loader
+ */
 export const Active: StoryObj<typeof PageLoader> = {
   args: {
     isActive: true,

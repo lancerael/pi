@@ -14,6 +14,10 @@ const subFiles = [
   '_NAME_.types.ts',
   '_NAME_index.ts',
 ]
+
+/**
+ * Generate a new component
+ */
 const generate = async () => {
   try {
     await fs.ensureDir(destination)

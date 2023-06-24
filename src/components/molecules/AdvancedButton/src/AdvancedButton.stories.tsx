@@ -13,12 +13,18 @@ const meta: Meta<typeof AdvancedButton> = {
   tags: ['autodocs'],
 }
 
+/**
+ * The default state for the advanced button
+ */
 export const Default: StoryObj<typeof AdvancedButton> = {
   args: {
     children: 'Default',
   },
 }
 
+/**
+ * The loading state for the advanced button
+ */
 export const Loading: StoryObj<typeof AdvancedButton> = {
   args: {
     children: 'Loading',

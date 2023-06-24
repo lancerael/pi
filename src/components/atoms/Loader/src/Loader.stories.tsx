@@ -13,12 +13,18 @@ const meta: Meta<typeof Loader> = {
   tags: ['autodocs'],
 }
 
+/**
+ * The default state for the loader
+ */
 export const Default: StoryObj<typeof Loader> = {
   args: {
     isLarge: false,
   },
 }
 
+/**
+ * The large version of the loader
+ */
 export const Large: StoryObj<typeof Loader> = {
   args: {
     isLarge: true,

@@ -1,10 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import * as themes from '../src/themes'
-import { ThemeType } from '../src/themes'
+import { themes, ThemeType, Theme } from '../src'
 //@ts-ignore
-import Table from '../../../molecules/Table/src/Table'
-import React from 'react'
-import { Title } from './formatters.style'
+import Table from '../../components/molecules/Table/src/Table'
 
 const StyleDemo = ({ themeName }: { themeName: ThemeType }) => {
   const theme = themes[themeName]
@@ -27,27 +24,29 @@ const StyleDemo = ({ themeName }: { themeName: ThemeType }) => {
   )
 
   return (
-    <>
-      <Title>
+    <Theme themeName={themeName}>
+      <h3>
         Theme:{' '}
         <em>
           {name[0].toUpperCase()}
           {name.slice(1).join('')}
         </em>
-      </Title>
+      </h3>
       <Table
         headers={['Variable', 'Light', 'Dark']}
         rows={keys.map((key) => ({
           cols: [key, color(theme.light[key]), color(theme.dark[key])],
         }))}
       />
-    </>
+    </Theme>
   )
 }
 
 const meta: Meta<typeof StyleDemo> = {
-  title: 'Theme/Themes',
+  title: 'Theming/Themes',
   component: StyleDemo,
+  parameters: { actions: { disabled: true } },
+  decorators: [],
 }
 
 export default meta

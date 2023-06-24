@@ -1,7 +1,7 @@
 {
   "name": "@pi-lib/select",
   "version": "0.2.2",
-  "description": "",
+  "description": "A React component for a themeable select input",
   "keywords": [
     "pi",
     "react",
@@ -39,6 +39,6 @@
   },
   "peerDependencies": {
     "react": "^18.2.0",
-    "styled-components": "^5.3.5"
+    "styled-components": "^5.3.11"
   }
 }

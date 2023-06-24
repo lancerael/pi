@@ -1,12 +1,18 @@
-# Loader
+### @pi-lib/loader
 
-_@pi-lib/loader_ - A simple themed loading spinner.
+**Loader** _v2.4.1_
 
-Takes these react props:
+Basic loading spinner React component
 
-```
-  /**
-   * Is it larger loader?
-   */
-  isLarge?: boolean
-```
+**Dependencies:** react, styled-components
+
+<table>
+  <tbody>
+    <tr>
+      <td><a href="https://pi.lance-taylor.com/?path=/story/ui-loader" target="_blank">Docs</a></td>
+      <td><a href="https://www.npmjs.com/package/@pi-lib/loader" target="_blank">NPM</a></td>
+      <td><a href="https://github.com/lancerael/pi/tree/main/src/src/components/atoms/Loader" target="_blank">Github</a></td>
+    </tr>
+  </tbody>
+</table>
+

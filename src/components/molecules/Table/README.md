@@ -1,35 +1,18 @@
-# Table
+### @pi-lib/table
 
-NPM: [@pi-lib/table](https://www.npmjs.com/package/@pi-lib/table)
+**Table** _v1.7.3_
 
-An expandable table, styled via Pi theme.
+A React component for a table with expandable rows
 
-Takes these custom react props:
+**Dependencies:** @pi-lib/styles, react
 
-```
-  /**
-   * An array of headers for the table
-   */
-  headers?: string[]
-  /**
-   * An array of rows containing columns and content
-   */
-  rows: Omit<RowProps, 'i'>[]
-  /**
-   * A map of custom column widths
-   */
-  fixedWidths?: {
-    /**
-     * An array of cell contents
-     */
-    cols: (JSX.Element | string)[]
-    /**
-     * The index for the row
-     */
-    i: number
-    /**
-     * Any content that ca be expanded
-     */
-    expandedContent?: JSX.Element
-  }
-```
+<table>
+  <tbody>
+    <tr>
+      <td><a href="https://pi.lance-taylor.com/?path=/story/layout-table" target="_blank">Docs</a></td>
+      <td><a href="https://www.npmjs.com/package/@pi-lib/table" target="_blank">NPM</a></td>
+      <td><a href="https://github.com/lancerael/pi/tree/main/src/src/components/molecules/Table" target="_blank">Github</a></td>
+    </tr>
+  </tbody>
+</table>
+

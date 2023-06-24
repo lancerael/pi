@@ -1,6 +1,9 @@
 import { StyledInput } from './Input.style'
 import { InputProps } from './Input.types'
 
+/**
+ * A React component to handle various types of form input
+ */
 export const Input = ({
   longTitle,
   title,

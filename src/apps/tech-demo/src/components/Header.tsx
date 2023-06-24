@@ -14,16 +14,13 @@ import Link from '@pi-lib/link'
 import CollapsibleMenu from '@pi-lib/collapsible-menu'
 import { useWindowClick } from '@pi-lib/utils'
 import ModalScreen from '@pi-lib/modal-screen'
-import { box } from '@pi-lib/styles'
 import Select from '@pi-lib/select'
 import Banner from '@pi-lib/banner'
 
 import IconButton from '@pi-lib/icon-button'
 import TechList from './TechList'
 import { ItemList } from './ItemList'
-import { ThemeType, themeList } from '@pi-lib/styles'
-import * as themes from '@pi-lib/styles/src/themes'
-import { Scheme } from '@pi-lib/styles/src/theme.types'
+import { box, ThemeType, themeList, themes, Scheme } from '@pi-lib/styles'
 
 const StyledHeader = styled.h1`
   display: inline-block;
@@ -141,7 +138,7 @@ export const Header = () => {
         </StyledMenu>
         <div ref={settingsRef}>
           <CollapsibleMenu
-            icon="cog"
+            icon="Cog"
             items={[
               <ItemList>
                 <IconButton
@@ -149,7 +146,8 @@ export const Header = () => {
                     setTimeout(() => dispatch(updateFontSize(altFontSize)))
                   }
                   isSmall
-                  src={`https://pi-lib-assets.s3.eu-west-2.amazonaws.com/font-${fontSize}.svg`}
+                  $isFilled
+                  src={`https://d3bjzq1zo2el1w.cloudfront.net/font-${fontSize}.svg`}
                   title={`Switch to ${altFontSize} font`}
                 />
                 <IconButton
@@ -157,18 +155,20 @@ export const Header = () => {
                     setTimeout(() => dispatch(updateScheme(altScheme)))
                   }
                   isSmall
-                  src={`https://pi-lib-assets.s3.eu-west-2.amazonaws.com/scheme-${altScheme}.svg`}
+                  $isStroked
+                  src={`https://d3bjzq1zo2el1w.cloudfront.net/scheme-${altScheme}.svg`}
                   title={`Switch to ${altScheme} mode`}
                 />
                 <IconButton
                   onPointerUp={() => setTimeout(() => setIsActive(true), 100)}
                   isSmall
-                  src="https://pi-lib-assets.s3.eu-west-2.amazonaws.com/info.svg"
+                  $isFilled
+                  src="https://d3bjzq1zo2el1w.cloudfront.net/info.svg"
                   title="View tech demo architectural diagram"
                 />
               </ItemList>,
               <ItemList title="Choose theme palette">
-                <StyledPalette src="https://pi-lib-assets.s3.eu-west-2.amazonaws.com/palette.svg" />
+                <StyledPalette src="https://d3bjzq1zo2el1w.cloudfront.net/palette.svg" />
                 <StyledSelect {...{ scheme }}>
                   <Select
                     name="theme"
@@ -193,7 +193,7 @@ export const Header = () => {
             src="https://pi-lib-assets.s3.eu-west-2.amazonaws.com/architecture.svg"
             alt={arcTitle}
             title={arcTitle}
-            style={{ maxWidth: '100%' }}
+            style={{ maxWidth: '100%', margin: '0 8px' }}
           />
           <TechList />
         </StyledInfo>

@@ -6,10 +6,10 @@ interface ItemListProps extends PropsWithChildren {
   doWrap?: boolean
 }
 
-const StyledItemList = styled.div<Pick<ItemListProps, 'doWrap'>>`
+const StyledItemList = styled.div`
   display: flex;
   gap: 8px;
-  ${({ doWrap }) =>
+  ${({ doWrap }: Pick<ItemListProps, 'doWrap'>) =>
     !!doWrap ? 'flex-wrap: wrap;' : 'justify-content: flex-end;'}
 `
 

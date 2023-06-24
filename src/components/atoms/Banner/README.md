@@ -1,18 +1,18 @@
-# Banner
+### @pi-lib/banner
 
-NPM: [@pi-lib/banner](https://www.npmjs.com/package/@pi-lib/banner)
+**Banner** _v0.3.1_
 
-A simple React banner component, styled via Pi theme. Use it for a header or a footer.
+A banner React component that can be used for header or footer
 
-Takes these custom React props:
+**Dependencies:** react, styled-components
 
-```
-  /**
-   * Does the banner contain a list of div items?
-   */
-  isList?: boolean
-  /**
-   * Is the banner at the bottom of the page?
-   */
-  isBottom?: boolean
-```
+<table>
+  <tbody>
+    <tr>
+      <td><a href="https://pi.lance-taylor.com/?path=/story/layout-banner" target="_blank">Docs</a></td>
+      <td><a href="https://www.npmjs.com/package/@pi-lib/banner" target="_blank">NPM</a></td>
+      <td><a href="https://github.com/lancerael/pi/tree/main/src/src/components/atoms/Banner" target="_blank">Github</a></td>
+    </tr>
+  </tbody>
+</table>
+

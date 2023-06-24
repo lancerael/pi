@@ -13,6 +13,9 @@ import { DEFAULT_CONTROLS } from './CandlestickChart.constants'
 import { CurrentIndicator } from './components/CurrentIndicator'
 import { IControls } from './components/Controls/Controls.types'
 
+/**
+ * A candlestick chart React component used to show the movement of traded assets.
+ */
 export const CandlestickChart: FC<CandlestickChartProps> = ({ data = [] }) => {
   const svgRef = useRef<SVGSVGElement>(null)
   const containerRef = useRef<HTMLDivElement>(null)

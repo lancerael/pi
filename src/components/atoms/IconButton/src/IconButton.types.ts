@@ -19,9 +19,22 @@ export interface IconButtonProps
    */
   isSmall?: boolean
   /**
+   * Should it automatically fill the SVG shapes
+   */
+  $isFilled?: boolean
+  /**
+   * Should it automatically color the SVG strokes
+   */
+  $isStroked?: boolean
+  /**
    * Set a specific size for the image
    */
   size?: string
 }
 
 export type StyledIconButtonProps = Pick<IconButtonProps, 'size'>
+
+export type StyledIconProps = Pick<
+  IconButtonProps,
+  'src' | '$isFilled' | '$isStroked'
+>

@@ -1,11 +1,11 @@
-import React, { DecoratorFn } from '@storybook/react'
+import React, { Decorator } from '@storybook/react'
 import * as jest from 'jest-mock'
 import { Theme, themeList } from '@pi-lib/styles'
 
 //@ts-ignore
 window.jest = jest
 
-const withTheme: DecoratorFn = (StoryFn, context) => {
+const withTheme: Decorator = (StoryFn, context) => {
   const themeName = context.parameters.themeName ?? context.globals.themeName
   const scheme = context.parameters.scheme ?? context.globals.scheme
   const fontSize = context.parameters.fontSize ?? context.globals.fontSize
@@ -30,13 +30,14 @@ export const parameters = {
   options: {
     storySort: {
       order: [
-        'Theme',
-        ['Themes', 'Docs', 'Custom'],
+        'Pi',
+        'Theming',
+        ['Getting Started', 'Custom Themes', 'Themes'],
         'Interactions',
+        'Inputs',
         'UI',
         'Layout',
         'Charts',
-        ['WorldMap', 'BarChart', 'CandlestickChart'],
       ],
     },
   },
@@ -58,7 +59,7 @@ export const globalTypes = {
     },
   },
   scheme: {
-    name: 'Contrast',
+    name: 'Scheme',
     description: 'Global scheme for theme',
     defaultValue: 'light',
     toolbar: {
@@ -68,7 +69,7 @@ export const globalTypes = {
         { value: 'dark', icon: 'circlehollow', title: 'Dark' },
         { value: '', icon: 'circlehollow', title: 'Device default' },
       ],
-      title: 'Contrast',
+      title: 'Scheme',
     },
   },
   fontSize: {

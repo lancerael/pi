@@ -1,17 +1,9 @@
-import React from 'react'
-import { Scheme } from '@pi-lib/styles/src/theme.types'
-import { ThemeType } from '@pi-lib/styles/src/themes'
 import PageContent from '@pi-lib/page-content'
 import { useSelector } from 'react-redux'
 
 import AxisChart from '@pi-lib/axis-chart'
 import Editor from './Editor'
 import { ChartConfig, DataItem, Hash } from 'd-theia/src/types'
-
-export interface iTheming {
-  themeName: ThemeType
-  scheme: Scheme
-}
 
 export interface ChartValues {
   chartConfig: ChartConfig

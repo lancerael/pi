@@ -6,6 +6,9 @@ import { WorldMapData, WorldMapFeature, WorldMapProps } from './WorldMap.types'
 
 import countries from './data/world.json'
 
+/**
+ * A React component for an SVG world map chart
+ */
 export const WorldMap = ({ label, country }: WorldMapProps) => {
   const svgRef = useRef(null)
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 })

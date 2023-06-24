@@ -2,11 +2,11 @@ import { PropsWithChildren } from 'react'
 
 export interface BannerProps extends PropsWithChildren {
   /**
-   * Does the banner contain a list of items?
+   * Does the banner contain a list of items that should wrap?
    */
-  isList?: boolean
+  wrapItems?: boolean
   /**
-   * Is the banner at the bottom of the page?
+   * Does the banner need an inversion of the gradient?
    */
-  isBottom?: boolean
+  invertGradient?: boolean
 }

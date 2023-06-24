@@ -1,9 +1,8 @@
 import React from 'react'
 import { ThemeProvider } from 'styled-components'
 import { globalFontSizes, globalStyles } from './styles'
-import * as themes from './themes'
-import { ThemeType } from './themes'
-import { ITheme, IThemeProps } from './theme.types'
+import { themes, ThemeType } from './themes'
+import { ITheme, ThemeProps } from './theme.types'
 
 export const baseTheme = {
   fonts: ['sans-serif', 'Roboto'],
@@ -12,13 +11,6 @@ export const baseTheme = {
     medium: '2em',
     large: '3em',
   },
-  chartBackground: `linear-gradient(
-    135deg,
-    var(--bg) 0%,
-    var(--subtle) 50%,
-    var(--border) 51%,
-    var(--bg) 100%
-  )`,
 }
 
 export const statusColors = {
@@ -61,7 +53,7 @@ export const Theme = ({
   theme = getTheme(themeName, themeOverrides),
   scheme = 'light',
   fontSize = 'small',
-}: IThemeProps) => {
+}: ThemeProps) => {
   const defaultTheme = !!matchMedia('(prefers-color-scheme: dark)').matches
     ? 'dark'
     : 'light'
@@ -78,7 +70,7 @@ export const Theme = ({
 
 export const withTheme =
   (Component: React.JSXElementConstructor<any>, themeName: ThemeType) =>
-  (props: unknown[]) =>
+  (props: { [key: string]: unknown }) =>
     (
       <Theme {...{ themeName }}>
         <Component {...props} />

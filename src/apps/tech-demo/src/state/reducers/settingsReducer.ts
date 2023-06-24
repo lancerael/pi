@@ -1,5 +1,4 @@
-import { Scheme } from '@pi-lib/styles/src/theme.types'
-import { ThemeType } from '@pi-lib/styles/src/themes'
+import { Scheme, ThemeType } from '@pi-lib/styles'
 import { createSlice } from '@reduxjs/toolkit'
 
 export interface SettingsState {

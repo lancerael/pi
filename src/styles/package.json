@@ -5,9 +5,11 @@
   "keywords": [
     "pi",
     "react",
-    "theming"
+    "theming",
+    "theme",
+    "styles"
   ],
-  "homepage": "https://pi.lance-taylor.com/?path=/story/theme-docs",
+  "homepage": "http://pi.lance-tayor.com/?path=/story/theming-getting-started",
   "repository": {
     "type": "git",
     "url": "https://github.com/lancerael/pi.git",
@@ -35,6 +37,6 @@
   },
   "peerDependencies": {
     "react": "^18.2.0",
-    "styled-components": "^5.3.5"
+    "styled-components": "^5.3.11"
   }
 }

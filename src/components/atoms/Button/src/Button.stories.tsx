@@ -1,7 +1,6 @@
 import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
 import Button from './Button'
-import { ButtonProps } from './Button.types'
 
 const meta: Meta<typeof Button> = {
   title: 'Interactions/Button',
@@ -20,10 +19,14 @@ const meta: Meta<typeof Button> = {
     isSpecial: {
       control: 'boolean',
     },
+    onPointerUp: { action: 'clicked' },
   },
   tags: ['autodocs'],
 }
 
+/**
+ * The default state for the button
+ */
 export const Default: StoryObj<typeof Button> = {
   args: {
     children: 'Default',
@@ -35,6 +38,9 @@ export const Default: StoryObj<typeof Button> = {
   },
 }
 
+/**
+ * The pending state for the button
+ */
 export const Pending: StoryObj<typeof Button> = {
   args: {
     children: 'Pending',
@@ -42,6 +48,9 @@ export const Pending: StoryObj<typeof Button> = {
   },
 }
 
+/**
+ * The success state for the button
+ */
 export const Success: StoryObj<typeof Button> = {
   args: {
     children: 'Success',
@@ -49,6 +58,9 @@ export const Success: StoryObj<typeof Button> = {
   },
 }
 
+/**
+ * The error state for the button
+ */
 export const Error: StoryObj<typeof Button> = {
   args: {
     children: 'Error',
@@ -56,6 +68,9 @@ export const Error: StoryObj<typeof Button> = {
   },
 }
 
+/**
+ * The disabled state for the button
+ */
 export const Disabled: StoryObj<typeof Button> = {
   args: {
     children: 'Disabled',
@@ -63,6 +78,9 @@ export const Disabled: StoryObj<typeof Button> = {
   },
 }
 
+/**
+ * The special version of the button
+ */
 export const Special: StoryObj<typeof Button> = {
   args: {
     children: 'Special',
@@ -70,6 +88,9 @@ export const Special: StoryObj<typeof Button> = {
   },
 }
 
+/**
+ * The compact version of the button
+ */
 export const Compact: StoryObj<typeof Button> = {
   args: {
     children: 'Compact',

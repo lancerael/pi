@@ -100,6 +100,9 @@ const meta: Meta<typeof ModalScreen> = {
   tags: ['autodocs'],
 }
 
+/**
+ * The default state for the component
+ */
 export const Default: StoryObj<typeof ModalScreen> = {
   args: {
     isActive: false,
@@ -107,6 +110,9 @@ export const Default: StoryObj<typeof ModalScreen> = {
   render,
 }
 
+/**
+ * The active state for the component
+ */
 export const Active: StoryObj<typeof ModalScreen> = {
   args: {
     isActive: true,

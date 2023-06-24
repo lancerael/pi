@@ -38,9 +38,8 @@
     "vitest": "^0.22.1"
   },
   "peerDependencies": {
-    "@pi-lib/styles": "^1.7.1",
+    "@pi-lib/styles": "workspace:^",
     "react": "^18.2.0",
-    "react-router-dom": "^6.10.0",
-    "styled-components": "^5.3.5"
+    "react-router-dom": "^6.10.0"
   }
 }

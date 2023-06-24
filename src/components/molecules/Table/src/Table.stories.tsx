@@ -8,7 +8,24 @@ const meta: Meta<typeof Table> = {
   tags: ['autodocs'],
 }
 
+/**
+ * The default state for the table
+ */
 export const Default: StoryObj<typeof Table> = {
+  args: {
+    headers: ['One', 'Two', 'Three'],
+    rows: [
+      { cols: ['a', 'b', 'c'] },
+      { cols: ['1', '2', '3'] },
+      { cols: ['x', 'y', 'z'] },
+    ],
+  },
+}
+
+/**
+ * A table with an expandable row
+ */
+export const Expandable: StoryObj<typeof Table> = {
   args: {
     headers: ['One', 'Two', 'Three'],
     rows: [

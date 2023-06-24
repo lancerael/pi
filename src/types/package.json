@@ -4,7 +4,8 @@
   "description": "Global types for Pi",
   "keywords": [
     "pi",
-    "types"
+    "types",
+    "utilities"
   ],
   "repository": {
     "type": "git",

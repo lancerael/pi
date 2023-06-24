@@ -1,11 +1,12 @@
 import IconButton from '@pi-lib/icon-button'
 import { ItemList } from './ItemList'
 
-const S3 = 'https://pi-lib-assets.s3.eu-west-2.amazonaws.com/'
+const source = 'https://d3bjzq1zo2el1w.cloudfront.net'
 
 const ICONS: { [key: string]: string } = {
   'AWS AMPLIFY': 'https://aws.amazon.com/amplify',
   'AWS API GATEWAY': 'https://aws.amazon.com/api-gateway',
+  'AWS CLOUDFRONT': 'https://aws.amazon.com/cloudfront',
   'AWS CLOUDWATCH': 'https://aws.amazon.com/cloudwatch',
   'AWS LAMBDA': 'https://aws.amazon.com/lambda',
   'AWS S3': 'https://aws.amazon.com/s3',
@@ -35,7 +36,7 @@ export const Footer = () => {
     <div style={{ padding: '12px' }}>
       <ItemList doWrap>
         {Object.entries(ICONS).map(([title, href], i) => {
-          const src = `${S3}${title.split(' ').join('-').toLowerCase()}.svg`
+          const src = `${source}${title.split(' ').join('-').toLowerCase()}.svg`
           return (
             !!title && (
               <IconButton key={title} isExternal {...{ src, href, title }} />

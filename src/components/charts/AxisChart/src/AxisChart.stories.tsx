@@ -9,7 +9,7 @@ const baseProps = getRandomData() as Pick<
   'chartConfig' | 'chartData'
 >
 
-const StoryTemplate = (props: AxisChartProps) => {
+const render = (props: AxisChartProps) => {
   return (
     <div style={{ width: '80%', height: '40vw' }}>
       <AxisChart {...props} />
@@ -17,26 +17,33 @@ const StoryTemplate = (props: AxisChartProps) => {
   )
 }
 
-const meta: Meta<typeof StoryTemplate> = {
+const meta: Meta<typeof AxisChart> = {
   title: 'Charts/AxisChart',
-  component: StoryTemplate,
-  tags: ['autodocs'],
+  component: AxisChart,
 }
 
-export const Bar: StoryObj<typeof StoryTemplate> = {
+/**
+ * The axis chart in bar form
+ */
+export const Bar: StoryObj<typeof AxisChart> = {
   args: {
     chartId: 'test',
     chartType: 'bar',
     ...baseProps,
   },
+  render,
 }
 
-export const Line: StoryObj<typeof StoryTemplate> = {
+/**
+ * The axis chart in line form
+ */
+export const Line: StoryObj<typeof AxisChart> = {
   args: {
     chartId: 'test2',
     chartType: 'line',
     ...baseProps,
   },
+  render,
 }
 
 export default meta
