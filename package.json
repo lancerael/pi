@@ -26,7 +26,7 @@
     "lint": "npx prettier -c . && npx eslint",
     "lint:fix": "npx prettier -w . && npx eslint --fix",
     "sb": "pnpm docs && cross-env NODE_OPTIONS=--openssl-legacy-provider storybook dev -p 6006",
-    "sb:build": "pnpm docs:docGen && cross-env NODE_OPTIONS=--openssl-legacy-provider storybook build",
+    "sb:build": "cross-env NODE_OPTIONS=--openssl-legacy-provider storybook build",
     "test": "npx nx run-many --target=test"
   },
   "devDependencies": {
