@@ -10,31 +10,31 @@ importers:
   .:
     devDependencies:
       '@pi-lib/button':
-        specifier: workspace:^
+        specifier: ^*
         version: link:src/components/atoms/interactions/Button
       '@pi-lib/charts':
-        specifier: workspace:^
+        specifier: ^*
         version: link:src/libs/Charts
       '@pi-lib/config':
-        specifier: workspace:^
+        specifier: ^*
         version: link:src/config
       '@pi-lib/link':
-        specifier: workspace:^
+        specifier: ^*
         version: link:src/components/atoms/interactions/Link
       '@pi-lib/loader':
-        specifier: workspace:^
+        specifier: ^*
         version: link:src/components/atoms/ui/Loader
       '@pi-lib/modal-screen':
-        specifier: workspace:^
+        specifier: ^*
         version: link:src/components/atoms/layout/ModalScreen
       '@pi-lib/styles':
-        specifier: workspace:^
+        specifier: ^*
         version: link:src/styles
       '@pi-lib/tooltip':
-        specifier: workspace:^
+        specifier: ^*
         version: link:src/components/atoms/ui/Tooltip
       '@pi-lib/utils':
-        specifier: workspace:^
+        specifier: ^*
         version: link:src/utils
       '@storybook/addon-actions':
         specifier: ^7.0.21
