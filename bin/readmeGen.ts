@@ -41,9 +41,9 @@
     componentName,
     { name, description, homepage, repository: { directory }, peerDependencies }
   ) => {
-    return `### ${name}
+    return `### ${componentName}
 
-**${componentName}**
+**${name}**
 
 ${description}
 
@@ -76,10 +76,8 @@ ${
   const updateReadmes = async () => {
     const allReadmes = {
       Theming: [],
-      Interactions: [],
-      Inputs: [],
-      UI: [],
-      Layout: [],
+      Atoms: [],
+      Molecules: [],
       Utilities: [],
     }
     const packageJsonFiles = await getPackageJsonFiles()

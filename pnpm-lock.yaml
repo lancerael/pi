@@ -10,31 +10,31 @@ importers:
   .:
     devDependencies:
       '@pi-lib/button':
-        specifier: '*'
-        version: link:src/components/atoms/Button
+        specifier: workspace:^
+        version: link:src/components/atoms/interactions/Button
       '@pi-lib/charts':
-        specifier: '*'
+        specifier: workspace:^
         version: link:src/libs/Charts
       '@pi-lib/config':
-        specifier: '*'
+        specifier: workspace:^
         version: link:src/config
       '@pi-lib/link':
-        specifier: '*'
-        version: link:src/components/atoms/Link
+        specifier: workspace:^
+        version: link:src/components/atoms/interactions/Link
       '@pi-lib/loader':
-        specifier: '*'
-        version: link:src/components/atoms/Loader
+        specifier: workspace:^
+        version: link:src/components/atoms/ui/Loader
       '@pi-lib/modal-screen':
-        specifier: '*'
-        version: link:src/components/atoms/ModalScreen
+        specifier: workspace:^
+        version: link:src/components/atoms/layout/ModalScreen
       '@pi-lib/styles':
-        specifier: '*'
+        specifier: workspace:^
         version: link:src/styles
       '@pi-lib/tooltip':
-        specifier: '*'
-        version: link:src/components/atoms/Tooltip
+        specifier: workspace:^
+        version: link:src/components/atoms/ui/Tooltip
       '@pi-lib/utils':
-        specifier: '*'
+        specifier: workspace:^
         version: link:src/utils
       '@storybook/addon-actions':
         specifier: ^7.0.21
@@ -255,37 +255,40 @@ importers:
         version: 1.2.2
       '@pi-lib/banner':
         specifier: workspace:^
-        version: link:../../components/atoms/Banner
+        version: link:../../components/atoms/layout/Banner
       '@pi-lib/button':
         specifier: workspace:^
-        version: link:../../components/atoms/Button
+        version: link:../../components/atoms/interactions/Button
       '@pi-lib/collapsible-menu':
         specifier: workspace:^
-        version: link:../../components/molecules/CollapsibleMenu
+        version: link:../../components/molecules/ui/CollapsibleMenu
       '@pi-lib/icon-button':
         specifier: workspace:^
-        version: link:../../components/atoms/IconButton
+        version: link:../../components/atoms/interactions/IconButton
       '@pi-lib/input':
         specifier: workspace:^
-        version: link:../../components/inputs/Input
+        version: link:../../components/atoms/inputs/Input
       '@pi-lib/link':
         specifier: workspace:^
-        version: link:../../components/atoms/Link
-      '@pi-lib/modal-screen':
+        version: link:../../components/atoms/interactions/Link
+      '@pi-lib/modal':
         specifier: workspace:^
-        version: link:../../components/atoms/ModalScreen
+        version: link:../../components/molecules/ui/Modal
       '@pi-lib/page-loader':
         specifier: workspace:^
-        version: link:../../components/molecules/PageLoader
+        version: link:../../components/molecules/ui/PageLoader
       '@pi-lib/select':
         specifier: workspace:^
-        version: link:../../components/inputs/Select
+        version: link:../../components/atoms/inputs/Select
       '@pi-lib/styles':
         specifier: workspace:^
         version: link:../../styles
       '@pi-lib/table':
         specifier: workspace:^
-        version: link:../../components/molecules/Table
+        version: link:../../components/molecules/layout/Table
+      '@pi-lib/toast':
+        specifier: workspace:^
+        version: link:../../components/molecules/ui/Toast
       '@pi-lib/utils':
         specifier: workspace:^
         version: link:../../utils
@@ -354,18 +357,18 @@ importers:
         specifier: ^0.22.1
         version: 0.22.1(jsdom@20.0.3)
 
-  src/components/atoms/Banner:
+  src/components/atoms/inputs/Input:
     dependencies:
+      '@pi-lib/styles':
+        specifier: workspace:^
+        version: link:../../../../styles
       react:
         specifier: ^18.2.0
         version: 18.2.0
-      styled-components:
-        specifier: ^5.3.11
-        version: 5.3.11(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)
     devDependencies:
       '@pi-lib/config':
         specifier: workspace:^
-        version: link:../../../config
+        version: link:../../../../config
       '@testing-library/react':
         specifier: ^13.3.0
         version: 13.4.0(react-dom@18.2.0)(react@18.2.0)
@@ -394,21 +397,61 @@ importers:
         specifier: ^0.22.1
         version: 0.22.1(jsdom@20.0.3)
 
-  src/components/atoms/Button:
+  src/components/atoms/inputs/Select:
     dependencies:
-      '@pi-lib/styles':
-        specifier: ^2.0.1
-        version: link:../../../styles
-      '@pi-lib/utils':
-        specifier: workspace:^
-        version: link:../../../utils
+      react:
+        specifier: ^18.2.0
+        version: 18.2.0
+      styled-components:
+        specifier: ^5.3.11
+        version: 5.3.11(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)
     devDependencies:
       '@pi-lib/config':
         specifier: workspace:^
-        version: link:../../../config
+        version: link:../../../../config
+      '@testing-library/react':
+        specifier: ^13.3.0
+        version: 13.4.0(react-dom@18.2.0)(react@18.2.0)
+      '@vitejs/plugin-react':
+        specifier: ^2.0.1
+        version: 2.2.0(vite@3.2.5)
+      '@vitest/coverage-istanbul':
+        specifier: ^0.23.1
+        version: 0.23.4(jsdom@20.0.3)
+      jest-axe:
+        specifier: ^6.0.0
+        version: 6.0.1
+      jsdom:
+        specifier: ^20.0.0
+        version: 20.0.3
+      rimraf:
+        specifier: ^3.0.2
+        version: 3.0.2
+      typescript:
+        specifier: ^4.7.4
+        version: 4.9.5
+      vite:
+        specifier: ^3.0.9
+        version: 3.2.5(@types/node@18.15.3)
+      vitest:
+        specifier: ^0.22.1
+        version: 0.22.1(jsdom@20.0.3)
+
+  src/components/atoms/interactions/Button:
+    dependencies:
+      '@pi-lib/styles':
+        specifier: workspace:^
+        version: link:../../../../styles
+      '@pi-lib/utils':
+        specifier: workspace:^
+        version: link:../../../../utils
+    devDependencies:
+      '@pi-lib/config':
+        specifier: workspace:^
+        version: link:../../../../config
       '@pi-lib/types':
-        specifier: ^0.2.1
-        version: link:../../../types
+        specifier: workspace:^
+        version: link:../../../../types
       '@testing-library/react':
         specifier: ^14.0.0
         version: 14.0.0(react-dom@18.2.0)(react@18.2.0)
@@ -443,14 +486,14 @@ importers:
         specifier: ^0.29.3
         version: 0.29.3(jsdom@21.1.1)
 
-  src/components/atoms/IconButton:
+  src/components/atoms/interactions/IconButton:
     dependencies:
       '@pi-lib/styles':
         specifier: workspace:^
-        version: link:../../../styles
+        version: link:../../../../styles
       '@pi-lib/utils':
         specifier: workspace:^
-        version: link:../../../utils
+        version: link:../../../../utils
       react:
         specifier: ^18.2.0
         version: 18.2.0
@@ -460,10 +503,10 @@ importers:
     devDependencies:
       '@pi-lib/config':
         specifier: workspace:^
-        version: link:../../../config
+        version: link:../../../../config
       '@pi-lib/types':
         specifier: workspace:^
-        version: link:../../../types
+        version: link:../../../../types
       '@testing-library/react':
         specifier: ^13.3.0
         version: 13.4.0(react-dom@18.2.0)(react@18.2.0)
@@ -492,11 +535,11 @@ importers:
         specifier: ^0.22.1
         version: 0.22.1(jsdom@20.0.3)
 
-  src/components/atoms/Link:
+  src/components/atoms/interactions/Link:
     dependencies:
       '@pi-lib/styles':
         specifier: workspace:^
-        version: link:../../../styles
+        version: link:../../../../styles
       react:
         specifier: ^18.2.0
         version: 18.2.0
@@ -506,7 +549,7 @@ importers:
     devDependencies:
       '@pi-lib/config':
         specifier: workspace:^
-        version: link:../../../config
+        version: link:../../../../config
       '@testing-library/react':
         specifier: ^13.3.0
         version: 13.4.0(react-dom@18.2.0)(react@18.2.0)
@@ -535,7 +578,7 @@ importers:
         specifier: ^0.22.1
         version: 0.22.1(jsdom@20.0.3)
 
-  src/components/atoms/Loader:
+  src/components/atoms/layout/Banner:
     dependencies:
       react:
         specifier: ^18.2.0
@@ -546,50 +589,7 @@ importers:
     devDependencies:
       '@pi-lib/config':
         specifier: workspace:^
-        version: link:../../../config
-      '@pi-lib/types':
-        specifier: ^0.2.1
-        version: link:../../../types
-      '@testing-library/react':
-        specifier: ^14.0.0
-        version: 14.0.0(react-dom@18.2.0)(react@18.2.0)
-      '@vitejs/plugin-react':
-        specifier: ^3.1.0
-        version: 3.1.0(vite@4.2.1)
-      '@vitest/coverage-istanbul':
-        specifier: ^0.29.3
-        version: 0.29.3(vitest@0.29.3)
-      jest-axe:
-        specifier: ^7.0.0
-        version: 7.0.0
-      jsdom:
-        specifier: ^21.1.1
-        version: 21.1.1
-      rimraf:
-        specifier: ^4.4.0
-        version: 4.4.0
-      typescript:
-        specifier: ^4.9.5
-        version: 4.9.5
-      vite:
-        specifier: ^4.1.4
-        version: 4.2.1(@types/node@18.15.3)
-      vitest:
-        specifier: ^0.29.3
-        version: 0.29.3(jsdom@21.1.1)
-
-  src/components/atoms/ModalScreen:
-    dependencies:
-      '@pi-lib/styles':
-        specifier: workspace:^
-        version: link:../../../styles
-      react:
-        specifier: ^18.2.0
-        version: 18.2.0
-    devDependencies:
-      '@pi-lib/config':
-        specifier: workspace:^
-        version: link:../../../config
+        version: link:../../../../config
       '@testing-library/react':
         specifier: ^13.3.0
         version: 13.4.0(react-dom@18.2.0)(react@18.2.0)
@@ -618,24 +618,104 @@ importers:
         specifier: ^0.22.1
         version: 0.22.1(jsdom@20.0.3)
 
-  src/components/atoms/Tooltip:
+  src/components/atoms/layout/ModalScreen:
     dependencies:
       '@pi-lib/styles':
         specifier: workspace:^
-        version: link:../../../styles
-      lodash.throttle:
-        specifier: ^4.1.1
-        version: 4.1.1
+        version: link:../../../../styles
       react:
         specifier: ^18.2.0
         version: 18.2.0
     devDependencies:
       '@pi-lib/config':
         specifier: workspace:^
-        version: link:../../../config
+        version: link:../../../../config
+      '@testing-library/react':
+        specifier: ^13.3.0
+        version: 13.4.0(react-dom@18.2.0)(react@18.2.0)
+      '@vitejs/plugin-react':
+        specifier: ^2.0.1
+        version: 2.2.0(vite@3.2.5)
+      '@vitest/coverage-istanbul':
+        specifier: ^0.23.1
+        version: 0.23.4(jsdom@20.0.3)
+      jest-axe:
+        specifier: ^6.0.0
+        version: 6.0.1
+      jsdom:
+        specifier: ^20.0.0
+        version: 20.0.3
+      rimraf:
+        specifier: ^3.0.2
+        version: 3.0.2
+      typescript:
+        specifier: ^4.7.4
+        version: 4.9.5
+      vite:
+        specifier: ^3.0.9
+        version: 3.2.5(@types/node@18.15.3)
+      vitest:
+        specifier: ^0.22.1
+        version: 0.22.1(jsdom@20.0.3)
+
+  src/components/atoms/ui/DismissableContent:
+    dependencies:
+      '@pi-lib/styles':
+        specifier: workspace:^
+        version: link:../../../../styles
+      react:
+        specifier: ^18.2.0
+        version: 18.2.0
+      styled-components:
+        specifier: ^5.3.11
+        version: 5.3.11(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)
+    devDependencies:
+      '@pi-lib/config':
+        specifier: workspace:^
+        version: link:../../../../config
+      '@testing-library/react':
+        specifier: ^13.3.0
+        version: 13.4.0(react-dom@18.2.0)(react@18.2.0)
+      '@vitejs/plugin-react':
+        specifier: ^2.0.1
+        version: 2.2.0(vite@3.2.5)
+      '@vitest/coverage-istanbul':
+        specifier: ^0.23.1
+        version: 0.23.4(jsdom@20.0.3)
+      jest-axe:
+        specifier: ^6.0.0
+        version: 6.0.1
+      jsdom:
+        specifier: ^20.0.0
+        version: 20.0.3
+      rimraf:
+        specifier: ^3.0.2
+        version: 3.0.2
+      typescript:
+        specifier: ^4.7.4
+        version: 4.9.5
+      vite:
+        specifier: ^3.0.9
+        version: 3.2.5(@types/node@18.15.3)
+      vitest:
+        specifier: ^0.22.1
+        version: 0.22.1(jsdom@20.0.3)
+
+  src/components/atoms/ui/Loader:
+    dependencies:
+      react:
+        specifier: ^18.2.0
+        version: 18.2.0
+      styled-components:
+        specifier: ^5.3.11
+        version: 5.3.11(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)
+    devDependencies:
+      '@pi-lib/config':
+        specifier: workspace:^
+        version: link:../../../../config
       '@pi-lib/types':
-        specifier: ^0.2.1
-        version: link:../../../types
+        specifier: workspace:^
+        version: link:../../../../types
       '@testing-library/react':
         specifier: ^14.0.0
         version: 14.0.0(react-dom@18.2.0)(react@18.2.0)
@@ -664,14 +744,60 @@ importers:
         specifier: ^0.29.3
         version: 0.29.3(jsdom@21.1.1)
 
-  src/components/charts/AxisChart:
+  src/components/atoms/ui/Tooltip:
     dependencies:
       '@pi-lib/styles':
         specifier: workspace:^
-        version: link:../../../styles
+        version: link:../../../../styles
+      lodash.throttle:
+        specifier: ^4.1.1
+        version: 4.1.1
+      react:
+        specifier: ^18.2.0
+        version: 18.2.0
+    devDependencies:
+      '@pi-lib/config':
+        specifier: workspace:^
+        version: link:../../../../config
+      '@pi-lib/types':
+        specifier: workspace:^
+        version: link:../../../../types
+      '@testing-library/react':
+        specifier: ^14.0.0
+        version: 14.0.0(react-dom@18.2.0)(react@18.2.0)
+      '@vitejs/plugin-react':
+        specifier: ^3.1.0
+        version: 3.1.0(vite@4.2.1)
+      '@vitest/coverage-istanbul':
+        specifier: ^0.29.3
+        version: 0.29.3(vitest@0.29.3)
+      jest-axe:
+        specifier: ^7.0.0
+        version: 7.0.0
+      jsdom:
+        specifier: ^21.1.1
+        version: 21.1.1
+      rimraf:
+        specifier: ^4.4.0
+        version: 4.4.0
+      typescript:
+        specifier: ^4.9.5
+        version: 4.9.5
+      vite:
+        specifier: ^4.1.4
+        version: 4.2.1(@types/node@18.15.3)
+      vitest:
+        specifier: ^0.29.3
+        version: 0.29.3(jsdom@21.1.1)
+
+  src/components/molecules/charts/AxisChart:
+    dependencies:
+      '@pi-lib/styles':
+        specifier: workspace:^
+        version: link:../../../../styles
       '@pi-lib/utils':
         specifier: workspace:^
-        version: link:../../../utils
+        version: link:../../../../utils
       d-theia:
         specifier: ^3.6.0
         version: 3.6.0
@@ -687,7 +813,7 @@ importers:
     devDependencies:
       '@pi-lib/config':
         specifier: workspace:^
-        version: link:../../../config
+        version: link:../../../../config
       '@testing-library/react':
         specifier: ^13.3.0
         version: 13.4.0(react-dom@18.2.0)(react@18.2.0)
@@ -716,7 +842,7 @@ importers:
         specifier: ^0.22.1
         version: 0.22.1(jsdom@20.0.3)
 
-  src/components/charts/BarChart:
+  src/components/molecules/charts/BarChart:
     dependencies:
       react:
         specifier: ^18.2.0
@@ -727,13 +853,13 @@ importers:
     devDependencies:
       '@pi-lib/config':
         specifier: workspace:^
-        version: link:../../../config
+        version: link:../../../../config
       '@pi-lib/constants':
-        specifier: ^2.0.1
-        version: link:../../../constants
+        specifier: workspace:^
+        version: link:../../../../constants
       '@pi-lib/types':
-        specifier: ^0.2.1
-        version: link:../../../types
+        specifier: workspace:^
+        version: link:../../../../types
       '@testing-library/react':
         specifier: ^14.0.0
         version: 14.0.0(react-dom@18.2.0)(react@18.2.0)
@@ -762,20 +888,20 @@ importers:
         specifier: ^0.29.3
         version: 0.29.3(jsdom@21.1.1)
 
-  src/components/charts/CandlestickChart:
+  src/components/molecules/charts/CandlestickChart:
     dependencies:
       '@pi-lib/button':
         specifier: workspace:^
-        version: link:../../atoms/Button
+        version: link:../../../atoms/interactions/Button
       '@pi-lib/loader':
         specifier: workspace:^
-        version: link:../../atoms/Loader
+        version: link:../../../atoms/ui/Loader
       '@pi-lib/styles':
         specifier: workspace:^
-        version: link:../../../styles
+        version: link:../../../../styles
       '@pi-lib/tooltip':
         specifier: workspace:^
-        version: link:../../atoms/Tooltip
+        version: link:../../../atoms/ui/Tooltip
       d3-axis:
         specifier: ^3.0.0
         version: 3.0.0
@@ -797,10 +923,10 @@ importers:
     devDependencies:
       '@pi-lib/config':
         specifier: workspace:^
-        version: link:../../../config
+        version: link:../../../../config
       '@pi-lib/types':
-        specifier: ^0.2.1
-        version: link:../../../types
+        specifier: workspace:^
+        version: link:../../../../types
       '@testing-library/react':
         specifier: ^14.0.0
         version: 14.0.0(react-dom@18.2.0)(react@18.2.0)
@@ -841,11 +967,11 @@ importers:
         specifier: ^0.29.3
         version: 0.29.3(jsdom@21.1.1)
 
-  src/components/charts/WorldMap:
+  src/components/molecules/charts/WorldMap:
     dependencies:
       '@pi-lib/styles':
         specifier: workspace:^
-        version: link:../../../styles
+        version: link:../../../../styles
       d3-geo:
         specifier: ^3.1.0
         version: 3.1.0
@@ -861,10 +987,10 @@ importers:
     devDependencies:
       '@pi-lib/config':
         specifier: workspace:^
-        version: link:../../../config
+        version: link:../../../../config
       '@pi-lib/types':
-        specifier: ^0.2.1
-        version: link:../../../types
+        specifier: workspace:^
+        version: link:../../../../types
       '@testing-library/react':
         specifier: ^13.3.0
         version: 13.4.0(react-dom@18.2.0)(react@18.2.0)
@@ -899,94 +1025,14 @@ importers:
         specifier: ^0.22.1
         version: 0.22.1(jsdom@20.0.3)
 
-  src/components/inputs/Input:
-    dependencies:
-      '@pi-lib/styles':
-        specifier: workspace:^
-        version: link:../../../styles
-      react:
-        specifier: ^18.2.0
-        version: 18.2.0
-    devDependencies:
-      '@pi-lib/config':
-        specifier: workspace:^
-        version: link:../../../config
-      '@testing-library/react':
-        specifier: ^13.3.0
-        version: 13.4.0(react-dom@18.2.0)(react@18.2.0)
-      '@vitejs/plugin-react':
-        specifier: ^2.0.1
-        version: 2.2.0(vite@3.2.5)
-      '@vitest/coverage-istanbul':
-        specifier: ^0.23.1
-        version: 0.23.4(jsdom@20.0.3)
-      jest-axe:
-        specifier: ^6.0.0
-        version: 6.0.1
-      jsdom:
-        specifier: ^20.0.0
-        version: 20.0.3
-      rimraf:
-        specifier: ^3.0.2
-        version: 3.0.2
-      typescript:
-        specifier: ^4.7.4
-        version: 4.9.5
-      vite:
-        specifier: ^3.0.9
-        version: 3.2.5(@types/node@18.15.3)
-      vitest:
-        specifier: ^0.22.1
-        version: 0.22.1(jsdom@20.0.3)
-
-  src/components/inputs/Select:
-    dependencies:
-      react:
-        specifier: ^18.2.0
-        version: 18.2.0
-      styled-components:
-        specifier: ^5.3.11
-        version: 5.3.11(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)
-    devDependencies:
-      '@pi-lib/config':
-        specifier: workspace:^
-        version: link:../../../config
-      '@testing-library/react':
-        specifier: ^13.3.0
-        version: 13.4.0(react-dom@18.2.0)(react@18.2.0)
-      '@vitejs/plugin-react':
-        specifier: ^2.0.1
-        version: 2.2.0(vite@3.2.5)
-      '@vitest/coverage-istanbul':
-        specifier: ^0.23.1
-        version: 0.23.4(jsdom@20.0.3)
-      jest-axe:
-        specifier: ^6.0.0
-        version: 6.0.1
-      jsdom:
-        specifier: ^20.0.0
-        version: 20.0.3
-      rimraf:
-        specifier: ^3.0.2
-        version: 3.0.2
-      typescript:
-        specifier: ^4.7.4
-        version: 4.9.5
-      vite:
-        specifier: ^3.0.9
-        version: 3.2.5(@types/node@18.15.3)
-      vitest:
-        specifier: ^0.22.1
-        version: 0.22.1(jsdom@20.0.3)
-
-  src/components/molecules/AdvancedButton:
+  src/components/molecules/interactions/AdvancedButton:
     dependencies:
       '@pi-lib/button':
-        specifier: ^1.6.1
-        version: link:../../atoms/Button
+        specifier: workspace:^
+        version: link:../../../atoms/interactions/Button
       '@pi-lib/loader':
-        specifier: ^3.0.1
-        version: link:../../atoms/Loader
+        specifier: workspace:^
+        version: link:../../../atoms/ui/Loader
       react:
         specifier: ^18.2.0
         version: 18.2.0
@@ -996,10 +1042,10 @@ importers:
     devDependencies:
       '@pi-lib/config':
         specifier: workspace:^
-        version: link:../../../config
+        version: link:../../../../config
       '@pi-lib/types':
-        specifier: ^0.2.1
-        version: link:../../../types
+        specifier: workspace:^
+        version: link:../../../../types
       '@testing-library/react':
         specifier: ^14.0.0
         version: 14.0.0(react-dom@18.2.0)(react@18.2.0)
@@ -1028,14 +1074,97 @@ importers:
         specifier: ^0.29.3
         version: 0.29.3(jsdom@21.1.1)
 
-  src/components/molecules/CollapsibleMenu:
+  src/components/molecules/layout/PageContent:
     dependencies:
       '@pi-lib/styles':
         specifier: workspace:^
-        version: link:../../../styles
+        version: link:../../../../styles
+      react:
+        specifier: ^18.2.0
+        version: 18.2.0
+    devDependencies:
+      '@pi-lib/config':
+        specifier: workspace:^
+        version: link:../../../../config
+      '@testing-library/react':
+        specifier: ^13.3.0
+        version: 13.4.0(react-dom@18.2.0)(react@18.2.0)
+      '@vitejs/plugin-react':
+        specifier: ^2.0.1
+        version: 2.2.0(vite@3.2.5)
+      '@vitest/coverage-istanbul':
+        specifier: ^0.23.1
+        version: 0.23.4(jsdom@20.0.3)
+      jest-axe:
+        specifier: ^6.0.0
+        version: 6.0.1
+      jsdom:
+        specifier: ^20.0.0
+        version: 20.0.3
+      rimraf:
+        specifier: ^3.0.2
+        version: 3.0.2
+      typescript:
+        specifier: ^4.7.4
+        version: 4.9.5
+      vite:
+        specifier: ^3.0.9
+        version: 3.2.5(@types/node@18.15.3)
+      vitest:
+        specifier: ^0.22.1
+        version: 0.22.1(jsdom@20.0.3)
+
+  src/components/molecules/layout/Table:
+    dependencies:
+      '@pi-lib/styles':
+        specifier: workspace:^
+        version: link:../../../../styles
+      react:
+        specifier: ^18.2.0
+        version: 18.2.0
+    devDependencies:
+      '@pi-lib/config':
+        specifier: workspace:^
+        version: link:../../../../config
+      '@pi-lib/types':
+        specifier: workspace:^
+        version: link:../../../../types
+      '@testing-library/react':
+        specifier: ^14.0.0
+        version: 14.0.0(react-dom@18.2.0)(react@18.2.0)
+      '@vitejs/plugin-react':
+        specifier: ^3.1.0
+        version: 3.1.0(vite@4.2.1)
+      '@vitest/coverage-istanbul':
+        specifier: ^0.29.3
+        version: 0.29.3(vitest@0.29.3)
+      jest-axe:
+        specifier: ^7.0.0
+        version: 7.0.0
+      jsdom:
+        specifier: ^21.1.1
+        version: 21.1.1
+      rimraf:
+        specifier: ^4.4.0
+        version: 4.4.0
+      typescript:
+        specifier: ^4.9.5
+        version: 4.9.5
+      vite:
+        specifier: ^4.1.4
+        version: 4.2.1(@types/node@18.15.3)
+      vitest:
+        specifier: ^0.29.3
+        version: 0.29.3(jsdom@21.1.1)
+
+  src/components/molecules/ui/CollapsibleMenu:
+    dependencies:
+      '@pi-lib/styles':
+        specifier: workspace:^
+        version: link:../../../../styles
       '@pi-lib/utils':
         specifier: workspace:^
-        version: link:../../../utils
+        version: link:../../../../utils
       react:
         specifier: ^18.2.0
         version: 18.2.0
@@ -1051,7 +1180,7 @@ importers:
     devDependencies:
       '@pi-lib/config':
         specifier: workspace:^
-        version: link:../../../config
+        version: link:../../../../config
       '@testing-library/react':
         specifier: ^13.3.0
         version: 13.4.0(react-dom@18.2.0)(react@18.2.0)
@@ -1080,18 +1209,30 @@ importers:
         specifier: ^0.22.1
         version: 0.22.1(jsdom@20.0.3)
 
-  src/components/molecules/PageContent:
+  src/components/molecules/ui/Modal:
     dependencies:
+      '@pi-lib/dismissable-content':
+        specifier: workspace:^
+        version: link:../../../atoms/ui/DismissableContent
+      '@pi-lib/modal-screen':
+        specifier: workspace:^
+        version: link:../../../atoms/layout/ModalScreen
       '@pi-lib/styles':
         specifier: workspace:^
-        version: link:../../../styles
+        version: link:../../../../styles
+      '@pi-lib/utils':
+        specifier: workspace:^
+        version: link:../../../../utils
       react:
         specifier: ^18.2.0
         version: 18.2.0
+      styled-components:
+        specifier: ^5.3.11
+        version: 5.3.11(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)
     devDependencies:
       '@pi-lib/config':
         specifier: workspace:^
-        version: link:../../../config
+        version: link:../../../../config
       '@testing-library/react':
         specifier: ^13.3.0
         version: 13.4.0(react-dom@18.2.0)(react@18.2.0)
@@ -1120,24 +1261,24 @@ importers:
         specifier: ^0.22.1
         version: 0.22.1(jsdom@20.0.3)
 
-  src/components/molecules/PageLoader:
+  src/components/molecules/ui/PageLoader:
     dependencies:
       '@pi-lib/loader':
         specifier: workspace:^
-        version: link:../../atoms/Loader
+        version: link:../../../atoms/ui/Loader
       '@pi-lib/modal-screen':
         specifier: workspace:^
-        version: link:../../atoms/ModalScreen
+        version: link:../../../atoms/layout/ModalScreen
       '@pi-lib/styles':
         specifier: workspace:^
-        version: link:../../../styles
+        version: link:../../../../styles
       react:
         specifier: ^18.2.0
         version: 18.2.0
     devDependencies:
       '@pi-lib/config':
         specifier: workspace:^
-        version: link:../../../config
+        version: link:../../../../config
       '@testing-library/react':
         specifier: ^13.3.0
         version: 13.4.0(react-dom@18.2.0)(react@18.2.0)
@@ -1166,48 +1307,54 @@ importers:
         specifier: ^0.22.1
         version: 0.22.1(jsdom@20.0.3)
 
-  src/components/molecules/Table:
+  src/components/molecules/ui/Toast:
     dependencies:
+      '@pi-lib/dismissable-content':
+        specifier: workspace:^
+        version: link:../../../atoms/ui/DismissableContent
+      '@pi-lib/icon-button':
+        specifier: workspace:^
+        version: link:../../../atoms/interactions/IconButton
       '@pi-lib/styles':
         specifier: workspace:^
-        version: link:../../../styles
+        version: link:../../../../styles
       react:
         specifier: ^18.2.0
         version: 18.2.0
+      styled-components:
+        specifier: ^5.3.11
+        version: 5.3.11(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)
     devDependencies:
       '@pi-lib/config':
         specifier: workspace:^
-        version: link:../../../config
-      '@pi-lib/types':
-        specifier: workspace:^
-        version: link:../../../types
+        version: link:../../../../config
       '@testing-library/react':
-        specifier: ^14.0.0
-        version: 14.0.0(react-dom@18.2.0)(react@18.2.0)
+        specifier: ^13.3.0
+        version: 13.4.0(react-dom@18.2.0)(react@18.2.0)
       '@vitejs/plugin-react':
-        specifier: ^3.1.0
-        version: 3.1.0(vite@4.2.1)
+        specifier: ^2.0.1
+        version: 2.2.0(vite@3.2.5)
       '@vitest/coverage-istanbul':
-        specifier: ^0.29.3
-        version: 0.29.3(vitest@0.29.3)
+        specifier: ^0.23.1
+        version: 0.23.4(jsdom@20.0.3)
       jest-axe:
-        specifier: ^7.0.0
-        version: 7.0.0
+        specifier: ^6.0.0
+        version: 6.0.1
       jsdom:
-        specifier: ^21.1.1
-        version: 21.1.1
+        specifier: ^20.0.0
+        version: 20.0.3
       rimraf:
-        specifier: ^4.4.0
-        version: 4.4.0
+        specifier: ^3.0.2
+        version: 3.0.2
       typescript:
-        specifier: ^4.9.5
+        specifier: ^4.7.4
         version: 4.9.5
       vite:
-        specifier: ^4.1.4
-        version: 4.2.1(@types/node@18.15.3)
+        specifier: ^3.0.9
+        version: 3.2.5(@types/node@18.15.3)
       vitest:
-        specifier: ^0.29.3
-        version: 0.29.3(jsdom@21.1.1)
+        specifier: ^0.22.1
+        version: 0.22.1(jsdom@20.0.3)
 
   src/config:
     devDependencies:
@@ -1362,12 +1509,12 @@ importers:
         version: 1.2.2
       '@pi-lib/candlestick-chart':
         specifier: workspace:^
-        version: link:../../components/charts/CandlestickChart
+        version: link:../../components/molecules/charts/CandlestickChart
       '@pi-lib/page-content':
         specifier: workspace:^
-        version: link:../../components/molecules/PageContent
+        version: link:../../components/molecules/layout/PageContent
       '@pi-lib/styles':
-        specifier: '*'
+        specifier: workspace:^
         version: link:../../styles
       react:
         specifier: ^18.2.0
@@ -1408,28 +1555,28 @@ importers:
         version: 1.2.2
       '@pi-lib/axis-chart':
         specifier: workspace:^
-        version: link:../../components/charts/AxisChart
+        version: link:../../components/molecules/charts/AxisChart
       '@pi-lib/button':
         specifier: workspace:^
-        version: link:../../components/atoms/Button
+        version: link:../../components/atoms/interactions/Button
       '@pi-lib/collapsible-menu':
         specifier: workspace:^
-        version: link:../../components/molecules/CollapsibleMenu
+        version: link:../../components/molecules/ui/CollapsibleMenu
       '@pi-lib/icon-button':
         specifier: workspace:^
-        version: link:../../components/atoms/IconButton
+        version: link:../../components/atoms/interactions/IconButton
       '@pi-lib/input':
         specifier: workspace:^
-        version: link:../../components/inputs/Input
+        version: link:../../components/atoms/inputs/Input
       '@pi-lib/page-content':
         specifier: workspace:^
-        version: link:../../components/molecules/PageContent
+        version: link:../../components/molecules/layout/PageContent
       '@pi-lib/page-loader':
         specifier: workspace:^
-        version: link:../../components/molecules/PageLoader
+        version: link:../../components/molecules/ui/PageLoader
       '@pi-lib/table':
         specifier: workspace:^
-        version: link:../../components/molecules/Table
+        version: link:../../components/molecules/layout/Table
       '@reduxjs/toolkit':
         specifier: ^1.9.3
         version: 1.9.3(react-redux@7.2.9)(react@18.2.0)
@@ -1508,7 +1655,7 @@ importers:
         specifier: workspace:^
         version: link:../config
       '@pi-lib/types':
-        specifier: ^0.2.1
+        specifier: workspace:^
         version: link:../types
       '@testing-library/react':
         specifier: ^14.0.0
@@ -1557,13 +1704,6 @@ packages:
     hasBin: true
     dependencies:
       default-browser-id: 3.0.0
-    dev: true
-
-  /@babel/code-frame@7.18.6:
-    resolution: {integrity: sha512-TDCmlK5eOvH+eH7cdAFlNXeVJqWIQ7gW9tY1GJIpUtFb6CmjVyq2VM3u71bOyR8CRihcCgMUYoDNyLXao3+70Q==}
-    engines: {node: '>=6.9.0'}
-    dependencies:
-      '@babel/highlight': 7.22.5
     dev: true
 
   /@babel/code-frame@7.22.5:
@@ -1618,13 +1758,6 @@ packages:
       '@jridgewell/gen-mapping': 0.3.2
       '@jridgewell/trace-mapping': 0.3.17
       jsesc: 2.5.2
-
-  /@babel/helper-annotate-as-pure@7.18.6:
-    resolution: {integrity: sha512-duORpUiYrEpzKIop6iNbjnwKLAKnJ47csTyRACyEmWj0QdUrm5aqNJGHSSEQSUAvNW0ojX0dOmK9dZduvkfeXA==}
-    engines: {node: '>=6.9.0'}
-    dependencies:
-      '@babel/types': 7.22.5
-    dev: true
 
   /@babel/helper-annotate-as-pure@7.22.5:
     resolution: {integrity: sha512-LvBTxu8bQSQkcyKOU+a1btnNFQ1dMAd0R6PyW3arXes06F6QLWLIrd681bxRPIXlrMGR3XYnW9JyML7dP3qgxg==}
@@ -1768,11 +1901,6 @@ packages:
     engines: {node: '>=6.9.0'}
     dependencies:
       '@babel/types': 7.22.5
-    dev: true
-
-  /@babel/helper-plugin-utils@7.20.2:
-    resolution: {integrity: sha512-8RvlJG2mj4huQ4pZ+rU9lqKi9ZKiRmuvGuM2HlWmkmgOhbs6zEAw6IEiJ5cQqGbDzGZOhwuOQNtZMi/ENLjZoQ==}
-    engines: {node: '>=6.9.0'}
     dev: true
 
   /@babel/helper-plugin-utils@7.22.5:
@@ -2190,16 +2318,6 @@ packages:
 
   /@babel/plugin-syntax-json-strings@7.8.3(@babel/core@7.21.3):
     resolution: {integrity: sha512-lY6kdGpWHvjoe2vk4WrAapEuBR69EMxZl+RoGRhrFGNYVK8mOPAW8VfbT/ZgrFbXlDNiiaxQnAtgVCZ6jv30EA==}
-    peerDependencies:
-      '@babel/core': ^7.0.0-0
-    dependencies:
-      '@babel/core': 7.21.3
-      '@babel/helper-plugin-utils': 7.22.5
-    dev: true
-
-  /@babel/plugin-syntax-jsx@7.18.6(@babel/core@7.21.3):
-    resolution: {integrity: sha512-6mmljtAedFGTWu2p/8WIORGwy+61PLgOMPOdazc7YoJ9ZCWUyFy3A6CpPkRKLKD1ToAesxX8KGEViAiLo9N+7Q==}
-    engines: {node: '>=6.9.0'}
     peerDependencies:
       '@babel/core': ^7.0.0-0
     dependencies:
@@ -2781,7 +2899,7 @@ packages:
       '@babel/core': ^7.0.0-0
     dependencies:
       '@babel/core': 7.21.3
-      '@babel/helper-plugin-utils': 7.20.2
+      '@babel/helper-plugin-utils': 7.22.5
     dev: true
 
   /@babel/plugin-transform-react-jsx-source@7.19.6(@babel/core@7.21.3):
@@ -2791,7 +2909,7 @@ packages:
       '@babel/core': ^7.0.0-0
     dependencies:
       '@babel/core': 7.21.3
-      '@babel/helper-plugin-utils': 7.20.2
+      '@babel/helper-plugin-utils': 7.22.5
     dev: true
 
   /@babel/plugin-transform-react-jsx@7.21.0(@babel/core@7.21.3):
@@ -2801,11 +2919,11 @@ packages:
       '@babel/core': ^7.0.0-0
     dependencies:
       '@babel/core': 7.21.3
-      '@babel/helper-annotate-as-pure': 7.18.6
+      '@babel/helper-annotate-as-pure': 7.22.5
       '@babel/helper-module-imports': 7.22.5
-      '@babel/helper-plugin-utils': 7.20.2
-      '@babel/plugin-syntax-jsx': 7.18.6(@babel/core@7.21.3)
-      '@babel/types': 7.21.3
+      '@babel/helper-plugin-utils': 7.22.5
+      '@babel/plugin-syntax-jsx': 7.22.5(@babel/core@7.21.3)
+      '@babel/types': 7.22.5
     dev: true
 
   /@babel/plugin-transform-regenerator@7.22.5(@babel/core@7.21.3):
@@ -6015,7 +6133,7 @@ packages:
     resolution: {integrity: sha512-d9ULIT+a4EXLX3UU8FBjauG9NnsZHkHztXoIcTsOKoOw030fyjheN9svkTULjJxtYag9DZz5Jz5qkWZDPxTFwA==}
     engines: {node: '>=12'}
     dependencies:
-      '@babel/code-frame': 7.18.6
+      '@babel/code-frame': 7.22.5
       '@babel/runtime': 7.22.3
       '@types/aria-query': 5.0.1
       aria-query: 5.1.3
@@ -6060,7 +6178,7 @@ packages:
       react: ^18.0.0
       react-dom: ^18.0.0
     dependencies:
-      '@babel/runtime': 7.21.0
+      '@babel/runtime': 7.22.3
       '@testing-library/dom': 9.0.1
       '@types/react-dom': 18.0.11
       react: 18.2.0

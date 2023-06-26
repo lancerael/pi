@@ -1,0 +1,45 @@
+{
+  "name": "@pi-lib/table",
+  "version": "2.0.1",
+  "description": "A React component for a table with expandable rows",
+  "keywords": [
+    "pi",
+    "react",
+    "component",
+    "molecules",
+    "layout",
+    "table"
+  ],
+  "homepage": "https://pi.lance-taylor.com/?path=/docs/molecules-layout-table",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lancerael/pi.git",
+    "directory": "src/components/molecules/layout/Table"
+  },
+  "license": "ISC",
+  "author": "Lance Taylor",
+  "type": "module",
+  "main": "./src/index.ts",
+  "scripts": {
+    "build": "rimraf vanilla && vite build",
+    "test": "vitest",
+    "test:coverage": "vitest --coverage"
+  },
+  "devDependencies": {
+    "@pi-lib/config": "workspace:^",
+    "@pi-lib/types": "workspace:^",
+    "@testing-library/react": "^14.0.0",
+    "@vitejs/plugin-react": "^3.1.0",
+    "@vitest/coverage-istanbul": "^0.29.3",
+    "jest-axe": "^7.0.0",
+    "jsdom": "^21.1.1",
+    "rimraf": "^4.4.0",
+    "typescript": "^4.9.5",
+    "vite": "^4.1.4",
+    "vitest": "^0.29.3"
+  },
+  "peerDependencies": {
+    "@pi-lib/styles": "workspace:^",
+    "react": "^18.2.0"
+  }
+}

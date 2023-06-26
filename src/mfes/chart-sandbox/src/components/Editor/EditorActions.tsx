@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import Button from '@pi-lib/button'
 import PageLoader from '@pi-lib/page-loader'
 import IconButton from '@pi-lib/icon-button'
@@ -108,7 +108,7 @@ export const EditorActions = () => {
     $isStroked = false,
     $isFilled = false,
   }: ActionProps) => {
-    const iconPath = `https://pi-lib-assets.s3.eu-west-2.amazonaws.com/${label
+    const iconPath = `https://d3bjzq1zo2el1w.cloudfront.net/${label
       .toLowerCase()
       .split(' ')
       .join('-')}.svg`

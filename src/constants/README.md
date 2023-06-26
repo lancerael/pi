@@ -1,6 +1,6 @@
-### @pi-lib/constants
+### constants
 
-**constants**
+**@pi-lib/constants**
 
 Shared Pi constants
 

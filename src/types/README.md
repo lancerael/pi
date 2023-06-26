@@ -1,6 +1,6 @@
-### @pi-lib/types
+### types
 
-**types**
+**@pi-lib/types**
 
 Global types for Pi
 

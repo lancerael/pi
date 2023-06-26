@@ -22,24 +22,25 @@ const generate = async () => {
   try {
     await fs.ensureDir(destination)
     for (const fileName of ['src', ...files]) {
-      await fs.copy(`${source}/${fileName}`, `${destination}/${fileName}`)
+      const fullDestinationPath = `${destination}/${fileName}`
+      await fs.copy(`${source}/${fileName}`, fullDestinationPath)
       if (fileName !== 'src') {
-        const fileContents = await fs.readFile(
-          `${destination}/${fileName}`,
-          'utf8'
-        )
+        const fileContents = await fs.readFile(fullDestinationPath, 'utf8')
         await fs.writeFile(
-          `${destination}/${fileName}`,
-          fileContents.replace(/_LC_NAME_/g, lcName).replace(/_NAME_/g, id)
+          fullDestinationPath,
+          fileContents
+            .replace(/_LC_NAME_/g, lcName)
+            .replace(/_NAME_/g, id)
+            .replace(/_FULL_PATH_/g, `${destinationPath}/${id}`)
         )
       }
     }
     for (const fileName of subFiles) {
       const oldFileName = `${destination}/src/${fileName}`
-      const newFileName = `${destination}/src/${fileName.replace(
+      const newFileName = oldFileName.replace(
         /_NAME_/g,
         oldFileName.match('index') ? '' : id
-      )}`
+      )
       const fileContents = await fs.readFile(oldFileName, 'utf8')
       await fs.writeFile(newFileName, fileContents.replace(/_NAME_/g, id))
       await fs.unlink(oldFileName)

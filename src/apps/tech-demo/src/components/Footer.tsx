@@ -10,13 +10,13 @@ export const Footer = () => {
           isExternal
           title="Pi Lib Monorepo - Github - external link"
           href="https://github.com/lancerael/pi"
-          src="https://pi-lib-assets.s3.eu-west-2.amazonaws.com/github.svg"
+          src="https://d3bjzq1zo2el1w.cloudfront.net/github.svg"
         />
         <IconButton
           isExternal
           title="Pi Lib Design System - Storybook - external link"
           href="https://pi.lance-taylor.com"
-          src="https://pi-lib-assets.s3.eu-west-2.amazonaws.com/storybook.svg"
+          src="https://d3bjzq1zo2el1w.cloudfront.net/storybook.svg"
         />
       </ItemList>
       <ItemList>
@@ -24,7 +24,7 @@ export const Footer = () => {
           isExternal
           title="by Lance Taylor - Linkedin - external link"
           href="https://www.linkedin.com/in/lance-taylor-47b85b40"
-          src="https://pi-lib-assets.s3.eu-west-2.amazonaws.com/linkedin.svg"
+          src="https://d3bjzq1zo2el1w.cloudfront.net/linkedin.svg"
         />
       </ItemList>
     </Banner>

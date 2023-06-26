@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { themes, ThemeType, Theme } from '../src'
 //@ts-ignore
-import Table from '../../components/molecules/Table/src/Table'
+import Table from '../../components/molecules/layout/Table/src/Table'
 
 const StyleDemo = ({ themeName }: { themeName: ThemeType }) => {
   const theme = themes[themeName]

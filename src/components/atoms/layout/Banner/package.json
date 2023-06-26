@@ -1,0 +1,44 @@
+{
+  "name": "@pi-lib/banner",
+  "version": "0.4.1",
+  "description": "A banner React component that can be used for a header or footer",
+  "keywords": [
+    "pi",
+    "react",
+    "component",
+    "atoms",
+    "layout",
+    "banner"
+  ],
+  "homepage": "https://pi.lance-taylor.com/?path=/docs/atoms-layout-banner",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lancerael/pi.git",
+    "directory": "src/components/atoms/layout/Banner"
+  },
+  "license": "ISC",
+  "author": "Lance Taylor",
+  "type": "module",
+  "main": "./src/index.ts",
+  "scripts": {
+    "build": "rimraf vanilla && vite build",
+    "test": "vitest",
+    "test:coverage": "vitest --coverage"
+  },
+  "devDependencies": {
+    "@pi-lib/config": "workspace:^",
+    "@testing-library/react": "^13.3.0",
+    "@vitejs/plugin-react": "^2.0.1",
+    "@vitest/coverage-istanbul": "^0.23.1",
+    "jest-axe": "^6.0.0",
+    "jsdom": "^20.0.0",
+    "rimraf": "^3.0.2",
+    "typescript": "^4.7.4",
+    "vite": "^3.0.9",
+    "vitest": "^0.22.1"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "styled-components": "^5.3.11"
+  }
+}

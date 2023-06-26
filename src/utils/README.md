@@ -1,6 +1,6 @@
-### @pi-lib/utils
+### utils
 
-**utils**
+**@pi-lib/utils**
 
 Utilities for use with Pi
 
