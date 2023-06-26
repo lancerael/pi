@@ -374,7 +374,7 @@ Utilities for use with Pi
 
 ## Development
 
-Pi uses `PNPM` to manage the monorepo, with some performance enhancements from `nx`. 
+Pi uses `PNPM` to manage the monorepo, with some performance enhancements from `nx`.
 
 - _Installation_ - Clone the repo and use `pnpm i` to install.
 - _Storybook_ - Use `pnpm sb` to launch Storybook.
