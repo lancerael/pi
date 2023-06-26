@@ -58,7 +58,7 @@ A banner React component that can be used for a header or footer
 
 **@pi-lib/button**
 
-A React button component
+A React button component with status
 
 **Dependencies:** @pi-lib/styles, @pi-lib/utils, react
 
@@ -336,21 +336,6 @@ Shared Pi constants
     <tr>
       <td><a href="https://www.npmjs.com/package/@pi-lib/constants?activeTab=readme" target="_blank">NPM</a></td>
       <td><a href="https://github.com/lancerael/pi/tree/main/src/config" target="_blank">Github</a></td>
-    </tr>
-  </tbody>
-</table>
-
-### types
-
-**@pi-lib/types**
-
-Global types for Pi
-
-<table>
-  <tbody>
-    <tr>
-      <td><a href="https://www.npmjs.com/package/@pi-lib/types?activeTab=readme" target="_blank">NPM</a></td>
-      <td><a href="https://github.com/lancerael/pi/tree/main/src/types" target="_blank">Github</a></td>
     </tr>
   </tbody>
 </table>

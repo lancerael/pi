@@ -4,7 +4,7 @@ import { ButtonProps } from './Button.types'
 import { StyledButton } from './Button.style'
 
 /**
- * A React button component
+ * A React button component with status
  */
 export const Button: FC<ButtonProps> = ({
   children,

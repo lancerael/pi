@@ -2,7 +2,7 @@
 
 **@pi-lib/button**
 
-A React button component
+A React button component with status
 
 **Dependencies:** @pi-lib/styles, @pi-lib/utils, react
 
