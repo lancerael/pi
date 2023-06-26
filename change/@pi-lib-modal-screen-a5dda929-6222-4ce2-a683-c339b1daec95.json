@@ -1,7 +1,0 @@
-{
-  "type": "patch",
-  "comment": "lint fix",
-  "packageName": "@pi-lib/modal-screen",
-  "email": "122271901+lancerael-undo@users.noreply.github.com",
-  "dependentChangeType": "patch"
-}

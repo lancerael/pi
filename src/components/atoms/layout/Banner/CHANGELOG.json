@@ -2,6 +2,21 @@
   "name": "@pi-lib/banner",
   "entries": [
     {
+      "date": "Mon, 26 Jun 2023 23:53:05 GMT",
+      "tag": "@pi-lib/banner_v0.5.0",
+      "version": "0.5.0",
+      "comments": {
+        "minor": [
+          {
+            "author": "122271901+lancerael-undo@users.noreply.github.com",
+            "package": "@pi-lib/banner",
+            "commit": "9e1a739e7f831da1f346545745e0bd0963a63fb8",
+            "comment": "* Updated component generator * Added DismissableContent * Added Modal * Added Toast * Improved structure for docs consistency * Demo enhancements"
+          }
+        ]
+      }
+    },
+    {
       "date": "Sat, 24 Jun 2023 22:13:58 GMT",
       "tag": "@pi-lib/banner_v0.4.1",
       "version": "0.4.1",

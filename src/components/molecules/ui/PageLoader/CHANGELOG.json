@@ -2,6 +2,21 @@
   "name": "@pi-lib/page-loader",
   "entries": [
     {
+      "date": "Mon, 26 Jun 2023 23:53:05 GMT",
+      "tag": "@pi-lib/page-loader_v1.0.2",
+      "version": "1.0.2",
+      "comments": {
+        "patch": [
+          {
+            "author": "122271901+lancerael-undo@users.noreply.github.com",
+            "package": "@pi-lib/page-loader",
+            "commit": "9e1a739e7f831da1f346545745e0bd0963a63fb8",
+            "comment": "lint fix"
+          }
+        ]
+      }
+    },
+    {
       "date": "Sat, 24 Jun 2023 22:13:58 GMT",
       "tag": "@pi-lib/page-loader_v1.0.1",
       "version": "1.0.1",

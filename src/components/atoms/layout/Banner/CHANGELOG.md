@@ -1,8 +1,16 @@
 # Change Log - @pi-lib/banner
 
-This log was last generated on Sat, 24 Jun 2023 22:13:58 GMT and should not be manually modified.
+This log was last generated on Mon, 26 Jun 2023 23:53:05 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 0.5.0
+
+Mon, 26 Jun 2023 23:53:05 GMT
+
+### Minor changes
+
+- * Updated component generator * Added DismissableContent * Added Modal * Added Toast * Improved structure for docs consistency * Demo enhancements (122271901+lancerael-undo@users.noreply.github.com)
 
 ## 0.4.1
 

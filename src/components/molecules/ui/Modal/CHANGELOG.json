@@ -1,0 +1,20 @@
+{
+  "name": "@pi-lib/modal",
+  "entries": [
+    {
+      "date": "Mon, 26 Jun 2023 23:53:05 GMT",
+      "tag": "@pi-lib/modal_v1.0.0",
+      "version": "1.0.0",
+      "comments": {
+        "major": [
+          {
+            "author": "122271901+lancerael-undo@users.noreply.github.com",
+            "package": "@pi-lib/modal",
+            "commit": "9e1a739e7f831da1f346545745e0bd0963a63fb8",
+            "comment": "* Updated component generator * Added DismissableContent * Added Modal * Added Toast * Improved structure for docs consistency * Demo enhancements"
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 {
   "name": "@pi-lib/charts",
-  "version": "0.12.1",
+  "version": "0.12.2",
   "description": "Simple charting solution driven by d3 and TS",
   "keywords": [
     "pi",

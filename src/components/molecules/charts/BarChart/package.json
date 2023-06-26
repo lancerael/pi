@@ -1,6 +1,6 @@
 {
   "name": "@pi-lib/bar-chart",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A React component for a bar chart",
   "keywords": [
     "pi",
