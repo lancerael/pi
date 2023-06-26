@@ -1,0 +1,59 @@
+{
+  "name": "@pi-lib/candlestick-chart",
+  "version": "2.0.1",
+  "description": "A candlestick chart React component used to show the movement of traded assets.",
+  "keywords": [
+    "pi",
+    "react",
+    "component",
+    "molecules",
+    "chart",
+    "charts",
+    "candlestick"
+  ],
+  "homepage": "https://pi.lance-taylor.com/?path=/story/molecules-charts-candlestickchart",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lancerael/pi.git",
+    "directory": "src/components/molecules/charts/CandlestickChart"
+  },
+  "license": "ISC",
+  "author": "Lance Taylor",
+  "type": "module",
+  "main": "./src/index.ts",
+  "scripts": {
+    "build": "rimraf vanilla && vite build",
+    "format": "npx prettier -c",
+    "test": "vitest",
+    "test:coverage": "vitest --coverage"
+  },
+  "devDependencies": {
+    "@pi-lib/config": "workspace:^",
+    "@pi-lib/types": "workspace:^",
+    "@testing-library/react": "^14.0.0",
+    "@types/d3-axis": "^3.0.2",
+    "@types/d3-scale": "^4.0.3",
+    "@types/d3-selection": "^3.0.4",
+    "@types/d3-transition": "^3.0.3",
+    "@vitejs/plugin-react": "^3.1.0",
+    "@vitest/coverage-istanbul": "^0.29.3",
+    "jest-axe": "^7.0.0",
+    "jsdom": "^21.1.1",
+    "prettier": "^2.8.4",
+    "rimraf": "^4.4.0",
+    "vite": "^4.1.4",
+    "vitest": "^0.29.3"
+  },
+  "peerDependencies": {
+    "@pi-lib/button": "workspace:^",
+    "@pi-lib/loader": "workspace:^",
+    "@pi-lib/styles": "workspace:^",
+    "@pi-lib/tooltip": "workspace:^",
+    "d3-axis": "^3.0.0",
+    "d3-scale": "^4.0.2",
+    "d3-selection": "^3.0.0",
+    "d3-transition": "^3.0.1",
+    "lodash.throttle": "^4.1.1",
+    "react": "^18.2.0"
+  }
+}

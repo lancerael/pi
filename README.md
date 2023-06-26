@@ -8,6 +8,7 @@ All packages prefixed with `@pi-lib/...` are standalone npm modules which you ca
 
 Once you have set up a theme, you can build your app with the React components. Check out the docs for more details on usage.
 
+- <a href="https://demo.lance-taylor.com" target="_blank">Demo</a>
 - <a href="https://pi.lance-taylor.com" target="_blank">Docs</a>
 - <a href="https://github.com/lancerael/pi" target="_blank">Code</a>
 
@@ -15,9 +16,9 @@ Once you have set up a theme, you can build your app with the React components. 
 
 ## Theming
 
-### @pi-lib/styles
+### styles
 
-**styles**
+**@pi-lib/styles**
 
 React theming utility for use with Pi and styled-components
 
@@ -33,197 +34,11 @@ React theming utility for use with Pi and styled-components
   </tbody>
 </table>
 
-## Interactions
+## Atoms
 
-### @pi-lib/advanced-button
+### Banner
 
-**AdvancedButton**
-
-A React component for an advanced button with a built in loader
-
-**Dependencies:** @pi-lib/button, @pi-lib/loader, react, styled-components
-
-<table>
-  <tbody>
-    <tr>
-      <td><a href="https://pi.lance-taylor.com/?path=/story/interactions-advancedbutton" target="_blank">Docs</a></td>
-      <td><a href="https://www.npmjs.com/package/@pi-lib/advanced-button?activeTab=readme" target="_blank">NPM</a></td>
-      <td><a href="https://github.com/lancerael/pi/tree/main/src/components/molecules/AdvancedButton" target="_blank">Github</a></td>
-    </tr>
-  </tbody>
-</table>
-
-### @pi-lib/button
-
-**Button**
-
-A React button component
-
-**Dependencies:** @pi-lib/styles, @pi-lib/utils, react
-
-<table>
-  <tbody>
-    <tr>
-      <td><a href="https://pi.lance-taylor.com/?path=/story/interactions-button" target="_blank">Docs</a></td>
-      <td><a href="https://www.npmjs.com/package/@pi-lib/button?activeTab=readme" target="_blank">NPM</a></td>
-      <td><a href="https://github.com/lancerael/pi/tree/main/src/components/atoms/Button" target="_blank">Github</a></td>
-    </tr>
-  </tbody>
-</table>
-
-### @pi-lib/icon-button
-
-**IconButton**
-
-A React component for a special button with an icon
-
-**Dependencies:** @pi-lib/styles, @pi-lib/utils, react, react-svg
-
-<table>
-  <tbody>
-    <tr>
-      <td><a href="https://pi.lance-taylor.com/?path=/story/interactions-iconbutton" target="_blank">Docs</a></td>
-      <td><a href="https://www.npmjs.com/package/@pi-lib/icon-button?activeTab=readme" target="_blank">NPM</a></td>
-      <td><a href="https://github.com/lancerael/pi/tree/main/src/components/atoms/IconButton" target="_blank">Github</a></td>
-    </tr>
-  </tbody>
-</table>
-
-### @pi-lib/link
-
-**Link**
-
-A React component for a router optional link
-
-**Dependencies:** @pi-lib/styles, react, react-router-dom
-
-<table>
-  <tbody>
-    <tr>
-      <td><a href="https://pi.lance-taylor.com/?path=/story/interactions-link" target="_blank">Docs</a></td>
-      <td><a href="https://www.npmjs.com/package/@pi-lib/link?activeTab=readme" target="_blank">NPM</a></td>
-      <td><a href="https://github.com/lancerael/pi/tree/main/src/components/atoms/Link" target="_blank">Github</a></td>
-    </tr>
-  </tbody>
-</table>
-
-## Inputs
-
-### @pi-lib/input
-
-**Input**
-
-A React component to handle various types of form input
-
-**Dependencies:** @pi-lib/styles, react
-
-<table>
-  <tbody>
-    <tr>
-      <td><a href="https://pi.lance-taylor.com/?path=/story/inputs-input" target="_blank">Docs</a></td>
-      <td><a href="https://www.npmjs.com/package/@pi-lib/input?activeTab=readme" target="_blank">NPM</a></td>
-      <td><a href="https://github.com/lancerael/pi/tree/main/src/components/inputs/Input" target="_blank">Github</a></td>
-    </tr>
-  </tbody>
-</table>
-
-### @pi-lib/select
-
-**Select**
-
-A React component for a themeable select input
-
-**Dependencies:** react, styled-components
-
-<table>
-  <tbody>
-    <tr>
-      <td><a href="https://pi.lance-taylor.com/?path=/story/inputs-select" target="_blank">Docs</a></td>
-      <td><a href="https://www.npmjs.com/package/@pi-lib/select?activeTab=readme" target="_blank">NPM</a></td>
-      <td><a href="https://github.com/lancerael/pi/tree/main/src/components/inputs/Select" target="_blank">Github</a></td>
-    </tr>
-  </tbody>
-</table>
-
-## UI
-
-### @pi-lib/collapsible-menu
-
-**CollapsibleMenu**
-
-A React component for an expanding/collapsing menu with icons
-
-**Dependencies:** @pi-lib/styles, @pi-lib/utils, react, react-aria, react-aria-components, react-stately
-
-<table>
-  <tbody>
-    <tr>
-      <td><a href="https://pi.lance-taylor.com/?path=/story/ui-collapsiblemenu" target="_blank">Docs</a></td>
-      <td><a href="https://www.npmjs.com/package/@pi-lib/collapsible-menu?activeTab=readme" target="_blank">NPM</a></td>
-      <td><a href="https://github.com/lancerael/pi/tree/main/src/components/molecules/CollapsibleMenu" target="_blank">Github</a></td>
-    </tr>
-  </tbody>
-</table>
-
-### @pi-lib/loader
-
-**Loader**
-
-Basic loading spinner React component
-
-**Dependencies:** react, styled-components
-
-<table>
-  <tbody>
-    <tr>
-      <td><a href="https://pi.lance-taylor.com/?path=/story/ui-loader" target="_blank">Docs</a></td>
-      <td><a href="https://www.npmjs.com/package/@pi-lib/loader?activeTab=readme" target="_blank">NPM</a></td>
-      <td><a href="https://github.com/lancerael/pi/tree/main/src/components/atoms/Loader" target="_blank">Github</a></td>
-    </tr>
-  </tbody>
-</table>
-
-### @pi-lib/page-loader
-
-**PageLoader**
-
-A React component for a page blocking loader
-
-**Dependencies:** @pi-lib/loader, @pi-lib/modal-screen, @pi-lib/styles, react
-
-<table>
-  <tbody>
-    <tr>
-      <td><a href="https://pi.lance-taylor.com/?path=/story/ui-pageloader" target="_blank">Docs</a></td>
-      <td><a href="https://www.npmjs.com/package/@pi-lib/page-loader?activeTab=readme" target="_blank">NPM</a></td>
-      <td><a href="https://github.com/lancerael/pi/tree/main/src/components/molecules/PageLoader" target="_blank">Github</a></td>
-    </tr>
-  </tbody>
-</table>
-
-### @pi-lib/tooltip
-
-**Tooltip**
-
-A React component used to position a tooltip containing content
-
-**Dependencies:** @pi-lib/styles, lodash.throttle, react
-
-<table>
-  <tbody>
-    <tr>
-      <td><a href="https://pi.lance-taylor.com/?path=/story/ui-tooltip" target="_blank">Docs</a></td>
-      <td><a href="https://www.npmjs.com/package/@pi-lib/tooltip?activeTab=readme" target="_blank">NPM</a></td>
-      <td><a href="https://github.com/lancerael/pi/tree/main/src/components/atoms/Tooltip" target="_blank">Github</a></td>
-    </tr>
-  </tbody>
-</table>
-
-## Layout
-
-### @pi-lib/banner
-
-**Banner**
+**@pi-lib/banner**
 
 A banner React component that can be used for a header or footer
 
@@ -232,16 +47,70 @@ A banner React component that can be used for a header or footer
 <table>
   <tbody>
     <tr>
-      <td><a href="https://pi.lance-taylor.com/?path=/story/layout-banner" target="_blank">Docs</a></td>
+      <td><a href="https://pi.lance-taylor.com/?path=/docs/atoms-layout-banner" target="_blank">Docs</a></td>
       <td><a href="https://www.npmjs.com/package/@pi-lib/banner?activeTab=readme" target="_blank">NPM</a></td>
-      <td><a href="https://github.com/lancerael/pi/tree/main/src/components/atoms/Banner" target="_blank">Github</a></td>
+      <td><a href="https://github.com/lancerael/pi/tree/main/src/components/atoms/layout/Banner" target="_blank">Github</a></td>
     </tr>
   </tbody>
 </table>
 
-### @pi-lib/modal-screen
+### Button
 
-**ModalScreen**
+**@pi-lib/button**
+
+A React button component
+
+**Dependencies:** @pi-lib/styles, @pi-lib/utils, react
+
+<table>
+  <tbody>
+    <tr>
+      <td><a href="https://pi.lance-taylor.com/?path=/docs/atoms-interactions-button" target="_blank">Docs</a></td>
+      <td><a href="https://www.npmjs.com/package/@pi-lib/button?activeTab=readme" target="_blank">NPM</a></td>
+      <td><a href="https://github.com/lancerael/pi/tree/main/src/components/atoms/interactions/Button" target="_blank">Github</a></td>
+    </tr>
+  </tbody>
+</table>
+
+### IconButton
+
+**@pi-lib/icon-button**
+
+A React component for a special button with an icon
+
+**Dependencies:** @pi-lib/styles, @pi-lib/utils, react, react-svg
+
+<table>
+  <tbody>
+    <tr>
+      <td><a href="https://pi.lance-taylor.com/?path=/docs/atoms-interactions-iconbutton" target="_blank">Docs</a></td>
+      <td><a href="https://www.npmjs.com/package/@pi-lib/icon-button?activeTab=readme" target="_blank">NPM</a></td>
+      <td><a href="https://github.com/lancerael/pi/tree/main/src/components/atoms/interactions/IconButton" target="_blank">Github</a></td>
+    </tr>
+  </tbody>
+</table>
+
+### Link
+
+**@pi-lib/link**
+
+A React component for a router optional link
+
+**Dependencies:** @pi-lib/styles, react, react-router-dom
+
+<table>
+  <tbody>
+    <tr>
+      <td><a href="https://pi.lance-taylor.com/?path=/docs/atoms-interactions-link" target="_blank">Docs</a></td>
+      <td><a href="https://www.npmjs.com/package/@pi-lib/link?activeTab=readme" target="_blank">NPM</a></td>
+      <td><a href="https://github.com/lancerael/pi/tree/main/src/components/atoms/interactions/Link" target="_blank">Github</a></td>
+    </tr>
+  </tbody>
+</table>
+
+### ModalScreen
+
+**@pi-lib/modal-screen**
 
 A React component used to block out the screen with modal content
 
@@ -250,16 +119,126 @@ A React component used to block out the screen with modal content
 <table>
   <tbody>
     <tr>
-      <td><a href="https://pi.lance-taylor.com/?path=/story/layout-modalscreen" target="_blank">Docs</a></td>
+      <td><a href="https://pi.lance-taylor.com/?path=/docs/atoms-layout-modalscreen" target="_blank">Docs</a></td>
       <td><a href="https://www.npmjs.com/package/@pi-lib/modal-screen?activeTab=readme" target="_blank">NPM</a></td>
-      <td><a href="https://github.com/lancerael/pi/tree/main/src/components/atoms/ModalScreen" target="_blank">Github</a></td>
+      <td><a href="https://github.com/lancerael/pi/tree/main/src/components/atoms/layout/ModalScreen" target="_blank">Github</a></td>
     </tr>
   </tbody>
 </table>
 
-### @pi-lib/page-content
+### Tooltip
 
-**PageContent**
+**@pi-lib/tooltip**
+
+A React component used to position a tooltip containing content
+
+**Dependencies:** @pi-lib/styles, lodash.throttle, react
+
+<table>
+  <tbody>
+    <tr>
+      <td><a href="https://pi.lance-taylor.com/?path=/docs/atoms-ui-tooltip" target="_blank">Docs</a></td>
+      <td><a href="https://www.npmjs.com/package/@pi-lib/tooltip?activeTab=readme" target="_blank">NPM</a></td>
+      <td><a href="https://github.com/lancerael/pi/tree/main/src/components/atoms/ui/Tooltip" target="_blank">Github</a></td>
+    </tr>
+  </tbody>
+</table>
+
+## Molecules
+
+### AdvancedButton
+
+**@pi-lib/advanced-button**
+
+A React component for an advanced button with a built in loader
+
+**Dependencies:** @pi-lib/button, @pi-lib/loader, react, styled-components
+
+<table>
+  <tbody>
+    <tr>
+      <td><a href="https://pi.lance-taylor.com/?path=/docs/molecules/interactions-advancedbutton" target="_blank">Docs</a></td>
+      <td><a href="https://www.npmjs.com/package/@pi-lib/advanced-button?activeTab=readme" target="_blank">NPM</a></td>
+      <td><a href="https://github.com/lancerael/pi/tree/main/src/components/molecules/interactions/AdvancedButton" target="_blank">Github</a></td>
+    </tr>
+  </tbody>
+</table>
+
+### AxisChart
+
+**@pi-lib/axis-chart**
+
+A React component used to display a bar ot line chart
+
+**Dependencies:** @pi-lib/styles, @pi-lib/utils, d-theia, lodash.throttle, react, styled-components
+
+<table>
+  <tbody>
+    <tr>
+      <td><a href="https://pi.lance-taylor.com/?path=/story/molecules-charts-axischart" target="_blank">Docs</a></td>
+      <td><a href="https://www.npmjs.com/package/@pi-lib/axis-chart?activeTab=readme" target="_blank">NPM</a></td>
+      <td><a href="https://github.com/lancerael/pi/tree/main/src/components/molecules/charts/AxisChart" target="_blank">Github</a></td>
+    </tr>
+  </tbody>
+</table>
+
+### CandlestickChart
+
+**@pi-lib/candlestick-chart**
+
+A candlestick chart React component used to show the movement of traded assets.
+
+**Dependencies:** @pi-lib/button, @pi-lib/loader, @pi-lib/styles, @pi-lib/tooltip, d3-axis, d3-scale, d3-selection, d3-transition, lodash.throttle, react
+
+<table>
+  <tbody>
+    <tr>
+      <td><a href="https://pi.lance-taylor.com/?path=/story/molecules-charts-candlestickchart" target="_blank">Docs</a></td>
+      <td><a href="https://www.npmjs.com/package/@pi-lib/candlestick-chart?activeTab=readme" target="_blank">NPM</a></td>
+      <td><a href="https://github.com/lancerael/pi/tree/main/src/components/molecules/charts/CandlestickChart" target="_blank">Github</a></td>
+    </tr>
+  </tbody>
+</table>
+
+### CollapsibleMenu
+
+**@pi-lib/collapsible-menu**
+
+A React component for an expanding/collapsing menu with icons
+
+**Dependencies:** @pi-lib/styles, @pi-lib/utils, react, react-aria, react-aria-components, react-stately
+
+<table>
+  <tbody>
+    <tr>
+      <td><a href="https://pi.lance-taylor.com/?path=/docs/molecules-ui-collapsiblemenu" target="_blank">Docs</a></td>
+      <td><a href="https://www.npmjs.com/package/@pi-lib/collapsible-menu?activeTab=readme" target="_blank">NPM</a></td>
+      <td><a href="https://github.com/lancerael/pi/tree/main/src/components/molecules/ui/CollapsibleMenu" target="_blank">Github</a></td>
+    </tr>
+  </tbody>
+</table>
+
+### Modal
+
+**@pi-lib/modal**
+
+Modal for custom content that allows dismissal internally or externally
+
+**Dependencies:** @pi-lib/styles, react, styled-components
+
+<table>
+  <tbody>
+    <tr>
+      <td><a href="https://pi.lance-taylor.com/?path=/docs/molecules-ui-modal" target="_blank">Docs</a></td>
+      <td><a href="https://www.npmjs.com/package/@pi-lib/modal?activeTab=readme" target="_blank">NPM</a></td>
+      <td><a href="https://github.com/lancerael/pi/tree/main/src/components/molecules/Modal" target="_blank">Github</a></td>
+    </tr>
+  </tbody>
+</table>
+
+### PageContent
+
+**@pi-lib/page-content**
 
 A React component for a page layout with a sidebar
 
@@ -268,16 +247,34 @@ A React component for a page layout with a sidebar
 <table>
   <tbody>
     <tr>
-      <td><a href="https://pi.lance-taylor.com/?path=/story/layout-pagecontent" target="_blank">Docs</a></td>
+      <td><a href="https://pi.lance-taylor.com/?path=/docs/molecules-layout-pagecontent" target="_blank">Docs</a></td>
       <td><a href="https://www.npmjs.com/package/@pi-lib/page-content?activeTab=readme" target="_blank">NPM</a></td>
-      <td><a href="https://github.com/lancerael/pi/tree/main/src/components/molecules/PageContent" target="_blank">Github</a></td>
+      <td><a href="https://github.com/lancerael/pi/tree/main/src/components/molecules/layout/PageContent" target="_blank">Github</a></td>
     </tr>
   </tbody>
 </table>
 
-### @pi-lib/table
+### PageLoader
 
-**Table**
+**@pi-lib/page-loader**
+
+A React component for a page blocking loader
+
+**Dependencies:** @pi-lib/loader, @pi-lib/modal-screen, @pi-lib/styles, react
+
+<table>
+  <tbody>
+    <tr>
+      <td><a href="https://pi.lance-taylor.com/?path=/docs/molecules-ui-pageloader" target="_blank">Docs</a></td>
+      <td><a href="https://www.npmjs.com/package/@pi-lib/page-loader?activeTab=readme" target="_blank">NPM</a></td>
+      <td><a href="https://github.com/lancerael/pi/tree/main/src/components/molecules/ui/PageLoader" target="_blank">Github</a></td>
+    </tr>
+  </tbody>
+</table>
+
+### Table
+
+**@pi-lib/table**
 
 A React component for a table with expandable rows
 
@@ -286,18 +283,36 @@ A React component for a table with expandable rows
 <table>
   <tbody>
     <tr>
-      <td><a href="https://pi.lance-taylor.com/?path=/story/layout-table" target="_blank">Docs</a></td>
+      <td><a href="https://pi.lance-taylor.com/?path=/docs/molecules-layout-table" target="_blank">Docs</a></td>
       <td><a href="https://www.npmjs.com/package/@pi-lib/table?activeTab=readme" target="_blank">NPM</a></td>
-      <td><a href="https://github.com/lancerael/pi/tree/main/src/components/molecules/Table" target="_blank">Github</a></td>
+      <td><a href="https://github.com/lancerael/pi/tree/main/src/components/molecules/layout/Table" target="_blank">Github</a></td>
+    </tr>
+  </tbody>
+</table>
+
+### WorldMap
+
+**@pi-lib/world-map**
+
+A React component for an SVG world map chart
+
+**Dependencies:** @pi-lib/styles, d3-geo, d3-selection, react, styled-components
+
+<table>
+  <tbody>
+    <tr>
+      <td><a href="https://pi.lance-taylor.com/?path=/story/molecules-charts-worldmap" target="_blank">Docs</a></td>
+      <td><a href="https://www.npmjs.com/package/@pi-lib/world-map?activeTab=readme" target="_blank">NPM</a></td>
+      <td><a href="https://github.com/lancerael/pi/tree/main/src/components/molecules/charts/WorldMap" target="_blank">Github</a></td>
     </tr>
   </tbody>
 </table>
 
 ## Utilities
 
-### @pi-lib/config
+### config
 
-**config**
+**@pi-lib/config**
 
 Shared Pi config
 
@@ -310,9 +325,9 @@ Shared Pi config
   </tbody>
 </table>
 
-### @pi-lib/constants
+### constants
 
-**constants**
+**@pi-lib/constants**
 
 Shared Pi constants
 
@@ -325,9 +340,9 @@ Shared Pi constants
   </tbody>
 </table>
 
-### @pi-lib/types
+### types
 
-**types**
+**@pi-lib/types**
 
 Global types for Pi
 
@@ -340,9 +355,9 @@ Global types for Pi
   </tbody>
 </table>
 
-### @pi-lib/utils
+### utils
 
-**utils**
+**@pi-lib/utils**
 
 Utilities for use with Pi
 
@@ -359,7 +374,7 @@ Utilities for use with Pi
 
 ## Development
 
-Pi uses `PNPM` to manage the monorepo, with some performance enhancements from `nx`. If you want to contribute, it is highly recommended you use `pnpm` and not `yarn` or `npm`.
+Pi uses `PNPM` to manage the monorepo, with some performance enhancements from `nx`. 
 
 - _Installation_ - Clone the repo and use `pnpm i` to install.
 - _Storybook_ - Use `pnpm sb` to launch Storybook.

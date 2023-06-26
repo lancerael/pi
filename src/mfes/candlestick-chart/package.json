@@ -1,24 +1,24 @@
 {
   "name": "@pi-lib/candlestick-chart-mfe",
-  "private": true,
   "version": "0.1.0",
+  "private": true,
   "type": "module",
   "scripts": {
-    "dev": "vite --port 5002 --strictPort",
     "build": "tsc && vite build",
-    "preview": "vite preview --port 5002 --strictPort",
+    "dev": "vite --port 5002 --strictPort",
+    "e2e": "npx cypress open",
     "lint": "npx prettier -c . && npx eslint",
     "lint:fix": "npx prettier -w . && npx eslint --fix",
+    "preview": "vite preview --port 5002 --strictPort",
+    "start": "pnpm build && pnpm preview",
     "test-": "vitest",
-    "test:coverage": "vitest --coverage",
-    "e2e": "npx cypress open",
-    "start": "pnpm build && pnpm preview"
+    "test:coverage": "vitest --coverage"
   },
   "dependencies": {
     "@originjs/vite-plugin-federation": "^1.2.2",
     "@pi-lib/candlestick-chart": "workspace:^",
     "@pi-lib/page-content": "workspace:^",
-    "@pi-lib/styles": "*",
+    "@pi-lib/styles": "workspace:^",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "styled-components": "^5.3.11"

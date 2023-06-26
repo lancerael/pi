@@ -1,6 +1,6 @@
-### @pi-lib/styles
+### styles
 
-**styles**
+**@pi-lib/styles**
 
 React theming utility for use with Pi and styled-components
 

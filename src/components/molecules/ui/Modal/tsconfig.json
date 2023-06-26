@@ -1,0 +1,3 @@
+{
+  "extends": "@pi-lib/config/tsconfig.shared.json"
+}

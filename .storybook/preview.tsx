@@ -1,4 +1,4 @@
-import React, { Decorator } from '@storybook/react'
+import { Decorator } from '@storybook/react'
 import * as jest from 'jest-mock'
 import { Theme, themeList } from '@pi-lib/styles'
 
@@ -32,12 +32,11 @@ export const parameters = {
       order: [
         'Pi',
         'Theming',
-        ['Getting Started', 'Custom Themes', 'Themes'],
-        'Interactions',
-        'Inputs',
-        'UI',
-        'Layout',
-        'Charts',
+        ['Getting Started'],
+        'Atoms',
+        ['Interactions', 'UI', 'Layout', 'Inputs'],
+        'Molecules',
+        ['Interactions', 'UI', 'Layout', 'Charts'],
       ],
     },
   },
