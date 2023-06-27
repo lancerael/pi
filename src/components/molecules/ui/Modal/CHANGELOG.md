@@ -10,4 +10,4 @@ Mon, 26 Jun 2023 23:53:05 GMT
 
 ### Major changes
 
-- * Updated component generator * Added DismissableContent * Added Modal * Added Toast * Improved structure for docs consistency * Demo enhancements (122271901+lancerael-undo@users.noreply.github.com)
+- - Updated component generator _ Added DismissableContent _ Added Modal _ Added Toast _ Improved structure for docs consistency \* Demo enhancements (122271901+lancerael-undo@users.noreply.github.com)

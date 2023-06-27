@@ -224,7 +224,7 @@ A React component for an expanding/collapsing menu with icons
 
 Modal for custom content that allows dismissal internally or externally
 
-**Dependencies:** @pi-lib/styles, react, styled-components
+**Dependencies:** @pi-lib/dismissable-content, @pi-lib/modal-screen, @pi-lib/styles, @pi-lib/utils, react, styled-components
 
 <table>
   <tbody>
@@ -336,21 +336,6 @@ Shared Pi constants
     <tr>
       <td><a href="https://www.npmjs.com/package/@pi-lib/constants?activeTab=readme" target="_blank">NPM</a></td>
       <td><a href="https://github.com/lancerael/pi/tree/main/src/config" target="_blank">Github</a></td>
-    </tr>
-  </tbody>
-</table>
-
-### utils
-
-**@pi-lib/utils**
-
-Utilities for use with Pi
-
-<table>
-  <tbody>
-    <tr>
-      <td><a href="https://www.npmjs.com/package/@pi-lib/utils?activeTab=readme" target="_blank">NPM</a></td>
-      <td><a href="https://github.com/lancerael/pi/tree/main/src/utils" target="_blank">Github</a></td>
     </tr>
   </tbody>
 </table>

@@ -4,7 +4,7 @@
 
 A React component for a themeable select input
 
-**Dependencies:** react, styled-components
+**Dependencies:** @pi-lib/styles, react, styled-components
 
 <table>
   <tbody>
