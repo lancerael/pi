@@ -9,36 +9,6 @@ importers:
 
   .:
     devDependencies:
-      '@pi-lib/button':
-        specifier: ^*
-        version: link:src/components/atoms/interactions/Button
-      '@pi-lib/charts':
-        specifier: ^*
-        version: link:src/libs/Charts
-      '@pi-lib/config':
-        specifier: ^*
-        version: link:src/config
-      '@pi-lib/dismissable-content':
-        specifier: ^*
-        version: link:src/components/atoms/ui/DismissableContent
-      '@pi-lib/link':
-        specifier: ^*
-        version: link:src/components/atoms/interactions/Link
-      '@pi-lib/loader':
-        specifier: ^*
-        version: link:src/components/atoms/ui/Loader
-      '@pi-lib/modal-screen':
-        specifier: ^*
-        version: link:src/components/atoms/layout/ModalScreen
-      '@pi-lib/styles':
-        specifier: ^*
-        version: link:src/styles
-      '@pi-lib/tooltip':
-        specifier: ^*
-        version: link:src/components/atoms/ui/Tooltip
-      '@pi-lib/utils':
-        specifier: ^*
-        version: link:src/utils
       '@storybook/addon-actions':
         specifier: ^7.0.21
         version: 7.0.21(react-dom@18.2.0)(react@18.2.0)

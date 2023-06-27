@@ -30,16 +30,6 @@
     "test": "npx nx run-many --target=test"
   },
   "devDependencies": {
-    "@pi-lib/button": "^*",
-    "@pi-lib/charts": "^*",
-    "@pi-lib/config": "^*",
-    "@pi-lib/dismissable-content": "^*",
-    "@pi-lib/link": "^*",
-    "@pi-lib/loader": "^*",
-    "@pi-lib/modal-screen": "^*",
-    "@pi-lib/styles": "^*",
-    "@pi-lib/tooltip": "^*",
-    "@pi-lib/utils": "^*",
     "@storybook/addon-actions": "^7.0.21",
     "@storybook/addon-backgrounds": "^7.0.21",
     "@storybook/addon-docs": "^7.0.21",
