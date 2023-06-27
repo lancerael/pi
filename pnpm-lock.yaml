@@ -1315,9 +1315,6 @@ importers:
       '@pi-lib/dismissable-content':
         specifier: workspace:^
         version: link:../../../atoms/ui/DismissableContent
-      '@pi-lib/icon-button':
-        specifier: workspace:^
-        version: link:../../../atoms/interactions/IconButton
       '@pi-lib/styles':
         specifier: workspace:^
         version: link:../../../../styles
