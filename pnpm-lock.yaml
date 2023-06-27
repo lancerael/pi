@@ -372,6 +372,9 @@ importers:
 
   src/components/atoms/inputs/Select:
     dependencies:
+      '@pi-lib/styles':
+        specifier: workspace:^
+        version: link:../../../../styles
       react:
         specifier: ^18.2.0
         version: 18.2.0
