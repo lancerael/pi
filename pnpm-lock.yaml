@@ -18,6 +18,9 @@ importers:
       '@pi-lib/config':
         specifier: ^*
         version: link:src/config
+      '@pi-lib/dismissable-content':
+        specifier: ^*
+        version: link:src/components/atoms/ui/DismissableContent
       '@pi-lib/link':
         specifier: ^*
         version: link:src/components/atoms/interactions/Link

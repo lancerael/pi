@@ -33,6 +33,7 @@
     "@pi-lib/button": "^*",
     "@pi-lib/charts": "^*",
     "@pi-lib/config": "^*",
+    "@pi-lib/dismissable-content": "^*",
     "@pi-lib/link": "^*",
     "@pi-lib/loader": "^*",
     "@pi-lib/modal-screen": "^*",

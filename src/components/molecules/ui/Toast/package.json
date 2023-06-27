@@ -24,10 +24,6 @@
     "test": "vitest",
     "test:coverage": "vitest --coverage"
   },
-  "dependencies": {
-    "@pi-lib/dismissable-content": "workspace:^",
-    "@pi-lib/icon-button": "workspace:^"
-  },
   "devDependencies": {
     "@pi-lib/config": "workspace:^",
     "@testing-library/react": "^13.3.0",
@@ -41,6 +37,7 @@
     "vitest": "^0.22.1"
   },
   "peerDependencies": {
+    "@pi-lib/dismissable-content": "workspace:^",
     "@pi-lib/styles": "workspace:^",
     "react": "^18.2.0",
     "styled-components": "^5.3.11"
