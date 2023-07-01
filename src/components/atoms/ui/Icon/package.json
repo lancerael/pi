@@ -1,20 +1,15 @@
 {
-  "name": "@pi-lib/dismissable-content",
-  "version": "1.0.0",
-  "description": "Internal content for a modal or a toast, that can be dismissed internally",
+  "name": "@pi-lib/icon",
+  "version": "0.0.0",
+  "description": "An icon component with a selection of icons",
   "keywords": [
-    "react",
-    "component",
-    "atom",
-    "ui",
-    "modal",
-    "toast"
+    "react"
   ],
-  "homepage": "https://pi.lance-taylor.com/?path=/docs/atoms-ui-dismissablecontent",
+  "homepage": "https://pi.lance-taylor.com/",
   "repository": {
     "type": "git",
-    "url": "https://github.com/lancerael/pi.git",
-    "directory": "src/components/atoms/ui/DismissableContent"
+    "url": "https://github.com/lancerael/pi.git/?path=/docs/atoms-ui-icon--docs",
+    "directory": "src/components/atoms/ui/Icon"
   },
   "license": "ISC",
   "author": "Lance Taylor",
@@ -38,7 +33,6 @@
     "vitest": "^0.22.1"
   },
   "peerDependencies": {
-    "@pi-lib/icon": "workspace:^",
     "@pi-lib/styles": "workspace:^",
     "react": "^18.2.0",
     "styled-components": "^5.3.11"

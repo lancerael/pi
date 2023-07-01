@@ -39,21 +39,27 @@ export interface ActiveItem {
   position?: CandleTooltipProps['position']
 }
 
-export interface VisibleRange {
-  offset: number
-  first: number
-  last: number
-  totalWidth: number
+export interface IControls {
+  zoomLevel: number
+  panLevel: number
+  setZoomLevel: React.Dispatch<React.SetStateAction<number>>
+  setPanLevel: React.Dispatch<React.SetStateAction<number>>
 }
 
-export interface Dimensions {
-  visibleRange: VisibleRange
-  sizes: {
-    width: number
-    height: number
-    left: number
-    top: number
-  }
+export interface Sizes {
+  width: number
+  height: number
+  left: number
+  top: number
+}
+
+export interface DataRange {
+  start: number
+  end: number
+  min: number
+  max: number
+  offset: number
+  dataSlice: CandlestickDayData[]
 }
 
 export type SVGSelection = Selection<
@@ -73,16 +79,6 @@ export type BarSelection = Selection<
 export interface Scales {
   xScale: ScaleBand<string>
   yScale: (y: number) => number
-}
-
-export interface Utils {
-  scaledHeight: (low: number, high: number) => number
-  scaledY: (low: number, high: number) => number
-}
-
-export interface Scaling {
-  utils: Utils
-  scales: Scales
 }
 
 export type SvgRef = React.RefObject<SVGSVGElement>

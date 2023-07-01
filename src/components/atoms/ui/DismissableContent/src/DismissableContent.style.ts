@@ -26,7 +26,7 @@ export const StyledClose = styled.div`
 
   :hover {
     path {
-      fill: var(--shadow);
+      fill: var(--subtle);
     }
   }
 `

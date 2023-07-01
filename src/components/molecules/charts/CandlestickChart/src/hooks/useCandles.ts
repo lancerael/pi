@@ -6,13 +6,11 @@ import {
   BarSelection,
   BarType,
   CandlestickDayData,
-  Dimensions,
-  Scaling,
   SvgRef,
   SVGSelection,
   ValueKeys,
 } from '../CandlestickChart.types'
-import { TRANSITION_TIME, CHART_PADDING } from '../CandlestickChart.constants'
+import { CHART_PADDING } from '../CandlestickChart.constants'
 
 const typeMap = {
   wicks: 'line',
@@ -21,19 +19,12 @@ const typeMap = {
 
 export const useCandles = (
   svgRef: SvgRef,
-  data: CandlestickDayData[],
-  dimensions: Dimensions,
-  scaling: Scaling,
-  transition: boolean
+  sizes: any,
+  dataSlice: any,
+  scales: any
 ) => {
-  const {
-    scales: { xScale },
-    utils: { scaledHeight, scaledY },
-  } = scaling
-  const {
-    visibleRange: { offset },
-    sizes: { left, top },
-  } = dimensions
+  const { xScale, yScale } = scales
+  const { left = 0, top = 0 } = sizes
   const groups = useRef<{ [key: string]: SVGSelection }>({})
   const isActive = useRef<boolean>(false)
   const [activeItem, setActiveItem] = useState<ActiveItem>({
@@ -46,11 +37,13 @@ export const useCandles = (
 
   // Bind the data to the chosen type of bars
   const bindData = useCallback(
-    (type: BarType, parent: SVGSelection = getSvg() as SVGSelection) =>
-      parent
+    (type: BarType, parent: SVGSelection = getSvg() as SVGSelection) => {
+      parent.selectAll(`${typeMap[type]}.${type}`).data([]).exit().remove()
+      return parent
         .selectAll(`${typeMap[type]}.${type}`)
-        .data(data) as unknown as BarSelection,
-    [data]
+        .data(dataSlice) as unknown as BarSelection
+    },
+    [dataSlice]
   )
 
   // Create the groups
@@ -67,22 +60,31 @@ export const useCandles = (
     [groups]
   )
 
+  // A helper to scale the candle height
+  const scaledHeight = useCallback(
+    (low: number, high: number) => Math.abs(yScale(high) - yScale(low)) || 1,
+    [scales.yScale]
+  )
+
+  // A helper to scale the candle Y axis position
+  const scaledY = useCallback(
+    (low: number, high: number) =>
+      yScale(Math.min(low, high)) - scaledHeight(low, high) || 1,
+    [scales.yScale]
+  )
+
   // Place the bars based on latest data
   const placeBars = useCallback(
     (type: BarType, keys: ValueKeys[]) => {
       let bars = bindData(type, getGroup(type))
 
-      if (bars.size() !== data.length) {
+      if (bars.size() !== dataSlice.length) {
         bars = bars.enter().append(typeMap[type])
       }
 
-      const getTransition = () =>
-        bars.transition().duration(transition ? TRANSITION_TIME : 50)
-
       const x = (d: CandlestickDayData) =>
         Number(xScale(d.date)) +
-        (type === 'wicks' ? +xScale.bandwidth() / 2 : 0) +
-        offset
+        (type === 'wicks' ? +xScale.bandwidth() / 2 : 0)
 
       const y = (d: CandlestickDayData) => scaledY(d[keys[0]], d[keys[1]])
 
@@ -92,7 +94,7 @@ export const useCandles = (
       const y2 = (d: CandlestickDayData) => y(d) + height(d)
 
       if (type === 'candles') {
-        getTransition()
+        bars
           .attr('width', () => +xScale.bandwidth())
           .attr('height', height)
           .attr('x', x)
@@ -128,7 +130,7 @@ export const useCandles = (
             }
           })
       } else {
-        getTransition().attr('x1', x).attr('y1', y).attr('x2', x).attr('y2', y2)
+        bars.attr('x1', x).attr('y1', y).attr('x2', x).attr('y2', y2)
       }
 
       bars.classed(type, true).exit().remove()

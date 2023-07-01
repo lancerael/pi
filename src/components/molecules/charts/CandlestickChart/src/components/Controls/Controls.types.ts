@@ -1,14 +1,6 @@
-import { VisibleRange } from '../../CandlestickChart.types'
-
-export interface IControls {
-  zoomLevel: number
-  panLevel: number
-  transition?: boolean
-}
+import { DataRange, IControls } from '../../CandlestickChart.types'
 
 export interface ControlsProps {
   controls: IControls
-  setControls: React.Dispatch<React.SetStateAction<IControls>>
-  visibleRange: VisibleRange
-  length: number
+  dataRange: DataRange
 }

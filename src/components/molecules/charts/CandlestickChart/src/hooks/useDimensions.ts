@@ -38,11 +38,8 @@ export const useDimensions = (
     const updateSVG = throttle(() => {
       const { clientWidth: width = 0, clientHeight: height = 0 } =
         svgRef?.current ?? {}
-      const {
-        offsetLeft: left = 0,
-        offsetTop: top = 0,
-        style,
-      } = containerRef?.current ?? {}
+      const { offsetLeft: left = 0, offsetTop: top = 0 } =
+        containerRef?.current ?? {}
 
       setDimensions({
         width,

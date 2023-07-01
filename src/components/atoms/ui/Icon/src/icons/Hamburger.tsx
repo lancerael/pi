@@ -1,7 +1,6 @@
-export const Hamburger = ({
-  size = 'calc(20px + 0.6rem)',
-  color = 'var(--outline)',
-}) => {
+import { IconProps } from '../Icon.types'
+
+export const Hamburger = ({ color, size }: Omit<IconProps, 'iconName'>) => {
   const pathProps: React.SVGProps<SVGPathElement> = {
     stroke: color,
     strokeWidth: 2,

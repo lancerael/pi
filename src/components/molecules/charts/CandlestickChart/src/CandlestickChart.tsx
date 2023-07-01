@@ -1,17 +1,20 @@
-import React, { FC, useRef, useState } from 'react'
-import Loader from '@pi-lib/loader'
-import { useScaling, useAxes, useCandles, useDimensions } from './hooks'
-import { ClipPaths, Controls, CandleTooltip } from './components'
+import { FC, useRef } from 'react'
+
 import {
   StyledCandlestickChart,
   StyledContainer,
   StyledLoaderContainer,
 } from './CandlestickChart.style'
 import { CandlestickChartProps } from './CandlestickChart.types'
-import { useTouch } from './hooks/useTouch'
-import { DEFAULT_CONTROLS } from './CandlestickChart.constants'
+import { useAxes, useCandles } from './hooks'
+import { CandleTooltip, ClipPaths, Controls } from './components'
+import Loader from '@pi-lib/loader'
 import { CurrentIndicator } from './components/CurrentIndicator'
-import { IControls } from './components/Controls/Controls.types'
+import { useSizes } from './hooks/useSizes'
+import { useDataRange } from './hooks/useDataRange'
+import { useScales } from './hooks/useScales'
+import { useControls } from './hooks/useControls'
+import { useTouch } from './hooks/useTouch'
 
 /**
  * A candlestick chart React component used to show the movement of traded assets.
@@ -19,18 +22,13 @@ import { IControls } from './components/Controls/Controls.types'
 export const CandlestickChart: FC<CandlestickChartProps> = ({ data = [] }) => {
   const svgRef = useRef<SVGSVGElement>(null)
   const containerRef = useRef<HTMLDivElement>(null)
-  const [controls, setControls] = useState<IControls>(DEFAULT_CONTROLS)
-  const dimensions = useDimensions(svgRef, containerRef, data.length, controls)
-  const scaling = useScaling(data, dimensions)
-  useAxes(svgRef, data, scaling.scales, dimensions)
-  useTouch(svgRef, setControls)
-  const candles = useCandles(
-    svgRef,
-    data,
-    dimensions,
-    scaling,
-    controls.transition ?? false
-  )
+  const controls = useControls()
+  const sizes = useSizes(svgRef, containerRef)
+  const dataRange = useDataRange(sizes.width, data, controls)
+  const scales = useScales(sizes, dataRange)
+  useAxes(svgRef, sizes, dataRange, scales)
+  const candles = useCandles(svgRef, sizes, dataRange.dataSlice, scales)
+  useTouch(svgRef, controls)
 
   return (
     <StyledContainer ref={containerRef}>
@@ -41,30 +39,27 @@ export const CandlestickChart: FC<CandlestickChartProps> = ({ data = [] }) => {
       ) : (
         <Controls
           {...{
-            svgRef,
             controls,
-            setControls,
-            visibleRange: dimensions.visibleRange,
-            length: data.length,
+            dataRange,
           }}
         />
       )}
+
       <StyledCandlestickChart
         ref={svgRef}
-        style={{ visibility: !data?.length ? 'hidden' : 'visible' }}
+        style={{
+          visibility: !data?.length ? 'hidden' : 'visible',
+          touchAction: 'none',
+        }}
       >
-        <ClipPaths {...dimensions.sizes} />
+        <ClipPaths {...sizes} />
       </StyledCandlestickChart>
       <CandleTooltip {...candles} />
       {!!data?.length && (
         <CurrentIndicator
           value={data[data.length - 1].close}
-          x={dimensions.sizes.width + dimensions.sizes.left - 15}
-          y={
-            scaling.scales.yScale(data[data.length - 1].close) +
-            +dimensions.sizes.top -
-            15
-          }
+          x={sizes.width + sizes.left - 15}
+          y={scales.yScale(data[data.length - 1].close) + +sizes.top - 15}
         />
       )}
     </StyledContainer>

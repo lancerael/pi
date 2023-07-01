@@ -1,71 +1,31 @@
-import React, { useCallback, useEffect } from 'react'
+import { useEffect } from 'react'
 import Button from '@pi-lib/button'
 import { StyledControls, StyledEmoji } from './Controls.style'
-import { ControlsProps, IControls } from './Controls.types'
+import { ControlsProps } from './Controls.types'
 
 const zoomSpeed = 0.2
 const panSpeed = 100
 
+// const animate = (action: string, controls: IControls) => {
+
+// }
+
 export const Controls = ({
-  controls: { zoomLevel },
-  setControls,
-  visibleRange,
-  length,
+  controls: { setPanLevel, setZoomLevel, zoomLevel },
+  dataRange: { start, end },
 }: ControlsProps) => {
   const buttonStyle = {
     minWidth: 'auto',
     margin: '5px',
   }
 
-  const panBack = useCallback(
-    () =>
-      setControls(({ panLevel, zoomLevel }: IControls) => {
-        const newPanLevel = panLevel + panSpeed / zoomLevel
-        return {
-          panLevel: visibleRange.first <= 0 ? panLevel : newPanLevel,
-          zoomLevel,
-          transition: true,
-        }
-      }),
-    [visibleRange.first]
-  )
+  const panBack = () => setPanLevel((panLevel) => panLevel - panSpeed)
 
-  const panForward = useCallback(
-    () =>
-      setControls(({ panLevel, zoomLevel }: IControls) => {
-        const newPanLevel = panLevel - panSpeed / zoomLevel
-        return {
-          panLevel: newPanLevel > 1 ? newPanLevel : 1,
-          zoomLevel,
-          transition: true,
-        }
-      }),
-    []
-  )
+  const panForward = () => setPanLevel((panLevel) => panLevel + panSpeed)
 
-  const zoomOut = useCallback(
-    () =>
-      setControls(({ panLevel, zoomLevel }: IControls) => ({
-        zoomLevel: +(
-          zoomLevel - zoomSpeed > 0 ? zoomLevel - zoomSpeed : zoomSpeed / 2
-        ).toFixed(2),
-        panLevel,
-        transition: true,
-      })),
-    []
-  )
+  const zoomOut = () => setZoomLevel((zoomLevel) => zoomLevel - zoomSpeed)
 
-  const zoomIn = useCallback(
-    () =>
-      setControls(({ panLevel, zoomLevel }: IControls) => ({
-        zoomLevel: +(
-          zoomLevel === zoomSpeed / 2 ? zoomSpeed : zoomLevel + zoomSpeed
-        ).toFixed(2),
-        panLevel,
-        transition: true,
-      })),
-    []
-  )
+  const zoomIn = () => setZoomLevel((zoomLevel) => zoomLevel + zoomSpeed)
 
   useEffect(() => {
     const keyHandler = ({ key }: { key: string }) => {
@@ -79,7 +39,7 @@ export const Controls = ({
 
     addEventListener('keydown', keyHandler)
     return () => removeEventListener('keydown', keyHandler)
-  }, [visibleRange.first])
+  }, [])
 
   return (
     <StyledControls>
@@ -87,7 +47,7 @@ export const Controls = ({
         {...buttonStyle}
         isCompact
         onPointerUp={panBack}
-        disabled={visibleRange.first <= 0}
+        disabled={start <= 0}
       >
         <StyledEmoji rotate={-90}>🔺</StyledEmoji>
       </Button>
@@ -111,10 +71,7 @@ export const Controls = ({
         {...buttonStyle}
         isCompact
         onPointerUp={panForward}
-        disabled={
-          visibleRange.last >= length - 1 ||
-          visibleRange.last - visibleRange.first > length
-        }
+        disabled={end >= length - 1 || end - start > length}
       >
         <StyledEmoji rotate={90}>🔺</StyledEmoji>
       </Button>

@@ -4,6 +4,8 @@
 
 Utilities for use with Pi
 
+**Dependencies:** lodash.throttle, react, react-aria
+
 <table>
   <tbody>
     <tr>

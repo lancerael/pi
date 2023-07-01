@@ -188,7 +188,7 @@ A React component used to display a bar ot line chart
 
 A candlestick chart React component used to show the movement of traded assets.
 
-**Dependencies:** @pi-lib/button, @pi-lib/loader, @pi-lib/styles, @pi-lib/tooltip, d3-axis, d3-scale, d3-selection, d3-transition, lodash.throttle, react
+**Dependencies:** @pi-lib/button, @pi-lib/loader, @pi-lib/styles, @pi-lib/tooltip, @use-gesture/react, d3-axis, d3-scale, d3-selection, d3-transition, lodash.throttle, react
 
 <table>
   <tbody>
@@ -206,7 +206,7 @@ A candlestick chart React component used to show the movement of traded assets.
 
 A React component for an expanding/collapsing menu with icons
 
-**Dependencies:** @pi-lib/styles, @pi-lib/utils, react, react-aria, react-aria-components, react-stately
+**Dependencies:** @pi-lib/icon, @pi-lib/styles, @pi-lib/utils, react, react-aria, react-aria-components, react-stately
 
 <table>
   <tbody>
@@ -360,6 +360,8 @@ Global types for Pi
 **@pi-lib/utils**
 
 Utilities for use with Pi
+
+**Dependencies:** lodash.throttle, react, react-aria
 
 <table>
   <tbody>

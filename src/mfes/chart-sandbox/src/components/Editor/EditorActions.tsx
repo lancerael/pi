@@ -172,7 +172,7 @@ export const EditorActions = () => {
       <PageLoader isActive={isLoading} />
       <CollapsibleMenu
         title="Table actions menu"
-        icon="Ellipsis"
+        iconName="Ellipsis"
         items={[
           <StyledActionWrapper>
             {actions.map((actionProps, i) => (
