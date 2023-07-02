@@ -1,4 +1,4 @@
-export const TRANSITION_TIME = 100
+export const TRANSITION_TIME = 500
 
 export const CHART_PADDING = 10
 

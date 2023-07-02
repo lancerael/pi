@@ -1,6 +1,7 @@
 import { ScaleBand } from 'd3-scale'
 import { Selection } from 'd3-selection'
 import { CandleTooltipProps } from './components/CandleTooltip/CandleTooltip.types'
+import { Transition } from 'd3-transition'
 
 export interface CandlestickDayData {
   date: string
@@ -80,6 +81,13 @@ export interface Scales {
   xScale: ScaleBand<string>
   yScale: (y: number) => number
 }
+
+export type ChartTransition = Transition<
+  SVGRectElement,
+  CandlestickDayData,
+  SVGSVGElement | SVGGElement | null,
+  unknown
+>
 
 export type SvgRef = React.RefObject<SVGSVGElement>
 

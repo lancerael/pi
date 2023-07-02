@@ -15,7 +15,7 @@ import {
  * @param width the chart width
  * @param data the chart data
  * @param controls the controls for zooming and panning
- * @returns start/end, min/max, offset and sloced visible data
+ * @returns start/end, min/max, offset and sliced visible data
  */
 export const useDataRange = (
   width: number,
@@ -23,7 +23,7 @@ export const useDataRange = (
   controls: IControls
 ): DataRange => {
   const { panLevel, zoomLevel } = controls
-  const lastIndex = data.length - 1
+  const lastIndex = data.length
   const end = useRef(lastIndex)
   const prevPan = useRef(0)
   const latestOffset = useRef(0)

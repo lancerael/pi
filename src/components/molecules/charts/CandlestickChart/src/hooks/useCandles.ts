@@ -6,11 +6,17 @@ import {
   BarSelection,
   BarType,
   CandlestickDayData,
+  ChartTransition,
   SvgRef,
   SVGSelection,
   ValueKeys,
 } from '../CandlestickChart.types'
-import { CHART_PADDING } from '../CandlestickChart.constants'
+import {
+  CANDLE_PADDING,
+  CANDLE_WIDTH,
+  CHART_PADDING,
+  TRANSITION_TIME,
+} from '../CandlestickChart.constants'
 
 const typeMap = {
   wicks: 'line',
@@ -20,17 +26,25 @@ const typeMap = {
 export const useCandles = (
   svgRef: SvgRef,
   sizes: any,
-  dataSlice: any,
+  dataRange: any,
   scales: any
 ) => {
   const { xScale, yScale } = scales
   const { left = 0, top = 0 } = sizes
+  const { dataSlice, offset } = dataRange
+  const lastItem = dataSlice[dataSlice.length - 1]
   const groups = useRef<{ [key: string]: SVGSelection }>({})
   const isActive = useRef<boolean>(false)
+  const prevLastItem = useRef(lastItem)
   const [activeItem, setActiveItem] = useState<ActiveItem>({
     item: undefined,
     position: undefined,
   })
+  const doTransition =
+    prevLastItem.current?.date === lastItem?.date &&
+    prevLastItem.current?.close !== lastItem?.close
+
+  prevLastItem.current = structuredClone(lastItem)
 
   // Get d3 selection of SVG
   const getSvg = useCallback(() => select(svgRef.current), [svgRef.current])
@@ -38,12 +52,13 @@ export const useCandles = (
   // Bind the data to the chosen type of bars
   const bindData = useCallback(
     (type: BarType, parent: SVGSelection = getSvg() as SVGSelection) => {
-      parent.selectAll(`${typeMap[type]}.${type}`).data([]).exit().remove()
+      !doTransition &&
+        parent.selectAll(`${typeMap[type]}.${type}`).data([]).exit().remove()
       return parent
         .selectAll(`${typeMap[type]}.${type}`)
-        .data(dataSlice) as unknown as BarSelection
+        .data(dataRange.dataSlice) as unknown as BarSelection
     },
-    [dataSlice]
+    [dataRange.dataSlice]
   )
 
   // Create the groups
@@ -82,9 +97,14 @@ export const useCandles = (
         bars = bars.enter().append(typeMap[type])
       }
 
+      const getTransition = () =>
+        doTransition ? bars.transition().duration(TRANSITION_TIME) : bars
+
       const x = (d: CandlestickDayData) =>
         Number(xScale(d.date)) +
-        (type === 'wicks' ? +xScale.bandwidth() / 2 : 0)
+        (type === 'wicks' ? +xScale.bandwidth() / 2 : 0) +
+        offset -
+        CANDLE_WIDTH * CANDLE_PADDING
 
       const y = (d: CandlestickDayData) => scaledY(d[keys[0]], d[keys[1]])
 
@@ -94,11 +114,11 @@ export const useCandles = (
       const y2 = (d: CandlestickDayData) => y(d) + height(d)
 
       if (type === 'candles') {
-        bars
-          .attr('width', () => +xScale.bandwidth())
-          .attr('height', height)
-          .attr('x', x)
-          .attr('y', y)
+        bars.attr('width', () => +xScale.bandwidth()).attr('x', x)
+        ;(getTransition().attr('y', y) as ChartTransition).attr(
+          'height',
+          height
+        )
         bars
           .classed('is-increased', (d) => d.close > d.open)
           .classed('is-decreased', (d) => d.close < d.open)
@@ -116,6 +136,7 @@ export const useCandles = (
             })
           })
           .on('mouseover', (e, d) => {
+            // console.log('over', activeItem)
             if (!isActive.current) {
               setActiveItem({
                 item: d,
@@ -123,6 +144,7 @@ export const useCandles = (
             }
           })
           .on('mouseout', (e, d) => {
+            // console.log('out', activeItem)
             if (!isActive.current) {
               setActiveItem({
                 item: undefined,

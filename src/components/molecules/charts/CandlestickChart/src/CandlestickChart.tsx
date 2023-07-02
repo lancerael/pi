@@ -6,15 +6,18 @@ import {
   StyledLoaderContainer,
 } from './CandlestickChart.style'
 import { CandlestickChartProps } from './CandlestickChart.types'
-import { useAxes, useCandles } from './hooks'
+import {
+  useAxes,
+  useCandles,
+  useSizes,
+  useDataRange,
+  useScales,
+  useControls,
+  useTouch,
+} from './hooks'
 import { CandleTooltip, ClipPaths, Controls } from './components'
 import Loader from '@pi-lib/loader'
 import { CurrentIndicator } from './components/CurrentIndicator'
-import { useSizes } from './hooks/useSizes'
-import { useDataRange } from './hooks/useDataRange'
-import { useScales } from './hooks/useScales'
-import { useControls } from './hooks/useControls'
-import { useTouch } from './hooks/useTouch'
 
 /**
  * A candlestick chart React component used to show the movement of traded assets.
@@ -27,7 +30,7 @@ export const CandlestickChart: FC<CandlestickChartProps> = ({ data = [] }) => {
   const dataRange = useDataRange(sizes.width, data, controls)
   const scales = useScales(sizes, dataRange)
   useAxes(svgRef, sizes, dataRange, scales)
-  const candles = useCandles(svgRef, sizes, dataRange.dataSlice, scales)
+  const candles = useCandles(svgRef, sizes, dataRange, scales)
   useTouch(svgRef, controls)
 
   return (
