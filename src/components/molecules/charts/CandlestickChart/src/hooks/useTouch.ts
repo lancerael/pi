@@ -15,7 +15,7 @@ export const useTouch = (svgRef: SvgRef, controls: IControls) => {
     },
     {
       target: svgRef,
-      pinch: { scaleBounds: { min: 0.5, max: 2 }, rubberband: true },
+      pinch: { scaleBounds: { min: 0.25, max: 2 }, rubberband: true },
     }
   )
 }

@@ -6,6 +6,7 @@ export const StyledControls = styled.div`
   display: flex;
   gap: 8px;
   padding: 8px;
+  z-index: 1000;
 `
 
 export const StyledEmoji = styled.div(

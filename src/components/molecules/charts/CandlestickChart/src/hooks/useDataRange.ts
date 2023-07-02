@@ -26,9 +26,10 @@ export const useDataRange = (
   data: CandlestickDayData[],
   controls: IControls
 ): DataRange => {
+  const thisData = [...data, emptyItem]
   const { panLevel, zoomLevel } = controls
-  const lastIndex = data.length
-  const end = useRef(lastIndex - 1)
+  const lastIndex = thisData.length
+  const end = useRef<number>(lastIndex)
   const prevPan = useRef(0)
   const latestOffset = useRef(0)
   const candleWidth = (CANDLE_WIDTH + CANDLE_WIDTH * CANDLE_PADDING) * zoomLevel
@@ -37,11 +38,13 @@ export const useDataRange = (
   const isPanningLeft = prevPan.current < panLevel
   const isPanningRight = prevPan.current > panLevel
   // Update chartoffset
+  if (end.current === 1) end.current = lastIndex
   if (
     (end.current < lastIndex || isPanningLeft) &&
     (end.current - perPage > 0 || isPanningRight)
   ) {
-    offset = latestOffset.current + panLevel - prevPan.current
+    offset =
+      latestOffset.current + (panLevel - prevPan.current) / (zoomLevel * 2)
     latestOffset.current = offset
   }
   prevPan.current = panLevel
@@ -56,8 +59,7 @@ export const useDataRange = (
     latestOffset.current = 0
   }
   const start = end.current - perPage
-  const dataSlice = data.slice(start, end.current)
-  dataSlice.length && dataSlice.push(data[end.current] ?? emptyItem)
+  const dataSlice = thisData.slice(start, end.current)
   const min = Math.min(
     ...dataSlice.map(({ low }) => low).filter((value) => value !== 0)
   )

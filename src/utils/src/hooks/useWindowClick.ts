@@ -1,4 +1,7 @@
-import { useThrottledWindowEvents } from './useThrottledWindowEvents'
+import {
+  CallbackFunction,
+  useThrottledWindowEvents,
+} from './useThrottledWindowEvents'
 
 /**
  * Bind a callback to the window that can be triggeed with an escape key
@@ -6,7 +9,7 @@ import { useThrottledWindowEvents } from './useThrottledWindowEvents'
  * @param containerRef
  */
 export const useWindowClick = (
-  callback: () => void,
+  callback: CallbackFunction,
   containerRef?: React.RefObject<HTMLElement>
 ) => {
   const onWindowClick = (e: MouseEvent) => {
@@ -17,6 +20,10 @@ export const useWindowClick = (
   const onEscapePress = ({ key }: KeyboardEvent) => {
     if (key === 'Escape') callback()
   }
-  useThrottledWindowEvents(onWindowClick, ['click'], false)
-  useThrottledWindowEvents(onEscapePress, ['keydown'], false)
+  useThrottledWindowEvents(onWindowClick as CallbackFunction, ['click'], false)
+  useThrottledWindowEvents(
+    onEscapePress as CallbackFunction,
+    ['keydown'],
+    false
+  )
 }

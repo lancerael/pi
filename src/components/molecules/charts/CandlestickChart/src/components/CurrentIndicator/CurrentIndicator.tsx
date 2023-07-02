@@ -8,10 +8,12 @@ export const CurrentIndicator = ({
   sizes,
 }: CurrentIndicatorProps) => {
   const indicatorBottom = sizes.height - AXIS_OFFSETS[0] - CHART_PADDING
-  const left = sizes.width - AXIS_OFFSETS[1] + CHART_PADDING + 4
-  let top = yScale(currentItem?.close) + +sizes.top - 15
+  const indicatorTop = CHART_PADDING
+  const left = sizes.width - AXIS_OFFSETS[1] + CHART_PADDING + 4 + sizes.left
+  let top = yScale(currentItem?.close) + -13
   top = top > indicatorBottom ? indicatorBottom : top
-  top = top < CHART_PADDING ? CHART_PADDING - 4 : top + 4
+  top = top < indicatorTop ? indicatorTop : top + 4
+  top += +sizes.top
   if (isNaN(top)) return <></>
   return (
     <StyledIndicator

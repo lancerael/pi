@@ -6,6 +6,7 @@ export const StyledCandlestickChart = styled.svg`
   height: 100%;
   user-select: none;
   touch-action: none;
+  position: relative;
 
   & rect.candles {
     cursor: pointer;
