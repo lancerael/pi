@@ -103,7 +103,8 @@ export const useCandles = (
       const x = (d: CandlestickDayData) =>
         Number(xScale(d.date)) +
         (type === 'wicks' ? +xScale.bandwidth() / 2 : 0) +
-        offset -
+        offset +
+        CANDLE_WIDTH -
         CANDLE_WIDTH * CANDLE_PADDING
 
       const y = (d: CandlestickDayData) => scaledY(d[keys[0]], d[keys[1]])
@@ -122,7 +123,7 @@ export const useCandles = (
         bars
           .classed('is-increased', (d) => d.close > d.open)
           .classed('is-decreased', (d) => d.close < d.open)
-          .classed('is-zoomed', (d) => +xScale.bandwidth() > 10)
+          .classed('is-zoomed', () => +xScale.bandwidth() > 10)
           .on('click', ({ target }, d) => {
             bars.classed('is-active', false)
             select(target).classed('is-active', true)

@@ -1,7 +1,11 @@
 import { axisBottom, axisRight } from 'd3-axis'
 import { select } from 'd3-selection'
 import { useEffect, useRef } from 'react'
-import { CHART_PADDING } from '../CandlestickChart.constants'
+import {
+  CANDLE_PADDING,
+  CANDLE_WIDTH,
+  CHART_PADDING,
+} from '../CandlestickChart.constants'
 import { SvgRef, IAxis, Scales } from '../CandlestickChart.types'
 import { AXIS_OFFSETS } from './../CandlestickChart.constants'
 
@@ -72,7 +76,12 @@ export const useAxes = (
     // Update the x axis and text labels
     axisX.current
       ?.call(axisBottom(xScale))
-      .attr('transform', `translate(${offset},${height - AXIS_OFFSETS[0]})`)
+      .attr(
+        'transform',
+        `translate(${offset - CANDLE_WIDTH * CANDLE_PADDING + CANDLE_WIDTH},${
+          height - AXIS_OFFSETS[0]
+        })`
+      )
       .selectAll('text')
       .classed(
         'emphasise',

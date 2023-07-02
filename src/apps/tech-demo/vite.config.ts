@@ -11,7 +11,7 @@ const IS_DEV = process.env.NODE_ENV === 'development'
 const ASSET_PATH = process.env.MFE_ASSET_PATH
 
 const getPath = (id) =>
-  IS_DEV ? `http://localhost:${portMap[id]}` : `${ASSET_PATH}/${id}`
+  true ? `http://192.168.1.88:${portMap[id]}` : `${ASSET_PATH}/${id}`
 
 export default defineConfig({
   plugins: [

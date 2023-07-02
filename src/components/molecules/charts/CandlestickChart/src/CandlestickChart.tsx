@@ -60,9 +60,9 @@ export const CandlestickChart: FC<CandlestickChartProps> = ({ data = [] }) => {
       <CandleTooltip {...candles} />
       {!!data?.length && (
         <CurrentIndicator
-          value={data[data.length - 1].close}
-          x={sizes.width + sizes.left - 15}
-          y={scales.yScale(data[data.length - 1].close) + +sizes.top - 15}
+          {...{ sizes }}
+          currentItem={data[data.length - 1]}
+          yScale={scales.yScale}
         />
       )}
     </StyledContainer>
