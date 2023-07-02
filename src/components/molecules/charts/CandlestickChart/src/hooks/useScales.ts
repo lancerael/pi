@@ -18,7 +18,10 @@ export const useScales = (sizes: Sizes, dataRange: DataRange) => {
   // The horizontal scale
   const xScale = useCallback(
     scaleBand()
-      .range([CHART_PADDING, sizes.width - AXIS_OFFSETS[1] + CANDLE_WIDTH])
+      .range([
+        CHART_PADDING - CANDLE_WIDTH,
+        sizes.width - AXIS_OFFSETS[1] + CANDLE_WIDTH,
+      ])
       .domain(dataRange.dataSlice.map(({ date }: any) => date))
       .paddingInner(CANDLE_PADDING),
     [sizes, dataRange]
