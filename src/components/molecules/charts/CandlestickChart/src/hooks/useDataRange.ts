@@ -44,7 +44,8 @@ export const useDataRange = (
     (end.current - perPage > 0 || isPanningRight)
   ) {
     offset =
-      latestOffset.current + (panLevel - prevPan.current) / (zoomLevel * 2)
+      latestOffset.current +
+      (panLevel - prevPan.current) / (zoomLevel * zoomLevel)
     latestOffset.current = offset
   }
   prevPan.current = panLevel
@@ -76,5 +77,6 @@ export const useDataRange = (
     max,
     offset: latestOffset.current,
     dataSlice,
+    length: data.length,
   }
 }

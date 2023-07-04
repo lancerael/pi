@@ -2,30 +2,30 @@ import { useEffect } from 'react'
 import Button from '@pi-lib/button'
 import { StyledControls, StyledEmoji } from './Controls.style'
 import { ControlsProps } from './Controls.types'
+import { doTransition } from '@pi-lib/utils'
 
 const zoomSpeed = 0.2
 const panSpeed = 100
 
-// const animate = (action: string, controls: IControls) => {
-
-// }
-
 export const Controls = ({
-  controls: { setPanLevel, setZoomLevel, zoomLevel },
-  dataRange: { start, end },
+  controls: { setPanLevel, setZoomLevel, panLevel, zoomLevel },
+  dataRange: { start, end, length },
 }: ControlsProps) => {
   const buttonStyle = {
     minWidth: 'auto',
     margin: '5px',
   }
 
-  const panBack = () => setPanLevel((panLevel) => panLevel - panSpeed)
+  const panBack = () => doTransition(panLevel, panLevel + panSpeed, setPanLevel)
 
-  const panForward = () => setPanLevel((panLevel) => panLevel + panSpeed)
+  const panForward = () =>
+    doTransition(panLevel, panLevel - panSpeed, setPanLevel)
 
-  const zoomOut = () => setZoomLevel((zoomLevel) => zoomLevel - zoomSpeed)
+  const zoomOut = () =>
+    doTransition(zoomLevel, zoomLevel - zoomSpeed, setZoomLevel)
 
-  const zoomIn = () => setZoomLevel((zoomLevel) => zoomLevel + zoomSpeed)
+  const zoomIn = () =>
+    doTransition(zoomLevel, zoomLevel + zoomSpeed, setZoomLevel)
 
   useEffect(() => {
     const keyHandler = ({ key }: { key: string }) => {
@@ -33,13 +33,12 @@ export const Controls = ({
         ArrowLeft: panBack,
         ArrowRight: panForward,
       }
-
       handlerMap[key]?.()
     }
 
     addEventListener('keydown', keyHandler)
     return () => removeEventListener('keydown', keyHandler)
-  }, [])
+  }, [panLevel])
 
   return (
     <StyledControls>

@@ -61,6 +61,7 @@ export interface DataRange {
   max: number
   offset: number
   dataSlice: CandlestickDayData[]
+  length: number
 }
 
 export type SVGSelection = Selection<
