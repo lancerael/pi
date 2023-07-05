@@ -4,7 +4,7 @@ import federation from '@originjs/vite-plugin-federation'
 
 export default defineConfig({
   server: {
-    https: true,
+    https: false,
     host: '192.168.1.88',
     port: 5002,
   },
