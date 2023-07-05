@@ -1,7 +1,0 @@
-{
-  "type": "patch",
-  "comment": "Fix mfe config",
-  "packageName": "@pi-lib/world-map",
-  "email": "122271901+lancerael-undo@users.noreply.github.com",
-  "dependentChangeType": "patch"
-}

@@ -2,6 +2,21 @@
   "name": "@pi-lib/charts",
   "entries": [
     {
+      "date": "Wed, 05 Jul 2023 23:03:12 GMT",
+      "tag": "@pi-lib/charts_v0.12.3",
+      "version": "0.12.3",
+      "comments": {
+        "patch": [
+          {
+            "author": "122271901+lancerael-undo@users.noreply.github.com",
+            "package": "@pi-lib/charts",
+            "commit": "226d9af27455dcb7f2ca97ff5ecc293da774e037",
+            "comment": "Style tweaks"
+          }
+        ]
+      }
+    },
+    {
       "date": "Sat, 24 Jun 2023 21:27:44 GMT",
       "tag": "@pi-lib/charts_v0.12.0",
       "version": "0.12.0",

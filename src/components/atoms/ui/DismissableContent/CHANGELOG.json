@@ -2,6 +2,21 @@
   "name": "@pi-lib/dismissable-content",
   "entries": [
     {
+      "date": "Wed, 05 Jul 2023 23:03:12 GMT",
+      "tag": "@pi-lib/dismissable-content_v1.0.1",
+      "version": "1.0.1",
+      "comments": {
+        "patch": [
+          {
+            "author": "122271901+lancerael-undo@users.noreply.github.com",
+            "package": "@pi-lib/dismissable-content",
+            "commit": "226d9af27455dcb7f2ca97ff5ecc293da774e037",
+            "comment": "Style tweaks"
+          }
+        ]
+      }
+    },
+    {
       "date": "Mon, 26 Jun 2023 23:53:05 GMT",
       "tag": "@pi-lib/dismissable-content_v1.0.0",
       "version": "1.0.0",

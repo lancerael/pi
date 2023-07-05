@@ -1,8 +1,16 @@
 # Change Log - @pi-lib/world-map
 
-This log was last generated on Mon, 26 Jun 2023 23:53:06 GMT and should not be manually modified.
+This log was last generated on Wed, 05 Jul 2023 23:03:12 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 1.0.3
+
+Wed, 05 Jul 2023 23:03:12 GMT
+
+### Patches
+
+- Fix mfe config (122271901+lancerael-undo@users.noreply.github.com)
 
 ## 1.0.2
 

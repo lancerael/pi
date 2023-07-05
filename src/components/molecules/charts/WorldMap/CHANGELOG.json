@@ -2,6 +2,21 @@
   "name": "@pi-lib/world-map",
   "entries": [
     {
+      "date": "Wed, 05 Jul 2023 23:03:12 GMT",
+      "tag": "@pi-lib/world-map_v1.0.3",
+      "version": "1.0.3",
+      "comments": {
+        "patch": [
+          {
+            "author": "122271901+lancerael-undo@users.noreply.github.com",
+            "package": "@pi-lib/world-map",
+            "commit": "226d9af27455dcb7f2ca97ff5ecc293da774e037",
+            "comment": "Fix mfe config"
+          }
+        ]
+      }
+    },
+    {
       "date": "Mon, 26 Jun 2023 23:53:06 GMT",
       "tag": "@pi-lib/world-map_v1.0.2",
       "version": "1.0.2",
