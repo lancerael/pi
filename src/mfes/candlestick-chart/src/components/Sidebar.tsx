@@ -19,7 +19,7 @@ export const Sidebar = () => {
         Previous close <span style={{ float: 'right' }}>4.03</span>
       </p>
       <p style={rowStyles}>
-        Today's open <span style={{ float: 'right' }}>4.40</span>
+        Today's open <span style={{ float: 'right' }}>4.41</span>
       </p>
       <p style={rowStyles}>
         Day's range <span style={{ float: 'right' }}>4.11 - 6.49</span>
