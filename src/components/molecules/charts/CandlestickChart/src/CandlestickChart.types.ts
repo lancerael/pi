@@ -1,6 +1,7 @@
 import { ScaleBand } from 'd3-scale'
 import { Selection } from 'd3-selection'
 import { CandleTooltipProps } from './components/CandleTooltip/CandleTooltip.types'
+import { Transition } from 'd3-transition'
 
 export interface CandlestickDayData {
   date: string
@@ -39,21 +40,28 @@ export interface ActiveItem {
   position?: CandleTooltipProps['position']
 }
 
-export interface VisibleRange {
-  offset: number
-  first: number
-  last: number
-  totalWidth: number
+export interface IControls {
+  zoomLevel: number
+  panLevel: number
+  setZoomLevel: React.Dispatch<React.SetStateAction<number>>
+  setPanLevel: React.Dispatch<React.SetStateAction<number>>
 }
 
-export interface Dimensions {
-  visibleRange: VisibleRange
-  sizes: {
-    width: number
-    height: number
-    left: number
-    top: number
-  }
+export interface Sizes {
+  width: number
+  height: number
+  left: number
+  top: number
+}
+
+export interface DataRange {
+  start: number
+  end: number
+  min: number
+  max: number
+  offset: number
+  dataSlice: CandlestickDayData[]
+  length: number
 }
 
 export type SVGSelection = Selection<
@@ -75,15 +83,12 @@ export interface Scales {
   yScale: (y: number) => number
 }
 
-export interface Utils {
-  scaledHeight: (low: number, high: number) => number
-  scaledY: (low: number, high: number) => number
-}
-
-export interface Scaling {
-  utils: Utils
-  scales: Scales
-}
+export type ChartTransition = Transition<
+  SVGRectElement,
+  CandlestickDayData,
+  SVGSVGElement | SVGGElement | null,
+  unknown
+>
 
 export type SvgRef = React.RefObject<SVGSVGElement>
 

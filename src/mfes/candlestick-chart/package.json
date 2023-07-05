@@ -5,11 +5,11 @@
   "type": "module",
   "scripts": {
     "build": "tsc && vite build",
-    "dev": "vite --port 5002 --strictPort",
+    "dev": "vite --port 5002 --strictPort --host",
     "e2e": "npx cypress open",
     "lint": "npx prettier -c . && npx eslint",
     "lint:fix": "npx prettier -w . && npx eslint --fix",
-    "preview": "vite preview --port 5002 --strictPort",
+    "preview": "vite preview --port 5002 --strictPort --host",
     "start": "pnpm build && pnpm preview",
     "test-": "vitest",
     "test:coverage": "vitest --coverage"
@@ -19,8 +19,11 @@
     "@pi-lib/candlestick-chart": "workspace:^",
     "@pi-lib/page-content": "workspace:^",
     "@pi-lib/styles": "workspace:^",
+    "@reduxjs/toolkit": "^1.9.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-redux": "^7.1.1",
+    "redux": "^4.0.0",
     "styled-components": "^5.3.11"
   },
   "devDependencies": {

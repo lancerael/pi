@@ -1,14 +1,12 @@
-import { axisBottom, axisRight, AxisScale } from 'd3-axis'
-import { BaseType, select, Selection } from 'd3-selection'
-import { useEffect, useState } from 'react'
-import { CHART_PADDING } from '../CandlestickChart.constants'
+import { axisBottom, axisRight } from 'd3-axis'
+import { select } from 'd3-selection'
+import { useEffect, useRef } from 'react'
 import {
-  CandlestickDayData,
-  Dimensions,
-  SvgRef,
-  IAxis,
-  Scales,
-} from '../CandlestickChart.types'
+  CANDLE_PADDING,
+  CANDLE_WIDTH,
+  CHART_PADDING,
+} from '../CandlestickChart.constants'
+import { SvgRef, IAxis, Scales } from '../CandlestickChart.types'
 import { AXIS_OFFSETS } from './../CandlestickChart.constants'
 
 // Used to cache date labels
@@ -42,17 +40,16 @@ const getDateLabel = (d: string = '', i: number, xScale: Scales['xScale']) => {
 
 export const useAxes = (
   svgRef: SvgRef,
-  data: CandlestickDayData[],
-  scales: Scales,
-  dimensions: Dimensions
+  sizes: any,
+  dataRange: any,
+  scales: any
 ) => {
-  const [axisX, setAxisX] = useState<IAxis>()
-  const [axisY, setAxisY] = useState<IAxis>()
+  const axisX = useRef<IAxis>()
+  const axisY = useRef<IAxis>()
+
+  const { height, width } = sizes
+  const { dataSlice, offset } = dataRange
   const { xScale, yScale } = scales
-  const {
-    sizes: { width, height },
-    visibleRange: { offset, first, last },
-  } = dimensions
 
   // Set up the x and y axes
   useEffect(() => {
@@ -62,26 +59,29 @@ export const useAxes = (
     select(svgRef.current).select('g.x-axis, y.y-axis').remove()
 
     // Initialise the x axis
-    setAxisX(
-      select(svgRef.current)
-        .append('g')
-        .attr('clip-path', 'url(#bottom-axis)')
-        .classed('x-axis', true)
-        .append('g')
-    )
+    axisX.current = select(svgRef.current)
+      .append('g')
+      .attr('clip-path', 'url(#bottom-axis)')
+      .classed('x-axis', true)
+      .append('g')
 
     // Initialise the y axis
-    setAxisY(select(svgRef.current).append('g').classed('y-axis', true))
+    axisY.current = select(svgRef.current).append('g').classed('y-axis', true)
   }, [])
 
   // Update the axes when the scales change
   useEffect(() => {
-    if (!xScale.domain || !data || !axisX || !axisY) return
+    if (!xScale.domain || !dataSlice || !axisX) return
 
     // Update the x axis and text labels
-    axisX
-      .call(axisBottom(xScale))
-      .attr('transform', `translate(${offset},${height - AXIS_OFFSETS[0]})`)
+    axisX.current
+      ?.call(axisBottom(xScale))
+      .attr(
+        'transform',
+        `translate(${offset - CANDLE_WIDTH * CANDLE_PADDING + CANDLE_WIDTH},${
+          height - AXIS_OFFSETS[0]
+        })`
+      )
       .selectAll('text')
       .classed(
         'emphasise',
@@ -94,18 +94,14 @@ export const useAxes = (
       .text((d, i) => getDateLabel(d as string, i, xScale))
 
     // Update the x axis tick lines
-    axisX.selectAll('line.clone').remove()
-    axisX
-      .selectAll('line')
+    axisX.current?.selectAll('line.clone').remove()
+    axisX.current
+      ?.selectAll('line')
       .attr('y2', (d, i) =>
         getDateLabel(d as string, i, xScale).length ? 12 : 6
       )
       .each((d, i, e: any) => {
-        if (
-          i > first &&
-          i < last &&
-          getDateLabel(d as string, i, xScale).length
-        ) {
+        if (getDateLabel(d as string, i, xScale).length) {
           var clone = e[i].parentNode.appendChild(e[i].cloneNode(true))
           select(clone)
             .classed('clone', true)
@@ -115,23 +111,21 @@ export const useAxes = (
       })
 
     // Update the y axis
-    axisY
-      .call(axisRight(yScale as AxisScale<number>))
+    axisY.current
+      ?.call(axisRight(yScale))
       .attr(
         'transform',
         `translate(${width - AXIS_OFFSETS[1] + CHART_PADDING}, 0)`
       )
 
     // Update the y axis tick lines
-    axisY.selectAll('line.clone').remove()
-    axisY.selectAll('line').each((d, i: number, e: any) => {
+    axisY.current?.selectAll('line.clone').remove()
+    axisY.current?.selectAll('line').each((d, i: number, e: any) => {
       var clone = e[i].parentNode.appendChild(e[i].cloneNode(true))
       select(clone)
         .classed('clone', true)
         .attr('x2', -width + 1 + AXIS_OFFSETS[1])
         .attr('x1', -1)
     })
-  }, [xScale, yScale])
-
-  return [axisX, axisY]
+  }, [xScale])
 }

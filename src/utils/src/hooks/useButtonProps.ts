@@ -7,6 +7,12 @@ export interface UseButtonProps<T> {
   }
 }
 
+/**
+ * Use to create a set of default aria props for a button
+ * @param props
+ * @param elementType
+ * @returns
+ */
 export const useButtonProps = <T>(
   props: {
     onPointerUp?: (e: any) => unknown
@@ -24,7 +30,7 @@ export const useButtonProps = <T>(
     buttonRef as RefObject<Element>
   )
   const { keyboardProps } = useKeyboard({
-    onKeyUp: (e) => [' ', 'Enter'].includes(e.key) && onPointerUp?.(e),
+    onKeyUp: (e: any) => [' ', 'Enter'].includes(e.key) && onPointerUp?.(e),
   })
   return {
     buttonProps: { ...buttonProps, ...keyboardProps, onPointerUp, buttonRef },

@@ -5,12 +5,12 @@
   "type": "module",
   "scripts": {
     "build": "tsc && vite build",
-    "dev": "vite --port 5001 --strictPort",
+    "dev": "vite --port 5001 --strictPort --host",
     "e2e": "npx cypress open",
     "lint": "npx prettier -c . && npx eslint",
     "lint:fix": "npx prettier -w . && npx eslint --fix",
     "preview": "vite preview --port 5001 --strictPort",
-    "start": "pnpm build && pnpm preview",
+    "start": "pnpm build && pnpm preview --host",
     "test-": "vitest",
     "test:coverage": "vitest --coverage"
   },
@@ -33,13 +33,6 @@
     "styled-components": "^5.3.11"
   },
   "devDependencies": {
-    "@types/d3-fetch": "^3.0.2",
-    "@types/d3-force": "^3.0.4",
-    "@types/d3-shape": "^3.1.1",
-    "@types/react": "^18.0.28",
-    "@types/react-dom": "^18.0.11",
-    "@types/react-redux": "^7.1.25",
-    "@types/styled-components": "^5.1.26",
     "@vitejs/plugin-react": "^3.1.0",
     "cypress": "^3.0.2",
     "react-is": "^18.2.0",

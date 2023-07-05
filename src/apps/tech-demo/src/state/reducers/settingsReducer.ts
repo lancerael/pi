@@ -19,17 +19,16 @@ const pageParts = window.location.href.split('/')
 
 const storedSettings = localStorage.getItem('piLibDemoSettings')
 
-const initialState: SettingsState = storedSettings
-  ? JSON.parse(storedSettings)
-  : {
-      themeName: 'andro',
-      scheme: !!matchMedia('(prefers-color-scheme: dark)').matches
-        ? 'dark'
-        : 'light',
-      fontSize: 'small',
-      page: `/${pageParts[pageParts.length - 1]}`,
-      consent: false,
-    }
+const initialState: SettingsState = {
+  themeName: 'andro',
+  scheme: !!matchMedia('(prefers-color-scheme: dark)').matches
+    ? 'dark'
+    : 'light',
+  fontSize: 'small',
+  consent: false,
+  ...JSON.parse(storedSettings ?? '{}'),
+  page: `/${pageParts[pageParts.length - 1]}`,
+}
 
 const storeSettings = (state: SettingsState) =>
   state.consent &&

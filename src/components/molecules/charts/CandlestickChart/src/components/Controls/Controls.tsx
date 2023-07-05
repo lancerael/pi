@@ -1,85 +1,55 @@
-import React, { useCallback, useEffect } from 'react'
+import { useEffect } from 'react'
 import Button from '@pi-lib/button'
 import { StyledControls, StyledEmoji } from './Controls.style'
-import { ControlsProps, IControls } from './Controls.types'
+import { ControlsProps } from './Controls.types'
+import { doTransition } from '@pi-lib/utils'
+import { ZOOM_RANGE } from '../../CandlestickChart.constants'
 
 const zoomSpeed = 0.2
-const panSpeed = 100
+const panSpeed = 250
 
 export const Controls = ({
-  controls: { zoomLevel },
-  setControls,
-  visibleRange,
-  length,
+  controls: { setPanLevel, setZoomLevel, panLevel, zoomLevel },
+  dataRange: { start, end, length },
 }: ControlsProps) => {
   const buttonStyle = {
     minWidth: 'auto',
     margin: '5px',
   }
 
-  const panBack = useCallback(
-    () =>
-      setControls(({ panLevel, zoomLevel }: IControls) => {
-        const newPanLevel = panLevel + panSpeed / zoomLevel
-        return {
-          panLevel: visibleRange.first <= 0 ? panLevel : newPanLevel,
-          zoomLevel,
-          transition: true,
-        }
-      }),
-    [visibleRange.first]
-  )
+  const canPanBack = start > 0
+  const canPanForward = end < length && end - start < length
+  const canZoomIn = zoomLevel < ZOOM_RANGE[1]
+  const canZoomOut = zoomLevel > ZOOM_RANGE[0]
 
-  const panForward = useCallback(
-    () =>
-      setControls(({ panLevel, zoomLevel }: IControls) => {
-        const newPanLevel = panLevel - panSpeed / zoomLevel
-        return {
-          panLevel: newPanLevel > 1 ? newPanLevel : 1,
-          zoomLevel,
-          transition: true,
-        }
-      }),
-    []
-  )
+  const panBack = () =>
+    canPanBack && doTransition(panLevel, panLevel + panSpeed, setPanLevel)
 
-  const zoomOut = useCallback(
-    () =>
-      setControls(({ panLevel, zoomLevel }: IControls) => ({
-        zoomLevel: +(
-          zoomLevel - zoomSpeed > 0 ? zoomLevel - zoomSpeed : zoomSpeed / 2
-        ).toFixed(2),
-        panLevel,
-        transition: true,
-      })),
-    []
-  )
+  const panForward = () =>
+    canPanForward && doTransition(panLevel, panLevel - panSpeed, setPanLevel)
 
-  const zoomIn = useCallback(
-    () =>
-      setControls(({ panLevel, zoomLevel }: IControls) => ({
-        zoomLevel: +(
-          zoomLevel === zoomSpeed / 2 ? zoomSpeed : zoomLevel + zoomSpeed
-        ).toFixed(2),
-        panLevel,
-        transition: true,
-      })),
-    []
-  )
+  const zoomIn = () =>
+    canZoomIn && doTransition(zoomLevel, zoomLevel + zoomSpeed, setZoomLevel)
+
+  const zoomOut = () =>
+    canZoomOut && doTransition(zoomLevel, zoomLevel - zoomSpeed, setZoomLevel)
 
   useEffect(() => {
     const keyHandler = ({ key }: { key: string }) => {
       const handlerMap: { [key: string]: () => void } = {
-        ArrowLeft: panBack,
-        ArrowRight: panForward,
+        'ArrowLeft': panBack,
+        'ArrowRight': panForward,
+        '=': zoomIn,
+        '-': zoomOut,
+        '+': zoomIn,
+        '_': zoomOut,
       }
-
       handlerMap[key]?.()
     }
 
     addEventListener('keydown', keyHandler)
     return () => removeEventListener('keydown', keyHandler)
-  }, [visibleRange.first])
+  }, [panLevel, zoomLevel])
 
   return (
     <StyledControls>
@@ -87,7 +57,7 @@ export const Controls = ({
         {...buttonStyle}
         isCompact
         onPointerUp={panBack}
-        disabled={visibleRange.first <= 0}
+        disabled={!canPanBack}
       >
         <StyledEmoji rotate={-90}>🔺</StyledEmoji>
       </Button>
@@ -95,7 +65,7 @@ export const Controls = ({
         {...buttonStyle}
         isCompact
         onPointerUp={zoomOut}
-        disabled={zoomLevel < zoomSpeed}
+        disabled={!canZoomOut}
       >
         ➖
       </Button>
@@ -103,7 +73,7 @@ export const Controls = ({
         {...buttonStyle}
         isCompact
         onPointerUp={zoomIn}
-        disabled={zoomLevel >= zoomSpeed * 10}
+        disabled={!canZoomIn}
       >
         ➕
       </Button>
@@ -111,10 +81,7 @@ export const Controls = ({
         {...buttonStyle}
         isCompact
         onPointerUp={panForward}
-        disabled={
-          visibleRange.last >= length - 1 ||
-          visibleRange.last - visibleRange.first > length
-        }
+        disabled={!canPanForward}
       >
         <StyledEmoji rotate={90}>🔺</StyledEmoji>
       </Button>

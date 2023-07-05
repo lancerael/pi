@@ -6,13 +6,17 @@ import {
   BarSelection,
   BarType,
   CandlestickDayData,
-  Dimensions,
-  Scaling,
+  ChartTransition,
   SvgRef,
   SVGSelection,
   ValueKeys,
 } from '../CandlestickChart.types'
-import { TRANSITION_TIME, CHART_PADDING } from '../CandlestickChart.constants'
+import {
+  CANDLE_PADDING,
+  CANDLE_WIDTH,
+  CHART_PADDING,
+  TRANSITION_TIME,
+} from '../CandlestickChart.constants'
 
 const typeMap = {
   wicks: 'line',
@@ -21,36 +25,40 @@ const typeMap = {
 
 export const useCandles = (
   svgRef: SvgRef,
-  data: CandlestickDayData[],
-  dimensions: Dimensions,
-  scaling: Scaling,
-  transition: boolean
+  sizes: any,
+  dataRange: any,
+  scales: any
 ) => {
-  const {
-    scales: { xScale },
-    utils: { scaledHeight, scaledY },
-  } = scaling
-  const {
-    visibleRange: { offset },
-    sizes: { left, top },
-  } = dimensions
+  const { xScale, yScale } = scales
+  const { left = 0, top = 0 } = sizes
+  const { dataSlice, offset } = dataRange
+  const lastItem = dataSlice[dataSlice.length - 1]
   const groups = useRef<{ [key: string]: SVGSelection }>({})
   const isActive = useRef<boolean>(false)
+  const prevLastItem = useRef(lastItem)
   const [activeItem, setActiveItem] = useState<ActiveItem>({
     item: undefined,
     position: undefined,
   })
+  const doTransition =
+    prevLastItem.current?.date === lastItem?.date &&
+    prevLastItem.current?.close !== lastItem?.close
+
+  prevLastItem.current = structuredClone(lastItem)
 
   // Get d3 selection of SVG
   const getSvg = useCallback(() => select(svgRef.current), [svgRef.current])
 
   // Bind the data to the chosen type of bars
   const bindData = useCallback(
-    (type: BarType, parent: SVGSelection = getSvg() as SVGSelection) =>
-      parent
+    (type: BarType, parent: SVGSelection = getSvg() as SVGSelection) => {
+      !doTransition &&
+        parent.selectAll(`${typeMap[type]}.${type}`).data([]).exit().remove()
+      return parent
         .selectAll(`${typeMap[type]}.${type}`)
-        .data(data) as unknown as BarSelection,
-    [data]
+        .data(dataRange.dataSlice) as unknown as BarSelection
+    },
+    [dataRange.dataSlice]
   )
 
   // Create the groups
@@ -67,22 +75,37 @@ export const useCandles = (
     [groups]
   )
 
+  // A helper to scale the candle height
+  const scaledHeight = useCallback(
+    (low: number, high: number) => Math.abs(yScale(high) - yScale(low)) || 1,
+    [scales.yScale]
+  )
+
+  // A helper to scale the candle Y axis position
+  const scaledY = useCallback(
+    (low: number, high: number) =>
+      yScale(Math.min(low, high)) - scaledHeight(low, high) || 1,
+    [scales.yScale]
+  )
+
   // Place the bars based on latest data
   const placeBars = useCallback(
     (type: BarType, keys: ValueKeys[]) => {
       let bars = bindData(type, getGroup(type))
 
-      if (bars.size() !== data.length) {
+      if (bars.size() !== dataSlice.length) {
         bars = bars.enter().append(typeMap[type])
       }
 
       const getTransition = () =>
-        bars.transition().duration(transition ? TRANSITION_TIME : 50)
+        doTransition ? bars.transition().duration(TRANSITION_TIME) : bars
 
       const x = (d: CandlestickDayData) =>
         Number(xScale(d.date)) +
         (type === 'wicks' ? +xScale.bandwidth() / 2 : 0) +
-        offset
+        offset +
+        CANDLE_WIDTH -
+        CANDLE_WIDTH * CANDLE_PADDING
 
       const y = (d: CandlestickDayData) => scaledY(d[keys[0]], d[keys[1]])
 
@@ -92,15 +115,15 @@ export const useCandles = (
       const y2 = (d: CandlestickDayData) => y(d) + height(d)
 
       if (type === 'candles') {
-        getTransition()
-          .attr('width', () => +xScale.bandwidth())
-          .attr('height', height)
-          .attr('x', x)
-          .attr('y', y)
+        bars.attr('width', () => +xScale.bandwidth()).attr('x', x)
+        ;(getTransition().attr('y', y) as ChartTransition).attr(
+          'height',
+          height
+        )
         bars
           .classed('is-increased', (d) => d.close > d.open)
           .classed('is-decreased', (d) => d.close < d.open)
-          .classed('is-zoomed', (d) => +xScale.bandwidth() > 10)
+          .classed('is-zoomed', () => +xScale.bandwidth() > 10)
           .on('click', ({ target }, d) => {
             bars.classed('is-active', false)
             select(target).classed('is-active', true)
@@ -114,6 +137,7 @@ export const useCandles = (
             })
           })
           .on('mouseover', (e, d) => {
+            // console.log('over', activeItem)
             if (!isActive.current) {
               setActiveItem({
                 item: d,
@@ -121,6 +145,7 @@ export const useCandles = (
             }
           })
           .on('mouseout', (e, d) => {
+            // console.log('out', activeItem)
             if (!isActive.current) {
               setActiveItem({
                 item: undefined,
@@ -128,7 +153,7 @@ export const useCandles = (
             }
           })
       } else {
-        getTransition().attr('x1', x).attr('y1', y).attr('x2', x).attr('y2', y2)
+        bars.attr('x1', x).attr('y1', y).attr('x2', x).attr('y2', y2)
       }
 
       bars.classed(type, true).exit().remove()

@@ -1,6 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { CollapsibleMenu } from './CollapsibleMenu'
 import { CollapsibleMenuProps } from './CollapsibleMenu.types'
+//@ts-ignore
+import Link from '../../../../atoms/interactions/Link/src'
 
 const render = (props: CollapsibleMenuProps) => (
   <div style={{ width: '100%', display: 'flex', justifyContent: 'flex-end' }}>
@@ -8,9 +10,9 @@ const render = (props: CollapsibleMenuProps) => (
       <CollapsibleMenu
         {...props}
         items={[
-          <a href="https://www.google.com">Item 1</a>,
-          <a href="https://www.google.com">Item 2</a>,
-          <a href="https://www.google.com">Item 3</a>,
+          <Link href="https://www.google.com">Item 1</Link>,
+          <Link href="https://www.google.com">Item 2</Link>,
+          <Link href="https://www.google.com">Item 3</Link>,
         ]}
       />
     </div>
@@ -28,7 +30,7 @@ const meta: Meta<typeof CollapsibleMenu> = {
  */
 export const Default: StoryObj<typeof CollapsibleMenu> = {
   args: {
-    icon: 'Hamburger',
+    iconName: 'Hamburger',
   },
   render,
 }
@@ -38,7 +40,7 @@ export const Default: StoryObj<typeof CollapsibleMenu> = {
  */
 export const Settings: StoryObj<typeof CollapsibleMenu> = {
   args: {
-    icon: 'Cog',
+    iconName: 'Cog',
   },
   render,
 }
@@ -48,7 +50,7 @@ export const Settings: StoryObj<typeof CollapsibleMenu> = {
  */
 export const Chevron: StoryObj<typeof CollapsibleMenu> = {
   args: {
-    icon: 'Chevron',
+    iconName: 'Chevron',
   },
   render,
 }
@@ -58,7 +60,7 @@ export const Chevron: StoryObj<typeof CollapsibleMenu> = {
  */
 export const Ellipsis: StoryObj<typeof CollapsibleMenu> = {
   args: {
-    icon: 'Ellipsis',
+    iconName: 'Ellipsis',
   },
   render,
 }

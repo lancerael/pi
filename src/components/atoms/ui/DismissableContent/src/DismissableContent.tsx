@@ -4,7 +4,7 @@ import {
   StyledClose,
 } from './DismissableContent.style'
 import { DismissableContentProps } from './DismissableContent.types'
-import { Close } from './Close'
+import Icon from '@pi-lib/icon'
 
 /**
  * Internal content for a modal or a toast, that can be dismissed internally
@@ -45,7 +45,7 @@ export const DismissableContent: FC<DismissableContentProps> = forwardRef(
       >
         {isDismissable && (
           <StyledClose onClick={onDismiss}>
-            <Close />
+            <Icon iconName="Close" color="var(--shadow)" />
           </StyledClose>
         )}
         {children}

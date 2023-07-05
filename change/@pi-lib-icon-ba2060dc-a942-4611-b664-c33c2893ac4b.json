@@ -1,0 +1,7 @@
+{
+  "type": "major",
+  "comment": "* Added Icon * mproves Candlestick Chart performance",
+  "packageName": "@pi-lib/icon",
+  "email": "122271901+lancerael-undo@users.noreply.github.com",
+  "dependentChangeType": "patch"
+}

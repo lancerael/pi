@@ -1,4 +1,4 @@
-import React, { FC, useRef } from 'react'
+import { FC, useRef } from 'react'
 import { useMenuTrigger } from 'react-aria'
 import { useMenuTriggerState } from 'react-stately'
 import { useWindowClick } from '@pi-lib/utils'
@@ -11,7 +11,7 @@ import {
   StyledMenu,
 } from './CollapsibleMenu.style'
 import { CollapsibleMenuProps } from './CollapsibleMenu.types'
-import * as icons from './assets'
+import Icon from '@pi-lib/icon'
 
 /**
  * A React component for an expanding/collapsing menu with icons
@@ -19,11 +19,9 @@ import * as icons from './assets'
 export const CollapsibleMenu: FC<CollapsibleMenuProps> = ({
   items,
   title = 'Expandable menu',
-  icon = 'Hamburger',
+  iconName = 'Hamburger',
   menutriggerProps = {},
 }) => {
-  const Icon = icons[icon]
-
   const containerRef = useRef<HTMLDivElement>(null)
   const openerRef = useRef<HTMLButtonElement>(null)
 
@@ -40,7 +38,10 @@ export const CollapsibleMenu: FC<CollapsibleMenuProps> = ({
         {...{ isOpen, ...menuTriggerProps }}
         ref={openerRef}
       >
-        <Icon />
+        <Icon
+          iconName={isOpen ? 'Close' : iconName}
+          color={isOpen ? 'var(--shadows)' : undefined}
+        />
       </StyledOpener>
       <StyledCollapsibleMenu {...{ isOpen }} aria-hidden={!isOpen}>
         <StyledMenuInner {...{ isOpen, ...menuProps }}>

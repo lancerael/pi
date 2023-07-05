@@ -38,6 +38,7 @@
     "vitest": "^0.22.1"
   },
   "peerDependencies": {
+    "@pi-lib/icon": "workspace:^",
     "@pi-lib/styles": "workspace:^",
     "react": "^18.2.0",
     "styled-components": "^5.3.11"

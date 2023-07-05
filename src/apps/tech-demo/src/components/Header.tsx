@@ -137,7 +137,7 @@ export const Header = () => {
           </StyledMenu>
           <div ref={settingsRef}>
             <CollapsibleMenu
-              icon="Cog"
+              iconName="Cog"
               items={[
                 <ItemList>
                   <IconButton
@@ -214,12 +214,21 @@ export const Header = () => {
             children: (
               <div
                 style={{
-                  margin: '0  30%',
+                  margin: '0 20%',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '8px',
+                  alignContent: 'center',
                 }}
               >
-                <Button onPointerUp={() => dispatch(updateConsent(true))}>
-                  Store settings on device? 🍪
-                </Button>
+                <div style={{ textAlign: 'center' }}>
+                  Store settings on device?
+                </div>
+                <div style={{ padding: '0 30%' }}>
+                  <Button onPointerUp={() => dispatch(updateConsent(true))}>
+                    Consent 🍪
+                  </Button>
+                </div>
               </div>
             ),
             isDismissed: !hasChangedSettings || !!consent,
