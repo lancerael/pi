@@ -22,7 +22,6 @@
   "main": "./src/index.ts",
   "scripts": {
     "build": "rimraf vanilla && vite build",
-    "test": "vitest",
     "test:coverage": "vitest --coverage"
   },
   "devDependencies": {
