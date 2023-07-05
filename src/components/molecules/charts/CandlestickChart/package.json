@@ -45,6 +45,7 @@
     "@pi-lib/loader": "workspace:^",
     "@pi-lib/styles": "workspace:^",
     "@pi-lib/tooltip": "workspace:^",
+    "@pi-lib/utils": "workspace:^",
     "@use-gesture/react": "^10.2.27",
     "d3-axis": "^3.0.0",
     "d3-scale": "^4.0.2",
@@ -52,9 +53,5 @@
     "d3-transition": "^3.0.1",
     "lodash.throttle": "^4.1.1",
     "react": "^18.2.0"
-  },
-  "dependencies": {
-    "@pi-lib/utils": "workspace:^",
-    "use-throttled-effect": "^0.0.7"
   }
 }
