@@ -43,23 +43,23 @@ export const useDataRange = (
     (end.current < lastIndex || isPanningLeft) &&
     (end.current - perPage > 0 || isPanningRight)
   ) {
-    offset =
-      latestOffset.current +
-      (panLevel - prevPan.current) / (zoomLevel * zoomLevel)
+    offset = latestOffset.current + (panLevel - prevPan.current) / zoomLevel
     latestOffset.current = offset
   }
   prevPan.current = panLevel
+  const indexMultiplier = Math.round(1 / (zoomLevel <= 1 ? zoomLevel : 1))
   // Move range left
   if (offset > candleWidth) {
-    end.current - perPage > 0 && end.current--
+    end.current - perPage > 0 && (end.current = end.current - indexMultiplier)
     latestOffset.current = 0
   }
   // Move range right
   if (offset < -candleWidth) {
-    end.current < lastIndex && end.current++
+    end.current < lastIndex && (end.current = end.current + indexMultiplier)
     latestOffset.current = 0
   }
-  const start = end.current - perPage
+  let start = end.current - perPage
+  start = start < 0 ? 0 : start
   const dataSlice = thisData.slice(start, end.current)
   const min = Math.min(
     ...dataSlice.map(({ low }) => low).filter((value) => value !== 0)

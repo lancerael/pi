@@ -9,3 +9,5 @@ export const DEFAULT_TRIM = 100
 export const CANDLE_PADDING = 0.3
 
 export const CANDLE_WIDTH = 10
+
+export const ZOOM_RANGE = [0.25, 2]

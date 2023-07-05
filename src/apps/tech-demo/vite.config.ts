@@ -14,6 +14,7 @@ const getPath = (id) =>
   true ? `http://192.168.1.88:${portMap[id]}` : `${ASSET_PATH}/${id}`
 
 export default defineConfig({
+  cacheDir: 'node_modules/.cacheDir',
   plugins: [
     react(),
     federation({

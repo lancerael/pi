@@ -3,6 +3,12 @@ import react from '@vitejs/plugin-react'
 import federation from '@originjs/vite-plugin-federation'
 
 export default defineConfig({
+  server: {
+    https: true,
+    host: '192.168.1.88',
+    port: 5002,
+  },
+  cacheDir: 'node_modules/.cacheDir',
   plugins: [
     react(),
     federation({
@@ -11,7 +17,13 @@ export default defineConfig({
       exposes: {
         './Candlestick': './src/components/Candlestick',
       },
-      shared: ['react', 'react-dom'],
+      shared: [
+        'react',
+        'react-dom',
+        '@reduxjs/toolkit',
+        'react-redux',
+        'redux',
+      ],
     }),
   ],
   build: {
