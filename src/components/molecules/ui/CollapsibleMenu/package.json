@@ -1,6 +1,6 @@
 {
   "name": "@pi-lib/collapsible-menu",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A React component for an expanding/collapsing menu with icons",
   "keywords": [
     "pi",

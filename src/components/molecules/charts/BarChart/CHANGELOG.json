@@ -2,6 +2,21 @@
   "name": "@pi-lib/bar-chart",
   "entries": [
     {
+      "date": "Fri, 07 Jul 2023 22:59:24 GMT",
+      "tag": "@pi-lib/bar-chart_v1.0.3",
+      "version": "1.0.3",
+      "comments": {
+        "none": [
+          {
+            "author": "122271901+lancerael-undo@users.noreply.github.com",
+            "package": "@pi-lib/bar-chart",
+            "commit": "c36b4bb4089868d1a1114f78d7d185ea906e20c4",
+            "comment": "Dep fix"
+          }
+        ]
+      }
+    },
+    {
       "date": "Mon, 26 Jun 2023 23:53:05 GMT",
       "tag": "@pi-lib/bar-chart_v1.0.2",
       "version": "1.0.2",

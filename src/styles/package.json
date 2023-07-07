@@ -1,6 +1,6 @@
 {
   "name": "@pi-lib/styles",
-  "version": "2.0.3",
+  "version": "2.1.0",
   "description": "React theming utility for use with Pi and styled-components",
   "keywords": [
     "pi",
