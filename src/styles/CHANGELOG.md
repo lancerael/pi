@@ -1,8 +1,16 @@
 # Change Log - @pi-lib/styles
 
-This log was last generated on Mon, 26 Jun 2023 23:53:05 GMT and should not be manually modified.
+This log was last generated on Fri, 07 Jul 2023 22:59:24 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 2.1.0
+
+Fri, 07 Jul 2023 22:59:24 GMT
+
+### Minor changes
+
+- * Improved Tooltip * Improved CandlestickChart * Added hashcomparison hook * Added hash code method (122271901+lancerael-undo@users.noreply.github.com)
 
 ## 2.0.2
 

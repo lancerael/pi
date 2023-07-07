@@ -2,6 +2,21 @@
   "name": "@pi-lib/tooltip",
   "entries": [
     {
+      "date": "Fri, 07 Jul 2023 22:59:24 GMT",
+      "tag": "@pi-lib/tooltip_v2.0.4",
+      "version": "2.0.4",
+      "comments": {
+        "patch": [
+          {
+            "author": "122271901+lancerael-undo@users.noreply.github.com",
+            "package": "@pi-lib/tooltip",
+            "commit": "c36b4bb4089868d1a1114f78d7d185ea906e20c4",
+            "comment": "Fixed tooltip position"
+          }
+        ]
+      }
+    },
+    {
       "date": "Mon, 26 Jun 2023 23:53:05 GMT",
       "tag": "@pi-lib/tooltip_v2.0.2",
       "version": "2.0.2",

@@ -2,6 +2,21 @@
   "name": "@pi-lib/utils",
   "entries": [
     {
+      "date": "Fri, 07 Jul 2023 22:59:24 GMT",
+      "tag": "@pi-lib/utils_v0.4.0",
+      "version": "0.4.0",
+      "comments": {
+        "minor": [
+          {
+            "author": "122271901+lancerael-undo@users.noreply.github.com",
+            "package": "@pi-lib/utils",
+            "commit": "c36b4bb4089868d1a1114f78d7d185ea906e20c4",
+            "comment": "* Improved Tooltip * Improved CandlestickChart * Added hashcomparison hook * Added hash code method"
+          }
+        ]
+      }
+    },
+    {
       "date": "Wed, 05 Jul 2023 23:03:12 GMT",
       "tag": "@pi-lib/utils_v0.3.3",
       "version": "0.3.3",
