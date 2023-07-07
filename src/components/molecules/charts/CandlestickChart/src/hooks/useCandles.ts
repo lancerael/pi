@@ -128,7 +128,7 @@ export const useCandles = (
         setActiveItem({
           item: d,
           position: {
-            x: Number(xScale(d.date)) + offset + xScale.bandwidth(),
+            x: Number(xScale(d.date)) + offset + left + xScale.bandwidth(),
             y: y2(d) + top,
           },
         })
