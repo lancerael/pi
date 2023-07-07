@@ -10,7 +10,7 @@ Fri, 07 Jul 2023 22:59:24 GMT
 
 ### Minor changes
 
-- * Improved Tooltip * Improved CandlestickChart * Added hashcomparison hook * Added hash code method (122271901+lancerael-undo@users.noreply.github.com)
+- - Improved Tooltip _ Improved CandlestickChart _ Added hashcomparison hook \* Added hash code method (122271901+lancerael-undo@users.noreply.github.com)
 
 ## 2.0.2
 
