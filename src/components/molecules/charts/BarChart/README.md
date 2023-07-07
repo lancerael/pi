@@ -4,7 +4,7 @@
 
 A React component for a bar chart
 
-**Dependencies:** react, styled-components
+**Dependencies:** @pi-lib/charts, react, styled-components
 
 <table>
   <tbody>

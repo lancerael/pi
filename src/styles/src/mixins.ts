@@ -32,7 +32,7 @@ export const formInput = (isExpanded?: boolean) => {
 export const chartContainer = () => {
   return css`
     border: 1px solid var(--border);
-    border-radius: 4px;
+    border-radius: 8px;
     background: linear-gradient(
       135deg,
       var(--bg) 0%,

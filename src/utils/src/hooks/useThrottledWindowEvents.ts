@@ -1,7 +1,7 @@
 import throttle from 'lodash.throttle'
 import { useEffect } from 'react'
 
-export type CallbackFunction = (...args: unknown[]) => unknown
+export type CallbackFunction = (...args: any[]) => unknown
 
 /**
  * A React hook that binds a callback to a range of window events

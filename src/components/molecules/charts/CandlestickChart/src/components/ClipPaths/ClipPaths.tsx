@@ -1,4 +1,3 @@
-import React from 'react'
 import { AXIS_OFFSETS, CHART_PADDING } from '../../CandlestickChart.constants'
 import { ClipPathsProps } from './ClipPaths.types'
 
@@ -18,7 +17,7 @@ export const ClipPaths = ({ width, height }: ClipPathsProps) => {
         y1={y}
         x2={x + baseCoords.width}
         y2={y}
-        stroke="#dedede"
+        stroke="var(--border)"
         strokeWidth={1}
       />
       <line
@@ -26,7 +25,7 @@ export const ClipPaths = ({ width, height }: ClipPathsProps) => {
         y1={y}
         x2={x}
         y2={y + baseCoords.height - CHART_PADDING}
-        stroke="#dedede"
+        stroke="var(--border)"
         strokeWidth={1}
       />
       <defs>
@@ -34,7 +33,11 @@ export const ClipPaths = ({ width, height }: ClipPathsProps) => {
           <rect {...baseCoords} />
         </clipPath>
         <clipPath id="bottom-axis">
-          <rect {...baseCoords} height={`${height}`} />
+          <rect
+            {...baseCoords}
+            width={baseCoords.width + 15}
+            height={`${height}`}
+          />
         </clipPath>
       </defs>
     </>
