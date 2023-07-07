@@ -1,6 +1,6 @@
 /**
- * A performant hash generation to check if a string has changed
- * @param stringToHash
+ * A performant hash generation
+ * @param value
  * @returns
  */
 export const hashCode = (value: unknown) => {
