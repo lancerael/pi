@@ -1,6 +1,7 @@
 import { useEffect, useRef, useCallback, useState } from 'react'
 import { select } from 'd3-selection'
 import 'd3-transition'
+import { useHashComparison, useThrottledWindowEvents } from '@pi-lib/utils'
 import {
   ActiveItem,
   BarSelection,
@@ -14,7 +15,6 @@ import {
 import {
   CANDLE_PADDING,
   CANDLE_WIDTH,
-  CHART_PADDING,
   TRANSITION_TIME,
 } from '../CandlestickChart.constants'
 
@@ -34,8 +34,9 @@ export const useCandles = (
   const { dataSlice, offset } = dataRange
   const lastItem = dataSlice[dataSlice.length - 1]
   const groups = useRef<{ [key: string]: SVGSelection }>({})
-  const isActive = useRef<boolean>(false)
+  const selectedItem = useRef<string>()
   const prevLastItem = useRef(lastItem)
+  const dataHash = useHashComparison(dataSlice)
   const [activeItem, setActiveItem] = useState<ActiveItem>({
     item: undefined,
     position: undefined,
@@ -43,7 +44,6 @@ export const useCandles = (
   const doTransition =
     prevLastItem.current?.date === lastItem?.date &&
     prevLastItem.current?.close !== lastItem?.close
-
   prevLastItem.current = structuredClone(lastItem)
 
   // Get d3 selection of SVG
@@ -58,7 +58,7 @@ export const useCandles = (
         .selectAll(`${typeMap[type]}.${type}`)
         .data(dataRange.dataSlice) as unknown as BarSelection
     },
-    [dataRange.dataSlice]
+    [dataHash]
   )
 
   // Create the groups
@@ -78,15 +78,25 @@ export const useCandles = (
   // A helper to scale the candle height
   const scaledHeight = useCallback(
     (low: number, high: number) => Math.abs(yScale(high) - yScale(low)) || 1,
-    [scales.yScale]
+    [yScale]
   )
 
   // A helper to scale the candle Y axis position
   const scaledY = useCallback(
     (low: number, high: number) =>
       yScale(Math.min(low, high)) - scaledHeight(low, high) || 1,
-    [scales.yScale]
+    [yScale]
   )
+
+  // Clear the tooltip selection on window resize or click
+  const resetSelection = useCallback((e?: UIEvent) => {
+    if (!e || (e?.target as SVGElement)?.nodeName !== 'rect') {
+      selectedItem.current = undefined
+      setActiveItem(({ position }) => ({ item: undefined, position }))
+    }
+  }, [])
+
+  useThrottledWindowEvents(resetSelection, ['resize', 'pointerdown'], false)
 
   // Place the bars based on latest data
   const placeBars = useCallback(
@@ -114,6 +124,16 @@ export const useCandles = (
 
       const y2 = (d: CandlestickDayData) => y(d) + height(d)
 
+      const activateItem = (d: CandlestickDayData) => {
+        setActiveItem({
+          item: d,
+          position: {
+            x: Number(xScale(d.date)) + offset + xScale.bandwidth(),
+            y: y2(d) + top,
+          },
+        })
+      }
+
       if (type === 'candles') {
         bars.attr('width', () => +xScale.bandwidth()).attr('x', x)
         ;(getTransition().attr('y', y) as ChartTransition).attr(
@@ -124,32 +144,18 @@ export const useCandles = (
           .classed('is-increased', (d) => d.close > d.open)
           .classed('is-decreased', (d) => d.close < d.open)
           .classed('is-zoomed', () => +xScale.bandwidth() > 10)
-          .on('click', ({ target }, d) => {
-            bars.classed('is-active', false)
-            select(target).classed('is-active', true)
-            isActive.current = true
-            setActiveItem({
-              item: d,
-              position: {
-                x: x(d) + xScale.bandwidth() + CHART_PADDING + left - 16,
-                y: y2(d) + top,
-              },
-            })
+          .on('pointerup', (e, d) => {
+            selectedItem.current = d.date
+            activateItem(d)
           })
-          .on('mouseover', (e, d) => {
-            // console.log('over', activeItem)
-            if (!isActive.current) {
-              setActiveItem({
-                item: d,
-              })
+          .on('pointerover', (e, d) => {
+            if (!selectedItem.current) {
+              activateItem(d)
             }
           })
-          .on('mouseout', (e, d) => {
-            // console.log('out', activeItem)
-            if (!isActive.current) {
-              setActiveItem({
-                item: undefined,
-              })
+          .on('pointerout', () => {
+            if (!selectedItem.current) {
+              resetSelection()
             }
           })
       } else {
@@ -160,30 +166,22 @@ export const useCandles = (
 
       return bars
     },
-    [xScale, scaledY]
+    [dataHash, offset]
   )
-
-  // Initialise the canvas with groups for wicks and candles
-  // and add reset listener
   useEffect(() => {
-    setTimeout(() => {
-      getGroup('wicks')
-      getGroup('candles')
-    })
-    const resetSelection = ({ target }: UIEvent) => {
-      if ((target as SVGElement)?.nodeName !== 'rect') {
-        getSvg().selectAll('rect').classed('is-active', false)
-        isActive.current = false
-        setActiveItem(({ position }) => ({ item: undefined, position }))
-      }
+    getSvg().selectAll('rect.candles').classed('is-active', false)
+    if (selectedItem.current) {
+      getSvg()
+        .select(
+          `rect.candles:nth-of-type(${
+            dataSlice.findIndex(
+              ({ date }: CandlestickDayData) => date === selectedItem.current
+            ) + 1
+          })`
+        )
+        .classed('is-active', true)
     }
-    addEventListener('resize', resetSelection)
-    addEventListener('pointerdown', resetSelection)
-    return () => {
-      removeEventListener('pointerdown', resetSelection)
-      removeEventListener('resize', resetSelection)
-    }
-  }, [])
+  }, [selectedItem.current])
 
   // Update the chart whenever the data/scale changes
   useEffect(() => {
@@ -191,7 +189,7 @@ export const useCandles = (
       placeBars('wicks', ['low', 'high'])
       placeBars('candles', ['open', 'close'])
     }
-  }, [xScale, scaledY])
+  }, [dataHash, offset])
 
-  return activeItem
+  return { activeItem, resetSelection }
 }

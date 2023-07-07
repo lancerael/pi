@@ -1,4 +1,4 @@
-import React, { FC, useCallback, useEffect, useRef, useState } from 'react'
+import { FC, useCallback, useEffect, useRef, useState } from 'react'
 import throttle from 'lodash.throttle'
 import { StyledTooltip } from './Tooltip.style'
 import { TooltipProps } from './Tooltip.types'
@@ -19,12 +19,15 @@ export const Tooltip: FC<TooltipProps> = ({
 
   // Update the tooltip to the correct position
   const updatePosition = useCallback(
-    (xPos: number, yPos: number) =>
-      setPosition({
-        x: xPos - (containerRef.current?.clientWidth ?? 0) / 2,
-        y: yPos + (isRendered ? 24 : 16),
-      }),
-    [containerRef.current]
+    (xPos: number, yPos: number) => {
+      setTimeout(() => {
+        setPosition({
+          x: xPos - (containerRef.current?.clientWidth ?? 0) / 2,
+          y: yPos + (isRendered ? 24 : 16),
+        })
+      }, 5)
+    },
+    [containerRef.current, isRendered]
   )
 
   // Allow  positioning

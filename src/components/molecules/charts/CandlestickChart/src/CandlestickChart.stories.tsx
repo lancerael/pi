@@ -3,7 +3,7 @@ import { CandlestickChart } from './CandlestickChart'
 import { useFakeApi } from './hooks'
 
 const render = () => {
-  const chartData = useFakeApi(400, 1)
+  const chartData = useFakeApi(400, 3, 20)
 
   return (
     <div style={{ width: '80%', height: '40vw' }}>

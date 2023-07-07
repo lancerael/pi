@@ -8,7 +8,11 @@ import { ZOOM_RANGE } from '../CandlestickChart.constants'
  * @param svgRef
  * @param controls
  */
-export const useTouch = (svgRef: SvgRef, controls: IControls) => {
+export const useTouch = (
+  svgRef: SvgRef,
+  controls: IControls,
+  resetSelection: () => void
+) => {
   const prevZoom = useRef(1)
   useGesture(
     {
@@ -16,6 +20,7 @@ export const useTouch = (svgRef: SvgRef, controls: IControls) => {
         return !pinching && controls.setPanLevel(x)
       },
       onPinch: ({ offset: [s], movement: [ms] }: any) => {
+        resetSelection()
         let zoomOffset = ms - prevZoom.current
         prevZoom.current = ms
         return controls.setZoomLevel((zoomLevel) => {
