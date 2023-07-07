@@ -9,6 +9,6 @@ import { hashCode } from '../methods/hashCode'
  */
 export const useHashComparison = (value: unknown) => {
   const newCode = useRef<string>()
-  newCode.current = hashCode(JSON.stringify(value))
+  newCode.current = hashCode(value)
   return newCode.current
 }

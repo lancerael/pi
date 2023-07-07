@@ -3,8 +3,8 @@
  * @param stringToHash
  * @returns
  */
-export const hashCode = (stringToHash: string) => {
-  return stringToHash
+export const hashCode = (value: unknown) => {
+  return JSON.stringify(value)
     .split('')
     .reduce((a, b) => {
       a = (a << 5) - a + b.charCodeAt(0)
