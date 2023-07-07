@@ -101,7 +101,6 @@ export const useCandles = (
   // Place the bars based on latest data
   const placeBars = useCallback(
     (type: BarType, keys: ValueKeys[]) => {
-      console.log('bah')
       let bars = bindData(type, getGroup(type))
 
       if (bars.size() !== dataSlice.length) {
