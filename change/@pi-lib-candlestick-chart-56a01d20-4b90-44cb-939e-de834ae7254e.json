@@ -1,7 +1,0 @@
-{
-  "type": "patch",
-  "comment": "Candlestick tooltip offset fix",
-  "packageName": "@pi-lib/candlestick-chart",
-  "email": "122271901+lancerael-undo@users.noreply.github.com",
-  "dependentChangeType": "patch"
-}
