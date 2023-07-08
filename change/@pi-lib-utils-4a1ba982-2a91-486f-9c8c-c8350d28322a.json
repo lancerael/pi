@@ -1,0 +1,7 @@
+{
+  "type": "minor",
+  "comment": "Added attribute selector",
+  "packageName": "@pi-lib/utils",
+  "email": "122271901+lancerael-undo@users.noreply.github.com",
+  "dependentChangeType": "patch"
+}
