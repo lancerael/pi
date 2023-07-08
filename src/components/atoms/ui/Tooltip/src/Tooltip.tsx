@@ -4,7 +4,7 @@ import { StyledTooltip } from './Tooltip.style'
 import { TooltipProps } from './Tooltip.types'
 
 /**
- * A React component used to position a tooltip containing content
+ * A React component used to show and position a tooltip containing content
  */
 export const Tooltip: FC<TooltipProps> = ({
   children,
