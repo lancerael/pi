@@ -12,7 +12,7 @@ export const getAttributes = (
     (collectedAttributes: BuiltObject, attribute: string) => {
       return {
         ...collectedAttributes,
-        [attribute]: target.getAttribute(attribute),
+        [attribute]: target.getAttribute(attribute) ?? '',
       }
     },
     {}
