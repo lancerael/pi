@@ -1,7 +1,0 @@
-{
-  "type": "patch",
-  "comment": "Fix candlestick tooltip position",
-  "packageName": "@pi-lib/candlestick-chart",
-  "email": "122271901+lancerael-undo@users.noreply.github.com",
-  "dependentChangeType": "patch"
-}
