@@ -19,7 +19,7 @@ export const CandleTooltip = ({ item, position }: CandleTooltipProps) => {
   }, [item])
 
   return (
-    <Tooltip isVisible={!!item} {...position}>
+    <Tooltip isActive={!!item} {...position}>
       <StyledTooltipContainer>
         <div>
           <strong>{formatDate(displayItem?.date)}</strong>

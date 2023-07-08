@@ -11,7 +11,7 @@ const meta: Meta<typeof Tooltip> = {
     y: {
       control: 'number',
     },
-    isVisible: {
+    isActive: {
       control: 'boolean',
     },
   },
@@ -23,7 +23,7 @@ const meta: Meta<typeof Tooltip> = {
  */
 export const Default: StoryObj<typeof Tooltip> = {
   args: {
-    isVisible: true,
+    isActive: true,
     x: 50,
     y: 20,
     children: 'Tooltip',
@@ -35,7 +35,7 @@ export const Default: StoryObj<typeof Tooltip> = {
  */
 export const Repositioned: StoryObj<typeof Tooltip> = {
   args: {
-    isVisible: true,
+    isActive: true,
     x: 250,
     y: 20,
     children: 'Another tooltip',
