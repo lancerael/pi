@@ -2,6 +2,21 @@
   "name": "@pi-lib/utils",
   "entries": [
     {
+      "date": "Sat, 08 Jul 2023 14:02:41 GMT",
+      "tag": "@pi-lib/utils_v0.5.0",
+      "version": "0.5.0",
+      "comments": {
+        "minor": [
+          {
+            "author": "122271901+lancerael-undo@users.noreply.github.com",
+            "package": "@pi-lib/utils",
+            "commit": "fa64d33aeead3ffa9f8181c5fd21bda5b9edc892",
+            "comment": "Added attribute selector"
+          }
+        ]
+      }
+    },
+    {
       "date": "Fri, 07 Jul 2023 22:59:24 GMT",
       "tag": "@pi-lib/utils_v0.4.0",
       "version": "0.4.0",

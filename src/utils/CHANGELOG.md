@@ -1,8 +1,16 @@
 # Change Log - @pi-lib/utils
 
-This log was last generated on Fri, 07 Jul 2023 22:59:24 GMT and should not be manually modified.
+This log was last generated on Sat, 08 Jul 2023 14:02:41 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 0.5.0
+
+Sat, 08 Jul 2023 14:02:41 GMT
+
+### Minor changes
+
+- Added attribute selector (122271901+lancerael-undo@users.noreply.github.com)
 
 ## 0.4.0
 
