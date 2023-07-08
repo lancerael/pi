@@ -8,36 +8,37 @@ import { TooltipProps } from './Tooltip.types'
  */
 export const Tooltip: FC<TooltipProps> = ({
   children,
-  isVisible = false,
+  isActive = false,
   x = 0,
   y = 0,
 }) => {
   const containerRef = useRef<HTMLDivElement>(null)
+  const lastWidth = useRef<number>()
   const [position, setPosition] = useState({ x, y })
   const [isRendered, setIsRendered] = useState(false)
-  const displayTimeout = useRef<NodeJS.Timeout>()
+  const [isVisible, setIsVisible] = useState(false)
+  const timeouts = useRef<{ [key: string]: NodeJS.Timeout }>({})
 
   // Update the tooltip to the correct position
   const updatePosition = useCallback(
     (xPos: number, yPos: number) => {
-      setTimeout(() => {
-        setPosition({
-          x: xPos - (containerRef.current?.clientWidth ?? 0) / 2,
-          y: yPos + (isRendered ? 24 : 16),
-        })
-      }, 5)
+      if (!xPos || !yPos) return
+      setPosition({
+        x: xPos - (lastWidth.current ?? 0) / 2,
+        y: yPos + (isRendered ? 24 : 16),
+      })
     },
     [containerRef.current, isRendered]
   )
 
-  // Allow  positioning
+  // Enable positioning
   useEffect(() => {
     updatePosition(x, y)
 
     // Update the position based on mouse location
     const updateMousePos = throttle(
       ({ clientX, clientY }: MouseEvent) =>
-        !x && !y && updatePosition(clientX, clientY),
+        !x && !y && clientX && clientY && updatePosition(clientX, clientY),
       100
     )
 
@@ -50,14 +51,31 @@ export const Tooltip: FC<TooltipProps> = ({
     return removeListener
   }, [x, y])
 
+  // Manage styles for a smooth transition
   useEffect(() => {
-    if (isVisible) {
-      setIsRendered(true)
-      clearTimeout(displayTimeout.current)
-      return
+    const clearTimeouts = () => {
+      clearTimeout(timeouts.current?.unrender)
+      clearTimeout(timeouts.current?.position)
+      clearTimeout(timeouts.current?.show)
     }
-    displayTimeout.current = setTimeout(() => setIsRendered(false), 200)
-  }, [isVisible])
+    clearTimeouts()
+    if (isActive) {
+      setIsRendered(true)
+      timeouts.current = {
+        position: setTimeout(() => {
+          lastWidth.current = containerRef.current?.clientWidth
+          updatePosition(x, y)
+        }, 100),
+        show: setTimeout(() => {
+          setIsVisible(true)
+        }, 150),
+      }
+    } else {
+      setIsVisible(false)
+      timeouts.current.unrender = setTimeout(() => setIsRendered(false), 200)
+    }
+    return clearTimeouts
+  }, [isActive])
 
   return (
     <StyledTooltip

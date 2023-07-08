@@ -1,11 +1,11 @@
 import Tooltip from './Tooltip'
 import { render, screen } from '@testing-library/react'
-import { expect, vi } from 'vitest'
+import { expect } from 'vitest'
 import { axe } from 'jest-axe'
 
 const defaultProps = {
   children: 'Tooltip',
-  isVisible: true,
+  isActive: true,
   x: 50,
   y: 20,
 }
@@ -17,7 +17,7 @@ describe('Tooltip', () => {
   })
 
   it('should not fail any accessibility tests', async () => {
-    const { container } = render(<Tooltip isVisible>Tooltip</Tooltip>)
+    const { container } = render(<Tooltip isActive>Tooltip</Tooltip>)
     expect(await axe(container)).toHaveNoViolations()
   })
 })

@@ -16,7 +16,8 @@ export const StyledTooltip = styled.div(
       content: '';
       ${box()}
       width: 10px;
-      height: ${isRendered ? '10px' : '0px'};
+      opacity: ${isVisible ? 0.9 : 0};
+      height: 10px;
       position: absolute;
       border-width: 2px;
       border-radius: 0;

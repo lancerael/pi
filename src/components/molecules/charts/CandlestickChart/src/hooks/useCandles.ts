@@ -1,7 +1,11 @@
 import { useEffect, useRef, useCallback, useState } from 'react'
 import { select } from 'd3-selection'
 import 'd3-transition'
-import { useHashComparison, useThrottledWindowEvents } from '@pi-lib/utils'
+import {
+  getAttributes,
+  useHashComparison,
+  useThrottledWindowEvents,
+} from '@pi-lib/utils'
 import {
   ActiveItem,
   BarSelection,
@@ -92,7 +96,7 @@ export const useCandles = (
   const resetSelection = useCallback((e?: UIEvent) => {
     if (!e || (e?.target as SVGElement)?.nodeName !== 'rect') {
       selectedItem.current = undefined
-      setActiveItem(({ position }) => ({ item: undefined, position }))
+      setActiveItem(() => ({}))
     }
   }, [])
 
@@ -124,12 +128,18 @@ export const useCandles = (
 
       const y2 = (d: CandlestickDayData) => y(d) + height(d)
 
-      const activateItem = (d: CandlestickDayData) => {
+      const activateItem = (d: CandlestickDayData, candle: SVGRectElement) => {
+        const { x, y, width, height } = getAttributes(candle, [
+          'x',
+          'y',
+          'width',
+          'height',
+        ])
         setActiveItem({
           item: d,
           position: {
-            x: Number(xScale(d.date)) + offset + left + xScale.bandwidth(),
-            y: y2(d) + top,
+            x: +x - 1 + +width / 2,
+            y: +y + +height,
           },
         })
       }
@@ -144,13 +154,13 @@ export const useCandles = (
           .classed('is-increased', (d) => d.close > d.open)
           .classed('is-decreased', (d) => d.close < d.open)
           .classed('is-zoomed', () => +xScale.bandwidth() > 10)
-          .on('pointerup', (e, d) => {
+          .on('pointerup', ({ currentTarget }, d) => {
             selectedItem.current = d.date
-            activateItem(d)
+            activateItem(d, currentTarget as SVGRectElement)
           })
-          .on('pointerover', (e, d) => {
+          .on('pointerover', ({ currentTarget }, d) => {
             if (!selectedItem.current) {
-              activateItem(d)
+              activateItem(d, currentTarget as SVGRectElement)
             }
           })
           .on('pointerout', () => {
