@@ -2,7 +2,7 @@
 
 **@pi-lib/tooltip**
 
-A React component used to position a tooltip containing content
+A React component used to show and position a tooltip containing content
 
 **Dependencies:** @pi-lib/styles, lodash.throttle, react
 
