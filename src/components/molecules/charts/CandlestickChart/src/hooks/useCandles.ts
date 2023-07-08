@@ -138,8 +138,8 @@ export const useCandles = (
         setActiveItem({
           item: d,
           position: {
-            x: +x - 1 + +width / 2,
-            y: +y + +height,
+            x: +x - 1 + +width / 2 + left,
+            y: +y + +height + top,
           },
         })
       }
