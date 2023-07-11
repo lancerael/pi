@@ -1,8 +1,16 @@
 # Change Log - @pi-lib/candlestick-chart
 
-This log was last generated on Sat, 08 Jul 2023 14:22:18 GMT and should not be manually modified.
+This log was last generated on Tue, 11 Jul 2023 23:14:18 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 2.1.5
+
+Tue, 11 Jul 2023 23:14:18 GMT
+
+### Patches
+
+- Improved candlestick youch performance (122271901+lancerael-undo@users.noreply.github.com)
 
 ## 2.1.4
 
