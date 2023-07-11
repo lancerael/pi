@@ -2,6 +2,21 @@
   "name": "@pi-lib/candlestick-chart",
   "entries": [
     {
+      "date": "Sat, 08 Jul 2023 14:22:18 GMT",
+      "tag": "@pi-lib/candlestick-chart_v2.1.4",
+      "version": "2.1.4",
+      "comments": {
+        "patch": [
+          {
+            "author": "122271901+lancerael-undo@users.noreply.github.com",
+            "package": "@pi-lib/candlestick-chart",
+            "commit": "a3a041d01c7eee68cc4564dc5647aa4102f2a8a5",
+            "comment": "Fix candlestick tooltip position"
+          }
+        ]
+      }
+    },
+    {
       "date": "Sat, 08 Jul 2023 14:02:41 GMT",
       "tag": "@pi-lib/candlestick-chart_v2.1.3",
       "version": "2.1.3",

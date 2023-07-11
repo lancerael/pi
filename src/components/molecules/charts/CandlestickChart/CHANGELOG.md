@@ -1,8 +1,16 @@
 # Change Log - @pi-lib/candlestick-chart
 
-This log was last generated on Sat, 08 Jul 2023 14:02:41 GMT and should not be manually modified.
+This log was last generated on Sat, 08 Jul 2023 14:22:18 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 2.1.4
+
+Sat, 08 Jul 2023 14:22:18 GMT
+
+### Patches
+
+- Fix candlestick tooltip position (122271901+lancerael-undo@users.noreply.github.com)
 
 ## 2.1.3
 
