@@ -154,6 +154,8 @@ export const useCandles = (
           .classed('is-increased', (d) => d.close > d.open)
           .classed('is-decreased', (d) => d.close < d.open)
           .classed('is-zoomed', () => +xScale.bandwidth() > 10)
+          .classed('is-active', (d) => d.date === selectedItem.current)
+          .attr('data-date', (d) => d.date)
           .on('pointerup', ({ currentTarget }, d) => {
             selectedItem.current = d.date
             activateItem(d, currentTarget as SVGRectElement)
@@ -178,17 +180,13 @@ export const useCandles = (
     },
     [dataHash, offset]
   )
+
+  // Add the style for the currently selected item
   useEffect(() => {
     getSvg().selectAll('rect.candles').classed('is-active', false)
     if (selectedItem.current) {
       getSvg()
-        .select(
-          `rect.candles:nth-of-type(${
-            dataSlice.findIndex(
-              ({ date }: CandlestickDayData) => date === selectedItem.current
-            ) + 1
-          })`
-        )
+        .select(`rect.candles[data-date="${selectedItem.current}"]`)
         .classed('is-active', true)
     }
   }, [selectedItem.current])

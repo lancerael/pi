@@ -14,6 +14,7 @@
     "bb:publish": "npx beachball publish",
     "build": "npx nx run-many --target=build",
     "demo": "pnpm --filter @pi-lib/tech-demo dev",
+    "demo:candlestick": "pnpm --filter @pi-lib/candlestick-chart-mfe dev",
     "demo:candlestick:start": "pnpm --filter @pi-lib/candlestick-chart-mfe start",
     "demo:mfes": "concurrently \"pnpm demo:sandbox:start\" \"pnpm demo:candlestick:start\"",
     "demo:sandbox": "pnpm --filter @pi-lib/chart-sandbox-mfe dev",
