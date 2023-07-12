@@ -1,0 +1,3611 @@
+[
+  {
+    "date": "2022-06-07",
+    "high": 204,
+    "low": 180,
+    "open": 196,
+    "close": 204,
+    "volume": 9406,
+    "trades": 87
+  },
+  {
+    "date": "2022-06-08",
+    "high": 251,
+    "low": 190,
+    "open": 203,
+    "close": 237,
+    "volume": 8789,
+    "trades": 67
+  },
+  {
+    "date": "2022-06-09",
+    "high": 289,
+    "low": 225,
+    "open": 239,
+    "close": 288,
+    "volume": 8190,
+    "trades": 50
+  },
+  {
+    "date": "2022-06-10",
+    "high": 301,
+    "low": 231,
+    "open": 287,
+    "close": 237,
+    "volume": 5571,
+    "trades": 76
+  },
+  {
+    "date": "2022-06-11",
+    "high": 236,
+    "low": 220,
+    "open": 235,
+    "close": 227,
+    "volume": 8233,
+    "trades": 79
+  },
+  {
+    "date": "2022-06-12",
+    "high": 234,
+    "low": 179,
+    "open": 227,
+    "close": 186,
+    "volume": 9353,
+    "trades": 58
+  },
+  {
+    "date": "2022-06-13",
+    "high": 189,
+    "low": 164,
+    "open": 184,
+    "close": 182,
+    "volume": 5085,
+    "trades": 84
+  },
+  {
+    "date": "2022-06-14",
+    "high": 213,
+    "low": 175,
+    "open": 182,
+    "close": 207,
+    "volume": 7575,
+    "trades": 97
+  },
+  {
+    "date": "2022-06-15",
+    "high": 222,
+    "low": 191,
+    "open": 207,
+    "close": 210,
+    "volume": 7700,
+    "trades": 72
+  },
+  {
+    "date": "2022-06-16",
+    "high": 279,
+    "low": 199,
+    "open": 211,
+    "close": 260,
+    "volume": 5305,
+    "trades": 91
+  },
+  {
+    "date": "2022-06-17",
+    "high": 272,
+    "low": 226,
+    "open": 262,
+    "close": 235,
+    "volume": 8556,
+    "trades": 65
+  },
+  {
+    "date": "2022-06-18",
+    "high": 286,
+    "low": 225,
+    "open": 232,
+    "close": 269,
+    "volume": 5569,
+    "trades": 92
+  },
+  {
+    "date": "2022-06-19",
+    "high": 328,
+    "low": 263,
+    "open": 266,
+    "close": 312,
+    "volume": 6634,
+    "trades": 77
+  },
+  {
+    "date": "2022-06-20",
+    "high": 317,
+    "low": 283,
+    "open": 313,
+    "close": 283,
+    "volume": 8166,
+    "trades": 83
+  },
+  {
+    "date": "2022-06-21",
+    "high": 346,
+    "low": 282,
+    "open": 282,
+    "close": 327,
+    "volume": 5214,
+    "trades": 64
+  },
+  {
+    "date": "2022-06-22",
+    "high": 370,
+    "low": 312,
+    "open": 325,
+    "close": 358,
+    "volume": 7128,
+    "trades": 94
+  },
+  {
+    "date": "2022-06-23",
+    "high": 375,
+    "low": 315,
+    "open": 356,
+    "close": 333,
+    "volume": 6153,
+    "trades": 99
+  },
+  {
+    "date": "2022-06-24",
+    "high": 347,
+    "low": 321,
+    "open": 331,
+    "close": 344,
+    "volume": 6863,
+    "trades": 55
+  },
+  {
+    "date": "2022-06-25",
+    "high": 381,
+    "low": 334,
+    "open": 345,
+    "close": 362,
+    "volume": 6360,
+    "trades": 93
+  },
+  {
+    "date": "2022-06-26",
+    "high": 408,
+    "low": 344,
+    "open": 359,
+    "close": 393,
+    "volume": 5267,
+    "trades": 52
+  },
+  {
+    "date": "2022-06-27",
+    "high": 398,
+    "low": 349,
+    "open": 394,
+    "close": 354,
+    "volume": 7729,
+    "trades": 66
+  },
+  {
+    "date": "2022-06-28",
+    "high": 414,
+    "low": 352,
+    "open": 355,
+    "close": 401,
+    "volume": 5747,
+    "trades": 97
+  },
+  {
+    "date": "2022-06-29",
+    "high": 432,
+    "low": 388,
+    "open": 403,
+    "close": 415,
+    "volume": 8392,
+    "trades": 56
+  },
+  {
+    "date": "2022-06-30",
+    "high": 423,
+    "low": 385,
+    "open": 412,
+    "close": 391,
+    "volume": 5861,
+    "trades": 64
+  },
+  {
+    "date": "2022-07-01",
+    "high": 413,
+    "low": 389,
+    "open": 390,
+    "close": 393,
+    "volume": 6176,
+    "trades": 74
+  },
+  {
+    "date": "2022-07-02",
+    "high": 437,
+    "low": 372,
+    "open": 391,
+    "close": 424,
+    "volume": 5982,
+    "trades": 92
+  },
+  {
+    "date": "2022-07-03",
+    "high": 439,
+    "low": 399,
+    "open": 427,
+    "close": 399,
+    "volume": 7169,
+    "trades": 76
+  },
+  {
+    "date": "2022-07-04",
+    "high": 402,
+    "low": 380,
+    "open": 397,
+    "close": 383,
+    "volume": 6192,
+    "trades": 62
+  },
+  {
+    "date": "2022-07-05",
+    "high": 387,
+    "low": 349,
+    "open": 384,
+    "close": 360,
+    "volume": 5747,
+    "trades": 50
+  },
+  {
+    "date": "2022-07-06",
+    "high": 393,
+    "low": 356,
+    "open": 359,
+    "close": 378,
+    "volume": 9132,
+    "trades": 81
+  },
+  {
+    "date": "2022-07-07",
+    "high": 398,
+    "low": 362,
+    "open": 381,
+    "close": 374,
+    "volume": 5140,
+    "trades": 96
+  },
+  {
+    "date": "2022-07-08",
+    "high": 378,
+    "low": 335,
+    "open": 372,
+    "close": 346,
+    "volume": 6404,
+    "trades": 52
+  },
+  {
+    "date": "2022-07-09",
+    "high": 369,
+    "low": 329,
+    "open": 349,
+    "close": 337,
+    "volume": 8017,
+    "trades": 94
+  },
+  {
+    "date": "2022-07-10",
+    "high": 341,
+    "low": 302,
+    "open": 335,
+    "close": 312,
+    "volume": 7233,
+    "trades": 56
+  },
+  {
+    "date": "2022-07-11",
+    "high": 355,
+    "low": 305,
+    "open": 311,
+    "close": 346,
+    "volume": 5168,
+    "trades": 50
+  },
+  {
+    "date": "2022-07-12",
+    "high": 365,
+    "low": 333,
+    "open": 344,
+    "close": 353,
+    "volume": 8097,
+    "trades": 92
+  },
+  {
+    "date": "2022-07-13",
+    "high": 363,
+    "low": 303,
+    "open": 353,
+    "close": 321,
+    "volume": 7592,
+    "trades": 96
+  },
+  {
+    "date": "2022-07-14",
+    "high": 361,
+    "low": 314,
+    "open": 320,
+    "close": 353,
+    "volume": 9001,
+    "trades": 61
+  },
+  {
+    "date": "2022-07-15",
+    "high": 411,
+    "low": 348,
+    "open": 355,
+    "close": 396,
+    "volume": 8041,
+    "trades": 93
+  },
+  {
+    "date": "2022-07-16",
+    "high": 400,
+    "low": 367,
+    "open": 396,
+    "close": 375,
+    "volume": 8846,
+    "trades": 60
+  },
+  {
+    "date": "2022-07-17",
+    "high": 418,
+    "low": 357,
+    "open": 373,
+    "close": 416,
+    "volume": 6845,
+    "trades": 81
+  },
+  {
+    "date": "2022-07-18",
+    "high": 437,
+    "low": 398,
+    "open": 418,
+    "close": 430,
+    "volume": 7909,
+    "trades": 94
+  },
+  {
+    "date": "2022-07-19",
+    "high": 453,
+    "low": 418,
+    "open": 428,
+    "close": 434,
+    "volume": 5136,
+    "trades": 52
+  },
+  {
+    "date": "2022-07-20",
+    "high": 466,
+    "low": 425,
+    "open": 437,
+    "close": 451,
+    "volume": 5010,
+    "trades": 87
+  },
+  {
+    "date": "2022-07-21",
+    "high": 463,
+    "low": 441,
+    "open": 454,
+    "close": 442,
+    "volume": 7611,
+    "trades": 76
+  },
+  {
+    "date": "2022-07-22",
+    "high": 481,
+    "low": 419,
+    "open": 439,
+    "close": 476,
+    "volume": 7352,
+    "trades": 87
+  },
+  {
+    "date": "2022-07-23",
+    "high": 491,
+    "low": 467,
+    "open": 475,
+    "close": 468,
+    "volume": 7268,
+    "trades": 68
+  },
+  {
+    "date": "2022-07-24",
+    "high": 537,
+    "low": 459,
+    "open": 470,
+    "close": 520,
+    "volume": 7833,
+    "trades": 65
+  },
+  {
+    "date": "2022-07-25",
+    "high": 527,
+    "low": 484,
+    "open": 518,
+    "close": 488,
+    "volume": 8019,
+    "trades": 82
+  },
+  {
+    "date": "2022-07-26",
+    "high": 521,
+    "low": 482,
+    "open": 489,
+    "close": 517,
+    "volume": 5028,
+    "trades": 71
+  },
+  {
+    "date": "2022-07-27",
+    "high": 524,
+    "low": 469,
+    "open": 516,
+    "close": 477,
+    "volume": 9263,
+    "trades": 55
+  },
+  {
+    "date": "2022-07-28",
+    "high": 481,
+    "low": 462,
+    "open": 475,
+    "close": 481,
+    "volume": 6756,
+    "trades": 54
+  },
+  {
+    "date": "2022-07-29",
+    "high": 516,
+    "low": 467,
+    "open": 483,
+    "close": 515,
+    "volume": 5963,
+    "trades": 67
+  },
+  {
+    "date": "2022-07-30",
+    "high": 526,
+    "low": 468,
+    "open": 513,
+    "close": 482,
+    "volume": 6623,
+    "trades": 94
+  },
+  {
+    "date": "2022-07-31",
+    "high": 498,
+    "low": 431,
+    "open": 480,
+    "close": 450,
+    "volume": 5430,
+    "trades": 98
+  },
+  {
+    "date": "2022-08-01",
+    "high": 472,
+    "low": 444,
+    "open": 448,
+    "close": 455,
+    "volume": 5555,
+    "trades": 70
+  },
+  {
+    "date": "2022-08-02",
+    "high": 461,
+    "low": 411,
+    "open": 458,
+    "close": 421,
+    "volume": 8265,
+    "trades": 77
+  },
+  {
+    "date": "2022-08-03",
+    "high": 468,
+    "low": 409,
+    "open": 423,
+    "close": 449,
+    "volume": 9069,
+    "trades": 97
+  },
+  {
+    "date": "2022-08-04",
+    "high": 451,
+    "low": 432,
+    "open": 446,
+    "close": 434,
+    "volume": 5671,
+    "trades": 84
+  },
+  {
+    "date": "2022-08-05",
+    "high": 439,
+    "low": 417,
+    "open": 436,
+    "close": 422,
+    "volume": 6813,
+    "trades": 94
+  },
+  {
+    "date": "2022-08-06",
+    "high": 439,
+    "low": 362,
+    "open": 419,
+    "close": 377,
+    "volume": 6303,
+    "trades": 68
+  },
+  {
+    "date": "2022-08-07",
+    "high": 411,
+    "low": 362,
+    "open": 378,
+    "close": 392,
+    "volume": 7330,
+    "trades": 52
+  },
+  {
+    "date": "2022-08-08",
+    "high": 454,
+    "low": 379,
+    "open": 392,
+    "close": 434,
+    "volume": 5322,
+    "trades": 88
+  },
+  {
+    "date": "2022-08-09",
+    "high": 457,
+    "low": 415,
+    "open": 435,
+    "close": 449,
+    "volume": 6651,
+    "trades": 60
+  },
+  {
+    "date": "2022-08-10",
+    "high": 458,
+    "low": 420,
+    "open": 451,
+    "close": 439,
+    "volume": 8540,
+    "trades": 56
+  },
+  {
+    "date": "2022-08-11",
+    "high": 472,
+    "low": 431,
+    "open": 440,
+    "close": 470,
+    "volume": 6006,
+    "trades": 51
+  },
+  {
+    "date": "2022-08-12",
+    "high": 478,
+    "low": 444,
+    "open": 471,
+    "close": 447,
+    "volume": 7184,
+    "trades": 89
+  },
+  {
+    "date": "2022-08-13",
+    "high": 468,
+    "low": 395,
+    "open": 450,
+    "close": 415,
+    "volume": 6571,
+    "trades": 97
+  },
+  {
+    "date": "2022-08-14",
+    "high": 416,
+    "low": 380,
+    "open": 414,
+    "close": 391,
+    "volume": 9229,
+    "trades": 65
+  },
+  {
+    "date": "2022-08-15",
+    "high": 408,
+    "low": 342,
+    "open": 388,
+    "close": 347,
+    "volume": 8237,
+    "trades": 99
+  },
+  {
+    "date": "2022-08-16",
+    "high": 349,
+    "low": 288,
+    "open": 347,
+    "close": 297,
+    "volume": 5070,
+    "trades": 87
+  },
+  {
+    "date": "2022-08-17",
+    "high": 337,
+    "low": 299,
+    "open": 299,
+    "close": 318,
+    "volume": 8339,
+    "trades": 62
+  },
+  {
+    "date": "2022-08-18",
+    "high": 376,
+    "low": 309,
+    "open": 318,
+    "close": 365,
+    "volume": 7790,
+    "trades": 83
+  },
+  {
+    "date": "2022-08-19",
+    "high": 394,
+    "low": 366,
+    "open": 368,
+    "close": 383,
+    "volume": 6550,
+    "trades": 98
+  },
+  {
+    "date": "2022-08-20",
+    "high": 392,
+    "low": 344,
+    "open": 380,
+    "close": 363,
+    "volume": 7881,
+    "trades": 92
+  },
+  {
+    "date": "2022-08-21",
+    "high": 373,
+    "low": 312,
+    "open": 362,
+    "close": 329,
+    "volume": 9681,
+    "trades": 74
+  },
+  {
+    "date": "2022-08-22",
+    "high": 370,
+    "low": 313,
+    "open": 327,
+    "close": 361,
+    "volume": 7387,
+    "trades": 63
+  },
+  {
+    "date": "2022-08-23",
+    "high": 376,
+    "low": 354,
+    "open": 359,
+    "close": 362,
+    "volume": 7720,
+    "trades": 63
+  },
+  {
+    "date": "2022-08-24",
+    "high": 427,
+    "low": 351,
+    "open": 362,
+    "close": 408,
+    "volume": 9703,
+    "trades": 73
+  },
+  {
+    "date": "2022-08-25",
+    "high": 410,
+    "low": 341,
+    "open": 405,
+    "close": 356,
+    "volume": 5243,
+    "trades": 79
+  },
+  {
+    "date": "2022-08-26",
+    "high": 390,
+    "low": 338,
+    "open": 356,
+    "close": 388,
+    "volume": 6216,
+    "trades": 63
+  },
+  {
+    "date": "2022-08-27",
+    "high": 440,
+    "low": 378,
+    "open": 389,
+    "close": 425,
+    "volume": 7065,
+    "trades": 52
+  },
+  {
+    "date": "2022-08-28",
+    "high": 449,
+    "low": 407,
+    "open": 425,
+    "close": 445,
+    "volume": 7911,
+    "trades": 93
+  },
+  {
+    "date": "2022-08-29",
+    "high": 444,
+    "low": 440,
+    "open": 443,
+    "close": 440,
+    "volume": 9510,
+    "trades": 98
+  },
+  {
+    "date": "2022-08-30",
+    "high": 464,
+    "low": 422,
+    "open": 442,
+    "close": 455,
+    "volume": 9361,
+    "trades": 81
+  },
+  {
+    "date": "2022-08-31",
+    "high": 497,
+    "low": 440,
+    "open": 452,
+    "close": 490,
+    "volume": 9178,
+    "trades": 63
+  },
+  {
+    "date": "2022-09-01",
+    "high": 498,
+    "low": 436,
+    "open": 489,
+    "close": 453,
+    "volume": 9799,
+    "trades": 51
+  },
+  {
+    "date": "2022-09-02",
+    "high": 499,
+    "low": 456,
+    "open": 456,
+    "close": 487,
+    "volume": 8536,
+    "trades": 69
+  },
+  {
+    "date": "2022-09-03",
+    "high": 497,
+    "low": 456,
+    "open": 487,
+    "close": 471,
+    "volume": 5941,
+    "trades": 94
+  },
+  {
+    "date": "2022-09-04",
+    "high": 520,
+    "low": 468,
+    "open": 471,
+    "close": 503,
+    "volume": 8785,
+    "trades": 83
+  },
+  {
+    "date": "2022-09-05",
+    "high": 522,
+    "low": 482,
+    "open": 501,
+    "close": 519,
+    "volume": 9258,
+    "trades": 72
+  },
+  {
+    "date": "2022-09-06",
+    "high": 534,
+    "low": 502,
+    "open": 519,
+    "close": 519,
+    "volume": 5699,
+    "trades": 80
+  },
+  {
+    "date": "2022-09-07",
+    "high": 572,
+    "low": 516,
+    "open": 521,
+    "close": 568,
+    "volume": 9906,
+    "trades": 67
+  },
+  {
+    "date": "2022-09-08",
+    "high": 583,
+    "low": 547,
+    "open": 567,
+    "close": 552,
+    "volume": 9331,
+    "trades": 63
+  },
+  {
+    "date": "2022-09-09",
+    "high": 597,
+    "low": 547,
+    "open": 553,
+    "close": 579,
+    "volume": 7217,
+    "trades": 50
+  },
+  {
+    "date": "2022-09-10",
+    "high": 587,
+    "low": 559,
+    "open": 578,
+    "close": 559,
+    "volume": 7365,
+    "trades": 89
+  },
+  {
+    "date": "2022-09-11",
+    "high": 582,
+    "low": 545,
+    "open": 562,
+    "close": 549,
+    "volume": 5821,
+    "trades": 99
+  },
+  {
+    "date": "2022-09-12",
+    "high": 562,
+    "low": 514,
+    "open": 552,
+    "close": 532,
+    "volume": 8284,
+    "trades": 94
+  },
+  {
+    "date": "2022-09-13",
+    "high": 534,
+    "low": 481,
+    "open": 533,
+    "close": 484,
+    "volume": 9372,
+    "trades": 61
+  },
+  {
+    "date": "2022-09-14",
+    "high": 492,
+    "low": 445,
+    "open": 486,
+    "close": 456,
+    "volume": 8697,
+    "trades": 55
+  },
+  {
+    "date": "2022-09-15",
+    "high": 465,
+    "low": 404,
+    "open": 459,
+    "close": 415,
+    "volume": 8299,
+    "trades": 76
+  },
+  {
+    "date": "2022-09-16",
+    "high": 434,
+    "low": 407,
+    "open": 412,
+    "close": 432,
+    "volume": 9014,
+    "trades": 54
+  },
+  {
+    "date": "2022-09-17",
+    "high": 460,
+    "low": 431,
+    "open": 431,
+    "close": 448,
+    "volume": 8409,
+    "trades": 55
+  },
+  {
+    "date": "2022-09-18",
+    "high": 500,
+    "low": 436,
+    "open": 449,
+    "close": 494,
+    "volume": 6014,
+    "trades": 74
+  },
+  {
+    "date": "2022-09-19",
+    "high": 545,
+    "low": 492,
+    "open": 496,
+    "close": 541,
+    "volume": 9236,
+    "trades": 91
+  },
+  {
+    "date": "2022-09-20",
+    "high": 591,
+    "low": 540,
+    "open": 543,
+    "close": 571,
+    "volume": 6491,
+    "trades": 57
+  },
+  {
+    "date": "2022-09-21",
+    "high": 623,
+    "low": 551,
+    "open": 568,
+    "close": 615,
+    "volume": 9850,
+    "trades": 59
+  },
+  {
+    "date": "2022-09-22",
+    "high": 647,
+    "low": 603,
+    "open": 615,
+    "close": 629,
+    "volume": 8494,
+    "trades": 99
+  },
+  {
+    "date": "2022-09-23",
+    "high": 650,
+    "low": 616,
+    "open": 628,
+    "close": 630,
+    "volume": 5586,
+    "trades": 99
+  },
+  {
+    "date": "2022-09-24",
+    "high": 639,
+    "low": 611,
+    "open": 629,
+    "close": 628,
+    "volume": 6617,
+    "trades": 77
+  },
+  {
+    "date": "2022-09-25",
+    "high": 630,
+    "low": 588,
+    "open": 628,
+    "close": 601,
+    "volume": 8448,
+    "trades": 61
+  },
+  {
+    "date": "2022-09-26",
+    "high": 613,
+    "low": 581,
+    "open": 600,
+    "close": 610,
+    "volume": 9357,
+    "trades": 66
+  },
+  {
+    "date": "2022-09-27",
+    "high": 669,
+    "low": 600,
+    "open": 613,
+    "close": 653,
+    "volume": 8585,
+    "trades": 52
+  },
+  {
+    "date": "2022-09-28",
+    "high": 681,
+    "low": 643,
+    "open": 654,
+    "close": 665,
+    "volume": 5171,
+    "trades": 88
+  },
+  {
+    "date": "2022-09-29",
+    "high": 701,
+    "low": 659,
+    "open": 668,
+    "close": 697,
+    "volume": 6274,
+    "trades": 92
+  },
+  {
+    "date": "2022-09-30",
+    "high": 704,
+    "low": 676,
+    "open": 695,
+    "close": 694,
+    "volume": 9142,
+    "trades": 92
+  },
+  {
+    "date": "2022-10-01",
+    "high": 718,
+    "low": 683,
+    "open": 694,
+    "close": 718,
+    "volume": 6530,
+    "trades": 96
+  },
+  {
+    "date": "2022-10-02",
+    "high": 780,
+    "low": 707,
+    "open": 716,
+    "close": 763,
+    "volume": 7056,
+    "trades": 87
+  },
+  {
+    "date": "2022-10-03",
+    "high": 784,
+    "low": 753,
+    "open": 766,
+    "close": 773,
+    "volume": 7518,
+    "trades": 59
+  },
+  {
+    "date": "2022-10-04",
+    "high": 820,
+    "low": 775,
+    "open": 775,
+    "close": 806,
+    "volume": 7887,
+    "trades": 80
+  },
+  {
+    "date": "2022-10-05",
+    "high": 810,
+    "low": 761,
+    "open": 808,
+    "close": 777,
+    "volume": 7751,
+    "trades": 81
+  },
+  {
+    "date": "2022-10-06",
+    "high": 818,
+    "low": 765,
+    "open": 774,
+    "close": 814,
+    "volume": 7395,
+    "trades": 59
+  },
+  {
+    "date": "2022-10-07",
+    "high": 871,
+    "low": 792,
+    "open": 811,
+    "close": 860,
+    "volume": 7906,
+    "trades": 71
+  },
+  {
+    "date": "2022-10-08",
+    "high": 868,
+    "low": 838,
+    "open": 863,
+    "close": 857,
+    "volume": 7796,
+    "trades": 72
+  },
+  {
+    "date": "2022-10-09",
+    "high": 878,
+    "low": 842,
+    "open": 859,
+    "close": 877,
+    "volume": 6556,
+    "trades": 70
+  },
+  {
+    "date": "2022-10-10",
+    "high": 880,
+    "low": 838,
+    "open": 880,
+    "close": 850,
+    "volume": 7862,
+    "trades": 55
+  },
+  {
+    "date": "2022-10-11",
+    "high": 917,
+    "low": 837,
+    "open": 853,
+    "close": 901,
+    "volume": 8376,
+    "trades": 82
+  },
+  {
+    "date": "2022-10-12",
+    "high": 905,
+    "low": 885,
+    "open": 903,
+    "close": 901,
+    "volume": 6847,
+    "trades": 100
+  },
+  {
+    "date": "2022-10-13",
+    "high": 922,
+    "low": 884,
+    "open": 899,
+    "close": 907,
+    "volume": 8821,
+    "trades": 81
+  },
+  {
+    "date": "2022-10-14",
+    "high": 908,
+    "low": 897,
+    "open": 906,
+    "close": 900,
+    "volume": 5579,
+    "trades": 74
+  },
+  {
+    "date": "2022-10-15",
+    "high": 931,
+    "low": 896,
+    "open": 903,
+    "close": 926,
+    "volume": 6274,
+    "trades": 66
+  },
+  {
+    "date": "2022-10-16",
+    "high": 981,
+    "low": 922,
+    "open": 923,
+    "close": 971,
+    "volume": 8665,
+    "trades": 68
+  },
+  {
+    "date": "2022-10-17",
+    "high": 1012,
+    "low": 950,
+    "open": 968,
+    "close": 992,
+    "volume": 9507,
+    "trades": 61
+  },
+  {
+    "date": "2022-10-18",
+    "high": 1001,
+    "low": 933,
+    "open": 990,
+    "close": 944,
+    "volume": 6558,
+    "trades": 53
+  },
+  {
+    "date": "2022-10-19",
+    "high": 970,
+    "low": 930,
+    "open": 942,
+    "close": 958,
+    "volume": 6679,
+    "trades": 84
+  },
+  {
+    "date": "2022-10-20",
+    "high": 1012,
+    "low": 947,
+    "open": 957,
+    "close": 997,
+    "volume": 7938,
+    "trades": 69
+  },
+  {
+    "date": "2022-10-21",
+    "high": 1049,
+    "low": 984,
+    "open": 999,
+    "close": 1045,
+    "volume": 7764,
+    "trades": 56
+  },
+  {
+    "date": "2022-10-22",
+    "high": 1057,
+    "low": 1030,
+    "open": 1048,
+    "close": 1057,
+    "volume": 9656,
+    "trades": 87
+  },
+  {
+    "date": "2022-10-23",
+    "high": 1062,
+    "low": 1024,
+    "open": 1058,
+    "close": 1032,
+    "volume": 9267,
+    "trades": 53
+  },
+  {
+    "date": "2022-10-24",
+    "high": 1079,
+    "low": 1015,
+    "open": 1032,
+    "close": 1076,
+    "volume": 7713,
+    "trades": 59
+  },
+  {
+    "date": "2022-10-25",
+    "high": 1124,
+    "low": 1069,
+    "open": 1079,
+    "close": 1107,
+    "volume": 7852,
+    "trades": 98
+  },
+  {
+    "date": "2022-10-26",
+    "high": 1120,
+    "low": 1088,
+    "open": 1108,
+    "close": 1110,
+    "volume": 7927,
+    "trades": 84
+  },
+  {
+    "date": "2022-10-27",
+    "high": 1121,
+    "low": 1048,
+    "open": 1109,
+    "close": 1061,
+    "volume": 7823,
+    "trades": 84
+  },
+  {
+    "date": "2022-10-28",
+    "high": 1090,
+    "low": 1046,
+    "open": 1064,
+    "close": 1070,
+    "volume": 6789,
+    "trades": 57
+  },
+  {
+    "date": "2022-10-29",
+    "high": 1075,
+    "low": 1048,
+    "open": 1070,
+    "close": 1062,
+    "volume": 7850,
+    "trades": 53
+  },
+  {
+    "date": "2022-10-30",
+    "high": 1119,
+    "low": 1044,
+    "open": 1064,
+    "close": 1110,
+    "volume": 5996,
+    "trades": 71
+  },
+  {
+    "date": "2022-10-31",
+    "high": 1141,
+    "low": 1095,
+    "open": 1111,
+    "close": 1136,
+    "volume": 6101,
+    "trades": 86
+  },
+  {
+    "date": "2022-11-01",
+    "high": 1142,
+    "low": 1134,
+    "open": 1137,
+    "close": 1135,
+    "volume": 8603,
+    "trades": 69
+  },
+  {
+    "date": "2022-11-02",
+    "high": 1189,
+    "low": 1130,
+    "open": 1137,
+    "close": 1178,
+    "volume": 5442,
+    "trades": 68
+  },
+  {
+    "date": "2022-11-03",
+    "high": 1190,
+    "low": 1169,
+    "open": 1181,
+    "close": 1174,
+    "volume": 9980,
+    "trades": 96
+  },
+  {
+    "date": "2022-11-04",
+    "high": 1187,
+    "low": 1141,
+    "open": 1175,
+    "close": 1152,
+    "volume": 5369,
+    "trades": 64
+  },
+  {
+    "date": "2022-11-05",
+    "high": 1210,
+    "low": 1152,
+    "open": 1154,
+    "close": 1195,
+    "volume": 6551,
+    "trades": 98
+  },
+  {
+    "date": "2022-11-06",
+    "high": 1201,
+    "low": 1162,
+    "open": 1195,
+    "close": 1176,
+    "volume": 8090,
+    "trades": 78
+  },
+  {
+    "date": "2022-11-07",
+    "high": 1216,
+    "low": 1167,
+    "open": 1179,
+    "close": 1206,
+    "volume": 9854,
+    "trades": 54
+  },
+  {
+    "date": "2022-11-08",
+    "high": 1257,
+    "low": 1185,
+    "open": 1203,
+    "close": 1246,
+    "volume": 6448,
+    "trades": 80
+  },
+  {
+    "date": "2022-11-09",
+    "high": 1291,
+    "low": 1229,
+    "open": 1246,
+    "close": 1287,
+    "volume": 8734,
+    "trades": 78
+  },
+  {
+    "date": "2022-11-10",
+    "high": 1301,
+    "low": 1284,
+    "open": 1284,
+    "close": 1287,
+    "volume": 9911,
+    "trades": 93
+  },
+  {
+    "date": "2022-11-11",
+    "high": 1339,
+    "low": 1284,
+    "open": 1287,
+    "close": 1336,
+    "volume": 8997,
+    "trades": 56
+  },
+  {
+    "date": "2022-11-12",
+    "high": 1348,
+    "low": 1274,
+    "open": 1333,
+    "close": 1291,
+    "volume": 8723,
+    "trades": 58
+  },
+  {
+    "date": "2022-11-13",
+    "high": 1311,
+    "low": 1273,
+    "open": 1289,
+    "close": 1301,
+    "volume": 9075,
+    "trades": 100
+  },
+  {
+    "date": "2022-11-14",
+    "high": 1310,
+    "low": 1247,
+    "open": 1302,
+    "close": 1258,
+    "volume": 6042,
+    "trades": 84
+  },
+  {
+    "date": "2022-11-15",
+    "high": 1279,
+    "low": 1207,
+    "open": 1260,
+    "close": 1216,
+    "volume": 7734,
+    "trades": 52
+  },
+  {
+    "date": "2022-11-16",
+    "high": 1223,
+    "low": 1203,
+    "open": 1215,
+    "close": 1223,
+    "volume": 9687,
+    "trades": 97
+  },
+  {
+    "date": "2022-11-17",
+    "high": 1234,
+    "low": 1204,
+    "open": 1224,
+    "close": 1213,
+    "volume": 6724,
+    "trades": 65
+  },
+  {
+    "date": "2022-11-18",
+    "high": 1234,
+    "low": 1158,
+    "open": 1215,
+    "close": 1177,
+    "volume": 9507,
+    "trades": 82
+  },
+  {
+    "date": "2022-11-19",
+    "high": 1216,
+    "low": 1172,
+    "open": 1175,
+    "close": 1214,
+    "volume": 9574,
+    "trades": 89
+  },
+  {
+    "date": "2022-11-20",
+    "high": 1266,
+    "low": 1197,
+    "open": 1215,
+    "close": 1247,
+    "volume": 9731,
+    "trades": 51
+  },
+  {
+    "date": "2022-11-21",
+    "high": 1257,
+    "low": 1189,
+    "open": 1246,
+    "close": 1206,
+    "volume": 5747,
+    "trades": 59
+  },
+  {
+    "date": "2022-11-22",
+    "high": 1235,
+    "low": 1189,
+    "open": 1204,
+    "close": 1215,
+    "volume": 9246,
+    "trades": 50
+  },
+  {
+    "date": "2022-11-23",
+    "high": 1272,
+    "low": 1202,
+    "open": 1218,
+    "close": 1264,
+    "volume": 5369,
+    "trades": 69
+  },
+  {
+    "date": "2022-11-24",
+    "high": 1282,
+    "low": 1242,
+    "open": 1264,
+    "close": 1249,
+    "volume": 7655,
+    "trades": 68
+  },
+  {
+    "date": "2022-11-25",
+    "high": 1285,
+    "low": 1231,
+    "open": 1251,
+    "close": 1277,
+    "volume": 5688,
+    "trades": 65
+  },
+  {
+    "date": "2022-11-26",
+    "high": 1324,
+    "low": 1279,
+    "open": 1279,
+    "close": 1304,
+    "volume": 9877,
+    "trades": 67
+  },
+  {
+    "date": "2022-11-27",
+    "high": 1325,
+    "low": 1291,
+    "open": 1305,
+    "close": 1324,
+    "volume": 7282,
+    "trades": 99
+  },
+  {
+    "date": "2022-11-28",
+    "high": 1367,
+    "low": 1317,
+    "open": 1327,
+    "close": 1349,
+    "volume": 7796,
+    "trades": 84
+  },
+  {
+    "date": "2022-11-29",
+    "high": 1375,
+    "low": 1345,
+    "open": 1351,
+    "close": 1363,
+    "volume": 7124,
+    "trades": 72
+  },
+  {
+    "date": "2022-11-30",
+    "high": 1414,
+    "low": 1347,
+    "open": 1364,
+    "close": 1414,
+    "volume": 6647,
+    "trades": 86
+  },
+  {
+    "date": "2022-12-01",
+    "high": 1450,
+    "low": 1407,
+    "open": 1411,
+    "close": 1433,
+    "volume": 7580,
+    "trades": 90
+  },
+  {
+    "date": "2022-12-02",
+    "high": 1485,
+    "low": 1427,
+    "open": 1436,
+    "close": 1481,
+    "volume": 5311,
+    "trades": 55
+  },
+  {
+    "date": "2022-12-03",
+    "high": 1500,
+    "low": 1445,
+    "open": 1481,
+    "close": 1459,
+    "volume": 9256,
+    "trades": 99
+  },
+  {
+    "date": "2022-12-04",
+    "high": 1460,
+    "low": 1418,
+    "open": 1457,
+    "close": 1434,
+    "volume": 5251,
+    "trades": 75
+  },
+  {
+    "date": "2022-12-05",
+    "high": 1455,
+    "low": 1428,
+    "open": 1433,
+    "close": 1440,
+    "volume": 7772,
+    "trades": 53
+  },
+  {
+    "date": "2022-12-06",
+    "high": 1455,
+    "low": 1424,
+    "open": 1441,
+    "close": 1432,
+    "volume": 9988,
+    "trades": 53
+  },
+  {
+    "date": "2022-12-07",
+    "high": 1429,
+    "low": 1394,
+    "open": 1429,
+    "close": 1406,
+    "volume": 6947,
+    "trades": 94
+  },
+  {
+    "date": "2022-12-08",
+    "high": 1440,
+    "low": 1393,
+    "open": 1406,
+    "close": 1427,
+    "volume": 8015,
+    "trades": 74
+  },
+  {
+    "date": "2022-12-09",
+    "high": 1436,
+    "low": 1407,
+    "open": 1428,
+    "close": 1413,
+    "volume": 5013,
+    "trades": 94
+  },
+  {
+    "date": "2022-12-10",
+    "high": 1421,
+    "low": 1386,
+    "open": 1410,
+    "close": 1400,
+    "volume": 7095,
+    "trades": 55
+  },
+  {
+    "date": "2022-12-11",
+    "high": 1410,
+    "low": 1390,
+    "open": 1397,
+    "close": 1410,
+    "volume": 8566,
+    "trades": 55
+  },
+  {
+    "date": "2022-12-12",
+    "high": 1466,
+    "low": 1403,
+    "open": 1409,
+    "close": 1446,
+    "volume": 8423,
+    "trades": 95
+  },
+  {
+    "date": "2022-12-13",
+    "high": 1455,
+    "low": 1426,
+    "open": 1445,
+    "close": 1429,
+    "volume": 7666,
+    "trades": 71
+  },
+  {
+    "date": "2022-12-14",
+    "high": 1467,
+    "low": 1416,
+    "open": 1428,
+    "close": 1464,
+    "volume": 9778,
+    "trades": 63
+  },
+  {
+    "date": "2022-12-15",
+    "high": 1467,
+    "low": 1450,
+    "open": 1466,
+    "close": 1460,
+    "volume": 8662,
+    "trades": 79
+  },
+  {
+    "date": "2022-12-16",
+    "high": 1484,
+    "low": 1451,
+    "open": 1459,
+    "close": 1480,
+    "volume": 8049,
+    "trades": 78
+  },
+  {
+    "date": "2022-12-17",
+    "high": 1510,
+    "low": 1477,
+    "open": 1482,
+    "close": 1506,
+    "volume": 8006,
+    "trades": 80
+  },
+  {
+    "date": "2022-12-18",
+    "high": 1542,
+    "low": 1488,
+    "open": 1505,
+    "close": 1532,
+    "volume": 6562,
+    "trades": 90
+  },
+  {
+    "date": "2022-12-19",
+    "high": 1573,
+    "low": 1532,
+    "open": 1535,
+    "close": 1565,
+    "volume": 5483,
+    "trades": 83
+  },
+  {
+    "date": "2022-12-20",
+    "high": 1571,
+    "low": 1504,
+    "open": 1565,
+    "close": 1517,
+    "volume": 5382,
+    "trades": 78
+  },
+  {
+    "date": "2022-12-21",
+    "high": 1538,
+    "low": 1490,
+    "open": 1519,
+    "close": 1493,
+    "volume": 9712,
+    "trades": 75
+  },
+  {
+    "date": "2022-12-22",
+    "high": 1532,
+    "low": 1478,
+    "open": 1495,
+    "close": 1532,
+    "volume": 7792,
+    "trades": 62
+  },
+  {
+    "date": "2022-12-23",
+    "high": 1581,
+    "low": 1532,
+    "open": 1534,
+    "close": 1562,
+    "volume": 9036,
+    "trades": 83
+  },
+  {
+    "date": "2022-12-24",
+    "high": 1568,
+    "low": 1512,
+    "open": 1561,
+    "close": 1529,
+    "volume": 8742,
+    "trades": 91
+  },
+  {
+    "date": "2022-12-25",
+    "high": 1576,
+    "low": 1513,
+    "open": 1529,
+    "close": 1571,
+    "volume": 7034,
+    "trades": 87
+  },
+  {
+    "date": "2022-12-26",
+    "high": 1573,
+    "low": 1557,
+    "open": 1569,
+    "close": 1569,
+    "volume": 6823,
+    "trades": 53
+  },
+  {
+    "date": "2022-12-27",
+    "high": 1590,
+    "low": 1559,
+    "open": 1570,
+    "close": 1568,
+    "volume": 8316,
+    "trades": 75
+  },
+  {
+    "date": "2022-12-28",
+    "high": 1589,
+    "low": 1559,
+    "open": 1567,
+    "close": 1583,
+    "volume": 8200,
+    "trades": 75
+  },
+  {
+    "date": "2022-12-29",
+    "high": 1605,
+    "low": 1561,
+    "open": 1585,
+    "close": 1579,
+    "volume": 6259,
+    "trades": 87
+  },
+  {
+    "date": "2022-12-30",
+    "high": 1627,
+    "low": 1560,
+    "open": 1578,
+    "close": 1614,
+    "volume": 7238,
+    "trades": 50
+  },
+  {
+    "date": "2022-12-31",
+    "high": 1674,
+    "low": 1600,
+    "open": 1615,
+    "close": 1657,
+    "volume": 7718,
+    "trades": 51
+  },
+  {
+    "date": "2023-01-01",
+    "high": 1678,
+    "low": 1619,
+    "open": 1660,
+    "close": 1629,
+    "volume": 9717,
+    "trades": 97
+  },
+  {
+    "date": "2023-01-02",
+    "high": 1650,
+    "low": 1587,
+    "open": 1632,
+    "close": 1596,
+    "volume": 6668,
+    "trades": 61
+  },
+  {
+    "date": "2023-01-03",
+    "high": 1598,
+    "low": 1564,
+    "open": 1593,
+    "close": 1569,
+    "volume": 6209,
+    "trades": 98
+  },
+  {
+    "date": "2023-01-04",
+    "high": 1572,
+    "low": 1552,
+    "open": 1572,
+    "close": 1553,
+    "volume": 6987,
+    "trades": 57
+  },
+  {
+    "date": "2023-01-05",
+    "high": 1608,
+    "low": 1539,
+    "open": 1550,
+    "close": 1588,
+    "volume": 6084,
+    "trades": 91
+  },
+  {
+    "date": "2023-01-06",
+    "high": 1606,
+    "low": 1545,
+    "open": 1590,
+    "close": 1559,
+    "volume": 6001,
+    "trades": 83
+  },
+  {
+    "date": "2023-01-07",
+    "high": 1603,
+    "low": 1558,
+    "open": 1562,
+    "close": 1603,
+    "volume": 5950,
+    "trades": 61
+  },
+  {
+    "date": "2023-01-08",
+    "high": 1619,
+    "low": 1597,
+    "open": 1603,
+    "close": 1609,
+    "volume": 7246,
+    "trades": 55
+  },
+  {
+    "date": "2023-01-09",
+    "high": 1670,
+    "low": 1592,
+    "open": 1612,
+    "close": 1662,
+    "volume": 5404,
+    "trades": 56
+  },
+  {
+    "date": "2023-01-10",
+    "high": 1718,
+    "low": 1652,
+    "open": 1664,
+    "close": 1713,
+    "volume": 9764,
+    "trades": 72
+  },
+  {
+    "date": "2023-01-11",
+    "high": 1721,
+    "low": 1684,
+    "open": 1713,
+    "close": 1684,
+    "volume": 6522,
+    "trades": 71
+  },
+  {
+    "date": "2023-01-12",
+    "high": 1723,
+    "low": 1674,
+    "open": 1684,
+    "close": 1723,
+    "volume": 8653,
+    "trades": 73
+  },
+  {
+    "date": "2023-01-13",
+    "high": 1754,
+    "low": 1720,
+    "open": 1726,
+    "close": 1734,
+    "volume": 6541,
+    "trades": 84
+  },
+  {
+    "date": "2023-01-14",
+    "high": 1748,
+    "low": 1709,
+    "open": 1735,
+    "close": 1713,
+    "volume": 8791,
+    "trades": 67
+  },
+  {
+    "date": "2023-01-15",
+    "high": 1748,
+    "low": 1710,
+    "open": 1716,
+    "close": 1731,
+    "volume": 5312,
+    "trades": 78
+  },
+  {
+    "date": "2023-01-16",
+    "high": 1738,
+    "low": 1712,
+    "open": 1734,
+    "close": 1713,
+    "volume": 7513,
+    "trades": 75
+  },
+  {
+    "date": "2023-01-17",
+    "high": 1719,
+    "low": 1691,
+    "open": 1716,
+    "close": 1703,
+    "volume": 9114,
+    "trades": 55
+  },
+  {
+    "date": "2023-01-18",
+    "high": 1766,
+    "low": 1682,
+    "open": 1701,
+    "close": 1748,
+    "volume": 6822,
+    "trades": 84
+  },
+  {
+    "date": "2023-01-19",
+    "high": 1778,
+    "low": 1743,
+    "open": 1745,
+    "close": 1773,
+    "volume": 6639,
+    "trades": 93
+  },
+  {
+    "date": "2023-01-20",
+    "high": 1786,
+    "low": 1775,
+    "open": 1776,
+    "close": 1775,
+    "volume": 5266,
+    "trades": 81
+  },
+  {
+    "date": "2023-01-21",
+    "high": 1790,
+    "low": 1752,
+    "open": 1773,
+    "close": 1771,
+    "volume": 7005,
+    "trades": 98
+  },
+  {
+    "date": "2023-01-22",
+    "high": 1784,
+    "low": 1770,
+    "open": 1772,
+    "close": 1776,
+    "volume": 9129,
+    "trades": 75
+  },
+  {
+    "date": "2023-01-23",
+    "high": 1792,
+    "low": 1724,
+    "open": 1779,
+    "close": 1741,
+    "volume": 5813,
+    "trades": 72
+  },
+  {
+    "date": "2023-01-24",
+    "high": 1791,
+    "low": 1724,
+    "open": 1738,
+    "close": 1786,
+    "volume": 6171,
+    "trades": 78
+  },
+  {
+    "date": "2023-01-25",
+    "high": 1790,
+    "low": 1736,
+    "open": 1788,
+    "close": 1753,
+    "volume": 8042,
+    "trades": 72
+  },
+  {
+    "date": "2023-01-26",
+    "high": 1766,
+    "low": 1718,
+    "open": 1751,
+    "close": 1729,
+    "volume": 8394,
+    "trades": 97
+  },
+  {
+    "date": "2023-01-27",
+    "high": 1788,
+    "low": 1713,
+    "open": 1728,
+    "close": 1770,
+    "volume": 6599,
+    "trades": 85
+  },
+  {
+    "date": "2023-01-28",
+    "high": 1775,
+    "low": 1716,
+    "open": 1772,
+    "close": 1729,
+    "volume": 8596,
+    "trades": 80
+  },
+  {
+    "date": "2023-01-29",
+    "high": 1739,
+    "low": 1668,
+    "open": 1727,
+    "close": 1684,
+    "volume": 6746,
+    "trades": 55
+  },
+  {
+    "date": "2023-01-30",
+    "high": 1696,
+    "low": 1685,
+    "open": 1685,
+    "close": 1694,
+    "volume": 8570,
+    "trades": 71
+  },
+  {
+    "date": "2023-01-31",
+    "high": 1750,
+    "low": 1692,
+    "open": 1693,
+    "close": 1740,
+    "volume": 6214,
+    "trades": 58
+  },
+  {
+    "date": "2023-02-01",
+    "high": 1778,
+    "low": 1727,
+    "open": 1741,
+    "close": 1772,
+    "volume": 5200,
+    "trades": 64
+  },
+  {
+    "date": "2023-02-02",
+    "high": 1824,
+    "low": 1764,
+    "open": 1775,
+    "close": 1817,
+    "volume": 9171,
+    "trades": 96
+  },
+  {
+    "date": "2023-02-03",
+    "high": 1826,
+    "low": 1762,
+    "open": 1814,
+    "close": 1765,
+    "volume": 7935,
+    "trades": 63
+  },
+  {
+    "date": "2023-02-04",
+    "high": 1785,
+    "low": 1767,
+    "open": 1767,
+    "close": 1784,
+    "volume": 8941,
+    "trades": 71
+  },
+  {
+    "date": "2023-02-05",
+    "high": 1789,
+    "low": 1776,
+    "open": 1783,
+    "close": 1783,
+    "volume": 8070,
+    "trades": 93
+  },
+  {
+    "date": "2023-02-06",
+    "high": 1784,
+    "low": 1747,
+    "open": 1782,
+    "close": 1761,
+    "volume": 9718,
+    "trades": 50
+  },
+  {
+    "date": "2023-02-07",
+    "high": 1816,
+    "low": 1748,
+    "open": 1759,
+    "close": 1802,
+    "volume": 5914,
+    "trades": 77
+  },
+  {
+    "date": "2023-02-08",
+    "high": 1804,
+    "low": 1790,
+    "open": 1800,
+    "close": 1794,
+    "volume": 9399,
+    "trades": 84
+  },
+  {
+    "date": "2023-02-09",
+    "high": 1798,
+    "low": 1756,
+    "open": 1797,
+    "close": 1764,
+    "volume": 7494,
+    "trades": 68
+  },
+  {
+    "date": "2023-02-10",
+    "high": 1762,
+    "low": 1742,
+    "open": 1761,
+    "close": 1747,
+    "volume": 6047,
+    "trades": 86
+  },
+  {
+    "date": "2023-02-11",
+    "high": 1762,
+    "low": 1724,
+    "open": 1747,
+    "close": 1739,
+    "volume": 9527,
+    "trades": 65
+  },
+  {
+    "date": "2023-02-12",
+    "high": 1771,
+    "low": 1719,
+    "open": 1737,
+    "close": 1759,
+    "volume": 8635,
+    "trades": 72
+  },
+  {
+    "date": "2023-02-13",
+    "high": 1778,
+    "low": 1718,
+    "open": 1759,
+    "close": 1733,
+    "volume": 8905,
+    "trades": 56
+  },
+  {
+    "date": "2023-02-14",
+    "high": 1745,
+    "low": 1708,
+    "open": 1735,
+    "close": 1712,
+    "volume": 8949,
+    "trades": 72
+  },
+  {
+    "date": "2023-02-15",
+    "high": 1714,
+    "low": 1666,
+    "open": 1710,
+    "close": 1674,
+    "volume": 5931,
+    "trades": 88
+  },
+  {
+    "date": "2023-02-16",
+    "high": 1679,
+    "low": 1654,
+    "open": 1676,
+    "close": 1667,
+    "volume": 6611,
+    "trades": 71
+  },
+  {
+    "date": "2023-02-17",
+    "high": 1700,
+    "low": 1659,
+    "open": 1664,
+    "close": 1685,
+    "volume": 9768,
+    "trades": 68
+  },
+  {
+    "date": "2023-02-18",
+    "high": 1693,
+    "low": 1658,
+    "open": 1685,
+    "close": 1677,
+    "volume": 5305,
+    "trades": 68
+  },
+  {
+    "date": "2023-02-19",
+    "high": 1695,
+    "low": 1676,
+    "open": 1680,
+    "close": 1677,
+    "volume": 5537,
+    "trades": 92
+  },
+  {
+    "date": "2023-02-20",
+    "high": 1688,
+    "low": 1630,
+    "open": 1674,
+    "close": 1633,
+    "volume": 7204,
+    "trades": 70
+  },
+  {
+    "date": "2023-02-21",
+    "high": 1661,
+    "low": 1619,
+    "open": 1632,
+    "close": 1655,
+    "volume": 5968,
+    "trades": 54
+  },
+  {
+    "date": "2023-02-22",
+    "high": 1660,
+    "low": 1604,
+    "open": 1654,
+    "close": 1606,
+    "volume": 6405,
+    "trades": 75
+  },
+  {
+    "date": "2023-02-23",
+    "high": 1619,
+    "low": 1596,
+    "open": 1603,
+    "close": 1602,
+    "volume": 5352,
+    "trades": 88
+  },
+  {
+    "date": "2023-02-24",
+    "high": 1622,
+    "low": 1567,
+    "open": 1603,
+    "close": 1571,
+    "volume": 8877,
+    "trades": 95
+  },
+  {
+    "date": "2023-02-25",
+    "high": 1587,
+    "low": 1568,
+    "open": 1573,
+    "close": 1583,
+    "volume": 8356,
+    "trades": 61
+  },
+  {
+    "date": "2023-02-26",
+    "high": 1628,
+    "low": 1571,
+    "open": 1580,
+    "close": 1616,
+    "volume": 9823,
+    "trades": 72
+  },
+  {
+    "date": "2023-02-27",
+    "high": 1658,
+    "low": 1609,
+    "open": 1614,
+    "close": 1647,
+    "volume": 9816,
+    "trades": 92
+  },
+  {
+    "date": "2023-02-28",
+    "high": 1675,
+    "low": 1632,
+    "open": 1645,
+    "close": 1658,
+    "volume": 9186,
+    "trades": 51
+  },
+  {
+    "date": "2023-03-01",
+    "high": 1662,
+    "low": 1644,
+    "open": 1656,
+    "close": 1651,
+    "volume": 8290,
+    "trades": 100
+  },
+  {
+    "date": "2023-03-02",
+    "high": 1692,
+    "low": 1651,
+    "open": 1654,
+    "close": 1679,
+    "volume": 9207,
+    "trades": 59
+  },
+  {
+    "date": "2023-03-03",
+    "high": 1711,
+    "low": 1667,
+    "open": 1677,
+    "close": 1692,
+    "volume": 8221,
+    "trades": 96
+  },
+  {
+    "date": "2023-03-04",
+    "high": 1707,
+    "low": 1637,
+    "open": 1693,
+    "close": 1645,
+    "volume": 5112,
+    "trades": 89
+  },
+  {
+    "date": "2023-03-05",
+    "high": 1658,
+    "low": 1604,
+    "open": 1648,
+    "close": 1621,
+    "volume": 6572,
+    "trades": 67
+  },
+  {
+    "date": "2023-03-06",
+    "high": 1639,
+    "low": 1621,
+    "open": 1624,
+    "close": 1626,
+    "volume": 6412,
+    "trades": 77
+  },
+  {
+    "date": "2023-03-07",
+    "high": 1632,
+    "low": 1614,
+    "open": 1623,
+    "close": 1619,
+    "volume": 5111,
+    "trades": 67
+  },
+  {
+    "date": "2023-03-08",
+    "high": 1628,
+    "low": 1591,
+    "open": 1617,
+    "close": 1601,
+    "volume": 8073,
+    "trades": 80
+  },
+  {
+    "date": "2023-03-09",
+    "high": 1600,
+    "low": 1583,
+    "open": 1600,
+    "close": 1599,
+    "volume": 7520,
+    "trades": 62
+  },
+  {
+    "date": "2023-03-10",
+    "high": 1614,
+    "low": 1553,
+    "open": 1600,
+    "close": 1555,
+    "volume": 6051,
+    "trades": 54
+  },
+  {
+    "date": "2023-03-11",
+    "high": 1556,
+    "low": 1524,
+    "open": 1553,
+    "close": 1531,
+    "volume": 9678,
+    "trades": 68
+  },
+  {
+    "date": "2023-03-12",
+    "high": 1541,
+    "low": 1520,
+    "open": 1529,
+    "close": 1529,
+    "volume": 9839,
+    "trades": 74
+  },
+  {
+    "date": "2023-03-13",
+    "high": 1541,
+    "low": 1520,
+    "open": 1531,
+    "close": 1528,
+    "volume": 7016,
+    "trades": 59
+  },
+  {
+    "date": "2023-03-14",
+    "high": 1544,
+    "low": 1510,
+    "open": 1528,
+    "close": 1526,
+    "volume": 6570,
+    "trades": 68
+  },
+  {
+    "date": "2023-03-15",
+    "high": 1539,
+    "low": 1515,
+    "open": 1525,
+    "close": 1530,
+    "volume": 8937,
+    "trades": 74
+  },
+  {
+    "date": "2023-03-16",
+    "high": 1532,
+    "low": 1518,
+    "open": 1528,
+    "close": 1522,
+    "volume": 9623,
+    "trades": 59
+  },
+  {
+    "date": "2023-03-17",
+    "high": 1536,
+    "low": 1523,
+    "open": 1523,
+    "close": 1525,
+    "volume": 9612,
+    "trades": 79
+  },
+  {
+    "date": "2023-03-18",
+    "high": 1559,
+    "low": 1517,
+    "open": 1523,
+    "close": 1555,
+    "volume": 9298,
+    "trades": 81
+  },
+  {
+    "date": "2023-03-19",
+    "high": 1580,
+    "low": 1554,
+    "open": 1554,
+    "close": 1580,
+    "volume": 9680,
+    "trades": 81
+  },
+  {
+    "date": "2023-03-20",
+    "high": 1587,
+    "low": 1548,
+    "open": 1583,
+    "close": 1562,
+    "volume": 9566,
+    "trades": 63
+  },
+  {
+    "date": "2023-03-21",
+    "high": 1615,
+    "low": 1544,
+    "open": 1564,
+    "close": 1598,
+    "volume": 5232,
+    "trades": 99
+  },
+  {
+    "date": "2023-03-22",
+    "high": 1617,
+    "low": 1559,
+    "open": 1601,
+    "close": 1560,
+    "volume": 5293,
+    "trades": 84
+  },
+  {
+    "date": "2023-03-23",
+    "high": 1571,
+    "low": 1508,
+    "open": 1562,
+    "close": 1524,
+    "volume": 9170,
+    "trades": 60
+  },
+  {
+    "date": "2023-03-24",
+    "high": 1535,
+    "low": 1480,
+    "open": 1523,
+    "close": 1498,
+    "volume": 5234,
+    "trades": 64
+  },
+  {
+    "date": "2023-03-25",
+    "high": 1517,
+    "low": 1484,
+    "open": 1501,
+    "close": 1486,
+    "volume": 9087,
+    "trades": 91
+  },
+  {
+    "date": "2023-03-26",
+    "high": 1506,
+    "low": 1425,
+    "open": 1488,
+    "close": 1443,
+    "volume": 8881,
+    "trades": 84
+  },
+  {
+    "date": "2023-03-27",
+    "high": 1456,
+    "low": 1406,
+    "open": 1443,
+    "close": 1422,
+    "volume": 7088,
+    "trades": 63
+  },
+  {
+    "date": "2023-03-28",
+    "high": 1431,
+    "low": 1383,
+    "open": 1424,
+    "close": 1399,
+    "volume": 7192,
+    "trades": 50
+  },
+  {
+    "date": "2023-03-29",
+    "high": 1413,
+    "low": 1347,
+    "open": 1398,
+    "close": 1350,
+    "volume": 6801,
+    "trades": 90
+  },
+  {
+    "date": "2023-03-30",
+    "high": 1349,
+    "low": 1336,
+    "open": 1348,
+    "close": 1342,
+    "volume": 7649,
+    "trades": 93
+  },
+  {
+    "date": "2023-03-31",
+    "high": 1358,
+    "low": 1335,
+    "open": 1341,
+    "close": 1358,
+    "volume": 8867,
+    "trades": 57
+  },
+  {
+    "date": "2023-04-01",
+    "high": 1361,
+    "low": 1332,
+    "open": 1357,
+    "close": 1345,
+    "volume": 9069,
+    "trades": 68
+  },
+  {
+    "date": "2023-04-02",
+    "high": 1344,
+    "low": 1308,
+    "open": 1342,
+    "close": 1320,
+    "volume": 8710,
+    "trades": 100
+  },
+  {
+    "date": "2023-04-03",
+    "high": 1347,
+    "low": 1319,
+    "open": 1319,
+    "close": 1343,
+    "volume": 7169,
+    "trades": 71
+  },
+  {
+    "date": "2023-04-04",
+    "high": 1344,
+    "low": 1299,
+    "open": 1343,
+    "close": 1306,
+    "volume": 5896,
+    "trades": 65
+  },
+  {
+    "date": "2023-04-05",
+    "high": 1341,
+    "low": 1294,
+    "open": 1304,
+    "close": 1334,
+    "volume": 7710,
+    "trades": 74
+  },
+  {
+    "date": "2023-04-06",
+    "high": 1356,
+    "low": 1286,
+    "open": 1336,
+    "close": 1293,
+    "volume": 9316,
+    "trades": 80
+  },
+  {
+    "date": "2023-04-07",
+    "high": 1338,
+    "low": 1273,
+    "open": 1293,
+    "close": 1329,
+    "volume": 7574,
+    "trades": 59
+  },
+  {
+    "date": "2023-04-08",
+    "high": 1336,
+    "low": 1311,
+    "open": 1329,
+    "close": 1327,
+    "volume": 6874,
+    "trades": 67
+  },
+  {
+    "date": "2023-04-09",
+    "high": 1335,
+    "low": 1277,
+    "open": 1329,
+    "close": 1290,
+    "volume": 8723,
+    "trades": 58
+  },
+  {
+    "date": "2023-04-10",
+    "high": 1334,
+    "low": 1278,
+    "open": 1287,
+    "close": 1325,
+    "volume": 7676,
+    "trades": 51
+  },
+  {
+    "date": "2023-04-11",
+    "high": 1331,
+    "low": 1286,
+    "open": 1322,
+    "close": 1298,
+    "volume": 8179,
+    "trades": 58
+  },
+  {
+    "date": "2023-04-12",
+    "high": 1314,
+    "low": 1255,
+    "open": 1301,
+    "close": 1265,
+    "volume": 9640,
+    "trades": 64
+  },
+  {
+    "date": "2023-04-13",
+    "high": 1281,
+    "low": 1215,
+    "open": 1265,
+    "close": 1228,
+    "volume": 8007,
+    "trades": 73
+  },
+  {
+    "date": "2023-04-14",
+    "high": 1240,
+    "low": 1188,
+    "open": 1226,
+    "close": 1199,
+    "volume": 8437,
+    "trades": 61
+  },
+  {
+    "date": "2023-04-15",
+    "high": 1217,
+    "low": 1162,
+    "open": 1202,
+    "close": 1169,
+    "volume": 5467,
+    "trades": 61
+  },
+  {
+    "date": "2023-04-16",
+    "high": 1207,
+    "low": 1152,
+    "open": 1167,
+    "close": 1204,
+    "volume": 6821,
+    "trades": 94
+  },
+  {
+    "date": "2023-04-17",
+    "high": 1231,
+    "low": 1193,
+    "open": 1202,
+    "close": 1221,
+    "volume": 8601,
+    "trades": 75
+  },
+  {
+    "date": "2023-04-18",
+    "high": 1229,
+    "low": 1186,
+    "open": 1221,
+    "close": 1195,
+    "volume": 9135,
+    "trades": 70
+  },
+  {
+    "date": "2023-04-19",
+    "high": 1204,
+    "low": 1188,
+    "open": 1192,
+    "close": 1188,
+    "volume": 6909,
+    "trades": 78
+  },
+  {
+    "date": "2023-04-20",
+    "high": 1205,
+    "low": 1187,
+    "open": 1189,
+    "close": 1199,
+    "volume": 6078,
+    "trades": 93
+  },
+  {
+    "date": "2023-04-21",
+    "high": 1209,
+    "low": 1149,
+    "open": 1198,
+    "close": 1152,
+    "volume": 9036,
+    "trades": 78
+  },
+  {
+    "date": "2023-04-22",
+    "high": 1184,
+    "low": 1141,
+    "open": 1153,
+    "close": 1177,
+    "volume": 5763,
+    "trades": 55
+  },
+  {
+    "date": "2023-04-23",
+    "high": 1238,
+    "low": 1168,
+    "open": 1178,
+    "close": 1221,
+    "volume": 9193,
+    "trades": 84
+  },
+  {
+    "date": "2023-04-24",
+    "high": 1233,
+    "low": 1205,
+    "open": 1222,
+    "close": 1224,
+    "volume": 6317,
+    "trades": 60
+  },
+  {
+    "date": "2023-04-25",
+    "high": 1256,
+    "low": 1209,
+    "open": 1224,
+    "close": 1255,
+    "volume": 6866,
+    "trades": 86
+  },
+  {
+    "date": "2023-04-26",
+    "high": 1271,
+    "low": 1186,
+    "open": 1256,
+    "close": 1206,
+    "volume": 5260,
+    "trades": 52
+  },
+  {
+    "date": "2023-04-27",
+    "high": 1212,
+    "low": 1185,
+    "open": 1205,
+    "close": 1199,
+    "volume": 5508,
+    "trades": 72
+  },
+  {
+    "date": "2023-04-28",
+    "high": 1205,
+    "low": 1150,
+    "open": 1197,
+    "close": 1157,
+    "volume": 8485,
+    "trades": 92
+  },
+  {
+    "date": "2023-04-29",
+    "high": 1176,
+    "low": 1114,
+    "open": 1158,
+    "close": 1119,
+    "volume": 7671,
+    "trades": 56
+  },
+  {
+    "date": "2023-04-30",
+    "high": 1126,
+    "low": 1083,
+    "open": 1117,
+    "close": 1084,
+    "volume": 8106,
+    "trades": 71
+  },
+  {
+    "date": "2023-05-01",
+    "high": 1097,
+    "low": 1022,
+    "open": 1083,
+    "close": 1033,
+    "volume": 7933,
+    "trades": 57
+  },
+  {
+    "date": "2023-05-02",
+    "high": 1051,
+    "low": 980,
+    "open": 1033,
+    "close": 990,
+    "volume": 5792,
+    "trades": 51
+  },
+  {
+    "date": "2023-05-03",
+    "high": 1016,
+    "low": 970,
+    "open": 988,
+    "close": 1006,
+    "volume": 7720,
+    "trades": 62
+  },
+  {
+    "date": "2023-05-04",
+    "high": 1042,
+    "low": 1003,
+    "open": 1006,
+    "close": 1035,
+    "volume": 5194,
+    "trades": 97
+  },
+  {
+    "date": "2023-05-05",
+    "high": 1050,
+    "low": 1029,
+    "open": 1034,
+    "close": 1040,
+    "volume": 8138,
+    "trades": 59
+  },
+  {
+    "date": "2023-05-06",
+    "high": 1109,
+    "low": 1035,
+    "open": 1041,
+    "close": 1089,
+    "volume": 5452,
+    "trades": 61
+  },
+  {
+    "date": "2023-05-07",
+    "high": 1104,
+    "low": 1081,
+    "open": 1090,
+    "close": 1081,
+    "volume": 5310,
+    "trades": 97
+  },
+  {
+    "date": "2023-05-08",
+    "high": 1096,
+    "low": 1029,
+    "open": 1079,
+    "close": 1044,
+    "volume": 7417,
+    "trades": 60
+  },
+  {
+    "date": "2023-05-09",
+    "high": 1094,
+    "low": 1033,
+    "open": 1047,
+    "close": 1075,
+    "volume": 9355,
+    "trades": 95
+  },
+  {
+    "date": "2023-05-10",
+    "high": 1090,
+    "low": 1045,
+    "open": 1076,
+    "close": 1060,
+    "volume": 6815,
+    "trades": 86
+  },
+  {
+    "date": "2023-05-11",
+    "high": 1067,
+    "low": 1029,
+    "open": 1057,
+    "close": 1045,
+    "volume": 6241,
+    "trades": 56
+  },
+  {
+    "date": "2023-05-12",
+    "high": 1061,
+    "low": 1041,
+    "open": 1045,
+    "close": 1061,
+    "volume": 6294,
+    "trades": 57
+  },
+  {
+    "date": "2023-05-13",
+    "high": 1094,
+    "low": 1045,
+    "open": 1058,
+    "close": 1084,
+    "volume": 8180,
+    "trades": 84
+  },
+  {
+    "date": "2023-05-14",
+    "high": 1117,
+    "low": 1074,
+    "open": 1084,
+    "close": 1112,
+    "volume": 8463,
+    "trades": 87
+  },
+  {
+    "date": "2023-05-15",
+    "high": 1156,
+    "low": 1093,
+    "open": 1111,
+    "close": 1138,
+    "volume": 6932,
+    "trades": 51
+  },
+  {
+    "date": "2023-05-16",
+    "high": 1179,
+    "low": 1131,
+    "open": 1139,
+    "close": 1161,
+    "volume": 6424,
+    "trades": 63
+  },
+  {
+    "date": "2023-05-17",
+    "high": 1162,
+    "low": 1132,
+    "open": 1162,
+    "close": 1151,
+    "volume": 6354,
+    "trades": 51
+  },
+  {
+    "date": "2023-05-18",
+    "high": 1160,
+    "low": 1100,
+    "open": 1150,
+    "close": 1108,
+    "volume": 9509,
+    "trades": 57
+  },
+  {
+    "date": "2023-05-19",
+    "high": 1154,
+    "low": 1088,
+    "open": 1106,
+    "close": 1154,
+    "volume": 9379,
+    "trades": 96
+  },
+  {
+    "date": "2023-05-20",
+    "high": 1194,
+    "low": 1141,
+    "open": 1157,
+    "close": 1177,
+    "volume": 7320,
+    "trades": 67
+  },
+  {
+    "date": "2023-05-21",
+    "high": 1211,
+    "low": 1165,
+    "open": 1175,
+    "close": 1211,
+    "volume": 7033,
+    "trades": 52
+  },
+  {
+    "date": "2023-05-22",
+    "high": 1241,
+    "low": 1196,
+    "open": 1208,
+    "close": 1238,
+    "volume": 5833,
+    "trades": 81
+  },
+  {
+    "date": "2023-05-23",
+    "high": 1278,
+    "low": 1235,
+    "open": 1235,
+    "close": 1271,
+    "volume": 6731,
+    "trades": 93
+  },
+  {
+    "date": "2023-05-24",
+    "high": 1272,
+    "low": 1259,
+    "open": 1270,
+    "close": 1268,
+    "volume": 7040,
+    "trades": 77
+  },
+  {
+    "date": "2023-05-25",
+    "high": 1288,
+    "low": 1228,
+    "open": 1270,
+    "close": 1229,
+    "volume": 5417,
+    "trades": 90
+  },
+  {
+    "date": "2023-05-26",
+    "high": 1238,
+    "low": 1200,
+    "open": 1226,
+    "close": 1220,
+    "volume": 8840,
+    "trades": 65
+  },
+  {
+    "date": "2023-05-27",
+    "high": 1287,
+    "low": 1202,
+    "open": 1221,
+    "close": 1271,
+    "volume": 7346,
+    "trades": 64
+  },
+  {
+    "date": "2023-05-28",
+    "high": 1314,
+    "low": 1262,
+    "open": 1270,
+    "close": 1311,
+    "volume": 8975,
+    "trades": 71
+  },
+  {
+    "date": "2023-05-29",
+    "high": 1320,
+    "low": 1290,
+    "open": 1314,
+    "close": 1306,
+    "volume": 7991,
+    "trades": 71
+  },
+  {
+    "date": "2023-05-30",
+    "high": 1327,
+    "low": 1292,
+    "open": 1303,
+    "close": 1313,
+    "volume": 9282,
+    "trades": 68
+  },
+  {
+    "date": "2023-05-31",
+    "high": 1328,
+    "low": 1299,
+    "open": 1312,
+    "close": 1317,
+    "volume": 8316,
+    "trades": 97
+  },
+  {
+    "date": "2023-06-01",
+    "high": 1357,
+    "low": 1309,
+    "open": 1317,
+    "close": 1348,
+    "volume": 8265,
+    "trades": 65
+  },
+  {
+    "date": "2023-06-02",
+    "high": 1352,
+    "low": 1337,
+    "open": 1349,
+    "close": 1339,
+    "volume": 5973,
+    "trades": 97
+  },
+  {
+    "date": "2023-06-03",
+    "high": 1347,
+    "low": 1308,
+    "open": 1339,
+    "close": 1320,
+    "volume": 5472,
+    "trades": 97
+  },
+  {
+    "date": "2023-06-04",
+    "high": 1367,
+    "low": 1309,
+    "open": 1319,
+    "close": 1349,
+    "volume": 8453,
+    "trades": 82
+  },
+  {
+    "date": "2023-06-05",
+    "high": 1373,
+    "low": 1347,
+    "open": 1348,
+    "close": 1360,
+    "volume": 6744,
+    "trades": 71
+  },
+  {
+    "date": "2023-06-06",
+    "high": 1411,
+    "low": 1347,
+    "open": 1359,
+    "close": 1405,
+    "volume": 6720,
+    "trades": 76
+  },
+  {
+    "date": "2023-06-07",
+    "high": 1419,
+    "low": 1355,
+    "open": 1402,
+    "close": 1373,
+    "volume": 5032,
+    "trades": 61
+  },
+  {
+    "date": "2023-06-08",
+    "high": 1390,
+    "low": 1369,
+    "open": 1374,
+    "close": 1375,
+    "volume": 8943,
+    "trades": 58
+  },
+  {
+    "date": "2023-06-09",
+    "high": 1379,
+    "low": 1348,
+    "open": 1372,
+    "close": 1358,
+    "volume": 9672,
+    "trades": 76
+  },
+  {
+    "date": "2023-06-10",
+    "high": 1386,
+    "low": 1352,
+    "open": 1358,
+    "close": 1380,
+    "volume": 9253,
+    "trades": 67
+  },
+  {
+    "date": "2023-06-11",
+    "high": 1393,
+    "low": 1341,
+    "open": 1379,
+    "close": 1352,
+    "volume": 8471,
+    "trades": 65
+  },
+  {
+    "date": "2023-06-12",
+    "high": 1357,
+    "low": 1332,
+    "open": 1350,
+    "close": 1332,
+    "volume": 5224,
+    "trades": 84
+  },
+  {
+    "date": "2023-06-13",
+    "high": 1352,
+    "low": 1274,
+    "open": 1333,
+    "close": 1289,
+    "volume": 6666,
+    "trades": 83
+  },
+  {
+    "date": "2023-06-14",
+    "high": 1300,
+    "low": 1268,
+    "open": 1286,
+    "close": 1276,
+    "volume": 6094,
+    "trades": 62
+  },
+  {
+    "date": "2023-06-15",
+    "high": 1305,
+    "low": 1254,
+    "open": 1273,
+    "close": 1290,
+    "volume": 7424,
+    "trades": 97
+  },
+  {
+    "date": "2023-06-16",
+    "high": 1327,
+    "low": 1276,
+    "open": 1287,
+    "close": 1316,
+    "volume": 8731,
+    "trades": 51
+  },
+  {
+    "date": "2023-06-17",
+    "high": 1336,
+    "low": 1259,
+    "open": 1316,
+    "close": 1270,
+    "volume": 7723,
+    "trades": 95
+  },
+  {
+    "date": "2023-06-18",
+    "high": 1281,
+    "low": 1205,
+    "open": 1269,
+    "close": 1225,
+    "volume": 5815,
+    "trades": 50
+  },
+  {
+    "date": "2023-06-19",
+    "high": 1270,
+    "low": 1219,
+    "open": 1226,
+    "close": 1262,
+    "volume": 9081,
+    "trades": 51
+  },
+  {
+    "date": "2023-06-20",
+    "high": 1315,
+    "low": 1254,
+    "open": 1264,
+    "close": 1295,
+    "volume": 5601,
+    "trades": 81
+  },
+  {
+    "date": "2023-06-21",
+    "high": 1315,
+    "low": 1281,
+    "open": 1296,
+    "close": 1294,
+    "volume": 9194,
+    "trades": 93
+  },
+  {
+    "date": "2023-06-22",
+    "high": 1328,
+    "low": 1276,
+    "open": 1295,
+    "close": 1317,
+    "volume": 9713,
+    "trades": 91
+  },
+  {
+    "date": "2023-06-23",
+    "high": 1336,
+    "low": 1280,
+    "open": 1320,
+    "close": 1293,
+    "volume": 9832,
+    "trades": 67
+  },
+  {
+    "date": "2023-06-24",
+    "high": 1293,
+    "low": 1244,
+    "open": 1290,
+    "close": 1263,
+    "volume": 8858,
+    "trades": 58
+  },
+  {
+    "date": "2023-06-25",
+    "high": 1264,
+    "low": 1210,
+    "open": 1261,
+    "close": 1222,
+    "volume": 9669,
+    "trades": 51
+  },
+  {
+    "date": "2023-06-26",
+    "high": 1223,
+    "low": 1158,
+    "open": 1219,
+    "close": 1169,
+    "volume": 8076,
+    "trades": 80
+  },
+  {
+    "date": "2023-06-27",
+    "high": 1186,
+    "low": 1125,
+    "open": 1170,
+    "close": 1137,
+    "volume": 9796,
+    "trades": 53
+  },
+  {
+    "date": "2023-06-28",
+    "high": 1181,
+    "low": 1140,
+    "open": 1140,
+    "close": 1180,
+    "volume": 5357,
+    "trades": 89
+  },
+  {
+    "date": "2023-06-29",
+    "high": 1193,
+    "low": 1163,
+    "open": 1178,
+    "close": 1188,
+    "volume": 7516,
+    "trades": 84
+  },
+  {
+    "date": "2023-06-30",
+    "high": 1196,
+    "low": 1156,
+    "open": 1185,
+    "close": 1157,
+    "volume": 7203,
+    "trades": 71
+  },
+  {
+    "date": "2023-07-01",
+    "high": 1213,
+    "low": 1156,
+    "open": 1157,
+    "close": 1197,
+    "volume": 9345,
+    "trades": 70
+  },
+  {
+    "date": "2023-07-02",
+    "high": 1205,
+    "low": 1149,
+    "open": 1197,
+    "close": 1150,
+    "volume": 7773,
+    "trades": 74
+  },
+  {
+    "date": "2023-07-03",
+    "high": 1163,
+    "low": 1132,
+    "open": 1148,
+    "close": 1140,
+    "volume": 5037,
+    "trades": 92
+  },
+  {
+    "date": "2023-07-04",
+    "high": 1160,
+    "low": 1132,
+    "open": 1141,
+    "close": 1154,
+    "volume": 5010,
+    "trades": 52
+  },
+  {
+    "date": "2023-07-05",
+    "high": 1153,
+    "low": 1129,
+    "open": 1151,
+    "close": 1144,
+    "volume": 8817,
+    "trades": 56
+  },
+  {
+    "date": "2023-07-06",
+    "high": 1142,
+    "low": 1096,
+    "open": 1141,
+    "close": 1107,
+    "volume": 7864,
+    "trades": 75
+  },
+  {
+    "date": "2023-07-07",
+    "high": 1146,
+    "low": 1091,
+    "open": 1105,
+    "close": 1134,
+    "volume": 8457,
+    "trades": 67
+  },
+  {
+    "date": "2023-07-08",
+    "high": 1176,
+    "low": 1123,
+    "open": 1133,
+    "close": 1159,
+    "volume": 6340,
+    "trades": 91
+  },
+  {
+    "date": "2023-07-09",
+    "high": 1171,
+    "low": 1133,
+    "open": 1157,
+    "close": 1141,
+    "volume": 6014,
+    "trades": 70
+  },
+  {
+    "date": "2023-07-10",
+    "high": 1160,
+    "low": 1134,
+    "open": 1138,
+    "close": 1155,
+    "volume": 9772,
+    "trades": 83
+  },
+  {
+    "date": "2023-07-11",
+    "high": 1171,
+    "low": 1138,
+    "open": 1152,
+    "close": 1159,
+    "volume": 6625,
+    "trades": 68
+  },
+  {
+    "date": "2023-07-12",
+    "high": 1192,
+    "low": 1156,
+    "open": 1161,
+    "close": 1188,
+    "volume": 9957,
+    "trades": 73
+  }
+]
