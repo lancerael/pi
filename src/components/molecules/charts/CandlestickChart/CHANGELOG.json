@@ -2,6 +2,21 @@
   "name": "@pi-lib/candlestick-chart",
   "entries": [
     {
+      "date": "Tue, 11 Jul 2023 23:14:18 GMT",
+      "tag": "@pi-lib/candlestick-chart_v2.1.5",
+      "version": "2.1.5",
+      "comments": {
+        "patch": [
+          {
+            "author": "122271901+lancerael-undo@users.noreply.github.com",
+            "package": "@pi-lib/candlestick-chart",
+            "commit": "6da195cc0f13faae9a90ff965c35a46c2fcf0d8f",
+            "comment": "Improved candlestick youch performance"
+          }
+        ]
+      }
+    },
+    {
       "date": "Sat, 08 Jul 2023 14:22:18 GMT",
       "tag": "@pi-lib/candlestick-chart_v2.1.4",
       "version": "2.1.4",
