@@ -1,7 +1,0 @@
-{
-  "type": "patch",
-  "comment": "Improved candlestick touch selection",
-  "packageName": "@pi-lib/candlestick-chart",
-  "email": "122271901+lancerael-undo@users.noreply.github.com",
-  "dependentChangeType": "patch"
-}
