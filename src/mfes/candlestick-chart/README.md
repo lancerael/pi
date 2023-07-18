@@ -1,3 +1,3 @@
-## Candlestick Chart Demo
+## Candlestick Chart
 
 The main page, publishing an MFE of the Candlestick Chart for the demo app.
