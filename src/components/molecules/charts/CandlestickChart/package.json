@@ -46,7 +46,6 @@
     "@pi-lib/styles": "workspace:^",
     "@pi-lib/tooltip": "workspace:^",
     "@pi-lib/utils": "workspace:^",
-    "@use-gesture/react": "^10.2.27",
     "d3-axis": "^3.0.0",
     "d3-scale": "^4.0.2",
     "d3-selection": "^3.0.0",
