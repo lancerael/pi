@@ -33,7 +33,10 @@ jobs:
 
       - name: List of changes
         shell: bash
-        run: echo "Changes = ${{ steps.changed-files.outputs.all_changed_files }}"
+        run:
+          echo "Changes = ${{ steps.changed-files.outputs.all_changed_files }}" |
+          echo "Has changed old = ${{ steps.changed-files.outputs.any_changed }}" |
+          echo "Has changed = ${{ steps.changed-files.outputs.test_any_changed }}"
 
       - name: Set up pnpm
         if: steps.changed-files.outputs.test_any_changed == 'true'
