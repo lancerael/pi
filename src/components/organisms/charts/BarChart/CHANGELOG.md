@@ -1,8 +1,16 @@
 # Change Log - @pi-lib/bar-chart
 
-This log was last generated on Mon, 26 Jun 2023 23:53:05 GMT and should not be manually modified.
+This log was last generated on Thu, 20 Jul 2023 22:16:53 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 1.0.4
+
+Thu, 20 Jul 2023 22:16:53 GMT
+
+### Patches
+
+- Component folder restructure (122271901+lancerael-undo@users.noreply.github.com)
 
 ## 1.0.2
 

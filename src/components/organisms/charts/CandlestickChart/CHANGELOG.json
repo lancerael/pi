@@ -2,6 +2,21 @@
   "name": "@pi-lib/candlestick-chart",
   "entries": [
     {
+      "date": "Thu, 20 Jul 2023 22:16:53 GMT",
+      "tag": "@pi-lib/candlestick-chart_v2.1.8",
+      "version": "2.1.8",
+      "comments": {
+        "patch": [
+          {
+            "author": "122271901+lancerael-undo@users.noreply.github.com",
+            "package": "@pi-lib/candlestick-chart",
+            "commit": "0e25d04356670644b4e23af447b1fc5857b41d8b",
+            "comment": "Candlestick touch enhancement"
+          }
+        ]
+      }
+    },
+    {
       "date": "Tue, 18 Jul 2023 23:20:42 GMT",
       "tag": "@pi-lib/candlestick-chart_v2.1.7",
       "version": "2.1.7",

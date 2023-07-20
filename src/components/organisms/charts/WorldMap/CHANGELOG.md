@@ -1,8 +1,16 @@
 # Change Log - @pi-lib/world-map
 
-This log was last generated on Wed, 05 Jul 2023 23:03:12 GMT and should not be manually modified.
+This log was last generated on Thu, 20 Jul 2023 22:16:53 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 1.0.5
+
+Thu, 20 Jul 2023 22:16:53 GMT
+
+### Patches
+
+- Component folder restructure (122271901+lancerael-undo@users.noreply.github.com)
 
 ## 1.0.3
 
