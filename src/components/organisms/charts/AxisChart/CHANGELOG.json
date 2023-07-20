@@ -2,6 +2,21 @@
   "name": "@pi-lib/axis-chart",
   "entries": [
     {
+      "date": "Thu, 20 Jul 2023 22:16:53 GMT",
+      "tag": "@pi-lib/axis-chart_v1.0.6",
+      "version": "1.0.6",
+      "comments": {
+        "patch": [
+          {
+            "author": "122271901+lancerael-undo@users.noreply.github.com",
+            "package": "@pi-lib/axis-chart",
+            "commit": "0e25d04356670644b4e23af447b1fc5857b41d8b",
+            "comment": "Component folder restructure"
+          }
+        ]
+      }
+    },
+    {
       "date": "Mon, 26 Jun 2023 23:53:05 GMT",
       "tag": "@pi-lib/axis-chart_v1.0.2",
       "version": "1.0.2",
