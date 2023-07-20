@@ -27,7 +27,6 @@ export const useTouch = (
       const [min, max] = ZOOM_RANGE
       controls.setZoomLevel((zoomLevel) => {
         let newZoom = zoomLevel - zoomChange
-        newZoom = newZoom < 0.1 ? 0.1 : newZoom
         newZoom = Math.round(newZoom * 1000) / 1000
         newZoom = newZoom < min ? min : newZoom
         newZoom = newZoom > max ? max : newZoom
@@ -40,14 +39,12 @@ export const useTouch = (
     // Changes the pan level
     const pan = (panChange: number) => {
       controls.setPanLevel((panLevel) => {
-        const newPan = panLevel + panChange / controls.zoomLevel
-        return newPan > 1 ? newPan : 1
+        return panLevel + panChange / controls.zoomLevel
       })
     }
 
     // Handles press start
     const start = ({ pointerId, pageX, pageY }: PointerEvent) => {
-      resetSelection()
       isPressed = true
       oldClientX = 0
       oldPinchDist = 0
@@ -65,6 +62,7 @@ export const useTouch = (
     const move = ({ clientX, pointerId, pageX, pageY }: PointerEvent) => {
       const pointerVals = Object.values(activePointers)
       if (isPressed) {
+        resetSelection()
         if (pointerVals?.length === 2) {
           if (Object.keys(activePointers).indexOf(`${pointerId}`) !== 1) return
           activePointers[pointerId] = { pageX, pageY }
@@ -99,18 +97,18 @@ export const useTouch = (
 
     // Used to add and remove all the listeners
     const updateListeners = (
-      action: 'add' | 'remove' = 'remove',
+      action:
+        | 'addEventListener'
+        | 'removeEventListener' = 'removeEventListener',
       pinchArgs?: { passive: boolean }
     ) => {
-      const onWindow = window[`${action}EventListener`]
-      const onSvg = svgRef.current?.[`${action}EventListener`]
-      onWindow('pointerup', stop as EventListener)
-      onSvg?.('pointerdown', start as EventListener)
-      onSvg?.('pointermove', pointerMove as EventListener)
-      onSvg?.('wheel', pinch as EventListener, pinchArgs)
+      window[action]('pointerup', stop as EventListener)
+      svgRef.current?.[action]('pointerdown', start as EventListener)
+      svgRef.current?.[action]('pointermove', pointerMove as EventListener)
+      svgRef.current?.[action]('wheel', pinch as EventListener, pinchArgs)
     }
+    updateListeners('addEventListener', { passive: false })
 
-    updateListeners('add', { passive: false })
     return updateListeners
   }, [svgRef.current])
 }
