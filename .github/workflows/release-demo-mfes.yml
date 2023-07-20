@@ -25,7 +25,11 @@ jobs:
         id: changed-files
         uses: tj-actions/changed-files@v35
         with:
-          files: ./src/mfes/${{ matrix.mfe-name }}/**
+          files_yaml: |
+            mfes:
+              - './src/mfes/${{ matrix.mfe-name }}/**'
+            components:
+              - './src/components/**'
 
       - name: List of changes
         shell: bash
@@ -51,3 +55,13 @@ jobs:
           AWS_REGION: 'eu-west-2'
           SOURCE_DIR: 'src/mfes/${{ matrix.mfe-name }}/dist'
           DEST_DIR: '${{ matrix.mfe-name }}'
+
+      - name: Configure AWS credentials
+        run: |
+          aws configure set aws_access_key_id ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws configure set aws_secret_access_key ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws configure set default.region eu-west-2
+
+      - name: Create CloudFront Invalidation
+        run: |
+          aws cloudfront create-invalidation --distribution-id E152JVQP5CZF23 --paths "/*"
