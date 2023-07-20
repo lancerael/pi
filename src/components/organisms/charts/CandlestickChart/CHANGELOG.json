@@ -2,6 +2,21 @@
   "name": "@pi-lib/candlestick-chart",
   "entries": [
     {
+      "date": "Tue, 18 Jul 2023 23:20:42 GMT",
+      "tag": "@pi-lib/candlestick-chart_v2.1.7",
+      "version": "2.1.7",
+      "comments": {
+        "patch": [
+          {
+            "author": "122271901+lancerael-undo@users.noreply.github.com",
+            "package": "@pi-lib/candlestick-chart",
+            "commit": "c5bccccdbe0b4cdf1004587b8d700b85058dec84",
+            "comment": "Restored home baked touch controls"
+          }
+        ]
+      }
+    },
+    {
       "date": "Wed, 12 Jul 2023 22:49:36 GMT",
       "tag": "@pi-lib/candlestick-chart_v2.1.6",
       "version": "2.1.6",

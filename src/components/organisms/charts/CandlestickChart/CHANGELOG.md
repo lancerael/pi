@@ -1,8 +1,16 @@
 # Change Log - @pi-lib/candlestick-chart
 
-This log was last generated on Wed, 12 Jul 2023 22:49:36 GMT and should not be manually modified.
+This log was last generated on Tue, 18 Jul 2023 23:20:42 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 2.1.7
+
+Tue, 18 Jul 2023 23:20:42 GMT
+
+### Patches
+
+- Restored home baked touch controls (122271901+lancerael-undo@users.noreply.github.com)
 
 ## 2.1.6
 
