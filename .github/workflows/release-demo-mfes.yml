@@ -24,24 +24,26 @@ jobs:
         with:
           node-version: 18.x
 
-      - name: Changed files
-        id: changed-files
+      - name: Changed MFEs
+        id: changed-mfes
         uses: tj-actions/changed-files@v37
         with:
-          files_yaml: |
-            mfes:
-              - 'src/mfes/${{ matrix.mfe-name }}/**'
-            components:
-              - 'src/components/**'
+          files: ./src/mfes/${{ matrix.mfe-name }}/**
+
+      - name: Changed components
+        id: changed-components
+        uses: tj-actions/changed-files@v37
+        with:
+          files: ./src/components/**
 
       - name: List of changes
         shell: bash
         run: |
-          echo "Changes = ${{steps.changed-files-yaml-mfes.outputs.all_changed_files}}, ${{ steps.changed-files.outputs.components_all_changed_files }}"
+          echo "Changes = ${{steps.changed-mfes.outputs.all_changed_files}}, ${{ steps.changed-components.outputs.all_changed_files }}"
 
       - name: Evaluate condition and set output
         id: check-changes
-        run: echo "has-changed=${{steps.changed-files.outputs.mfes_any_changed || steps.changed-files.outputs.components_any_changed}}" >> $GITHUB_OUTPUT
+        run: echo "has-changed=${{steps.changed-mfes.outputs.any_changed == 'true' || steps.changed-components.outputs.any_changed == 'true'}}" >> $GITHUB_OUTPUT
 
       - name: Set up pnpm
         if: steps.check-changes.outputs.has-changed == 'true'
