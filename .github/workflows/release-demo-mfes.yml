@@ -36,13 +36,13 @@ jobs:
 
       - name: Changed MFEs
         id: changed-mfes
-        uses: tj-actions/changed-files@v35
+        uses: tj-actions/changed-files@v37
         with:
           files: ./src/mfes/${{ matrix.mfe-name }}/**
 
       - name: Changed components
         id: changed-components
-        uses: tj-actions/changed-files@v35
+        uses: tj-actions/changed-files@v37
         with:
           files: ./src/components/**
 
