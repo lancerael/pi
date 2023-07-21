@@ -11,7 +11,7 @@ export const Sidebar = ({ chartData }: { chartData: CandlestickDayData[] }) => {
   return (
     <div style={{ minWidth: '300px' }}>
       <h2 style={{ textTransform: 'uppercase' }}>
-        Acme Inc.{' '}
+        Ace Forest Inc.{' '}
         <span
           style={{
             float: 'right',

@@ -22,7 +22,7 @@ jobs:
           node-version: 18.x
 
       - name: Changed files
-        id: changed-files-yaml
+        id: changed-files
         uses: tj-actions/changed-files@v37
         with:
           files_yaml: |
@@ -34,18 +34,22 @@ jobs:
       - name: List of changes
         shell: bash
         run: |
-          echo "Changes ${{steps.changed-files-yaml.outputs.test_all_changed_files}} = ${{ steps.changed-files-yaml.outputs.all_changed_files }} - Has changed old = ${{ steps.changed-files-yaml.outputs.any_changed }} - Has changed = ${{ steps.changed-files-yaml.outputs.test_any_changed }}"
+          echo "Changes = ${{steps.changed-files.outputs.mfes_all_changed_files}}, ${{ steps.changed-files.outputs.components_all_changed_files }}"
+
+      - name: Evaluate condition and set output
+        id: check-changes
+        run: echo "has-changed=${{steps.changed-files.outputs.mfes_any_changed || steps.changed-files.outputs.components_any_changed}}" >> $GITHUB_OUTPUT
 
       - name: Set up pnpm
-        if: steps.changed-files-yaml.outputs.test_any_changed == 'true'
+        if: steps.check-changes.outputs.has-changed == 'true'
         uses: ./.github/actions/pnpm-setup
 
       - name: Build for AWS
-        if: steps.changed-files-yaml.outputs.test_any_changed == 'true'
+        if: steps.check-changes.outputs.has-changed == 'true'
         run: pnpm build
 
       - name: Deploy to S3 bucket
-        if: steps.changed-files-yaml.outputs.test_any_changed == 'true'
+        if: steps.check-changes.outputs.has-changed == 'true'
         uses: jakejarvis/s3-sync-action@master
         with:
           args: --acl public-read --follow-symlinks --delete
@@ -58,13 +62,13 @@ jobs:
           DEST_DIR: '${{ matrix.mfe-name }}'
 
       - name: Configure AWS credentials
-        if: steps.changed-files-yaml.outputs.test_any_changed == 'true'
+        if: steps.check-changes.outputs.has-changed == 'true'
         run: |
           aws configure set aws_access_key_id ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws configure set aws_secret_access_key ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws configure set default.region eu-west-2
 
       - name: Create CloudFront Invalidation
-        if: steps.changed-files-yaml.outputs.test_any_changed == 'true'
+        if: steps.check-changes.outputs.has-changed == 'true'
         run: |
           aws cloudfront create-invalidation --distribution-id E152JVQP5CZF23 --paths "/*"
