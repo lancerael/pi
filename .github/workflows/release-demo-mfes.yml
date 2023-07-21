@@ -66,6 +66,7 @@ jobs:
           aws s3 sync src/mfes/${{ matrix.mfe-name }}/dist s3://${{ secrets.AWS_S3_MFES }}/${{ matrix.mfe-name }}
 
       - name: Set ACL for uploaded files
+        if: steps.check-changes.outputs.has-changed == 'true'
         run: |
           aws s3 cp s3://${{ secrets.AWS_S3_MFES }}/${{ matrix.mfe-name }} --recursive --acl public-read
 
