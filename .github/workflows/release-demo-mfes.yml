@@ -53,25 +53,17 @@ jobs:
         if: steps.check-changes.outputs.has-changed == 'true'
         run: pnpm --filter @pi-lib/${{ matrix.mfe-name }}-mfe build
 
-      - name: Deploy to S3 bucket
-        if: steps.check-changes.outputs.has-changed == 'true'
-        uses: jakejarvis/s3-sync-action@master
-        with:
-          args: --acl public-read --follow-symlinks --delete
-        env:
-          AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          AWS_REGION: 'eu-west-2'
-          SOURCE_DIR: 'src/mfes/${{ matrix.mfe-name }}/dist'
-          DEST_DIR: '${{ matrix.mfe-name }}'
-
       - name: Configure AWS credentials
         if: steps.check-changes.outputs.has-changed == 'true'
         run: |
           aws configure set aws_access_key_id ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws configure set aws_secret_access_key ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws configure set default.region eu-west-2
+
+      - name: Deploy to S3
+        if: steps.check-changes.outputs.has-changed == 'true'
+        run: |
+          aws s3 sync 'src/mfes/${{ matrix.mfe-name }}/dist' ${{ secrets.AWS_S3_BUCKET }} --delete
 
       - name: Create CloudFront Invalidation
         if: steps.check-changes.outputs.has-changed == 'true'
