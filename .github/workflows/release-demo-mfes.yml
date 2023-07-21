@@ -30,9 +30,9 @@ jobs:
         with:
           files_yaml: |
             mfes:
-              - './src/mfes/${{ matrix.mfe-name }}/**'
+              - 'src/mfes/${{ matrix.mfe-name }}/**'
             components:
-              - './src/components/**'
+              - 'src/components/**'
 
       - name: List of changes
         shell: bash
