@@ -24,6 +24,16 @@ jobs:
         with:
           node-version: 18.x
 
+      - name: Changed files
+        id: changed-files
+        uses: tj-actions/changed-files@v35
+        with:
+          files: ./src/mfes/${{ matrix.mfe-name }}/**
+
+      - name: List of changes
+        shell: bash
+        run: echo "Changes = ${{ steps.changed-files.outputs.all_changed_files }}"
+
       - name: Changed MFEs
         id: changed-mfes
         uses: tj-actions/changed-files@v37
