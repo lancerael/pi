@@ -37,7 +37,7 @@ jobs:
       - name: List of changes
         shell: bash
         run: |
-          echo "Changes = ${{steps.changed-files.outputs.mfes_all_changed_files}}, ${{ steps.changed-files.outputs.components_all_changed_files }}"
+          echo "Changes = ${{steps.changed-files-yaml-mfes.outputs.all_changed_files}}, ${{ steps.changed-files.outputs.components_all_changed_files }}"
 
       - name: Evaluate condition and set output
         id: check-changes
