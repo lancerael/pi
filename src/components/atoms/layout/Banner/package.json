@@ -1,6 +1,6 @@
 {
   "name": "@pi-lib/banner",
-  "version": "0.5.2",
+  "version": "0.5.3",
   "description": "A banner React component that can be used for a header or footer",
   "keywords": [
     "pi",

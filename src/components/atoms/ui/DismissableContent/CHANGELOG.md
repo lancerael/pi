@@ -1,8 +1,16 @@
 # Change Log - @pi-lib/dismissable-content
 
-This log was last generated on Wed, 05 Jul 2023 23:03:12 GMT and should not be manually modified.
+This log was last generated on Sat, 22 Jul 2023 23:29:50 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 1.0.4
+
+Sat, 22 Jul 2023 23:29:50 GMT
+
+### Patches
+
+- Style tweaks (lancerael@googlemail.com)
 
 ## 1.0.1
 

@@ -2,6 +2,21 @@
   "name": "@pi-lib/collapsible-menu",
   "entries": [
     {
+      "date": "Sat, 22 Jul 2023 23:29:50 GMT",
+      "tag": "@pi-lib/collapsible-menu_v1.0.7",
+      "version": "1.0.7",
+      "comments": {
+        "patch": [
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/collapsible-menu",
+            "commit": "fa495d9fd000ec3c46c2225f99ce410f82a87275",
+            "comment": "Style tweaks"
+          }
+        ]
+      }
+    },
+    {
       "date": "Wed, 05 Jul 2023 23:03:12 GMT",
       "tag": "@pi-lib/collapsible-menu_v1.0.3",
       "version": "1.0.3",
