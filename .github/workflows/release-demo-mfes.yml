@@ -68,7 +68,7 @@ jobs:
       - name: Set ACL for uploaded files
         if: steps.check-changes.outputs.has-changed == 'true'
         run: |
-          aws s3api put-object-acl --bucket ${{ secrets.AWS_S3_MFES }} --key ${{ matrix.mfe-name }} --acl public-read
+          aws s3api put-object-acl --bucket ${{ secrets.AWS_S3_MFES }}/${{ matrix.mfe-name }} --key ${{ secrets.AWS_ACCESS_KEY_ID }} --acl public-read
 
       - name: Create CloudFront Invalidation
         if: steps.check-changes.outputs.has-changed == 'true'
