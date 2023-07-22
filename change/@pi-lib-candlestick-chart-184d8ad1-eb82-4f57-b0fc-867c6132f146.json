@@ -1,0 +1,7 @@
+{
+  "type": "patch",
+  "comment": "cs indicator fix",
+  "packageName": "@pi-lib/candlestick-chart",
+  "email": "lancerael@googlemail.com",
+  "dependentChangeType": "patch"
+}
