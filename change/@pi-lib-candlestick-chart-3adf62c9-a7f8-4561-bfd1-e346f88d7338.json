@@ -1,7 +1,0 @@
-{
-  "type": "patch",
-  "comment": "Improved shadow style",
-  "packageName": "@pi-lib/candlestick-chart",
-  "email": "lancerael@googlemail.com",
-  "dependentChangeType": "patch"
-}

@@ -1,6 +1,6 @@
 {
   "name": "@pi-lib/button",
-  "version": "1.7.2",
+  "version": "1.7.3",
   "description": "A React button component with status",
   "keywords": [
     "pi",

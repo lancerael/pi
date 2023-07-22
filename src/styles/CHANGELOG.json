@@ -2,6 +2,21 @@
   "name": "@pi-lib/styles",
   "entries": [
     {
+      "date": "Sat, 22 Jul 2023 15:04:59 GMT",
+      "tag": "@pi-lib/styles_v2.1.1",
+      "version": "2.1.1",
+      "comments": {
+        "patch": [
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/styles",
+            "commit": "58b655736766600dec95853d23fa57db70587662",
+            "comment": "Improved shadow style"
+          }
+        ]
+      }
+    },
+    {
       "date": "Fri, 07 Jul 2023 22:59:24 GMT",
       "tag": "@pi-lib/styles_v2.1.0",
       "version": "2.1.0",
