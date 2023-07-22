@@ -60,8 +60,7 @@ export const StyledCollapsibleMenu = styled.div(
 
 export const StyledMenuInner = styled.div(
   ({ isOpen }: StyledCollapsibleMenuProps) => css`
-    margin-top: ${isOpen ? '-4px' : '-200px'};
-    margin-bottom: -4px;
+    margin-top: ${isOpen ? '0' : '-200px'};
     display: flex;
     flex-direction: column;
     gap: 8px;
@@ -71,9 +70,12 @@ export const StyledMenuInner = styled.div(
 export const StyledMenu = styled.ul`
   margin: 0;
   padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 `
 
 export const StyledMenuItem = styled.li`
   margin: 0;
-  padding: 4px;
+  padding: 0;
 `

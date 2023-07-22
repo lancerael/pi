@@ -222,11 +222,11 @@ export const Header = () => {
                 }}
               >
                 <div style={{ textAlign: 'center' }}>
-                  Store settings on device?
+                  Store your preferences on this device?
                 </div>
                 <div style={{ padding: '0 30%' }}>
                   <Button onPointerUp={() => dispatch(updateConsent(true))}>
-                    Consent 🍪
+                    Yes please! 🍪
                   </Button>
                 </div>
               </div>

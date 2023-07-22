@@ -122,7 +122,9 @@ export const EditorActions = () => {
           />
         </StyledIconButton>
         <StyledButton>
-          <Button {...{ title, onPointerUp }}>{label.toUpperCase()}</Button>
+          <Button {...{ title, onPointerUp, isSpecial: true }}>
+            {label.toUpperCase()}
+          </Button>
         </StyledButton>
       </StyledAction>
     )
