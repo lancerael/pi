@@ -2,6 +2,21 @@
   "name": "@pi-lib/banner",
   "entries": [
     {
+      "date": "Sat, 22 Jul 2023 15:04:59 GMT",
+      "tag": "@pi-lib/banner_v0.5.2",
+      "version": "0.5.2",
+      "comments": {
+        "patch": [
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/banner",
+            "commit": "58b655736766600dec95853d23fa57db70587662",
+            "comment": "Improved shadow style"
+          }
+        ]
+      }
+    },
+    {
       "date": "Mon, 26 Jun 2023 23:53:05 GMT",
       "tag": "@pi-lib/banner_v0.5.0",
       "version": "0.5.0",

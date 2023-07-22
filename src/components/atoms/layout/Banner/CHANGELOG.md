@@ -1,8 +1,16 @@
 # Change Log - @pi-lib/banner
 
-This log was last generated on Mon, 26 Jun 2023 23:53:05 GMT and should not be manually modified.
+This log was last generated on Sat, 22 Jul 2023 15:04:59 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 0.5.2
+
+Sat, 22 Jul 2023 15:04:59 GMT
+
+### Patches
+
+- Improved shadow style (lancerael@googlemail.com)
 
 ## 0.5.0
 
