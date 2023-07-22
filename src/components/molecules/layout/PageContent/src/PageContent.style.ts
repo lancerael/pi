@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components'
 import { StyledSidebarProps } from './PageContent.style.types'
+import { shadow } from '@pi-lib/styles'
 
 export const StyledPageContent = styled.div(
   ({ isCollapsible }: StyledSidebarProps) => css`
@@ -28,6 +29,7 @@ export const StyledSidebar = styled.div(
     color: var(--textSoft);
     border-right: 1px solid var(--border);
     padding: 16px;
+    ${shadow('2px 0px')}
     ${!!isCollapsible &&
     css`
       @media (max-width: 800px) {
@@ -35,6 +37,8 @@ export const StyledSidebar = styled.div(
         border-right: none;
         border-bottom: 1px solid var(--border);
         max-width: 100%;
+
+        ${shadow('0px 2px')}
       }
     `}
   `

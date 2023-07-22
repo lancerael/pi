@@ -1,5 +1,8 @@
 import { css } from 'styled-components'
 
+export const shadow = (offset = '2px 2px') =>
+  `box-shadow: ${offset} 5px 2px rgba(0, 0, 0, 0.05);`
+
 export const box = ({
   color,
   bgColor,
@@ -13,7 +16,7 @@ export const box = ({
     background-color: ${bgColor ?? `var(--${backgroundVar})`};
     border-radius: 6px;
     padding: 8px;
-    box-shadow: 2px 2px 2px 0px rgb(61 61 61 / 10%);
+    ${shadow('2px 2px')}
   `
 }
 
@@ -40,5 +43,6 @@ export const chartContainer = () => {
       var(--mark) 51%,
       var(--bg) 100%
     );
+    ${shadow('2px 2px')}
   `
 }
