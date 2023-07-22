@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components'
 import { BannerProps } from './Banner.types'
+import { shadow } from '@pi-lib/styles'
 
 export const StyledBanner = styled.div(
   ({
@@ -21,5 +22,6 @@ export const StyledBanner = styled.div(
     border-${invertGradient ? 'top' : 'bottom'}: 1px solid var(--specialShadow);
     ${!!wrapItems && 'flex-wrap: wrap;'};
     overflow-x: clip;
+    ${shadow('0px 2px')}
   `
 )

@@ -12,14 +12,6 @@ export const StyledCandlestickChart = styled.svg`
     cursor: pointer;
     transition: filter 0.2s;
 
-    &.is-increased {
-      fill: var(--success);
-    }
-
-    &.is-decreased {
-      fill: var(--error);
-    }
-
     &.is-offscreen {
       display: none;
     }
@@ -46,7 +38,7 @@ export const StyledCandlestickChart = styled.svg`
 
     &.is-active {
       filter: brightness(1);
-      stroke: var(--textSoft);
+      stroke: var(--textSoft) !important;
       stroke-width: 2;
     }
   }

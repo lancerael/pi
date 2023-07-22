@@ -16,7 +16,7 @@ export const Sidebar = ({ chartData }: { chartData: CandlestickDayData[] }) => {
           style={{
             float: 'right',
             fontWeight: 'bold',
-            color: close > open ? 'var(--success)' : 'var(--error)',
+            color: close > open ? 'green' : 'red',
           }}
         >
           {close}
