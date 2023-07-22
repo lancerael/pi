@@ -42,7 +42,7 @@ React theming utility for use with Pi and styled-components
 
 A banner React component that can be used for a header or footer
 
-**Dependencies:** react, styled-components
+**Dependencies:** @pi-lib/styles, react, styled-components
 
 <table>
   <tbody>

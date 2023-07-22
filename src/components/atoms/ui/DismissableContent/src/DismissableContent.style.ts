@@ -1,11 +1,12 @@
 import styled, { css } from 'styled-components'
 import { StyledDismissableContentProps } from './DismissableContent.style.types'
+import { gradient } from '@pi-lib/styles'
 
 export const StyledDismissableContent = styled.div(
   ({ isVisible, isPresent }: StyledDismissableContentProps) => {
     return css`
       border: 1px solid var(--textStrong);
-      background: linear-gradient(to bottom, var(--text), var(--textSoft));
+      ${gradient({ isAlt: true })}
       color: var(--bg);
       border-radius: 8px;
       padding: 16px;

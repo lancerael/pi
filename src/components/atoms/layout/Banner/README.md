@@ -4,7 +4,7 @@
 
 A banner React component that can be used for a header or footer
 
-**Dependencies:** react, styled-components
+**Dependencies:** @pi-lib/styles, react, styled-components
 
 <table>
   <tbody>

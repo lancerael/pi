@@ -1,15 +1,25 @@
 import { css } from 'styled-components'
 
-export const shadow = (offset = '2px 2px') =>
-  `box-shadow: ${offset} 5px 2px rgba(0, 0, 0, 0.05);`
+export const shadow = (offset = '2px 2px', opacity = '0.05') =>
+  `box-shadow: ${offset} 5px 1px rgba(0, 0, 0, ${opacity});`
+
+export const gradient = ({ invertGradient = false, isAlt = false } = {}) => {
+  return isAlt
+    ? `background: linear-gradient(to ${
+        invertGradient ? 'bottom' : 'top'
+      }, var(--text), var(--textSoft));`
+    : `background: linear-gradient(to ${
+        invertGradient ? 'bottom' : 'top'
+      }, var(--dark), var(--specialShadow));`
+}
 
 export const box = ({
   color,
   bgColor,
   isSpecial,
 }: { color?: string; bgColor?: string; isSpecial?: boolean } = {}) => {
-  const colorVar = isSpecial ? 'specialText' : 'text'
-  const backgroundVar = isSpecial ? 'specialBg' : 'subtle'
+  const colorVar = isSpecial ? 'subtle' : 'textSoft'
+  const backgroundVar = isSpecial ? 'textSoft' : 'subtle'
   return css`
     border: 1px solid var(--shadow);
     color: ${color ? color : `var(--${colorVar})`};
@@ -38,8 +48,8 @@ export const chartContainer = () => {
     border-radius: 8px;
     background: linear-gradient(
       135deg,
-      var(--bg) 0%,
-      var(--subtle) 50%,
+      var(--subtle) 0%,
+      var(--bg) 50%,
       var(--mark) 51%,
       var(--bg) 100%
     );
