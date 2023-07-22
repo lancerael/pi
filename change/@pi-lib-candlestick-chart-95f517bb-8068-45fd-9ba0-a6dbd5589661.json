@@ -1,7 +1,0 @@
-{
-  "type": "patch",
-  "comment": "Style tweaks",
-  "packageName": "@pi-lib/candlestick-chart",
-  "email": "lancerael@googlemail.com",
-  "dependentChangeType": "patch"
-}

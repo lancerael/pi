@@ -2,6 +2,21 @@
   "name": "@pi-lib/banner",
   "entries": [
     {
+      "date": "Sat, 22 Jul 2023 23:29:50 GMT",
+      "tag": "@pi-lib/banner_v0.5.3",
+      "version": "0.5.3",
+      "comments": {
+        "patch": [
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/banner",
+            "commit": "fa495d9fd000ec3c46c2225f99ce410f82a87275",
+            "comment": "Style tweaks"
+          }
+        ]
+      }
+    },
+    {
       "date": "Sat, 22 Jul 2023 15:04:59 GMT",
       "tag": "@pi-lib/banner_v0.5.2",
       "version": "0.5.2",
