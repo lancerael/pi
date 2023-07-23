@@ -1,18 +1,15 @@
-import { useEffect, useRef } from 'react'
-import { CANDLE_PADDING, CANDLE_WIDTH } from '../CandlestickChart.constants'
+import { useEffect, useMemo, useRef } from 'react'
+import {
+  CANDLE_PADDING,
+  CANDLE_WIDTH,
+  EMPTY_ITEM,
+  FILTER_PERIOD_MAP,
+} from '../CandlestickChart.constants'
 import {
   CandlestickDayData,
   DataRange,
   IControls,
 } from '../CandlestickChart.types'
-
-const emptyItem = {
-  date: '--',
-  open: 0,
-  high: 0,
-  low: 0,
-  close: 0,
-}
 
 /**
  * A React hook used to isolate the numbers related to the active range
@@ -26,12 +23,33 @@ export const useDataRange = (
   data: CandlestickDayData[],
   controls: IControls
 ): DataRange => {
-  const thisData = [...data, emptyItem]
+  let lastIndex = data.length - 1
   const { panLevel, zoomLevel } = controls
-  const lastIndex = thisData.length
   const end = useRef<number>(lastIndex)
   const prevPan = useRef(0)
   const latestOffset = useRef(0)
+  const thisData = useMemo(() => {
+    let filteredDates = structuredClone(data)
+    if (['weeks', 'months'].includes(controls.period)) {
+      filteredDates = data.filter(({ date }) =>
+        FILTER_PERIOD_MAP[controls.period].includes(
+          date.split('-').reverse()[0]
+        )
+      )
+      filteredDates = filteredDates.map((item, i) => {
+        const rangeEndIndex =
+          data.findIndex(({ date }) => date === filteredDates[i + 1]?.date) - 1
+        return {
+          ...item,
+          close: data[rangeEndIndex]?.close ?? data[data.length - 1]?.close,
+        }
+      })
+    }
+    lastIndex = filteredDates.length - 1
+    end.current = lastIndex
+    return [EMPTY_ITEM, ...filteredDates, EMPTY_ITEM]
+  }, [data, controls.period])
+
   const candleWidth = (CANDLE_WIDTH + CANDLE_WIDTH * CANDLE_PADDING) * zoomLevel
   const perPage = Math.round(width / candleWidth) || 0
   let offset = latestOffset.current
@@ -60,6 +78,7 @@ export const useDataRange = (
   }
   let start = end.current - perPage
   start = start < 0 ? 0 : start
+
   const dataSlice = thisData.slice(start, end.current)
   const min = Math.min(
     ...dataSlice.map(({ low }) => low).filter((value) => value !== 0)

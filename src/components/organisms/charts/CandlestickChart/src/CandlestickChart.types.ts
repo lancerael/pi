@@ -2,6 +2,7 @@ import { ScaleBand } from 'd3-scale'
 import { Selection } from 'd3-selection'
 import { CandleTooltipProps } from './components/CandleTooltip/CandleTooltip.types'
 import { Transition } from 'd3-transition'
+import { FILTER_PERIOD_MAP } from './CandlestickChart.constants'
 
 export interface CandlestickDayData {
   date: string
@@ -43,8 +44,12 @@ export interface ActiveItem {
 export interface IControls {
   zoomLevel: number
   panLevel: number
+  period: keyof typeof FILTER_PERIOD_MAP
   setZoomLevel: React.Dispatch<React.SetStateAction<number>>
   setPanLevel: React.Dispatch<React.SetStateAction<number>>
+  setPeriod: React.Dispatch<
+    React.SetStateAction<keyof typeof FILTER_PERIOD_MAP>
+  >
 }
 
 export interface Sizes {
