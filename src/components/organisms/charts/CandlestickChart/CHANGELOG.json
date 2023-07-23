@@ -2,6 +2,21 @@
   "name": "@pi-lib/candlestick-chart",
   "entries": [
     {
+      "date": "Sat, 22 Jul 2023 23:40:43 GMT",
+      "tag": "@pi-lib/candlestick-chart_v2.1.11",
+      "version": "2.1.11",
+      "comments": {
+        "patch": [
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/candlestick-chart",
+            "commit": "252589d4f30e84a8358e783eef1d2d8828e79d30",
+            "comment": "cs indicator fix"
+          }
+        ]
+      }
+    },
+    {
       "date": "Sat, 22 Jul 2023 23:29:50 GMT",
       "tag": "@pi-lib/candlestick-chart_v2.1.10",
       "version": "2.1.10",
