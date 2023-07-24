@@ -23,7 +23,7 @@ export const useDataRange = (
   data: CandlestickDayData[],
   controls: IControls
 ): DataRange => {
-  let lastIndex = data.length - 1
+  let lastIndex = data.length + 2
   const { panLevel, zoomLevel } = controls
   const end = useRef<number>(lastIndex)
   const prevPan = useRef(0)
@@ -45,7 +45,7 @@ export const useDataRange = (
         }
       })
     }
-    lastIndex = filteredDates.length - 1
+    lastIndex = filteredDates.length + 2
     end.current = lastIndex
     return [EMPTY_ITEM, ...filteredDates, EMPTY_ITEM]
   }, [data, controls.period])
