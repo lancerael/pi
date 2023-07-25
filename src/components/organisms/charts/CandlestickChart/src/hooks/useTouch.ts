@@ -88,6 +88,8 @@ export const useTouch = (
       if (e.ctrlKey) {
         throttledZoom(e.deltaY * 0.006)
         e.preventDefault()
+      } else {
+        // throttledPan()
       }
     }
 
@@ -103,8 +105,8 @@ export const useTouch = (
       pinchArgs?: { passive: boolean }
     ) => {
       window[action]('pointerup', stop as EventListener)
+      window[action]('pointermove', pointerMove as EventListener)
       svgRef.current?.[action]('pointerdown', start as EventListener)
-      svgRef.current?.[action]('pointermove', pointerMove as EventListener)
       svgRef.current?.[action]('wheel', pinch as EventListener, pinchArgs)
     }
     updateListeners('addEventListener', { passive: false })
