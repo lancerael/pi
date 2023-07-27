@@ -1,8 +1,16 @@
 # Change Log - @pi-lib/candlestick-chart
 
-This log was last generated on Sat, 22 Jul 2023 23:40:43 GMT and should not be manually modified.
+This log was last generated on Thu, 27 Jul 2023 21:42:27 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 2.2.0
+
+Thu, 27 Jul 2023 21:42:27 GMT
+
+### Minor changes
+
+- Adding candlestick period controls (lancerael@googlemail.com)
 
 ## 2.1.11
 
