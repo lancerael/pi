@@ -81,7 +81,7 @@ export const useTouch = (
 
     const throttledZoom = throttle(zoom, 10)
     const throttledMove = throttle(move, 10)
-    const throttledPan = throttle((panChange) => pan(panChange), 10)
+    const throttledPan = throttle(pan, 10)
 
     // Handler for trackpad pinch
     const pinch = (e: WheelEvent) => {
