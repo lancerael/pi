@@ -108,6 +108,7 @@ export const useDataRange = (
     max,
     offset: latestOffset.current,
     dataSlice,
-    length: data.length,
+    lastItem: thisData[thisData.length - 2],
+    length: thisData.length,
   }
 }

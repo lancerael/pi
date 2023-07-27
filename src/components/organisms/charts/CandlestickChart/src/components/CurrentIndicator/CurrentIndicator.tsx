@@ -7,6 +7,7 @@ export const CurrentIndicator = ({
   yScale,
   sizes,
 }: CurrentIndicatorProps) => {
+  if (!currentItem) return <></>
   const indicatorBottom = sizes.height - AXIS_OFFSETS[0] - CHART_PADDING
   const indicatorTop = CHART_PADDING
   const left = sizes.width - AXIS_OFFSETS[1] + CHART_PADDING + 4 + sizes.left

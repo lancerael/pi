@@ -34,8 +34,6 @@ export const useTouch = (
       })
     }
 
-    const throttledZoom = throttle(zoom, 10)
-
     // Changes the pan level
     const pan = (panChange: number) => {
       controls.setPanLevel((panLevel) => {
@@ -76,12 +74,14 @@ export const useTouch = (
         } else {
           const panChange = oldClientX ? clientX - oldClientX : 0
           oldClientX = clientX
-          pan(panChange / controls.zoomLevel)
+          pan(panChange)
         }
       }
     }
 
+    const throttledZoom = throttle(zoom, 10)
     const throttledMove = throttle(move, 10)
+    const throttledPan = throttle((panChange) => pan(panChange), 10)
 
     // Handler for trackpad pinch
     const pinch = (e: WheelEvent) => {
@@ -89,7 +89,7 @@ export const useTouch = (
         throttledZoom(e.deltaY * 0.006)
         e.preventDefault()
       } else {
-        // throttledPan()
+        throttledPan(e.deltaY * 0.006)
       }
     }
 

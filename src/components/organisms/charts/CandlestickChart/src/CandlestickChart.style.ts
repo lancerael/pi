@@ -1,7 +1,10 @@
 import { chartContainer } from '@pi-lib/styles'
 import styled from 'styled-components'
+import { ChartStyleProps } from './CandlestickChart.types'
 
 export const StyledCandlestickChart = styled.svg`
+  visibility: ${({ isVisible }: ChartStyleProps) =>
+    isVisible ? 'visible' : 'hidden'};
   width: 100%;
   height: 100%;
   user-select: none;

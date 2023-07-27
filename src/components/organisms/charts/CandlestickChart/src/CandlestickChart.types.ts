@@ -66,6 +66,7 @@ export interface DataRange {
   max: number
   offset: number
   dataSlice: CandlestickDayData[]
+  lastItem: CandlestickDayData
   length: number
 }
 
@@ -104,3 +105,7 @@ export type IAxis = Selection<SVGGElement, unknown, null, undefined>
 export type BarType = 'wicks' | 'candles'
 
 export type ValueKeys = 'low' | 'high' | 'open' | 'close'
+
+export interface ChartStyleProps {
+  isVisible: boolean
+}
