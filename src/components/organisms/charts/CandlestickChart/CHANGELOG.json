@@ -2,6 +2,21 @@
   "name": "@pi-lib/candlestick-chart",
   "entries": [
     {
+      "date": "Thu, 27 Jul 2023 21:42:27 GMT",
+      "tag": "@pi-lib/candlestick-chart_v2.2.0",
+      "version": "2.2.0",
+      "comments": {
+        "minor": [
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/candlestick-chart",
+            "commit": "73f403dfb83db5558996c8b181696c1caad10581",
+            "comment": "Adding candlestick period controls"
+          }
+        ]
+      }
+    },
+    {
       "date": "Sat, 22 Jul 2023 23:40:43 GMT",
       "tag": "@pi-lib/candlestick-chart_v2.1.11",
       "version": "2.1.11",
