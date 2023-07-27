@@ -35,6 +35,8 @@ export interface CandlestickChartProps {
   data?: CandlestickDayData[]
 }
 
+export type Period = keyof typeof FILTER_PERIOD_MAP
+
 export interface ActiveItem {
   item?: CandlestickDayData
   isActive?: Boolean
@@ -44,12 +46,10 @@ export interface ActiveItem {
 export interface IControls {
   zoomLevel: number
   panLevel: number
-  period: keyof typeof FILTER_PERIOD_MAP
+  period: Period
   setZoomLevel: React.Dispatch<React.SetStateAction<number>>
   setPanLevel: React.Dispatch<React.SetStateAction<number>>
-  setPeriod: React.Dispatch<
-    React.SetStateAction<keyof typeof FILTER_PERIOD_MAP>
-  >
+  setPeriod: React.Dispatch<React.SetStateAction<Period>>
 }
 
 export interface Sizes {
