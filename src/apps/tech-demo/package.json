@@ -7,7 +7,7 @@
     "build": "tsc && vite build",
     "build:local": "tsc && cross-env NODE_ENV=development vite build",
     "dev": "vite --host",
-    "dev:local": "cross-env NODE_ENV=development vite",
+    "dev:local": "cross-env NODE_ENV=development vite --host",
     "lint": "npx prettier -c . && npx eslint",
     "lint:fix": "npx prettier -w . && npx eslint --fix",
     "preview": "cross-env NODE_ENV=development vite preview --host",

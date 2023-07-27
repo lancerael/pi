@@ -1234,6 +1234,9 @@ importers:
       '@pi-lib/loader':
         specifier: workspace:^
         version: link:../../../atoms/ui/Loader
+      '@pi-lib/select':
+        specifier: workspace:^
+        version: link:../../../atoms/inputs/Select
       '@pi-lib/styles':
         specifier: workspace:^
         version: link:../../../../styles

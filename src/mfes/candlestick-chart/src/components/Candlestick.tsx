@@ -6,7 +6,7 @@ import { useFakeApi } from '@pi-lib/candlestick-chart/src/hooks'
 import { CandlestickDayData } from '@pi-lib/candlestick-chart/src/CandlestickChart.types'
 
 export const Candlestick = () => {
-  const chartData = useFakeApi(400, 1) as CandlestickDayData[]
+  const chartData = useFakeApi(800, 1) as CandlestickDayData[]
   return (
     <PageContent sidebar={<Sidebar {...{ chartData }} />}>
       <CandlestickChart data={chartData} />

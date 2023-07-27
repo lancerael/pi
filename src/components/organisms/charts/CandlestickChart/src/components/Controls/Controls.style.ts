@@ -1,3 +1,4 @@
+import { box } from '@pi-lib/styles'
 import styled, { css } from 'styled-components'
 
 export const StyledControls = styled.div`
@@ -7,6 +8,12 @@ export const StyledControls = styled.div`
   gap: 8px;
   padding: 8px;
   z-index: 1000;
+
+  select {
+    padding: 4px !important;
+    height: auto;
+    ${box()}
+  }
 `
 
 export const StyledEmoji = styled.div(

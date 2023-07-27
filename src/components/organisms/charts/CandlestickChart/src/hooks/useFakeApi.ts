@@ -1,14 +1,17 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { CandlestickDayData } from '../CandlestickChart.types'
 import { generateCandlestickData, movePrevValue } from '../utils'
 
 export const useFakeApi = (length: number, delay = 3, interval = 5) => {
   const [chartData, setChartData] = useState<CandlestickDayData[]>()
 
+  const generatedData = useMemo(() => generateCandlestickData(length).dates, [])
+
   // Simulate an API request
   useEffect(() => {
+    if (chartData) return
     setTimeout(() => {
-      setChartData(generateCandlestickData(length).dates)
+      setChartData(generatedData)
       setInterval(() => {
         setChartData((currentData) => {
           const newData = [...(currentData as CandlestickDayData[])]

@@ -1,15 +1,24 @@
-import { useEffect } from 'react'
+import { ChangeEvent, useEffect } from 'react'
 import Button from '@pi-lib/button'
+import { doTransition } from '@pi-lib/utils'
+import Select from '@pi-lib/select'
 import { StyledControls, StyledEmoji } from './Controls.style'
 import { ControlsProps } from './Controls.types'
-import { doTransition } from '@pi-lib/utils'
 import { ZOOM_RANGE } from '../../CandlestickChart.constants'
+import { IControls } from '../../CandlestickChart.types'
 
 const zoomSpeed = 0.2
 const panSpeed = 250
 
 export const Controls = ({
-  controls: { setPanLevel, setZoomLevel, panLevel, zoomLevel },
+  controls: {
+    setPanLevel,
+    setZoomLevel,
+    setPeriod,
+    panLevel,
+    zoomLevel,
+    period,
+  },
   dataRange: { start, end, length },
 }: ControlsProps) => {
   const buttonStyle = {
@@ -85,6 +94,17 @@ export const Controls = ({
       >
         <StyledEmoji rotate={90}>🔺</StyledEmoji>
       </Button>
+      <Select
+        onChange={({ target: { value } }: ChangeEvent<HTMLSelectElement>) =>
+          setPeriod(value as IControls['period'])
+        }
+        value={period}
+        options={[
+          { content: 'Days', value: 'days' },
+          { content: 'Weeks', value: 'weeks' },
+          { content: 'Months', value: 'months' },
+        ]}
+      />
     </StyledControls>
   )
 }

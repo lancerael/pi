@@ -43,6 +43,7 @@
   "peerDependencies": {
     "@pi-lib/button": "workspace:^",
     "@pi-lib/loader": "workspace:^",
+    "@pi-lib/select": "workspace:^",
     "@pi-lib/styles": "workspace:^",
     "@pi-lib/tooltip": "workspace:^",
     "@pi-lib/utils": "workspace:^",

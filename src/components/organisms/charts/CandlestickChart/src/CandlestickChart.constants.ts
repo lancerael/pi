@@ -11,3 +11,17 @@ export const CANDLE_PADDING = 0.3
 export const CANDLE_WIDTH = 10
 
 export const ZOOM_RANGE = [0.25, 2]
+
+export const FILTER_PERIOD_MAP = {
+  days: [''],
+  weeks: ['01', '08', '15', '22', '29'],
+  months: ['01'],
+}
+
+export const EMPTY_ITEM = {
+  date: '--',
+  open: 0,
+  high: 0,
+  low: 0,
+  close: 0,
+}
