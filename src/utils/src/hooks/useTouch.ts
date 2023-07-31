@@ -106,9 +106,7 @@ export const useTouch = <T>(
 
     // Used to add and remove all the listeners
     const updateListeners = (
-      action:
-        | 'addEventListener'
-        | 'removeEventListener' = 'removeEventListener',
+      action: 'addEventListener' | 'removeEventListener',
       pinchArgs?: { passive: boolean }
     ) => {
       window[action]('pointerup', stop as EventListener)
@@ -118,6 +116,6 @@ export const useTouch = <T>(
     }
     updateListeners('addEventListener', { passive: false })
 
-    return updateListeners
+    return () => updateListeners('removeEventListener')
   }, [targetRef.current])
 }
