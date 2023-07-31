@@ -3,6 +3,7 @@ import { Selection } from 'd3-selection'
 import { CandleTooltipProps } from './components/CandleTooltip/CandleTooltip.types'
 import { Transition } from 'd3-transition'
 import { FILTER_PERIOD_MAP } from './CandlestickChart.constants'
+import { IControls } from '@pi-lib/utils'
 
 export interface CandlestickDayData {
   date: string
@@ -35,21 +36,17 @@ export interface CandlestickChartProps {
   data?: CandlestickDayData[]
 }
 
+export type Period = keyof typeof FILTER_PERIOD_MAP
+
 export interface ActiveItem {
   item?: CandlestickDayData
   isActive?: Boolean
   position?: CandleTooltipProps['position']
 }
 
-export interface IControls {
-  zoomLevel: number
-  panLevel: number
-  period: keyof typeof FILTER_PERIOD_MAP
-  setZoomLevel: React.Dispatch<React.SetStateAction<number>>
-  setPanLevel: React.Dispatch<React.SetStateAction<number>>
-  setPeriod: React.Dispatch<
-    React.SetStateAction<keyof typeof FILTER_PERIOD_MAP>
-  >
+export interface ChartControls extends IControls {
+  period: Period
+  setPeriod: React.Dispatch<React.SetStateAction<Period>>
 }
 
 export interface Sizes {

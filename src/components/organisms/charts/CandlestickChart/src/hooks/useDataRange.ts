@@ -40,15 +40,26 @@ export const useDataRange = (
     if (!data.length) return []
     let filteredData = [...data]
     if (['weeks', 'months'].includes(period)) {
+      // Filter data to condense ranges by period indexes
       filteredData = data.filter(({ date }) =>
         FILTER_PERIOD_MAP[period].includes(date.split('-').reverse()[0])
       )
+      // Get the correct high/low/close values for the range
       filteredData = filteredData.map((item, i) => {
-        const rangeEndIndex =
-          data.findIndex(({ date }) => date === filteredData[i + 1]?.date) - 1
+        const getIndex = (dateMatch: string) =>
+          data.findIndex(({ date }) => date === dateMatch)
+        const rangeStartIndex = getIndex(item?.date)
+        const rangeEndIndex = getIndex(filteredData[i + 1]?.date)
+        const currentRange = data.slice(rangeStartIndex, rangeEndIndex)
+        const getValueRange = (key: 'high' | 'low') =>
+          currentRange.map((item) => item[key])
         return {
           ...item,
-          close: data[rangeEndIndex]?.close ?? data[data.length - 1]?.close,
+          close:
+            currentRange[currentRange.length - 1]?.close ??
+            data[data.length - 1]?.close,
+          high: Math.max(...getValueRange('high')),
+          low: Math.min(...getValueRange('low')),
         }
       })
     }
