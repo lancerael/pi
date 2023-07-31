@@ -110,7 +110,7 @@ export const useTouch = <T = HTMLElement>(
       pinchArgs?: { passive: boolean }
     ) => {
       const target = targetRef.current as HTMLElement
-      if (!target.addEventListener) return
+      if (!target?.addEventListener) return
       window[action]('pointerup', stop as EventListener)
       window[action]('pointermove', pointerMove as EventListener)
       target?.[action]('pointerdown', start as EventListener)
