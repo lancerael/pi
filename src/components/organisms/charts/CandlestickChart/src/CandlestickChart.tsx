@@ -13,7 +13,6 @@ import {
   useDataRange,
   useScales,
   useSizes,
-  useTouch,
 } from './hooks'
 import {
   CandleTooltip,
@@ -22,6 +21,8 @@ import {
   CurrentIndicator,
 } from './components'
 import Loader from '@pi-lib/loader'
+import { useTouch } from '@pi-lib/utils'
+import { ZOOM_RANGE } from './CandlestickChart.constants'
 
 /**
  * A candlestick chart React component used to show the movement of traded assets.
@@ -40,7 +41,7 @@ export const CandlestickChart: FC<CandlestickChartProps> = ({ data = [] }) => {
     dataRange,
     scales
   )
-  useTouch(svgRef, controls, resetSelection)
+  useTouch<SVGSVGElement>(svgRef, controls, ZOOM_RANGE, resetSelection)
 
   return (
     <StyledContainer ref={containerRef}>

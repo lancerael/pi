@@ -5,7 +5,7 @@ import Select from '@pi-lib/select'
 import { StyledControls, StyledEmoji } from './Controls.style'
 import { ControlsProps } from './Controls.types'
 import { ZOOM_RANGE } from '../../CandlestickChart.constants'
-import { IControls } from '../../CandlestickChart.types'
+import { ChartControls } from '../../CandlestickChart.types'
 
 const zoomSpeed = 0.2
 const panSpeed = 250
@@ -96,7 +96,7 @@ export const Controls = ({
       </Button>
       <Select
         onChange={({ target: { value } }: ChangeEvent<HTMLSelectElement>) =>
-          setPeriod(value as IControls['period'])
+          setPeriod(value as ChartControls['period'])
         }
         value={period}
         options={[

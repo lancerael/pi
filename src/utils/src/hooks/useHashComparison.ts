@@ -2,8 +2,7 @@ import { useRef } from 'react'
 import { hashCode } from '../methods/hashCode'
 
 /**
- * Used to tell if an object has changed, or just rebuilt.
- * Useful for performance enhancements when used in useEffect etc
+ * A quick way to see if an object has been changed or just rebuilt
  * @param value the value to be compared
  * @returns
  */

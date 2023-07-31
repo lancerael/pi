@@ -1,7 +1,12 @@
-import { IControls, SvgRef } from '../CandlestickChart.types'
 import { useEffect } from 'react'
 import throttle from 'lodash.throttle'
-import { ZOOM_RANGE } from '../CandlestickChart.constants'
+
+export interface IControls {
+  zoomLevel: number
+  panLevel: number
+  setZoomLevel: React.Dispatch<React.SetStateAction<number>>
+  setPanLevel: React.Dispatch<React.SetStateAction<number>>
+}
 
 /**
  * A React hook to add touch gestures to the chart
@@ -9,10 +14,11 @@ import { ZOOM_RANGE } from '../CandlestickChart.constants'
  * @param controls
  * @param resetSelection
  */
-export const useTouch = (
-  svgRef: SvgRef,
+export const useTouch = <T>(
+  targetRef: React.RefObject<T>,
   controls: IControls,
-  resetSelection: () => void
+  zoomRange = [0.25, 2],
+  resetCallback?: () => void
 ) => {
   useEffect(() => {
     let isPressed = false
@@ -24,7 +30,8 @@ export const useTouch = (
 
     // Changes the zoom level
     const zoom = (zoomChange: number) => {
-      const [min, max] = ZOOM_RANGE
+      resetCallback?.()
+      const [min, max] = zoomRange
       controls.setZoomLevel((zoomLevel) => {
         let newZoom = zoomLevel - zoomChange
         newZoom = Math.round(newZoom * 1000) / 1000
@@ -36,6 +43,7 @@ export const useTouch = (
 
     // Changes the pan level
     const pan = (panChange: number) => {
+      resetCallback?.()
       controls.setPanLevel((panLevel) => {
         return panLevel + panChange / controls.zoomLevel
       })
@@ -60,7 +68,6 @@ export const useTouch = (
     const move = ({ clientX, pointerId, pageX, pageY }: PointerEvent) => {
       const pointerVals = Object.values(activePointers)
       if (isPressed) {
-        resetSelection()
         if (pointerVals?.length === 2) {
           if (Object.keys(activePointers).indexOf(`${pointerId}`) !== 1) return
           activePointers[pointerId] = { pageX, pageY }
@@ -86,11 +93,11 @@ export const useTouch = (
     // Handler for trackpad pinch
     const pinch = (e: WheelEvent) => {
       if (e.ctrlKey) {
-        throttledZoom(e.deltaY * 0.006)
-        e.preventDefault()
+        throttledZoom(e.deltaY * 0.0005)
       } else {
-        throttledPan(e.deltaY * 0.006)
+        throttledPan(e.deltaY)
       }
+      e.preventDefault()
     }
 
     // Handler for pointer move to determine throttle
@@ -106,11 +113,11 @@ export const useTouch = (
     ) => {
       window[action]('pointerup', stop as EventListener)
       window[action]('pointermove', pointerMove as EventListener)
-      svgRef.current?.[action]('pointerdown', start as EventListener)
-      svgRef.current?.[action]('wheel', pinch as EventListener, pinchArgs)
+      targetRef.current?.[action]('pointerdown', start as EventListener)
+      targetRef.current?.[action]('wheel', pinch as EventListener, pinchArgs)
     }
     updateListeners('addEventListener', { passive: false })
 
     return updateListeners
-  }, [svgRef.current])
+  }, [targetRef.current])
 }
