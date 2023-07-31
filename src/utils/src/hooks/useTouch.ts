@@ -14,7 +14,7 @@ export interface IControls {
  * @param controls
  * @param resetSelection
  */
-export const useTouch = <T>(
+export const useTouch = <T = HTMLElement>(
   targetRef: React.RefObject<T>,
   controls: IControls,
   zoomRange = [0.25, 2],
@@ -109,10 +109,12 @@ export const useTouch = <T>(
       action: 'addEventListener' | 'removeEventListener',
       pinchArgs?: { passive: boolean }
     ) => {
+      const target = targetRef.current as HTMLElement
+      if (JSON.stringify(target) === '{}') return
       window[action]('pointerup', stop as EventListener)
       window[action]('pointermove', pointerMove as EventListener)
-      targetRef.current?.[action]('pointerdown', start as EventListener)
-      targetRef.current?.[action]('wheel', pinch as EventListener, pinchArgs)
+      target?.[action]('pointerdown', start as EventListener)
+      target?.[action]('wheel', pinch as EventListener, pinchArgs)
     }
     updateListeners('addEventListener', { passive: false })
 
