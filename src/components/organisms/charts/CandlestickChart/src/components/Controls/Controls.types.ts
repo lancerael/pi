@@ -1,6 +1,6 @@
-import { DataRange, IControls } from '../../CandlestickChart.types'
+import { DataRange, ChartControls } from '../../CandlestickChart.types'
 
 export interface ControlsProps {
-  controls: IControls
+  controls: ChartControls
   dataRange: DataRange
 }

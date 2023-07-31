@@ -8,7 +8,7 @@ import {
 import {
   CandlestickDayData,
   DataRange,
-  IControls,
+  ChartControls,
 } from '../CandlestickChart.types'
 
 /**
@@ -21,10 +21,10 @@ import {
 export const useDataRange = (
   width: number,
   data: CandlestickDayData[],
-  controls: IControls
+  controls: ChartControls
 ): DataRange => {
   const { panLevel, zoomLevel, period } = controls
-  const lastPeriod = useRef<IControls['period']>()
+  const lastPeriod = useRef<ChartControls['period']>()
   const lastIndex = useRef(data.length + 2)
   const end = useRef<number>(lastIndex.current)
   const prevPan = useRef(0)
@@ -63,6 +63,7 @@ export const useDataRange = (
         }
       })
     }
+    // Reset period ref
     if (lastPeriod.current !== period) {
       lastIndex.current = filteredData.length + 2
       end.current = lastIndex.current
