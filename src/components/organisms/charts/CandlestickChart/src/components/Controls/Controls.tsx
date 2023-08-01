@@ -31,7 +31,6 @@ export const Controls = ({
   const canZoomIn = zoomLevel < ZOOM_RANGE[1]
   const canZoomOut = zoomLevel > ZOOM_RANGE[0]
 
-
   const panBack = useCallback(() => {
     canPanBack &&
       doTransition({
