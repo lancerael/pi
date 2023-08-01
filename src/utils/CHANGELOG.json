@@ -2,6 +2,21 @@
   "name": "@pi-lib/utils",
   "entries": [
     {
+      "date": "Tue, 01 Aug 2023 23:09:45 GMT",
+      "tag": "@pi-lib/utils_v0.6.0",
+      "version": "0.6.0",
+      "comments": {
+        "minor": [
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/utils",
+            "commit": "e8666df05ae67b7d8cd0aa77ccd6dd7549ca9a35",
+            "comment": "Added swipe with transition"
+          }
+        ]
+      }
+    },
+    {
       "date": "Sat, 08 Jul 2023 14:02:41 GMT",
       "tag": "@pi-lib/utils_v0.5.0",
       "version": "0.5.0",

@@ -2,6 +2,21 @@
   "name": "@pi-lib/candlestick-chart",
   "entries": [
     {
+      "date": "Tue, 01 Aug 2023 23:09:45 GMT",
+      "tag": "@pi-lib/candlestick-chart_v2.3.0",
+      "version": "2.3.0",
+      "comments": {
+        "minor": [
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/candlestick-chart",
+            "commit": "e8666df05ae67b7d8cd0aa77ccd6dd7549ca9a35",
+            "comment": "Added swipe with transition"
+          }
+        ]
+      }
+    },
+    {
       "date": "Thu, 27 Jul 2023 21:42:27 GMT",
       "tag": "@pi-lib/candlestick-chart_v2.2.0",
       "version": "2.2.0",

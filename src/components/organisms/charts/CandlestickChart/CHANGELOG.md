@@ -1,8 +1,16 @@
 # Change Log - @pi-lib/candlestick-chart
 
-This log was last generated on Thu, 27 Jul 2023 21:42:27 GMT and should not be manually modified.
+This log was last generated on Tue, 01 Aug 2023 23:09:45 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 2.3.0
+
+Tue, 01 Aug 2023 23:09:45 GMT
+
+### Minor changes
+
+- Added swipe with transition (lancerael@googlemail.com)
 
 ## 2.2.0
 
