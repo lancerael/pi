@@ -91,7 +91,6 @@ export const useTouch = <T = HTMLElement>(
   const stop = useCallback(
     (e: PointerEvent) => {
       if (Math.abs(trackers.current.oldPanChange.x) > 15) {
-        console.log('da')
         doTransition({
           value: controls.panLevel.x,
           target: controls.panLevel.x + trackers.current.oldPanChange.x * 30,
