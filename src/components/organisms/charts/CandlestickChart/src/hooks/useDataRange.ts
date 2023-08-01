@@ -31,8 +31,8 @@ export const useDataRange = (
   const latestOffset = useRef(0)
   const candleWidth = (CANDLE_WIDTH + CANDLE_WIDTH * CANDLE_PADDING) * zoomLevel
   const perPage = Math.round(width / candleWidth) || 0
-  const isPanningLeft = prevPan.current < panLevel
-  const isPanningRight = prevPan.current > panLevel
+  const isPanningLeft = prevPan.current < panLevel.x
+  const isPanningRight = prevPan.current > panLevel.x
   let offset = latestOffset.current
 
   // Get the data filtered by period (days/weeks/months)
@@ -78,10 +78,10 @@ export const useDataRange = (
     (end.current < lastIndex.current || isPanningLeft) &&
     (end.current - perPage > 0 || isPanningRight)
   ) {
-    offset = latestOffset.current + (panLevel - prevPan.current) / zoomLevel
+    offset = latestOffset.current + (panLevel.x - prevPan.current) / zoomLevel
     latestOffset.current = offset
   }
-  prevPan.current = panLevel
+  prevPan.current = panLevel.x
 
   // Move range left or right
   const indexMultiplier = Math.round(1 / (zoomLevel <= 1 ? zoomLevel : 1))
