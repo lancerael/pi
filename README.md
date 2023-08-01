@@ -186,7 +186,7 @@ A React component used to display a bar ot line chart
 
 **@pi-lib/candlestick-chart**
 
-A candlestick chart React component used to show the movement of traded assets.
+A candlestick chart React component used to show the movement of traded assets over time.
 
 **Dependencies:** @pi-lib/button, @pi-lib/loader, @pi-lib/select, @pi-lib/styles, @pi-lib/tooltip, @pi-lib/utils, d3-axis, d3-scale, d3-selection, d3-transition, lodash.throttle, react
 

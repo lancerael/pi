@@ -1,7 +1,0 @@
-{
-  "type": "patch",
-  "comment": "Made CS chart touch hook generic",
-  "packageName": "@pi-lib/utils",
-  "email": "lancerael@googlemail.com",
-  "dependentChangeType": "patch"
-}

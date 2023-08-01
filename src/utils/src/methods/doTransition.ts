@@ -1,4 +1,4 @@
-const intervals = {}
+const timeouts: { [key: string]: NodeJS.Timeout } = {}
 
 export interface TransitionProps {
   value: number
@@ -25,10 +25,10 @@ export const doTransition = ({
   interval = 15,
   intervalId = 'default',
 }: TransitionProps): void => {
-  clearInterval(intervals[intervalId])
+  clearTimeout(timeouts[intervalId])
   let distance = +(target - value).toFixed(2)
   const newValue = +(value + +(distance / speed)).toFixed(2)
-  intervals[intervalId] = setTimeout(() => {
+  timeouts[intervalId] = setTimeout(() => {
     if (Math.abs(distance) > speed) {
       callback(newValue)
       doTransition({
