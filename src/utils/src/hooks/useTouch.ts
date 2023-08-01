@@ -1,35 +1,55 @@
-import { useEffect } from 'react'
+import { useCallback, useEffect, useRef } from 'react'
 import throttle from 'lodash.throttle'
+import { doTransition } from '../methods'
+
+export interface PanLevel {
+  x: number
+  y: number
+}
 
 export interface IControls {
   zoomLevel: number
-  panLevel: number
+  panLevel: PanLevel
   setZoomLevel: React.Dispatch<React.SetStateAction<number>>
-  setPanLevel: React.Dispatch<React.SetStateAction<number>>
+  setPanLevel: React.Dispatch<React.SetStateAction<PanLevel>>
+}
+
+export interface Trackers {
+  isPressed: boolean
+  oldClientX: number
+  oldClientY: number
+  oldPinchDist: number
+  oldPanChange: PanLevel
+  activePointers: {
+    [key: string]: Pick<PointerEvent, 'pageX' | 'pageY'>
+  }
 }
 
 /**
  * A React hook to add touch gestures to the chart
- * @param svgRef
+ * @param targetRef
  * @param controls
+ * @param zoomRange
  * @param resetSelection
  */
 export const useTouch = <T = HTMLElement>(
   targetRef: React.RefObject<T>,
   controls: IControls,
-  zoomRange = [0.25, 2],
+  zoomRange: [number, number] = [0.25, 2],
   resetCallback?: () => void
 ) => {
-  useEffect(() => {
-    let isPressed = false
-    let oldClientX = 0
-    let oldPinchDist = 0
-    let activePointers: {
-      [key: string]: Pick<PointerEvent, 'pageX' | 'pageY'>
-    } = {}
+  const trackers = useRef<Trackers>({
+    isPressed: false,
+    oldClientX: 0,
+    oldClientY: 0,
+    oldPinchDist: 0,
+    oldPanChange: { x: 0, y: 0 },
+    activePointers: {},
+  })
 
-    // Changes the zoom level
-    const zoom = (zoomChange: number) => {
+  // Changes the zoom level
+  const zoom = useCallback(
+    (zoomChange: number) => {
       resetCallback?.()
       const [min, max] = zoomRange
       controls.setZoomLevel((zoomLevel) => {
@@ -39,71 +59,117 @@ export const useTouch = <T = HTMLElement>(
         newZoom = newZoom > max ? max : newZoom
         return newZoom
       })
-    }
+    },
+    [controls.zoomLevel]
+  )
 
-    // Changes the pan level
-    const pan = (panChange: number) => {
+  // Changes the pan level
+  const pan = useCallback(
+    (panChange: PanLevel) => {
       resetCallback?.()
-      controls.setPanLevel((panLevel) => {
-        return panLevel + panChange / controls.zoomLevel
-      })
-    }
+      trackers.current.oldPanChange = { ...panChange }
+      controls.setPanLevel((panLevel) => ({
+        x: panLevel.x + panChange.x / controls.zoomLevel,
+        y: panLevel.y + panChange.y / controls.zoomLevel,
+      }))
+    },
+    [controls.panLevel]
+  )
 
-    // Handles press start
-    const start = ({ pointerId, pageX, pageY }: PointerEvent) => {
-      isPressed = true
-      oldClientX = 0
-      oldPinchDist = 0
-      activePointers[pointerId] = { pageX, pageY }
-    }
+  // Handles press start
+  const start = useCallback(
+    ({ pointerId, pageX, pageY }: PointerEvent) => {
+      trackers.current.isPressed = true
+      trackers.current.oldClientX = 0
+      trackers.current.oldPinchDist = 0
+      trackers.current.activePointers[pointerId] = { pageX, pageY }
+    },
+    [trackers.current]
+  )
 
-    // Handles press stop
-    const stop = (e: PointerEvent) => {
-      isPressed = false
-      activePointers = {}
-    }
+  // Handles press stop
+  const stop = useCallback(
+    (e: PointerEvent) => {
+      if (Math.abs(trackers.current.oldPanChange.x) > 15) {
+        doTransition({
+          value: controls.panLevel.x,
+          target: controls.panLevel.x + trackers.current.oldPanChange.x * 30,
+          callback: (x) => controls.setPanLevel({ ...controls.panLevel, x }),
+          speed: 10,
+          intervalId: 'swipe',
+        })
+      }
+      trackers.current.oldPanChange.x = 0
+      trackers.current.isPressed = false
+      trackers.current.activePointers = {}
+    },
+    [controls.panLevel.x, trackers.current]
+  )
 
-    // Handles movement - used to zoom or pan
-    // Depending on number of pointers active
-    const move = ({ clientX, pointerId, pageX, pageY }: PointerEvent) => {
-      const pointerVals = Object.values(activePointers)
-      if (isPressed) {
+  // Handles movement - used to zoom or pan
+  // Depending on number of pointers active
+  const move = useCallback(
+    ({ clientX, clientY, pointerId, pageX, pageY }: PointerEvent) => {
+      const pointerVals = Object.values(trackers.current.activePointers)
+      if (trackers.current.isPressed) {
         if (pointerVals?.length === 2) {
-          if (Object.keys(activePointers).indexOf(`${pointerId}`) !== 1) return
-          activePointers[pointerId] = { pageX, pageY }
+          if (
+            Object.keys(trackers.current.activePointers).indexOf(
+              `${pointerId}`
+            ) !== 1
+          )
+            return
+          trackers.current.activePointers[pointerId] = { pageX, pageY }
           const xDist = pointerVals[0].pageX - pointerVals[1].pageX
           const yDist = pointerVals[0].pageY - pointerVals[1].pageY
           const pinchDist = Math.sqrt(xDist * xDist + yDist * yDist)
-          const zoomChange = oldPinchDist ? (oldPinchDist - pinchDist) / 160 : 0
-          oldPinchDist = pinchDist
+          const zoomChange = trackers.current.oldPinchDist
+            ? (trackers.current.oldPinchDist - pinchDist) / 160
+            : 0
+          trackers.current.oldPinchDist = pinchDist
           zoom(zoomChange)
           return
         } else {
-          const panChange = oldClientX ? clientX - oldClientX : 0
-          oldClientX = clientX
-          pan(panChange)
+          const x = trackers.current.oldClientX
+            ? clientX - trackers.current.oldClientX
+            : 0
+          const y = trackers.current.oldClientY
+            ? clientY - trackers.current.oldClientY
+            : 0
+          trackers.current.oldClientX = clientX
+          trackers.current.oldClientY = clientY
+          pan({ x, y })
         }
       }
-    }
+    },
+    [controls.panLevel.x, trackers.current]
+  )
 
-    const throttledZoom = throttle(zoom, 10)
-    const throttledMove = throttle(move, 10)
-    const throttledPan = throttle(pan, 10)
+  const throttledZoom = useCallback(throttle(zoom, 10), [zoom])
+  const throttledMove = useCallback(throttle(move, 10), [move])
+  const throttledPan = useCallback(throttle(pan, 10), [pan])
 
-    // Handler for trackpad pinch
-    const pinch = (e: WheelEvent) => {
+  // Handler for trackpad pinch
+  const pinch = useCallback(
+    (e: WheelEvent) => {
       if (e.ctrlKey) {
         throttledZoom(e.deltaY * 0.0005)
       } else {
-        throttledPan(e.deltaY)
+        throttledPan({ x: e.deltaY, y: 0 })
       }
       e.preventDefault()
-    }
+    },
+    [throttledZoom, throttledPan]
+  )
 
-    // Handler for pointer move to determine throttle
-    const pointerMove = (e: PointerEvent) =>
-      e.pointerType === 'mouse' ? throttledMove(e) : move(e)
+  // Handler for pointer move to determine throttle
+  const pointerMove = useCallback(
+    (e: PointerEvent) =>
+      e.pointerType === 'mouse' ? throttledMove(e) : move(e),
+    [throttledMove, move]
+  )
 
+  useEffect(() => {
     // Used to add and remove all the listeners
     const updateListeners = (
       action: 'addEventListener' | 'removeEventListener',

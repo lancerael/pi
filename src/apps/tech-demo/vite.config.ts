@@ -11,7 +11,7 @@ const IS_DEV = process.env.NODE_ENV === 'development'
 const ASSET_PATH = process.env.MFE_ASSET_PATH
 
 const getPath = (id) => {
-  const devUrl = `http://192.168.1.88:${portMap[id]}`
+  const devUrl = `http://${process.env.DEV_IP}:${portMap[id]}`
   if (IS_DEV) return devUrl
   if (ASSET_PATH) return `${ASSET_PATH}/${id}`
   return devUrl

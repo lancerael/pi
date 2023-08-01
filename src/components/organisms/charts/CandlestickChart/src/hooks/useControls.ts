@@ -6,7 +6,7 @@ import { ChartControls } from '../CandlestickChart.types'
  * @returns
  */
 export const useControls = (): ChartControls => {
-  const [panLevel, setPanLevel] = useState(0)
+  const [panLevel, setPanLevel] = useState({ x: 0, y: 0 })
   const [zoomLevel, setZoomLevel] = useState(1)
   const [period, setPeriod] = useState<ChartControls['period']>('days')
 

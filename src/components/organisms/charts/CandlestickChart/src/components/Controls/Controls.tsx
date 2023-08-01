@@ -1,4 +1,4 @@
-import { ChangeEvent, useEffect } from 'react'
+import { ChangeEvent, useCallback, useEffect } from 'react'
 import Button from '@pi-lib/button'
 import { doTransition } from '@pi-lib/utils'
 import Select from '@pi-lib/select'
@@ -31,17 +31,47 @@ export const Controls = ({
   const canZoomIn = zoomLevel < ZOOM_RANGE[1]
   const canZoomOut = zoomLevel > ZOOM_RANGE[0]
 
-  const panBack = () =>
-    canPanBack && doTransition(panLevel, panLevel + panSpeed, setPanLevel)
+  const panBack = useCallback(() => {
+    canPanBack &&
+      doTransition({
+        value: panLevel.x,
+        target: panLevel.x + panSpeed,
+        callback: (x) => setPanLevel({ ...panLevel, x }),
+        intervalId: 'panBack',
+      })
+  }, [panLevel.x])
 
-  const panForward = () =>
-    canPanForward && doTransition(panLevel, panLevel - panSpeed, setPanLevel)
+  const panForward = useCallback(() => {
+    canPanForward &&
+      doTransition({
+        value: panLevel.x,
+        target: panLevel.x - panSpeed,
+        callback: (x) => setPanLevel({ ...panLevel, x }),
+        intervalId: 'panForward',
+      })
+  }, [panLevel.x])
 
-  const zoomIn = () =>
-    canZoomIn && doTransition(zoomLevel, zoomLevel + zoomSpeed, setZoomLevel)
+  const zoomIn = useCallback(
+    () =>
+      canZoomIn &&
+      doTransition({
+        value: zoomLevel,
+        target: zoomLevel + zoomSpeed,
+        callback: setZoomLevel,
+      }),
+    [zoomLevel]
+  )
 
-  const zoomOut = () =>
-    canZoomOut && doTransition(zoomLevel, zoomLevel - zoomSpeed, setZoomLevel)
+  const zoomOut = useCallback(
+    () =>
+      canZoomOut &&
+      doTransition({
+        value: zoomLevel,
+        target: zoomLevel - zoomSpeed,
+        callback: setZoomLevel,
+      }),
+    [zoomLevel]
+  )
 
   useEffect(() => {
     const keyHandler = ({ key }: { key: string }) => {

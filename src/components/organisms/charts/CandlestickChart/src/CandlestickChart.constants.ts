@@ -10,7 +10,7 @@ export const CANDLE_PADDING = 0.3
 
 export const CANDLE_WIDTH = 10
 
-export const ZOOM_RANGE = [0.25, 2]
+export const ZOOM_RANGE: [number, number] = [0.25, 2]
 
 export const FILTER_PERIOD_MAP = {
   days: [''],
