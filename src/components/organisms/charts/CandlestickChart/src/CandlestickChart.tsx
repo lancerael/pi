@@ -25,7 +25,7 @@ import { useTouch } from '@pi-lib/utils'
 import { ZOOM_RANGE } from './CandlestickChart.constants'
 
 /**
- * A candlestick chart React component used to show the movement of traded assets.
+ * A candlestick chart React component used to show the movement of traded assets over time.
  */
 export const CandlestickChart: FC<CandlestickChartProps> = ({ data = [] }) => {
   const svgRef = useRef<SVGSVGElement>(null)
