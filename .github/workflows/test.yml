@@ -22,6 +22,10 @@ jobs:
         shell: bash
         run: pnpm lint
 
+      - name: Build
+        shell: bash
+        run: pnpm build
+
       - name: Test
         shell: bash
         run: pnpm test
