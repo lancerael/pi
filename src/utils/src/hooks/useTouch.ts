@@ -48,20 +48,17 @@ export const useTouch = <T = HTMLElement>(
   })
 
   // Changes the zoom level
-  const zoom = useCallback(
-    (zoomChange: number) => {
-      resetCallback?.()
-      const [min, max] = zoomRange
-      controls.setZoomLevel((zoomLevel) => {
-        let newZoom = zoomLevel - zoomChange
-        newZoom = Math.round(newZoom * 1000) / 1000
-        newZoom = newZoom < min ? min : newZoom
-        newZoom = newZoom > max ? max : newZoom
-        return newZoom
-      })
-    },
-    [controls.zoomLevel]
-  )
+  const zoom = useCallback((zoomChange: number) => {
+    resetCallback?.()
+    const [min, max] = zoomRange
+    controls.setZoomLevel((zoomLevel) => {
+      let newZoom = zoomLevel - zoomChange
+      newZoom = Math.round(newZoom * 1000) / 1000
+      newZoom = newZoom < min ? min : newZoom
+      newZoom = newZoom > max ? max : newZoom
+      return newZoom
+    })
+  }, [])
 
   // Changes the pan level
   const pan = useCallback(
@@ -73,19 +70,16 @@ export const useTouch = <T = HTMLElement>(
         y: panLevel.y + panChange.y / controls.zoomLevel,
       }))
     },
-    [controls.panLevel]
+    [controls.zoomLevel]
   )
 
   // Handles press start
-  const start = useCallback(
-    ({ pointerId, pageX, pageY }: PointerEvent) => {
-      trackers.current.isPressed = true
-      trackers.current.oldClientX = 0
-      trackers.current.oldPinchDist = 0
-      trackers.current.activePointers[pointerId] = { pageX, pageY }
-    },
-    [trackers.current]
-  )
+  const start = useCallback(({ pointerId, pageX, pageY }: PointerEvent) => {
+    trackers.current.isPressed = true
+    trackers.current.oldClientX = 0
+    trackers.current.oldPinchDist = 0
+    trackers.current.activePointers[pointerId] = { pageX, pageY }
+  }, [])
 
   // Handles press stop
   const stop = useCallback(
@@ -93,9 +87,9 @@ export const useTouch = <T = HTMLElement>(
       if (Math.abs(trackers.current.oldPanChange.x) > 15) {
         doTransition({
           value: controls.panLevel.x,
-          target: controls.panLevel.x + trackers.current.oldPanChange.x * 30,
+          target: controls.panLevel.x + trackers.current.oldPanChange.x * 3,
           callback: (x) => controls.setPanLevel({ ...controls.panLevel, x }),
-          speed: 10,
+          speed: 3 + trackers.current.oldPanChange.x / 10 / controls.zoomLevel,
           intervalId: 'swipe',
         })
       }
@@ -103,7 +97,7 @@ export const useTouch = <T = HTMLElement>(
       trackers.current.isPressed = false
       trackers.current.activePointers = {}
     },
-    [controls.panLevel.x, trackers.current]
+    [controls.panLevel.x, trackers.current.oldPanChange.x]
   )
 
   // Handles movement - used to zoom or pan

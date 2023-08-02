@@ -1,5 +1,5 @@
 import { useRef } from 'react'
-import { hashCode } from '../methods/hashCode'
+import { simpleHash } from '../methods/simpleHash'
 
 /**
  * A quick way to see if an object has been changed or just rebuilt
@@ -8,6 +8,6 @@ import { hashCode } from '../methods/hashCode'
  */
 export const useHashComparison = (value: unknown) => {
   const newCode = useRef<string>()
-  newCode.current = hashCode(value)
+  newCode.current = simpleHash(value)
   return newCode.current
 }

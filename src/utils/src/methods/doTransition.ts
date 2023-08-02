@@ -27,9 +27,9 @@ export const doTransition = ({
 }: TransitionProps): void => {
   clearTimeout(timeouts[intervalId])
   let distance = +(target - value).toFixed(2)
-  const newValue = +(value + +(distance / speed)).toFixed(2)
+  const newValue = +(value + +(distance / Math.abs(speed))).toFixed(2)
   timeouts[intervalId] = setTimeout(() => {
-    if (Math.abs(distance) > speed) {
+    if (Math.abs(distance) > Math.abs(speed)) {
       callback(newValue)
       doTransition({
         value: newValue,
