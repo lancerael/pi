@@ -4,6 +4,7 @@
   "description": "A candlestick chart React component used to show the movement of traded assets over time.",
   "keywords": [
     "pi",
+    "pi-lib",
     "react",
     "component",
     "molecules",
