@@ -41,7 +41,7 @@ jobs:
         run: |
           echo "Changes = ${{steps.changed-mfes.outputs.all_changed_files}}, ${{ steps.changed-components.outputs.all_changed_files }}"
 
-      - name: Evaluate condition and set output
+      - name: Evaluate changes
         id: check-changes
         run: echo "has-changed=${{steps.changed-mfes.outputs.any_changed == 'true' || steps.changed-components.outputs.any_changed == 'true'}}" >> $GITHUB_OUTPUT
 

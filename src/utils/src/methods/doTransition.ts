@@ -24,8 +24,9 @@ export const doTransition = ({
   speed = 10,
   interval = 15,
   intervalId = 'default',
-}: TransitionProps): void => {
-  clearTimeout(timeouts[intervalId])
+}: TransitionProps): (() => void) => {
+  const clear = () => clearTimeout(timeouts[intervalId])
+  clear()
   let distance = +(target - value).toFixed(2)
   const newValue = +(value + +(distance / Math.abs(speed))).toFixed(2)
   timeouts[intervalId] = setTimeout(() => {
@@ -43,4 +44,5 @@ export const doTransition = ({
       callback(+target.toFixed(2))
     }
   }, interval)
+  return clear
 }
