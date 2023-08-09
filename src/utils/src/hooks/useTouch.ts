@@ -23,6 +23,7 @@ export interface Trackers {
   activePointers: {
     [key: string]: Pick<PointerEvent, 'pageX' | 'pageY'>
   }
+  clearTransition: (timeout?: NodeJS.Timeout) => void
 }
 
 /**
@@ -45,6 +46,7 @@ export const useTouch = <T = HTMLElement>(
     oldPinchDist: 0,
     oldPanChange: { x: 0, y: 0 },
     activePointers: {},
+    clearTransition: () => {},
   })
 
   // Changes the zoom level
@@ -75,6 +77,7 @@ export const useTouch = <T = HTMLElement>(
 
   // Handles press start
   const start = useCallback(({ pointerId, pageX, pageY }: PointerEvent) => {
+    trackers.current?.clearTransition()
     trackers.current.isPressed = true
     trackers.current.oldClientX = 0
     trackers.current.oldPinchDist = 0
@@ -84,12 +87,14 @@ export const useTouch = <T = HTMLElement>(
   // Handles press stop
   const stop = useCallback(
     (e: PointerEvent) => {
+      const offsetX =
+        Math.round(trackers.current.oldPanChange.x * 5) * controls.zoomLevel
       if (Math.abs(trackers.current.oldPanChange.x) > 15) {
-        doTransition({
+        trackers.current.clearTransition = doTransition({
           value: controls.panLevel.x,
-          target: controls.panLevel.x + trackers.current.oldPanChange.x * 3,
+          target: controls.panLevel.x + offsetX,
           callback: (x) => controls.setPanLevel({ ...controls.panLevel, x }),
-          speed: 3 + trackers.current.oldPanChange.x / 10 / controls.zoomLevel,
+          speed: 10,
           intervalId: 'swipe',
         })
       }
@@ -97,7 +102,7 @@ export const useTouch = <T = HTMLElement>(
       trackers.current.isPressed = false
       trackers.current.activePointers = {}
     },
-    [controls.panLevel.x, trackers.current.oldPanChange.x]
+    [controls.zoomLevel, trackers.current.oldPanChange.x]
   )
 
   // Handles movement - used to zoom or pan
@@ -105,35 +110,34 @@ export const useTouch = <T = HTMLElement>(
   const move = useCallback(
     ({ clientX, clientY, pointerId, pageX, pageY }: PointerEvent) => {
       const pointerVals = Object.values(trackers.current.activePointers)
-      if (trackers.current.isPressed) {
-        if (pointerVals?.length === 2) {
-          if (
-            Object.keys(trackers.current.activePointers).indexOf(
-              `${pointerId}`
-            ) !== 1
-          )
-            return
-          trackers.current.activePointers[pointerId] = { pageX, pageY }
-          const xDist = pointerVals[0].pageX - pointerVals[1].pageX
-          const yDist = pointerVals[0].pageY - pointerVals[1].pageY
-          const pinchDist = Math.sqrt(xDist * xDist + yDist * yDist)
-          const zoomChange = trackers.current.oldPinchDist
-            ? (trackers.current.oldPinchDist - pinchDist) / 160
-            : 0
-          trackers.current.oldPinchDist = pinchDist
-          zoom(zoomChange)
+      if (!trackers.current.isPressed) return
+      if (pointerVals?.length === 2) {
+        if (
+          Object.keys(trackers.current.activePointers).indexOf(
+            `${pointerId}`
+          ) !== 1
+        )
           return
-        } else {
-          const x = trackers.current.oldClientX
-            ? clientX - trackers.current.oldClientX
-            : 0
-          const y = trackers.current.oldClientY
-            ? clientY - trackers.current.oldClientY
-            : 0
-          trackers.current.oldClientX = clientX
-          trackers.current.oldClientY = clientY
-          pan({ x, y })
-        }
+        trackers.current.activePointers[pointerId] = { pageX, pageY }
+        const xDist = pointerVals[0].pageX - pointerVals[1].pageX
+        const yDist = pointerVals[0].pageY - pointerVals[1].pageY
+        const pinchDist = Math.sqrt(xDist * xDist + yDist * yDist)
+        const zoomChange = trackers.current.oldPinchDist
+          ? (trackers.current.oldPinchDist - pinchDist) / 160
+          : 0
+        trackers.current.oldPinchDist = pinchDist
+        zoom(zoomChange)
+        return
+      } else {
+        const x = trackers.current.oldClientX
+          ? clientX - trackers.current.oldClientX
+          : 0
+        const y = trackers.current.oldClientY
+          ? clientY - trackers.current.oldClientY
+          : 0
+        trackers.current.oldClientX = clientX
+        trackers.current.oldClientY = clientY
+        pan({ x, y })
       }
     },
     [controls.panLevel.x, trackers.current]
@@ -179,5 +183,5 @@ export const useTouch = <T = HTMLElement>(
     updateListeners('addEventListener', { passive: false })
 
     return () => updateListeners('removeEventListener')
-  }, [targetRef.current])
+  }, [controls, targetRef.current])
 }
