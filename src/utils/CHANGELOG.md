@@ -1,8 +1,16 @@
 # Change Log - @pi-lib/utils
 
-This log was last generated on Wed, 02 Aug 2023 23:43:10 GMT and should not be manually modified.
+This log was last generated on Wed, 09 Aug 2023 17:55:41 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 0.6.2
+
+Wed, 09 Aug 2023 17:55:41 GMT
+
+### Patches
+
+- Improved swipe controls (lancerael@googlemail.com)
 
 ## 0.6.1
 

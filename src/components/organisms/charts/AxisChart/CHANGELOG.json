@@ -2,6 +2,21 @@
   "name": "@pi-lib/axis-chart",
   "entries": [
     {
+      "date": "Wed, 09 Aug 2023 17:55:41 GMT",
+      "tag": "@pi-lib/axis-chart_v1.0.11",
+      "version": "1.0.11",
+      "comments": {
+        "none": [
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/axis-chart",
+            "commit": "6a48d1797d92f5f47e2daddd0da4e3d80546b9c9",
+            "comment": "Improved swipe controls"
+          }
+        ]
+      }
+    },
+    {
       "date": "Thu, 20 Jul 2023 22:16:53 GMT",
       "tag": "@pi-lib/axis-chart_v1.0.6",
       "version": "1.0.6",

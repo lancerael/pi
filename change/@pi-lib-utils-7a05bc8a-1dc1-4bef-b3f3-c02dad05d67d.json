@@ -1,7 +1,0 @@
-{
-  "type": "patch",
-  "comment": "Improved swipe controls",
-  "packageName": "@pi-lib/utils",
-  "email": "lancerael@googlemail.com",
-  "dependentChangeType": "patch"
-}
