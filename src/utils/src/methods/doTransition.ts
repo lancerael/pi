@@ -24,7 +24,7 @@ export const doTransition = ({
   speed = 10,
   interval = 15,
   intervalId = 'default',
-}: TransitionProps): ((timeout: NodeJS.Timeout) => void) => {
+}: TransitionProps): (() => void) => {
   const clear = () => clearTimeout(timeouts[intervalId])
   clear()
   let distance = +(target - value).toFixed(2)
