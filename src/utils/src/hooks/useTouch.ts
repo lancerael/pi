@@ -87,6 +87,7 @@ export const useTouch = <T = HTMLElement>(
   // Handles press stop
   const stop = useCallback(
     (e: PointerEvent) => {
+      if (!trackers.current) return
       const offsetX =
         Math.round(trackers.current.oldPanChange.x * 5) * controls.zoomLevel
       if (Math.abs(trackers.current.oldPanChange.x) > 15) {
