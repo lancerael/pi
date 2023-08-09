@@ -2,6 +2,21 @@
   "name": "@pi-lib/utils",
   "entries": [
     {
+      "date": "Wed, 02 Aug 2023 23:43:10 GMT",
+      "tag": "@pi-lib/utils_v0.6.1",
+      "version": "0.6.1",
+      "comments": {
+        "patch": [
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/utils",
+            "commit": "e803724679e93f8732057aa5bf4bf42c56ef5d72",
+            "comment": "Improved swipe controls"
+          }
+        ]
+      }
+    },
+    {
       "date": "Tue, 01 Aug 2023 23:09:45 GMT",
       "tag": "@pi-lib/utils_v0.6.0",
       "version": "0.6.0",
