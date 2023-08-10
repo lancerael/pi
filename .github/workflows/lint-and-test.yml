@@ -1,0 +1,84 @@
+name: Test Components & Apps
+
+on:
+  pull_request:
+    branches: [dev]
+
+jobs:
+  tdd:
+    name: Run unit tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Changed files
+        id: changed-files
+        uses: tj-actions/changed-files@v35
+        with:
+          files: /src/components/**
+
+      - name: Set up pnpm
+        uses: ./.github/actions/pnpm-cache
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Lint
+        run: pnpm lint
+
+      - name: Test
+        if: steps.changed-files.outputs.any_changed == 'true'
+        run: pnpm -r test
+
+  list-mfes:
+    name: Gets a list of apps
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.set-matrix.outputs.matrix }}
+    steps:
+      - uses: actions/checkout@v3
+
+      - id: set-matrix
+        run: echo "matrix=$(ls -d src/mfes/* | jq -R -s -c 'split("\n")[:-1]')" >>$GITHUB_OUTPUT
+
+      - name: List of apps
+        run: echo "Apps = ${{ steps.set-matrix.outputs.matrix }}"
+
+  test-mfes:
+    name: Run behavioural tests
+    needs: list-mfes
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        path: ${{ fromJson(needs.list-mfes.outputs.matrix) }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 2
+
+      - name: Changed files
+        id: changed-files
+        uses: tj-actions/changed-files@v35
+        with:
+          files: ${{ matrix.path }}/**
+
+      - name: List of changes
+        run: echo "Changes = ${{ steps.changed-files.outputs.all_changed_files }}"
+
+      - name: Path
+        run: echo "Path = ${{ matrix.path }}"
+
+      - name: Set up PNPM cache
+        if: steps.changed-files.outputs.any_changed == 'true'
+        uses: ./.github/actions/pnpm-cache
+
+      - name: Cypress run
+        if: steps.changed-files.outputs.any_changed == 'true'
+        uses: cypress-io/github-action@v5.0.5
+        with:
+          install: false
+          working-directory: ${{ matrix.path }}
+          start: pnpm dev

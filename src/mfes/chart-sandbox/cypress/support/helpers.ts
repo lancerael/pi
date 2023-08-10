@@ -1,4 +1,4 @@
-const fnRgbTohex = (sRgb) => {
+export const rgbTohex = (sRgb: any) => {
   if (sRgb.match(/\#/)) {
     return sRgb
   }
@@ -6,5 +6,3 @@ const fnRgbTohex = (sRgb) => {
   var sHex = iBlue | (iGreen << 8) | (iRed << 16)
   return `#${(0x1000000 + sHex).toString(16).slice(1)}`
 }
-
-export { fnRgbTohex }
