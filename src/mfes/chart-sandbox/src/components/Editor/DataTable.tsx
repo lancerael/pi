@@ -1,4 +1,4 @@
-import React, { SyntheticEvent, useEffect } from 'react'
+import { SyntheticEvent, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import Table from '@pi-lib/table'
 import Button from '@pi-lib/button'
@@ -64,6 +64,7 @@ const DataTable = () => {
             }: SyntheticEvent<HTMLInputElement>) =>
               dispatch(updateType({ value, i }))
             }
+            data-selector="chart-key-input"
           />
         )),
         <EditorActions />,
@@ -83,6 +84,7 @@ const DataTable = () => {
                 }: SyntheticEvent<HTMLInputElement>) =>
                   dispatch(updateColor({ value, i }))
                 }
+                data-selector="chart-color-input"
               />
             )),
             '',
@@ -99,6 +101,7 @@ const DataTable = () => {
               }: SyntheticEvent<HTMLInputElement>) =>
                 dispatch(updateLabel({ value, i1 }))
               }
+              data-selector="chart-label-input"
             />,
             ...dataItem.itemValues.map((value: number, i2: number) => (
               <Input
@@ -111,6 +114,7 @@ const DataTable = () => {
                 }: SyntheticEvent<HTMLInputElement>) =>
                   dispatch(updateValue({ value, i1, i2 }))
                 }
+                data-selector="chart-value-input"
               />
             )),
             <Button

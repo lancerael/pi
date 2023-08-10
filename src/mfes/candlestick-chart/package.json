@@ -5,8 +5,9 @@
   "type": "module",
   "scripts": {
     "build": "tsc && vite build",
+    "ci-setup": "echo 'not implemented'",
     "dev": "vite --port 5002 --strictPort --host",
-    "e2e": "npx cypress open",
+    "e2e": "echo 'not implemented'",
     "lint": "npx prettier -c . && npx eslint",
     "lint:fix": "npx prettier -w . && npx eslint --fix",
     "preview": "vite preview --port 5002 --strictPort --host",
@@ -28,7 +29,6 @@
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^3.1.0",
-    "cypress": "^3.0.2",
     "react-is": "^18.2.0",
     "rimraf": "^3.0.2",
     "typescript": "^4.9.3",
