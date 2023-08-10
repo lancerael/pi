@@ -1,10 +1,7 @@
 {
   "chartConfig": {
     "title": "Random Chart Data",
-    "axisLabels": [
-      "Y Axis",
-      "X Axis"
-    ],
+    "axisLabels": ["Y Axis", "X Axis"],
     "itemValues": [
       {
         "name": "Type 1",
@@ -20,17 +17,11 @@
   "chartData": [
     {
       "itemLabel": "Item 1",
-      "itemValues": [
-        76,
-        41
-      ]
+      "itemValues": [76, 41]
     },
     {
       "itemLabel": "Item 8",
-      "itemValues": [
-        130,
-        28
-      ]
+      "itemValues": [130, 28]
     }
   ]
 }
