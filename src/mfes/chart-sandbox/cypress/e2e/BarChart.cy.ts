@@ -35,3 +35,5 @@ describe('BarChart', () => {
     cy.checkValueChanges()
   })
 })
+
+export {}
