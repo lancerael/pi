@@ -35,3 +35,5 @@ describe('LineChart', () => {
     cy.checkValueChanges('line', 'circle.circles')
   })
 })
+
+export {}
