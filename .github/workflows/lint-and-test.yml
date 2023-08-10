@@ -81,4 +81,5 @@ jobs:
         with:
           install: false
           working-directory: ${{ matrix.path }}
+          build: pnpm ci-setup
           start: pnpm dev

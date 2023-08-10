@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "build": "tsc && vite build",
+    "ci-setup": "pnpm install && npx cypress install",
     "dev": "vite --port 5001 --strictPort --host",
     "e2e": "npx cypress open",
     "lint": "npx prettier -c . && npx eslint",
