@@ -19,7 +19,7 @@ jobs:
           files: /src/components/**
 
       - name: Set up pnpm
-        uses: ./.github/actions/pnpm-cache
+        uses: ./.github/actions/pnpm-setup
 
       - name: Install dependencies
         run: pnpm install
@@ -73,7 +73,7 @@ jobs:
 
       - name: Set up PNPM cache
         if: steps.changed-files.outputs.any_changed == 'true'
-        uses: ./.github/actions/pnpm-cache
+        uses: ./.github/actions/pnpm-setup
 
       - name: Cypress run
         if: steps.changed-files.outputs.any_changed == 'true'
