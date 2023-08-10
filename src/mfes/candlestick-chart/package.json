@@ -5,8 +5,9 @@
   "type": "module",
   "scripts": {
     "build": "tsc && vite build",
+    "ci-setup": "",
     "dev": "vite --port 5002 --strictPort --host",
-    "e2e": "npx cypress open",
+    "e2e": "",
     "lint": "npx prettier -c . && npx eslint",
     "lint:fix": "npx prettier -w . && npx eslint --fix",
     "preview": "vite preview --port 5002 --strictPort --host",
