@@ -1,19 +1,19 @@
 {
   const fs = require('fs-extra')
-  const fileName = './src/styles/docs/styles.stories.tsx'
-  const themeFile = './src/styles/src/themes/themes.types.ts'
+  const fileName = './src/packages/styles/docs/styles.stories.tsx'
+  const themeFile = './src/packages/styles/src/themes/themes.types.ts'
 
   /**
    * Generate the teplate for the story
    */
   const template = (name) => `
-export const ${
-    name.charAt(0).toUpperCase() + name.slice(1)
-  }: StoryObj<typeof StyleDemo> = {
-  args: {
-    themeName: '${name}',
-  },
-}
+    export const ${
+      name.charAt(0).toUpperCase() + name.slice(1)
+    }: StoryObj<typeof StyleDemo> = {
+      args: {
+        themeName: '${name}',
+      },
+    }
 `
 
   /**

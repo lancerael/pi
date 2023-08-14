@@ -16,7 +16,7 @@ jobs:
         id: changed-files
         uses: tj-actions/changed-files@v35
         with:
-          files: /src/components/**
+          files: /src/packages/**
 
       - name: Set up pnpm
         uses: ./.github/actions/pnpm-setup
@@ -40,12 +40,12 @@ jobs:
       - uses: actions/checkout@v3
 
       - id: set-matrix
-        run: echo "matrix=$(ls -d src/mfes/chart-sandbox | jq -R -s -c 'split("\n")[:-1]')" >>$GITHUB_OUTPUT
+        run: echo "matrix=$(ls -d src/apps/mfes/chart-sandbox | jq -R -s -c 'split("\n")[:-1]')" >>$GITHUB_OUTPUT
 
       - name: List of apps
         run: echo "Apps = ${{ steps.set-matrix.outputs.matrix }}"
 
-  test-mfes:
+  bdd-mfes:
     name: Run behavioural tests
     needs: list-mfes
     runs-on: ubuntu-latest
