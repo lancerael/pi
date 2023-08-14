@@ -20,7 +20,7 @@ jobs:
         id: changed-files
         uses: tj-actions/changed-files@v35
         with:
-          files: ./src/components/**
+          files: ./src/packages/**
 
       - name: List of changes
         shell: bash
@@ -31,7 +31,7 @@ jobs:
         with:
           global: true
           name: 'Lance Rael'
-          email: 'lancerael@outlook.com'
+          email: '${{ secrets.PI_EMAIL }}'
           actor: 'LanceRael'
           token: '${{ secrets.PI_PUBLISH }}'
 

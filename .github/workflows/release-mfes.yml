@@ -30,20 +30,20 @@ jobs:
         with:
           files: ./src/mfes/${{ matrix.mfe-name }}/**
 
-      - name: Changed components
-        id: changed-components
+      - name: Changed packages
+        id: changed-packages
         uses: tj-actions/changed-files@v35
         with:
-          files: ./src/components/**
+          files: ./src/packages/**
 
       - name: List of changes
         shell: bash
         run: |
-          echo "Changes = ${{steps.changed-mfes.outputs.all_changed_files}}, ${{ steps.changed-components.outputs.all_changed_files }}"
+          echo "Changes = ${{steps.changed-mfes.outputs.all_changed_files}}, ${{ steps.changed-packages.outputs.all_changed_files }}"
 
       - name: Evaluate changes
         id: check-changes
-        run: echo "has-changed=${{steps.changed-mfes.outputs.any_changed == 'true' || steps.changed-components.outputs.any_changed == 'true'}}" >> $GITHUB_OUTPUT
+        run: echo "has-changed=${{steps.changed-mfes.outputs.any_changed == 'true' || steps.changed-packages.outputs.any_changed == 'true'}}" >> $GITHUB_OUTPUT
 
       - name: Set up pnpm
         if: steps.check-changes.outputs.has-changed == 'true'
@@ -68,4 +68,4 @@ jobs:
       - name: Create CloudFront Invalidation
         if: steps.check-changes.outputs.has-changed == 'true'
         run: |
-          aws cloudfront create-invalidation --distribution-id E152JVQP5CZF23 --paths "/*"
+          aws cloudfront create-invalidation --distribution-id ${{ secrets.AWS_CLOUDFRONT_ID }} --paths "/*"
