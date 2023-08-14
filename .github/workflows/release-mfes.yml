@@ -28,7 +28,7 @@ jobs:
         id: changed-mfes
         uses: tj-actions/changed-files@v35
         with:
-          files: ./src/mfes/${{ matrix.mfe-name }}/**
+          files: ./src/apps/mfes/${{ matrix.mfe-name }}/**
 
       - name: Changed packages
         id: changed-packages
