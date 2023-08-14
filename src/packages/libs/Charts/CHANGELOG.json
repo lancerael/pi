@@ -2,6 +2,21 @@
   "name": "@pi-lib/charts",
   "entries": [
     {
+      "date": "Mon, 14 Aug 2023 23:36:59 GMT",
+      "tag": "@pi-lib/charts_v0.12.3",
+      "version": "0.12.3",
+      "comments": {
+        "none": [
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/charts",
+            "commit": "eb610a4007b4f96ce71d17e27052db9107dfc530",
+            "comment": "Project structure improvements"
+          }
+        ]
+      }
+    },
+    {
       "date": "Wed, 05 Jul 2023 23:03:12 GMT",
       "tag": "@pi-lib/charts_v0.12.3",
       "version": "0.12.3",

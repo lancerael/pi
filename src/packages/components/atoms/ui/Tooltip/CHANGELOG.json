@@ -2,6 +2,21 @@
   "name": "@pi-lib/tooltip",
   "entries": [
     {
+      "date": "Mon, 14 Aug 2023 23:36:59 GMT",
+      "tag": "@pi-lib/tooltip_v2.0.7",
+      "version": "2.0.7",
+      "comments": {
+        "none": [
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/tooltip",
+            "commit": "eb610a4007b4f96ce71d17e27052db9107dfc530",
+            "comment": "Project structure improvements"
+          }
+        ]
+      }
+    },
+    {
       "date": "Sat, 08 Jul 2023 14:02:41 GMT",
       "tag": "@pi-lib/tooltip_v2.0.5",
       "version": "2.0.5",
