@@ -2,6 +2,21 @@
   "name": "@pi-lib/axis-chart",
   "entries": [
     {
+      "date": "Mon, 14 Aug 2023 23:36:58 GMT",
+      "tag": "@pi-lib/axis-chart_v1.0.11",
+      "version": "1.0.11",
+      "comments": {
+        "none": [
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/axis-chart",
+            "commit": "eb610a4007b4f96ce71d17e27052db9107dfc530",
+            "comment": "Project structure improvements"
+          }
+        ]
+      }
+    },
+    {
       "date": "Wed, 09 Aug 2023 17:55:41 GMT",
       "tag": "@pi-lib/axis-chart_v1.0.11",
       "version": "1.0.11",

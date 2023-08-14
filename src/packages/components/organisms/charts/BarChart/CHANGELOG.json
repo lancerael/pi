@@ -2,6 +2,21 @@
   "name": "@pi-lib/bar-chart",
   "entries": [
     {
+      "date": "Mon, 14 Aug 2023 23:36:58 GMT",
+      "tag": "@pi-lib/bar-chart_v1.0.4",
+      "version": "1.0.4",
+      "comments": {
+        "none": [
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/bar-chart",
+            "commit": "eb610a4007b4f96ce71d17e27052db9107dfc530",
+            "comment": "Project structure improvements"
+          }
+        ]
+      }
+    },
+    {
       "date": "Thu, 20 Jul 2023 22:16:53 GMT",
       "tag": "@pi-lib/bar-chart_v1.0.4",
       "version": "1.0.4",

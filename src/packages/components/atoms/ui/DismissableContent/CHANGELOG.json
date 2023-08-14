@@ -2,6 +2,21 @@
   "name": "@pi-lib/dismissable-content",
   "entries": [
     {
+      "date": "Mon, 14 Aug 2023 23:36:59 GMT",
+      "tag": "@pi-lib/dismissable-content_v1.0.4",
+      "version": "1.0.4",
+      "comments": {
+        "none": [
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/dismissable-content",
+            "commit": "eb610a4007b4f96ce71d17e27052db9107dfc530",
+            "comment": "Project structure improvements"
+          }
+        ]
+      }
+    },
+    {
       "date": "Sat, 22 Jul 2023 23:29:50 GMT",
       "tag": "@pi-lib/dismissable-content_v1.0.4",
       "version": "1.0.4",
