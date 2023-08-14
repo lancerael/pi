@@ -1,4 +1,4 @@
-import { defineConfig } from 'vite'
+import { defineConfig, loadEnv } from 'vite'
 import react from '@vitejs/plugin-react'
 import federation from '@originjs/vite-plugin-federation'
 
@@ -17,31 +17,37 @@ const getPath = (id) => {
   return devUrl
 }
 
-export default defineConfig({
-  cacheDir: 'node_modules/.cacheDir',
-  plugins: [
-    react(),
-    federation({
-      name: 'app',
-      remotes: {
-        remoteSandbox: `${getPath('chart-sandbox')}/assets/remoteSandbox.js`,
-        remoteCandlestick: `${getPath(
-          'candlestick-chart'
-        )}/assets/remoteCandlestick.js`,
-      },
-      shared: [
-        'react',
-        'react-dom',
-        '@reduxjs/toolkit',
-        'react-redux',
-        'redux',
-      ],
-    }),
-  ],
-  build: {
-    modulePreload: false,
-    target: 'esnext',
-    minify: false,
-    cssCodeSplit: false,
-  },
+export default defineConfig(({ mode }) => {
+  const env = loadEnv(mode, process.cwd(), '')
+  return {
+    cacheDir: 'node_modules/.cacheDir',
+    plugins: [
+      react(),
+      federation({
+        name: 'app',
+        remotes: {
+          remoteSandbox: `${getPath('chart-sandbox')}/assets/remoteSandbox.js`,
+          remoteCandlestick: `${getPath(
+            'candlestick-chart'
+          )}/assets/remoteCandlestick.js`,
+        },
+        shared: [
+          'react',
+          'react-dom',
+          '@reduxjs/toolkit',
+          'react-redux',
+          'redux',
+        ],
+      }),
+    ],
+    build: {
+      modulePreload: false,
+      target: 'esnext',
+      minify: false,
+      cssCodeSplit: false,
+    },
+    define: {
+      'process.env.CLOUDFRONT_URL': env.CLOUDFRONT_URL,
+    },
+  }
 })
