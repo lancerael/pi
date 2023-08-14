@@ -8,7 +8,9 @@ import { ActionProps } from './EditorAction.types'
 import Button from '@pi-lib/button'
 
 const CLOUDFRONT_URL =
-  import.meta.env.VITE_CLOUDFRONT_URL ?? process.env.CLOUDFRONT_URL
+  import.meta.env.VITE_CLOUDFRONT_URL ??
+  Cypress.env('MY_CUSTOM_VARIABLE') ??
+  process.env.CLOUDFRONT_URL
 
 /**
  * A component to handle each of the actions on the table
