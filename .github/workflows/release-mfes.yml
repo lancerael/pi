@@ -63,7 +63,7 @@ jobs:
       - name: Deploy to S3
         if: steps.check-changes.outputs.has-changed == 'true'
         run: |
-          aws s3 sync src/mfes/${{ matrix.mfe-name }}/dist s3://${{ secrets.AWS_S3_MFES }}/${{ matrix.mfe-name }} --acl public-read
+          aws s3 sync src/apps/mfes/${{ matrix.mfe-name }}/dist s3://${{ secrets.AWS_S3_MFES }}/${{ matrix.mfe-name }} --acl public-read
 
       - name: Create CloudFront Invalidation
         if: steps.check-changes.outputs.has-changed == 'true'
