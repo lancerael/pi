@@ -14,3 +14,8 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
     </Theme>
   </React.StrictMode>
 )
+
+export const CLOUDFRONT_URL =
+  import.meta.env.VITE_CLOUDFRONT_URL ??
+  Cypress?.env('CLOUDFRONT_URL') ??
+  process.env.CLOUDFRONT_URL
