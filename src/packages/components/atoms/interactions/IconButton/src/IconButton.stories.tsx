@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { IconButton } from './IconButton'
 
 const CLOUDFRONT_URL =
-  import.meta.env.VITE_CLOUDFRONT_URL ?? process.env.CLOUDFRONT_URL
+  import.meta.env.VITE_CLOUDFRONT_URL ?? '___CLOUDFRONT_URL___'
 
 const meta: Meta<typeof IconButton> = {
   title: 'Atoms/Interactions/IconButton',

@@ -28,6 +28,7 @@
   "devDependencies": {
     "@pi-lib/config": "workspace:^",
     "@pi-lib/types": "workspace:^",
+    "@rollup/plugin-replace": "^5.0.2",
     "@testing-library/react": "^13.3.0",
     "@vitejs/plugin-react": "^2.0.1",
     "@vitest/coverage-istanbul": "^0.23.1",
