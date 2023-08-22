@@ -11,6 +11,9 @@ jobs:
     if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
 
+    env:
+      CLOUDFRONT_URL: ${{ secrets.CLOUDFRONT_URL }}
+
     strategy:
       matrix:
         mfe-name: [chart-sandbox, candlestick-chart]
