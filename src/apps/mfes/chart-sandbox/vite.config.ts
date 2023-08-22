@@ -1,6 +1,7 @@
 import { defineConfig, loadEnv } from 'vite'
 import react from '@vitejs/plugin-react'
 import federation from '@originjs/vite-plugin-federation'
+import replace from '@rollup/plugin-replace'
 
 export default defineConfig(({ mode }) => {
   process.env = { ...process.env, ...loadEnv(mode, process.cwd(), '') }
@@ -26,6 +27,15 @@ export default defineConfig(({ mode }) => {
     ],
     build: {
       target: 'esnext',
+      rollupOptions: {
+        plugins: [
+          replace({
+            'process.env.CLOUDFRONT_URL': JSON.stringify(
+              process.env.CLOUDFRONT_URL
+            ),
+          }),
+        ],
+      },
     },
   }
 })
