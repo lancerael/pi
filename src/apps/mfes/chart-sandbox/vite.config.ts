@@ -28,7 +28,8 @@ export default defineConfig(({ mode }) => {
       target: 'esnext',
     },
     define: {
-      'process.env.CLOUDFRONT_URL': env.CLOUDFRONT_URL,
+      'process.env.CLOUDFRONT_URL':
+        env.CLOUDFRONT_URL ?? 'https://d3bjzq1zo2el1w.cloudfront.net',
     },
   }
 })
