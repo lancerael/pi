@@ -11,9 +11,6 @@ jobs:
     if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
 
-    env:
-      CLOUDFRONT_URL: ${{ secrets.CLOUDFRONT_URL }}
-
     strategy:
       matrix:
         mfe-name: [chart-sandbox, candlestick-chart]
@@ -54,6 +51,8 @@ jobs:
 
       - name: Build for AWS
         if: steps.check-changes.outputs.has-changed == 'true'
+        env:
+          CLOUDFRONT_URL: ${{ secrets.CLOUDFRONT_URL }}
         run: pnpm --filter @pi-lib/${{ matrix.mfe-name }}-mfe build
 
       - name: Configure AWS credentials
@@ -62,6 +61,11 @@ jobs:
           aws configure set aws_access_key_id ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws configure set aws_secret_access_key ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws configure set default.region eu-west-2
+
+      - name: Flush S3
+        if: steps.check-changes.outputs.has-changed == 'true'
+        run: |
+          aws s3 rm s3://${{ secrets.AWS_S3_MFES }}/${{ matrix.mfe-name }} --recursive
 
       - name: Deploy to S3
         if: steps.check-changes.outputs.has-changed == 'true'
