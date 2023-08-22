@@ -40,6 +40,8 @@ jobs:
         uses: ./.github/actions/pnpm-setup
 
       - name: Build for vanilla dist
+        env:
+          CLOUDFRONT_URL: ${{ secrets.CLOUDFRONT_URL }}
         if: steps.changed-files.outputs.any_changed == 'true'
         run: pnpm build
 
