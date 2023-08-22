@@ -36,4 +36,4 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
 )
 
 export const CLOUDFRONT_URL =
-  import.meta.env.VITE_CLOUDFRONT_URL ?? process.env.CLOUDFRONT_URL
+  import.meta.env.VITE_CLOUDFRONT_URL || process.env.CLOUDFRONT_URL
