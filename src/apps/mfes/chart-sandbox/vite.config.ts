@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react'
 import federation from '@originjs/vite-plugin-federation'
 
 export default defineConfig(({ mode }) => {
-  const env = loadEnv(mode, process.cwd(), '')
+  process.env = { ...process.env, ...loadEnv(mode, process.cwd(), '') }
   return {
     plugins: [
       react(),
@@ -26,10 +26,6 @@ export default defineConfig(({ mode }) => {
     ],
     build: {
       target: 'esnext',
-    },
-    define: {
-      'process.env.CLOUDFRONT_URL':
-        env.CLOUDFRONT_URL ?? 'https://d3bjzq1zo2el1w.cloudfront.net',
     },
   }
 })
