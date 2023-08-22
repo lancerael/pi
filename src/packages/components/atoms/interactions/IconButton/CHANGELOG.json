@@ -2,6 +2,21 @@
   "name": "@pi-lib/icon-button",
   "entries": [
     {
+      "date": "Tue, 22 Aug 2023 22:59:47 GMT",
+      "tag": "@pi-lib/icon-button_v1.0.10",
+      "version": "1.0.10",
+      "comments": {
+        "none": [
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/icon-button",
+            "commit": "6f366d4ca51cde208fb986b72a42a339b45ed326",
+            "comment": "Fix all cloudfront paths"
+          }
+        ]
+      }
+    },
+    {
       "date": "Mon, 14 Aug 2023 23:36:59 GMT",
       "tag": "@pi-lib/icon-button_v1.0.10",
       "version": "1.0.10",
