@@ -30,9 +30,7 @@ export default defineConfig(({ mode }) => {
       rollupOptions: {
         plugins: [
           replace({
-            'process.env.CLOUDFRONT_URL': JSON.stringify(
-              process.env.CLOUDFRONT_URL
-            ),
+            ___CLOUDFRONT_URL___: process.env.CLOUDFRONT_URL,
           }),
         ],
       },
