@@ -14,6 +14,3 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
     </Theme>
   </React.StrictMode>
 )
-
-export const CLOUDFRONT_URL =
-  import.meta.env.VITE_CLOUDFRONT_URL ?? '___CLOUDFRONT_URL___'

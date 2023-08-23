@@ -6,7 +6,6 @@ import {
 } from './EditorAction.style'
 import { ActionProps } from './EditorAction.types'
 import Button from '@pi-lib/button'
-import { CLOUDFRONT_URL } from '../../../main'
 
 /**
  * A component to handle each of the actions on the table
@@ -18,7 +17,7 @@ export const EditorAction = ({
   $isStroked = false,
   $isFilled = false,
 }: ActionProps) => {
-  const iconPath = `${CLOUDFRONT_URL}/${label
+  const iconPath = `${import.meta.env.VITE_CLOUDFRONT_URL}/${label
     .toLowerCase()
     .split(' ')
     .join('-')}.svg`
