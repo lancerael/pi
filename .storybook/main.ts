@@ -13,4 +13,5 @@ export default {
   core: {
     disableTelemetry: true,
   },
+  staticDirs: ['../src/assets'],
 }

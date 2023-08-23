@@ -1,9 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { IconButton } from './IconButton'
 
-const CLOUDFRONT_URL =
-  import.meta.env.VITE_CLOUDFRONT_URL ?? '___CLOUDFRONT_URL___'
-
 const meta: Meta<typeof IconButton> = {
   title: 'Atoms/Interactions/IconButton',
   component: IconButton,
@@ -30,7 +27,7 @@ const meta: Meta<typeof IconButton> = {
  */
 export const Default: StoryObj<typeof IconButton> = {
   args: {
-    src: `${CLOUDFRONT_URL}/info.svg`,
+    src: `/info.svg`,
     isExternal: false,
     title: 'Button title',
     isSmall: false,
@@ -43,7 +40,7 @@ export const Default: StoryObj<typeof IconButton> = {
  */
 export const Colored: StoryObj<typeof IconButton> = {
   args: {
-    src: `${CLOUDFRONT_URL}/info.svg`,
+    src: `/info.svg`,
     $isStroked: true,
   },
 }
@@ -54,7 +51,7 @@ export const Colored: StoryObj<typeof IconButton> = {
 export const Small: StoryObj<typeof IconButton> = {
   args: {
     href: 'https://www.google.com',
-    src: `${CLOUDFRONT_URL}/info.svg`,
+    src: `/info.svg`,
     isExternal: true,
     isSmall: true,
     $isStroked: true,
