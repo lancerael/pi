@@ -47,7 +47,7 @@ export default defineConfig({
     rollupOptions: {
       plugins: [
         replace({
-          'import.meta.env.VITE_CLOUDFRONT_URL': `'${process.env.CLOUDFRONT_URL}'`,
+          __CLOUDFRONT_URL__: `${process.env.CLOUDFRONT_URL}`,
         }),
       ],
     },

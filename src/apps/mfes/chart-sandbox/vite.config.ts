@@ -28,7 +28,7 @@ export default defineConfig({
     rollupOptions: {
       plugins: [
         replace({
-          __CLOUDFRONT_URL__: `'${process.env.CLOUDFRONT_URL}'`,
+          __CLOUDFRONT_URL__: `${process.env.CLOUDFRONT_URL}`,
         }),
       ],
     },
