@@ -17,10 +17,9 @@ export const EditorAction = ({
   $isStroked = false,
   $isFilled = false,
 }: ActionProps) => {
-  const iconPath = `${import.meta.env.VITE_CLOUDFRONT_URL}/${label
-    .toLowerCase()
-    .split(' ')
-    .join('-')}.svg`
+  const iconPath = `${
+    import.meta.env.VITE_CLOUDFRONT_URL ?? '__CLOUDFRONT_URL__'
+  }/${label.toLowerCase().split(' ').join('-')}.svg`
   return (
     <StyledAction>
       <StyledIconButton>
