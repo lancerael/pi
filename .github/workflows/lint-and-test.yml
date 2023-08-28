@@ -83,3 +83,9 @@ jobs:
           working-directory: ${{ matrix.path }}
           build: pnpm ci-setup
           start: pnpm dev
+
+      - name: Upload screenshots as artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: cypress-screenshots
+          path: ${{ matrix.path }}/cypress/screenshots
