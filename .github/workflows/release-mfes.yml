@@ -53,6 +53,7 @@ jobs:
         if: steps.check-changes.outputs.has-changed == 'true'
         env:
           CLOUDFRONT_URL: ${{ secrets.CLOUDFRONT_URL }}
+          LAMBDA_URL: ${{ secrets.LAMBDA_URL }}
         run: pnpm --filter @pi-lib/${{ matrix.mfe-name }}-mfe build
 
       - name: Configure AWS credentials
