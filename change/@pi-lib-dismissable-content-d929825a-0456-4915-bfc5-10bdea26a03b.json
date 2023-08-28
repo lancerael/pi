@@ -1,0 +1,7 @@
+{
+  "type": "minor",
+  "comment": "Added timer to dismissable content",
+  "packageName": "@pi-lib/dismissable-content",
+  "email": "lancerael@googlemail.com",
+  "dependentChangeType": "patch"
+}
