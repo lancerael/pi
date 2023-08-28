@@ -1,7 +1,0 @@
-{
-  "type": "patch",
-  "comment": "Reduced large size",
-  "packageName": "@pi-lib/icon-button",
-  "email": "lancerael@googlemail.com",
-  "dependentChangeType": "patch"
-}

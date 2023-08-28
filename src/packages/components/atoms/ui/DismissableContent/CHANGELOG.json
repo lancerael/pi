@@ -2,6 +2,21 @@
   "name": "@pi-lib/dismissable-content",
   "entries": [
     {
+      "date": "Mon, 28 Aug 2023 21:50:31 GMT",
+      "tag": "@pi-lib/dismissable-content_v1.1.0",
+      "version": "1.1.0",
+      "comments": {
+        "minor": [
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/dismissable-content",
+            "commit": "95db34bd015db509b2414ff9aaf1fc29967de96f",
+            "comment": "Added timer to dismissable content"
+          }
+        ]
+      }
+    },
+    {
       "date": "Mon, 14 Aug 2023 23:36:59 GMT",
       "tag": "@pi-lib/dismissable-content_v1.0.4",
       "version": "1.0.4",

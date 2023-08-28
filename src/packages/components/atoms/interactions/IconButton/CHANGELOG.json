@@ -2,6 +2,21 @@
   "name": "@pi-lib/icon-button",
   "entries": [
     {
+      "date": "Mon, 28 Aug 2023 21:50:31 GMT",
+      "tag": "@pi-lib/icon-button_v1.0.11",
+      "version": "1.0.11",
+      "comments": {
+        "patch": [
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/icon-button",
+            "commit": "95db34bd015db509b2414ff9aaf1fc29967de96f",
+            "comment": "Reduced large size"
+          }
+        ]
+      }
+    },
+    {
       "date": "Tue, 22 Aug 2023 22:59:47 GMT",
       "tag": "@pi-lib/icon-button_v1.0.10",
       "version": "1.0.10",
