@@ -7,13 +7,14 @@ import { themeList, themes, Scheme } from '@pi-lib/styles'
  */
 export const StyledHeader = styled.h1`
   display: inline-block;
-  font-size: 1.6em;
+  font-size: 1.2em;
   padding-left: 4px;
   text-shadow: 1px 1px rgb(0 0 0 / 30%);
   position: relative;
+  margin: 0;
 
   svg {
-    padding-top: 6px;
+    padding-top: 8px;
   }
 `
 

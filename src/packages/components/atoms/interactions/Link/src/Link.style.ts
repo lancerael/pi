@@ -14,7 +14,7 @@ const getLinkStyle = ({ $isMain, $isInactive }: StyledLinkProps) => {
     css`
       text-transform: uppercase;
       font-weight: bold;
-      font-size: 1.4em;
+      font-size: 1.2em;
     `}
 
     ${$isInactive
