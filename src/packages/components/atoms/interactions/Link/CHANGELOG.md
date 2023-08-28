@@ -1,8 +1,16 @@
 # Change Log - @pi-lib/link
 
-This log was last generated on Mon, 26 Jun 2023 23:53:05 GMT and should not be manually modified.
+This log was last generated on Mon, 28 Aug 2023 22:56:47 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 1.0.7
+
+Mon, 28 Aug 2023 22:56:47 GMT
+
+### Patches
+
+- Improved demo app header link sizes (lancerael@googlemail.com)
 
 ## 1.0.2
 

@@ -2,6 +2,21 @@
   "name": "@pi-lib/link",
   "entries": [
     {
+      "date": "Mon, 28 Aug 2023 22:56:47 GMT",
+      "tag": "@pi-lib/link_v1.0.7",
+      "version": "1.0.7",
+      "comments": {
+        "patch": [
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/link",
+            "commit": "f058112d7b878db021947403a1965841d69a08f7",
+            "comment": "Improved demo app header link sizes"
+          }
+        ]
+      }
+    },
+    {
       "date": "Mon, 14 Aug 2023 23:36:59 GMT",
       "tag": "@pi-lib/link_v1.0.6",
       "version": "1.0.6",
