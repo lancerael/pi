@@ -6,7 +6,7 @@ Cypress.Commands.add('setUpTests', () => {
   cy.intercept(
     {
       method: 'GET',
-      url: 'https://3ce64aq6e3.execute-api.eu-west-2.amazonaws.com/default/chartRandom',
+      url: '__LAMBDA_URL__/default/chartRandom',
     },
     { fixture: 'chartData.json' }
   ).as('chartData')

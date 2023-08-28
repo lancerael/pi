@@ -77,9 +77,17 @@ jobs:
 
       - name: Cypress run
         if: steps.changed-files.outputs.any_changed == 'true'
-        uses: cypress-io/github-action@v5.0.5
+        uses: cypress-io/github-action@v5
         with:
           install: false
           working-directory: ${{ matrix.path }}
           build: pnpm ci-setup
           start: pnpm dev
+
+      - name: Upload screenshots as artifacts
+        uses: actions/upload-artifact@v3
+        if: failure()
+        with:
+          name: cypress-screenshots
+          path: ${{ matrix.path }}/cypress/screenshots
+          retention-days: 5

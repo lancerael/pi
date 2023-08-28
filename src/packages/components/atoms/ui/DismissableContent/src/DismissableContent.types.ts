@@ -10,6 +10,10 @@ export interface DismissableContentProps extends PropsWithChildren {
    */
   isDismissable?: boolean
   /**
+   * Does the content expire with a timer?
+   */
+  timerInterval?: number
+  /**
    * The callback for when the user dismisses the content
    */
   dismissCallback?: () => void

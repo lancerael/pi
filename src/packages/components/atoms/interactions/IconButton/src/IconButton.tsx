@@ -24,7 +24,7 @@ export const IconButton: FC<IconButtonProps> = ({
   isSmall = false,
   $isFilled = false,
   $isStroked = false,
-  size = isSmall ? '1em' : '1.5em',
+  size = isSmall ? '1em' : '1.2em',
   dataSelector = 'pi-lib-icon-button',
   ...props
 }) => {

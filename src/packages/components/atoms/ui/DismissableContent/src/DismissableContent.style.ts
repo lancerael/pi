@@ -1,5 +1,8 @@
 import styled, { css } from 'styled-components'
-import { StyledDismissableContentProps } from './DismissableContent.style.types'
+import {
+  StyledDismissableContentProps,
+  StyledTimerProps,
+} from './DismissableContent.style.types'
 import { gradient } from '@pi-lib/styles'
 
 export const StyledDismissableContent = styled.div(
@@ -31,3 +34,18 @@ export const StyledClose = styled.div`
     }
   }
 `
+
+export const StyledTimer = styled.div(
+  ({ isTimerTriggered, timerInterval }: StyledTimerProps) => {
+    return css`
+      position: absolute;
+      left: 0px;
+      bottom: 0px;
+      height: 8px;
+      border-radius: 0 0 0 8px;
+      border-bottom: 4px solid var(--outline);
+      width: ${isTimerTriggered ? '0%' : '100%'};
+      transition: width ${timerInterval / 1000}s linear;
+    `
+  }
+)
