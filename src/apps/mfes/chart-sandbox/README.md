@@ -1,3 +1,3 @@
-## Chart Sandbox - MFE
+## Chart Sandbox  Demo - MFE
 
-A demo app that combines Pi Lib and d-theia, publishing an MFE for the demo app.
+A demo app that combines Pi Lib and d-theia, publishing an MFE for the demo app
