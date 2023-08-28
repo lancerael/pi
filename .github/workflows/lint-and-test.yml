@@ -78,6 +78,8 @@ jobs:
       - name: Cypress run
         if: steps.changed-files.outputs.any_changed == 'true'
         uses: cypress-io/github-action@v5
+        env:
+          LAMBDA_URL: ${{ secrets.LAMBDA_URL }}
         with:
           install: false
           working-directory: ${{ matrix.path }}
