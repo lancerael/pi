@@ -29,6 +29,7 @@ export default defineConfig({
       plugins: [
         replace({
           __CLOUDFRONT_URL__: `${process.env.CLOUDFRONT_URL}`,
+          __LAMBDA_URL__: `${process.env.LAMBDA_URL}`,
         }),
       ],
     },

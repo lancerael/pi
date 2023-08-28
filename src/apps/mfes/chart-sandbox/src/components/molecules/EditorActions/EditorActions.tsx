@@ -64,7 +64,9 @@ export const EditorActions = () => {
     setIsLoading(true)
     try {
       const response = await fetch(
-        'https://3ce64aq6e3.execute-api.eu-west-2.amazonaws.com/default/chartRandom'
+        `${
+          import.meta.env.VITE_LAMBDA_URL ?? '__LAMBDA_URL__'
+        }/default/chartRandom`
       )
       const randomChart = await response.json()
       updateChart(randomChart)
