@@ -755,9 +755,6 @@ importers:
       '@pi-lib/styles':
         specifier: workspace:^
         version: link:../../../../styles
-      '@pi-lib/utils':
-        specifier: workspace:^
-        version: link:../../../../utils
       react:
         specifier: ^18.2.0
         version: 18.2.0
