@@ -8,3 +8,14 @@ export interface StyledDismissableContentProps {
    */
   isPresent: boolean
 }
+
+export interface StyledTimerProps {
+  /**
+   * If the timer is triggered and the transition should take effect
+   */
+  isTimerTriggered: boolean
+  /**
+   * The interval for the transition
+   */
+  timerInterval: number
+}

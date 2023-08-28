@@ -9,7 +9,6 @@ import Select from '@pi-lib/select'
 import Banner from '@pi-lib/banner'
 import IconButton from '@pi-lib/icon-button'
 import Toast from '@pi-lib/toast'
-import Button from '@pi-lib/button'
 import {
   updatePage,
   updateScheme,
@@ -31,6 +30,7 @@ import {
   StyledToolbar,
 } from './Header.style'
 import { Logo } from './Logo'
+import CookieToast from '../CookieToast'
 
 /**
  * The banner at the top of the page containing internal links
@@ -108,7 +108,7 @@ export const Header = () => {
                     }
                     isSmall
                     $isStroked
-                    src={`${CLOUDFRONT_URL}/scheme-${altScheme}.svg`}
+                    src={`${CLOUDFRONT_URL}/scheme-${scheme}.svg`}
                     title={`Switch to ${altScheme} mode`}
                   />
                   <IconButton
@@ -161,25 +161,9 @@ export const Header = () => {
         toasts={{
           consent: {
             children: (
-              <div
-                style={{
-                  margin: '0 20%',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  gap: '8px',
-                  alignContent: 'center',
-                }}
-              >
-                <div style={{ textAlign: 'center' }}>
-                  Store your preferences on this device?
-                </div>
-                <div style={{ padding: '0 20%' }}>
-                  <Button onPointerUp={() => dispatch(updateConsent(true))}>
-                    Yes please! 🍪
-                  </Button>
-                </div>
-              </div>
+              <CookieToast callback={() => dispatch(updateConsent(true))} />
             ),
+            timerInterval: 25000,
             isDismissed: !hasChangedSettings || !!consent,
           },
         }}

@@ -46,9 +46,25 @@ export const Undismissable: StoryObj<typeof Toast> = {
   args: {
     toasts: {
       default: {
-        children: 'Contents',
+        children: 'Undismissable',
         isDismissable: false,
         isDismissed: false,
+      },
+    },
+  },
+}
+
+/**
+ * An timed toast
+ */
+export const Timed: StoryObj<typeof Toast> = {
+  args: {
+    toasts: {
+      default: {
+        children: 'Timed',
+        isDismissable: true,
+        isDismissed: false,
+        timerInterval: 20000,
       },
     },
   },
@@ -61,7 +77,7 @@ export const Dismissed: StoryObj<typeof Toast> = {
   args: {
     toasts: {
       default: {
-        children: 'Contents',
+        children: 'Dismissed',
         isDismissable: true,
         isDismissed: true,
       },

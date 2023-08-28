@@ -12,6 +12,9 @@ const meta: Meta<typeof DismissableContent> = {
     isDismissable: {
       control: 'boolean',
     },
+    timerInterval: {
+      control: 'number',
+    },
   },
   tags: ['autodocs'],
 }
@@ -29,11 +32,24 @@ export const Default: StoryObj<typeof DismissableContent> = {
 }
 
 /**
+ * The timed version of the component
+ */
+export const Timed: StoryObj<typeof DismissableContent> = {
+  args: {
+    children: 'Timed',
+    isDismissed: false,
+    isDismissable: true,
+    timerInterval: 20000,
+    dismissCallback: action('closed'),
+  },
+}
+
+/**
  * The dismissed version of the component
  */
 export const Dismissed: StoryObj<typeof DismissableContent> = {
   args: {
-    children: 'Content',
+    children: 'Dismissed',
     isDismissed: true,
     isDismissable: true,
     dismissCallback: action('closed'),
@@ -45,7 +61,7 @@ export const Dismissed: StoryObj<typeof DismissableContent> = {
  */
 export const Undismissable: StoryObj<typeof DismissableContent> = {
   args: {
-    children: 'Content',
+    children: 'Undismissable',
     isDismissed: false,
     isDismissable: false,
   },
