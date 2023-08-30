@@ -15,7 +15,7 @@ const meta: Meta<typeof Button> = {
     isCompact: {
       control: 'boolean',
     },
-    isSpecial: {
+    isInverted: {
       control: 'boolean',
     },
     onPointerUp: { action: 'clicked' },
@@ -31,7 +31,7 @@ export const Default: StoryObj<typeof Button> = {
     children: 'Default',
     status: 'default',
     isCompact: false,
-    isSpecial: false,
+    isInverted: false,
     disabled: false,
     dataSelector: 'pi-lib-button',
   },
@@ -83,7 +83,7 @@ export const Disabled: StoryObj<typeof Button> = {
 export const Special: StoryObj<typeof Button> = {
   args: {
     children: 'Special',
-    isSpecial: true,
+    isInverted: true,
   },
 }
 

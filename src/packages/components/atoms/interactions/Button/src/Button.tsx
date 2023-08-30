@@ -10,7 +10,7 @@ export const Button: FC<ButtonProps> = ({
   children,
   status = 'default',
   isCompact = false,
-  isSpecial = false,
+  isInverted = false,
   dataSelector = 'pi-lib-button',
   ...props
 }) => {
@@ -21,7 +21,7 @@ export const Button: FC<ButtonProps> = ({
       {...{
         status,
         isCompact,
-        isSpecial,
+        isInverted,
         ...buttonProps,
         ...props,
       }}
