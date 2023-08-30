@@ -1,8 +1,16 @@
 # Change Log - @pi-lib/tooltip
 
-This log was last generated on Sat, 08 Jul 2023 14:02:41 GMT and should not be manually modified.
+This log was last generated on Wed, 30 Aug 2023 22:50:34 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 2.0.8
+
+Wed, 30 Aug 2023 22:50:34 GMT
+
+### Patches
+
+- Added documentation comments (lancerael@googlemail.com)
 
 ## 2.0.5
 

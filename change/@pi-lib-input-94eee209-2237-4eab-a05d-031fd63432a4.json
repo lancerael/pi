@@ -1,7 +1,0 @@
-{
-  "type": "minor",
-  "comment": "Added documentation comments",
-  "packageName": "@pi-lib/input",
-  "email": "lancerael@googlemail.com",
-  "dependentChangeType": "patch"
-}

@@ -1,8 +1,16 @@
 # Change Log - @pi-lib/link
 
-This log was last generated on Mon, 28 Aug 2023 22:56:47 GMT and should not be manually modified.
+This log was last generated on Wed, 30 Aug 2023 22:50:34 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 1.0.8
+
+Wed, 30 Aug 2023 22:50:34 GMT
+
+### Patches
+
+- Added documentation comments (lancerael@googlemail.com)
 
 ## 1.0.7
 

@@ -2,6 +2,21 @@
   "name": "@pi-lib/loader",
   "entries": [
     {
+      "date": "Wed, 30 Aug 2023 22:50:34 GMT",
+      "tag": "@pi-lib/loader_v3.0.4",
+      "version": "3.0.4",
+      "comments": {
+        "patch": [
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/loader",
+            "commit": "c61100221c615a33b5412a9bb838250d18f8adf6",
+            "comment": "Updated loader internal props"
+          }
+        ]
+      }
+    },
+    {
       "date": "Mon, 14 Aug 2023 23:36:59 GMT",
       "tag": "@pi-lib/loader_v3.0.3",
       "version": "3.0.3",

@@ -1,8 +1,16 @@
 # Change Log - @pi-lib/utils
 
-This log was last generated on Wed, 09 Aug 2023 17:55:41 GMT and should not be manually modified.
+This log was last generated on Wed, 30 Aug 2023 22:50:34 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 0.6.3
+
+Wed, 30 Aug 2023 22:50:34 GMT
+
+### Patches
+
+- Added documentation comments (lancerael@googlemail.com)
 
 ## 0.6.2
 
