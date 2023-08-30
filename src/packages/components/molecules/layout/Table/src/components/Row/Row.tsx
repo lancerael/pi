@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
-import { RowProps } from '../../Table.types'
 import { StyledDetails, StyledRow } from './Row.styles'
+import { RowProps } from './Row.types'
 
 /**
  * The element for the rows in the table
