@@ -1,6 +1,6 @@
 {
   "name": "@pi-lib/advanced-button",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "A React component for an advanced button with a built in loader",
   "keywords": [
     "pi",

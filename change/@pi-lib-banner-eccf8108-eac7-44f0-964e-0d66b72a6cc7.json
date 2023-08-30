@@ -1,7 +1,0 @@
-{
-  "type": "minor",
-  "comment": "Fix button width",
-  "packageName": "@pi-lib/banner",
-  "email": "lancerael@googlemail.com",
-  "dependentChangeType": "patch"
-}

@@ -1,8 +1,16 @@
 # Change Log - @pi-lib/button
 
-This log was last generated on Wed, 30 Aug 2023 22:50:34 GMT and should not be manually modified.
+This log was last generated on Wed, 30 Aug 2023 23:18:45 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 2.0.1
+
+Wed, 30 Aug 2023 23:18:45 GMT
+
+### Patches
+
+- Fix button width (lancerael@googlemail.com)
 
 ## 2.0.0
 

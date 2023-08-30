@@ -1,8 +1,16 @@
 # Change Log - @pi-lib/banner
 
-This log was last generated on Wed, 30 Aug 2023 22:50:34 GMT and should not be manually modified.
+This log was last generated on Wed, 30 Aug 2023 23:18:45 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 0.6.0
+
+Wed, 30 Aug 2023 23:18:45 GMT
+
+### Minor changes
+
+- Fix button width (lancerael@googlemail.com)
 
 ## 0.5.4
 
