@@ -2,12 +2,18 @@ import styled, { keyframes, css } from 'styled-components'
 import { StyledCircleProps } from './Loader.style.types'
 import { LoaderProps } from './Loader.types'
 
+/**
+ * The keyframe animation for the loader
+ */
 const rotate = keyframes`
   to {
     rotate: 360deg;
   }
 `
 
+/**
+ * A helper function to generate keyframes for a circle animation
+ */
 const circle = (isLarge: Boolean) => keyframes`
   to {
     height: ${isLarge ? '20px' : '4px'};
@@ -17,6 +23,9 @@ const circle = (isLarge: Boolean) => keyframes`
   }
 `
 
+/**
+ * The main container for the loader styles
+ */
 export const StyledLoader = styled.div(
   ({ isLarge }: LoaderProps) => css`
     width: ${isLarge ? '58px' : '24px'};
@@ -27,6 +36,9 @@ export const StyledLoader = styled.div(
   `
 )
 
+/**
+ * The inner container element for loader inner styles
+ */
 export const StyledLoaderInner = styled.div`
   position: absolute;
   left: 0;
@@ -37,6 +49,9 @@ export const StyledLoaderInner = styled.div`
   margin: 2px;
 `
 
+/**
+ * The styles for the container for each row of circles
+ */
 export const StyledCircleRow = styled.div`
   height: 8px;
   display: flex;
@@ -45,8 +60,11 @@ export const StyledCircleRow = styled.div`
   height: auto;
 `
 
+/**
+ * The style for each individual circle
+ */
 export const StyledCircle = styled.div(
-  ({ delay, isLarge = false }: StyledCircleProps) => css`
+  ({ hasDelay, isLarge = false }: StyledCircleProps) => css`
     width: ${isLarge ? '25px' : '7px'};
     height: ${isLarge ? '25px' : '7px'};
     margin: 2px;
@@ -57,6 +75,6 @@ export const StyledCircle = styled.div(
     animation: ${circle(isLarge)} 0.3s linear alternate infinite;
     box-shadow: inset 0 0 0px 1px var(--specialShadow);
 
-    ${delay ? 'animation-delay: 0.3s;' : ''}
+    ${hasDelay ? 'animation-hasDelay: 0.3s;' : ''}
   `
 )
