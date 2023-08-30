@@ -1,5 +1,4 @@
 import { FC, useRef } from 'react'
-
 import { CandlestickChartProps } from './CandlestickChart.types'
 import {
   StyledCandlestickChart,
@@ -57,11 +56,9 @@ export const CandlestickChart: FC<CandlestickChartProps> = ({ data = [] }) => {
           }}
         />
       )}
-
       <StyledCandlestickChart ref={svgRef} isVisible={!!data?.length}>
         <ClipPaths {...sizes} />
       </StyledCandlestickChart>
-
       <CandleTooltip {...activeItem} />
       <CurrentIndicator
         {...{ sizes }}

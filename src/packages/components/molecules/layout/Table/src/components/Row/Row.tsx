@@ -1,7 +1,10 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { RowProps } from '../../Table.types'
 import { StyledDetails, StyledRow } from './Row.styles'
 
+/**
+ * The element for the rows in the table
+ */
 export const Row = ({ cols, i, expandedContent }: RowProps) => {
   const [isItemActive, setIsItemActive] = useState(false)
   const [isDetailVisible, setIsDetailVisible] = useState(false)

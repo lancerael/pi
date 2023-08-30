@@ -2,6 +2,9 @@ import { chartContainer } from '@pi-lib/styles'
 import styled from 'styled-components'
 import { ChartStyleProps } from './CandlestickChart.types'
 
+/**
+ * The main styles for the chart SVG element
+ */
 export const StyledCandlestickChart = styled.svg`
   visibility: ${({ isVisible }: ChartStyleProps) =>
     isVisible ? 'visible' : 'hidden'};
@@ -62,6 +65,9 @@ export const StyledCandlestickChart = styled.svg`
   }
 `
 
+/**
+ * The styles for the chart container div
+ */
 export const StyledContainer = styled.div`
   ${chartContainer()}
   width: 100%;
@@ -69,6 +75,9 @@ export const StyledContainer = styled.div`
   font-family: sans-serif;
 `
 
+/**
+ * The styles for the loader container
+ */
 export const StyledLoaderContainer = styled.div`
   height: 100%;
   display: flex;

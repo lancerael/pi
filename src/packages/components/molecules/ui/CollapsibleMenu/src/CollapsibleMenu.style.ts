@@ -1,9 +1,11 @@
 import styled, { css } from 'styled-components'
 import { Button } from 'react-aria-components'
-
 import { box } from '@pi-lib/styles'
 import { StyledCollapsibleMenuProps } from './CollapsibleMenu.style.types'
 
+/**
+ * The main container for the menu styles
+ */
 export const StyledContainer = styled.div`
   width: auto;
   text-align: right;
@@ -13,6 +15,9 @@ export const StyledContainer = styled.div`
   height: calc(20px + 0.6rem);
 `
 
+/**
+ * The styles for the opener Button
+ */
 export const StyledOpener = styled(Button)`
   background: none;
   cursor: pointer;
@@ -26,11 +31,10 @@ export const StyledOpener = styled(Button)`
   ${({ isOpen }: StyledCollapsibleMenuProps) =>
     isOpen &&
     css`
-      ${box()}
+      ${box({ name: 'alt' })}
       box-shadow: none;
       border-radius: 5px 5px 0 0;
-      border-bottom: 1px solid var(--subtle);
-      background-color: var(--subtle);
+      border-bottom: 1px solid var(--border);
       svg {
         fill: var(--text) !important;
       }
@@ -43,11 +47,13 @@ export const StyledOpener = styled(Button)`
   margin: 0;
 `
 
+/**
+ * The container for the styles in the collapsible part of the menu
+ */
 export const StyledCollapsibleMenu = styled.div(
   ({ isOpen }: StyledCollapsibleMenuProps) => css`
-    ${box()}
+    ${box({ name: 'alt' })}
     border-radius: 5px 0 5px 5px;
-    background-color: var(--subtle);
     opacity: ${isOpen ? 1 : 0};
     position: absolute;
     top: calc(22px + 0.6rem);
@@ -58,6 +64,9 @@ export const StyledCollapsibleMenu = styled.div(
   `
 )
 
+/**
+ * The styles for the innper part of the collapsible menu
+ */
 export const StyledMenuInner = styled.div(
   ({ isOpen }: StyledCollapsibleMenuProps) => css`
     margin-top: ${isOpen ? '0' : '-200px'};
@@ -67,6 +76,9 @@ export const StyledMenuInner = styled.div(
   `
 )
 
+/**
+ * The styles for the actual menu
+ */
 export const StyledMenu = styled.ul`
   margin: 0;
   padding: 0;
@@ -75,6 +87,9 @@ export const StyledMenu = styled.ul`
   gap: 8px;
 `
 
+/**
+ * The styles for the menu item
+ */
 export const StyledMenuItem = styled.li`
   margin: 0;
   padding: 0;

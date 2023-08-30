@@ -2,12 +2,15 @@ import styled, { css } from 'styled-components'
 import { BannerProps } from './Banner.types'
 import { gradient, shadow } from '@pi-lib/styles'
 
+/**
+ * The main container element for the banner styles
+ */
 export const StyledBanner = styled.div(
   ({
     wrapItems,
     invertGradient,
   }: Pick<BannerProps, 'wrapItems' | 'invertGradient'>) => css`
-    ${gradient({ invertGradient })}
+    ${gradient({ to: invertGradient ? 'bottom' : 'top' })}
     color: var(--light);
     display: flex;
     gap: 4px;

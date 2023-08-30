@@ -1,5 +1,8 @@
 import { PropsWithChildren } from 'react'
 
+/**
+ * The main prop interface for the component
+ */
 export interface DismissableContentProps extends PropsWithChildren {
   /**
    * The external override for dimsissing the content

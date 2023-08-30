@@ -2,6 +2,9 @@ import styled, { css } from 'styled-components'
 import { StyledSidebarProps } from './PageContent.style.types'
 import { shadow } from '@pi-lib/styles'
 
+/**
+ * The main container for the page content component
+ */
 export const StyledPageContent = styled.div(
   ({ isCollapsible }: StyledSidebarProps) => css`
     flex: 1;
@@ -18,6 +21,9 @@ export const StyledPageContent = styled.div(
   `
 )
 
+/**
+ * The styled element for the sidebar
+ */
 export const StyledSidebar = styled.div(
   ({ maxWidth, isCollapsible }: StyledSidebarProps) => css`
     max-width: ${maxWidth ?? '100%'};
@@ -44,6 +50,9 @@ export const StyledSidebar = styled.div(
   `
 )
 
+/**
+ * The conatiner element for the styles of the main content section
+ */
 export const StyledMain = styled.div`
   flex-grow: 1;
   display: flex;

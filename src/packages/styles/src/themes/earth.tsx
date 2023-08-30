@@ -1,7 +1,7 @@
 export const earth = {
   light: {
     bg: '#ffffff',
-    text: '#557b68',
+    text: '#223129',
     textSoft: '#648f7a',
     textStrong: '#3e5c4d',
     subtle: '#f7faf8',
@@ -20,7 +20,7 @@ export const earth = {
   },
   dark: {
     bg: '#202020',
-    text: '#67947e',
+    text: '#e1fcef',
     textSoft: '#5a826f',
     textStrong: '#83bb9f',
     subtle: '#202522',

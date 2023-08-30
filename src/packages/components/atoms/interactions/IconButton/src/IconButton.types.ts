@@ -1,5 +1,8 @@
 import { SelectorProp } from '@pi-lib/types'
 
+/**
+ * The main prop interface for the component
+ */
 export interface IconButtonProps
   extends Pick<
       React.HTMLProps<HTMLAnchorElement>,
@@ -31,10 +34,3 @@ export interface IconButtonProps
    */
   size?: string
 }
-
-export type StyledIconButtonProps = Pick<IconButtonProps, 'size'>
-
-export type StyledIconProps = Pick<
-  IconButtonProps,
-  'src' | '$isFilled' | '$isStroked'
->

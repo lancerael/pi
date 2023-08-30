@@ -1,11 +1,15 @@
 import { box, chartContainer } from '@pi-lib/styles'
 import styled from 'styled-components'
 
+/**
+ * Main div for the chart container styles
+ */
 export const StyledAxisChart = styled.div`
   ${chartContainer()}
   flex-grow: 1;
   position: relative;
   height: 100%;
+  padding-left: 4px;
 
   & svg {
     & rect,

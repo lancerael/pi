@@ -2,7 +2,7 @@
  * A utility to build an object containing attributes from a dom node
  * @param target
  * @param attributes
- * @returns
+ * @returns a map of attributes
  */
 export const getAttributes = (
   target: HTMLElement | SVGElement,

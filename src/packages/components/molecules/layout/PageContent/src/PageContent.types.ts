@@ -1,5 +1,8 @@
 import { PropsWithChildren } from 'react'
 
+/**
+ * The main prop interface for the component
+ */
 export interface PageContentProps extends PropsWithChildren {
   /**
    * The content of the sidebar

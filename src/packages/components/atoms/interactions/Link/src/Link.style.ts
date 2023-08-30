@@ -2,9 +2,15 @@ import styled, { css } from 'styled-components'
 import { StyledLinkProps } from './Link.style.types'
 import { Link } from 'react-router-dom'
 
+/**
+ * A helper to determine what type of styled element to use
+ */
 export const getStyledLink = ($isInactive: boolean) =>
   $isInactive ? StyledSpan : StyledLink
 
+/**
+ * A helper to get the link style for any element type
+ */
 const getLinkStyle = ({ $isMain, $isInactive }: StyledLinkProps) => {
   return css`
     text-decoration: none;
@@ -31,8 +37,19 @@ const getLinkStyle = ({ $isMain, $isInactive }: StyledLinkProps) => {
   `
 }
 
+/**
+ * A styled link for use with React router
+ */
 export const StyledRouterLink = styled(Link)`
   ${(props: StyledLinkProps) => getLinkStyle(props)}
 `
+
+/**
+ * A styled link component for use as a standard link
+ */
 export const StyledLink = styled.a(getLinkStyle)
+
+/**
+ * A styled span component for use as an inactive link
+ */
 export const StyledSpan = styled.span(getLinkStyle)

@@ -27,7 +27,7 @@ export interface Trackers {
 }
 
 /**
- * A React hook to add touch gestures to the chart
+ * A React hook to add touch gestures to your component
  * @param targetRef
  * @param controls
  * @param zoomRange

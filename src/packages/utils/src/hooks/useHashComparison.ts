@@ -4,7 +4,7 @@ import { simpleHash } from '../methods/simpleHash'
 /**
  * A quick way to see if an object has been changed or just rebuilt
  * @param value the value to be compared
- * @returns
+ * @returns the latest hash code
  */
 export const useHashComparison = (value: unknown) => {
   const newCode = useRef<string>()

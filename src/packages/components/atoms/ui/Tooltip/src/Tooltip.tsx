@@ -19,7 +19,9 @@ export const Tooltip: FC<TooltipProps> = ({
   const [isVisible, setIsVisible] = useState(false)
   const timeouts = useRef<{ [key: string]: NodeJS.Timeout }>({})
 
-  // Update the tooltip to the correct position
+  /**
+   * Update the tooltip to the correct position
+   */
   const updatePosition = useCallback(
     (xPos: number, yPos: number) => {
       if (!xPos || !yPos) return

@@ -1,6 +1,9 @@
 import { chartContainer } from '@pi-lib/styles'
 import styled from 'styled-components'
 
+/**
+ * The main styles for the container div
+ */
 export const StyledWorldMapContainer = styled.div`
   ${chartContainer()}
   margin-right: 8px;

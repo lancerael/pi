@@ -2,8 +2,11 @@ import React from 'react'
 import { ThemeProvider } from 'styled-components'
 import { globalFontSizes, globalStyles } from './styles'
 import { themes, ThemeType } from './themes'
-import { ITheme, ThemeProps } from './theme.types'
+import { PiTheme, Scheme, ThemeProps } from './theme.types'
 
+/**
+ * The parameters of the base theme
+ */
 export const baseTheme = {
   fonts: ['sans-serif', 'Roboto'],
   fontSizes: {
@@ -13,6 +16,9 @@ export const baseTheme = {
   },
 }
 
+/**
+ * The status colours for the schemes
+ */
 export const statusColors = {
   light: {
     pending: '#232c75',
@@ -20,24 +26,43 @@ export const statusColors = {
     success: '#237528',
   },
   dark: {
-    pending: '#5db0f4',
-    error: '#f97c7f',
+    pending: '#3a99e8',
+    error: '#f95659',
     success: '#60aa3d',
   },
 }
 
-export const mergeColours = (
-  scheme: 'dark' | 'light',
-  themeName: ThemeType
-) => ({
+/**
+ * A map of the available background gradients
+ */
+export const gradients = {
+  default: ['dark', 'specialShadow'],
+  alt: ['text', 'textSoft'],
+}
+
+/**
+ * A map of the available box colours
+ */
+export const boxColors = {
+  default: ['textSoft', 'subtle'],
+  alt: ['text', 'border'],
+}
+
+/**
+ * A helper to merge the colours for the chosen theme
+ */
+export const mergeColours = (scheme: Scheme, themeName: ThemeType) => ({
   ...statusColors[scheme],
   ...themes[themeName][scheme],
 })
 
+/**
+ * A helper to get the currently selected theme
+ */
 export const getTheme = (
   themeName: ThemeType = 'andro',
-  themeOverrides?: ITheme
-): ITheme => ({
+  themeOverrides?: PiTheme
+): PiTheme => ({
   colors: {
     light: mergeColours('light', themeName),
     dark: mergeColours('dark', themeName),
@@ -46,6 +71,9 @@ export const getTheme = (
   ...themeOverrides,
 })
 
+/**
+ * A react provider component that wraps the child components in a theme
+ */
 export const Theme = ({
   children,
   themeName = 'andro',
@@ -68,6 +96,9 @@ export const Theme = ({
   )
 }
 
+/**
+ * A react HOC to add a theme to a component
+ */
 export const withTheme =
   (Component: React.JSXElementConstructor<any>, themeName: ThemeType) =>
   (props: { [key: string]: unknown }) =>
