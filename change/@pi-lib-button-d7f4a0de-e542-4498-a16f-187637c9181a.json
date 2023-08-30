@@ -1,7 +1,0 @@
-{
-  "type": "major",
-  "comment": "Updated button props",
-  "packageName": "@pi-lib/button",
-  "email": "lancerael@googlemail.com",
-  "dependentChangeType": "patch"
-}

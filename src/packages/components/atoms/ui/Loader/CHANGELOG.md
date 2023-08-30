@@ -1,8 +1,16 @@
 # Change Log - @pi-lib/loader
 
-This log was last generated on Mon, 26 Jun 2023 23:53:05 GMT and should not be manually modified.
+This log was last generated on Wed, 30 Aug 2023 22:50:34 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 3.0.4
+
+Wed, 30 Aug 2023 22:50:34 GMT
+
+### Patches
+
+- Updated loader internal props (lancerael@googlemail.com)
 
 ## 3.0.2
 
