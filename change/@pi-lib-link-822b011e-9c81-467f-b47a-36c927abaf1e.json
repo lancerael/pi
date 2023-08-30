@@ -1,7 +1,0 @@
-{
-  "type": "patch",
-  "comment": "Improved demo app header link sizes",
-  "packageName": "@pi-lib/link",
-  "email": "lancerael@googlemail.com",
-  "dependentChangeType": "patch"
-}
