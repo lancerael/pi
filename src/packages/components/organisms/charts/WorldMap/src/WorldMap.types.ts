@@ -1,3 +1,6 @@
+/**
+ * The main prop interface for the component
+ */
 export interface WorldMapProps {
   /**
    * The label for the country
@@ -9,6 +12,9 @@ export interface WorldMapProps {
   country: string
 }
 
+/**
+ * A feature of the world geojson data
+ */
 export interface WorldMapFeature {
   type: string
   properties: { name: string }
@@ -19,6 +25,9 @@ export interface WorldMapFeature {
   id: string
 }
 
+/**
+ * The structure of the data for the world map
+ */
 export interface WorldMapData {
   type: string
   features: WorldMapFeature[]

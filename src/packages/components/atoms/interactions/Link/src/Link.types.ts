@@ -1,5 +1,8 @@
 import { LinkProps as RouterLinkProps } from 'react-router-dom'
 
+/**
+ * The main prop interface for the component
+ */
 export interface LinkProps
   extends Pick<
     React.HTMLProps<HTMLAnchorElement>,

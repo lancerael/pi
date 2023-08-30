@@ -1,7 +1,7 @@
 /**
  * A performant hash generation for simple deep JSON comparison
  * @param value
- * @returns
+ * @returns a string hash version of the supplied value
  */
 export const simpleHash = (value: unknown) => {
   return JSON.stringify(value)

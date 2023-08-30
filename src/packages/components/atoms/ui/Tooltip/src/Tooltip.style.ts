@@ -2,6 +2,9 @@ import { box } from '@pi-lib/styles'
 import styled, { css } from 'styled-components'
 import { StyledTooltipProps } from './Tooltip.style.types'
 
+/**
+ * The main container for the tooltip styles
+ */
 export const StyledTooltip = styled.div(
   ({ isVisible = false, isRendered = false }: StyledTooltipProps) => css`
     position: absolute;

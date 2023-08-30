@@ -1,3 +1,6 @@
+/**
+ * The prop interface for the dismissable content
+ */
 export interface StyledDismissableContentProps {
   /**
    * The toast is visible (opacity)
@@ -9,6 +12,9 @@ export interface StyledDismissableContentProps {
   isPresent: boolean
 }
 
+/**
+ * The prop interface for the styled timer
+ */
 export interface StyledTimerProps {
   /**
    * If the timer is triggered and the transition should take effect

@@ -5,11 +5,14 @@ import {
 } from './DismissableContent.style.types'
 import { gradient } from '@pi-lib/styles'
 
+/**
+ * The main container element for the styles
+ */
 export const StyledDismissableContent = styled.div(
   ({ isVisible, isPresent }: StyledDismissableContentProps) => {
     return css`
       border: 1px solid var(--textStrong);
-      ${gradient({ isAlt: true })}
+      ${gradient({ name: 'alt' })}
       color: var(--bg);
       border-radius: 8px;
       padding: 16px;
@@ -22,6 +25,9 @@ export const StyledDismissableContent = styled.div(
   }
 )
 
+/**
+ * The button used to close the content
+ */
 export const StyledClose = styled.div`
   position: absolute;
   top: 8px;
@@ -35,6 +41,9 @@ export const StyledClose = styled.div`
   }
 `
 
+/**
+ * The timer element for automatically closing content
+ */
 export const StyledTimer = styled.div(
   ({ isTimerTriggered, timerInterval }: StyledTimerProps) => {
     return css`

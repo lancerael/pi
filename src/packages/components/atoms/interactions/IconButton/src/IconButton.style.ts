@@ -1,8 +1,14 @@
 import styled, { css } from 'styled-components'
 import { box } from '@pi-lib/styles'
-import { StyledIconButtonProps, StyledIconProps } from './IconButton.types'
+import {
+  StyledIconButtonProps,
+  StyledIconProps,
+} from './IconButton.style.types'
 import { ReactSVG } from 'react-svg'
 
+/**
+ * The main styles for the icon button
+ */
 export const StyledIconButton = styled.a(
   ({ size }: StyledIconButtonProps) => css`
     ${box()}
@@ -19,6 +25,9 @@ export const StyledIconButton = styled.a(
   `
 )
 
+/**
+ * The styles for the SVG element
+ */
 export const StyledIcon = styled(ReactSVG)`
   > div {
     aspect-ratio: 1 / 1;

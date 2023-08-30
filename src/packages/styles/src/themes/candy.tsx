@@ -1,7 +1,7 @@
 export const candy = {
   light: {
     bg: '#ffffff',
-    text: '#7950ff',
+    text: '#422d86',
     textSoft: '#8b6eff',
     textStrong: '#5f00f7',
     subtle: '#f9f9fe',
@@ -20,7 +20,7 @@ export const candy = {
   },
   dark: {
     bg: '#202020',
-    text: '#8f79ef',
+    text: '#c5bced',
     textSoft: '#7f63eb',
     textStrong: '#b1a5f4',
     subtle: '#24232b',

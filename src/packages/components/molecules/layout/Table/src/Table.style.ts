@@ -1,5 +1,8 @@
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 
+/**
+ * The main styles for the table element
+ */
 export const StyledTable = styled.table`
   width: 100%;
   border-collapse: collapse;
@@ -21,6 +24,10 @@ export const StyledTable = styled.table`
     transition: all 0.2s;
   }
 `
+
+/**
+ * The styles for the thead component
+ */
 export const StyledTableHead = styled.thead`
   background: var(--dark);
   font-variant: all-small-caps;

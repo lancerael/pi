@@ -1,5 +1,8 @@
-import { ChartConfig, ChartData, DataItem, Hash } from 'd-theia/src/types'
+import { ChartConfig, DataItem, Hash } from 'd-theia/src/types'
 
+/**
+ * The main prop interface for the chart component
+ */
 export interface AxisChartProps {
   /**
    * The ID for the chart
@@ -17,9 +20,4 @@ export interface AxisChartProps {
    * The data for the chart
    */
   chartData: (DataItem & Hash)[]
-}
-
-export interface IChart {
-  updateData: (...args: unknown[]) => void
-  updateConfig: (...args: unknown[]) => void
 }

@@ -1,5 +1,8 @@
 import * as icons from './icons'
 
+/**
+ * The main prop interface for the component
+ */
 export interface IconProps {
   /**
    * The name of the icon

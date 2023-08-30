@@ -11,7 +11,7 @@ export interface UseButtonProps<T> {
  * Use to create a set of default aria props for a button
  * @param props
  * @param elementType
- * @returns
+ * @returns the object containing formatted buttonProps
  */
 export const useButtonProps = <T>(
   props: {

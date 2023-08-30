@@ -12,6 +12,9 @@ const meta: Meta<typeof Select> = {
   tags: ['autodocs'],
 }
 
+/**
+ * The default view for the select
+ */
 export const Default: StoryObj<typeof Select> = {
   args: {
     label: 'Select label',

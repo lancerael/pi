@@ -1,5 +1,8 @@
 import styled, { css } from 'styled-components'
 
+/**
+ * The main styles for the table row
+ */
 export const StyledRow = styled.tr(
   ({ isOdd, isExpandable }: { isOdd: boolean; isExpandable: boolean }) => css`
     background: var(--subtle);
@@ -21,6 +24,9 @@ export const StyledRow = styled.tr(
   `
 )
 
+/**
+ * The container row for the expanded content
+ */
 export const StyledDetails = styled.tr`
   & > td,
   & > div {

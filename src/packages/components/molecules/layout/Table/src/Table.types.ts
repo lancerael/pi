@@ -1,20 +1,8 @@
-export type CellContent = JSX.Element | string
+import { RowProps } from './components/Row/Row.types'
 
-export interface RowProps {
-  /**
-   * An array of cell contents
-   */
-  cols: CellContent[]
-  /**
-   * The index for the row
-   */
-  i: number
-  /**
-   * Any content that ca be expanded
-   */
-  expandedContent?: JSX.Element
-}
-
+/**
+ * The main prop interface for the table component
+ */
 export interface TableProps {
   /**
    * An array of headers for the table
@@ -29,3 +17,8 @@ export interface TableProps {
    */
   fixedWidths?: { [key: number]: { width: string } }
 }
+
+/**
+ * The content for the table cells
+ */
+export type CellContent = JSX.Element | string

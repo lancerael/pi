@@ -1,3 +1,6 @@
+/**
+ * The main prop interface for the component
+ */
 export interface InputProps
   extends Pick<
     React.HTMLProps<HTMLInputElement>,

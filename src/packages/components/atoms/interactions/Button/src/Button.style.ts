@@ -3,13 +3,17 @@ import { box } from '@pi-lib/styles'
 
 import { StyledButtonProps } from './Button.style.types'
 
+/**
+ * The main styles for the button
+ */
 export const StyledButton = styled.button(
-  ({ status, isCompact, isSpecial }: StyledButtonProps) => {
+  ({ status, isCompact, isInverted }: StyledButtonProps) => {
     return css`
       ${box({
-        color: status === 'default' ? '' : `var(--${status})`,
-        isSpecial,
+        isInverted,
       })}
+
+      ${status === 'default' ? `var(--${status})` : ''},
       width: 100%;
       padding: ${isCompact ? '4px' : '8px 16px'};
       cursor: pointer;

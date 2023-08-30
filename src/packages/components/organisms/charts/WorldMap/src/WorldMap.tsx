@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useRef, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import { BaseType, select, ValueFn } from 'd3-selection'
 import { geoNaturalEarth1, geoPath } from 'd3-geo'
 import { StyledWorldMapContainer } from './WorldMap.style'
@@ -14,6 +14,9 @@ export const WorldMap = ({ label, country }: WorldMapProps) => {
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 })
   const outerRef = useRef<HTMLDivElement>(null)
 
+  /**
+   * A d3 calculated world projecton for the map
+   */
   const projection = useMemo(
     () =>
       geoNaturalEarth1()
@@ -22,6 +25,7 @@ export const WorldMap = ({ label, country }: WorldMapProps) => {
     [dimensions]
   )
 
+  // Used to update the drawing of the map when the data changes
   useEffect(() => {
     if (!svgRef.current) return
     select(svgRef.current).select('g').remove()
@@ -42,6 +46,7 @@ export const WorldMap = ({ label, country }: WorldMapProps) => {
       )
   }, [projection, country])
 
+  // Used to initialse the map and attach resize event
   useEffect(() => {
     const resize = () => {
       setTimeout(() => {

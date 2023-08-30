@@ -1,6 +1,9 @@
 import { IconProps } from '@pi-lib/icon/src/Icon.types'
 import type { MenuTriggerProps } from 'react-stately'
 
+/**
+ * The main prop interface for the collapsible menu
+ */
 export interface CollapsibleMenuProps {
   /**
    * The items contained in the menu

@@ -30,7 +30,7 @@ export const EditorAction = ({
         />
       </StyledIconButton>
       <StyledButton>
-        <Button {...{ title, onPointerUp, isSpecial: true }}>
+        <Button {...{ title, onPointerUp, isInverted: true }}>
           {label.toUpperCase()}
         </Button>
       </StyledButton>

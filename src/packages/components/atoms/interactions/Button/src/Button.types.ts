@@ -1,5 +1,8 @@
 import { SelectorProp, Status } from '@pi-lib/types'
 
+/**
+ * The main prop interface for the component
+ */
 export interface ButtonProps
   extends Pick<
       React.HTMLProps<HTMLButtonElement>,
@@ -20,7 +23,7 @@ export interface ButtonProps
    */
   isCompact?: boolean
   /**
-   * Show a special version of the button
+   * Show a special inverted version of the button
    */
-  isSpecial?: boolean
+  isInverted?: boolean
 }

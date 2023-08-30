@@ -1,3 +1,6 @@
+/**
+ * The props for the styled toast container
+ */
 export interface StyledToastProps {
   /**
    * The toast is visible (opacity)

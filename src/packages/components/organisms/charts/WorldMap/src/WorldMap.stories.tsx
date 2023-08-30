@@ -19,6 +19,9 @@ const meta: Meta<typeof WorldMap> = {
   },
 }
 
+/**
+ * The default view for the world map
+ */
 export const Default: StoryObj<typeof WorldMap> = {
   args: {
     country: 'GBR',
