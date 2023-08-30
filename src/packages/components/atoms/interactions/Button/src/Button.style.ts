@@ -13,7 +13,7 @@ export const StyledButton = styled.button(
         isInverted,
       })}
 
-      ${status === 'default' ? `var(--${status})` : ''},
+      ${status === 'default' ? `var(--${status})` : ''};
       width: 100%;
       padding: ${isCompact ? '4px' : '8px 16px'};
       cursor: pointer;
