@@ -11,12 +11,14 @@ export interface TransitionProps {
 
 /**
  * Used to transition a value with a callback
- * @param value the starting value
- * @param target the target value
- * @param callback the method to call with each intermediate number
- * @param speed the speed to transition (number of incements)
- * @param interval the wait time between each increment
- * @param intervalId the id for the interval
+ * @param {Object} props - The properties object
+ * @param {number} props.value - The starting value
+ * @param {number} props.target - The target value
+ * @param {Function} props.callback - The method to call with each intermediate number
+ * @param {number} [props.speed=10] - The speed to transition (number of increments)
+ * @param {number} [props.interval=15] - The wait time between each increment
+ * @param {string} [props.intervalId='default'] - The id for the interval
+ * @returns {Function} A function that, when called, will clear the timeout
  */
 export const doTransition = ({
   value,
@@ -31,7 +33,8 @@ export const doTransition = ({
   let distance = +(target - value).toFixed(2)
   const newValue = +(value + +(distance / Math.abs(speed))).toFixed(2)
   timeouts[intervalId] = setTimeout(() => {
-    if (Math.abs(distance) > Math.abs(speed)) {
+    console.log(distance)
+    if (Math.abs(distance) > 5) {
       callback(newValue)
       doTransition({
         value: newValue,

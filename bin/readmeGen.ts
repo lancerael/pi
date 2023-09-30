@@ -101,7 +101,9 @@ ${
 
       // Update component comment
       if (!nonComponents.includes(parsedContents.name)) {
-        const componentPath = `${location}/src/${componentName}.tsx`
+        const componentPath = `${location}/src/${componentName}.ts${
+          location.includes('components') ? 'x' : ''
+        }`
         const componentContents = await fs.readFile(componentPath, 'utf8')
         await fs.writeFile(
           componentPath,

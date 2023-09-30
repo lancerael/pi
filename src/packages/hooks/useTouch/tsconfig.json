@@ -1,0 +1,6 @@
+{
+  "compilerOptions": {
+    "jsx": "react"
+  },
+  "extends": "@pi-lib/config/tsconfig.shared.json"
+}
