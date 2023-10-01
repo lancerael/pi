@@ -1,0 +1,7 @@
+{
+  "type": "minor",
+  "comment": "Update candlestick chart to use new hook",
+  "packageName": "@pi-lib/candlestick-chart",
+  "email": "lancerael@googlemail.com",
+  "dependentChangeType": "patch"
+}
