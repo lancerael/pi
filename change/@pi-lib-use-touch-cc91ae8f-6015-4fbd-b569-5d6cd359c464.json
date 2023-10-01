@@ -1,7 +1,0 @@
-{
-  "type": "patch",
-  "comment": "Enhanced useTouch",
-  "packageName": "@pi-lib/use-touch",
-  "email": "lancerael@googlemail.com",
-  "dependentChangeType": "patch"
-}

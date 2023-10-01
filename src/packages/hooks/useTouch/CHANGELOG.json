@@ -2,6 +2,21 @@
   "name": "@pi-lib/use-touch",
   "entries": [
     {
+      "date": "Sun, 01 Oct 2023 22:41:39 GMT",
+      "tag": "@pi-lib/use-touch_v1.0.1",
+      "version": "1.0.1",
+      "comments": {
+        "patch": [
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/use-touch",
+            "commit": "8e7ba5bc94eb5f74b8bbc2cc86ba93970605c060",
+            "comment": "Enhanced useTouch"
+          }
+        ]
+      }
+    },
+    {
       "date": "Sun, 01 Oct 2023 18:40:14 GMT",
       "tag": "@pi-lib/use-touch_v1.0.0",
       "version": "1.0.0",
