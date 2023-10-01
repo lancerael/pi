@@ -101,17 +101,24 @@ ${
 
       // Update component comment
       if (!nonComponents.includes(parsedContents.name)) {
-        const componentPath = `${location}/src/${componentName}.tsx`
+        const componentPath = `${location}/src/${componentName}.ts${
+          location.includes('components') ? 'x' : ''
+        }`
         const componentContents = await fs.readFile(componentPath, 'utf8')
-        await fs.writeFile(
-          componentPath,
-          componentContents.replace(
-            /\/\*\*\r?\n\s+\*[^]*?\r?\n\s+\*\//,
-            `/**
+        if (
+          componentContents.match(/\/\*\*[\s\S]+?\*\//)[0].split('\n').length <=
+          3
+        ) {
+          await fs.writeFile(
+            componentPath,
+            componentContents.replace(
+              /\/\*\*\r?\n\s+\*[^]*?\r?\n\s+\*\//,
+              `/**
  * ${parsedContents.description}
  */`
+            )
           )
-        )
+        }
       }
     })
 

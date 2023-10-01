@@ -1,19 +1,18 @@
-import { FC } from 'react'
 import { useButtonProps } from '@pi-lib/utils'
-import { ButtonProps } from './Button.types'
 import { StyledButton } from './Button.style'
+import { ButtonProps } from './Button.types'
 
 /**
  * A React button component with status
  */
-export const Button: FC<ButtonProps> = ({
+export const Button = ({
   children,
   status = 'default',
   isCompact = false,
   isInverted = false,
   dataSelector = 'pi-lib-button',
   ...props
-}) => {
+}: ButtonProps) => {
   const { buttonProps } = useButtonProps<HTMLButtonElement>(props, 'button')
   if (props.disabled) props.onPointerUp = undefined
   return (

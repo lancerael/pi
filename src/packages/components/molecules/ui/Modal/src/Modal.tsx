@@ -1,4 +1,4 @@
-import { FC, useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import ModalScreen from '@pi-lib/modal-screen'
 import DismissableContent, {
   DismissableContentProps,
@@ -8,12 +8,12 @@ import { useWindowClick } from '@pi-lib/utils'
 /**
  * Modal for custom content that allows dismissal internally or externally
  */
-export const Modal: FC<DismissableContentProps> = ({
+export const Modal = ({
   children,
   isDismissed = false,
   isDismissable = true,
   dismissCallback,
-}) => {
+}: DismissableContentProps) => {
   // Used to manage closing internally
   const [isActive, setIsActive] = useState(!isDismissed)
   const dismiss = (isBeingDismissed: boolean) => {

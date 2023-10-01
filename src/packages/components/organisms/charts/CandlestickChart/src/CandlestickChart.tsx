@@ -1,4 +1,4 @@
-import { FC, useRef } from 'react'
+import { useRef } from 'react'
 import { CandlestickChartProps } from './CandlestickChart.types'
 import {
   StyledCandlestickChart,
@@ -8,7 +8,7 @@ import {
 import {
   useAxes,
   useCandles,
-  useControls,
+  useChartControls,
   useDataRange,
   useScales,
   useSizes,
@@ -20,16 +20,16 @@ import {
   CurrentIndicator,
 } from './components'
 import Loader from '@pi-lib/loader'
-import { useTouch } from '@pi-lib/utils'
 import { ZOOM_RANGE } from './CandlestickChart.constants'
+import { useTouch } from '@pi-lib/use-touch'
 
 /**
  * A candlestick chart React component used to show the movement of traded assets over time.
  */
-export const CandlestickChart: FC<CandlestickChartProps> = ({ data = [] }) => {
+export const CandlestickChart = ({ data = [] }: CandlestickChartProps) => {
   const svgRef = useRef<SVGSVGElement>(null)
   const containerRef = useRef<HTMLDivElement>(null)
-  const controls = useControls()
+  const controls = useChartControls()
   const sizes = useSizes(svgRef, containerRef)
   const dataRange = useDataRange(sizes.width, data, controls)
   const scales = useScales(sizes, dataRange)
@@ -40,7 +40,12 @@ export const CandlestickChart: FC<CandlestickChartProps> = ({ data = [] }) => {
     dataRange,
     scales
   )
-  useTouch<SVGSVGElement>(svgRef, controls, ZOOM_RANGE, resetSelection)
+  useTouch<SVGSVGElement>({
+    targetRef: svgRef,
+    controls,
+    zoomRange: ZOOM_RANGE,
+    resetCallback: resetSelection,
+  })
 
   return (
     <StyledContainer ref={containerRef}>

@@ -9,10 +9,7 @@ import { StyledButtonProps } from './Button.style.types'
 export const StyledButton = styled.button(
   ({ status, isCompact, isInverted }: StyledButtonProps) => {
     return css`
-      ${box({
-        isInverted,
-      })}
-
+      ${box({ isInverted })}
       ${status === 'default' ? `var(--${status})` : ''};
       width: 100%;
       padding: ${isCompact ? '4px' : '8px 16px'};

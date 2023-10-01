@@ -1,11 +1,10 @@
-import { FC } from 'react'
 import { StyledRouterLink, getStyledLink } from './Link.style'
 import { LinkProps } from './Link.types'
 
 /**
  * A React component for a router optional link
  */
-export const Link: FC<LinkProps> = ({
+export const Link = ({
   $isExternal = false,
   $isMain = false,
   $isInactive = false,

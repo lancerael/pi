@@ -3,7 +3,7 @@ import { Selection } from 'd3-selection'
 import { CandleTooltipProps } from './components/CandleTooltip/CandleTooltip.types'
 import { Transition } from 'd3-transition'
 import { FILTER_PERIOD_MAP } from './CandlestickChart.constants'
-import { IControls } from '@pi-lib/utils'
+import { TouchControls } from '@pi-lib/use-touch'
 
 /**
  * The individual items in the array of chart data
@@ -59,7 +59,7 @@ export interface ActiveItem {
 /**
  * The chart controls extended to include the period
  */
-export interface ChartControls extends IControls {
+export interface ChartControls extends TouchControls {
   period: Period
   setPeriod: React.Dispatch<React.SetStateAction<Period>>
 }

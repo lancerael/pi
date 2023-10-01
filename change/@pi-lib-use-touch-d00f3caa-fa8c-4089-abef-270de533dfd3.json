@@ -1,0 +1,7 @@
+{
+  "type": "major",
+  "comment": "New useTouch hook",
+  "packageName": "@pi-lib/use-touch",
+  "email": "lancerael@googlemail.com",
+  "dependentChangeType": "patch"
+}
