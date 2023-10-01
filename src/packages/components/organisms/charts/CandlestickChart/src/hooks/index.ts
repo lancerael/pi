@@ -1,6 +1,6 @@
 export * from './useAxes'
 export * from './useCandles'
-export * from './useControls'
+export * from './useChartControls'
 export * from './useDataRange'
 export * from './useFakeApi'
 export * from './useScales'

@@ -1,20 +1,17 @@
 import { useState } from 'react'
 import { ChartControls } from '../CandlestickChart.types'
+import { useControls } from '@pi-lib/use-touch'
 
 /**
  * A React hook that manages controls on the chart
  * @returns
  */
-export const useControls = (): ChartControls => {
-  const [panLevel, setPanLevel] = useState({ x: 0, y: 0 })
-  const [zoomLevel, setZoomLevel] = useState(1)
+export const useChartControls = (): ChartControls => {
+  const controls = useControls()
   const [period, setPeriod] = useState<ChartControls['period']>('days')
 
   return {
-    panLevel,
-    setPanLevel,
-    zoomLevel,
-    setZoomLevel,
+    ...controls,
     period,
     setPeriod,
   }
