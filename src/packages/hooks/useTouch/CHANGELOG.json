@@ -1,0 +1,20 @@
+{
+  "name": "@pi-lib/use-touch",
+  "entries": [
+    {
+      "date": "Sun, 01 Oct 2023 18:40:14 GMT",
+      "tag": "@pi-lib/use-touch_v1.0.0",
+      "version": "1.0.0",
+      "comments": {
+        "major": [
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/use-touch",
+            "commit": "9064b25428af87da4828f852d6ba104b107dff52",
+            "comment": "New useTouch hook"
+          }
+        ]
+      }
+    }
+  ]
+}

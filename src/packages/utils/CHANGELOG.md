@@ -1,8 +1,16 @@
 # Change Log - @pi-lib/utils
 
-This log was last generated on Wed, 30 Aug 2023 22:50:34 GMT and should not be manually modified.
+This log was last generated on Sun, 01 Oct 2023 18:40:14 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 1.0.0
+
+Sun, 01 Oct 2023 18:40:14 GMT
+
+### Major changes
+
+- Moved useTouch to standalone package (lancerael@googlemail.com)
 
 ## 0.6.3
 

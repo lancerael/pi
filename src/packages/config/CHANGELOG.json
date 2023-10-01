@@ -2,6 +2,21 @@
   "name": "@pi-lib/config",
   "entries": [
     {
+      "date": "Sun, 01 Oct 2023 18:40:14 GMT",
+      "tag": "@pi-lib/config_v2.0.3",
+      "version": "2.0.3",
+      "comments": {
+        "none": [
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/config",
+            "commit": "9064b25428af87da4828f852d6ba104b107dff52",
+            "comment": "Update prop definitions"
+          }
+        ]
+      }
+    },
+    {
       "date": "Mon, 14 Aug 2023 23:36:59 GMT",
       "tag": "@pi-lib/config_v2.0.3",
       "version": "2.0.3",

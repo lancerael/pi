@@ -2,6 +2,21 @@
   "name": "@pi-lib/bar-chart",
   "entries": [
     {
+      "date": "Sun, 01 Oct 2023 18:40:14 GMT",
+      "tag": "@pi-lib/bar-chart_v1.0.4",
+      "version": "1.0.4",
+      "comments": {
+        "none": [
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/bar-chart",
+            "commit": "9064b25428af87da4828f852d6ba104b107dff52",
+            "comment": "Update prop definitions"
+          }
+        ]
+      }
+    },
+    {
       "date": "Mon, 14 Aug 2023 23:36:58 GMT",
       "tag": "@pi-lib/bar-chart_v1.0.4",
       "version": "1.0.4",

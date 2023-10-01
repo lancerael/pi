@@ -2,6 +2,21 @@
   "name": "@pi-lib/modal",
   "entries": [
     {
+      "date": "Sun, 01 Oct 2023 18:40:14 GMT",
+      "tag": "@pi-lib/modal_v1.0.11",
+      "version": "1.0.11",
+      "comments": {
+        "none": [
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/modal",
+            "commit": "9064b25428af87da4828f852d6ba104b107dff52",
+            "comment": "Update prop definitions"
+          }
+        ]
+      }
+    },
+    {
       "date": "Mon, 14 Aug 2023 23:36:59 GMT",
       "tag": "@pi-lib/modal_v1.0.8",
       "version": "1.0.8",

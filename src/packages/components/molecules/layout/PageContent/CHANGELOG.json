@@ -2,6 +2,21 @@
   "name": "@pi-lib/page-content",
   "entries": [
     {
+      "date": "Sun, 01 Oct 2023 18:40:14 GMT",
+      "tag": "@pi-lib/page-content_v1.0.7",
+      "version": "1.0.7",
+      "comments": {
+        "none": [
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/page-content",
+            "commit": "9064b25428af87da4828f852d6ba104b107dff52",
+            "comment": "Update prop definitions"
+          }
+        ]
+      }
+    },
+    {
       "date": "Wed, 30 Aug 2023 22:50:34 GMT",
       "tag": "@pi-lib/page-content_v1.0.7",
       "version": "1.0.7",

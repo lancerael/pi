@@ -2,6 +2,21 @@
   "name": "@pi-lib/banner",
   "entries": [
     {
+      "date": "Sun, 01 Oct 2023 18:40:14 GMT",
+      "tag": "@pi-lib/banner_v0.6.0",
+      "version": "0.6.0",
+      "comments": {
+        "none": [
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/banner",
+            "commit": "9064b25428af87da4828f852d6ba104b107dff52",
+            "comment": "Update prop definitions"
+          }
+        ]
+      }
+    },
+    {
       "date": "Wed, 30 Aug 2023 23:18:45 GMT",
       "tag": "@pi-lib/banner_v0.6.0",
       "version": "0.6.0",
