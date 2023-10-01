@@ -3,6 +3,9 @@ import { useTouch, useControls } from './'
 import { useRef } from 'react'
 import React from 'react'
 
+const boxWidth = 400
+const halfWidth = boxWidth / 2
+
 const render = () => {
   const targetRef = useRef(null)
   const controls = useControls()
@@ -13,28 +16,24 @@ const render = () => {
       <div
         ref={targetRef}
         style={{
-          width: `${100 * zoomLevel}px`,
-          height: `${100 * zoomLevel}px`,
+          width: `${boxWidth * zoomLevel}px`,
+          height: `${boxWidth * zoomLevel}px`,
           borderRadius: '25%',
           transition: 'none',
           background: 'purple',
           cursor: 'pointer',
           position: 'absolute',
-          left: `${50 + panLevel.x - zoomLevel * 50}px`,
-          top: `${50 + panLevel.y - zoomLevel * 50}px`,
+          left: `${halfWidth + panLevel.x - zoomLevel * halfWidth}px`,
+          top: `${halfWidth + panLevel.y - zoomLevel * halfWidth}px`,
           color: 'white',
           textAlign: 'center',
-          padding: `${12 * zoomLevel}px`,
+          padding: `${18 * zoomLevel}px`,
           boxSizing: 'border-box',
           userSelect: 'none',
           fontSize: `${14 * zoomLevel}px`,
+          touchAction: 'none',
         }}
-      >
-        DRAG ME!
-        <br />
-        <br />
-        PINCH ME!
-      </div>
+      ></div>
     </div>
   )
 }
