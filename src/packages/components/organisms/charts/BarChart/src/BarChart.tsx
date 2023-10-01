@@ -1,12 +1,11 @@
-import React, { FC, useEffect, useRef } from 'react'
-import { StyledBarChart } from './BarChart.style'
-import { BarChartProps } from './BarChart.types'
+import { useEffect, useRef } from 'react'
 import { Chart } from '@pi-lib/charts'
+import { BarChartProps } from './BarChart.types'
 
 /**
  * A React component for a bar chart
  */
-export const BarChart: FC<BarChartProps> = ({ config, theme, data, label }) => {
+export const BarChart = ({ config, theme, data, label }: BarChartProps) => {
   const divRef = useRef(null)
   const chart = useRef<Chart>()
 

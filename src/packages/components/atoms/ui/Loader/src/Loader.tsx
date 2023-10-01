@@ -1,4 +1,3 @@
-import { FC } from 'react'
 import {
   StyledCircle,
   StyledCircleRow,
@@ -10,7 +9,7 @@ import { LoaderProps } from './Loader.types'
 /**
  * Basic loading spinner React component
  */
-export const Loader: FC<LoaderProps> = ({ isLarge = false }) => (
+export const Loader = ({ isLarge = false }: LoaderProps) => (
   <StyledLoader title="Loading..." data-testid="pi-lib-loader" {...{ isLarge }}>
     <StyledLoaderInner>
       <StyledCircleRow>

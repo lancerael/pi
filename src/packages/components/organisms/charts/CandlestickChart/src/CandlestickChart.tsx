@@ -1,4 +1,4 @@
-import { FC, useRef } from 'react'
+import { useRef } from 'react'
 import { CandlestickChartProps } from './CandlestickChart.types'
 import {
   StyledCandlestickChart,
@@ -26,7 +26,7 @@ import { useTouch } from '@pi-lib/use-touch'
 /**
  * A candlestick chart React component used to show the movement of traded assets over time.
  */
-export const CandlestickChart: FC<CandlestickChartProps> = ({ data = [] }) => {
+export const CandlestickChart = ({ data = [] }: CandlestickChartProps) => {
   const svgRef = useRef<SVGSVGElement>(null)
   const containerRef = useRef<HTMLDivElement>(null)
   const controls = useChartControls()

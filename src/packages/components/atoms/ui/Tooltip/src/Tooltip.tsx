@@ -1,4 +1,4 @@
-import { FC, useCallback, useEffect, useRef, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import throttle from 'lodash.throttle'
 import { StyledTooltip } from './Tooltip.style'
 import { TooltipProps } from './Tooltip.types'
@@ -6,12 +6,12 @@ import { TooltipProps } from './Tooltip.types'
 /**
  * A React component used to show and position a tooltip containing content
  */
-export const Tooltip: FC<TooltipProps> = ({
+export const Tooltip = ({
   children,
   isActive = false,
   x = 0,
   y = 0,
-}) => {
+}: TooltipProps) => {
   const containerRef = useRef<HTMLDivElement>(null)
   const lastWidth = useRef<number>()
   const [position, setPosition] = useState({ x, y })

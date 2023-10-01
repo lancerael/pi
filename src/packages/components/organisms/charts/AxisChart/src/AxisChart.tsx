@@ -1,18 +1,18 @@
-import { useEffect, useRef, FC } from 'react'
+import { useEffect, useRef } from 'react'
 import Theia from 'd-theia'
+import Chart from 'd-theia/src/components/Chart'
 import { StyledAxisChart } from './AxisChart.style'
 import { AxisChartProps } from './AxisChart.types'
-import Chart from 'd-theia/src/components/Chart'
 
 /**
  * A React component used to display a bar ot line chart
  */
-export const AxisChart: FC<AxisChartProps> = ({
+export const AxisChart = ({
   chartId,
   chartType,
   chartData,
   chartConfig,
-}) => {
+}: AxisChartProps) => {
   const chartContainer = useRef(null)
   const dtChart = useRef<Chart>()
   const skipUpdate =
