@@ -69,6 +69,7 @@ export const useTouch = <T = HTMLElement>({
           let val = panLevel[axis] + panChange[axis]
           val = val < min ? min : val
           val = val > max ? max : val
+          console.log(val, panChange)
           return val
         }
         return { x: setVal('x', panRange[0]), y: setVal('y', panRange[1]) }
@@ -99,7 +100,6 @@ export const useTouch = <T = HTMLElement>({
       const swipeAxis = (axis: 'x' | 'y') => {
         const oldChange = trackers.current.oldPanChange[axis]
         const offset = Math.round(oldChange * 5) * controls.zoomLevel
-        console.log(axis, offset)
         if (Math.abs(oldChange) > 5) {
           trackers.current.clearTransition = doTransition({
             value: controls.panLevel[axis],
@@ -132,8 +132,8 @@ export const useTouch = <T = HTMLElement>({
     ({ clientX, clientY, pointerId, pageX, pageY }: PointerEvent) => {
       const pointerVals = Object.values(trackers.current.activePointers)
       if (!trackers.current.isPressed) return
-      // As there are 2 pointers, user is pinching
       if (pointerVals?.length === 2) {
+        // As there are 2 pointers, user is pinching
         if (
           Object.keys(trackers.current.activePointers).indexOf(
             `${pointerId}`
@@ -150,8 +150,8 @@ export const useTouch = <T = HTMLElement>({
         trackers.current.oldPinchDist = pinchDist
         zoom(zoomChange)
         return
-        // There is a single pointer - user is dragging
       } else {
+        // There is a single pointer - user is dragging
         const x = trackers.current.oldClientX
           ? clientX - trackers.current.oldClientX
           : 0
@@ -160,6 +160,7 @@ export const useTouch = <T = HTMLElement>({
           : 0
         trackers.current.oldClientX = clientX
         trackers.current.oldClientY = clientY
+        // console.log(x, y, clientX, clientY)
         pan({ x, y })
       }
     },

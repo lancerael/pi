@@ -29,7 +29,8 @@
     "lint:fix": "npx prettier -w . && npx eslint --fix",
     "sb": "pnpm docs:gen && cross-env NODE_OPTIONS=--openssl-legacy-provider storybook dev -p 6006",
     "sb:build": "cross-env NODE_OPTIONS=--openssl-legacy-provider storybook build",
-    "test": "npx nx run-many --target=test"
+    "test": "npx nx run-many --target=test",
+    "test:min": "npx nx affected --target=test"
   },
   "devDependencies": {
     "@pi-lib/styles": "workspace:^",

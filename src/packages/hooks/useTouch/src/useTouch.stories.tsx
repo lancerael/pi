@@ -23,7 +23,11 @@ const render = () => {
           left: `${50 + panLevel.x - zoomLevel * 50}px`,
           top: `${50 + panLevel.y - zoomLevel * 50}px`,
         }}
-      ></div>
+      >
+        <div style={{ color: 'white', textAlign: 'center', margin: '25px' }}>
+          DRAG ME!
+        </div>
+      </div>
     </div>
   )
 }

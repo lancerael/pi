@@ -89,6 +89,9 @@ export interface Trackers {
    */
   activePointers: {
     [key: string]: Pick<PointerEvent, 'pageX' | 'pageY'>
+  } & {
+    oldPageX?: number
+    opdPageY?: number
   }
   /**
    * Function to clear the transition.
