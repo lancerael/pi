@@ -6,7 +6,7 @@ import React from 'react'
 const render = () => {
   const targetRef = useRef(null)
   const controls = useControls()
-  useTouch<any>({ targetRef, controls, zoomRange: [0.25, 20] })
+  useTouch<any>({ targetRef, controls, zoomRange: [0.5, 20] })
   const { zoomLevel, panLevel } = controls
   return (
     <div style={{ width: '100%', height: '500px', position: 'relative' }}>
@@ -22,11 +22,18 @@ const render = () => {
           position: 'absolute',
           left: `${50 + panLevel.x - zoomLevel * 50}px`,
           top: `${50 + panLevel.y - zoomLevel * 50}px`,
+          color: 'white',
+          textAlign: 'center',
+          padding: `${12 * zoomLevel}px`,
+          boxSizing: 'border-box',
+          userSelect: 'none',
+          fontSize: `${14 * zoomLevel}px`,
         }}
       >
-        <div style={{ color: 'white', textAlign: 'center', margin: '25px' }}>
-          DRAG ME!
-        </div>
+        DRAG ME!
+        <br />
+        <br />
+        PINCH ME!
       </div>
     </div>
   )

@@ -1,6 +1,7 @@
 import { act, renderHook, fireEvent } from '@testing-library/react'
 import { expect } from 'vitest'
 import { useTouch } from './'
+import { PanLevel, TouchControls } from './useTouch.types'
 
 if (typeof PointerEvent === 'undefined') {
   global.window.PointerEvent = class extends global.window.Event {
@@ -12,17 +13,51 @@ if (typeof PointerEvent === 'undefined') {
   } as any
 }
 
-// class MockPointerEvent {}
+const firePointerEvent = (
+  target: Node | Window,
+  type: 'pointerdown' | 'pointermove' | 'pointerup',
+  pointerId: number,
+  pageX?: number,
+  pageY?: number
+) => {
+  fireEvent(
+    target,
+    new PointerEvent(type, {
+      pointerId,
+      pageX,
+      pageY,
+      bubbles: true,
+    } as PointerEvent)
+  )
+}
 
 describe('useTouch Hook', () => {
   let target: HTMLDivElement
   let targetRef: React.RefObject<HTMLDivElement>
+  let panLevel: PanLevel
+  let zoomLevel: number
+  let controls: TouchControls
 
   beforeEach(() => {
+    panLevel = {
+      x: 0,
+      y: 0,
+    }
+    zoomLevel = 1
+    controls = {
+      setZoomLevel: (setter: any) => {
+        zoomLevel = setter(zoomLevel)
+      },
+      setPanLevel: (setter: any) => {
+        panLevel = setter(panLevel)
+      },
+      zoomLevel,
+      panLevel,
+    }
     target = document.createElement('div')
     document.body.appendChild(target)
     targetRef = { current: target }
-    // global.window.PointerEvent = MockPointerEvent as any
+    renderHook(() => useTouch({ targetRef, controls }))
   })
 
   afterEach(() => {
@@ -30,102 +65,26 @@ describe('useTouch Hook', () => {
   })
 
   test('should handle drag correctly', async () => {
-    let panLevel = {
-      x: 0,
-      y: 0,
-    }
-
-    const controls = {
-      setZoomLevel: vi.fn(),
-      setPanLevel: (setter: any) => {
-        console.log('update', setter(panLevel))
-        panLevel = setter(panLevel)
-      },
-      zoomLevel: 0,
-      panLevel,
-    }
-
-    renderHook(() => useTouch({ targetRef, controls }))
-
-    await act(async () => {
-      fireEvent.pointerDown(target, {
-        pointerId: 0,
-        pageX: 10,
-        pageY: 10,
-      })
-      // fireEvent.pointerMove(target, {
-      //   isTrusted: true,
-      //   clientX: 100,
-      //   clientY: 100,
-      // })
-      fireEvent(
-        target,
-        new PointerEvent('pointermove', {
-          bubbles: true,
-          clientX: 50,
-          clientY: 50,
-        })
-      )
-      fireEvent(
-        target,
-        new PointerEvent('pointermove', {
-          bubbles: true,
-          clientX: 100,
-          clientY: 100,
-        })
-      )
-      fireEvent.pointerUp(target, {
-        pointerId: 0,
-      })
+    await act(() => {
+      firePointerEvent(target, 'pointerdown', 0, 10, 10)
+      firePointerEvent(global.window, 'pointermove', 0, 100, 100)
+      firePointerEvent(target, 'pointerup', 0)
     })
-    expect(controls.setZoomLevel).not.toHaveBeenCalled()
-    expect(controls.panLevel).toEqual({ x: 90, y: 90 })
+    expect(zoomLevel).toBe(1)
+    expect(panLevel).toEqual({ x: 90, y: 90 })
   })
 
-  // test('should handle move event correctly', () => {
-  //   const controls = {
-  //     setZoomLevel: jest.fn(),
-  //     setPanLevel: jest.fn(),
-  //     // ... other control functions and states
-  //   }
-
-  //   const { result } = renderHook(() =>
-  //     useTouch(targetRef, controls /*, other parameters here...*/)
-  //   )
-
-  //   act(() => {
-  //     // Simulate a pointer move event
-  //     target.dispatchEvent(
-  //       new PointerEvent('pointermove', { clientX: 20, clientY: 20 })
-  //     )
-  //   })
-
-  //   // Assert that the move handler has done its job correctly
-  //   // For example, if it's supposed to update pan levels:
-  //   expect(controls.setPanLevel).toHaveBeenCalledWith({ x: 10, y: 10 })
-  //   // ... more assertions based on your actual implementation
-  // })
-
-  // test('should handle stop event correctly', () => {
-  //   const controls = {
-  //     setZoomLevel: jest.fn(),
-  //     setPanLevel: jest.fn(),
-  //     // ... other control functions and states
-  //   }
-
-  //   const { result } = renderHook(() =>
-  //     useTouch(targetRef, controls /*, other parameters here...*/)
-  //   )
-
-  //   act(() => {
-  //     // Simulate a pointer up event
-  //     target.dispatchEvent(new PointerEvent('pointerup'))
-  //   })
-
-  //   // Assert that the stop handler has done its job correctly
-  //   // For example, if it's supposed to reset some internal state or stop certain actions:
-  //   // ... assertions based on your actual implementation
-  // })
-
-  // Add additional tests for other events and handlers as needed
+  test('should handle pinch correctly', async () => {
+    await act(() => {
+      firePointerEvent(target, 'pointerdown', 0, 10, 10)
+      firePointerEvent(target, 'pointerdown', 1, 20, 20)
+      firePointerEvent(global.window, 'pointermove', 0, 30, 30)
+      firePointerEvent(global.window, 'pointermove', 1, 40, 40)
+      firePointerEvent(global.window, 'pointermove', 1, 80, 80)
+      firePointerEvent(target, 'pointerup', 0)
+      firePointerEvent(target, 'pointerup', 0)
+    })
+    expect(zoomLevel).toBe(2)
+    expect(panLevel).toEqual({ x: 0, y: 0 })
+  })
 })

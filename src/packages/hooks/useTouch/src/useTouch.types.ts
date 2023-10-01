@@ -69,14 +69,6 @@ export interface Trackers {
    */
   isPressed: boolean
   /**
-   * The previous clientX value.
-   */
-  oldClientX: number
-  /**
-   * The previous clientY value.
-   */
-  oldClientY: number
-  /**
    * The previous pinch distance.
    */
   oldPinchDist: number
@@ -85,13 +77,13 @@ export interface Trackers {
    */
   oldPanChange: PanLevel
   /**
-   * The active pointers with their pageX and pageY values.
+   * The active pointers with their pageX and pageY values, as well as previous values.
    */
   activePointers: {
-    [key: string]: Pick<PointerEvent, 'pageX' | 'pageY'>
-  } & {
-    oldPageX?: number
-    opdPageY?: number
+    [key: number]: Pick<PointerEvent, 'pageX' | 'pageY'> & {
+      oldPageX?: number
+      oldPageY?: number
+    }
   }
   /**
    * Function to clear the transition.
@@ -103,3 +95,5 @@ export interface Trackers {
  * Type representing a range of numbers.
  */
 export type NumberRange = [number, number]
+
+export type ActionMethods = 'addEventListener' | 'removeEventListener'

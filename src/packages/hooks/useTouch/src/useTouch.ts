@@ -1,12 +1,17 @@
 import { useCallback, useEffect, useRef } from 'react'
 import throttle from 'lodash.throttle'
 import {
+  ActionMethods,
   NumberRange,
   PanLevel,
   Trackers,
   UseTouchProps,
 } from './useTouch.types'
 import { doTransition } from '@pi-lib/utils'
+
+const clampValue = (value: number, min: number, max: number) => {
+  return Math.min(Math.max(value, min), max)
+}
 
 /**
  * `useTouch` is a hook used to add touch controls to a React component.
@@ -32,8 +37,6 @@ export const useTouch = <T = HTMLElement>({
 }: UseTouchProps<T>) => {
   const trackers = useRef<Trackers>({
     isPressed: false,
-    oldClientX: 0,
-    oldClientY: 0,
     oldPinchDist: 0,
     oldPanChange: { x: 0, y: 0 },
     activePointers: {},
@@ -48,17 +51,14 @@ export const useTouch = <T = HTMLElement>({
     resetCallback?.()
     const [min, max] = zoomRange
     controls.setZoomLevel((zoomLevel) => {
-      let newZoom = zoomLevel - zoomChange * 50
-      newZoom = Math.round(newZoom * 1000) / 1000
-      newZoom = newZoom < min ? min : newZoom
-      newZoom = newZoom > max ? max : newZoom
-      return newZoom
+      const newZoom = zoomLevel - zoomChange * 50
+      return clampValue(Math.round(newZoom * 1000) / 1000, min, max)
     })
   }, [])
 
   /**
    * Changes the pan level.
-   * @param {PanLevel} panChange - The change in pan levels.
+   * @param {PanLevel} panChange - The change in pan levels along x and y axes.
    */
   const pan = useCallback(
     (panChange: PanLevel) => {
@@ -66,11 +66,7 @@ export const useTouch = <T = HTMLElement>({
       trackers.current.oldPanChange = { ...panChange }
       controls.setPanLevel((panLevel) => {
         const setVal = (axis: 'x' | 'y', [min, max]: NumberRange) => {
-          let val = panLevel[axis] + panChange[axis]
-          val = val < min ? min : val
-          val = val > max ? max : val
-          console.log(val, panChange)
-          return val
+          return clampValue(panLevel[axis] + panChange[axis], min, max)
         }
         return { x: setVal('x', panRange[0]), y: setVal('y', panRange[1]) }
       })
@@ -85,10 +81,13 @@ export const useTouch = <T = HTMLElement>({
   const start = useCallback(({ pointerId, pageX, pageY }: PointerEvent) => {
     trackers.current?.clearTransition()
     trackers.current.isPressed = true
-    trackers.current.oldClientX = 0
-    trackers.current.oldClientY = 0
     trackers.current.oldPinchDist = 0
-    trackers.current.activePointers[pointerId] = { pageX, pageY }
+    trackers.current.activePointers[pointerId] = {
+      pageX,
+      pageY,
+      oldPageX: pageX,
+      oldPageY: pageY,
+    }
   }, []) as EventListener
 
   /**
@@ -129,38 +128,26 @@ export const useTouch = <T = HTMLElement>({
    * @param {PointerEvent} event - The pointer event object.
    */
   const move = useCallback(
-    ({ clientX, clientY, pointerId, pageX, pageY }: PointerEvent) => {
-      const pointerVals = Object.values(trackers.current.activePointers)
-      if (!trackers.current.isPressed) return
+    ({ pointerId, pageX, pageY }: PointerEvent) => {
+      const { activePointers, isPressed, oldPinchDist } = trackers.current
+      const pointerVals = Object.values(activePointers)
       if (pointerVals?.length === 2) {
-        // As there are 2 pointers, user is pinching
-        if (
-          Object.keys(trackers.current.activePointers).indexOf(
-            `${pointerId}`
-          ) !== 1
-        )
-          return
-        trackers.current.activePointers[pointerId] = { pageX, pageY }
+        //User is pinching
+        if (Object.keys(activePointers)[1] !== String(pointerId)) return
+        activePointers[pointerId] = { pageX, pageY }
         const xDist = pointerVals[0].pageX - pointerVals[1].pageX
         const yDist = pointerVals[0].pageY - pointerVals[1].pageY
         const pinchDist = Math.sqrt(xDist * xDist + yDist * yDist)
-        const zoomChange = trackers.current.oldPinchDist
-          ? (trackers.current.oldPinchDist - pinchDist) / 160
-          : 0
+        const zoomChange = oldPinchDist ? (oldPinchDist - pinchDist) / 160 : 0
         trackers.current.oldPinchDist = pinchDist
         zoom(zoomChange)
         return
-      } else {
-        // There is a single pointer - user is dragging
-        const x = trackers.current.oldClientX
-          ? clientX - trackers.current.oldClientX
-          : 0
-        const y = trackers.current.oldClientY
-          ? clientY - trackers.current.oldClientY
-          : 0
-        trackers.current.oldClientX = clientX
-        trackers.current.oldClientY = clientY
-        // console.log(x, y, clientX, clientY)
+      } else if (isPressed) {
+        // User is dragging
+        const x = pointerVals[0].oldPageX ? pageX - pointerVals[0].oldPageX : 0
+        const y = pointerVals[0].oldPageY ? pageY - pointerVals[0].oldPageY : 0
+        pointerVals[0].oldPageX = pageX
+        pointerVals[0].oldPageY = pageY
         pan({ x, y })
       }
     },
@@ -172,13 +159,13 @@ export const useTouch = <T = HTMLElement>({
   const throttledPan = useCallback(throttle(pan, 10), [pan])
 
   /**
-   * Handler for trackpad pinch.
+   * Handler for trackpad pinch or mousewheel zoom.
    * @param {WheelEvent} event - The wheel event object.
    */
   const pinch = useCallback(
     (e: WheelEvent) => {
-      if (!e.ctrlKey) {
-        throttledZoom(e.deltaY * 0.00003)
+      if (e.ctrlKey) {
+        throttledZoom(e.deltaY * 0.0003)
       } else {
         throttledPan({ x: e.deltaY * 0.05, y: 0 })
       }
@@ -202,9 +189,7 @@ export const useTouch = <T = HTMLElement>({
     const updateListeners = (action: 'add' | 'remove') => {
       const args = (passive: boolean) =>
         action === 'add' ? { passive } : undefined
-      const actionMethod:
-        | 'addEventListener'
-        | 'removeEventListener' = `${action}EventListener`
+      const actionMethod: ActionMethods = `${action}EventListener`
       const target = targetRef.current as HTMLElement
       if (!target?.addEventListener) return
       window[actionMethod]('pointerup', stop, args(true))
