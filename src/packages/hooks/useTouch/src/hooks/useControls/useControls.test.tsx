@@ -1,7 +1,7 @@
 import { useControls } from './'
 import { act, renderHook } from '@testing-library/react'
 import { expect } from 'vitest'
-import { TouchControls } from './useTouch.types'
+import { TouchControls } from './useControls.types'
 
 describe('useControls Hook', () => {
   let hook: {

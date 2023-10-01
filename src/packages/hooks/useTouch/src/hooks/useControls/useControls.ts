@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { TouchControls } from './useTouch.types'
+import { TouchControls } from './useControls.types'
 
 /**
  * `useControls` is a custom React hook that manages the zoom and pan levels of a chart.
