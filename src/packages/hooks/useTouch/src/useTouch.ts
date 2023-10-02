@@ -133,7 +133,7 @@ export const useTouch = <T = HTMLElement>({
       e.preventDefault()
       const { activePointers, isPressed, oldPinchDist } = trackers.current
       const pointerVals = Object.values(activePointers)
-      if (pointerVals?.length === 2) {
+      if (pointerVals?.length > 1) {
         //User is pinching
         if (Object.keys(activePointers)[1] !== String(e.pointerId)) return
         activePointers[e.pointerId] = { pageX: e.pageX, pageY: e.pageY }

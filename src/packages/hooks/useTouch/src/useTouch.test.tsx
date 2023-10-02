@@ -1,7 +1,6 @@
 import { act, renderHook, fireEvent } from '@testing-library/react'
 import { expect } from 'vitest'
-import { useTouch } from './'
-import { PanLevel, TouchControls } from './useTouch.types'
+import { PanLevel, TouchControls, useTouch } from './'
 
 if (typeof PointerEvent === 'undefined') {
   global.window.PointerEvent = class extends global.window.Event {
