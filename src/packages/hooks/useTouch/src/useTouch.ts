@@ -99,11 +99,12 @@ export const useTouch = <T = HTMLElement>({
     (e: PointerEvent) => {
       const swipeAxis = (axis: 'x' | 'y') => {
         const oldChange = trackers.current.oldPanChange[axis]
-        const offset = Math.round(oldChange * 5) * controls.zoomLevel
         if (Math.abs(oldChange) > 5) {
+          const value = controls.panLevel[axis]
+          const offset = Math.round(oldChange * 5) * controls.zoomLevel
           trackers.current.clearTransition = doTransition({
-            value: controls.panLevel[axis],
-            target: controls.panLevel[axis] + offset,
+            value,
+            target: value + offset,
             callback: (val) =>
               controls.setPanLevel((panLevel) => ({
                 ...panLevel,
@@ -116,10 +117,9 @@ export const useTouch = <T = HTMLElement>({
       }
       swipeAxis('x')
       swipeAxis('y')
-      trackers.current.oldPanChange.x = 0
-      trackers.current.oldPanChange.y = 0
+      trackers.current.oldPanChange = { x: 0, y: 0 }
       trackers.current.isPressed = false
-      trackers.current.activePointers = {}
+      delete trackers.current.activePointers[e.pointerId]
     },
     [controls.zoomLevel, trackers.current.oldPanChange.x]
   ) as EventListener
@@ -140,7 +140,7 @@ export const useTouch = <T = HTMLElement>({
         const xDist = pointerVals[0].pageX - pointerVals[1].pageX
         const yDist = pointerVals[0].pageY - pointerVals[1].pageY
         const pinchDist = Math.sqrt(xDist * xDist + yDist * yDist)
-        const zoomChange = oldPinchDist ? (oldPinchDist - pinchDist) / 160 : 0
+        const zoomChange = oldPinchDist ? (oldPinchDist - pinchDist) / 200 : 0
         trackers.current.oldPinchDist = pinchDist
         zoom(zoomChange)
       } else if (isPressed) {
