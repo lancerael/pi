@@ -5,11 +5,20 @@ import React from 'react'
 
 const boxWidth = 400
 const halfWidth = boxWidth / 2
+const padding = 18
 
 const render = () => {
   const targetRef = useRef(null)
   const controls = useControls()
-  useTouch<any>({ targetRef, controls, zoomRange: [0.5, 20] })
+  useTouch<any>({
+    targetRef,
+    controls,
+    zoomRange: [0.5, 20],
+    panRange: [
+      [-2000, 2000],
+      [-2000, 2000],
+    ],
+  })
   const { zoomLevel, panLevel } = controls
   return (
     <div style={{ width: '100%', height: '500px', position: 'relative' }}>
@@ -27,7 +36,7 @@ const render = () => {
           top: `${halfWidth + panLevel.y - zoomLevel * halfWidth}px`,
           color: 'white',
           textAlign: 'center',
-          padding: `${18 * zoomLevel}px`,
+          padding: `${padding}px`,
           boxSizing: 'border-box',
           userSelect: 'none',
           fontSize: `${14 * zoomLevel}px`,

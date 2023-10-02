@@ -1,0 +1,7 @@
+{
+  "type": "patch",
+  "comment": "Improved useTouch pinch on mobile",
+  "packageName": "@pi-lib/use-touch",
+  "email": "lancerael@googlemail.com",
+  "dependentChangeType": "patch"
+}
