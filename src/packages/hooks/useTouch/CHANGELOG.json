@@ -2,6 +2,21 @@
   "name": "@pi-lib/use-touch",
   "entries": [
     {
+      "date": "Mon, 02 Oct 2023 20:55:53 GMT",
+      "tag": "@pi-lib/use-touch_v1.0.2",
+      "version": "1.0.2",
+      "comments": {
+        "patch": [
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/use-touch",
+            "commit": "f487a467860f8f13b3d4845b3a1c0f6cf536713d",
+            "comment": "Improved useTouch pinch on mobile"
+          }
+        ]
+      }
+    },
+    {
       "date": "Sun, 01 Oct 2023 22:41:39 GMT",
       "tag": "@pi-lib/use-touch_v1.0.1",
       "version": "1.0.1",
