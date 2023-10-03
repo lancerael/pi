@@ -25,17 +25,17 @@ const updatePackageFile = (filePath) => {
  * Recursively walks through directories and updates package.json files.
  * @param {string} dir - Directory path to start walking from.
  */
-const walkDir = (dir) => {
+const updateDir = (dir) => {
   const files = fs.readdirSync(dir)
   for (const file of files) {
     const filepath = path.join(dir, file)
     const stats = fs.statSync(filepath)
     if (stats.isDirectory() && file !== 'node_modules') {
-      walkDir(filepath)
+      updateDir(filepath)
     } else if (file === 'package.json' && filepath !== generatorPath) {
       updatePackageFile(filepath)
     }
   }
 }
 
-walkDir('./src')
+updateDir('./src')
