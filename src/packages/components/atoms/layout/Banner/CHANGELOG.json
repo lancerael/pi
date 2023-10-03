@@ -2,6 +2,21 @@
   "name": "@pi-lib/banner",
   "entries": [
     {
+      "date": "Tue, 03 Oct 2023 22:31:05 GMT",
+      "tag": "@pi-lib/banner_v0.6.0",
+      "version": "0.6.0",
+      "comments": {
+        "none": [
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/banner",
+            "commit": "74c25e2d8e485c28cd2a03c5c7eb002fba54dc5d",
+            "comment": "Generator dep upgrades"
+          }
+        ]
+      }
+    },
+    {
       "date": "Sun, 01 Oct 2023 18:40:14 GMT",
       "tag": "@pi-lib/banner_v0.6.0",
       "version": "0.6.0",

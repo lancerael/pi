@@ -2,6 +2,21 @@
   "name": "@pi-lib/use-touch",
   "entries": [
     {
+      "date": "Tue, 03 Oct 2023 22:31:06 GMT",
+      "tag": "@pi-lib/use-touch_v1.0.2",
+      "version": "1.0.2",
+      "comments": {
+        "none": [
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/use-touch",
+            "commit": "74c25e2d8e485c28cd2a03c5c7eb002fba54dc5d",
+            "comment": "Generator dep upgrades"
+          }
+        ]
+      }
+    },
+    {
       "date": "Mon, 02 Oct 2023 20:55:53 GMT",
       "tag": "@pi-lib/use-touch_v1.0.2",
       "version": "1.0.2",

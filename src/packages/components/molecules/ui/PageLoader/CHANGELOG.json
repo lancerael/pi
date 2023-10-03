@@ -2,6 +2,21 @@
   "name": "@pi-lib/page-loader",
   "entries": [
     {
+      "date": "Tue, 03 Oct 2023 22:31:06 GMT",
+      "tag": "@pi-lib/page-loader_v1.0.7",
+      "version": "1.0.7",
+      "comments": {
+        "none": [
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/page-loader",
+            "commit": "74c25e2d8e485c28cd2a03c5c7eb002fba54dc5d",
+            "comment": "Generator dep upgrades"
+          }
+        ]
+      }
+    },
+    {
       "date": "Sun, 01 Oct 2023 18:40:14 GMT",
       "tag": "@pi-lib/page-loader_v1.0.7",
       "version": "1.0.7",
