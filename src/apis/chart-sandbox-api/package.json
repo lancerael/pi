@@ -16,7 +16,7 @@
     "fsevents": "^2.3.2",
     "nodemon": "^2.0.20",
     "rimraf": "^3.0.2",
-    "vite": "^4.0.4"
+    "vite": "^4.4.10"
   },
   "dependencies": {
     "d-theia": "^3.6.0",
