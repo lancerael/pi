@@ -2,6 +2,21 @@
   "name": "@pi-lib/dismissable-content",
   "entries": [
     {
+      "date": "Tue, 03 Oct 2023 22:31:05 GMT",
+      "tag": "@pi-lib/dismissable-content_v1.1.1",
+      "version": "1.1.1",
+      "comments": {
+        "none": [
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/dismissable-content",
+            "commit": "74c25e2d8e485c28cd2a03c5c7eb002fba54dc5d",
+            "comment": "Generator dep upgrades"
+          }
+        ]
+      }
+    },
+    {
       "date": "Wed, 30 Aug 2023 22:50:34 GMT",
       "tag": "@pi-lib/dismissable-content_v1.1.1",
       "version": "1.1.1",
