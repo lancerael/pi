@@ -6,12 +6,8 @@ import {
   Trackers,
   UseTouchProps,
 } from './useTouch.types'
-import { doTransition } from '@pi-lib/utils'
+import { clampValue, doTransition } from '@pi-lib/utils'
 import { PanLevel } from './hooks/useControls'
-
-const clampValue = (value: number, min: number, max: number) => {
-  return Math.min(Math.max(value, min), max)
-}
 
 /**
  * `useTouch` is a hook used to add touch controls to a React component.
