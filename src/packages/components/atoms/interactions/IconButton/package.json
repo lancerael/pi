@@ -29,7 +29,7 @@
     "@pi-lib/types": "workspace:^",
     "@rollup/plugin-replace": "^5.0.2",
     "@testing-library/react": "^13.3.0",
-    "@vitejs/plugin-react": "^3.1.0",
+    "@vitejs/plugin-react": "^4.1.0",
     "jest-axe": "^8.0.0",
     "jsdom": "^20.0.0",
     "rimraf": "^3.0.2",

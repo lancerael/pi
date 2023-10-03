@@ -20,7 +20,7 @@
     "prebuild": "rimraf js && npx tsc"
   },
   "devDependencies": {
-    "@vitejs/plugin-react": "^3.1.0",
+    "@vitejs/plugin-react": "^4.1.0",
     "jest-axe": "^8.0.0",
     "jsdom": "^20.0.0",
     "rimraf": "^3.0.2",
