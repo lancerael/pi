@@ -30,10 +30,10 @@ jobs:
       - name: Any changes
         shell: bash
         run: |
-          echo "Changed = ${{steps.changes.outputs.any_changes}}"
+          echo "Changed = ${{steps.changes.outputs.any_changed}}"
 
     outputs:
-      changed: ${{ steps.changes.outputs.any_changes }}
+      changed: ${{ steps.changes.outputs.any_changed }}
 
   release:
     needs: check-changes
