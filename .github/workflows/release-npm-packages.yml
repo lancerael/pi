@@ -7,27 +7,36 @@ on:
     branches: [main]
 
 jobs:
-  if_merged:
-    if: github.event.pull_request.merged == true
+  check-changes:
+    name: Check for changes
     runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Changed files
+        id: changes
+        uses: tj-actions/changed-files@v39
+        with:
+          files: ./src/packages/**
+
+    outputs:
+      changed: ${{ steps.changes.outputs.any_changed }}
+
+  release:
+    name: Release packages to NPM
+    needs: check-changes
+    runs-on: ubuntu-latest
+    if: needs.check-changes.outputs.changed == true && github.event.pull_request.merged == true
     steps:
       - uses: actions/checkout@v3
+
       - uses: actions/setup-node@v1
         with:
           node-version: 18.x
 
-      - name: Changed files
-        id: changed-files
-        uses: tj-actions/changed-files@v35
-        with:
-          files: ./src/packages/**
-
-      - name: List of changes
-        shell: bash
-        run: echo "Changes = ${{ steps.changed-files.outputs.all_changed_files }}"
-
       - uses: oleksiyrudenko/gha-git-credentials@v2.1
-        if: steps.changed-files.outputs.any_changed == 'true'
         with:
           global: true
           name: 'Lance Rael'
@@ -36,19 +45,15 @@ jobs:
           token: '${{ secrets.PI_PUBLISH }}'
 
       - name: Set up pnpm
-        if: steps.changed-files.outputs.any_changed == 'true'
         uses: ./.github/actions/pnpm-setup
 
       - name: Build for vanilla dist
         env:
           CLOUDFRONT_URL: ${{ secrets.CLOUDFRONT_URL }}
-        if: steps.changed-files.outputs.any_changed == 'true'
         run: pnpm build
 
       - name: Setup beachball
-        if: steps.changed-files.outputs.any_changed == 'true'
         uses: ecraig12345/beachball-actions/install-beachball@v1
 
       - name: Publish packages
-        if: steps.changed-files.outputs.any_changed == 'true'
         run: npm run bb:publish -- -n ${{ secrets.PI_PUB }} -yes

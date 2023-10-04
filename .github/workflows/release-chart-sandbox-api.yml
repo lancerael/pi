@@ -1,8 +1,6 @@
 name: Release Chart Sandbox API
 
 on:
-  push:
-    branches: [dev]
   pull_request:
     types:
       - closed
@@ -10,6 +8,7 @@ on:
 
 jobs:
   check-changes:
+    name: Check for changes
     runs-on: ubuntu-latest
 
     steps:
@@ -22,26 +21,17 @@ jobs:
         with:
           files: ./src/apis/chart-sandbox-api/**
 
-      - name: List of changes
-        shell: bash
-        run: |
-          echo "Changes = ${{steps.changes.outputs.all_changed_files}}"
-
-      - name: Any changes
-        shell: bash
-        run: |
-          echo "Changed = ${{steps.changes.outputs.any_changed}}"
-
     outputs:
       changed: ${{ steps.changes.outputs.any_changed }}
 
   release:
+    name: Release the API
     needs: check-changes
     runs-on: ubuntu-latest
-    if: needs.check-changes.outputs.changed == 'true'
+    if: needs.check-changes.outputs.changed == true && github.event.pull_request.merged == true
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/setup-node@v2
+      - uses: actions/setup-node@v3
         with:
           node-version: 18.x
 
