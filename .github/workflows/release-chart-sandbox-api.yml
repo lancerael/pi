@@ -20,6 +20,16 @@ jobs:
         with:
           files: ./src/apis/chart-sandbox-api/**
 
+      - name: List of changes
+        shell: bash
+        run: |
+          echo "Changes = ${{steps.changes.outputs.all_changed_files}}"
+
+      - name: Any changes
+        shell: bash
+        run: |
+          echo "Changed = ${{steps.changes.outputs.any_changes}}"
+
     outputs:
       changed: ${{ steps.changes.outputs.any_changes }}
 
