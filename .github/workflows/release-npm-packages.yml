@@ -57,3 +57,20 @@ jobs:
 
       - name: Publish packages
         run: npm run bb:publish -- -n ${{ secrets.PI_PUB }} -yes
+
+  coverage:
+    name: Code coverage report
+    needs: release
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: Set up pnpm
+        uses: ./.github/actions/pnpm-setup
+
+      - name: Build coverage report
+        shell: bash
+        run: pnpm test:cov
+
+      - name: Coveralls
+        uses: coverallsapp/github-action@v2
