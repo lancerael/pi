@@ -21,7 +21,7 @@ jobs:
           files: ./src/apis/chart-sandbox-api/**
 
     outputs:
-      folder_changed: ${{ steps.changes.outputs.any_changes }}
+      changed: ${{ steps.changes.outputs.any_changes }}
 
   release:
     needs: check-changes
