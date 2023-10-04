@@ -36,44 +36,12 @@ jobs:
         with:
           files: ./src/packages/**
 
-      - name: List of changes
-        shell: bash
-        run: |
-          echo "Changes = ${{steps.changed-mfes.outputs.all_changed_files}}, ${{ steps.changed-packages.outputs.all_changed_files }}"
-
       - name: Evaluate changes
         id: check-changes
         run: echo "has-changed=${{steps.changed-mfes.outputs.any_changed == 'true' || steps.changed-packages.outputs.any_changed == 'true'}}" >> $GITHUB_OUTPUT
 
-      - name: Set up pnpm
+      - name: Release the MFE
         if: steps.check-changes.outputs.has-changed == 'true'
-        uses: ./.github/actions/pnpm-setup
-
-      - name: Build for AWS
-        if: steps.check-changes.outputs.has-changed == 'true'
-        env:
-          CLOUDFRONT_URL: ${{ secrets.CLOUDFRONT_URL }}
-          LAMBDA_URL: ${{ secrets.LAMBDA_URL }}
-        run: pnpm --filter @pi-lib/${{ matrix.mfe-name }}-mfe build
-
-      - name: Configure AWS credentials
-        if: steps.check-changes.outputs.has-changed == 'true'
-        run: |
-          aws configure set aws_access_key_id ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws configure set aws_secret_access_key ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws configure set default.region eu-west-2
-
-      - name: Flush S3
-        if: steps.check-changes.outputs.has-changed == 'true'
-        run: |
-          aws s3 rm s3://${{ secrets.AWS_S3_MFES }}/${{ matrix.mfe-name }} --recursive
-
-      - name: Deploy to S3
-        if: steps.check-changes.outputs.has-changed == 'true'
-        run: |
-          aws s3 sync src/apps/mfes/${{ matrix.mfe-name }}/dist s3://${{ secrets.AWS_S3_MFES }}/${{ matrix.mfe-name }} --acl public-read
-
-      - name: Create CloudFront Invalidation
-        if: steps.check-changes.outputs.has-changed == 'true'
-        run: |
-          aws cloudfront create-invalidation --distribution-id ${{ secrets.AWS_CLOUDFRONT_ID }} --paths "/*"
+        uses: ./.github/actions/release-mfe
+        with:
+          mfe_name: ${{ matrix.mfe-name }}

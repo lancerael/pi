@@ -1,4 +1,4 @@
-<a href="https://pi.lance-taylor.com" target="_blank" title="Storybook"><img src="https://cdn.jsdelivr.net/gh/storybookjs/brand@main/badge/badge-storybook.svg"/></a>
+<a href="https://pi.lance-taylor.com" target="_blank" title="Storybook"><img src="https://cdn.jsdelivr.net/gh/storybookjs/brand@main/badge/badge-storybook.svg"/></a> ![Coveralls branch](https://img.shields.io/coverallsCoverage/:github/:lancerael/:pi)
 
 # pi-lib
 
