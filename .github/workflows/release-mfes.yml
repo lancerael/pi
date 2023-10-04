@@ -45,3 +45,9 @@ jobs:
         uses: ./.github/actions/release-mfe
         with:
           mfe_name: ${{ matrix.mfe-name }}
+          cloudfront_url: ${{ secrets.CLOUDFRONT_URL }}
+          lambda_url: ${{ secrets.LAMBDA_URL }}
+          key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          s3_mfes: ${{ secrets.AWS_S3_MFES }}
+          cloudfront_id: ${{ secrets.AWS_CLOUDFRONT_ID }}
