@@ -1,6 +1,5 @@
 <a href="https://pi.lance-taylor.com" target="_blank" title="Storybook"><img src="https://cdn.jsdelivr.net/gh/storybookjs/brand@main/badge/badge-storybook.svg"/></a> ![Coveralls branch](https://img.shields.io/coverallsCoverage/:github/:lancerael/:pi)
 
-
 # pi-lib
 
 Monorepo containing a design system of React UI components and supporting utilities. It supports theming and comes with some starter themes.
