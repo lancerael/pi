@@ -3,7 +3,18 @@ description: An action to deploy an MFE to AWS S3
 
 inputs:
   mfe_name:
-    description: The name for the MFE
+    required: true
+  cloudfront_url:
+    required: true
+  lambda_url:
+    required: true
+  key_id:
+    required: true
+  access_key:
+    required: true
+  s3_mfes:
+    required: true
+  cloudfront_id:
     required: true
 
 runs:
@@ -14,26 +25,26 @@ runs:
 
     - name: Build for AWS
       env:
-        CLOUDFRONT_URL: ${{ secrets.CLOUDFRONT_URL }}
-        LAMBDA_URL: ${{ secrets.LAMBDA_URL }}
+        CLOUDFRONT_URL: ${{ inputs.cloudfront_url }}
+        LAMBDA_URL: ${{ inputs.lambda_url }}
       run: pnpm --filter @pi-lib/${{ inputs.mfe_name }}-mfe build
 
     - name: Configure AWS credentials
       run: |
-        aws configure set aws_access_key_id ${{ secrets.AWS_ACCESS_KEY_ID }}
-        aws configure set aws_secret_access_key ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws configure set aws_access_key_id ${{ inputs.key_id }}
+        aws configure set aws_secret_access_key ${{ inputs.access_key }}
         aws configure set default.region eu-west-2
 
     - name: Flush S3
       run: |
-        aws s3 rm s3://${{ secrets.AWS_S3_MFES }}/${{ inputs.mfe_name }} --recursive
+        aws s3 rm s3://${{ inputs.s3_mfes }}/${{ inputs.mfe_name }} --recursive
 
     - name: Deploy to S3
       if: steps.check-changes.outputs.has-changed == 'true'
       run: |
-        aws s3 sync src/apps/mfes/${{ inputs.mfe_name }}/dist s3://${{ secrets.AWS_S3_MFES }}/${{ inputs.mfe_name }} --acl public-read
+        aws s3 sync src/apps/mfes/${{ inputs.mfe_name }}/dist s3://${{ inputs.s3_mfes }}/${{ inputs.mfe_name }} --acl public-read
 
     - name: Create CloudFront Invalidation
       if: steps.check-changes.outputs.has-changed == 'true'
       run: |
-        aws cloudfront create-invalidation --distribution-id ${{ secrets.AWS_CLOUDFRONT_ID }} --paths "/*"
+        aws cloudfront create-invalidation --distribution-id ${{ inputs.cloudfront_id }} --paths "/*"
