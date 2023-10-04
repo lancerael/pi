@@ -14,14 +14,14 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Check for changes
-        id: changed
-        uses: ./.github/actions/check-changes
+      - name: Changed files
+        id: changes
+        uses: tj-actions/changed-files@v39
         with:
           files: ./src/apis/chart-sandbox-api/**
 
     outputs:
-      folder_changed: ${{ steps.changes.outputs.changed }}
+      folder_changed: ${{ steps.changes.outputs.any_changes }}
 
   release:
     needs: check-changes
