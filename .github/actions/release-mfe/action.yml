@@ -27,24 +27,27 @@ runs:
       env:
         CLOUDFRONT_URL: ${{ inputs.cloudfront_url }}
         LAMBDA_URL: ${{ inputs.lambda_url }}
+      shell: bash
       run: pnpm --filter @pi-lib/${{ inputs.mfe_name }}-mfe build
 
     - name: Configure AWS credentials
+      shell: bash
       run: |
         aws configure set aws_access_key_id ${{ inputs.key_id }}
         aws configure set aws_secret_access_key ${{ inputs.access_key }}
         aws configure set default.region eu-west-2
 
     - name: Flush S3
+      shell: bash
       run: |
         aws s3 rm s3://${{ inputs.s3_mfes }}/${{ inputs.mfe_name }} --recursive
 
     - name: Deploy to S3
-      if: steps.check-changes.outputs.has-changed == 'true'
+      shell: bash
       run: |
         aws s3 sync src/apps/mfes/${{ inputs.mfe_name }}/dist s3://${{ inputs.s3_mfes }}/${{ inputs.mfe_name }} --acl public-read
 
     - name: Create CloudFront Invalidation
-      if: steps.check-changes.outputs.has-changed == 'true'
+      shell: bash
       run: |
         aws cloudfront create-invalidation --distribution-id ${{ inputs.cloudfront_id }} --paths "/*"
