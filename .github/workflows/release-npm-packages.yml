@@ -23,6 +23,12 @@ jobs:
         with:
           files: ./src/packages/**
 
+      - name: Any changed
+        run: echo "Changed = ${{ steps.changes.outputs.any_changed }}
+
+      - name: Pull request merged
+        run: echo "Merged = ${{ github.event.pull_request.merged }}"
+
     outputs:
       changed: ${{ steps.changes.outputs.any_changed }}
 
@@ -30,7 +36,7 @@ jobs:
     name: Release packages to NPM
     needs: check-changes
     runs-on: ubuntu-latest
-    if: needs.check-changes.outputs.changed == true && github.event.pull_request.merged == true
+    if: needs.check-changes.outputs.changed == 'true' && github.event.pull_request.merged == 'true'
     steps:
       - uses: actions/checkout@v3
 
