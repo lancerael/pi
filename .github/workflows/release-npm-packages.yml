@@ -10,7 +10,7 @@ jobs:
   check-changes:
     name: Check for changes
     runs-on: ubuntu-latest
-    if: github.event.pull_request.merged == 'true'
+    if: github.event.pull_request.merged == true
 
     steps:
       - name: Checkout repository
@@ -23,12 +23,6 @@ jobs:
         uses: tj-actions/changed-files@v39
         with:
           files: ./src/packages/**
-
-      - name: Any changed
-        run: echo "Changed = ${{ steps.changes.outputs.any_changed }}"
-
-      - name: Pull request merged
-        run: echo "Merged = ${{ github.event.pull_request.merged }}"
 
     outputs:
       changed: ${{ steps.changes.outputs.any_changed }}
