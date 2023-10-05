@@ -10,6 +10,7 @@ jobs:
   check-changes:
     name: Check for changes
     runs-on: ubuntu-latest
+    if: github.event.pull_request.merged == 'true'
 
     steps:
       - name: Checkout repository
@@ -36,7 +37,7 @@ jobs:
     name: Release packages to NPM
     needs: check-changes
     runs-on: ubuntu-latest
-    if: needs.check-changes.outputs.changed == 'true' && github.event.pull_request.merged == 'true'
+    if: needs.check-changes.outputs.changed
     steps:
       - uses: actions/checkout@v3
 
