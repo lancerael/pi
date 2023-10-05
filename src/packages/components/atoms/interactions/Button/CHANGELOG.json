@@ -2,6 +2,39 @@
   "name": "@pi-lib/button",
   "entries": [
     {
+      "date": "Thu, 05 Oct 2023 23:32:45 GMT",
+      "tag": "@pi-lib/button_v2.0.2",
+      "version": "2.0.2",
+      "comments": {
+        "none": [
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/button",
+            "commit": "00c6b0c9ba824ac921df52b9d75c3dbd3b7b1089",
+            "comment": "CI/CD enhancements"
+          },
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/button",
+            "commit": "00c6b0c9ba824ac921df52b9d75c3dbd3b7b1089",
+            "comment": "CI tweaks & build"
+          },
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/button",
+            "commit": "00c6b0c9ba824ac921df52b9d75c3dbd3b7b1089",
+            "comment": "MFE ci action fix"
+          },
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/button",
+            "commit": "00c6b0c9ba824ac921df52b9d75c3dbd3b7b1089",
+            "comment": "Fix mfe ci"
+          }
+        ]
+      }
+    },
+    {
       "date": "Tue, 03 Oct 2023 22:31:05 GMT",
       "tag": "@pi-lib/button_v2.0.2",
       "version": "2.0.2",
