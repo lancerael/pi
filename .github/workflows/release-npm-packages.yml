@@ -24,7 +24,7 @@ jobs:
           files: ./src/packages/**
 
       - name: Any changed
-        run: echo "Changed = ${{ steps.changes.outputs.any_changed }}
+        run: echo "Changed = ${{ steps.changes.outputs.any_changed }}"
 
       - name: Pull request merged
         run: echo "Merged = ${{ github.event.pull_request.merged }}"
