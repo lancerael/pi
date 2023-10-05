@@ -40,7 +40,7 @@ React theming utility for use with Pi and styled-components
 
 **@pi-lib/banner**
 
-A banner React component that can be used for a header or a footer
+A banner React component that can be used for a header or footer
 
 **Dependencies:** @pi-lib/styles, react, styled-components
 
@@ -267,53 +267,6 @@ Shared Pi config
     <tr>
       <td><a href="https://www.npmjs.com/package/@pi-lib/config?activeTab=readme" target="_blank">NPM</a></td>
       <td><a href="https://github.com/lancerael/pi/tree/main/src/config" target="_blank">Github</a></td>
-    </tr>
-  </tbody>
-</table>
-
-### constants
-
-**@pi-lib/constants**
-
-Shared Pi constants
-
-<table>
-  <tbody>
-    <tr>
-      <td><a href="https://www.npmjs.com/package/@pi-lib/constants?activeTab=readme" target="_blank">NPM</a></td>
-      <td><a href="https://github.com/lancerael/pi/tree/main/src/config" target="_blank">Github</a></td>
-    </tr>
-  </tbody>
-</table>
-
-### types
-
-**@pi-lib/types**
-
-Global types for Pi
-
-<table>
-  <tbody>
-    <tr>
-      <td><a href="https://www.npmjs.com/package/@pi-lib/types?activeTab=readme" target="_blank">NPM</a></td>
-      <td><a href="https://github.com/lancerael/pi/tree/main/src/types" target="_blank">Github</a></td>
-    </tr>
-  </tbody>
-</table>
-
-### utils
-
-**@pi-lib/utils**
-
-Utilities for use with Pi
-
-**Dependencies:** lodash.throttle, react, react-aria
-
-<table>
-  <tbody>
-    <tr>
-      <td><a href="https://www.npmjs.com/package/@pi-lib/utils?activeTab=readme" target="_blank">NPM</a></td>
-      <td><a href="https://github.com/lancerael/pi/tree/main/src/utils" target="_blank">Github</a></td>
     </tr>
   </tbody>
 </table>

@@ -2,7 +2,7 @@
 
 **@pi-lib/banner**
 
-A banner React component that can be used for a header or a footer
+A banner React component that can be used for a header or footer
 
 **Dependencies:** @pi-lib/styles, react, styled-components
 
