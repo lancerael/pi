@@ -40,7 +40,7 @@ React theming utility for use with Pi and styled-components
 
 **@pi-lib/banner**
 
-A banner React component that can be used for a header or footer
+A banner React component that can be used for a header or a footer
 
 **Dependencies:** @pi-lib/styles, react, styled-components
 
@@ -58,7 +58,7 @@ A banner React component that can be used for a header or footer
 
 **@pi-lib/button**
 
-A React button component with status
+A React button component with a status
 
 **Dependencies:** @pi-lib/styles, @pi-lib/utils, react
 

@@ -1,0 +1,7 @@
+{
+  "type": "none",
+  "comment": "CI tweaks & build",
+  "packageName": "@pi-lib/banner",
+  "email": "lancerael@googlemail.com",
+  "dependentChangeType": "none"
+}

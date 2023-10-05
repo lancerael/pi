@@ -3,7 +3,7 @@ import { StyledButton } from './Button.style'
 import { ButtonProps } from './Button.types'
 
 /**
- * A React button component with status
+ * A React button component with a status
  */
 export const Button = ({
   children,
