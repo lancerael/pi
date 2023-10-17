@@ -1,7 +1,0 @@
-{
-  "type": "none",
-  "comment": "CI tweaks & build",
-  "packageName": "@pi-lib/button",
-  "email": "lancerael@googlemail.com",
-  "dependentChangeType": "none"
-}

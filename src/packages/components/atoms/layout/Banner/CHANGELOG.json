@@ -2,6 +2,45 @@
   "name": "@pi-lib/banner",
   "entries": [
     {
+      "date": "Thu, 05 Oct 2023 23:32:45 GMT",
+      "tag": "@pi-lib/banner_v0.6.0",
+      "version": "0.6.0",
+      "comments": {
+        "none": [
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/banner",
+            "commit": "00c6b0c9ba824ac921df52b9d75c3dbd3b7b1089",
+            "comment": "CI tweaks & build"
+          },
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/banner",
+            "commit": "00c6b0c9ba824ac921df52b9d75c3dbd3b7b1089",
+            "comment": "ci tweaks"
+          },
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/banner",
+            "commit": "00c6b0c9ba824ac921df52b9d75c3dbd3b7b1089",
+            "comment": "ci fixes"
+          },
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/banner",
+            "commit": "00c6b0c9ba824ac921df52b9d75c3dbd3b7b1089",
+            "comment": "CI tweaks"
+          },
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/banner",
+            "commit": "00c6b0c9ba824ac921df52b9d75c3dbd3b7b1089",
+            "comment": "ci tweaks"
+          }
+        ]
+      }
+    },
+    {
       "date": "Tue, 03 Oct 2023 22:31:05 GMT",
       "tag": "@pi-lib/banner_v0.6.0",
       "version": "0.6.0",
