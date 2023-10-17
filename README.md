@@ -1,10 +1,16 @@
-<a href="https://pi.lance-taylor.com" target="_blank" title="Storybook"><img src="https://cdn.jsdelivr.net/gh/storybookjs/brand@main/badge/badge-storybook.svg"/></a> ![Coveralls branch](https://img.shields.io/coverallsCoverage/:github/:lancerael/:pi)
+<a href="https://pi.lance-taylor.com" target="_blank" title="Storybook"><img src="https://cdn.jsdelivr.net/gh/storybookjs/brand@main/badge/badge-storybook.svg"/></a> [![Build Status][ci-image]][ci-url] [![Coverage Status][coveralls-image]][coveralls-url]
+
+[ci-image]: https://github.com/lancerael/pi/workflows/Tests/badge.svg
+[ci-url]: https://github.com/lancerael/pi/actions?workflow=Tests
+
+[coveralls-image]: https://coveralls.io/repos/github/lancerael/pi/badge.svg?branch=dev
+[coveralls-url]: https://coveralls.io/github/lancerael/pi?branch=dev
 
 # pi-lib
 
-Monorepo containing a design system of React UI components and supporting utilities. It supports theming and comes with some starter themes.
+Monorepo containing a design system of React UI components and supporting utilities. Pi supports theming and comes with some starter themes.
 
-All packages prefixed with `@pi-lib/...` are standalone npm modules which you can install with a package manager like `npm`, `yarn` or `pnpm`. They intended for use with TypeScript, but they are also bundled in vanilla JS if you import from the package name with a suffix of `/vanilla`
+All packages prefixed with `@pi-lib/...` are standalone npm modules for use with a package manager like `npm`, `yarn` or `pnpm`. They intended for use with TypeScript, but they are also bundled in vanilla JS - import from the package name with a suffix of `/vanilla`
 
 Once you have set up a theme, you can build your app with the React components. Check out the docs for more details on usage.
 
@@ -331,4 +337,4 @@ Pi uses `PNPM` to manage the monorepo, with some performance enhancements from `
 
 ## Contribution
 
-If you have a contribution, make a branch and raise a pull request into `main`. Run `pnpm change` to register the changes with the pipeline. This will automatically publish version bumps when the PR is merged.
+If you have a contribution, make a branch and raise a pull request into `main`. Run `pnpm change` to register the changes with the pipeline, the push the change files to the PR source branch. This will automatically publish version bumps when the PR is merged.
