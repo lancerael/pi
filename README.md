@@ -2,7 +2,6 @@
 
 [ci-image]: https://github.com/lancerael/pi/workflows/Tests/badge.svg
 [ci-url]: https://github.com/lancerael/pi/actions?workflow=Tests
-
 [coveralls-image]: https://coveralls.io/repos/github/lancerael/pi/badge.svg?branch=dev
 [coveralls-url]: https://coveralls.io/github/lancerael/pi?branch=dev
 
