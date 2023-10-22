@@ -24,6 +24,10 @@ jobs:
         with:
           files: ./src/packages/**
 
+      - name: List of changes
+        shell: bash
+        run: echo "Changes = ${{ steps.changes.outputs.all_changed_files }}"
+
     outputs:
       changed: ${{ steps.changes.outputs.any_changed }}
 

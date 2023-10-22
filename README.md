@@ -1,9 +1,6 @@
-<a href="https://pi.lance-taylor.com" target="_blank" title="Storybook"><img src="https://cdn.jsdelivr.net/gh/storybookjs/brand@main/badge/badge-storybook.svg"/></a> [![Build Status][ci-image]][ci-url] [![Coverage Status][coveralls-image]][coveralls-url]
-
-[ci-image]: https://github.com/lancerael/pi/workflows/Tests/badge.svg
-[ci-url]: https://github.com/lancerael/pi/actions?workflow=Tests
-[coveralls-image]: https://coveralls.io/repos/github/lancerael/pi/badge.svg?branch=dev
-[coveralls-url]: https://coveralls.io/github/lancerael/pi?branch=dev
+<a href="https://pi.lance-taylor.com" target="_blank" title="Storybook"><img src="https://cdn.jsdelivr.net/gh/storybookjs/brand@main/badge/badge-storybook.svg"/></a>&nbsp;
+<a href="https://github.com/lancerael/pi/actions?workflow=Tests" target="_blank" title="Tests"><img src="https://github.com/lancerael/pi/workflows/Tests/badge.svg"/></a>&nbsp;
+<a href="https://coveralls.io/github/lancerael/pi?branch=dev" target="_blank" title="Coverage"><img src="https://coveralls.io/repos/github/lancerael/pi/badge.svg?branch=dev"/></a>
 
 # pi-lib
 
@@ -330,8 +327,8 @@ Utilities for use with Pi
 Pi uses `PNPM` to manage the monorepo, with some performance enhancements from `nx`.
 
 - _Installation_ - Clone the repo and use `pnpm i` to install.
-- _Storybook_ - Use `pnpm sb` to launch Storybook.
-- _New components_ - Use `pnpm generate [path] [ComponentName]` to scaffold a new component.
+- _Storybook_ - Use `pnpm sb:dev` to launch Storybook.
+- _New components_ - Use `pnpm gen:new [path] [ComponentName]` to scaffold a new component.
 - _Vanilla versions_ - run `pnpm build` to generate the alternative vanilla JS export.
 
 ## Contribution
