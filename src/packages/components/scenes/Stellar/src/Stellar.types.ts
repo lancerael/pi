@@ -4,7 +4,7 @@ export interface StellarProps extends PropsWithChildren {
   /**
    * The number of stars in the cosmos
    */
-  starCount: number
+  starCount?: number
 }
 
 export type Coords = [number, number]
