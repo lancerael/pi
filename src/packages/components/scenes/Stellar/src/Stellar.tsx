@@ -81,6 +81,8 @@ export const Stellar = ({ starCount = 100, children }: StellarProps) => {
             top: `${top}px`,
             left: `${left}px`,
             color: colorStar([left, top], dimensions.current),
+            background: color,
+            boxShadow: `0px 0px 10px 1px ${color}`,
             width: `${age / 2.5}px`,
             height: `${age / 2.5}px`,
             opacity: age ? 1 - age / 30 : 0,

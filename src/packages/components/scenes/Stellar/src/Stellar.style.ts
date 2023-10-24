@@ -1,4 +1,4 @@
-import styled, { css, keyframes } from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 
 const pulse = keyframes`
     0% {
@@ -30,18 +30,14 @@ export const StyledStellar = styled.div`
   /* filter: brightness(0.6); */
 `
 
-export const StyledStar = styled.div(
-  ({ color }) => css`
-    width: 5px;
-    height: 5px;
-    background: ${color};
-    position: absolute;
-    border-radius: 50%;
-    box-shadow: 0px 0px 10px 1px ${color};
-    transition: all 0.5s linear;
-    z-iindex: 1;
-  `
-)
+export const StyledStar = styled.div`
+  width: 5px;
+  height: 5px;
+  position: absolute;
+  border-radius: 50%;
+  transition: all 0.5s linear;
+  z-index: 1;
+`
 
 export const StyledContent = styled.div`
   position: relative;
