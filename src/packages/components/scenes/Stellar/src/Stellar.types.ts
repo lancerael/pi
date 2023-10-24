@@ -1,4 +1,6 @@
-export interface StellarProps {
+import { PropsWithChildren } from 'react'
+
+export interface StellarProps extends PropsWithChildren {
   /**
    * The number of stars in the cosmos
    */
@@ -8,11 +10,11 @@ export interface StellarProps {
 export type Coords = [number, number]
 
 export interface StarPos {
-  radius: number
   coords: Coords
-  // age: number
+  age: number
 }
 
 export interface Star extends StarPos {
   id: string
+  color: string
 }

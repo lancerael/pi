@@ -1,73 +1,95 @@
 import { useEffect, useRef, useState } from 'react'
-import { StyledStar, StyledStellar } from './Stellar.style'
+import { StyledContent, StyledStar, StyledStellar } from './Stellar.style'
 import { Coords, Star, StellarProps } from './Stellar.types'
 import { colorStar, makeStar, makeStars, moveStar } from './Stellar.helpers'
+import { useThrottledWindowEvents } from '@pi-lib/utils'
+import throttle from 'lodash.throttle'
 
 /**
  *
  * @returns
  */
-export const Stellar = ({ starCount = 100 }: StellarProps) => {
-  const [dimensions, setDimensions] = useState<Coords>([0, 0])
+export const Stellar = ({ starCount = 100, children }: StellarProps) => {
   const [stars, setStars] = useState<Star[]>([])
+  const dimensions = useRef<Coords>([0, 0])
   const stellarRef = useRef(null)
-  const hasAnimationStarted = useRef(false)
-  const [width, height] = dimensions
+  const contentRef = useRef(null)
+  const lastScroll = useRef(0)
+
+  const updateDimensions = () => {
+    const { clientWidth, clientHeight } = stellarRef.current
+    dimensions.current = [clientWidth, clientHeight]
+  }
+
+  useThrottledWindowEvents(updateDimensions)
 
   useEffect(() => {
     if (!stellarRef.current) return
-    const { clientWidth, clientHeight } = stellarRef.current
-    setDimensions([clientWidth, clientHeight])
+    updateDimensions()
+    setStars(makeStars(starCount, dimensions.current))
+    setInterval(() => {
+      if (!stars.length) return
+      setStars((stars) => {
+        // Move the stars
+        const newStars = stars.map((star: Star) =>
+          moveStar(star, dimensions.current)
+        )
+        // Add a new one
+        newStars.push(makeStar(dimensions.current))
+        // Remove the ones off screen
+        const overlap = 200
+        const [width, height] = dimensions.current
+        return newStars.filter(
+          ({ coords: [left, top] }) =>
+            top > -overlap &&
+            top < height + overlap &&
+            left > -overlap &&
+            left < width + overlap
+        )
+      })
+    }, 100)
   }, [stellarRef.current])
 
   useEffect(() => {
-    if (!width || !height || stars.length) return
-    setStars(makeStars(starCount, dimensions))
-  }, [dimensions])
-
-  useEffect(() => {
-    if (hasAnimationStarted.current || !stars.length) return
-    setTimeout(() => {
-      setInterval(() => {
-        if (!stars.length) return
-        setStars((stars) => {
-          // Move the stars
-          const newStars = stars.map(({ id, coords }: Star) => {
+    if (!contentRef.current) return
+    const scroll = throttle((e) => {
+      setStars((stars) => {
+        const offset = contentRef.current.scrollTop - lastScroll.current
+        lastScroll.current = contentRef.current.scrollTop
+        return [
+          ...stars.map(({ coords: [left, top], ...star }: Star) => {
             return {
-              id,
-              ...moveStar(coords, dimensions),
+              coords: [left, top - offset] as Coords,
+              ...star,
             }
-          })
-          // Add a new one
-          newStars.push(makeStar(dimensions))
-          // And remove the ones off screen
-          return newStars.filter(
-            ({ coords: [left, top] }) =>
-              top > 0 && top < height && left > 0 && left < width
-          )
-        })
-      }, 50)
-    })
-    hasAnimationStarted.current = true
-  }, [stars])
+          }),
+          makeStar(dimensions.current),
+        ]
+      })
+    }, 200)
+    contentRef.current.addEventListener('scroll', scroll)
+    return () => contentRef.current.removeEventListener('scroll', scroll)
+  }, [contentRef.current])
 
   return (
     <StyledStellar ref={stellarRef}>
-      {stars.length}
-      {stars.map(({ id, coords: [left, top], radius }, i) => (
+      {stars.map(({ id, coords: [left, top], age, color }, i) => (
         <StyledStar
           key={id}
+          color={color}
           style={{
             top: `${top}px`,
             left: `${left}px`,
-            color: colorStar([left, top], dimensions),
-            width: `${radius / 100}px`,
-            height: `${radius / 100}px`,
+            color: colorStar([left, top], dimensions.current),
+            width: `${age / 2.5}px`,
+            height: `${age / 2.5}px`,
+            opacity: age ? 1 - age / 30 : 0,
           }}
         >
-          {/* . {radius} */}
+          {/* . {age} */}
         </StyledStar>
       ))}
+      <StyledContent ref={contentRef}>{children}</StyledContent>
     </StyledStellar>
   )
 }

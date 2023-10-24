@@ -19,15 +19,9 @@ export const useThrottledWindowEvents = (
 ) => {
   useEffect(() => {
     doInit && callback()
-
     const throttledCallback: CallbackFunction = throttle(callback, timeout)
-
-    // Used to bind and remove the events
-    const updateEvents = (
-      action: (event: string, callback: CallbackFunction) => void
-    ) => events.forEach((event) => action(event, throttledCallback))
-
-    updateEvents(addEventListener)
-    return () => updateEvents(removeEventListener)
+    events.forEach((event) => addEventListener(event, throttledCallback))
+    return () =>
+      events.forEach((event) => removeEventListener(event, throttledCallback))
   }, [])
 }

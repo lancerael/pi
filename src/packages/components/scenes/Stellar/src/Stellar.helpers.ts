@@ -1,4 +1,4 @@
-import { Coords, Star, StarPos } from './Stellar.types'
+import { Coords, Star } from './Stellar.types'
 
 export const randomNumber = (min: number, max: number): number => {
   const timestamp = `${Date.now()}`
@@ -16,11 +16,12 @@ export const randomString = (length: number): string => {
 export const makeStar = ([width, height]: Coords): Star => {
   const left = randomNumber(0, width)
   const top = randomNumber(0, height)
+  const getRGB = () => 100 + randomNumber(0, 155)
   return {
-    radius: getDistance([left, top], [width / 2, height / 2]),
     id: randomString(8),
     coords: [left, top],
-    // age: 1,
+    age: 0,
+    color: `rgba(${getRGB()}, ${getRGB()}, ${getRGB()}, .5)`,
   }
 }
 
@@ -28,23 +29,17 @@ export const makeStars = (starCount: number, dimensions: Coords): Star[] => {
   return Array.from({ length: starCount }, () => makeStar(dimensions))
 }
 
-export const getDistance = ([x1, y1]: Coords, [x2, y2]: Coords) => {
-  const xDist = x1 - x2
-  const yDist = y1 - y2
-  return +Math.sqrt(xDist * xDist + yDist * yDist).toFixed(2)
-}
-
 export const moveStar = (
-  [left, top]: Coords,
+  { coords: [left, top], age, ...star }: Star,
   [width, height]: Coords
-): StarPos => {
-  const modifier = 10
+): Star => {
+  const xDist = left - width / 2
+  const yDist = top - height / 2
+  const radius = Math.sqrt(xDist * xDist + yDist * yDist)
   return {
-    radius: getDistance([left, top], [width / 2, height / 2]),
-    coords: [
-      left + (left < width / 2 ? -modifier : modifier),
-      top + (top < height / 2 ? -modifier : modifier),
-    ],
+    coords: [left + (xDist * age) / radius, top + (yDist * age) / radius],
+    age: age + 1,
+    ...star,
   }
 }
 
