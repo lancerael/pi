@@ -1,0 +1,7 @@
+{
+  "type": "major",
+  "comment": "Adding Stellar scene",
+  "packageName": "@pi-lib/stellar",
+  "email": "lancerael@googlemail.com",
+  "dependentChangeType": "patch"
+}
