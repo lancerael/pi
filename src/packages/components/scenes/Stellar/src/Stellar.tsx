@@ -6,8 +6,7 @@ import { useThrottledWindowEvents } from '@pi-lib/utils'
 import throttle from 'lodash.throttle'
 
 /**
- *
- * @returns
+ * A spacefaring scene that takes you through the stars.
  */
 export const Stellar = ({ starCount = 100, children }: StellarProps) => {
   const [stars, setStars] = useState<Star[]>([])
@@ -68,7 +67,7 @@ export const Stellar = ({ starCount = 100, children }: StellarProps) => {
       })
     }, 200)
     contentRef.current.addEventListener('scroll', scroll)
-    return () => contentRef.current.removeEventListener('scroll', scroll)
+    return () => contentRef.current?.removeEventListener('scroll', scroll)
   }, [contentRef.current])
 
   return (
