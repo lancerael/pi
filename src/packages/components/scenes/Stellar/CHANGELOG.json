@@ -1,0 +1,20 @@
+{
+  "name": "@pi-lib/stellar",
+  "entries": [
+    {
+      "date": "Wed, 25 Oct 2023 00:00:28 GMT",
+      "tag": "@pi-lib/stellar_v1.0.0",
+      "version": "1.0.0",
+      "comments": {
+        "major": [
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/stellar",
+            "commit": "7268b395bcb639896553900e237ee9eaa16a3997",
+            "comment": "Adding Stellar scene"
+          }
+        ]
+      }
+    }
+  ]
+}
