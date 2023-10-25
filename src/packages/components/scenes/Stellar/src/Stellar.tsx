@@ -11,11 +11,12 @@ import throttle from 'lodash.throttle'
 export const Stellar = ({ starCount = 100, children }: StellarProps) => {
   const [stars, setStars] = useState<Star[]>([])
   const dimensions = useRef<Coords>([0, 0])
-  const stellarRef = useRef(null)
-  const contentRef = useRef(null)
+  const stellarRef = useRef<HTMLDivElement>(null)
+  const contentRef = useRef<HTMLDivElement>(null)
   const lastScroll = useRef(0)
 
   const updateDimensions = () => {
+    if (!stellarRef.current) return
     const { clientWidth, clientHeight } = stellarRef.current
     dimensions.current = [clientWidth, clientHeight]
   }
@@ -53,6 +54,7 @@ export const Stellar = ({ starCount = 100, children }: StellarProps) => {
     if (!contentRef.current) return
     const scroll = throttle((e) => {
       setStars((stars) => {
+        if (!contentRef.current) return stars
         const offset = contentRef.current.scrollTop - lastScroll.current
         lastScroll.current = contentRef.current.scrollTop
         return [
@@ -65,7 +67,7 @@ export const Stellar = ({ starCount = 100, children }: StellarProps) => {
           makeStar(dimensions.current),
         ]
       })
-    }, 200)
+    }, 100)
     contentRef.current.addEventListener('scroll', scroll)
     return () => contentRef.current?.removeEventListener('scroll', scroll)
   }, [contentRef.current])
