@@ -1,0 +1,7 @@
+{
+  "type": "patch",
+  "comment": "Interactions for Stellar scene",
+  "packageName": "@pi-lib/stellar",
+  "email": "lancerael@googlemail.com",
+  "dependentChangeType": "patch"
+}
