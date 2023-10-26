@@ -1,7 +1,7 @@
-import { useEffect, useRef, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import { StyledContent, StyledStar, StyledStellar } from './Stellar.style'
 import { Coords, Star, StellarProps } from './Stellar.types'
-import { colorStar, makeStar, makeStars, moveStar } from './Stellar.helpers'
+import { makeStar, makeStars, moveStar, scatter } from './Stellar.helpers'
 import { useThrottledWindowEvents } from '@pi-lib/utils'
 import throttle from 'lodash.throttle'
 
@@ -11,41 +11,36 @@ import throttle from 'lodash.throttle'
 export const Stellar = ({ starCount = 100, children }: StellarProps) => {
   const [stars, setStars] = useState<Star[]>([])
   const dimensions = useRef<Coords>([0, 0])
+  const target = useRef<Coords>([0, 0])
   const stellarRef = useRef<HTMLDivElement>(null)
   const contentRef = useRef<HTMLDivElement>(null)
+  const moveTimeout = useRef<NodeJS.Timeout>()
   const lastScroll = useRef(0)
 
-  const updateDimensions = () => {
+  const updateDimensions = useCallback(() => {
     if (!stellarRef.current) return
     const { clientWidth, clientHeight } = stellarRef.current
     dimensions.current = [clientWidth, clientHeight]
-  }
+    target.current = [clientWidth / 2, clientHeight / 2]
+  }, [stellarRef.current])
 
   useThrottledWindowEvents(updateDimensions)
 
   useEffect(() => {
     if (!stellarRef.current) return
     updateDimensions()
-    setStars(makeStars(starCount, dimensions.current))
+    setStars(makeStars(1, dimensions.current))
     setInterval(() => {
       if (!stars.length) return
       setStars((stars) => {
         // Move the stars
-        const newStars = stars.map((star: Star) =>
-          moveStar(star, dimensions.current)
-        )
+        const newStars = stars.map((star: Star) => {
+          return moveStar(star, target.current)
+        })
         // Add a new one
         newStars.push(makeStar(dimensions.current))
         // Remove the ones off screen
-        const overlap = 200
-        const [width, height] = dimensions.current
-        return newStars.filter(
-          ({ coords: [left, top] }) =>
-            top > -overlap &&
-            top < height + overlap &&
-            left > -overlap &&
-            left < width + overlap
-        )
+        return newStars.filter(({ age }) => age < 50)
       })
     }, 100)
   }, [stellarRef.current])
@@ -68,12 +63,38 @@ export const Stellar = ({ starCount = 100, children }: StellarProps) => {
         ]
       })
     }, 100)
+    const mouseMove = throttle(({ clientX, clientY }: MouseEvent) => {
+      target.current = [clientX, clientY]
+      clearTimeout(moveTimeout.current)
+
+      setStars((stars) => {
+        return [...stars, makeStar(dimensions.current, scatter(target.current))]
+      })
+
+      moveTimeout.current = setTimeout(() => {
+        updateDimensions()
+      }, 3000)
+    }, 250)
     contentRef.current.addEventListener('scroll', scroll)
-    return () => contentRef.current?.removeEventListener('scroll', scroll)
+    contentRef.current.addEventListener('mousemove', mouseMove)
+    return () => {
+      contentRef.current?.removeEventListener('scroll', scroll)
+      contentRef.current?.removeEventListener('mousemove', mouseMove)
+    }
   }, [contentRef.current])
 
   return (
     <StyledStellar ref={stellarRef}>
+      <div
+        style={{
+          position: 'absolute',
+          left: `${target.current[0]}px`,
+          top: `${target.current[1]}px`,
+        }}
+      >
+        {/* {stars.length} */}
+      </div>
+      {/* {target.current[0]} {target.current[1]} */}
       {stars.map(({ id, coords: [left, top], age, color }, i) => (
         <StyledStar
           key={id}
@@ -81,7 +102,6 @@ export const Stellar = ({ starCount = 100, children }: StellarProps) => {
           style={{
             top: `${top}px`,
             left: `${left}px`,
-            color: colorStar([left, top], dimensions.current),
             background: color,
             boxShadow: `0px 0px 10px 1px ${color}`,
             width: `${age / 2.5}px`,
