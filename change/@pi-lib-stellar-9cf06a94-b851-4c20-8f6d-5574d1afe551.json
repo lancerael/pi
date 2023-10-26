@@ -1,6 +1,6 @@
 {
   "type": "patch",
-  "comment": "Type fixes and snappier scroll for Stellar scene",
+  "comment": "Interactions for Stellar scene",
   "packageName": "@pi-lib/stellar",
   "email": "lancerael@googlemail.com",
   "dependentChangeType": "patch"
