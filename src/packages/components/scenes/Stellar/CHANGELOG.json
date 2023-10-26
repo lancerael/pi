@@ -2,6 +2,21 @@
   "name": "@pi-lib/stellar",
   "entries": [
     {
+      "date": "Thu, 26 Oct 2023 23:26:52 GMT",
+      "tag": "@pi-lib/stellar_v1.0.1",
+      "version": "1.0.1",
+      "comments": {
+        "patch": [
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/stellar",
+            "commit": "e121f6d01289a8749452f64a475922794f8169c7",
+            "comment": "Interactions for Stellar scene"
+          }
+        ]
+      }
+    },
+    {
       "date": "Wed, 25 Oct 2023 00:00:28 GMT",
       "tag": "@pi-lib/stellar_v1.0.0",
       "version": "1.0.0",
