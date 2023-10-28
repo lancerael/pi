@@ -1,6 +1,6 @@
 {
   "name": "@pi-lib/stellar",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A spacefaring scene that takes you through the stars.",
   "keywords": [
     "react"
