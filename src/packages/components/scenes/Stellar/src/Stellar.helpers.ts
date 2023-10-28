@@ -28,7 +28,7 @@ export const makeStar = (
     id: randomString(8),
     coords: [left, top],
     age: 1,
-    color: `rgba(${getRGB()}, ${getRGB()}, ${getRGB()}, .5)`,
+    color: `rgba(${getRGB()}, ${getRGB()}, ${getRGB()}, 1)`,
   }
 }
 
