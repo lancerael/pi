@@ -4,7 +4,7 @@
 
 Hook used to add touch controls to a React component
 
-**Dependencies:** @pi-lib/utils, lodash.throttle, react, react-aria
+**Dependencies:** @pi-lib/utils, react, react-aria
 
 <table>
   <tbody>

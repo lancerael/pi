@@ -105,9 +105,6 @@ importers:
       '@types/jsdom':
         specifier: ^21.1.0
         version: 21.1.0
-      '@types/lodash.throttle':
-        specifier: ^4.1.7
-        version: 4.1.7
       '@types/node':
         specifier: ^18.15.3
         version: 18.15.3
@@ -165,9 +162,6 @@ importers:
       jest-mock:
         specifier: ^29.5.0
         version: 29.5.0
-      lodash.throttle:
-        specifier: ^4.1.1
-        version: 4.1.1
       nx:
         specifier: ^15.9.3
         version: 15.9.3
@@ -875,9 +869,9 @@ importers:
       '@pi-lib/styles':
         specifier: workspace:^
         version: link:../../../../styles
-      lodash.throttle:
-        specifier: ^4.1.1
-        version: 4.1.1
+      '@pi-lib/utils':
+        specifier: workspace:^
+        version: link:../../../../utils
       react:
         specifier: ^18.2.0
         version: 18.2.0
@@ -1243,9 +1237,6 @@ importers:
       d-theia:
         specifier: ^3.6.0
         version: 3.6.0
-      lodash.throttle:
-        specifier: ^4.1.1
-        version: 4.1.1
       react:
         specifier: ^18.2.0
         version: 18.2.0
@@ -1316,9 +1307,6 @@ importers:
       d3-transition:
         specifier: ^3.0.1
         version: 3.0.1(d3-selection@3.0.0)
-      lodash.throttle:
-        specifier: ^4.1.1
-        version: 4.1.1
       react:
         specifier: ^18.2.0
         version: 18.2.0
@@ -1414,9 +1402,6 @@ importers:
       '@pi-lib/utils':
         specifier: workspace:^
         version: link:../../../utils
-      lodash.throttle:
-        specifier: ^4.1.1
-        version: 4.1.1
       react:
         specifier: ^18.2.0
         version: 18.2.0
@@ -1486,9 +1471,6 @@ importers:
       '@pi-lib/utils':
         specifier: workspace:^
         version: link:../../utils
-      lodash.throttle:
-        specifier: ^4.1.1
-        version: 4.1.1
       react:
         specifier: ^18.2.0
         version: 18.2.0
@@ -1568,9 +1550,6 @@ importers:
 
   src/packages/utils:
     dependencies:
-      lodash.throttle:
-        specifier: ^4.1.1
-        version: 4.1.1
       react:
         specifier: ^18.2.0
         version: 18.2.0
@@ -7436,12 +7415,6 @@ packages:
     resolution: {integrity: sha512-wOuvG1SN4Us4rez+tylwwwCV1psiNVOkJeM3AUWUNWg/jDQY2+HE/444y5gc+jBmRqASOm2Oeh5c1axHobwRKQ==}
     dev: true
 
-  /@types/lodash.throttle@4.1.7:
-    resolution: {integrity: sha512-znwGDpjCHQ4FpLLx19w4OXDqq8+OvREa05H89obtSyXyOFKL3dDjCslsmfBz0T2FU8dmf5Wx1QvogbINiGIu9g==}
-    dependencies:
-      '@types/lodash': 4.14.191
-    dev: true
-
   /@types/lodash@4.14.191:
     resolution: {integrity: sha512-BdZ5BCCvho3EIXw6wUCXHe7rS53AIDPLE+JzwgT+OsJk53oBfbSmZZ7CX4VaRoN78N+TJpFi9QPlfIVNmJYWxQ==}
     dev: true
@@ -11544,9 +11517,6 @@ packages:
   /lodash.once@4.1.1:
     resolution: {integrity: sha512-Sb487aTOCr9drQVL8pIxOzVhafOjZN9UU54hiN8PU3uAiSV7lx1yYNpbNmex2PK6dSJoNTSJUUswT651yww3Mg==}
     dev: true
-
-  /lodash.throttle@4.1.1:
-    resolution: {integrity: sha512-wIkUCfVKpVsWo3JSZlc+8MB5it+2AN5W8J7YVMST30UrvcQNZ1Okbj+rbVniijTWE6FGYy4XJq/rHkas8qJMLQ==}
 
   /lodash.union@4.6.0:
     resolution: {integrity: sha512-c4pB2CdGrGdjMKYLA+XiRDO7Y0PRQbm/Gzg8qMj+QH+pFVAoTp5sBpO0odL3FjoPCGjK96p6qsP+yQoiLoOBcw==}

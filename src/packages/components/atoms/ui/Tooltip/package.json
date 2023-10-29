@@ -39,7 +39,7 @@
   },
   "peerDependencies": {
     "@pi-lib/styles": "workspace:^",
-    "lodash.throttle": "^4.1.1",
+    "@pi-lib/utils": "workspace:^",
     "react": "^18.2.0"
   }
 }

@@ -1,4 +1,4 @@
-import { useThrottledWindowEvents } from '@pi-lib/utils'
+import { useThrottledEvents } from '@pi-lib/utils'
 import { useCallback, useState } from 'react'
 import { ContainerRef, SvgRef } from '../CandlestickChart.types'
 
@@ -31,7 +31,7 @@ export const useSizes = (svgRef: SvgRef, containerRef: ContainerRef) => {
     })
   }, [svgRef.current, containerRef.current])
 
-  useThrottledWindowEvents(updateSizes)
+  useThrottledEvents(updateSizes)
 
   return sizes
 }

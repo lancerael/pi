@@ -1,12 +1,11 @@
 import { useCallback, useEffect, useRef } from 'react'
-import throttle from 'lodash.throttle'
 import {
   ActionMethods,
   NumberRange,
   Trackers,
   UseTouchProps,
 } from './useTouch.types'
-import { clampValue, doTransition } from '@pi-lib/utils'
+import { clampValue, doTransition, throttle } from '@pi-lib/utils'
 import { PanLevel } from './hooks/useControls'
 
 /**

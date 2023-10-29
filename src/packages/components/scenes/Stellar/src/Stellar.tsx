@@ -2,8 +2,8 @@ import { useCallback, useEffect, useRef, useState } from 'react'
 import { StyledContent, StyledStar, StyledStellar } from './Stellar.style'
 import { Coords, Star, StellarProps } from './Stellar.types'
 import { makeStar, makeStars, moveStar, scatter } from './Stellar.helpers'
-import { useThrottledWindowEvents } from '@pi-lib/utils'
-import throttle from 'lodash.throttle'
+import { useThrottledEvents } from '@pi-lib/utils'
+import { throttle } from '@pi-lib/utils'
 
 /**
  * A spacefaring scene that takes you through the stars.
@@ -24,12 +24,12 @@ export const Stellar = ({ starCount = 100, children }: StellarProps) => {
     target.current = [clientWidth / 2, clientHeight / 2]
   }, [stellarRef.current])
 
-  useThrottledWindowEvents(updateDimensions)
+  useThrottledEvents(updateDimensions)
 
   useEffect(() => {
     if (!stellarRef.current) return
     updateDimensions()
-    setStars(makeStars(1, dimensions.current))
+    setStars(makeStars(starCount, dimensions.current))
     setInterval(() => {
       if (!stars.length) return
       setStars((stars) => {

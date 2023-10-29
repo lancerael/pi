@@ -1,5 +1,5 @@
 import { useRef } from 'react'
-import { simpleHash } from '../methods/simpleHash'
+import { simpleHash } from '../helpers/simpleHash'
 
 /**
  * A quick way to see if an object has been changed or just rebuilt
