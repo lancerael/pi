@@ -3,7 +3,6 @@ import { StyledContent, StyledStar, StyledStellar } from './Stellar.style'
 import { Coords, Star, StellarProps } from './Stellar.types'
 import { makeStar, makeStars, moveStar, scatter } from './Stellar.helpers'
 import { useThrottledEvents } from '@pi-lib/utils'
-import { throttle } from '@pi-lib/utils'
 
 /**
  * A spacefaring scene that takes you through the stars.
@@ -24,7 +23,40 @@ export const Stellar = ({ starCount = 100, children }: StellarProps) => {
     target.current = [clientWidth / 2, clientHeight / 2]
   }, [stellarRef.current])
 
+  const scroll = useCallback(() => {
+    setStars((stars) => {
+      if (!contentRef.current) return stars
+      const offset = (contentRef.current.scrollTop - lastScroll.current) / 10
+      lastScroll.current = contentRef.current.scrollTop
+      return [
+        ...stars.map(({ coords: [left, top], age, ...star }: Star) => {
+          return {
+            coords: [left, top - offset * age] as Coords,
+            age,
+            ...star,
+          }
+        }),
+        makeStar(dimensions.current),
+      ]
+    })
+  }, [])
+
+  const mouseMove = useCallback(({ clientX, clientY }: MouseEvent) => {
+    target.current = [clientX, clientY]
+    clearTimeout(moveTimeout.current)
+
+    setStars((stars) => {
+      return [...stars, makeStar(dimensions.current, scatter(target.current))]
+    })
+
+    moveTimeout.current = setTimeout(() => {
+      updateDimensions()
+    }, 3000)
+  }, [])
+
   useThrottledEvents(updateDimensions)
+  useThrottledEvents(scroll, ['scroll'], false, contentRef.current)
+  useThrottledEvents(mouseMove, ['pointermove'], false, contentRef.current)
 
   useEffect(() => {
     if (!stellarRef.current) return
@@ -44,45 +76,6 @@ export const Stellar = ({ starCount = 100, children }: StellarProps) => {
       })
     }, 100)
   }, [stellarRef.current])
-
-  useEffect(() => {
-    if (!contentRef.current) return
-    const scroll = throttle((e) => {
-      setStars((stars) => {
-        if (!contentRef.current) return stars
-        const offset = (contentRef.current.scrollTop - lastScroll.current) / 10
-        lastScroll.current = contentRef.current.scrollTop
-        return [
-          ...stars.map(({ coords: [left, top], age, ...star }: Star) => {
-            return {
-              coords: [left, top - offset * age] as Coords,
-              age,
-              ...star,
-            }
-          }),
-          makeStar(dimensions.current),
-        ]
-      })
-    }, 100)
-    const mouseMove = throttle(({ clientX, clientY }: MouseEvent) => {
-      target.current = [clientX, clientY]
-      clearTimeout(moveTimeout.current)
-
-      setStars((stars) => {
-        return [...stars, makeStar(dimensions.current, scatter(target.current))]
-      })
-
-      moveTimeout.current = setTimeout(() => {
-        updateDimensions()
-      }, 3000)
-    }, 250)
-    contentRef.current.addEventListener('scroll', scroll)
-    contentRef.current.addEventListener('mousemove', mouseMove)
-    return () => {
-      contentRef.current?.removeEventListener('scroll', scroll)
-      contentRef.current?.removeEventListener('mousemove', mouseMove)
-    }
-  }, [contentRef.current])
 
   return (
     <StyledStellar ref={stellarRef}>

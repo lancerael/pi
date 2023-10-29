@@ -15,10 +15,11 @@ export const useThrottledEvents = (
   callback: CallbackFunction,
   events: string[] = ['resize'],
   doInit: boolean = true,
-  target: Window | HTMLElement = window,
+  target: Window | HTMLElement | null = window,
   timeout = 150
 ) => {
   useEffect(() => {
+    if (!target) return
     doInit && callback()
     const throttledCallback: CallbackFunction = throttle(callback, timeout)
     events.forEach((event) => target.addEventListener(event, throttledCallback))
@@ -26,5 +27,5 @@ export const useThrottledEvents = (
       events.forEach((event) =>
         target.removeEventListener(event, throttledCallback)
       )
-  }, [])
+  }, [target])
 }
