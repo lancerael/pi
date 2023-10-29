@@ -1,7 +1,0 @@
-{
-  "type": "minor",
-  "comment": "Refactor useThrottledEvents",
-  "packageName": "@pi-lib/tooltip",
-  "email": "lancerael@googlemail.com",
-  "dependentChangeType": "patch"
-}

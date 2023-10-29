@@ -1,8 +1,16 @@
 # Change Log - @pi-lib/axis-chart
 
-This log was last generated on Wed, 30 Aug 2023 22:50:34 GMT and should not be manually modified.
+This log was last generated on Sun, 29 Oct 2023 21:38:21 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 1.1.0
+
+Sun, 29 Oct 2023 21:38:21 GMT
+
+### Minor changes
+
+- Refactor useThrottledEvents (lancerael@googlemail.com)
 
 ## 1.0.12
 

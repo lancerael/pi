@@ -2,6 +2,21 @@
   "name": "@pi-lib/candlestick-chart",
   "entries": [
     {
+      "date": "Sun, 29 Oct 2023 21:38:21 GMT",
+      "tag": "@pi-lib/candlestick-chart_v2.5.0",
+      "version": "2.5.0",
+      "comments": {
+        "minor": [
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/candlestick-chart",
+            "commit": "fe8d871cab043c427e3f5bd4a2d2afe5cdca753d",
+            "comment": "Candlestick pan fix"
+          }
+        ]
+      }
+    },
+    {
       "date": "Tue, 03 Oct 2023 22:31:05 GMT",
       "tag": "@pi-lib/candlestick-chart_v2.4.2",
       "version": "2.4.2",

@@ -2,6 +2,21 @@
   "name": "@pi-lib/tooltip",
   "entries": [
     {
+      "date": "Sun, 29 Oct 2023 21:38:21 GMT",
+      "tag": "@pi-lib/tooltip_v2.1.0",
+      "version": "2.1.0",
+      "comments": {
+        "minor": [
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/tooltip",
+            "commit": "fe8d871cab043c427e3f5bd4a2d2afe5cdca753d",
+            "comment": "Refactor useThrottledEvents"
+          }
+        ]
+      }
+    },
+    {
       "date": "Tue, 03 Oct 2023 22:31:06 GMT",
       "tag": "@pi-lib/tooltip_v2.0.8",
       "version": "2.0.8",

@@ -1,8 +1,16 @@
 # Change Log - @pi-lib/utils
 
-This log was last generated on Wed, 25 Oct 2023 00:00:28 GMT and should not be manually modified.
+This log was last generated on Sun, 29 Oct 2023 21:38:21 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 2.0.0
+
+Sun, 29 Oct 2023 21:38:21 GMT
+
+### Major changes
+
+- Refactor useThrottledEvents (lancerael@googlemail.com)
 
 ## 1.1.0
 

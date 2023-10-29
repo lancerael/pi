@@ -1,8 +1,16 @@
 # Change Log - @pi-lib/stellar
 
-This log was last generated on Thu, 26 Oct 2023 23:26:52 GMT and should not be manually modified.
+This log was last generated on Sun, 29 Oct 2023 21:38:21 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 1.0.2
+
+Sun, 29 Oct 2023 21:38:21 GMT
+
+### Patches
+
+- Improve star scrolling speed (lancerael@googlemail.com)
 
 ## 1.0.1
 

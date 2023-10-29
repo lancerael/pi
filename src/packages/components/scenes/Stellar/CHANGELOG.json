@@ -2,6 +2,21 @@
   "name": "@pi-lib/stellar",
   "entries": [
     {
+      "date": "Sun, 29 Oct 2023 21:38:21 GMT",
+      "tag": "@pi-lib/stellar_v1.0.2",
+      "version": "1.0.2",
+      "comments": {
+        "patch": [
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/stellar",
+            "commit": "fe8d871cab043c427e3f5bd4a2d2afe5cdca753d",
+            "comment": "Improve star scrolling speed"
+          }
+        ]
+      }
+    },
+    {
       "date": "Thu, 26 Oct 2023 23:26:52 GMT",
       "tag": "@pi-lib/stellar_v1.0.1",
       "version": "1.0.1",

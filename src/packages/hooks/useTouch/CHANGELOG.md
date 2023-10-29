@@ -1,8 +1,16 @@
 # Change Log - @pi-lib/use-touch
 
-This log was last generated on Mon, 02 Oct 2023 20:55:53 GMT and should not be manually modified.
+This log was last generated on Sun, 29 Oct 2023 21:38:21 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 1.1.0
+
+Sun, 29 Oct 2023 21:38:21 GMT
+
+### Minor changes
+
+- Refactor useThrottledEvents (lancerael@googlemail.com)
 
 ## 1.0.2
 
