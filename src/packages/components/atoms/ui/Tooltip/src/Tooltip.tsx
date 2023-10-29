@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
-import throttle from 'lodash.throttle'
+import { throttle } from '@pi-lib/utils'
 import { StyledTooltip } from './Tooltip.style'
 import { TooltipProps } from './Tooltip.types'
 

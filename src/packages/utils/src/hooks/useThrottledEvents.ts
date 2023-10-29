@@ -1,4 +1,4 @@
-import throttle from 'lodash.throttle'
+import { throttle } from '../'
 import { useEffect } from 'react'
 
 export type CallbackFunction = (...args: any[]) => unknown
@@ -11,17 +11,21 @@ export type CallbackFunction = (...args: any[]) => unknown
  * @param doInit fire the callback on initialisation
  * @param timeout an optional throttle value that defaults to 150ms
  */
-export const useThrottledWindowEvents = (
+export const useThrottledEvents = (
   callback: CallbackFunction,
   events: string[] = ['resize'],
   doInit: boolean = true,
+  target: Window | HTMLElement | null = window,
   timeout = 150
 ) => {
   useEffect(() => {
+    if (!target) return
     doInit && callback()
     const throttledCallback: CallbackFunction = throttle(callback, timeout)
-    events.forEach((event) => addEventListener(event, throttledCallback))
+    events.forEach((event) => target.addEventListener(event, throttledCallback))
     return () =>
-      events.forEach((event) => removeEventListener(event, throttledCallback))
-  }, [])
+      events.forEach((event) =>
+        target.removeEventListener(event, throttledCallback)
+      )
+  }, [target])
 }

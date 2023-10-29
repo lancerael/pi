@@ -4,7 +4,7 @@
 
 A React component used to show and position a tooltip containing content
 
-**Dependencies:** @pi-lib/styles, lodash.throttle, react
+**Dependencies:** @pi-lib/styles, @pi-lib/utils, react
 
 <table>
   <tbody>

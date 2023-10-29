@@ -122,5 +122,6 @@ export const useDataRange = (
     dataSlice,
     lastItem: thisData[thisData.length - 2],
     length: thisData.length,
+    totalWidth: candleWidth * thisData.length,
   }
 }

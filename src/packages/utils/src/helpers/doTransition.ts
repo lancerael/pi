@@ -33,7 +33,6 @@ export const doTransition = ({
   let distance = +(target - value).toFixed(2)
   const newValue = +(value + +(distance / Math.abs(speed))).toFixed(2)
   timeouts[intervalId] = setTimeout(() => {
-    console.log(distance)
     if (Math.abs(distance) > 5) {
       callback(newValue)
       doTransition({

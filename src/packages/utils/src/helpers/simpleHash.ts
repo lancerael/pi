@@ -1,5 +1,6 @@
 /**
- * A performant hash generation for simple deep JSON comparison
+ * A performant hash generation for simple deep JSON comparison.
+ * Not cryptographic or suitable for large data sets.
  * @param value
  * @returns a string hash version of the supplied value
  */

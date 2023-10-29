@@ -1,7 +1,4 @@
-import {
-  CallbackFunction,
-  useThrottledWindowEvents,
-} from './useThrottledWindowEvents'
+import { CallbackFunction, useThrottledEvents } from './useThrottledEvents'
 
 /**
  * Bind a callback to the window that can be triggeed with an escape key
@@ -20,10 +17,6 @@ export const useWindowClick = (
   const onEscapePress = ({ key }: KeyboardEvent) => {
     if (key === 'Escape') callback()
   }
-  useThrottledWindowEvents(onWindowClick as CallbackFunction, ['click'], false)
-  useThrottledWindowEvents(
-    onEscapePress as CallbackFunction,
-    ['keydown'],
-    false
-  )
+  useThrottledEvents(onWindowClick as CallbackFunction, ['click'], false)
+  useThrottledEvents(onEscapePress as CallbackFunction, ['keydown'], false)
 }

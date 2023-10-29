@@ -4,7 +4,7 @@ import 'd3-transition'
 import {
   getAttributes,
   useHashComparison,
-  useThrottledWindowEvents,
+  useThrottledEvents,
 } from '@pi-lib/utils'
 import {
   ActiveItem,
@@ -100,7 +100,7 @@ export const useCandles = (
     }
   }, [])
 
-  useThrottledWindowEvents(resetSelection, ['resize', 'pointerdown'], false)
+  useThrottledEvents(resetSelection, ['resize', 'pointerdown'], false)
 
   // Place the bars based on latest data
   const placeBars = useCallback(

@@ -4,7 +4,7 @@
 
 A spacefaring scene that takes you through the stars.
 
-**Dependencies:** @pi-lib/styles, @pi-lib/utils, lodash.throttle, react, styled-components
+**Dependencies:** @pi-lib/styles, @pi-lib/utils, react, styled-components
 
 <table>
   <tbody>

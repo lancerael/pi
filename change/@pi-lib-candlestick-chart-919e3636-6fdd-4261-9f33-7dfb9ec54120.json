@@ -1,0 +1,7 @@
+{
+  "type": "minor",
+  "comment": "Candlestick pan fix",
+  "packageName": "@pi-lib/candlestick-chart",
+  "email": "lancerael@googlemail.com",
+  "dependentChangeType": "patch"
+}
