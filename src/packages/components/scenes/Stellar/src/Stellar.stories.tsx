@@ -4,7 +4,7 @@ import { StellarProps } from './Stellar.types'
 
 const render = (props: StellarProps) => (
   <Stellar {...props}>
-    <div style={{ userSelect: 'none' }}>
+    <div style={{ userSelect: 'none', maxHeight: '500px' }}>
       <br />
       <br />
       <br />
@@ -179,7 +179,7 @@ const render = (props: StellarProps) => (
 )
 
 const meta: Meta<typeof Stellar> = {
-  title: 'Stellar',
+  title: 'Theming/Scenes/Stellar',
   component: Stellar,
   argTypes: {},
   tags: ['autodocs'],
