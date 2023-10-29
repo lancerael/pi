@@ -44,6 +44,10 @@ export const CandlestickChart = ({ data = [] }: CandlestickChartProps) => {
     targetRef: svgRef,
     controls,
     zoomRange: ZOOM_RANGE,
+    panRange: [
+      [0, dataRange.totalWidth],
+      [0, 0],
+    ],
     resetCallback: resetSelection,
   })
 

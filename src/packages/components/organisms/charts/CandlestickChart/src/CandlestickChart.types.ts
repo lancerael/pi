@@ -86,6 +86,7 @@ export interface DataRange {
   dataSlice: CandlestickDayData[]
   lastItem: CandlestickDayData
   length: number
+  totalWidth: number
 }
 
 /**
