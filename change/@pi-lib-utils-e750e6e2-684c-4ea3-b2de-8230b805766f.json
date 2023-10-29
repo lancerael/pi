@@ -1,0 +1,7 @@
+{
+  "type": "minor",
+  "comment": "Adding starburst and performance adjustments let by new framerate hook",
+  "packageName": "@pi-lib/utils",
+  "email": "lancerael@googlemail.com",
+  "dependentChangeType": "patch"
+}
