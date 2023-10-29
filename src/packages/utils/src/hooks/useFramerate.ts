@@ -7,7 +7,7 @@ export const useFramerate = () => {
   const frame = useRef(0)
 
   useEffect(() => {
-    const checkFrame = (time) => {
+    const checkFrame = (time: number) => {
       counter.current++
 
       if (counter.current >= 30) {
