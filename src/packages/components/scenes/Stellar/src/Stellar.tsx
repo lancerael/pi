@@ -50,12 +50,13 @@ export const Stellar = ({ starCount = 100, children }: StellarProps) => {
     const scroll = throttle((e) => {
       setStars((stars) => {
         if (!contentRef.current) return stars
-        const offset = contentRef.current.scrollTop - lastScroll.current
+        const offset = (contentRef.current.scrollTop - lastScroll.current) / 10
         lastScroll.current = contentRef.current.scrollTop
         return [
-          ...stars.map(({ coords: [left, top], ...star }: Star) => {
+          ...stars.map(({ coords: [left, top], age, ...star }: Star) => {
             return {
-              coords: [left, top - offset] as Coords,
+              coords: [left, top - offset * age] as Coords,
+              age,
               ...star,
             }
           }),

@@ -5,19 +5,20 @@ export const throttle = (
 ) => {
   let timeout: NodeJS.Timeout
   let lastExecTime = 0
-
+  let isInitComplete = false
   return (...args: any[]) => {
-    const currentTime = Date.now()
-
-    if (currentTime - lastExecTime < delay) {
-      clearTimeout(timeout)
-      timeout = setTimeout(() => {
-        lastExecTime = currentTime
-        callback(...args)
-      }, delay)
-    } else {
+    const execute = () => {
       lastExecTime = currentTime
       callback(...args)
     }
+    const currentTime = Date.now()
+    if (!isInitComplete) {
+      execute()
+      isInitComplete = true
+    }
+    if (currentTime - lastExecTime < delay) {
+      clearTimeout(timeout)
+      timeout = setTimeout(execute, delay)
+    } else execute()
   }
 }
