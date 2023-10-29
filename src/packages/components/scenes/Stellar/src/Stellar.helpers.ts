@@ -19,21 +19,26 @@ export const scatter = ([x, y]: Coords): Coords => {
 
 export const makeStar = (
   [width, height]: Coords,
-  [x, y]: Coords = [0, 0]
+  target: Coords = [0, 0]
 ): Star => {
-  const left = x ? x : randomNumber(0, width)
-  const top = y ? y : randomNumber(0, height)
+  const [x, y] = scatter(target)
+  const left = target[0] ? x : randomNumber(0, width)
+  const top = target[1] ? y : randomNumber(0, height)
   const getRGB = () => 150 + randomNumber(0, 105)
   return {
     id: randomString(8),
     coords: [left, top],
-    age: 1,
+    age: 0,
     color: `rgba(${getRGB()}, ${getRGB()}, ${getRGB()}, 1)`,
   }
 }
 
-export const makeStars = (starCount: number, dimensions: Coords): Star[] => {
-  return Array.from({ length: starCount }, () => makeStar(dimensions))
+export const makeStars = (
+  starCount: number,
+  dimensions: Coords,
+  target?: Coords
+): Star[] => {
+  return Array.from({ length: starCount }, () => makeStar(dimensions, target))
 }
 
 export const moveStar = (

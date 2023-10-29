@@ -1,8 +1,10 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { StyledContent, StyledStar, StyledStellar } from './Stellar.style'
 import { Coords, Star, StellarProps } from './Stellar.types'
-import { makeStar, makeStars, moveStar, scatter } from './Stellar.helpers'
-import { useThrottledEvents } from '@pi-lib/utils'
+import { makeStar, makeStars, moveStar, randomNumber } from './Stellar.helpers'
+import { useFramerate, useThrottledEvents } from '@pi-lib/utils'
+
+const FPS_CUTOFF = 45
 
 /**
  * A spacefaring scene that takes you through the stars.
@@ -15,6 +17,7 @@ export const Stellar = ({ starCount = 100, children }: StellarProps) => {
   const contentRef = useRef<HTMLDivElement>(null)
   const moveTimeout = useRef<NodeJS.Timeout>()
   const lastScroll = useRef(0)
+  const framerate = useFramerate()
 
   const updateDimensions = useCallback(() => {
     if (!stellarRef.current) return
@@ -28,35 +31,64 @@ export const Stellar = ({ starCount = 100, children }: StellarProps) => {
       if (!contentRef.current) return stars
       const offset = (contentRef.current.scrollTop - lastScroll.current) / 10
       lastScroll.current = contentRef.current.scrollTop
-      return [
-        ...stars.map(({ coords: [left, top], age, ...star }: Star) => {
+      const newStars = stars.map(
+        ({ coords: [left, top], age, ...star }: Star) => {
           return {
             coords: [left, top - offset * age] as Coords,
             age,
             ...star,
           }
-        }),
-        makeStar(dimensions.current),
-      ]
+        }
+      )
+      if (framerate.current > FPS_CUTOFF) {
+        newStars.push(makeStar(dimensions.current))
+      }
+      return newStars
     })
   }, [])
 
-  const mouseMove = useCallback(({ clientX, clientY }: MouseEvent) => {
-    target.current = [clientX, clientY]
-    clearTimeout(moveTimeout.current)
+  const starSpawm = useCallback(
+    ({ clientX, clientY }: MouseEvent, isBurst: boolean) => {
+      target.current = [clientX, clientY]
+      clearTimeout(moveTimeout.current)
 
-    setStars((stars) => {
-      return [...stars, makeStar(dimensions.current, scatter(target.current))]
-    })
+      if (framerate.current < FPS_CUTOFF) return
 
-    moveTimeout.current = setTimeout(() => {
-      updateDimensions()
-    }, 3000)
-  }, [])
+      const upperRandom = Math.floor(framerate.current / 30)
+
+      setStars((stars) => {
+        return [
+          ...stars,
+          ...makeStars(
+            isBurst ? randomNumber(1, upperRandom || 1) : 1,
+            dimensions.current,
+            target.current
+          ),
+        ]
+      })
+
+      moveTimeout.current = setTimeout(() => {
+        updateDimensions()
+      }, 3000)
+    },
+    [framerate]
+  )
 
   useThrottledEvents(updateDimensions)
   useThrottledEvents(scroll, ['scroll'], false, contentRef.current)
-  useThrottledEvents(mouseMove, ['pointermove'], false, contentRef.current)
+  useThrottledEvents(
+    (e) => starSpawm(e, false),
+    ['pointermove'],
+    false,
+    contentRef.current,
+    500
+  )
+  useThrottledEvents(
+    (e) => starSpawm(e, true),
+    ['pointerdown'],
+    false,
+    contentRef.current
+  )
 
   useEffect(() => {
     if (!stellarRef.current) return
@@ -79,6 +111,7 @@ export const Stellar = ({ starCount = 100, children }: StellarProps) => {
 
   return (
     <StyledStellar ref={stellarRef}>
+      {/* {framerate.current} */}
       <div
         style={{
           position: 'absolute',
