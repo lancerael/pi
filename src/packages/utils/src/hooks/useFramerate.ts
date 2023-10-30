@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react'
 
 export const useFramerate = () => {
   const counter = useRef(0)
-  const lastTime = useRef(null)
+  const lastTime = useRef<number | null>(null)
   const fps = useRef(0)
   const frame = useRef(0)
 
