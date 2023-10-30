@@ -1,7 +1,0 @@
-{
-  "type": "none",
-  "comment": "Fix TS build error",
-  "packageName": "@pi-lib/utils",
-  "email": "lancerael@googlemail.com",
-  "dependentChangeType": "none"
-}

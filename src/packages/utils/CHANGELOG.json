@@ -2,6 +2,35 @@
   "name": "@pi-lib/utils",
   "entries": [
     {
+      "date": "Mon, 30 Oct 2023 00:05:19 GMT",
+      "tag": "@pi-lib/utils_v2.1.0",
+      "version": "2.1.0",
+      "comments": {
+        "none": [
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/utils",
+            "commit": "043ec214ea07da2b920a46927a153900eb70717b",
+            "comment": "TS fix"
+          },
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/utils",
+            "commit": "043ec214ea07da2b920a46927a153900eb70717b",
+            "comment": "Fix TS build error"
+          }
+        ],
+        "minor": [
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/utils",
+            "commit": "043ec214ea07da2b920a46927a153900eb70717b",
+            "comment": "Adding starburst and performance adjustments let by new framerate hook"
+          }
+        ]
+      }
+    },
+    {
       "date": "Sun, 29 Oct 2023 21:38:21 GMT",
       "tag": "@pi-lib/utils_v2.0.0",
       "version": "2.0.0",

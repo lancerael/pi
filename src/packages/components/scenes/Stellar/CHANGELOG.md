@@ -1,8 +1,16 @@
 # Change Log - @pi-lib/stellar
 
-This log was last generated on Sun, 29 Oct 2023 21:38:21 GMT and should not be manually modified.
+This log was last generated on Mon, 30 Oct 2023 00:05:19 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 1.0.3
+
+Mon, 30 Oct 2023 00:05:19 GMT
+
+### Patches
+
+- Adding starburst and performance adjustments let by new framerate hook (lancerael@googlemail.com)
 
 ## 1.0.2
 
