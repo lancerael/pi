@@ -1,6 +1,6 @@
 {
   "type": "minor",
-  "comment": "Merge branch 'stellar-perf' into dev",
+  "comment": "Stellar performance tweaks",
   "packageName": "@pi-lib/stellar",
   "email": "lancerael@googlemail.com",
   "dependentChangeType": "patch"
