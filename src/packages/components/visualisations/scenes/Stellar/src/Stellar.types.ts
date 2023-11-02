@@ -18,3 +18,7 @@ export interface Star extends StarPos {
   id: string
   color: string
 }
+
+export interface StarStyle extends Pick<Star, 'id'> {
+  style: React.CSSProperties
+}

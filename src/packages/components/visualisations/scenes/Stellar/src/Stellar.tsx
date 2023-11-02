@@ -1,7 +1,13 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { StyledContent, StyledStar, StyledStellar } from './Stellar.style'
-import { Coords, Star, StellarProps } from './Stellar.types'
-import { makeStar, makeStars, moveStar, randomNumber } from './Stellar.helpers'
+import { Coords, Star, StarStyle, StellarProps } from './Stellar.types'
+import {
+  getStarStyle,
+  makeStar,
+  makeStars,
+  moveStar,
+  randomNumber,
+} from './Stellar.helpers'
 import { useFramerate, useThrottledEvents } from '@pi-lib/utils'
 
 const FPS_CUTOFF = 45
@@ -10,7 +16,7 @@ const FPS_CUTOFF = 45
  * A spacefaring scene that takes you through the stars.
  */
 export const Stellar = ({ starCount = 10, children }: StellarProps) => {
-  const [stars, setStars] = useState<Star[]>([])
+  const [stars, setStars] = useState<StarStyle[]>([])
   const dimensions = useRef<Coords>([0, 0])
   const target = useRef<Coords>([0, 0])
   const stellarRef = useRef<HTMLDivElement>(null)
@@ -34,7 +40,7 @@ export const Stellar = ({ starCount = 10, children }: StellarProps) => {
     starTracker.current = starTracker.current.map(
       ({ coords: [left, top], age, ...star }: Star) => {
         return {
-          coords: [left, top - offset * age] as Coords,
+          coords: [left, top - offset * (age / 2)] as Coords,
           age,
           ...star,
         }
@@ -71,7 +77,8 @@ export const Stellar = ({ starCount = 10, children }: StellarProps) => {
     (e) => starSpawm(e, false),
     ['pointermove'],
     false,
-    contentRef.current
+    contentRef.current,
+    500
   )
   useThrottledEvents(
     (e) => starSpawm(e, true),
@@ -87,43 +94,21 @@ export const Stellar = ({ starCount = 10, children }: StellarProps) => {
     setInterval(() => {
       if (!starTracker.current.length) return
       starTracker.current = starTracker.current
-        .map((star: Star) => {
-          return moveStar(star, target.current)
-        })
-        .filter(({ age }) => age < 35)
-      starTracker.current.push(makeStar(dimensions.current))
-      setStars(starTracker.current)
+        .map((star: Star) => moveStar(star, target.current))
+        .filter(({ age }) => age < 65)
+      if (framerate.current > FPS_CUTOFF) {
+        starTracker.current.push(makeStar(dimensions.current))
+      }
+      setStars(starTracker.current.map(getStarStyle))
     }, 200)
   }, [stellarRef.current])
 
   return (
     <StyledStellar ref={stellarRef}>
-      {Math.round(framerate.current)}
-      {/* <div
-        style={{
-          position: 'absolute',
-          left: `${target.current[0]}px`,
-          top: `${target.current[1]}px`,
-        }}
-      >
-        {stars.length}
-      </div> */}
-      {/* {target.current[0]} {target.current[1]} */}
-      {stars.map(({ id, coords: [left, top], age, color }, i) => (
-        <StyledStar
-          key={id}
-          color={color}
-          style={{
-            top: `${top}px`,
-            left: `${left}px`,
-            background: color,
-            boxShadow: `0px 0px 10px 1px ${color}`,
-            width: `${age / 2.5}px`,
-            height: `${age / 2.5}px`,
-            opacity: age ? 1 - age / 30 : 0,
-          }}
-        >
-          {/* . {age} */}
+      {/* {Math.round(framerate.current)} {stars.length} */}
+      {stars.map(({ id, style }, i) => (
+        <StyledStar key={id} {...{ style }}>
+          {/* {starTracker.current[i].age?.toFixed(2)} */}
         </StyledStar>
       ))}
       <StyledContent ref={contentRef}>{children}</StyledContent>

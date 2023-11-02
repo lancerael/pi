@@ -35,7 +35,7 @@ export const StyledStar = styled.div`
   height: 5px;
   position: absolute;
   border-radius: 50%;
-  transition: all 0.2s linear;
+  transition: all 0.2s linear, opacity 1s linear;
   z-index: 1;
 `
 
