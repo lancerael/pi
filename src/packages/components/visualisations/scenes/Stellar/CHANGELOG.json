@@ -2,6 +2,21 @@
   "name": "@pi-lib/stellar",
   "entries": [
     {
+      "date": "Mon, 30 Oct 2023 00:05:19 GMT",
+      "tag": "@pi-lib/stellar_v1.0.3",
+      "version": "1.0.3",
+      "comments": {
+        "patch": [
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/stellar",
+            "commit": "043ec214ea07da2b920a46927a153900eb70717b",
+            "comment": "Adding starburst and performance adjustments let by new framerate hook"
+          }
+        ]
+      }
+    },
+    {
       "date": "Sun, 29 Oct 2023 21:38:21 GMT",
       "tag": "@pi-lib/stellar_v1.0.2",
       "version": "1.0.2",
