@@ -1,0 +1,7 @@
+{
+  "type": "minor",
+  "comment": "Code cleanup",
+  "packageName": "@pi-lib/utils",
+  "email": "lancerael@googlemail.com",
+  "dependentChangeType": "patch"
+}

@@ -1,10 +1,8 @@
 import { Coords, Star } from './Stellar.types'
 
 export const randomNumber = (min: number, max: number): number => {
-  const timestamp = `${Date.now()}`
-  const lastCharacter = timestamp.split('').reverse()[0]
   const range = max - min + 1
-  return min + Math.floor(Math.random() * range) + parseInt(lastCharacter, 10)
+  return min + Math.floor(Math.random() * range)
 }
 
 export const randomString = (length: number): string => {
@@ -24,21 +22,25 @@ export const makeStar = (
   const [x, y] = scatter(target)
   const left = target[0] ? x : randomNumber(0, width)
   const top = target[1] ? y : randomNumber(0, height)
-  const getRGB = () => 150 + randomNumber(0, 105)
+  const getRGB = () => 100 + randomNumber(0, 155)
+  const getColor = () =>
+    !randomNumber(0, 5)
+      ? `${getRGB()}, ${getRGB()}, ${getRGB()}`
+      : '200, 200, 200'
   return {
     id: randomString(8),
     coords: [left, top],
     age: 0,
-    color: `rgba(${getRGB()}, ${getRGB()}, ${getRGB()}, 1)`,
+    color: `rgba(${getColor()}, 1)`,
   }
 }
 
 export const makeStars = (
-  starCount: number,
+  length: number,
   dimensions: Coords,
   target?: Coords
 ): Star[] => {
-  return Array.from({ length: starCount }, () => makeStar(dimensions, target))
+  return Array.from({ length }, () => makeStar(dimensions, target))
 }
 
 export const moveStar = (
@@ -49,8 +51,29 @@ export const moveStar = (
   const yDist = top - y
   const radius = Math.sqrt(xDist * xDist + yDist * yDist)
   return {
-    coords: [left + (xDist * age) / radius, top + (yDist * age) / radius],
+    coords: [
+      left + (xDist * (age / 3)) / radius,
+      top + (yDist * (age / 3)) / radius,
+    ],
     age: age + 1,
     ...star,
   }
 }
+
+export const getStarStyle = ({
+  id,
+  coords: [left, top],
+  age,
+  color,
+}: Star) => ({
+  id,
+  style: {
+    top: `${top}px`,
+    left: `${left}px`,
+    background: color,
+    boxShadow: `0px 0px 10px 1px ${color}`,
+    width: `${age / 5}px`,
+    height: `${age / 5}px`,
+    opacity: age >= 1 ? 1 - age / 50 : 0,
+  },
+})

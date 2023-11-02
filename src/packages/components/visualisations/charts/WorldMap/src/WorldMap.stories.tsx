@@ -9,7 +9,7 @@ const render = (props: WorldMapProps) => (
 )
 
 const meta: Meta<typeof WorldMap> = {
-  title: 'Organisms/Charts/WorldMap',
+  title: 'Visualisations/Charts/WorldMap',
   component: WorldMap,
   argTypes: {
     country: {

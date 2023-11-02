@@ -34,7 +34,7 @@ export const Stellar = ({ starCount = 100, children }: StellarProps) => {
       const newStars = stars.map(
         ({ coords: [left, top], age, ...star }: Star) => {
           return {
-            coords: [left, top - offset * age] as Coords,
+            coords: [left, top - offset * (age / 2)] as Coords,
             age,
             ...star,
           }
@@ -111,21 +111,10 @@ export const Stellar = ({ starCount = 100, children }: StellarProps) => {
 
   return (
     <StyledStellar ref={stellarRef}>
-      {/* {framerate.current} */}
-      <div
-        style={{
-          position: 'absolute',
-          left: `${target.current[0]}px`,
-          top: `${target.current[1]}px`,
-        }}
-      >
-        {/* {stars.length} */}
-      </div>
-      {/* {target.current[0]} {target.current[1]} */}
+      {framerate.current}
       {stars.map(({ id, coords: [left, top], age, color }, i) => (
         <StyledStar
           key={id}
-          color={color}
           style={{
             top: `${top}px`,
             left: `${left}px`,

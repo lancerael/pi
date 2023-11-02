@@ -17,7 +17,7 @@ const render = (props: AxisChartProps) => {
 }
 
 const meta: Meta<typeof AxisChart> = {
-  title: 'Organisms/Charts/AxisChart',
+  title: 'Visualisations/Charts/AxisChart',
   component: AxisChart,
 }
 
