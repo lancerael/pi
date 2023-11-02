@@ -9,7 +9,7 @@ const FPS_CUTOFF = 45
 /**
  * A spacefaring scene that takes you through the stars.
  */
-export const Stellar = ({ starCount = 100, children }: StellarProps) => {
+export const Stellar = ({ starCount = 10, children }: StellarProps) => {
   const [stars, setStars] = useState<Star[]>([])
   const dimensions = useRef<Coords>([0, 0])
   const target = useRef<Coords>([0, 0])
@@ -17,6 +17,7 @@ export const Stellar = ({ starCount = 100, children }: StellarProps) => {
   const contentRef = useRef<HTMLDivElement>(null)
   const moveTimeout = useRef<NodeJS.Timeout>()
   const lastScroll = useRef(0)
+  const starTracker = useRef<Star[]>([])
   const framerate = useFramerate()
 
   const updateDimensions = useCallback(() => {
@@ -24,27 +25,21 @@ export const Stellar = ({ starCount = 100, children }: StellarProps) => {
     const { clientWidth, clientHeight } = stellarRef.current
     dimensions.current = [clientWidth, clientHeight]
     target.current = [clientWidth / 2, clientHeight / 2]
-  }, [stellarRef.current])
+  }, [])
 
   const scroll = useCallback(() => {
-    setStars((stars) => {
-      if (!contentRef.current) return stars
-      const offset = (contentRef.current.scrollTop - lastScroll.current) / 10
-      lastScroll.current = contentRef.current.scrollTop
-      const newStars = stars.map(
-        ({ coords: [left, top], age, ...star }: Star) => {
-          return {
-            coords: [left, top - offset * age] as Coords,
-            age,
-            ...star,
-          }
+    if (!contentRef.current) return
+    const offset = (contentRef.current.scrollTop - lastScroll.current) / 10
+    lastScroll.current = contentRef.current.scrollTop
+    starTracker.current = starTracker.current.map(
+      ({ coords: [left, top], age, ...star }: Star) => {
+        return {
+          coords: [left, top - offset * age] as Coords,
+          age,
+          ...star,
         }
-      )
-      if (framerate.current > FPS_CUTOFF) {
-        newStars.push(makeStar(dimensions.current))
       }
-      return newStars
-    })
+    )
   }, [])
 
   const starSpawm = useCallback(
@@ -54,38 +49,33 @@ export const Stellar = ({ starCount = 100, children }: StellarProps) => {
 
       if (framerate.current < FPS_CUTOFF) return
 
-      const upperRandom = Math.floor(framerate.current / 30)
-
-      setStars((stars) => {
-        return [
-          ...stars,
-          ...makeStars(
-            isBurst ? randomNumber(1, upperRandom || 1) : 1,
-            dimensions.current,
-            target.current
-          ),
-        ]
-      })
+      starTracker.current = [
+        ...starTracker.current,
+        ...makeStars(
+          isBurst ? randomNumber(1, 5) : 1,
+          dimensions.current,
+          target.current
+        ),
+      ]
 
       moveTimeout.current = setTimeout(() => {
         updateDimensions()
       }, 3000)
     },
-    [framerate]
+    []
   )
 
   useThrottledEvents(updateDimensions)
-  useThrottledEvents(scroll, ['scroll'], false, contentRef.current)
+  useThrottledEvents(scroll, ['scroll'], false, contentRef.current, 50)
   useThrottledEvents(
     (e) => starSpawm(e, false),
     ['pointermove'],
     false,
-    contentRef.current,
-    500
+    contentRef.current
   )
   useThrottledEvents(
     (e) => starSpawm(e, true),
-    ['pointerdown'],
+    ['pointerup'],
     false,
     contentRef.current
   )
@@ -93,34 +83,31 @@ export const Stellar = ({ starCount = 100, children }: StellarProps) => {
   useEffect(() => {
     if (!stellarRef.current) return
     updateDimensions()
-    setStars(makeStars(starCount, dimensions.current))
+    starTracker.current = makeStars(starCount, dimensions.current)
     setInterval(() => {
-      if (!stars.length) return
-      setStars((stars) => {
-        // Move the stars
-        const newStars = stars.map((star: Star) => {
+      if (!starTracker.current.length) return
+      starTracker.current = starTracker.current
+        .map((star: Star) => {
           return moveStar(star, target.current)
         })
-        // Add a new one
-        newStars.push(makeStar(dimensions.current))
-        // Remove the ones off screen
-        return newStars.filter(({ age }) => age < 50)
-      })
-    }, 100)
+        .filter(({ age }) => age < 35)
+      starTracker.current.push(makeStar(dimensions.current))
+      setStars(starTracker.current)
+    }, 200)
   }, [stellarRef.current])
 
   return (
     <StyledStellar ref={stellarRef}>
-      {/* {framerate.current} */}
-      <div
+      {Math.round(framerate.current)}
+      {/* <div
         style={{
           position: 'absolute',
           left: `${target.current[0]}px`,
           top: `${target.current[1]}px`,
         }}
       >
-        {/* {stars.length} */}
-      </div>
+        {stars.length}
+      </div> */}
       {/* {target.current[0]} {target.current[1]} */}
       {stars.map(({ id, coords: [left, top], age, color }, i) => (
         <StyledStar

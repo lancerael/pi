@@ -1,10 +1,8 @@
 import { Coords, Star } from './Stellar.types'
 
 export const randomNumber = (min: number, max: number): number => {
-  const timestamp = `${Date.now()}`
-  const lastCharacter = timestamp.split('').reverse()[0]
   const range = max - min + 1
-  return min + Math.floor(Math.random() * range) + parseInt(lastCharacter, 10)
+  return min + Math.floor(Math.random() * range)
 }
 
 export const randomString = (length: number): string => {
@@ -34,11 +32,11 @@ export const makeStar = (
 }
 
 export const makeStars = (
-  starCount: number,
+  length: number,
   dimensions: Coords,
   target?: Coords
 ): Star[] => {
-  return Array.from({ length: starCount }, () => makeStar(dimensions, target))
+  return Array.from({ length }, () => makeStar(dimensions, target))
 }
 
 export const moveStar = (
