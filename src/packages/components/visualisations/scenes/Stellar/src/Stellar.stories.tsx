@@ -19,30 +19,12 @@ const render = (props: StellarProps) => (
       <br />
       <br />
       <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
       Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
       inceptos himenaeos. Phasellus ac euismod nibh. Aliquam rhoncus consectetur
       libero vitae gravida. Morbi suscipit, dui ut hendrerit tincidunt, risus
       nulla rutrum ex, rhoncus tincidunt libero dolor eu arcu. In porttitor
       risus diam, non commodo nunc venenatis vel. Donec dignissim lacinia
       ullamcorper. Vestibulum tincidunt lorem vitae lobortis pharetra.
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
       <br />
       <br />
       <br />
@@ -56,23 +38,11 @@ const render = (props: StellarProps) => (
       <br />
       <br />
       <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
       Donec in metus orci. Maecenas elementum porta dapibus. Curabitur eleifend
       ante massa. Duis suscipit in augue iaculis rhoncus. Nunc enim elit,
       ultrices a nisi ac, varius finibus elit. Ut odio lacus, accumsan sit amet
       turpis vestibulum, feugiat cursus risus. Duis id mi ut neque pellentesque
       fringilla.
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
       <br />
       Curabitur condimentum sagittis augue maximus condimentum. In fringilla
       ipsum id dolor mattis venenatis. Nulla ultricies, eros vel interdum
