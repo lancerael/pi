@@ -11,7 +11,7 @@ const render = () => {
 }
 
 const meta: Meta<typeof CandlestickChart> = {
-  title: 'Organisms/Charts/CandlestickChart',
+  title: 'Visualisations/Charts/CandlestickChart',
   component: CandlestickChart,
 }
 
