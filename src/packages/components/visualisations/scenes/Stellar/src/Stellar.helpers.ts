@@ -60,20 +60,33 @@ export const moveStar = (
   }
 }
 
-export const getStarStyle = ({
-  id,
-  coords: [left, top],
-  age,
-  color,
-}: Star) => ({
-  id,
-  style: {
-    top: `${top}px`,
-    left: `${left}px`,
-    background: color,
-    boxShadow: `0px 0px 10px 1px ${color}`,
-    width: `${age / 5}px`,
-    height: `${age / 5}px`,
-    opacity: age >= 1 ? 1 - age / 50 : 0,
-  },
-})
+export const filterStars = (
+  age: number,
+  [left, top]: Coords,
+  [width, height]: Coords
+) => {
+  const MAX_AGE = 45
+  const PADDING = 50
+  return (
+    age < MAX_AGE &&
+    left > 0 - PADDING &&
+    left < width + PADDING &&
+    top > 0 - PADDING &&
+    top < height + PADDING
+  )
+}
+
+export const getStarStyle = ({ id, coords: [left, top], age, color }: Star) => {
+  return {
+    id,
+    style: {
+      top: `${top}px`,
+      left: `${left}px`,
+      background: color,
+      boxShadow: `0px 0px 10px 1px ${color}`,
+      width: `${age / 5}px`,
+      height: `${age / 5}px`,
+      opacity: age >= 1 ? 1 - age / 40 : 0,
+    },
+  }
+}

@@ -4,7 +4,9 @@ import { StellarProps } from './Stellar.types'
 
 const render = (props: StellarProps) => (
   <Stellar {...props}>
-    <div style={{ userSelect: 'none', maxHeight: '100px', marginTop: '400px' }}>
+    <div
+      style={{ userSelect: 'none', maxHeight: '500px', paddingTop: '800px' }}
+    >
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus finibus
       venenatis nibh in auctor. Ut feugiat odio non euismod porttitor. Nulla
       semper ornare tellus ac gravida. Nam et sodales tortor. Donec sodales
