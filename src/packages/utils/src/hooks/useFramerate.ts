@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react'
 
-export const useFramerate = () => {
+export const useFramerate = (frames: number = 60) => {
   const counter = useRef(0)
   const lastTime = useRef<number | null>(null)
   const fps = useRef(0)
@@ -10,7 +10,7 @@ export const useFramerate = () => {
     const checkFrame = (time: number) => {
       counter.current++
 
-      if (counter.current >= 30) {
+      if (counter.current >= frames) {
         fps.current = lastTime.current
           ? (counter.current / (time - lastTime.current)) * 1000
           : 0

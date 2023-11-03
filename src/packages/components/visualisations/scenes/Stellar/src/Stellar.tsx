@@ -100,12 +100,13 @@ export const Stellar = ({ starCount = 10, children }: StellarProps) => {
         starTracker.current.push(makeStar(dimensions.current))
       }
       setStars(starTracker.current.map(getStarStyle))
+      // setStars([])
     }, 200)
   }, [stellarRef.current])
 
   return (
     <StyledStellar ref={stellarRef}>
-      {/* {Math.round(framerate.current)} {stars.length} */}
+      {Math.round(framerate.current)}
       {stars.map(({ id, style }, i) => (
         <StyledStar key={id} {...{ style }}>
           {/* {starTracker.current[i].age?.toFixed(2)} */}
