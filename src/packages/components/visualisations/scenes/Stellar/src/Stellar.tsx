@@ -2,6 +2,7 @@ import { useCallback, useEffect, useRef, useState } from 'react'
 import { StyledContent, StyledStar, StyledStellar } from './Stellar.style'
 import { Coords, Star, StarStyle, StellarProps } from './Stellar.types'
 import {
+  filterStars,
   getStarStyle,
   makeStar,
   makeStars,
@@ -10,7 +11,7 @@ import {
 } from './Stellar.helpers'
 import { useFramerate, useThrottledEvents } from '@pi-lib/utils'
 
-const FPS_CUTOFF = 45
+const FPS_CUTOFF = 35
 
 /**
  * A spacefaring scene that takes you through the stars.
@@ -53,7 +54,7 @@ export const Stellar = ({ starCount = 10, children }: StellarProps) => {
       target.current = [clientX, clientY]
       clearTimeout(moveTimeout.current)
 
-      if (framerate.current < FPS_CUTOFF) return
+      if (framerate.current.fps < FPS_CUTOFF) return
 
       starTracker.current = [
         ...starTracker.current,
@@ -95,22 +96,21 @@ export const Stellar = ({ starCount = 10, children }: StellarProps) => {
       if (!starTracker.current.length) return
       starTracker.current = starTracker.current
         .map((star: Star) => moveStar(star, target.current))
-        .filter(({ age }) => age < 65)
-      if (framerate.current > FPS_CUTOFF) {
+        .filter(({ age, coords }) =>
+          filterStars(age, coords, dimensions.current)
+        )
+      if (framerate.current.fps > FPS_CUTOFF) {
         starTracker.current.push(makeStar(dimensions.current))
       }
       setStars(starTracker.current.map(getStarStyle))
-      // setStars([])
     }, 200)
   }, [stellarRef.current])
 
   return (
     <StyledStellar ref={stellarRef}>
-      {Math.round(framerate.current)}
-      {stars.map(({ id, style }, i) => (
-        <StyledStar key={id} {...{ style }}>
-          {/* {starTracker.current[i].age?.toFixed(2)} */}
-        </StyledStar>
+      {Math.round(framerate.current.fps)}- {stars.length}
+      {stars.map(({ id, style }) => (
+        <StyledStar key={id} {...{ style }} />
       ))}
       <StyledContent ref={contentRef}>{children}</StyledContent>
     </StyledStellar>
