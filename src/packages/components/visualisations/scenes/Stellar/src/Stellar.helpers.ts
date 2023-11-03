@@ -1,3 +1,4 @@
+import { FILTER_PADDING, MAX_AGE } from './Stellar.constants'
 import { Coords, Star } from './Stellar.types'
 
 export const randomNumber = (min: number, max: number): number => {
@@ -22,16 +23,16 @@ export const makeStar = (
   const [x, y] = scatter(target)
   const left = target[0] ? x : randomNumber(0, width)
   const top = target[1] ? y : randomNumber(0, height)
-  const getRGB = () => 100 + randomNumber(0, 155)
+  const getRGB = () => 150 + randomNumber(0, 105)
   const getColor = () =>
     !randomNumber(0, 5)
       ? `${getRGB()}, ${getRGB()}, ${getRGB()}`
-      : '200, 200, 200'
+      : '255, 255, 255'
   return {
     id: randomString(8),
     coords: [left, top],
     age: 0,
-    color: `rgba(${getColor()}, 1)`,
+    color: `rgba(${getColor()}, ${randomNumber(5, 10) / 10})`,
   }
 }
 
@@ -50,10 +51,11 @@ export const moveStar = (
   const xDist = left - x
   const yDist = top - y
   const radius = Math.sqrt(xDist * xDist + yDist * yDist)
+  const multiplier = (age + age * age) / 5
   return {
     coords: [
-      left + (xDist * (age / 3)) / radius,
-      top + (yDist * (age / 3)) / radius,
+      left + (xDist * multiplier) / radius,
+      top + (yDist * multiplier) / radius,
     ],
     age: age + 1,
     ...star,
@@ -65,18 +67,17 @@ export const filterStars = (
   [left, top]: Coords,
   [width, height]: Coords
 ) => {
-  const MAX_AGE = 45
-  const PADDING = 50
   return (
     age < MAX_AGE &&
-    left > 0 - PADDING &&
-    left < width + PADDING &&
-    top > 0 - PADDING &&
-    top < height + PADDING
+    left > 0 - FILTER_PADDING &&
+    left < width + FILTER_PADDING &&
+    top > 0 - FILTER_PADDING &&
+    top < height + FILTER_PADDING
   )
 }
 
 export const getStarStyle = ({ id, coords: [left, top], age, color }: Star) => {
+  const multiplier = (age + age * (age / 10)) / 5
   return {
     id,
     style: {
@@ -84,9 +85,9 @@ export const getStarStyle = ({ id, coords: [left, top], age, color }: Star) => {
       left: `${left}px`,
       background: color,
       boxShadow: `0px 0px 10px 1px ${color}`,
-      width: `${age / 5}px`,
-      height: `${age / 5}px`,
-      opacity: age >= 1 ? 1 - age / 40 : 0,
+      width: `${multiplier}px`,
+      height: `${multiplier}px`,
+      opacity: age >= 1 ? 1 - age / 19 : 0,
     },
   }
 }

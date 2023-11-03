@@ -3,20 +3,6 @@ import { useEffect, useRef } from 'react'
 export const useFramerate = (frames: number = 60) => {
   const frame = useRef(0)
 
-  const counters = useRef({
-    fps: {
-      counter: 0,
-      lastTime: 0,
-      framerate: 0,
-    },
-    average: {
-      counter: 0,
-      lastTime: 0,
-      framerate: 0,
-    },
-    totalTime: 0,
-  })
-
   const framerates = useRef({
     fps: 0,
     average: 0,
@@ -24,24 +10,34 @@ export const useFramerate = (frames: number = 60) => {
   })
 
   useEffect(() => {
+    const counters = {
+      fps: {
+        counter: 0,
+        lastTime: 0,
+      },
+      average: {
+        counter: 0,
+        lastTime: 0,
+      },
+    }
     const checkFrame = (time: number) => {
-      const { fps, average } = counters.current
+      const { fps, average } = counters
+      if (!average.lastTime) average.lastTime = time
       fps.counter++
       average.counter++
 
       if (fps.counter >= frames) {
-        fps.framerate = fps.lastTime
-          ? Math.round((fps.counter / (time - fps.lastTime)) * 1000)
-          : 0
+        const totalTime = time - average.lastTime
+        framerates.current = {
+          fps: fps.lastTime
+            ? Math.round((fps.counter / (time - fps.lastTime)) * 1000)
+            : 0,
+          average: Math.round((average.counter / totalTime) * 1000),
+          totalTime: Math.round(totalTime / 1000),
+        }
         fps.counter = 0
         fps.lastTime = time
-      }
-
-      if (!average.lastTime) average.lastTime = time
-      else {
-        const totalTime = time - average.lastTime
-        average.framerate = Math.round((average.counter / totalTime) * 1000)
-        counters.current.totalTime = Math.round(totalTime / 1000)
+        // console.log(framerates.current)
       }
 
       frame.current = requestAnimationFrame(checkFrame)
@@ -50,17 +46,7 @@ export const useFramerate = (frames: number = 60) => {
     frame.current = requestAnimationFrame(checkFrame)
 
     return () => cancelAnimationFrame(frame.current)
-  }, [])
-
-  useEffect(() => {
-    const { fps, average, totalTime } = counters.current
-    framerates.current = {
-      fps: fps.framerate,
-      average: average.framerate,
-      totalTime,
-    }
-    // console.log(framerates.current)
-  }, [counters.current.totalTime])
+  }, [frames])
 
   return framerates
 }
