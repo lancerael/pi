@@ -9,9 +9,9 @@ A React component for an SVG world map chart
 <table>
   <tbody>
     <tr>
-      <td><a href="https://pi.lance-taylor.com/?path=/story/molecules-charts-worldmap" target="_blank">Docs</a></td>
+      <td><a href="https://pi.lance-taylor.com/?path=/story/visualisations-charts-worldmap" target="_blank">Docs</a></td>
       <td><a href="https://www.npmjs.com/package/@pi-lib/world-map?activeTab=readme" target="_blank">NPM</a></td>
-      <td><a href="https://github.com/lancerael/pi/tree/main/src/components/molecules/charts/WorldMap" target="_blank">Github</a></td>
+      <td><a href="https://github.com/lancerael/pi/tree/main/src/components/visualisations/charts/WorldMap" target="_blank">Github</a></td>
     </tr>
   </tbody>
 </table>
