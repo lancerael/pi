@@ -27,7 +27,6 @@ export const StyledStellar = styled.div`
   height: 100%;
   position: relative;
   overflow: clip;
-  /* filter: brightness(0.6); */
 `
 
 export const StyledStar = styled.div`
@@ -35,7 +34,7 @@ export const StyledStar = styled.div`
   height: 5px;
   position: absolute;
   border-radius: 50%;
-  transition: all 0.2s linear, opacity 1s linear;
+  transition: all 0.2s linear, opacity 0.5s linear;
   z-index: 1;
 `
 
