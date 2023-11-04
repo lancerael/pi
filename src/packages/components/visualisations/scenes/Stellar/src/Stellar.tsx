@@ -25,10 +25,10 @@ export const Stellar = memo(
     starCount = 10,
     isTravelling = true,
     showDebug = false,
-    // speed = 10,
     children,
   }: StellarProps) => {
     const [stars, setStars] = useState<StarStyle[]>([])
+    const starTracker = useRef<Star[]>([])
     const stellarCoords = useRef<StellarCoords>({
       dimensions: [0, 0],
       target: [0, 0],
@@ -37,7 +37,6 @@ export const Stellar = memo(
     const contentRef = useRef<HTMLDivElement>(null)
     const moveTimeout = useRef<NodeJS.Timeout>()
     const lastScroll = useRef(0)
-    const starTracker = useRef<Star[]>([])
     const framerate = useFramerate()
 
     const updateDimensions = useCallback(() => {
@@ -113,7 +112,7 @@ export const Stellar = memo(
         if (!starTracker.current.length) return
         const { dimensions, target } = stellarCoords.current
         const { fps } = framerate.current
-        if (!fps || fps > FPS_CUTOFF) {
+        if (!fps || (fps > FPS_CUTOFF && isTravelling)) {
           starTracker.current.push(
             ...makeStars(
               randomNumber(1, fps > FPS_CUTOFF + 10 ? 2 : 1),
