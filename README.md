@@ -1,5 +1,5 @@
 <a href="https://pi.lance-taylor.com" target="_blank" title="Storybook"><img src="https://cdn.jsdelivr.net/gh/storybookjs/brand@main/badge/badge-storybook.svg"/></a>&nbsp;
-<a href="https://github.com/lancerael/pi/actions?workflow=Tests" target="_blank" title="Tests"><img src="https://github.com/lancerael/pi/workflows/Tests/badge.svg"/></a>&nbsp;
+<a href="https://github.com/lancerael/pi/actions?workflow=Test Components & Apps" target="_blank" title="Tests"><img src="https://github.com/lancerael/pi/workflows/Tests/badge.svg"/></a>&nbsp;
 <a href="https://coveralls.io/github/lancerael/pi?branch=dev" target="_blank" title="Coverage"><img src="https://coveralls.io/repos/github/lancerael/pi/badge.svg?branch=dev"/></a>
 
 # pi-lib

@@ -11,11 +11,11 @@
     "charts",
     "axis"
   ],
-  "homepage": "https://pi.lance-taylor.com/?path=/story/molecules-charts-axischart",
+  "homepage": "https://pi.lance-taylor.com/?path=/story/visualisations-charts-axischart",
   "repository": {
     "type": "git",
     "url": "https://github.com/lancerael/pi.git",
-    "directory": "src/components/molecules/charts/AxisChart"
+    "directory": "src/components/visualisations/charts/AxisChart"
   },
   "license": "ISC",
   "author": "Lance Taylor",

@@ -9,9 +9,9 @@ A spacefaring scene that takes you through the stars.
 <table>
   <tbody>
     <tr>
-      <td><a href="https://pi.lance-taylor.com/" target="_blank">Docs</a></td>
+      <td><a href="https://pi.lance-taylor.com/?path=/story/visualisations-scenes-shimmer" target="_blank">Docs</a></td>
       <td><a href="https://www.npmjs.com/package/@pi-lib/stellar?activeTab=readme" target="_blank">NPM</a></td>
-      <td><a href="https://github.com/lancerael/pi/tree/main/./src/packages/components/scenes/Stellar" target="_blank">Github</a></td>
+      <td><a href="https://github.com/lancerael/pi/tree/main/./src/packages/components/visualisations/scenes/Stellar" target="_blank">Github</a></td>
     </tr>
   </tbody>
 </table>

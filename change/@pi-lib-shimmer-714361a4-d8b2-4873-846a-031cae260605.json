@@ -1,0 +1,7 @@
+{
+  "type": "minor",
+  "comment": "Added Shimmer text animation component",
+  "packageName": "@pi-lib/shimmer",
+  "email": "lancerael@googlemail.com",
+  "dependentChangeType": "patch"
+}
