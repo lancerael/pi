@@ -44,7 +44,7 @@ export const doTransition = ({
         intervalId,
       })
     } else {
-      callback(+target.toFixed(2))
+      callback?.(+target.toFixed(2))
     }
   }, interval)
   return clear
