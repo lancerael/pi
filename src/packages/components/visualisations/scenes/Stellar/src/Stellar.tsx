@@ -14,7 +14,7 @@ import {
   moveStar,
   randomNumber,
 } from './Stellar.helpers'
-import { useFramerate, useThrottledEvents } from '@pi-lib/utils'
+import { doTransition, useFramerate, useThrottledEvents } from '@pi-lib/utils'
 import { FPS_CUTOFF } from './Stellar.constants'
 
 /**
@@ -45,17 +45,28 @@ export const Stellar = memo(
     })
     const stellarRef = useRef<HTMLDivElement>(null)
     const contentRef = useRef<HTMLDivElement>(null)
+    const targetTransition = useRef<() => void>()
     const moveTimeout = useRef<NodeJS.Timeout>()
     const lastScroll = useRef(0)
     const framerate = useFramerate()
 
+    const setTarget = (x: number, y: number, speed: number) => {
+      targetTransition.current?.()
+      targetTransition.current = doTransition({
+        values: stellarCoords.current.target,
+        targets: [x, y],
+        callback: (newTarget) =>
+          (stellarCoords.current.target = newTarget as Coords),
+        intervalId: `stellarTarget`,
+        speed,
+      })
+    }
+
     const updateDimensions = useCallback(() => {
       if (!stellarRef.current) return
       const { clientWidth, clientHeight } = stellarRef.current
-      stellarCoords.current = {
-        dimensions: [clientWidth, clientHeight],
-        target: [clientWidth / 2, clientHeight / 2],
-      }
+      stellarCoords.current.dimensions = [clientWidth, clientHeight]
+      setTarget(clientWidth / 2, clientHeight / 2, 50)
     }, [])
 
     const scroll = useCallback(() => {
@@ -75,7 +86,7 @@ export const Stellar = memo(
 
     const starSpawm = useCallback(
       ({ clientX, clientY }: MouseEvent, isBurst: boolean) => {
-        stellarCoords.current.target = [clientX, clientY]
+        setTarget(clientX, clientY, 15)
         clearTimeout(moveTimeout.current)
 
         if (framerate.current.fps < FPS_CUTOFF) return
@@ -84,7 +95,7 @@ export const Stellar = memo(
           ...makeStars(
             isBurst ? randomNumber(1, 5) : 1,
             stellarCoords.current.dimensions,
-            stellarCoords.current.target
+            [clientX, clientY]
           )
         )
         moveTimeout.current = setTimeout(() => {
@@ -142,8 +153,11 @@ export const Stellar = memo(
 
     return (
       <StyledStellar ref={stellarRef}>
-        {showDebug &&
-          `Framerate: ${framerate.current.fps}. Total stars: ${stars.length}`}
+        {showDebug && (
+          <div>
+            Framerate: {framerate.current.fps}. Total stars: {stars.length}
+          </div>
+        )}
         {stars.map(({ id, style }) => (
           <StyledStar key={id} {...{ style }} />
         ))}

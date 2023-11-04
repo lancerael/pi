@@ -66,11 +66,22 @@ describe('useTouch Hook', () => {
   test('should handle drag correctly', async () => {
     await act(() => {
       firePointerEvent(target, 'pointerdown', 0, 10, 10)
+      firePointerEvent(global.window, 'pointermove', 0, 99, 99)
       firePointerEvent(global.window, 'pointermove', 0, 100, 100)
       firePointerEvent(target, 'pointerup', 0)
     })
     expect(zoomLevel).toBe(1)
     expect(panLevel).toEqual({ x: 90, y: 90 })
+  })
+
+  test('should handle swipe correctly', async () => {
+    await act(() => {
+      firePointerEvent(target, 'pointerdown', 0, 10, 10)
+      firePointerEvent(global.window, 'pointermove', 0, 50, 50)
+      firePointerEvent(target, 'pointerup', 0)
+    })
+    expect(zoomLevel).toBe(1)
+    expect(panLevel).toEqual({ x: 20, y: 20 })
   })
 
   test('should handle pinch correctly', async () => {

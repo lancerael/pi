@@ -34,9 +34,9 @@ export const Controls = ({
   const panBack = useCallback(() => {
     canPanBack &&
       doTransition({
-        value: panLevel.x,
-        target: panLevel.x + panSpeed,
-        callback: (x) => setPanLevel({ ...panLevel, x }),
+        values: [panLevel.x],
+        targets: [panLevel.x + panSpeed],
+        callback: ([x]) => setPanLevel({ ...panLevel, x }),
         intervalId: 'panBack',
       })
   }, [panLevel.x])
@@ -44,9 +44,9 @@ export const Controls = ({
   const panForward = useCallback(() => {
     canPanForward &&
       doTransition({
-        value: panLevel.x,
-        target: panLevel.x - panSpeed,
-        callback: (x) => setPanLevel({ ...panLevel, x }),
+        values: [panLevel.x],
+        targets: [panLevel.x - panSpeed],
+        callback: ([x]) => setPanLevel({ ...panLevel, x }),
         intervalId: 'panForward',
       })
   }, [panLevel.x])
@@ -55,9 +55,9 @@ export const Controls = ({
     () =>
       canZoomIn &&
       doTransition({
-        value: zoomLevel,
-        target: zoomLevel + zoomSpeed,
-        callback: setZoomLevel,
+        values: [zoomLevel],
+        targets: [zoomLevel + zoomSpeed],
+        callback: ([z]) => setZoomLevel(z),
       }),
     [zoomLevel]
   )
@@ -66,9 +66,9 @@ export const Controls = ({
     () =>
       canZoomOut &&
       doTransition({
-        value: zoomLevel,
-        target: zoomLevel - zoomSpeed,
-        callback: setZoomLevel,
+        values: [zoomLevel],
+        targets: [zoomLevel - zoomSpeed],
+        callback: ([z]) => setZoomLevel(z),
       }),
     [zoomLevel]
   )
