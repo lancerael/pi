@@ -2,6 +2,21 @@
   "name": "@pi-lib/world-map",
   "entries": [
     {
+      "date": "Sat, 04 Nov 2023 22:01:56 GMT",
+      "tag": "@pi-lib/world-map_v1.0.8",
+      "version": "1.0.8",
+      "comments": {
+        "none": [
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/world-map",
+            "commit": "2b33eca840af2b2095baa02b7442cae80fd8967a",
+            "comment": "Updated packages"
+          }
+        ]
+      }
+    },
+    {
       "date": "Sat, 04 Nov 2023 00:31:47 GMT",
       "tag": "@pi-lib/world-map_v1.0.8",
       "version": "1.0.8",

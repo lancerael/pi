@@ -1,0 +1,20 @@
+{
+  "name": "@pi-lib/shimmer",
+  "entries": [
+    {
+      "date": "Sat, 04 Nov 2023 22:01:56 GMT",
+      "tag": "@pi-lib/shimmer_v0.1.0",
+      "version": "0.1.0",
+      "comments": {
+        "minor": [
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/shimmer",
+            "commit": "2b33eca840af2b2095baa02b7442cae80fd8967a",
+            "comment": "Added Shimmer text animation component"
+          }
+        ]
+      }
+    }
+  ]
+}
