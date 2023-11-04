@@ -41,8 +41,6 @@ export const doTransition = ({
     return oldValue + distance / Math.abs(speed)
   })
 
-  console.log(values, targets, newValues)
-
   if (!isFinished) {
     callback(newValues)
     timeouts[intervalId] = setTimeout(() => {
