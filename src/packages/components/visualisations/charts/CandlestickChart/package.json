@@ -12,11 +12,11 @@
     "charts",
     "candlestick"
   ],
-  "homepage": "https://pi.lance-taylor.com/?path=/story/molecules-charts-candlestickchart",
+  "homepage": "https://pi.lance-taylor.com/?path=/story/visualisations-charts-candlestickchart",
   "repository": {
     "type": "git",
     "url": "https://github.com/lancerael/pi.git",
-    "directory": "src/components/molecules/charts/CandlestickChart"
+    "directory": "src/components/visualisations/charts/CandlestickChart"
   },
   "license": "ISC",
   "author": "Lance Taylor",
