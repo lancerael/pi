@@ -2,6 +2,41 @@
   "name": "@pi-lib/utils",
   "entries": [
     {
+      "date": "Sat, 04 Nov 2023 00:31:47 GMT",
+      "tag": "@pi-lib/utils_v2.2.0",
+      "version": "2.2.0",
+      "comments": {
+        "patch": [
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/utils",
+            "commit": "101f10bb54a8caf0c307d1f3290fafccf5a41501",
+            "comment": "TS fix"
+          },
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/utils",
+            "commit": "101f10bb54a8caf0c307d1f3290fafccf5a41501",
+            "comment": "Fix TS error in doTransition"
+          }
+        ],
+        "minor": [
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/utils",
+            "commit": "101f10bb54a8caf0c307d1f3290fafccf5a41501",
+            "comment": "Code cleanup"
+          },
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/utils",
+            "commit": "101f10bb54a8caf0c307d1f3290fafccf5a41501",
+            "comment": "performance tweaks"
+          }
+        ]
+      }
+    },
+    {
       "date": "Mon, 30 Oct 2023 00:05:19 GMT",
       "tag": "@pi-lib/utils_v2.1.0",
       "version": "2.1.0",
