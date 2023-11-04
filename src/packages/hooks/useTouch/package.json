@@ -1,6 +1,6 @@
 {
   "name": "@pi-lib/use-touch",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Hook used to add touch controls to a React component",
   "keywords": [
     "react",

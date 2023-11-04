@@ -1,7 +1,0 @@
-{
-  "type": "minor",
-  "comment": "stellar performance enhancements",
-  "packageName": "@pi-lib/stellar",
-  "email": "lancerael@googlemail.com",
-  "dependentChangeType": "patch"
-}

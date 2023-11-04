@@ -1,8 +1,22 @@
 # Change Log - @pi-lib/utils
 
-This log was last generated on Mon, 30 Oct 2023 00:05:19 GMT and should not be manually modified.
+This log was last generated on Sat, 04 Nov 2023 00:31:47 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 2.2.0
+
+Sat, 04 Nov 2023 00:31:47 GMT
+
+### Minor changes
+
+- Code cleanup (lancerael@googlemail.com)
+- performance tweaks (lancerael@googlemail.com)
+
+### Patches
+
+- TS fix (lancerael@googlemail.com)
+- Fix TS error in doTransition (lancerael@googlemail.com)
 
 ## 2.1.0
 
