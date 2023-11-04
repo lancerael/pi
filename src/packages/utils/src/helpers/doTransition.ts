@@ -34,7 +34,7 @@ export const doTransition = ({
   const newValue = +(value + +(distance / Math.abs(speed))).toFixed(2)
   timeouts[intervalId] = setTimeout(() => {
     if (Math.abs(distance) > 5) {
-      callback(newValue)
+      callback?.(newValue)
       doTransition({
         value: newValue,
         target: +target.toFixed(2),

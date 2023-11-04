@@ -1,0 +1,7 @@
+{
+  "type": "patch",
+  "comment": "Fix TS error in doTransition",
+  "packageName": "@pi-lib/utils",
+  "email": "lancerael@googlemail.com",
+  "dependentChangeType": "patch"
+}
