@@ -1,8 +1,16 @@
 # Change Log - @pi-lib/utils
 
-This log was last generated on Sat, 04 Nov 2023 00:31:47 GMT and should not be manually modified.
+This log was last generated on Sat, 04 Nov 2023 19:22:46 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 3.0.0
+
+Sat, 04 Nov 2023 19:22:46 GMT
+
+### Major changes
+
+- Updated doTransition to support multiple values (lancerael@googlemail.com)
 
 ## 2.2.0
 

@@ -2,6 +2,21 @@
   "name": "@pi-lib/use-touch",
   "entries": [
     {
+      "date": "Sat, 04 Nov 2023 19:22:46 GMT",
+      "tag": "@pi-lib/use-touch_v1.2.0",
+      "version": "1.2.0",
+      "comments": {
+        "minor": [
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/use-touch",
+            "commit": "071ca5d23731b9ef2f045990163791862a7cc179",
+            "comment": "Updated doTransition to support multiple values"
+          }
+        ]
+      }
+    },
+    {
       "date": "Sun, 29 Oct 2023 21:38:21 GMT",
       "tag": "@pi-lib/use-touch_v1.1.0",
       "version": "1.1.0",

@@ -2,6 +2,21 @@
   "name": "@pi-lib/candlestick-chart",
   "entries": [
     {
+      "date": "Sat, 04 Nov 2023 19:22:46 GMT",
+      "tag": "@pi-lib/candlestick-chart_v2.6.0",
+      "version": "2.6.0",
+      "comments": {
+        "minor": [
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/candlestick-chart",
+            "commit": "071ca5d23731b9ef2f045990163791862a7cc179",
+            "comment": "Updated doTransition to support multiple values"
+          }
+        ]
+      }
+    },
+    {
       "date": "Sat, 04 Nov 2023 00:31:47 GMT",
       "tag": "@pi-lib/candlestick-chart_v2.5.2",
       "version": "2.5.2",

@@ -1,8 +1,16 @@
 # Change Log - @pi-lib/candlestick-chart
 
-This log was last generated on Sun, 29 Oct 2023 21:38:21 GMT and should not be manually modified.
+This log was last generated on Sat, 04 Nov 2023 19:22:46 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 2.6.0
+
+Sat, 04 Nov 2023 19:22:46 GMT
+
+### Minor changes
+
+- Updated doTransition to support multiple values (lancerael@googlemail.com)
 
 ## 2.5.0
 

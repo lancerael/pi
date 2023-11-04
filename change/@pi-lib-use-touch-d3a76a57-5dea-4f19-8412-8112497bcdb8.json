@@ -1,7 +1,0 @@
-{
-  "type": "minor",
-  "comment": "Updated doTransition to support multiple values",
-  "packageName": "@pi-lib/use-touch",
-  "email": "lancerael@googlemail.com",
-  "dependentChangeType": "patch"
-}

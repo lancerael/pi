@@ -2,6 +2,21 @@
   "name": "@pi-lib/stellar",
   "entries": [
     {
+      "date": "Sat, 04 Nov 2023 19:22:46 GMT",
+      "tag": "@pi-lib/stellar_v1.2.0",
+      "version": "1.2.0",
+      "comments": {
+        "minor": [
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/stellar",
+            "commit": "071ca5d23731b9ef2f045990163791862a7cc179",
+            "comment": "Added transition to stellar target update"
+          }
+        ]
+      }
+    },
+    {
       "date": "Sat, 04 Nov 2023 00:31:47 GMT",
       "tag": "@pi-lib/stellar_v1.1.0",
       "version": "1.1.0",
