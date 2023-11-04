@@ -92,26 +92,24 @@ export const useTouch = <T = HTMLElement>({
    */
   const stop = useCallback(
     (e: PointerEvent) => {
-      const swipeAxis = (axis: 'x' | 'y') => {
-        const oldChange = trackers.current.oldPanChange[axis]
-        if (Math.abs(oldChange) > 5) {
-          const value = controls.panLevel[axis]
-          const offset = Math.round(oldChange * 5) * controls.zoomLevel
-          trackers.current.clearTransition = doTransition({
-            value,
-            target: value + offset,
-            callback: (val) =>
-              controls.setPanLevel((panLevel) => ({
-                ...panLevel,
-                [axis]: val,
-              })),
-            speed: 10,
-            intervalId: `swipe-${axis}`,
-          })
-        }
+      const { x, y } = trackers.current.oldPanChange
+      if (Math.abs(x) + Math.abs(y) > 10) {
+        const values = Object.values(controls.panLevel)
+        const targets = [x, y].map(
+          (old, i) => values[i] + Math.round(old * 5) * controls.zoomLevel
+        )
+        trackers.current.clearTransition = doTransition({
+          values,
+          targets,
+          callback: ([newX, newY]) =>
+            controls.setPanLevel(() => ({
+              x: newX,
+              y: newY,
+            })),
+          speed: 10,
+          intervalId: `swipe`,
+        })
       }
-      swipeAxis('x')
-      swipeAxis('y')
       trackers.current.oldPanChange = { x: 0, y: 0 }
       trackers.current.isPressed = false
       delete trackers.current.activePointers[e.pointerId]

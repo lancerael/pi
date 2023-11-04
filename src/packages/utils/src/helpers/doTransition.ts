@@ -1,9 +1,9 @@
 const timeouts: { [key: string]: NodeJS.Timeout } = {}
 
 export interface TransitionProps {
-  value: number
-  target: number
-  callback?: (newNumber: number) => void
+  values: number[]
+  targets: number[]
+  callback?: (newValue: number[]) => void
   speed?: number
   interval?: number
   intervalId?: string
@@ -12,8 +12,8 @@ export interface TransitionProps {
 /**
  * Used to transition a value with a callback
  * @param {Object} props - The properties object
- * @param {number} props.value - The starting value
- * @param {number} props.target - The target value
+ * @param {number[]} props.value - The starting values an array
+ * @param {number[]} props.target - The target values
  * @param {Function} props.callback - The method to call with each intermediate number
  * @param {number} [props.speed=10] - The speed to transition (number of increments)
  * @param {number} [props.interval=15] - The wait time between each increment
@@ -21,31 +21,41 @@ export interface TransitionProps {
  * @returns {Function} A function that, when called, will clear the timeout
  */
 export const doTransition = ({
-  value,
-  target,
+  values,
+  targets,
   callback,
   speed = 10,
   interval = 15,
   intervalId = 'default',
 }: TransitionProps): (() => void) => {
+  if (values.length !== targets.length)
+    throw new Error('Transition values do not match targets.')
   const clear = () => clearTimeout(timeouts[intervalId])
   clear()
-  let distance = +(target - value).toFixed(2)
-  const newValue = +(value + +(distance / Math.abs(speed))).toFixed(2)
-  timeouts[intervalId] = setTimeout(() => {
-    if (Math.abs(distance) > 5) {
-      callback?.(newValue)
+  let isFinished = true
+
+  const newValues = values.map((oldValue, i) => {
+    const distance = targets[i] - oldValue
+    if (Math.abs(distance) < 5) return targets[i]
+    isFinished = false
+    return oldValue + distance / Math.abs(speed)
+  })
+
+  if (!isFinished) {
+    callback(newValues)
+    timeouts[intervalId] = setTimeout(() => {
       doTransition({
-        value: newValue,
-        target: +target.toFixed(2),
+        values: newValues,
+        targets,
         callback,
         speed,
         interval,
         intervalId,
       })
-    } else {
-      callback?.(+target.toFixed(2))
-    }
-  }, interval)
+    }, interval)
+  } else {
+    callback(targets)
+  }
+
   return clear
 }

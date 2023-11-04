@@ -45,7 +45,7 @@ export const useCandles = (
     item: undefined,
     position: undefined,
   })
-  const doTransition =
+  const hasTransition =
     prevLastItem.current?.date === lastItem?.date &&
     prevLastItem.current?.close !== lastItem?.close
   prevLastItem.current = structuredClone(lastItem)
@@ -56,7 +56,7 @@ export const useCandles = (
   // Bind the data to the chosen type of bars
   const bindData = useCallback(
     (type: BarType, parent: SVGSelection = getSvg() as SVGSelection) => {
-      !doTransition &&
+      !hasTransition &&
         parent.selectAll(`${typeMap[type]}.${type}`).data([]).exit().remove()
       return parent
         .selectAll(`${typeMap[type]}.${type}`)
@@ -112,7 +112,7 @@ export const useCandles = (
       }
 
       const getTransition = () =>
-        doTransition ? bars.transition().duration(TRANSITION_TIME) : bars
+        hasTransition ? bars.transition().duration(TRANSITION_TIME) : bars
 
       const x = (d: CandlestickDayData) =>
         Number(xScale(d.date)) +

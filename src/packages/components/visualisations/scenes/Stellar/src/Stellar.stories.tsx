@@ -85,6 +85,7 @@ const meta: Meta<typeof Stellar> = {
 export const Default: StoryObj<typeof Stellar> = {
   args: {
     starCount: 10,
+    isTravelling: true,
     showDebug: true,
   },
   render,

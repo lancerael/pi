@@ -14,39 +14,59 @@ import {
   moveStar,
   randomNumber,
 } from './Stellar.helpers'
-import { useFramerate, useThrottledEvents } from '@pi-lib/utils'
+import { doTransition, useFramerate, useThrottledEvents } from '@pi-lib/utils'
 import { FPS_CUTOFF } from './Stellar.constants'
 
 /**
  * A spacefaring scene that takes you through the stars.
+ * React component that renders a starfield animation. Stars can be dynamically
+ * added to the scene by mouse movement or clicks. The component also handles screen
+ * resizing and star movement over time.
+ *
+ * @param {StellarProps} props - The props for the Stellar component.
+ * @param {number} props.starCount - Initial number of stars to render.
+ * @param {boolean} props.isTravelling - Whether the stars should move.
+ * @param {boolean} props.showDebug - Whether to display debug information.
+ * @param {React.ReactNode} props.children - Child components to be rendered inside the Stellar component.
+ * @returns {JSX.Element} - A styled starfield animation with interactive star spawning.
  */
 export const Stellar = memo(
   ({
     starCount = 10,
     isTravelling = true,
     showDebug = false,
-    // speed = 10,
     children,
   }: StellarProps) => {
     const [stars, setStars] = useState<StarStyle[]>([])
+    const starTracker = useRef<Star[]>([])
     const stellarCoords = useRef<StellarCoords>({
       dimensions: [0, 0],
       target: [0, 0],
     })
     const stellarRef = useRef<HTMLDivElement>(null)
     const contentRef = useRef<HTMLDivElement>(null)
+    const targetTransition = useRef<() => void>()
     const moveTimeout = useRef<NodeJS.Timeout>()
     const lastScroll = useRef(0)
-    const starTracker = useRef<Star[]>([])
     const framerate = useFramerate()
+
+    const setTarget = (x: number, y: number, speed: number) => {
+      targetTransition.current?.()
+      targetTransition.current = doTransition({
+        values: stellarCoords.current.target,
+        targets: [x, y],
+        callback: (newTarget) =>
+          (stellarCoords.current.target = newTarget as Coords),
+        intervalId: `stellarTarget`,
+        speed,
+      })
+    }
 
     const updateDimensions = useCallback(() => {
       if (!stellarRef.current) return
       const { clientWidth, clientHeight } = stellarRef.current
-      stellarCoords.current = {
-        dimensions: [clientWidth, clientHeight],
-        target: [clientWidth / 2, clientHeight / 2],
-      }
+      stellarCoords.current.dimensions = [clientWidth, clientHeight]
+      setTarget(clientWidth / 2, clientHeight / 2, 50)
     }, [])
 
     const scroll = useCallback(() => {
@@ -66,7 +86,7 @@ export const Stellar = memo(
 
     const starSpawm = useCallback(
       ({ clientX, clientY }: MouseEvent, isBurst: boolean) => {
-        stellarCoords.current.target = [clientX, clientY]
+        setTarget(clientX, clientY, 15)
         clearTimeout(moveTimeout.current)
 
         if (framerate.current.fps < FPS_CUTOFF) return
@@ -75,7 +95,7 @@ export const Stellar = memo(
           ...makeStars(
             isBurst ? randomNumber(1, 5) : 1,
             stellarCoords.current.dimensions,
-            stellarCoords.current.target
+            [clientX, clientY]
           )
         )
         moveTimeout.current = setTimeout(() => {
@@ -113,7 +133,7 @@ export const Stellar = memo(
         if (!starTracker.current.length) return
         const { dimensions, target } = stellarCoords.current
         const { fps } = framerate.current
-        if (!fps || fps > FPS_CUTOFF) {
+        if (!fps || (fps > FPS_CUTOFF && isTravelling)) {
           starTracker.current.push(
             ...makeStars(
               randomNumber(1, fps > FPS_CUTOFF + 10 ? 2 : 1),
@@ -133,8 +153,11 @@ export const Stellar = memo(
 
     return (
       <StyledStellar ref={stellarRef}>
-        {showDebug &&
-          `Framerate: ${framerate.current.fps}. Total stars: ${stars.length}`}
+        {showDebug && (
+          <div>
+            Framerate: {framerate.current.fps}. Total stars: {stars.length}
+          </div>
+        )}
         {stars.map(({ id, style }) => (
           <StyledStar key={id} {...{ style }} />
         ))}
