@@ -19,6 +19,16 @@ import { FPS_CUTOFF } from './Stellar.constants'
 
 /**
  * A spacefaring scene that takes you through the stars.
+ * React component that renders a starfield animation. Stars can be dynamically
+ * added to the scene by mouse movement or clicks. The component also handles screen
+ * resizing and star movement over time.
+ *
+ * @param {StellarProps} props - The props for the Stellar component.
+ * @param {number} props.starCount - Initial number of stars to render.
+ * @param {boolean} props.isTravelling - Whether the stars should move.
+ * @param {boolean} props.showDebug - Whether to display debug information.
+ * @param {React.ReactNode} props.children - Child components to be rendered inside the Stellar component.
+ * @returns {JSX.Element} - A styled starfield animation with interactive star spawning.
  */
 export const Stellar = memo(
   ({
