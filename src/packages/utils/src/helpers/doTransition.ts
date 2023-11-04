@@ -3,7 +3,7 @@ const timeouts: { [key: string]: NodeJS.Timeout } = {}
 export interface TransitionProps {
   values: number[]
   targets: number[]
-  callback?: (newValue: number[]) => void
+  callback: (newValue: number[]) => void
   speed?: number
   interval?: number
   intervalId?: string
