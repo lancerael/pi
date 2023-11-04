@@ -1,0 +1,7 @@
+{
+  "type": "major",
+  "comment": "Updated doTransition to support multiple values",
+  "packageName": "@pi-lib/utils",
+  "email": "lancerael@googlemail.com",
+  "dependentChangeType": "patch"
+}

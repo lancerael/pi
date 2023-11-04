@@ -1,0 +1,7 @@
+{
+  "type": "minor",
+  "comment": "Added transition to stellar target update",
+  "packageName": "@pi-lib/stellar",
+  "email": "lancerael@googlemail.com",
+  "dependentChangeType": "patch"
+}
