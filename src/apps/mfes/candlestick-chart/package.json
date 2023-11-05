@@ -24,7 +24,7 @@
     "react-dom": "^18.2.0",
     "react-redux": "^7.1.1",
     "redux": "^4.0.0",
-    "styled-components": "^5.3.11"
+    "styled-components": "^6.1.0"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.1.0",
