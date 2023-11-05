@@ -1,0 +1,7 @@
+{
+  "type": "patch",
+  "comment": "Bumped styled components",
+  "packageName": "@pi-lib/modal-screen",
+  "email": "lancerael@hotmail.com",
+  "dependentChangeType": "patch"
+}

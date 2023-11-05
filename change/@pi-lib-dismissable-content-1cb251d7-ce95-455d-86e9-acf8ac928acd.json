@@ -1,0 +1,7 @@
+{
+  "type": "patch",
+  "comment": "Bumped styled components",
+  "packageName": "@pi-lib/dismissable-content",
+  "email": "lancerael@hotmail.com",
+  "dependentChangeType": "patch"
+}
