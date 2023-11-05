@@ -4,7 +4,7 @@
 
 A React component for a table with expandable rows
 
-**Dependencies:** @pi-lib/styles, react, styled-components
+**Dependencies:** @pi-lib/styles, react
 
 <table>
   <tbody>

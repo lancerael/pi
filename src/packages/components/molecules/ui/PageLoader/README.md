@@ -4,7 +4,7 @@
 
 A React component for a page blocking loader
 
-**Dependencies:** @pi-lib/loader, @pi-lib/modal-screen, @pi-lib/styles, react, styled-components
+**Dependencies:** @pi-lib/loader, @pi-lib/modal-screen, @pi-lib/styles, react
 
 <table>
   <tbody>

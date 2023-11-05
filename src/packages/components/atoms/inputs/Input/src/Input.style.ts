@@ -5,7 +5,7 @@ import { StyledTextInputProps } from './Input.style.types'
 /**
  * The container element for the component wrapper
  */
-export const StyledInput = styled.div<StyledTextInputProps>`
+export const StyledInput = styled.div`
   display: flex;
   align-items: center;
 
@@ -18,6 +18,6 @@ export const StyledInput = styled.div<StyledTextInputProps>`
     width: 100%;
     flex-grow: 1;
 
-    ${({ type }) => formInput(type === 'color')}
+    ${({ type }: StyledTextInputProps) => formInput(type === 'color')}
   }
 `

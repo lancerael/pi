@@ -4,7 +4,7 @@
 
 A React component for a router optional link
 
-**Dependencies:** @pi-lib/styles, react, react-router-dom, styled-components
+**Dependencies:** @pi-lib/styles, react, react-router-dom
 
 <table>
   <tbody>
