@@ -1,12 +1,12 @@
 import styled from 'styled-components'
-import { StyledItemListProps } from './ItemList.styles.types'
+import { ItemListProps } from './IndexList.types'
 
 /**
  * Wrapper element for the list of items
  */
-export const StyledItemList = styled.div<StyledItemListProps>`
+export const StyledItemList = styled.div`
   display: flex;
   gap: 8px;
-  ${({ doWrap }) =>
+  ${({ doWrap }: Pick<ItemListProps, 'doWrap'>) =>
     !!doWrap ? 'flex-wrap: wrap;' : 'justify-content: flex-end;'}
 `

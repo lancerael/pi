@@ -4,7 +4,7 @@
 
 A React component to handle various types of form input
 
-**Dependencies:** @pi-lib/styles, react, styled-components
+**Dependencies:** @pi-lib/styles, react
 
 <table>
   <tbody>

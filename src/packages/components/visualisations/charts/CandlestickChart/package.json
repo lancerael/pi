@@ -52,7 +52,6 @@
     "d3-scale": "^4.0.2",
     "d3-selection": "^3.0.0",
     "d3-transition": "^3.0.1",
-    "react": "^18.2.0",
-    "styled-components": "^6.1.0"
+    "react": "^18.2.0"
   }
 }

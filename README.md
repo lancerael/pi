@@ -62,7 +62,7 @@ A banner React component that can be used for a header or footer
 
 A React button component with a status
 
-**Dependencies:** @pi-lib/styles, @pi-lib/utils, react, styled-components
+**Dependencies:** @pi-lib/styles, @pi-lib/utils, react
 
 <table>
   <tbody>
@@ -80,7 +80,7 @@ A React button component with a status
 
 A React component for a special button with an icon
 
-**Dependencies:** @pi-lib/styles, @pi-lib/utils, react, react-svg, styled-components
+**Dependencies:** @pi-lib/styles, @pi-lib/utils, react, react-svg
 
 <table>
   <tbody>
@@ -98,7 +98,7 @@ A React component for a special button with an icon
 
 A React component for a router optional link
 
-**Dependencies:** @pi-lib/styles, react, react-router-dom, styled-components
+**Dependencies:** @pi-lib/styles, react, react-router-dom
 
 <table>
   <tbody>
@@ -116,7 +116,7 @@ A React component for a router optional link
 
 A React component used to block out the screen with modal content
 
-**Dependencies:** @pi-lib/styles, react, styled-components
+**Dependencies:** @pi-lib/styles, react
 
 <table>
   <tbody>
@@ -134,7 +134,7 @@ A React component used to block out the screen with modal content
 
 A React component used to show and position a tooltip containing content
 
-**Dependencies:** @pi-lib/styles, @pi-lib/utils, react, styled-components
+**Dependencies:** @pi-lib/styles, @pi-lib/utils, react
 
 <table>
   <tbody>
@@ -172,7 +172,7 @@ A React component for an advanced button with a built in loader
 
 A React component for an expanding/collapsing menu with icons
 
-**Dependencies:** @pi-lib/icon, @pi-lib/styles, @pi-lib/utils, react, react-aria, react-aria-components, react-stately, styled-components
+**Dependencies:** @pi-lib/icon, @pi-lib/styles, @pi-lib/utils, react, react-aria, react-aria-components, react-stately
 
 <table>
   <tbody>
@@ -208,7 +208,7 @@ Modal for custom content that allows dismissal internally or externally
 
 A React component for a page layout with a sidebar
 
-**Dependencies:** @pi-lib/styles, react, styled-components
+**Dependencies:** @pi-lib/styles, react
 
 <table>
   <tbody>
@@ -226,7 +226,7 @@ A React component for a page layout with a sidebar
 
 A React component for a page blocking loader
 
-**Dependencies:** @pi-lib/loader, @pi-lib/modal-screen, @pi-lib/styles, react, styled-components
+**Dependencies:** @pi-lib/loader, @pi-lib/modal-screen, @pi-lib/styles, react
 
 <table>
   <tbody>
@@ -244,7 +244,7 @@ A React component for a page blocking loader
 
 A React component for a table with expandable rows
 
-**Dependencies:** @pi-lib/styles, react, styled-components
+**Dependencies:** @pi-lib/styles, react
 
 <table>
   <tbody>
