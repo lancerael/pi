@@ -1,9 +1,6 @@
 import styled, { css } from 'styled-components'
 import { box } from '@pi-lib/styles'
-import {
-  StyledIconButtonProps,
-  StyledIconType,
-} from './IconButton.style.types'
+import { StyledIconButtonProps, StyledIconType } from './IconButton.style.types'
 import { ReactSVG } from 'react-svg'
 
 /**

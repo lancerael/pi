@@ -1,6 +1,5 @@
-import { IStyledComponent } from 'styled-components'
 import { IconButtonProps } from './IconButton.types'
-import { Substitute } from 'styled-components/dist/types'
+import { CustomStyledType } from '@pi-lib/styles'
 
 /**
  * The props for the styled icon button
@@ -15,4 +14,7 @@ export type StyledIconProps = Pick<
   'size' | '$isFilled' | '$isStroked'
 >
 
-export type StyledIconType = IStyledComponent<"web", Substitute<React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>, StyledIconProps>>
+export type StyledIconType = CustomStyledType<
+  HTMLButtonElement,
+  StyledIconProps
+>
