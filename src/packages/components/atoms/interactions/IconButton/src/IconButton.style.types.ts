@@ -1,4 +1,5 @@
 import { IconButtonProps } from './IconButton.types'
+import { CustomStyledType } from '@pi-lib/styles'
 
 /**
  * The props for the styled icon button
@@ -10,5 +11,10 @@ export type StyledIconButtonProps = Pick<IconButtonProps, 'size'>
  */
 export type StyledIconProps = Pick<
   IconButtonProps,
-  'src' | '$isFilled' | '$isStroked'
+  'size' | '$isFilled' | '$isStroked'
+>
+
+export type StyledIconType = CustomStyledType<
+  HTMLButtonElement,
+  StyledIconProps
 >

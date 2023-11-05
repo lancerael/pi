@@ -8,8 +8,8 @@ import { gradient } from '@pi-lib/styles'
 /**
  * The main container element for the styles
  */
-export const StyledDismissableContent = styled.div(
-  ({ isVisible, isPresent }: StyledDismissableContentProps) => {
+export const StyledDismissableContent =
+  styled.div<StyledDismissableContentProps>(({ isVisible, isPresent }) => {
     return css`
       border: 1px solid var(--textStrong);
       ${gradient({ name: 'alt' })}
@@ -22,8 +22,7 @@ export const StyledDismissableContent = styled.div(
       position: relative;
       min-width: 25%;
     `
-  }
-)
+  })
 
 /**
  * The button used to close the content
@@ -44,8 +43,8 @@ export const StyledClose = styled.div`
 /**
  * The timer element for automatically closing content
  */
-export const StyledTimer = styled.div(
-  ({ isTimerTriggered, timerInterval }: StyledTimerProps) => {
+export const StyledTimer = styled.div<StyledTimerProps>(
+  ({ isTimerTriggered, timerInterval }) => {
     return css`
       position: absolute;
       left: 0px;

@@ -4,8 +4,8 @@ import { StyledModalScreenProps } from './ModalScreen.style.types'
 /**
  * The main container element for the modal screen styles
  */
-export const StyledModalScreen = styled.div(
-  ({ isActive, isVisible }: StyledModalScreenProps) => css`
+export const StyledModalScreen = styled.div<StyledModalScreenProps>(
+  ({ isActive, isVisible }) => css`
     position: fixed;
     top: 0;
     left: 0;

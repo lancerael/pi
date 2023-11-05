@@ -16,8 +16,8 @@ export const StyledControls = styled.div`
   }
 `
 
-export const StyledEmoji = styled.div(
-  ({ rotate }: { rotate: number }) => css`
+export const StyledEmoji = styled.div<{ rotate: number }>(
+  ({ rotate }) => css`
     rotate: ${rotate}deg;
   `
 )

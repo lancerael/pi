@@ -26,8 +26,8 @@ const circle = (isLarge: Boolean) => keyframes`
 /**
  * The main container for the loader styles
  */
-export const StyledLoader = styled.div(
-  ({ isLarge }: LoaderProps) => css`
+export const StyledLoader = styled.div<LoaderProps>(
+  ({ isLarge }) => css`
     width: ${isLarge ? '58px' : '24px'};
     height: ${isLarge ? '58px' : '24px'};
     margin: -7px 0;
@@ -63,8 +63,8 @@ export const StyledCircleRow = styled.div`
 /**
  * The style for each individual circle
  */
-export const StyledCircle = styled.div(
-  ({ hasDelay, isLarge = false }: StyledCircleProps) => css`
+export const StyledCircle = styled.div<StyledCircleProps>(
+  ({ hasDelay, isLarge = false }) => css`
     width: ${isLarge ? '25px' : '7px'};
     height: ${isLarge ? '25px' : '7px'};
     margin: 2px;

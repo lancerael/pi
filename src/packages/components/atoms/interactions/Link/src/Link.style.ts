@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components'
-import { StyledLinkProps } from './Link.style.types'
+import { StyledLinkProps, StyledLinkType } from './Link.style.types'
 import { Link } from 'react-router-dom'
 
 /**
@@ -40,16 +40,16 @@ const getLinkStyle = ({ $isMain, $isInactive }: StyledLinkProps) => {
 /**
  * A styled link for use with React router
  */
-export const StyledRouterLink = styled(Link)`
-  ${(props: StyledLinkProps) => getLinkStyle(props)}
+export const StyledRouterLink: StyledLinkType = styled(Link)`
+  ${(props) => getLinkStyle(props)}
 `
 
 /**
  * A styled link component for use as a standard link
  */
-export const StyledLink = styled.a(getLinkStyle)
+export const StyledLink: StyledLinkType = styled.a(getLinkStyle)
 
 /**
  * A styled span component for use as an inactive link
  */
-export const StyledSpan = styled.span(getLinkStyle)
+export const StyledSpan: StyledLinkType = styled.span(getLinkStyle)

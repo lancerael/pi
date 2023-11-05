@@ -5,8 +5,8 @@ import { StyledTooltipProps } from './Tooltip.style.types'
 /**
  * The main container for the tooltip styles
  */
-export const StyledTooltip = styled.div(
-  ({ isVisible = false, isRendered = false }: StyledTooltipProps) => css`
+export const StyledTooltip = styled.div<StyledTooltipProps>(
+  ({ isVisible = false, isRendered = false }) => css`
     position: absolute;
     transition: all 0.2s;
     opacity: ${isVisible ? 0.9 : 0};

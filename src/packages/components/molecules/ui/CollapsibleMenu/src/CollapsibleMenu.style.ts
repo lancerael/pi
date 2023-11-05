@@ -1,7 +1,10 @@
 import styled, { css } from 'styled-components'
 import { Button } from 'react-aria-components'
 import { box } from '@pi-lib/styles'
-import { StyledCollapsibleMenuProps } from './CollapsibleMenu.style.types'
+import {
+  StyledCollapsibleMenuProps,
+  StyledLinkType,
+} from './CollapsibleMenu.style.types'
 
 /**
  * The main container for the menu styles
@@ -18,7 +21,7 @@ export const StyledContainer = styled.div`
 /**
  * The styles for the opener Button
  */
-export const StyledOpener = styled(Button)`
+export const StyledOpener: StyledLinkType = styled(Button)`
   background: none;
   cursor: pointer;
   position: absolute;
@@ -28,7 +31,7 @@ export const StyledOpener = styled(Button)`
   border-radius: 5px;
   border: 1px solid rgba(0, 0, 0, 0%);
   transition-delay: 0.05s;
-  ${({ isOpen }: StyledCollapsibleMenuProps) =>
+  ${({ isOpen }) =>
     isOpen &&
     css`
       ${box({ name: 'alt' })}
@@ -50,8 +53,8 @@ export const StyledOpener = styled(Button)`
 /**
  * The container for the styles in the collapsible part of the menu
  */
-export const StyledCollapsibleMenu = styled.div(
-  ({ isOpen }: StyledCollapsibleMenuProps) => css`
+export const StyledCollapsibleMenu = styled.div<StyledCollapsibleMenuProps>(
+  ({ isOpen }) => css`
     ${box({ name: 'alt' })}
     border-radius: 5px 0 5px 5px;
     opacity: ${isOpen ? 1 : 0};
@@ -67,8 +70,8 @@ export const StyledCollapsibleMenu = styled.div(
 /**
  * The styles for the innper part of the collapsible menu
  */
-export const StyledMenuInner = styled.div(
-  ({ isOpen }: StyledCollapsibleMenuProps) => css`
+export const StyledMenuInner = styled.div<StyledCollapsibleMenuProps>(
+  ({ isOpen }) => css`
     margin-top: ${isOpen ? '0' : '-200px'};
     display: flex;
     flex-direction: column;

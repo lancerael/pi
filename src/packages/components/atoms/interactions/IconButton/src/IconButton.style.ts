@@ -1,16 +1,13 @@
 import styled, { css } from 'styled-components'
 import { box } from '@pi-lib/styles'
-import {
-  StyledIconButtonProps,
-  StyledIconProps,
-} from './IconButton.style.types'
+import { StyledIconButtonProps, StyledIconType } from './IconButton.style.types'
 import { ReactSVG } from 'react-svg'
 
 /**
  * The main styles for the icon button
  */
-export const StyledIconButton = styled.a(
-  ({ size }: StyledIconButtonProps) => css`
+export const StyledIconButton = styled.a<StyledIconButtonProps>(
+  ({ size }) => css`
     ${box()}
     cursor: pointer;
     display: inline-block;
@@ -28,10 +25,10 @@ export const StyledIconButton = styled.a(
 /**
  * The styles for the SVG element
  */
-export const StyledIcon = styled(ReactSVG)`
+export const StyledIcon: StyledIconType = styled(ReactSVG)`
   > div {
     aspect-ratio: 1 / 1;
-    ${({ size }: StyledIconButtonProps) => css`
+    ${({ size }) => css`
       aspect-ratio: 1 / 1;
       height: ${size};
     `}
@@ -40,10 +37,10 @@ export const StyledIcon = styled(ReactSVG)`
   svg {
     width: 100%;
     height: 100%;
-    ${({ $isFilled }: StyledIconProps) => $isFilled && 'fill: var(--dark);'}
+    ${({ $isFilled }) => $isFilled && 'fill: var(--dark);'}
   }
 
   path {
-    ${({ $isStroked }: StyledIconProps) => $isStroked && 'stroke: var(--dark);'}
+    ${({ $isStroked }) => $isStroked && 'stroke: var(--dark);'}
   }
 `

@@ -4,8 +4,8 @@ import { StyledColumnProps } from './Layout.types'
 /**
  *
  */
-export const StyledColumn = styled.div(
-  ({ maxWidth, isCollapsible }: StyledColumnProps) => {
+export const StyledColumn = styled.div<StyledColumnProps>(
+  ({ maxWidth, isCollapsible }) => {
     return css`
       max-width: ${maxWidth ?? '100%'};
       min-height: 100%;
