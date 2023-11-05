@@ -40,6 +40,7 @@
     "@pi-lib/loader": "workspace:^",
     "@pi-lib/modal-screen": "workspace:^",
     "@pi-lib/styles": "workspace:^",
-    "react": "^18.2.0"
+    "react": "^18.2.0",
+    "styled-components": "^6.1.0"
   }
 }
