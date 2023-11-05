@@ -6,8 +6,8 @@ import { StyledButtonProps } from './Button.style.types'
 /**
  * The main styles for the button
  */
-export const StyledButton = styled.button(
-  ({ status, isCompact, isInverted }: StyledButtonProps) => {
+export const StyledButton = styled.button<StyledButtonProps>(
+  ({ status, isCompact, isInverted }) => {
     return css`
       ${box({ isInverted })}
       ${status === 'default' ? `var(--${status})` : ''};

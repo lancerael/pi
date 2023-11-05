@@ -1,4 +1,6 @@
+import { IStyledComponent } from 'styled-components'
 import { IconButtonProps } from './IconButton.types'
+import { Substitute } from 'styled-components/dist/types'
 
 /**
  * The props for the styled icon button
@@ -10,5 +12,7 @@ export type StyledIconButtonProps = Pick<IconButtonProps, 'size'>
  */
 export type StyledIconProps = Pick<
   IconButtonProps,
-  'src' | '$isFilled' | '$isStroked'
+  'size' | '$isFilled' | '$isStroked'
 >
+
+export type StyledIconType = IStyledComponent<"web", Substitute<React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>, StyledIconProps>>

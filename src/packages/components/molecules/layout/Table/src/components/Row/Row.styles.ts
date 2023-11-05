@@ -1,10 +1,11 @@
 import styled, { css } from 'styled-components'
+import { StyledRowProps } from './Row.styles.types'
 
 /**
  * The main styles for the table row
  */
-export const StyledRow = styled.tr(
-  ({ isOdd, isExpandable }: { isOdd: boolean; isExpandable: boolean }) => css`
+export const StyledRow = styled.tr<StyledRowProps>(
+  ({ isOdd, isExpandable }) => css`
     background: var(--subtle);
     border: 1px solid var(--border);
     border-width: 0 1px;

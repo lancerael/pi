@@ -74,7 +74,7 @@ export const StyledPalette = styled(ReactSVG)`
 /**
  * The select menu that contains the theme options
  */
-export const StyledSelect = styled.div(({ scheme }: { scheme: Scheme }) =>
+export const StyledSelect = styled.div<{ scheme: Scheme }>(({ scheme }) =>
   themeList.map((theme, i) => {
     const { subtle, specialBg } = themes[theme][scheme]
     return css`
