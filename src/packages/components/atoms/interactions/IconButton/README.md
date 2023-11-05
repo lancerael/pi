@@ -4,7 +4,7 @@
 
 A React component for a special button with an icon
 
-**Dependencies:** @pi-lib/styles, @pi-lib/utils, react, react-svg
+**Dependencies:** @pi-lib/styles, @pi-lib/utils, react, react-svg, styled-components
 
 <table>
   <tbody>

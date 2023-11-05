@@ -4,7 +4,7 @@
 
 A React component for a page layout with a sidebar
 
-**Dependencies:** @pi-lib/styles, react
+**Dependencies:** @pi-lib/styles, react, styled-components
 
 <table>
   <tbody>

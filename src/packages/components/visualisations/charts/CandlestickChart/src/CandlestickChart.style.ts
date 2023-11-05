@@ -5,9 +5,8 @@ import { ChartStyleProps } from './CandlestickChart.types'
 /**
  * The main styles for the chart SVG element
  */
-export const StyledCandlestickChart = styled.svg`
-  visibility: ${({ isVisible }: ChartStyleProps) =>
-    isVisible ? 'visible' : 'hidden'};
+export const StyledCandlestickChart = styled.svg<ChartStyleProps>`
+  visibility: ${({ isVisible }) => (isVisible ? 'visible' : 'hidden')};
   width: 100%;
   height: 100%;
   user-select: none;
