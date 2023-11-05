@@ -4,7 +4,7 @@
 
 A React button component with a status
 
-**Dependencies:** @pi-lib/styles, @pi-lib/utils, react
+**Dependencies:** @pi-lib/styles, @pi-lib/utils, react, styled-components
 
 <table>
   <tbody>
