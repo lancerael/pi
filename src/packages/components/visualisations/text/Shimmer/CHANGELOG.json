@@ -2,6 +2,21 @@
   "name": "@pi-lib/shimmer",
   "entries": [
     {
+      "date": "Mon, 06 Nov 2023 00:06:06 GMT",
+      "tag": "@pi-lib/shimmer_v0.1.1",
+      "version": "0.1.1",
+      "comments": {
+        "patch": [
+          {
+            "author": "lancerael@hotmail.com",
+            "package": "@pi-lib/shimmer",
+            "commit": "e836b150a71dd18f58867aa340b0aaca72b636f0",
+            "comment": "Bumped styled components"
+          }
+        ]
+      }
+    },
+    {
       "date": "Sat, 04 Nov 2023 22:01:56 GMT",
       "tag": "@pi-lib/shimmer_v0.1.0",
       "version": "0.1.0",

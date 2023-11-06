@@ -1,7 +1,0 @@
-{
-  "type": "patch",
-  "comment": "Bumped styled components",
-  "packageName": "@pi-lib/tooltip",
-  "email": "lancerael@hotmail.com",
-  "dependentChangeType": "patch"
-}

@@ -1,7 +1,0 @@
-{
-  "type": "patch",
-  "comment": "Bumped styled components",
-  "packageName": "@pi-lib/button",
-  "email": "lancerael@hotmail.com",
-  "dependentChangeType": "patch"
-}

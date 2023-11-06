@@ -2,6 +2,21 @@
   "name": "@pi-lib/banner",
   "entries": [
     {
+      "date": "Mon, 06 Nov 2023 00:06:06 GMT",
+      "tag": "@pi-lib/banner_v0.6.1",
+      "version": "0.6.1",
+      "comments": {
+        "patch": [
+          {
+            "author": "lancerael@hotmail.com",
+            "package": "@pi-lib/banner",
+            "commit": "e836b150a71dd18f58867aa340b0aaca72b636f0",
+            "comment": "Bumped styled components"
+          }
+        ]
+      }
+    },
+    {
       "date": "Thu, 05 Oct 2023 23:32:45 GMT",
       "tag": "@pi-lib/banner_v0.6.0",
       "version": "0.6.0",

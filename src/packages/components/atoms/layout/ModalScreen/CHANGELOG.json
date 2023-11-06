@@ -2,6 +2,21 @@
   "name": "@pi-lib/modal-screen",
   "entries": [
     {
+      "date": "Mon, 06 Nov 2023 00:06:06 GMT",
+      "tag": "@pi-lib/modal-screen_v1.0.8",
+      "version": "1.0.8",
+      "comments": {
+        "patch": [
+          {
+            "author": "lancerael@hotmail.com",
+            "package": "@pi-lib/modal-screen",
+            "commit": "e836b150a71dd18f58867aa340b0aaca72b636f0",
+            "comment": "Bumped styled components"
+          }
+        ]
+      }
+    },
+    {
       "date": "Tue, 03 Oct 2023 22:31:06 GMT",
       "tag": "@pi-lib/modal-screen_v1.0.7",
       "version": "1.0.7",

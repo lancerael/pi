@@ -1,8 +1,16 @@
 # Change Log - @pi-lib/modal
 
-This log was last generated on Mon, 26 Jun 2023 23:53:05 GMT and should not be manually modified.
+This log was last generated on Mon, 06 Nov 2023 00:06:06 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 1.0.17
+
+Mon, 06 Nov 2023 00:06:06 GMT
+
+### Patches
+
+- Bumped styled components (lancerael@hotmail.com)
 
 ## 1.0.0
 

@@ -2,6 +2,21 @@
   "name": "@pi-lib/modal",
   "entries": [
     {
+      "date": "Mon, 06 Nov 2023 00:06:06 GMT",
+      "tag": "@pi-lib/modal_v1.0.17",
+      "version": "1.0.17",
+      "comments": {
+        "patch": [
+          {
+            "author": "lancerael@hotmail.com",
+            "package": "@pi-lib/modal",
+            "commit": "e836b150a71dd18f58867aa340b0aaca72b636f0",
+            "comment": "Bumped styled components"
+          }
+        ]
+      }
+    },
+    {
       "date": "Tue, 03 Oct 2023 22:31:06 GMT",
       "tag": "@pi-lib/modal_v1.0.11",
       "version": "1.0.11",

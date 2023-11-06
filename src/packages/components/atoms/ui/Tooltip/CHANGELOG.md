@@ -1,8 +1,16 @@
 # Change Log - @pi-lib/tooltip
 
-This log was last generated on Sun, 29 Oct 2023 21:38:21 GMT and should not be manually modified.
+This log was last generated on Mon, 06 Nov 2023 00:06:06 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 2.1.4
+
+Mon, 06 Nov 2023 00:06:06 GMT
+
+### Patches
+
+- Bumped styled components (lancerael@hotmail.com)
 
 ## 2.1.0
 

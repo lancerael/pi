@@ -2,6 +2,21 @@
   "name": "@pi-lib/icon-button",
   "entries": [
     {
+      "date": "Mon, 06 Nov 2023 00:06:06 GMT",
+      "tag": "@pi-lib/icon-button_v1.1.7",
+      "version": "1.1.7",
+      "comments": {
+        "patch": [
+          {
+            "author": "lancerael@hotmail.com",
+            "package": "@pi-lib/icon-button",
+            "commit": "e836b150a71dd18f58867aa340b0aaca72b636f0",
+            "comment": "Bumped styled components"
+          }
+        ]
+      }
+    },
+    {
       "date": "Tue, 03 Oct 2023 22:31:05 GMT",
       "tag": "@pi-lib/icon-button_v1.1.1",
       "version": "1.1.1",
