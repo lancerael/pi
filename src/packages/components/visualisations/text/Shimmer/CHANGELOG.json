@@ -2,6 +2,21 @@
   "name": "@pi-lib/shimmer",
   "entries": [
     {
+      "date": "Mon, 06 Nov 2023 00:50:21 GMT",
+      "tag": "@pi-lib/shimmer_v0.1.2",
+      "version": "0.1.2",
+      "comments": {
+        "patch": [
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/shimmer",
+            "commit": "b71b1c77fe719c9fd9c10c24c517ace75c658943",
+            "comment": "Add shimmer effect"
+          }
+        ]
+      }
+    },
+    {
       "date": "Mon, 06 Nov 2023 00:06:06 GMT",
       "tag": "@pi-lib/shimmer_v0.1.1",
       "version": "0.1.1",
