@@ -26,6 +26,7 @@ const meta: Meta<typeof Shimmer> = {
 export const Default: StoryObj<typeof Shimmer> = {
   args: {
     lines: [
+      ' ',
       'Hello',
       'Welcome to Pi.',
       'This is line three',
@@ -34,6 +35,7 @@ export const Default: StoryObj<typeof Shimmer> = {
       'Until it gets to the end',
       'Then it goes back to the beginning',
       'Like this...',
+      ' ',
     ],
   },
   render,

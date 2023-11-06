@@ -1,0 +1,7 @@
+{
+  "type": "patch",
+  "comment": "Add shimmer effect",
+  "packageName": "@pi-lib/shimmer",
+  "email": "lancerael@googlemail.com",
+  "dependentChangeType": "patch"
+}
