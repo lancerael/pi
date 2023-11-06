@@ -29,7 +29,7 @@ jobs:
 
       - name: Test
         if: steps.changed-files.outputs.any_changed == 'true'
-        run: pnpm -r test
+        run: pnpm -r test:nx
 
   list-mfes:
     name: Gets a list of apps
