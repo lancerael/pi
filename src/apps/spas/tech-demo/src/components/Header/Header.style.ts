@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components'
 import { ReactSVG } from 'react-svg'
-import { themeList, themes, Scheme } from '@pi-lib/styles'
+import { themeList, themes, Scheme, CustomStyledType } from '@pi-lib/styles'
 
 /**
  * Wrapper element for the logo & title
@@ -62,7 +62,10 @@ export const StyledInfo = styled.div`
 /**
  * Palette icon
  */
-export const StyledPalette = styled(ReactSVG)`
+export const StyledPalette: CustomStyledType<
+  HTMLElement,
+  { src: string }
+> = styled(ReactSVG)`
   svg {
     fill: var(--textSoft);
     width: 1em;
