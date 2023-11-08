@@ -1,20 +1,20 @@
 {
-  "name": "@pi-lib/banner",
-  "version": "0.6.1",
-  "description": "A banner React component that can comtain spaced or flowing items",
+  "name": "@pi-lib/grid",
+  "version": "0.0.0",
+  "description": "A wrapper for a simple grid layout.",
   "keywords": [
     "pi",
     "react",
     "component",
     "atoms",
     "layout",
-    "banner"
+    "grid"
   ],
-  "homepage": "https://pi.lance-taylor.com/?path=/docs/atoms-layout-banner",
+  "homepage": "https://pi.lance-taylor.com/?path=/docs/atoms-layout-grid",
   "repository": {
     "type": "git",
     "url": "https://github.com/lancerael/pi.git",
-    "directory": "src/components/atoms/layout/Banner"
+    "directory": "./src/packages/components/atoms/layout/Grid"
   },
   "license": "ISC",
   "author": "Lance Taylor",

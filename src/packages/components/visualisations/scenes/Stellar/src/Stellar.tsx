@@ -1,4 +1,4 @@
-import { memo, useCallback, useEffect, useRef, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import { StyledContent, StyledStar, StyledStellar } from './Stellar.style'
 import {
   Coords,
@@ -15,7 +15,7 @@ import {
   randomNumber,
 } from './Stellar.helpers'
 import { doTransition, useFramerate, useThrottledEvents } from '@pi-lib/utils'
-import { FPS_CUTOFF } from './Stellar.constants'
+import { FPS_CUTOFF, MAX_STARS } from './Stellar.constants'
 
 /**
  * A spacefaring scene that takes you through the stars.
@@ -92,6 +92,7 @@ export const Stellar = ({
 
       starTracker.current.push(
         ...makeStars(
+          isTravelling,
           isBurst ? randomNumber(1, 5) : 1,
           stellarCoords.current.dimensions,
           [clientX, clientY]
@@ -124,6 +125,7 @@ export const Stellar = ({
     updateDimensions()
     if (!starTracker.current.length) {
       starTracker.current = makeStars(
+        isTravelling,
         starCount,
         stellarCoords.current.dimensions
       )
@@ -132,9 +134,13 @@ export const Stellar = ({
       if (!starTracker.current.length) return
       const { dimensions, target } = stellarCoords.current
       const { fps } = framerate.current
-      if (!fps || (fps > FPS_CUTOFF && isTravelling)) {
+      if (
+        !fps ||
+        (fps > FPS_CUTOFF && starTracker.current.length < MAX_STARS)
+      ) {
         starTracker.current.push(
           ...makeStars(
+            isTravelling,
             randomNumber(1, fps > FPS_CUTOFF + 10 ? 2 : 1),
             dimensions
           )

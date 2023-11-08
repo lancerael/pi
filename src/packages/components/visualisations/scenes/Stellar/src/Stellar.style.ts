@@ -42,10 +42,8 @@ export const StyledContent = styled.div`
   position: relative;
   width: 100%;
   height: 100%;
-  border: 1ps solid green;
   z-index: 2;
   overflow: auto;
   color: lightblue;
-  padding: 2rem;
   box-sizing: border-box;
 `

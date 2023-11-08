@@ -7,6 +7,7 @@ const render = (props: ShimmerProps) => (
     style={{
       backgroundImage: 'linear-gradient(to right, #0f0c29, #302b63, #24243e)',
       padding: '25px',
+      minHeight: '2rem',
     }}
   >
     <Shimmer {...props}>children</Shimmer>
@@ -26,7 +27,6 @@ const meta: Meta<typeof Shimmer> = {
 export const Default: StoryObj<typeof Shimmer> = {
   args: {
     lines: [
-      ' ',
       'Hello',
       'Welcome to Pi.',
       'This is line three',

@@ -1,102 +1,64 @@
 'use client'
-
-import Image from 'next/image'
-import styles from './page.module.css'
 import Stellar from '@pi-lib/stellar'
+import Grid from '@pi-lib/grid'
+import Interact from '@/components/Interact'
+import Shimmer from '@pi-lib/shimmer'
+import { useState } from 'react'
 
 export default function Home() {
+  const [isComplete, setIsComplete] = useState(false)
   return (
-    <Stellar>
-      <main className={styles.main}>
-        <div className={styles.description}>
-          <p>
-            Get started by editing&nbsp;
-            <code className={styles.code}>src/app/page.tsx</code>
-          </p>
-          <div>
-            <a
-              href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              By{' '}
-              <Image
-                src="/vercel.svg"
-                alt="Vercel Logo"
-                className={styles.vercelLogo}
-                width={100}
-                height={24}
-                priority
-              />
-            </a>
+    <div style={{ height: '100vh' }}>
+      <Stellar isTravelling={true}>
+        <main style={{ height: '100%', maxWidth: '1024px', margin: '0 auto' }}>
+          <div
+            style={{
+              textAlign: 'center',
+              justifyContent: 'center',
+              alignItems: 'center',
+              height: '100vh',
+              display: 'flex',
+            }}
+          >
+            {isComplete && <Interact />}
+            <Shimmer
+              lines={[
+                'Lance Taylor',
+                'Software Engineer',
+                'Senior / Lead',
+                'Full stack / FE specialist',
+                'React / Typescript / NodeJS',
+                'CI/CD, TDD/BDD, AWS/Azure',
+                'Agile / Kanban / Scrum',
+                'UI/UX, Accessibility',
+                'Scroll down for more info...',
+              ]}
+              behaviour="fade"
+              delay={2500}
+              callback={() => setIsComplete(true)}
+            />
           </div>
-        </div>
-
-        <div className={styles.center}>
-          <Image
-            className={styles.logo}
-            src="/next.svg"
-            alt="Next.js Logo"
-            width={180}
-            height={37}
-            priority
-          />
-        </div>
-
-        <div className={styles.grid}>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2>
-              Docs <span>-&gt;</span>
-            </h2>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a
-            href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2>
-              Learn <span>-&gt;</span>
-            </h2>
-            <p>
-              Learn about Next.js in an interactive course with&nbsp;quizzes!
-            </p>
-          </a>
-
-          <a
-            href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2>
-              Templates <span>-&gt;</span>
-            </h2>
-            <p>Explore the Next.js 13 playground.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2>
-              Deploy <span>-&gt;</span>
-            </h2>
-            <p>
-              Instantly deploy your Next.js site to a shareable URL with Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
-    </Stellar>
+          <Grid>
+            {Array.from({ length: 4 }, (_, i) => (
+              <div
+                key={i}
+                style={{ border: '1px solid green', padding: '8px' }}
+              >
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
+                eget tempor enim, ultrices tristique est. Praesent faucibus et
+                leo ut malesuada. Sed vitae sodales erat. Phasellus id arcu sed
+                ligula tristique commodo. Donec pellentesque pharetra elit a
+                porta. Aenean porta augue ac sapien posuere, at lobortis est
+                gravida. Curabitur scelerisque nunc quis ultricies consectetur.
+                Sed eget auctor sapien, id tempus lectus. Etiam hendrerit tellus
+                non accumsan faucibus. Curabitur faucibus ligula eu tempor
+                viverra. Morbi rhoncus pulvinar turpis, vitae posuere risus
+                interdum quis.
+              </div>
+            ))}
+          </Grid>
+        </main>
+      </Stellar>
+    </div>
   )
 }

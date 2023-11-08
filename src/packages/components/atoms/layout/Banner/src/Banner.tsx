@@ -6,10 +6,10 @@ import { BannerProps } from './Banner.types'
  */
 export const Banner = ({
   children,
-  wrapItems = false,
-  invertGradient = false,
+  $wrapItems = false,
+  $invertGradient = false,
 }: BannerProps) => (
-  <StyledBanner {...{ wrapItems, invertGradient }}>{children}</StyledBanner>
+  <StyledBanner {...{ $wrapItems, $invertGradient }}>{children}</StyledBanner>
 )
 
 export default Banner

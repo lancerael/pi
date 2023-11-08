@@ -39,6 +39,7 @@ export const scatter = ([x, y]: Coords): Coords => {
  * @returns {Star} A new star object.
  */
 export const makeStar = (
+  isTravelling: boolean,
   [width, height]: Coords,
   target: Coords = [0, 0]
 ): Star => {
@@ -53,7 +54,7 @@ export const makeStar = (
   return {
     id: randomString(8),
     coords: [left, top],
-    age: 0,
+    age: isTravelling ? 0 : randomNumber(1, MAX_AGE),
     color: `rgba(${getColor()}, ${randomNumber(5, 10) / 10})`,
   }
 }
@@ -66,11 +67,14 @@ export const makeStar = (
  * @returns {Star[]} An array of star objects.
  */
 export const makeStars = (
+  isTravelling: boolean,
   length: number,
   dimensions: Coords,
   target?: Coords
 ): Star[] => {
-  return Array.from({ length }, () => makeStar(dimensions, target))
+  return Array.from({ length }, () =>
+    makeStar(isTravelling, dimensions, target)
+  )
 }
 
 /**

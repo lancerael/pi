@@ -39,7 +39,9 @@
     "test": "npx nx run-many --target=test",
     "test-": "------------------------------------------------------TEST----------",
     "test:cov": "vitest --coverage",
-    "test:min": "npx nx affected --target=test"
+    "test:min": "npx nx affected --target=test",
+    "web": "--------------------------------------------------------WEB----------",
+    "web:dev": "pnpm --filter @pi-lib/lt-dotcom dev"
   },
   "devDependencies": {
     "@pi-lib/styles": "workspace:^",
