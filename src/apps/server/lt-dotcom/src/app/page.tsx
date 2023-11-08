@@ -26,12 +26,13 @@ export default function Home() {
                 'Lance Taylor',
                 'Software Engineer',
                 'Senior / Lead',
-                'Full stack / FE specialist',
-                'React / Typescript / NodeJS',
+                'Full stack / FE',
+                'React, Typescript, NodeJS',
                 'CI/CD, TDD/BDD, AWS/Azure',
-                'Agile / Kanban / Scrum',
+                'Agile, Kanban, Scrum',
                 'UI/UX, Accessibility',
-                'Scroll down for more info...',
+                ' ',
+                'Interact, or scroll down...',
               ]}
               behaviour="fade"
               delay={2500}

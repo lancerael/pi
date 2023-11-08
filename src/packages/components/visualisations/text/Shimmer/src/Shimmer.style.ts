@@ -48,7 +48,7 @@ export const StyledLine = styled.div<StyledLineProps>(
       content: attr(data-content);
       opacity: ${$isVisible ? 1 : 0};
       filter: blur(${$isVisible ? '0' : '20px'});
-      background-image: linear-gradient(90deg, #add8e6, white, #add8e6);
+      background-image: linear-gradient(90deg, antiquewhite, #add8e6, antiquewhite);
       background-clip: text;
       background-size: 200%;
       background-position: 0% 50%;
