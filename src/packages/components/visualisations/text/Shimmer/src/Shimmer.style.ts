@@ -42,19 +42,27 @@ export const StyledLine = styled.div<StyledLineProps>(
   ({ $isVisible }) => css`
     font-size: 2rem;
     height: ${$isVisible ? '2rem' : '0'};
+    transition: none;
 
     &::after {
       transition: all 1.5s linear;
       content: attr(data-content);
       opacity: ${$isVisible ? 1 : 0};
       filter: blur(${$isVisible ? '0' : '20px'});
-      background-image: linear-gradient(90deg, antiquewhite, #add8e6, antiquewhite);
+      background-image: linear-gradient(
+        90deg,
+        lightblue,
+        lightblue,
+        white,
+        lightblue,
+        lightblue
+      );
       background-clip: text;
       background-size: 200%;
       background-position: 0% 50%;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      animation: ${textPulse} 2.5s linear infinite;
+      animation: ${textPulse} 5s linear infinite;
     }
 
     &::before {

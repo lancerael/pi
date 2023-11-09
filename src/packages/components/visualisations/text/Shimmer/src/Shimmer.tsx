@@ -27,7 +27,7 @@ export const Shimmer = ({
       const nextLine = currentLine + 1
       if (behaviour === 'loop' || nextLine < lines.length)
         return nextLine % lines.length
-      callback()
+      requestAnimationFrame(callback)
       if (behaviour === 'fade') return nextLine
       return currentLine
     })
