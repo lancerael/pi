@@ -34,6 +34,7 @@ export const Stellar = ({
   starCount = 10,
   isTravelling = true,
   showDebug = false,
+  scrollCallback,
   children,
 }: StellarProps) => {
   const [stars, setStars] = useState<StarStyle[]>([])
@@ -68,34 +69,39 @@ export const Stellar = ({
     setTarget(clientWidth / 2, clientHeight / 2, 50)
   }, [])
 
+  const updateStyles = () => setStars(starTracker.current.map(getStarStyle))
+
   const scroll = useCallback(() => {
     if (!contentRef.current) return
-    const offset = (contentRef.current.scrollTop - lastScroll.current) / 10
-    lastScroll.current = contentRef.current.scrollTop
+    const { scrollTop } = contentRef.current
+    const offset = (scrollTop - lastScroll.current) / 10
+    lastScroll.current = scrollTop
     starTracker.current = starTracker.current.map(
       ({ coords: [left, top], age, ...star }: Star) => {
         return {
-          coords: [left, top - offset * (age / 2)] as Coords,
+          coords: [left, top - offset * age] as Coords,
           age,
           ...star,
         }
       }
     )
+    scrollCallback?.(scrollTop)
+    updateStyles()
   }, [])
 
   const starSpawm = useCallback(
     ({ clientX, clientY }: MouseEvent, isBurst: boolean) => {
-      setTarget(clientX, clientY, 15)
+      setTarget(clientX, clientY - 5, 15)
       clearTimeout(moveTimeout.current)
 
       if (framerate.current.fps < FPS_CUTOFF) return
 
       starTracker.current.push(
         ...makeStars(
-          isTravelling,
-          isBurst ? randomNumber(1, 5) : 1,
+          isTravelling ? 1 : -1,
+          isBurst ? randomNumber(5, 10) : 1,
           stellarCoords.current.dimensions,
-          [clientX, clientY]
+          [clientX, clientY - 5]
         )
       )
       moveTimeout.current = setTimeout(() => {
@@ -106,7 +112,7 @@ export const Stellar = ({
   )
 
   useThrottledEvents(updateDimensions)
-  useThrottledEvents(scroll, ['scroll'], false, contentRef.current)
+  useThrottledEvents(scroll, ['scroll'], false, contentRef.current, 50)
   useThrottledEvents(
     (e) => starSpawm(e, false),
     ['pointermove'],
@@ -125,7 +131,7 @@ export const Stellar = ({
     updateDimensions()
     if (!starTracker.current.length) {
       starTracker.current = makeStars(
-        isTravelling,
+        isTravelling ? 0 : -1,
         starCount,
         stellarCoords.current.dimensions
       )
@@ -140,21 +146,21 @@ export const Stellar = ({
       ) {
         starTracker.current.push(
           ...makeStars(
-            isTravelling,
+            isTravelling ? 0 : -1,
             randomNumber(1, fps > FPS_CUTOFF + 10 ? 2 : 1),
             dimensions
           )
         )
       }
-      setStars(starTracker.current.map(getStarStyle))
       if (isTravelling) {
         starTracker.current = starTracker.current
           .map((star: Star) => moveStar(star, target))
           .filter(({ age, coords }) => filterStars(age, coords, dimensions))
       }
-    }, 200)
+      updateStyles()
+    }, 100)
     return () => clearInterval(keyframe)
-  }, [stellarRef.current, isTravelling])
+  }, [isTravelling])
 
   return (
     <StyledStellar ref={stellarRef}>

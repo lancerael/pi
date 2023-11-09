@@ -1,5 +1,5 @@
 import { FILTER_PADDING, MAX_AGE } from './Stellar.constants'
-import { Coords, Star } from './Stellar.types'
+import { Coords, SpawnAge, Star } from './Stellar.types'
 
 /**
  * Generates a random number between the specified inclusive range of `min` and `max`.
@@ -39,7 +39,7 @@ export const scatter = ([x, y]: Coords): Coords => {
  * @returns {Star} A new star object.
  */
 export const makeStar = (
-  isTravelling: boolean,
+  spawnAge: SpawnAge,
   [width, height]: Coords,
   target: Coords = [0, 0]
 ): Star => {
@@ -54,7 +54,7 @@ export const makeStar = (
   return {
     id: randomString(8),
     coords: [left, top],
-    age: isTravelling ? 0 : randomNumber(1, MAX_AGE),
+    age: spawnAge > -1 ? spawnAge : randomNumber(1, MAX_AGE),
     color: `rgba(${getColor()}, ${randomNumber(5, 10) / 10})`,
   }
 }
@@ -67,14 +67,12 @@ export const makeStar = (
  * @returns {Star[]} An array of star objects.
  */
 export const makeStars = (
-  isTravelling: boolean,
+  spawnAge: SpawnAge,
   length: number,
   dimensions: Coords,
   target?: Coords
 ): Star[] => {
-  return Array.from({ length }, () =>
-    makeStar(isTravelling, dimensions, target)
-  )
+  return Array.from({ length }, () => makeStar(spawnAge, dimensions, target))
 }
 
 /**
@@ -90,7 +88,7 @@ export const moveStar = (
   const xDist = left - x
   const yDist = top - y
   const radius = Math.sqrt(xDist * xDist + yDist * yDist)
-  const multiplier = (age + age * age) / 4
+  const multiplier = (age + age * age) / 8
   return {
     coords: [
       left + (xDist * multiplier) / radius,
@@ -128,8 +126,8 @@ export const filterStars = (
  * @returns {Object} An object containing the `id` and `style` properties for the star.
  */
 export const getStarStyle = ({ id, coords: [left, top], age, color }: Star) => {
-  const scale = (age + age * (age / 15)) / 20
-  const opacity = age >= 1 ? 1 - age / 19 : 0
+  const scale = (age + age * (age / 10)) / 20
+  const opacity = age >= 1 ? 1 - age / 30 : 0
   return {
     id,
     style: {
