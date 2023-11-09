@@ -7,6 +7,7 @@ export const themeList = [
   'pebble',
   'retro',
   'rose',
+  'stellar',
 ] as const
 
 export type ThemeType = (typeof themeList)[number]

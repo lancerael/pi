@@ -1,0 +1,55 @@
+export const careerHighlights = [
+  {
+    title: 'Vodafone',
+    subTitle: 'Senior/Lead/Manager',
+    summary: `4 years of software development and leadership,
+      delivering among other things:`,
+    bullets: [
+      'Identity management system to millions of users',
+      'Various complex sharable React components.',
+      'Production apps in consumer and enterprise.',
+      'Workflow, CI/CD, TDD/BDD and DevOps enhancements.',
+      'Leadership of multiple cross functional teams.',
+      'Management and career development.',
+    ],
+  },
+  {
+    title: 'Thomson Reuters',
+    subTitle: 'Senior/Lead',
+    summary: `5 years of software development and leadership,
+      delivering among other things:`,
+    bullets: [
+      'Enterprise application for worldwide pharma data.',
+      'Complex data visualisations and charting tools.',
+      'Frameworks for sharable components and white label reskinning.',
+      'Leadership of distributed teams.',
+      'Performance and usability enhancements.',
+      'Ownership of technical implementations.',
+    ],
+  },
+  {
+    title: 'UNDO',
+    subTitle: 'Senior/Lead',
+    summary: `1 year of software development and leadership,
+      delivering among other things:`,
+    bullets: [
+      'Inventory management system for stakeholders and partners',
+      'Workflow, CI/CD, TDD/BDD and DevOps process implementation.',
+      'Various complex sharable React components.',
+      'SSR and SSG microsites using GraphQL.',
+      'Leadership of full stack technical implementation.',
+      'Management and career development.',
+    ],
+  },
+  {
+    title: 'Cohesion DX8',
+    subTitle: 'Senior Software Engineer',
+    summary: `Now Acquia Site Studio, a powerful low-code development solution for Drupal. Delivering:`,
+    bullets: [
+      'Powerful tools for building complex UIs.',
+      'Performance, stability and usability enhancements.',
+      'CI/CD BDD test automation',
+      'Skill sharing workshops',
+    ],
+  },
+]

@@ -85,6 +85,7 @@ export const Stellar = ({
         }
       }
     )
+    updateDimensions()
     scrollCallback?.(scrollTop)
     updateStyles()
   }, [])
@@ -106,7 +107,7 @@ export const Stellar = ({
       )
       moveTimeout.current = setTimeout(() => {
         updateDimensions()
-      }, 3000)
+      }, 1000)
     },
     []
   )

@@ -9,13 +9,17 @@ import {
   SchemeValues,
 } from './theme.types'
 import { ThemeType, themeList } from './themes'
+import { hexToRgba } from './helpers'
 
 /**
  * A helper to ger the CSS variables from the values from the color scheme
  */
 const getVars = (schemeValues: SchemeValues) =>
   Object.entries(schemeValues).reduce(
-    (acc, [key, val]) => `${acc} --${key}: ${val};`,
+    (acc, [key, val]) => `${acc}
+      --${key}: ${val};
+      --${key}A: ${hexToRgba(val, 0.3)};
+    `,
     ''
   )
 

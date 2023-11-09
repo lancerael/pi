@@ -5,6 +5,9 @@ import Interact from '@/components/Interact'
 import Shimmer from '@pi-lib/shimmer'
 import Card from '@pi-lib/card'
 import { CSSProperties, useRef, useState } from 'react'
+import { tickerLines } from '@/data/tickerLines'
+import { careerHighlights } from '@/data/careerHighlights'
+import Banner from '@pi-lib/banner'
 
 export default function Home() {
   const [isComplete, setIsComplete] = useState(false)
@@ -14,7 +17,7 @@ export default function Home() {
   const getShimmerWrapperStyle = (): CSSProperties => {
     const isShimmerAtLimit =
       wrapperRef.current &&
-      scrollTop > (wrapperRef.current?.offsetHeight ?? 0) / 2 - 48
+      scrollTop > (wrapperRef.current?.offsetHeight ?? 0) / 2 - 36
     return {
       position: isShimmerAtLimit ? 'absolute' : 'fixed',
       top: isShimmerAtLimit ? 'calc(100vh - 48px)' : undefined,
@@ -38,18 +41,7 @@ export default function Home() {
             {isComplete && <Interact />}
             <div style={getShimmerWrapperStyle()}>
               <Shimmer
-                lines={[
-                  'Lance Taylor',
-                  'Software Engineer',
-                  'Senior / Lead',
-                  'Full stack / FE',
-                  'React, Typescript, NodeJS',
-                  'CI/CD, TDD/BDD, AWS/Azure',
-                  'Agile, Kanban, Scrum',
-                  'UI/UX, Accessibility',
-                  ' ',
-                  'Interact, or scroll down...',
-                ]}
+                lines={tickerLines}
                 behaviour="fade"
                 delay={2500}
                 callback={() => setIsComplete(true)}
@@ -57,21 +49,22 @@ export default function Home() {
             </div>
           </div>
           <Grid>
-            {Array.from({ length: 40 }, (_, i) => (
-              <Card key={i} title={'Vodafone'} subTitle={'Senior/Lead/Manager'}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
-                eget tempor enim, ultrices tristique est. Praesent faucibus et
-                leo ut malesuada. Sed vitae sodales erat. Phasellus id arcu sed
-                ligula tristique commodo. Donec pellentesque pharetra elit a
-                porta. Aenean porta augue ac sapien posuere, at lobortis est
-                gravida. Curabitur scelerisque nunc quis ultricies consectetur.
-                Sed eget auctor sapien, id tempus lectus. Etiam hendrerit tellus
-                non accumsan faucibus. Curabitur faucibus ligula eu tempor
-                viverra. Morbi rhoncus pulvinar turpis, vitae posuere risus
-                interdum quis.
+            {careerHighlights.map(({ title, subTitle, summary, bullets }) => (
+              <Card key={title} {...{ title, subTitle }}>
+                {summary}
+                <ul style={{ padding: '1rem' }}>
+                  {bullets.map((bullet, i) => (
+                    <li key={i}>{bullet}</li>
+                  ))}
+                </ul>
               </Card>
             ))}
           </Grid>
+          <Banner>
+            <div>Something 1</div>
+            <div>Something 2</div>
+            <div>Something 3</div>
+          </Banner>
         </main>
       </Stellar>
     </div>

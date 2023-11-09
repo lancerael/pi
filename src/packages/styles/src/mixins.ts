@@ -20,22 +20,6 @@ export const shadow = (offset = '2px 2px', opacity = '0.05') =>
   `box-shadow: ${offset} 5px 1px rgba(0, 0, 0, ${opacity});`
 
 /**
- * A mixin generator for a boxed container
- */
-export const box = ({ name = 'default', isInverted }: BoxProps = {}) => {
-  const colors = boxColors[name]
-  const [colorVar, backgroundVar] = isInverted ? colors.reverse() : colors
-  return css`
-    border: 1px solid var(--shadow);
-    color: var(--${colorVar});
-    background-color: var(--${backgroundVar});
-    border-radius: 6px;
-    padding: 8px;
-    ${shadow()}
-  `
-}
-
-/**
  * A mixin generator for a form input
  */
 export const formInput = (isExpanded?: boolean) => {
@@ -51,6 +35,22 @@ export const formInput = (isExpanded?: boolean) => {
 }
 
 /**
+ * A mixin generator for a boxed container
+ */
+export const box = ({ name = 'default', isInverted }: BoxProps = {}) => {
+  const colors = boxColors[name]
+  const [colorVar, backgroundVar] = isInverted ? colors.reverse() : colors
+  return css`
+    border: 1px solid var(--border);
+    color: var(--${colorVar});
+    background-color: var(--${backgroundVar}A);
+    border-radius: 6px;
+    padding: 8px;
+    ${shadow()}
+  `
+}
+
+/**
  * A mixin generator for a chart container
  */
 export const container = () => {
@@ -59,10 +59,10 @@ export const container = () => {
     border-radius: 8px;
     background: linear-gradient(
       135deg,
-      var(--subtle) 0%,
-      var(--bg) 50%,
+      var(--subtleA) 0%,
+      var(--bgA) 50%,
       var(--mark) 51%,
-      var(--bg) 100%
+      var(--bgA) 100%
     );
     ${shadow()}
   `

@@ -1,5 +1,6 @@
 import {
   StyledCard,
+  StyledContent,
   StyledHeader,
   StyledSubTitle,
   StyledTitle,
@@ -19,7 +20,7 @@ export const Card = ({ title, subTitle, children }: CardProps) => {
           {!!subTitle && <StyledSubTitle>{subTitle}</StyledSubTitle>}
         </StyledHeader>
       )}
-      {children}
+      <StyledContent>{children}</StyledContent>
     </StyledCard>
   )
 }

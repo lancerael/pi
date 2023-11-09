@@ -6,6 +6,7 @@ import { andro } from './andro'
 import { candy } from './candy'
 import { earth } from './earth'
 import { retro } from './retro'
+import { stellar } from './stellar'
 
 export const themes = {
   pebble,
@@ -16,6 +17,7 @@ export const themes = {
   candy,
   earth,
   retro,
+  stellar,
 }
 
 export * from './themes.types'
