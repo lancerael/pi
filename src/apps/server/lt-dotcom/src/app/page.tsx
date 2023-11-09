@@ -8,6 +8,17 @@ import { CSSProperties, useRef, useState } from 'react'
 import { tickerLines } from '@/data/tickerLines'
 import { careerHighlights } from '@/data/careerHighlights'
 import Banner from '@pi-lib/banner'
+import styled from 'styled-components'
+
+const StyledMain = styled.main`
+  height: 100%;
+  max-width: 1024px;
+  margin: 0 auto;
+
+  @media (max-width: 1036px) {
+    margin: 0 1rem;
+  }
+`
 
 export default function Home() {
   const [isComplete, setIsComplete] = useState(false)
@@ -28,7 +39,7 @@ export default function Home() {
   return (
     <div style={{ height: '100vh' }} ref={wrapperRef}>
       <Stellar isTravelling={true} scrollCallback={setScrollTop}>
-        <main style={{ height: '100%', maxWidth: '1024px', margin: '0 auto' }}>
+        <StyledMain>
           <div
             style={{
               textAlign: 'center',
@@ -48,24 +59,26 @@ export default function Home() {
               />
             </div>
           </div>
-          <Grid>
-            {careerHighlights.map(({ title, subTitle, summary, bullets }) => (
-              <Card key={title} {...{ title, subTitle }}>
-                {summary}
-                <ul style={{ padding: '1rem' }}>
-                  {bullets.map((bullet, i) => (
-                    <li key={i}>{bullet}</li>
-                  ))}
-                </ul>
-              </Card>
-            ))}
-          </Grid>
+          <div style={{ marginBottom: '1rem' }}>
+            <Grid>
+              {careerHighlights.map(({ title, subTitle, summary, bullets }) => (
+                <Card key={title} {...{ title, subTitle }}>
+                  {summary}
+                  <ul style={{ padding: '1rem' }}>
+                    {bullets.map((bullet, i) => (
+                      <li key={i}>{bullet}</li>
+                    ))}
+                  </ul>
+                </Card>
+              ))}
+            </Grid>
+          </div>
           <Banner>
             <div>Something 1</div>
             <div>Something 2</div>
             <div>Something 3</div>
           </Banner>
-        </main>
+        </StyledMain>
       </Stellar>
     </div>
   )
