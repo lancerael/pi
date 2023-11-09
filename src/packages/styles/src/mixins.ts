@@ -53,7 +53,7 @@ export const formInput = (isExpanded?: boolean) => {
 /**
  * A mixin generator for a chart container
  */
-export const chartContainer = () => {
+export const container = () => {
   return css`
     border: 1px solid var(--border);
     border-radius: 8px;
