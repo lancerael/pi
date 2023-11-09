@@ -16,7 +16,7 @@ export const Interact = () => {
       count++
       setStracker({
         styles: spiralStyle(count),
-        isAlt: !(count % 16),
+        isAlt: [20, 21, 22, 35, 36, 37].includes(count),
       })
       if (count > MAX_COUNT) clearInterval(altInterval)
     }, 100)
@@ -26,7 +26,7 @@ export const Interact = () => {
   return (
     <StyledContainer style={{ ...tracker.styles }}>
       <Image
-        style={{ opacity: '0.9' }}
+        style={{ opacity: '0.9', marginTop: `${tracker.isAlt ? -4 : 0}px` }}
         src={`/hand${tracker.isAlt ? '2' : ''}.svg`}
         alt="Interaction"
         width={36}
