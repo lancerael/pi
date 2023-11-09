@@ -14,7 +14,7 @@ const children = (
 describe('Grid', () => {
   it('should render a Grid', () => {
     render(<Grid>{children}</Grid>)
-    expect(screen.getAllByText('Test')).toHaveLength(6)
+    expect(screen.getAllByText('test')).toHaveLength(6)
   })
 
   it('should not fail any accessibility tests', async () => {
