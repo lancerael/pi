@@ -21,7 +21,7 @@ const render = (props: GridProps) => (
 )
 
 const meta: Meta<typeof Grid> = {
-  title: 'Grid',
+  title: 'Atoms/Layout/Grid',
   component: Grid,
   argTypes: {},
   tags: ['autodocs'],
