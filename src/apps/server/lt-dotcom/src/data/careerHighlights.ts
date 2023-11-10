@@ -3,12 +3,12 @@ export const careerHighlights = [
     title: 'Vodafone',
     subTitle: 'Senior/Lead/Manager',
     summary: `Delivering consumer and enterprise apps
-      for millions of users`,
+      to millions of users`,
     bullets: [
       'ID verification system for entire market',
-      'Complex sharable React components',
-      'Workflow, CI/CD, TDD/BDD and DevOps',
-      'Leadership of cross functional teams',
+      'Complex shared React components',
+      'CI/CD, TDD/BDD and DevOps',
+      'Cross functional team lead',
       'Management and career development',
     ],
   },
@@ -19,7 +19,7 @@ export const careerHighlights = [
     bullets: [
       'Complex data visualisations and charting tools',
       'Sharable components and white labelling',
-      'Leadership of distributed teams',
+      'Distributed team lead',
       'Performance / usability',
       'Ownership of technical implementations',
     ],
@@ -27,7 +27,7 @@ export const careerHighlights = [
   {
     title: 'Acquia Cohesion',
     subTitle: 'Senior Software Engineer',
-    summary: `Now Site Studio, a powerful low-code development solution for Drupal`,
+    summary: `Now Site Studio, a powerful low-code site builder for Drupal`,
     bullets: [
       'Powerful tools for building complex UIs',
       'Performance, stability and usability enhancements',
@@ -41,8 +41,8 @@ export const careerHighlights = [
     subTitle: 'Senior/Lead',
     summary: `Delivering SPAs, and SSR / SSG microsites using GraphQL`,
     bullets: [
-      'Inventory management system app',
-      'Workflow, CI/CD, TDD/BDD & DevOps',
+      'Inventory management system',
+      'CI/CD, TDD/BDD & DevOps',
       'Complex sharable React components',
       'Leadership of technical implementation',
       'Management and career development',
