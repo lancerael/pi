@@ -1,0 +1,7 @@
+{
+  "type": "major",
+  "comment": "Adding PageGrid component",
+  "packageName": "@pi-lib/page-grid",
+  "email": "lancerael@googlemail.com",
+  "dependentChangeType": "patch"
+}

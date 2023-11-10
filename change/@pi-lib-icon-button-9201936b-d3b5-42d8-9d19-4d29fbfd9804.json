@@ -1,0 +1,7 @@
+{
+  "type": "patch",
+  "comment": "Bumping TS",
+  "packageName": "@pi-lib/icon-button",
+  "email": "lancerael@googlemail.com",
+  "dependentChangeType": "patch"
+}

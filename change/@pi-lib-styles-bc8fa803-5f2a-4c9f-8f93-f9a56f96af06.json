@@ -1,0 +1,7 @@
+{
+  "type": "minor",
+  "comment": "Adding transparency to colour palette",
+  "packageName": "@pi-lib/styles",
+  "email": "lancerael@googlemail.com",
+  "dependentChangeType": "patch"
+}

@@ -1,0 +1,7 @@
+{
+  "type": "major",
+  "comment": "Added Card component",
+  "packageName": "@pi-lib/card",
+  "email": "lancerael@googlemail.com",
+  "dependentChangeType": "patch"
+}
