@@ -7,17 +7,16 @@ import Card from '@pi-lib/card'
 import { CSSProperties, useRef, useState } from 'react'
 import { tickerLines } from '@/data/tickerLines'
 import { careerHighlights } from '@/data/careerHighlights'
-import Banner from '@pi-lib/banner'
+import PageGrid from '@pi-lib/page-grid'
+import { gradient } from '@pi-lib/styles'
 import styled from 'styled-components'
+import Banner from '@pi-lib/banner'
+import { skillset } from '@/data/skillset'
 
-const StyledMain = styled.main`
-  height: 100%;
-  max-width: 1024px;
-  margin: 0 auto;
-
-  @media (max-width: 1036px) {
-    margin: 0 1rem;
-  }
+const StyledFullGradient = styled.div`
+  ${gradient({ isTransparent: true })}
+  margin: 5rem 0;
+  padding: 5rem 1rem;
 `
 
 export default function Home() {
@@ -26,12 +25,13 @@ export default function Home() {
   const wrapperRef = useRef<HTMLDivElement>(null)
 
   const getShimmerWrapperStyle = (): CSSProperties => {
+    const scrollGap = 128
     const isShimmerAtLimit =
       wrapperRef.current &&
-      scrollTop > (wrapperRef.current?.offsetHeight ?? 0) / 2 - 36
+      scrollTop > (wrapperRef.current?.offsetHeight ?? 0) / 2 - scrollGap
     return {
       position: isShimmerAtLimit ? 'absolute' : 'fixed',
-      top: isShimmerAtLimit ? 'calc(100vh - 48px)' : undefined,
+      top: isShimmerAtLimit ? `calc(100vh - ${scrollGap + 18}px)` : undefined,
       transition: 'none',
     }
   }
@@ -39,7 +39,36 @@ export default function Home() {
   return (
     <div style={{ height: '100vh' }} ref={wrapperRef}>
       <Stellar isTravelling={true} scrollCallback={setScrollTop}>
-        <StyledMain>
+        <div
+          style={{
+            position: 'fixed',
+            width: '100%',
+            fontSize: '1.4rem',
+            fontWeight: 'bold',
+            margin: '1rem 0',
+            filter: 'blur(0.5px)',
+          }}
+        >
+          <PageGrid>
+            <Banner $useBackground={false}>
+              <div
+                style={{
+                  color: 'var(--special)',
+                }}
+              >
+                Lance Taylor
+              </div>
+              <div
+                style={{
+                  color: 'var(--special)',
+                }}
+              >
+                ▶ ⏩ ⏪ 🔽 ⏸
+              </div>
+            </Banner>
+          </PageGrid>
+        </div>
+        <PageGrid>
           <div
             style={{
               textAlign: 'center',
@@ -59,12 +88,14 @@ export default function Home() {
               />
             </div>
           </div>
-          <div style={{ marginBottom: '1rem' }}>
+          <div style={{ margin: '1rem' }}>
             <Grid>
-              {careerHighlights.map(({ title, subTitle, summary, bullets }) => (
-                <Card key={title} {...{ title, subTitle }}>
+              {skillset.map(({ title, subTitle, summary, bullets }) => (
+                <Card key={title} {...{ title, subTitle }} $isClear>
                   {summary}
-                  <ul style={{ padding: '1rem' }}>
+                  <ul
+                    style={{ padding: '1rem 1rem 0', color: 'var(--textSoft)' }}
+                  >
                     {bullets.map((bullet, i) => (
                       <li key={i}>{bullet}</li>
                     ))}
@@ -73,12 +104,28 @@ export default function Home() {
               ))}
             </Grid>
           </div>
-          <Banner>
+          <StyledFullGradient className="pi-page-grid-full">
             <div>Something 1</div>
             <div>Something 2</div>
             <div>Something 3</div>
-          </Banner>
-        </StyledMain>
+          </StyledFullGradient>
+          <div style={{ margin: '1rem' }}>
+            <Grid>
+              {careerHighlights.map(({ title, subTitle, summary, bullets }) => (
+                <Card key={title} {...{ title, subTitle }}>
+                  {summary}
+                  <ul
+                    style={{ padding: '1rem 1rem 0', color: 'var(--textSoft)' }}
+                  >
+                    {bullets.map((bullet, i) => (
+                      <li key={i}>{bullet}</li>
+                    ))}
+                  </ul>
+                </Card>
+              ))}
+            </Grid>
+          </div>
+        </PageGrid>
       </Stellar>
     </div>
   )

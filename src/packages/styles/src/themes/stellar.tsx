@@ -24,7 +24,7 @@ export const stellar = {
     textSoft: '#b3afb9',
     textStrong: '#b1b1b1',
     subtle: '#26232a',
-    border: '#6a5e7f',
+    border: '#6a5e7f50',
     shadow: '#000000',
     input: '#1c1c1c',
     outline: '#798cd3',

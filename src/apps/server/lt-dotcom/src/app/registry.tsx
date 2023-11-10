@@ -18,7 +18,7 @@ export default function StyleRegistry({ children }: PropsWithChildren) {
 
   return (
     <StyleSheetManager sheet={styleSheet.instance}>
-      <Theme themeName="electron" scheme="dark">
+      <Theme themeName="stellar" scheme="dark">
         {children}
       </Theme>
     </StyleSheetManager>

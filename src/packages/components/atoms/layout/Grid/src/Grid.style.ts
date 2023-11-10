@@ -11,5 +11,6 @@ export const StyledGrid = styled.div`
 
   @media (max-width: 636px) {
     grid-template-columns: 1fr;
+    gap: 3rem;
   }
 `

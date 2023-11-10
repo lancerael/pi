@@ -18,7 +18,7 @@ const getVars = (schemeValues: SchemeValues) =>
   Object.entries(schemeValues).reduce(
     (acc, [key, val]) => `${acc}
       --${key}: ${val};
-      --${key}A: ${hexToRgba(val, 0.3)};
+      --${key}A: ${hexToRgba(val, 0.5)};
     `,
     ''
   )

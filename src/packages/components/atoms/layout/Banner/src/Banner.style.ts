@@ -6,8 +6,10 @@ import { StyledBannerProps } from './Banner.styles.types'
  * The main container element for the banner styles
  */
 export const StyledBanner = styled.div<StyledBannerProps>(
-  ({ $wrapItems, $invertGradient }) => css`
-    ${gradient({ to: $invertGradient ? 'bottom' : 'top' })}
+  ({ $wrapItems, $invertGradient, $useBackground }) => css`
+    ${$useBackground
+      ? gradient({ to: $invertGradient ? 'bottom' : 'top' })
+      : ''}
     color: var(--light);
     display: flex;
     gap: 4px;
@@ -15,9 +17,13 @@ export const StyledBanner = styled.div<StyledBannerProps>(
     position: relative;
     justify-content: space-between;
     align-items: center;
-    border-${
-      $invertGradient ? 'top' : 'bottom'
-    }: 1px solid var(--specialShadow);
+    ${$useBackground
+      ? `
+      border-${
+        $invertGradient ? 'top' : 'bottom'
+      }: 1px solid var(--specialShadow);
+    `
+      : ''}
     ${!!$wrapItems && 'flex-wrap: wrap;'};
     overflow-x: clip;
     ${shadow('0px 2px', '0.1')}

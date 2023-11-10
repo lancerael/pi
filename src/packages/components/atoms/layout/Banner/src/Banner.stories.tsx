@@ -23,6 +23,9 @@ const meta: Meta<typeof Banner> = {
     $wrapItems: {
       control: 'boolean',
     },
+    $useBackground: {
+      control: 'boolean',
+    },
     $invertGradient: {
       control: 'boolean',
     },
@@ -36,6 +39,7 @@ const meta: Meta<typeof Banner> = {
 export const Default: StoryObj<typeof Banner> = {
   args: {
     $wrapItems: false,
+    $useBackground: false,
     $invertGradient: false,
   },
   render,

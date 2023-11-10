@@ -9,4 +9,8 @@ export interface CardProps extends PropsWithChildren {
    * The subtitle for the card
    */
   subTitle?: any
+  /**
+   * Sets whether the background and border should be clear
+   */
+  $isClear?: boolean
 }

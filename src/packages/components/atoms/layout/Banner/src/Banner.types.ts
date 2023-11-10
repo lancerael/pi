@@ -9,6 +9,10 @@ export interface BannerProps extends PropsWithChildren {
    */
   $wrapItems?: boolean
   /**
+   * Does the banner need a background gradient?
+   */
+  $useBackground?: boolean
+  /**
    * Does the banner need an inversion of the gradient?
    */
   $invertGradient?: boolean

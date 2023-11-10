@@ -8,9 +8,12 @@ import { boxColors, gradients } from './theme'
 export const gradient = ({
   to = 'top',
   name = 'default',
+  isTransparent,
 }: GradientProps = {}) => {
   const [start, end] = gradients[name]
-  return `background: linear-gradient(to ${to}, var(--${start}), var(--${end}));`
+  return `background: linear-gradient(to ${to}, var(--${start}${
+    isTransparent ? 'A' : ''
+  }), var(--${end}${isTransparent ? 'A' : ''}));`
 }
 
 /**
