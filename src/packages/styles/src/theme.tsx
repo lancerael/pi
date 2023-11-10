@@ -86,7 +86,8 @@ export const Theme = ({
   const isDark =
     isWindow && !!matchMedia('(prefers-color-scheme: dark)').matches
   const defaultTheme = isDark ? 'dark' : 'light'
-  const GlobalStyle = globalStyles[themeName]?.[scheme || defaultTheme]
+  const style = globalStyles[themeName]
+  const GlobalStyle = style ? style?.[scheme || defaultTheme] : () => <></>
   const SizeStyle = globalFontSizes[fontSize]
   return (
     <ThemeProvider {...{ theme }}>
