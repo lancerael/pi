@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 
-import { rgbToHex } from './helpers'
+import { rgbToHex } from '@pi-lib/styles'
 
 Cypress.Commands.add('setUpTests', () => {
   cy.intercept(

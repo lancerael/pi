@@ -15,7 +15,9 @@ export const useThrottledEvents = (
   callback: CallbackFunction,
   events: string[] = ['resize'],
   doInit: boolean = true,
-  target: Window | HTMLElement | null = null,
+  target: Window | HTMLElement | null = typeof window !== 'undefined'
+    ? window
+    : null,
   timeout = 150
 ) => {
   useEffect(() => {

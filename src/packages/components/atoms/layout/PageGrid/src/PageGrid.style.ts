@@ -10,13 +10,13 @@ export const StyledPageGrid = styled.div<StyledPageGridProps>(
 
     display: grid;
     grid-template-columns:
-      [pi-page-grid-full-start]
+      [full-start]
       var(--outer-cols)
       [inner-start]
       var(--inner-col)
       [inner-end]
       var(--outer-cols)
-      [pi-page-grid-full-end];
+      [full-end];
 
     & > :not(.pi-page-grid-full),
     .pi-page-grid-full > :not(.pi-page-grid-full) {
@@ -24,7 +24,7 @@ export const StyledPageGrid = styled.div<StyledPageGridProps>(
     }
 
     & > .pi-page-grid-full {
-      grid-column: pi-page-grid-full;
+      grid-column: full;
       display: grid;
       grid-template-columns: inherit;
     }

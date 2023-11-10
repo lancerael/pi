@@ -1,11 +1,16 @@
 {
   "name": "@pi-lib/page-grid",
   "version": "0.0.0",
-  "description": "",
+  "description": "A wrapper for a page grid layout.",
   "keywords": [
-    "react"
+    "pi",
+    "react",
+    "component",
+    "atoms",
+    "layout",
+    "grid"
   ],
-  "homepage": "https://pi.lance-taylor.com/",
+  "homepage": "https://pi.lance-taylor.com/?path=/docs/atoms-layout-page-grid",
   "repository": {
     "type": "git",
     "url": "https://github.com/lancerael/pi.git",

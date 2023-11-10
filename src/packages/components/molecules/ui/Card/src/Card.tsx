@@ -14,6 +14,7 @@ import { CardProps } from './Card.types'
  * @param {CardProps} props - The properties passed to the component.
  * @param {string} [props.title] - The title text for the card. Not displayed if absent.
  * @param {string} [props.subTitle] - The subtitle text for the card. Not displayed if absent.
+ * @param {boolean} [props.$isClear] - The background of the card is completely transparent.
  * @param {React.ReactNode} props.children - The main content to be displayed inside the card.
  * @returns {React.ReactNode} A styled card element.
  */

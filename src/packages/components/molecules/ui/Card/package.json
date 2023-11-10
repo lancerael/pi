@@ -1,15 +1,20 @@
 {
   "name": "@pi-lib/card",
   "version": "0.0.0",
-  "description": "",
+  "description": "A card component with a title and subtitle.",
   "keywords": [
-    "react"
+    "pi",
+    "react",
+    "component",
+    "molecules",
+    "ui",
+    "card"
   ],
-  "homepage": "https://pi.lance-taylor.com/",
+  "homepage": "https://pi.lance-taylor.com/?path=/docs/molecules-ui-card",
   "repository": {
     "type": "git",
     "url": "https://github.com/lancerael/pi.git",
-    "directory": "./src/packages/components/molecules/Card"
+    "directory": "./src/packages/components/molecules/ui/Card"
   },
   "license": "ISC",
   "author": "Lance Taylor",
@@ -18,6 +23,9 @@
   "scripts": {
     "build": "rimraf vanilla && vite build",
     "test": "vitest"
+  },
+  "dependencies": {
+    "@pi-lib/styles": "workspace:^"
   },
   "devDependencies": {
     "@pi-lib/config": "workspace:^",
@@ -34,8 +42,5 @@
     "@pi-lib/styles": "workspace:^",
     "react": "^18.2.0",
     "styled-components": "^6.1.0"
-  },
-  "dependencies": {
-    "@pi-lib/styles": "workspace:^"
   }
 }
