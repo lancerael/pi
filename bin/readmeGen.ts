@@ -87,7 +87,11 @@ ${
       const fileContents = await fs.readFile(filePath, 'utf8')
       const parsedContents = JSON.parse(fileContents)
       const componentName = location.split('/').pop()
-      if (parsedContents.private || customReadmes.includes(parsedContents.name))
+      if (
+        parsedContents.private ||
+        !parsedContents.name ||
+        customReadmes.includes(parsedContents.name)
+      )
         return
       const componentReadme = readmeTemplate(componentName, parsedContents)
       Object.keys(allReadmes).forEach((readmeKey) => {

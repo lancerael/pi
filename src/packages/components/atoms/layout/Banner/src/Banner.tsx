@@ -2,7 +2,7 @@ import { StyledBanner } from './Banner.style'
 import { BannerProps } from './Banner.types'
 
 /**
- * A banner React component that can be used for a header or footer
+ * A banner React component that can comtain spaced or flowing items
  */
 export const Banner = ({
   children,
