@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 
-import { rgbTohex } from './helpers'
+import { rgbToHex } from './helpers'
 
 Cypress.Commands.add('setUpTests', () => {
   cy.intercept(
@@ -69,14 +69,16 @@ Cypress.Commands.add(
       ($element, i, $collection) => {
         let dataLength = $collection.length / colorLength
         let colorIndex = (i - (i % dataLength)) / dataLength
-        expect(rgbTohex($element[0].getAttribute('fill'))).to.eq(
+        expect(rgbToHex($element[0].getAttribute('fill') as string)).to.eq(
           chartColors[colorIndex]
         )
       }
     )
     cy.log('...on the key')
     cy.get(`#container-${type} rect.key`).each(($element, i) => {
-      expect(rgbTohex($element[0].getAttribute('fill'))).to.eq(chartColors[i])
+      expect(rgbToHex($element[0].getAttribute('fill') as string)).to.eq(
+        chartColors[i]
+      )
     })
   }
 )
@@ -89,7 +91,9 @@ Cypress.Commands.add(
       cy.wrap($element[0]).clear().type('#223344')
     })
     cy.get(`#container-${type} ${selector}`).each(($element) => {
-      expect(rgbTohex($element[0].getAttribute('fill'))).to.eq('#223344')
+      expect(rgbToHex($element[0].getAttribute('fill') as string)).to.eq(
+        '#223344'
+      )
     })
   }
 )

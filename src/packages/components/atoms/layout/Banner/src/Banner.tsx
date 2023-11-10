@@ -2,14 +2,17 @@ import { StyledBanner } from './Banner.style'
 import { BannerProps } from './Banner.types'
 
 /**
- * A banner React component that can be used for a header or footer
+ * A banner React component that can comtain spaced or flowing items
  */
 export const Banner = ({
   children,
-  wrapItems = false,
-  invertGradient = false,
+  $useBackground = true,
+  $wrapItems = false,
+  $invertGradient = false,
 }: BannerProps) => (
-  <StyledBanner {...{ wrapItems, invertGradient }}>{children}</StyledBanner>
+  <StyledBanner {...{ $wrapItems, $invertGradient, $useBackground }}>
+    {children}
+  </StyledBanner>
 )
 
 export default Banner

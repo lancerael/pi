@@ -34,7 +34,8 @@ export const StyledStar = styled.div`
   height: 5px;
   position: absolute;
   border-radius: 50%;
-  transition: all 0.2s linear, opacity 0.5s linear;
+  transition: all 0.1s linear, opacity 0.5s linear;
+  transition-delay: 0s;
   z-index: 1;
 `
 
@@ -42,10 +43,8 @@ export const StyledContent = styled.div`
   position: relative;
   width: 100%;
   height: 100%;
-  border: 1ps solid green;
   z-index: 2;
   overflow: auto;
   color: lightblue;
-  padding: 2rem;
   box-sizing: border-box;
 `

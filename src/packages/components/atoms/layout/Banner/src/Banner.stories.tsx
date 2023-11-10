@@ -20,10 +20,13 @@ const meta: Meta<typeof Banner> = {
   title: 'Atoms/Layout/Banner',
   component: Banner,
   argTypes: {
-    wrapItems: {
+    $wrapItems: {
       control: 'boolean',
     },
-    invertGradient: {
+    $useBackground: {
+      control: 'boolean',
+    },
+    $invertGradient: {
       control: 'boolean',
     },
   },
@@ -35,8 +38,9 @@ const meta: Meta<typeof Banner> = {
  */
 export const Default: StoryObj<typeof Banner> = {
   args: {
-    wrapItems: false,
-    invertGradient: false,
+    $wrapItems: false,
+    $useBackground: false,
+    $invertGradient: false,
   },
   render,
 }
@@ -46,8 +50,8 @@ export const Default: StoryObj<typeof Banner> = {
  */
 export const Inverted: StoryObj<typeof Banner> = {
   args: {
-    wrapItems: true,
-    invertGradient: true,
+    $wrapItems: true,
+    $invertGradient: true,
   },
   render,
 }

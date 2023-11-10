@@ -24,13 +24,14 @@
     "@pi-lib/page-content": "workspace:^",
     "@pi-lib/page-loader": "workspace:^",
     "@pi-lib/table": "workspace:^",
+    "@pi-lib/utils": "workspace:^",
     "@reduxjs/toolkit": "^1.9.3",
     "d-theia": "^3.6.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-redux": "^7.1.1",
     "redux": "^4.0.0",
-    "styled-components": "^5.3.11"
+    "styled-components": "^6.1.0"
   },
   "devDependencies": {
     "@originjs/vite-plugin-federation": "^1.2.2",
@@ -39,7 +40,7 @@
     "cypress": "^12.17.3",
     "react-is": "^18.2.0",
     "rimraf": "^3.0.2",
-    "typescript": "^4.9.5",
+    "typescript": "^5",
     "vite": "^4.4.10",
     "vitest": "^0.34.6"
   }

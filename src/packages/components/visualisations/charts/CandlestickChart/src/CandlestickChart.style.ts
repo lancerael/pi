@@ -1,4 +1,4 @@
-import { chartContainer } from '@pi-lib/styles'
+import { container } from '@pi-lib/styles'
 import styled from 'styled-components'
 import { ChartStyleProps } from './CandlestickChart.types'
 
@@ -68,7 +68,7 @@ export const StyledCandlestickChart = styled.svg<ChartStyleProps>`
  * The styles for the chart container div
  */
 export const StyledContainer = styled.div`
-  ${chartContainer()}
+  ${container()}
   width: 100%;
   height: 100%;
   font-family: sans-serif;

@@ -4,29 +4,52 @@ import { ShimmerProps } from './Shimmer.types'
 
 /**
  * Shimmer component to create a shimmering effect over a series of lines.
- * The component cycles through each line, making one line visible at a time in a loop.
+ * The component cycles through each line, making one line visible at a time in a loop, or in a fade manner depending on the behavior prop.
  *
  * @param {ShimmerProps} props - The props for the Shimmer component.
- * @param {Array<string>} props.lines - An array of strings that represent each line's content.
- * @returns {JSX.Element} The Shimmer effect with cycling visibility over the provided lines.
+ * @param {string[]} props.lines - An array of strings that represent the content for each line.
+ * @param {number} [props.delay=1000] - Initial delay in milliseconds before the shimmer effect starts.
+ * @param {number} [props.pause=5000] - Delay in milliseconds between each shimmer effect cycle.
+ * @param {'loop'|'linger'|'fade'} [props.behaviour='loop'] - Determines the cycle behavior of the shimmer effect.
+ * @returns {JSX.Element} A styled shimmer effect wrapping each provided line, cycling visibility according to specified behavior.
  */
-export const Shimmer = ({ lines }: ShimmerProps) => {
-  const [visibleLine, setVisibleLine] = useState(0)
+export const Shimmer = ({
+  lines,
+  delay = 1000,
+  pause = 5000,
+  behaviour = 'loop',
+  callback = () => {},
+}: ShimmerProps) => {
+  const [visibleLine, setVisibleLine] = useState(-1)
+
+  const progressLines = () => {
+    setVisibleLine((currentLine) => {
+      const nextLine = currentLine + 1
+      if (behaviour === 'loop' || nextLine < lines.length)
+        return nextLine % lines.length
+      requestAnimationFrame(callback)
+      if (behaviour === 'fade') return nextLine
+      return currentLine
+    })
+  }
+
   useEffect(() => {
-    const linesInterval = setInterval(() => {
-      setVisibleLine((currentLine) => {
-        if (lines.length - 1 - currentLine) return currentLine + 1
-        return 0
-      })
-    }, 5000)
-    return () => clearInterval(linesInterval)
-  }, [])
+    let linesPause: NodeJS.Timeout
+    const linesDelay = setTimeout(() => {
+      progressLines()
+      linesPause = setInterval(progressLines, pause)
+    }, delay)
+    return () => {
+      clearTimeout(linesDelay)
+      clearInterval(linesPause)
+    }
+  }, [lines, delay, pause, behaviour])
   return (
     <StyledShimmer>
       {lines.map((line, i) => (
         <StyledLine
           key={i}
-          isVisible={visibleLine === i}
+          $isVisible={visibleLine === i}
           data-content={line}
           data-testid={line}
         />

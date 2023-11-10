@@ -49,6 +49,7 @@ export type SizeMap = Record<FontSize, GlobalStyleComponent>
 export interface GradientProps {
   to?: 'top' | 'bottom'
   name?: keyof typeof gradients
+  isTransparent?: boolean
 }
 
 export interface BoxProps {

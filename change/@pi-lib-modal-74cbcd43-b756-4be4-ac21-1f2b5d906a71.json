@@ -1,0 +1,7 @@
+{
+  "type": "patch",
+  "comment": "Bumping TS",
+  "packageName": "@pi-lib/modal",
+  "email": "lancerael@googlemail.com",
+  "dependentChangeType": "patch"
+}

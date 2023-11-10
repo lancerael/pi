@@ -1,4 +1,4 @@
-export const rgbTohex = (sRgb: any) => {
+export const rgbToHex = (sRgb: any) => {
   if (sRgb.match(/\#/)) {
     return sRgb
   }

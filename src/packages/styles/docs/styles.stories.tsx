@@ -100,3 +100,9 @@ export const Rose: StoryObj<typeof StyleDemo> = {
     themeName: 'rose',
   },
 }
+
+export const Stellar: StoryObj<typeof StyleDemo> = {
+  args: {
+    themeName: 'stellar',
+  },
+}

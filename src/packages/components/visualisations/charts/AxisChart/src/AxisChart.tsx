@@ -13,7 +13,7 @@ export const AxisChart = ({
   chartData,
   chartConfig,
 }: AxisChartProps) => {
-  const chartContainer = useRef(null)
+  const container = useRef(null)
   const dtChart = useRef<Chart>()
   const skipUpdate =
     !dtChart.current ||
@@ -21,12 +21,12 @@ export const AxisChart = ({
 
   // Set up chart
   useEffect(() => {
-    if (!chartContainer.current || dtChart.current) return
+    if (!container.current || dtChart.current) return
     dtChart.current = Theia.chart(chartId, chartType, {
       chartData,
       chartConfig,
     })
-  }, [chartContainer.current])
+  }, [container.current])
 
   // Update chart
   useEffect(() => {
@@ -37,7 +37,7 @@ export const AxisChart = ({
   // Keep chart in proportion in case of font resize
   setInterval(() => dtChart.current?.onResize(), 10000)
 
-  return <StyledAxisChart id={chartId} ref={chartContainer} />
+  return <StyledAxisChart id={chartId} ref={container} />
 }
 
 export default AxisChart

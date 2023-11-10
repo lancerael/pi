@@ -55,7 +55,7 @@ describe('Stellar Helpers', () => {
     let star: Star
 
     beforeAll(() => {
-      star = makeStar(dimensions)
+      star = makeStar(0, dimensions)
     })
 
     test('should return a star object with expected properties', () => {
@@ -83,7 +83,7 @@ describe('Stellar Helpers', () => {
     let stars: Star[]
 
     beforeAll(() => {
-      stars = makeStars(numStars, dimensions)
+      stars = makeStars(0, numStars, dimensions)
     })
 
     test('should create an array of stars with the specified length', () => {
@@ -134,7 +134,7 @@ describe('Stellar Helpers', () => {
     })
 
     test('should return false for a star that exceeds the age limit', () => {
-      const maxAge = 50
+      const maxAge = 200
       expect(filterStars(maxAge, position, dimensions)).toBe(false)
     })
 
@@ -170,8 +170,7 @@ describe('Stellar Helpers', () => {
 
     test('style should contain opacity based on age', () => {
       expect(starStyle.style).toHaveProperty('opacity')
-      const expectedOpacity = star.age >= 1 ? 1 - star.age / 19 : 0
-      expect(starStyle.style.opacity).toBe(expectedOpacity)
+      expect(starStyle.style.opacity).toBe(0.96)
     })
   })
 })

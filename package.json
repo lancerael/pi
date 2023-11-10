@@ -36,10 +36,12 @@
     "sb": "---------------------------------------------------------STORYBOOK-----",
     "sb:build": "cross-env NODE_OPTIONS=--openssl-legacy-provider storybook build",
     "sb:dev": "cross-env NODE_OPTIONS=--openssl-legacy-provider storybook dev -p 6006",
-    "test": "npx nx run-many --target=test",
-    "test-": "------------------------------------------------------TEST----------",
+    "test": "-------------------------------------------------------TEST----------",
     "test:cov": "vitest --coverage",
-    "test:min": "npx nx affected --target=test"
+    "test:min": "npx nx affected --target=test",
+    "test:nx": "npx nx run-many --target=test",
+    "web": "--------------------------------------------------------WEB----------",
+    "web:dev": "pnpm --filter @pi-lib/lt-dotcom dev"
   },
   "devDependencies": {
     "@pi-lib/styles": "workspace:^",
@@ -49,7 +51,6 @@
     "@storybook/addon-essentials": "^7.0.21",
     "@storybook/addon-interactions": "^7.0.21",
     "@storybook/addon-links": "^7.0.21",
-    "@storybook/addon-mdx-gfm": "7.0.21",
     "@storybook/addon-measure": "^7.0.21",
     "@storybook/addon-outline": "^7.0.21",
     "@storybook/blocks": "^7.0.21",
@@ -99,7 +100,7 @@
     "resize-observer-polyfill": "^1.5.1",
     "storybook": "7.0.21",
     "styled-components": "^6.1.0",
-    "typescript": "^4.9.5",
+    "typescript": "^5",
     "vite": "^4.4.10",
     "vitest": "^0.34.6"
   },

@@ -1,0 +1,43 @@
+{
+  "name": "@pi-lib/page-grid",
+  "version": "0.0.0",
+  "description": "A wrapper for a page grid layout.",
+  "keywords": [
+    "pi",
+    "react",
+    "component",
+    "atoms",
+    "layout",
+    "grid"
+  ],
+  "homepage": "https://pi.lance-taylor.com/?path=/docs/atoms-layout-page-grid",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lancerael/pi.git",
+    "directory": "./src/packages/components/atoms/layout/PageGrid"
+  },
+  "license": "ISC",
+  "author": "Lance Taylor",
+  "type": "module",
+  "main": "./src/index.ts",
+  "scripts": {
+    "build": "rimraf vanilla && vite build",
+    "test": "vitest"
+  },
+  "devDependencies": {
+    "@pi-lib/config": "workspace:^",
+    "@testing-library/react": "^13.3.0",
+    "@vitejs/plugin-react": "^4.1.0",
+    "jest-axe": "^8.0.0",
+    "jsdom": "^20.0.0",
+    "rimraf": "^3.0.2",
+    "typescript": "^5",
+    "vite": "^4.4.10",
+    "vitest": "^0.34.6"
+  },
+  "peerDependencies": {
+    "@pi-lib/styles": "workspace:^",
+    "react": "^18.2.0",
+    "styled-components": "^6.1.0"
+  }
+}

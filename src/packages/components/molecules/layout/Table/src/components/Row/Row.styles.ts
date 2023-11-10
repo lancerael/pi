@@ -5,12 +5,12 @@ import { StyledRowProps } from './Row.styles.types'
  * The main styles for the table row
  */
 export const StyledRow = styled.tr<StyledRowProps>(
-  ({ isOdd, isExpandable }) => css`
+  ({ $isOdd, $isExpandable }) => css`
     background: var(--subtle);
     border: 1px solid var(--border);
     border-width: 0 1px;
 
-    ${isExpandable &&
+    ${$isExpandable &&
     css`
       cursor: pointer;
       &:hover {
@@ -18,7 +18,7 @@ export const StyledRow = styled.tr<StyledRowProps>(
       }
     `}
 
-    ${isOdd &&
+    ${$isOdd &&
     css`
       background: var(--mark);
     `}
