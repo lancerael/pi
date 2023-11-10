@@ -49,7 +49,10 @@ export const boxColors = {
 }
 
 /**
- * A helper to merge the colours for the chosen theme
+ * Merges status colors with theme-specific colors.
+ * @param {Scheme} scheme - The color scheme ('light' or 'dark').
+ * @param {ThemeType} themeName - The name of the theme.
+ * @returns {Object} Merged color object.
  */
 export const mergeColours = (scheme: Scheme, themeName: ThemeType) => ({
   ...statusColors[scheme],
@@ -57,7 +60,10 @@ export const mergeColours = (scheme: Scheme, themeName: ThemeType) => ({
 })
 
 /**
- * A helper to get the currently selected theme
+ * Generates the theme object based on theme name and overrides.
+ * @param {ThemeType} themeName - The name of the theme.
+ * @param {PiTheme} [themeOverrides] - Optional overrides for the theme.
+ * @returns {PiTheme} The final theme object.
  */
 export const getTheme = (
   themeName: ThemeType = 'andro',
@@ -72,7 +78,10 @@ export const getTheme = (
 })
 
 /**
- * A react provider component that wraps the child components in a theme
+ * Theme provider component to wrap child components in a theme.
+ * @component
+ * @param {ThemeProps} props - The props for the Theme component.
+ * @returns {JSX.Element} A ThemeProvider wrapped component.
  */
 export const Theme = ({
   children,
@@ -99,7 +108,10 @@ export const Theme = ({
 }
 
 /**
- * A react HOC to add a theme to a component
+ * Higher-order component to add a theme to a wrapped component.
+ * @param {React.JSXElementConstructor<any>} Component - The component to be wrapped.
+ * @param {ThemeType} themeName - The name of the theme to be applied.
+ * @returns {Function} A function that takes props and returns a themed component.
  */
 export const withTheme =
   (Component: React.JSXElementConstructor<any>, themeName: ThemeType) =>
