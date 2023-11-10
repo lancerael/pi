@@ -82,11 +82,10 @@ export const Theme = ({
   scheme = 'light',
   fontSize = 'small',
 }: ThemeProps) => {
-  const defaultTheme =
-    typeof window !== 'undefined' &&
-    !!matchMedia('(prefers-color-scheme: dark)').matches
-      ? 'dark'
-      : 'light'
+  const isWindow = typeof window !== 'undefined'
+  const isDark =
+    isWindow && !!matchMedia('(prefers-color-scheme: dark)').matches
+  const defaultTheme = isDark ? 'dark' : 'light'
   const GlobalStyle = globalStyles[themeName]?.[scheme || defaultTheme] ?? <></>
   const SizeStyle = globalFontSizes[fontSize]
   return (
