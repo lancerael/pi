@@ -1,7 +1,0 @@
-{
-  "type": "minor",
-  "comment": "Bumping TS",
-  "packageName": "@pi-lib/select",
-  "email": "lancerael@googlemail.com",
-  "dependentChangeType": "patch"
-}

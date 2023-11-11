@@ -1,7 +1,0 @@
-{
-  "type": "minor",
-  "comment": "Adding transparent option and transient props",
-  "packageName": "@pi-lib/banner",
-  "email": "lancerael@googlemail.com",
-  "dependentChangeType": "patch"
-}

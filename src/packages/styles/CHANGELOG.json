@@ -2,6 +2,21 @@
   "name": "@pi-lib/styles",
   "entries": [
     {
+      "date": "Sat, 11 Nov 2023 00:16:54 GMT",
+      "tag": "@pi-lib/styles_v3.0.0",
+      "version": "3.0.0",
+      "comments": {
+        "major": [
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/styles",
+            "commit": "361c0e4498d835296f3e16c144fae2932c60efed",
+            "comment": "Adding transparency to colour palette, and changed chartContainer mixin to container"
+          }
+        ]
+      }
+    },
+    {
       "date": "Mon, 06 Nov 2023 00:06:06 GMT",
       "tag": "@pi-lib/styles_v2.1.4",
       "version": "2.1.4",

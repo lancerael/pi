@@ -2,6 +2,21 @@
   "name": "@pi-lib/advanced-button",
   "entries": [
     {
+      "date": "Sat, 11 Nov 2023 00:16:53 GMT",
+      "tag": "@pi-lib/advanced-button_v1.0.20",
+      "version": "1.0.20",
+      "comments": {
+        "patch": [
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/advanced-button",
+            "commit": "361c0e4498d835296f3e16c144fae2932c60efed",
+            "comment": "Bumping TS"
+          }
+        ]
+      }
+    },
+    {
       "date": "Mon, 06 Nov 2023 00:06:06 GMT",
       "tag": "@pi-lib/advanced-button_v1.0.19",
       "version": "1.0.19",

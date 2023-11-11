@@ -1,8 +1,16 @@
 # Change Log - @pi-lib/banner
 
-This log was last generated on Mon, 06 Nov 2023 00:06:06 GMT and should not be manually modified.
+This log was last generated on Sat, 11 Nov 2023 00:16:53 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 1.1.0
+
+Sat, 11 Nov 2023 00:16:53 GMT
+
+### Minor changes
+
+- Adding transparent option and transient props (lancerael@googlemail.com)
 
 ## 0.6.1
 

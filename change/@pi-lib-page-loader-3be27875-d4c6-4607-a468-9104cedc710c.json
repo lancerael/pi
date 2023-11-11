@@ -1,7 +1,0 @@
-{
-  "type": "patch",
-  "comment": "Bumping TS",
-  "packageName": "@pi-lib/page-loader",
-  "email": "lancerael@googlemail.com",
-  "dependentChangeType": "patch"
-}

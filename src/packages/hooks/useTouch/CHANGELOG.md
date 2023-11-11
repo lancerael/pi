@@ -1,8 +1,16 @@
 # Change Log - @pi-lib/use-touch
 
-This log was last generated on Sat, 04 Nov 2023 19:22:46 GMT and should not be manually modified.
+This log was last generated on Sat, 11 Nov 2023 00:16:54 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 1.2.1
+
+Sat, 11 Nov 2023 00:16:54 GMT
+
+### Patches
+
+- Bumping TS (lancerael@googlemail.com)
 
 ## 1.2.0
 

@@ -1,6 +1,6 @@
 {
   "name": "@pi-lib/loader",
-  "version": "3.0.5",
+  "version": "3.0.6",
   "description": "Basic loading spinner React component",
   "keywords": [
     "pi",

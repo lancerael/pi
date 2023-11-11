@@ -1,7 +1,0 @@
-{
-  "type": "major",
-  "comment": "Adding transparency to colour palette, and changed chartContainer mixin to container",
-  "packageName": "@pi-lib/styles",
-  "email": "lancerael@googlemail.com",
-  "dependentChangeType": "patch"
-}

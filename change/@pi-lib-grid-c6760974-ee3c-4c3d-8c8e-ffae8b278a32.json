@@ -1,7 +1,0 @@
-{
-  "type": "major",
-  "comment": "Adding Grid component",
-  "packageName": "@pi-lib/grid",
-  "email": "lancerael@googlemail.com",
-  "dependentChangeType": "patch"
-}

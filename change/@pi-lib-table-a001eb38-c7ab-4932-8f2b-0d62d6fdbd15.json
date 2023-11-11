@@ -1,7 +1,0 @@
-{
-  "type": "patch",
-  "comment": "Bumping TS",
-  "packageName": "@pi-lib/table",
-  "email": "lancerael@googlemail.com",
-  "dependentChangeType": "patch"
-}

@@ -1,8 +1,16 @@
 # Change Log - @pi-lib/shimmer
 
-This log was last generated on Mon, 06 Nov 2023 00:50:21 GMT and should not be manually modified.
+This log was last generated on Sat, 11 Nov 2023 00:16:54 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 0.1.3
+
+Sat, 11 Nov 2023 00:16:54 GMT
+
+### Patches
+
+- Improved Shimmer visuals (lancerael@googlemail.com)
 
 ## 0.1.2
 

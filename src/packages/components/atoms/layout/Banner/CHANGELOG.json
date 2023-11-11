@@ -2,6 +2,21 @@
   "name": "@pi-lib/banner",
   "entries": [
     {
+      "date": "Sat, 11 Nov 2023 00:16:53 GMT",
+      "tag": "@pi-lib/banner_v1.1.0",
+      "version": "1.1.0",
+      "comments": {
+        "minor": [
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/banner",
+            "commit": "361c0e4498d835296f3e16c144fae2932c60efed",
+            "comment": "Adding transparent option and transient props"
+          }
+        ]
+      }
+    },
+    {
       "date": "Mon, 06 Nov 2023 00:06:06 GMT",
       "tag": "@pi-lib/banner_v0.6.1",
       "version": "0.6.1",

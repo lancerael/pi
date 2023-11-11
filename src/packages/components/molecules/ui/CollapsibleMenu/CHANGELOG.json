@@ -2,6 +2,21 @@
   "name": "@pi-lib/collapsible-menu",
   "entries": [
     {
+      "date": "Sat, 11 Nov 2023 00:16:54 GMT",
+      "tag": "@pi-lib/collapsible-menu_v1.0.19",
+      "version": "1.0.19",
+      "comments": {
+        "patch": [
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/collapsible-menu",
+            "commit": "361c0e4498d835296f3e16c144fae2932c60efed",
+            "comment": "Bumping TS"
+          }
+        ]
+      }
+    },
+    {
       "date": "Mon, 06 Nov 2023 00:06:06 GMT",
       "tag": "@pi-lib/collapsible-menu_v1.0.18",
       "version": "1.0.18",

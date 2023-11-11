@@ -2,6 +2,21 @@
   "name": "@pi-lib/loader",
   "entries": [
     {
+      "date": "Sat, 11 Nov 2023 00:16:54 GMT",
+      "tag": "@pi-lib/loader_v3.0.6",
+      "version": "3.0.6",
+      "comments": {
+        "patch": [
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/loader",
+            "commit": "361c0e4498d835296f3e16c144fae2932c60efed",
+            "comment": "Bumping TS"
+          }
+        ]
+      }
+    },
+    {
       "date": "Mon, 06 Nov 2023 00:06:06 GMT",
       "tag": "@pi-lib/loader_v3.0.5",
       "version": "3.0.5",

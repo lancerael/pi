@@ -1,7 +1,0 @@
-{
-  "type": "patch",
-  "comment": "Improved Shimmer visuals",
-  "packageName": "@pi-lib/shimmer",
-  "email": "lancerael@googlemail.com",
-  "dependentChangeType": "patch"
-}
