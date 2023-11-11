@@ -46,5 +46,4 @@ export const StyledContent = styled.div`
   z-index: 2;
   overflow: auto;
   color: lightblue;
-  box-sizing: border-box;
 `
