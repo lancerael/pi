@@ -1,0 +1,7 @@
+{
+  "type": "minor",
+  "comment": "Adding simple button and rotation",
+  "packageName": "@pi-lib/icon-button",
+  "email": "lancerael@googlemail.com",
+  "dependentChangeType": "patch"
+}

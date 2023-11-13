@@ -1,0 +1,7 @@
+{
+  "type": "patch",
+  "comment": "Adding better external controls",
+  "packageName": "@pi-lib/stellar",
+  "email": "lancerael@googlemail.com",
+  "dependentChangeType": "patch"
+}
