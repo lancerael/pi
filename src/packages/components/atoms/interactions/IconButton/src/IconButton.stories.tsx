@@ -42,6 +42,7 @@ export const Colored: StoryObj<typeof IconButton> = {
   args: {
     src: `/info.svg`,
     $isStroked: true,
+    $isFilled: true,
   },
 }
 

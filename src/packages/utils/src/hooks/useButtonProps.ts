@@ -33,6 +33,11 @@ export const useButtonProps = <T>(
     onKeyUp: (e: any) => [' ', 'Enter'].includes(e.key) && onPointerUp?.(e),
   })
   return {
-    buttonProps: { ...buttonProps, ...keyboardProps, onPointerUp, ref: buttonRef },
+    buttonProps: {
+      ...buttonProps,
+      ...keyboardProps,
+      onPointerUp,
+      ref: buttonRef,
+    },
   }
 }

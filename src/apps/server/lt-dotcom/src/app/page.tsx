@@ -8,12 +8,12 @@ import Shimmer from '@pi-lib/shimmer'
 import PageGrid from '@pi-lib/page-grid'
 import Banner from '@pi-lib/banner'
 import Card from '@pi-lib/card'
+import IconButton from '@pi-lib/icon-button'
 import { getTransientProps } from '@pi-lib/utils'
 import { tickerLines } from '@/data/tickerLines'
 import { careerHighlights } from '@/data/careerHighlights'
 import Interact from '@/components/Interact'
 import { skillset } from '@/data/skillset'
-import IconButton from '@pi-lib/icon-button/src/IconButton'
 
 const StyledFullGradient = styled.div`
   ${gradient({ isTransparent: true })}

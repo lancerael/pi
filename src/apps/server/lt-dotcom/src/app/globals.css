@@ -15,14 +15,6 @@ a {
   text-decoration: none;
 }
 
-svg {
-  fill: var(--special);
-}
-
-svg path {
-  stroke: var(--special);
-}
-
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
