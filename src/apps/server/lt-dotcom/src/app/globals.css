@@ -8,12 +8,19 @@ html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 a {
   color: inherit;
   text-decoration: none;
+}
+
+svg {
+  fill: var(--special);
+}
+
+svg path {
+  stroke: var(--special);
 }
 
 @media (prefers-color-scheme: dark) {

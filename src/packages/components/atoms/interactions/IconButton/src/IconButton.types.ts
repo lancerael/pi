@@ -30,7 +30,15 @@ export interface IconButtonProps
    */
   $isStroked?: boolean
   /**
+   * Should it simplify the button style
+   */
+  $isSimpleButton?: boolean
+  /**
    * Set a specific size for the image
    */
   size?: string
+  /**
+   * Set a specific rotartion amount for the image in degrees
+   */
+  $rotate?: number
 }

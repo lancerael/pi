@@ -24,7 +24,7 @@ export const StyledStellar = styled.div`
   animation: ${pulse} 8s linear infinite;
   background-position: center center;
   width: 100%;
-  height: 100%;
+  height: 100svh;
   position: relative;
   overflow: clip;
 `
@@ -45,5 +45,5 @@ export const StyledContent = styled.div`
   height: 100%;
   z-index: 2;
   overflow: auto;
-  color: lightblue;
+  box-sizing: border-box;
 `

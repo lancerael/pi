@@ -12,14 +12,16 @@ export const IconButton = ({
   isSmall = false,
   $isFilled = false,
   $isStroked = false,
-  size = isSmall ? '1em' : '1.2em',
+  size = isSmall ? '1rem' : '1.2rem',
   dataSelector = 'pi-lib-icon-button',
+  $isSimpleButton = false,
+  $rotate,
   ...props
 }: IconButtonProps) => {
   const { buttonProps } = useButtonProps<HTMLAnchorElement>(props, 'a')
   return (
     <StyledIconButton
-      {...{ ...props, ...buttonProps, size, title }}
+      {...{ ...props, ...buttonProps, size, title, $isSimpleButton, $rotate }}
       target={isExternal ? '_blank' : undefined}
     >
       <StyledIcon {...{ src, size, $isFilled, $isStroked }} />

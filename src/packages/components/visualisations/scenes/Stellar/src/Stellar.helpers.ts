@@ -83,7 +83,8 @@ export const makeStars = (
  */
 export const moveStar = (
   { coords: [left, top], age, ...star }: Star,
-  [x, y]: Coords
+  [x, y]: Coords,
+  travelSpeed: number
 ): Star => {
   const xDist = left - x
   const yDist = top - y
@@ -91,10 +92,10 @@ export const moveStar = (
   const multiplier = (age + age * age) / 8
   return {
     coords: [
-      left + (xDist * multiplier) / radius,
-      top + (yDist * multiplier) / radius,
+      left + (xDist * multiplier * travelSpeed) / radius,
+      top + (yDist * multiplier * travelSpeed) / radius,
     ],
-    age: age + 1,
+    age: age + travelSpeed,
     ...star,
   }
 }

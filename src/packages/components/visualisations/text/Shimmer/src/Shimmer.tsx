@@ -17,6 +17,8 @@ export const Shimmer = ({
   lines,
   delay = 1000,
   pause = 5000,
+  holdFirst = pause,
+  fadeTime = 500,
   behaviour = 'loop',
   callback = () => {},
 }: ShimmerProps) => {
@@ -35,12 +37,16 @@ export const Shimmer = ({
 
   useEffect(() => {
     let linesPause: NodeJS.Timeout
-    const linesDelay = setTimeout(() => {
+    let firstLineDelay: NodeJS.Timeout
+    const initDelay = setTimeout(() => {
       progressLines()
-      linesPause = setInterval(progressLines, pause)
+      firstLineDelay = setTimeout(() => {
+        linesPause = setInterval(progressLines, pause)
+      }, holdFirst)
     }, delay)
     return () => {
-      clearTimeout(linesDelay)
+      clearTimeout(initDelay)
+      clearTimeout(firstLineDelay)
       clearInterval(linesPause)
     }
   }, [lines, delay, pause, behaviour])
@@ -50,6 +56,7 @@ export const Shimmer = ({
         <StyledLine
           key={i}
           $isVisible={visibleLine === i}
+          $fadeTime={fadeTime}
           data-content={line}
           data-testid={line}
         />

@@ -32,6 +32,7 @@ import { FPS_CUTOFF, MAX_STARS } from './Stellar.constants'
  */
 export const Stellar = ({
   starCount = 10,
+  travelSpeed = 1,
   isTravelling = true,
   showDebug = false,
   scrollCallback,
@@ -47,6 +48,7 @@ export const Stellar = ({
   const contentRef = useRef<HTMLDivElement>(null)
   const targetTransition = useRef<() => void>()
   const moveTimeout = useRef<NodeJS.Timeout>()
+  const travelInfo = useRef({ isTravelling, travelSpeed })
   const lastScroll = useRef(0)
   const framerate = useFramerate()
 
@@ -95,7 +97,11 @@ export const Stellar = ({
       setTarget(clientX, clientY - 5, 15)
       clearTimeout(moveTimeout.current)
 
-      if (framerate.current.fps < FPS_CUTOFF) return
+      if (
+        framerate.current.fps < FPS_CUTOFF ||
+        !travelInfo.current.isTravelling
+      )
+        return
 
       starTracker.current.push(
         ...makeStars(
@@ -109,11 +115,11 @@ export const Stellar = ({
         updateDimensions()
       }, 1000)
     },
-    []
+    [isTravelling]
   )
 
   useThrottledEvents(updateDimensions)
-  useThrottledEvents(scroll, ['scroll'], false, contentRef.current, 50)
+  useThrottledEvents(scroll, ['scroll'], false, contentRef.current, 100)
   useThrottledEvents(
     (e) => starSpawm(e, false),
     ['pointermove'],
@@ -142,8 +148,9 @@ export const Stellar = ({
       const { dimensions, target } = stellarCoords.current
       const { fps } = framerate.current
       if (
-        !fps ||
-        (fps > FPS_CUTOFF && starTracker.current.length < MAX_STARS)
+        (!fps ||
+          (fps > FPS_CUTOFF && starTracker.current.length < MAX_STARS)) &&
+        isTravelling
       ) {
         starTracker.current.push(
           ...makeStars(
@@ -155,13 +162,14 @@ export const Stellar = ({
       }
       if (isTravelling) {
         starTracker.current = starTracker.current
-          .map((star: Star) => moveStar(star, target))
+          .map((star: Star) => moveStar(star, target, travelSpeed))
           .filter(({ age, coords }) => filterStars(age, coords, dimensions))
       }
       updateStyles()
     }, 100)
+    travelInfo.current = { isTravelling, travelSpeed }
     return () => clearInterval(keyframe)
-  }, [isTravelling])
+  }, [isTravelling, travelSpeed])
 
   return (
     <StyledStellar ref={stellarRef}>

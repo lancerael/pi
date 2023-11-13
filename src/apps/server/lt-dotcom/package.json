@@ -12,6 +12,7 @@
     "@pi-lib/banner": "workspace:^",
     "@pi-lib/card": "workspace:^",
     "@pi-lib/grid": "workspace:^",
+    "@pi-lib/icon-button": "workspace:^",
     "@pi-lib/page-grid": "workspace:^",
     "@pi-lib/shimmer": "workspace:^",
     "@pi-lib/stellar": "workspace:^",

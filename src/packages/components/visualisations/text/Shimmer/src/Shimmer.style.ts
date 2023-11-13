@@ -25,37 +25,39 @@ const blurPulse = keyframes`
 const textPulse = keyframes`
     0% {
       background-position: 0% 50%;
+      font-size: 2rem;
     }
     50% {
       background-position: 100% 50%;
+      font-size: 2.01rem;
     }
     100% {
       background-position: 200% 50%;
+      font-size: 2rem;
     }
 `
 
 export const StyledShimmer = styled.div`
-  height: 2rem;
+  /* height: 4rem; */
 `
 
 export const StyledLine = styled.div<StyledLineProps>(
-  ({ $isVisible }) => css`
-    font-size: 2rem;
+  ({ $isVisible, $fadeTime = 5000 }) => css`
     height: ${$isVisible ? '2rem' : '0'};
     transition: none;
 
     &::after {
-      transition: all 1.5s linear;
+      transition: all ${$fadeTime / 1000}s linear;
       content: attr(data-content);
       opacity: ${$isVisible ? 1 : 0};
       filter: blur(${$isVisible ? '0' : '20px'});
       background-image: linear-gradient(
         90deg,
-        lightblue,
-        lightblue,
-        white,
-        lightblue,
-        lightblue
+        var(--text),
+        var(--text),
+        var(--special),
+        var(--text),
+        var(--text)
       );
       background-clip: text;
       background-size: 200%;
@@ -69,8 +71,9 @@ export const StyledLine = styled.div<StyledLineProps>(
       transition: all 0.5s ease-in;
       content: attr(data-content);
       animation: ${blurPulse} 2.5s linear infinite;
-      opacity: ${$isVisible ? 0.7 : 0};
+      opacity: ${$isVisible ? 0.5 : 0};
       position: absolute;
+      font-size: 2rem;
     }
   `
 )
