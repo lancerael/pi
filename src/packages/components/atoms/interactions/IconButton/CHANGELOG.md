@@ -1,8 +1,16 @@
 # Change Log - @pi-lib/icon-button
 
-This log was last generated on Sat, 11 Nov 2023 00:16:54 GMT and should not be manually modified.
+This log was last generated on Mon, 13 Nov 2023 21:14:13 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 1.2.0
+
+Mon, 13 Nov 2023 21:14:13 GMT
+
+### Minor changes
+
+- Adding simple button and rotation (lancerael@googlemail.com)
 
 ## 1.1.8
 

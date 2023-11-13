@@ -1,7 +1,0 @@
-{
-  "type": "patch",
-  "comment": "Adding theme colours",
-  "packageName": "@pi-lib/shimmer",
-  "email": "lancerael@googlemail.com",
-  "dependentChangeType": "patch"
-}

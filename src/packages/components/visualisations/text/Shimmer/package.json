@@ -1,6 +1,6 @@
 {
   "name": "@pi-lib/shimmer",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "A shimmering text ticker animation.",
   "keywords": [
     "pi",
