@@ -363,6 +363,9 @@ importers:
       '@pi-lib/grid':
         specifier: workspace:^
         version: link:../../../packages/components/atoms/layout/Grid
+      '@pi-lib/icon-button':
+        specifier: workspace:^
+        version: link:../../../packages/components/atoms/interactions/IconButton
       '@pi-lib/page-grid':
         specifier: workspace:^
         version: link:../../../packages/components/atoms/layout/PageGrid

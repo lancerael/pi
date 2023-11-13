@@ -4,7 +4,10 @@ import { CustomStyledType } from '@pi-lib/styles'
 /**
  * The props for the styled icon button
  */
-export type StyledIconButtonProps = Pick<IconButtonProps, 'size'>
+export type StyledIconButtonProps = Pick<
+  IconButtonProps,
+  'size' | '$isSimpleButton' | '$rotate'
+>
 
 /**
  * The props for the styled icon

@@ -3,7 +3,7 @@ import { useButton, useKeyboard } from 'react-aria'
 
 export interface UseButtonProps<T> {
   buttonProps: DOMAttributes<HTMLElement> & {
-    buttonRef: React.RefObject<T>
+    ref: React.RefObject<T>
   }
 }
 
@@ -33,6 +33,11 @@ export const useButtonProps = <T>(
     onKeyUp: (e: any) => [' ', 'Enter'].includes(e.key) && onPointerUp?.(e),
   })
   return {
-    buttonProps: { ...buttonProps, ...keyboardProps, onPointerUp, buttonRef },
+    buttonProps: {
+      ...buttonProps,
+      ...keyboardProps,
+      onPointerUp,
+      ref: buttonRef,
+    },
   }
 }

@@ -14,6 +14,10 @@ export interface StellarProps extends PropsWithChildren {
    **/
   isTravelling?: boolean
   /**
+   * The speed of travel through space
+   **/
+  travelSpeed?: number
+  /**
    * Flag to display debug information, defaulting to false.
    **/
   showDebug?: boolean

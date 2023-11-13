@@ -12,6 +12,14 @@ export interface ShimmerProps {
    */
   pause?: number
   /**
+   * The delay before the first slide progresses to the second
+   */
+  holdFirst?: number
+  /**
+   * The take taken for each transition
+   */
+  fadeTime?: number
+  /**
    * The type of looping behaviour
    *  - loop - loop forever
    *  - linger - stay on the last item
