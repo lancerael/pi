@@ -2,6 +2,21 @@
   "name": "@pi-lib/icon-button",
   "entries": [
     {
+      "date": "Mon, 13 Nov 2023 21:14:13 GMT",
+      "tag": "@pi-lib/icon-button_v1.2.0",
+      "version": "1.2.0",
+      "comments": {
+        "minor": [
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/icon-button",
+            "commit": "8b10f5e3cd252cd95284742a908533980734fc7d",
+            "comment": "Adding simple button and rotation"
+          }
+        ]
+      }
+    },
+    {
       "date": "Sat, 11 Nov 2023 00:16:54 GMT",
       "tag": "@pi-lib/icon-button_v1.1.8",
       "version": "1.1.8",

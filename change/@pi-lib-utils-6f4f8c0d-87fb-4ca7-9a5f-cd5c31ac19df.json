@@ -1,7 +1,0 @@
-{
-  "type": "minor",
-  "comment": "Adding transient props helper",
-  "packageName": "@pi-lib/utils",
-  "email": "lancerael@googlemail.com",
-  "dependentChangeType": "patch"
-}
