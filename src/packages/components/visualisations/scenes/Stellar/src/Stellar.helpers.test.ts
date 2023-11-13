@@ -111,7 +111,7 @@ describe('Stellar Helpers', () => {
     let movedStar: Star
 
     beforeAll(() => {
-      movedStar = moveStar(star, direction)
+      movedStar = moveStar(star, direction, 1)
     })
 
     test('should move the star in the direction specified', () => {
