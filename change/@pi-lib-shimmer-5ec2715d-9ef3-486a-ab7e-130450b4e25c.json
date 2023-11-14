@@ -1,7 +1,0 @@
-{
-  "type": "minor",
-  "comment": "Style tweaks",
-  "packageName": "@pi-lib/shimmer",
-  "email": "lancerael@googlemail.com",
-  "dependentChangeType": "patch"
-}

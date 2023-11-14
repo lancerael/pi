@@ -2,6 +2,21 @@
   "name": "@pi-lib/stellar",
   "entries": [
     {
+      "date": "Tue, 14 Nov 2023 23:51:57 GMT",
+      "tag": "@pi-lib/stellar_v1.5.0",
+      "version": "1.5.0",
+      "comments": {
+        "minor": [
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/stellar",
+            "commit": "752fee65d33241c221b0378852a9077cf861c570",
+            "comment": "Style tweaks"
+          }
+        ]
+      }
+    },
+    {
       "date": "Tue, 14 Nov 2023 11:57:56 GMT",
       "tag": "@pi-lib/stellar_v1.4.0",
       "version": "1.4.0",

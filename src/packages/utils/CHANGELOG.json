@@ -2,6 +2,21 @@
   "name": "@pi-lib/utils",
   "entries": [
     {
+      "date": "Tue, 14 Nov 2023 23:51:57 GMT",
+      "tag": "@pi-lib/utils_v3.2.0",
+      "version": "3.2.0",
+      "comments": {
+        "minor": [
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/utils",
+            "commit": "752fee65d33241c221b0378852a9077cf861c570",
+            "comment": "Improved type definitions"
+          }
+        ]
+      }
+    },
+    {
       "date": "Mon, 13 Nov 2023 21:14:13 GMT",
       "tag": "@pi-lib/utils_v3.1.0",
       "version": "3.1.0",
