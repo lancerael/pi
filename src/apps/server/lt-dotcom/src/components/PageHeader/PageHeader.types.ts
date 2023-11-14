@@ -1,4 +1,4 @@
-import { TransientProps } from '@pi-lib/utils'
+import { BaseProps, TransientProps } from '@pi-lib/utils'
 import { Dispatch, PropsWithChildren, SetStateAction } from 'react'
 
 export interface TravelTrackerProps {
@@ -6,7 +6,7 @@ export interface TravelTrackerProps {
   isTravelling: boolean
 }
 
-export interface UiTrackerProps {
+export interface UiTrackerProps extends BaseProps {
   fullWidth: number
   scrollTop: number
 }
