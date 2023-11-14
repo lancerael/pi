@@ -2,6 +2,21 @@
   "name": "@pi-lib/stellar",
   "entries": [
     {
+      "date": "Tue, 14 Nov 2023 11:57:56 GMT",
+      "tag": "@pi-lib/stellar_v1.4.0",
+      "version": "1.4.0",
+      "comments": {
+        "minor": [
+          {
+            "author": "lancerael@hotmail.com",
+            "package": "@pi-lib/stellar",
+            "commit": "aa5f4cb9b76bc53bea636b3d2b7abee49fe50e86",
+            "comment": "LTdotcom style fixes"
+          }
+        ]
+      }
+    },
+    {
       "date": "Mon, 13 Nov 2023 21:23:50 GMT",
       "tag": "@pi-lib/stellar_v1.3.1",
       "version": "1.3.1",

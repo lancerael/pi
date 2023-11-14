@@ -1,7 +1,0 @@
-{
-  "type": "minor",
-  "comment": "LTdotcom style fixes",
-  "packageName": "@pi-lib/stellar",
-  "email": "lancerael@hotmail.com",
-  "dependentChangeType": "patch"
-}

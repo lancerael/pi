@@ -1,8 +1,16 @@
 # Change Log - @pi-lib/banner
 
-This log was last generated on Sat, 11 Nov 2023 00:16:53 GMT and should not be manually modified.
+This log was last generated on Tue, 14 Nov 2023 11:57:56 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 1.2.0
+
+Tue, 14 Nov 2023 11:57:56 GMT
+
+### Minor changes
+
+- LTdotcom style fixes (lancerael@hotmail.com)
 
 ## 1.1.0
 
