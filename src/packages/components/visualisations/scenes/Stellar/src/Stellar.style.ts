@@ -1,15 +1,9 @@
 import styled, { keyframes } from 'styled-components'
 
 const pulse = keyframes`
-    0% {
-        background-size: 100% 100%;
-    }
-    50% {
-        background-size: 175% 75%;
-    }
-    100% {
-        background-size: 100% 100%;
-    }
+  50% {
+      background-size: 185% 75%;
+  }
 `
 
 export const StyledStellar = styled.div`
@@ -21,6 +15,7 @@ export const StyledStellar = styled.div`
     #020719,
     #010408
   );
+  background-size: 100% 100%;
   animation: ${pulse} 8s linear infinite;
   background-position: center center;
   width: 100%;

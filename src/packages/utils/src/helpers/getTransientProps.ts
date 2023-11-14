@@ -1,22 +1,39 @@
 /**
- * Transforms the properties of an object by prepending a `$` to each key.
- * Used to transform props for a styled component
+ * Transforms the keys of an object by prefixing each key with `$`.
+ * This is typically used for creating transient props in styled components.
  *
- * @param {Record<string, unknown>} props - The object whose properties are to be transformed.
- * @returns {Record<string, unknown>} A new object with transformed property keys.
+ * @template T The type of the input object, defaults to BaseProps if not specified..
+ * @param {T} props - The object whose keys are to be transformed.
+ * @returns {TransientProps<T>} - An object with the same values as the input object,
+ *                                but with each key prefixed with `$`.
  *
  * @example
- * getTransientProps({ name: 'John', age: 30 });
- * returns { $name: 'John', $age: 30 };
+ * const props = { color: 'red', size: 10 };
+ * const transientProps = getTransientProps(props);
+ * // transientProps will be { $color: 'red', $size: 10 }
  */
-export const getTransientProps = (props: Record<string, unknown>) => {
+export const getTransientProps = <T = BaseProps>(
+  props: T
+): TransientProps<T> => {
   return Object.entries(props).reduce(
     (acc, [key, val]) => ({ ...acc, [`$${key}`]: val }),
-    {}
+    {} as TransientProps<T>
   )
 }
 
-// Used to transform the prop interface as needed
-export type TransientProps<T> = {
+/**
+ * Represents a type where each key of an object is prefixed with `$`.
+ * Useful for representing transient props in styled components.
+ *
+ * @template T Base type from which the transient props are derived.
+ *             Defaults to BaseProps if not specified.
+ */
+export type TransientProps<T = BaseProps> = {
   [K in keyof T as `$${string & K}`]: T[K]
 }
+
+/**
+ * Represents the base type for props. This is a generic record type
+ * with string keys and values of any type.
+ */
+export type BaseProps = Record<string, unknown>

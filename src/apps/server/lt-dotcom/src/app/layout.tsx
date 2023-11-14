@@ -7,8 +7,8 @@ import { PropsWithChildren } from 'react'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: `Lance's Site`,
-  description: 'Splash screen to introduce software engineer',
+  title: `Lance Taylor`,
+  description: 'Introducing software engineer',
 }
 
 export default function RootLayout({ children }: PropsWithChildren) {
