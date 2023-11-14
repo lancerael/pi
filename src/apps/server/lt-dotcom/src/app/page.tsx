@@ -9,10 +9,10 @@ import PageGrid from '@pi-lib/page-grid'
 import Banner from '@pi-lib/banner'
 import Card from '@pi-lib/card'
 import IconButton from '@pi-lib/icon-button'
-import { getTransientProps } from '@pi-lib/utils'
+import { getTransientProps, useThrottledEvents } from '@pi-lib/utils'
+import Interact from '@/components/Interact'
 import { tickerLines } from '@/data/tickerLines'
 import { careerHighlights } from '@/data/careerHighlights'
-import Interact from '@/components/Interact'
 import { skillset } from '@/data/skillset'
 
 const StyledFullGradient = styled.div`
@@ -40,7 +40,7 @@ const ShimmerOuter = styled.div`
   text-align: center;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 100dvh;
   display: flex;
 `
 
@@ -52,6 +52,7 @@ interface StyledHeaderProps {
 export default function Home() {
   const [isComplete, setIsComplete] = useState(false)
   const [scrollTop, setScrollTop] = useState(0)
+  const [fullWidth, setFullWidth] = useState(0)
   const [isTravelling, setIsTravelling] = useState(true)
   const [travelSpeed, setTravelSpeed] = useState(1)
   const wrapperRef = useRef<HTMLDivElement>(null)
@@ -61,7 +62,6 @@ export default function Home() {
   const isShimmerAtLimit =
     wrapperRef.current &&
     scrollTop > (wrapperRef.current?.offsetHeight ?? 0) / 2 - scrollGap
-  const fullWidth = widthRef.current?.offsetWidth
 
   const getShimmerOuterStyle = (): CSSProperties => {
     return {
@@ -70,6 +70,8 @@ export default function Home() {
       transition: 'none',
     }
   }
+
+  useThrottledEvents(() => setFullWidth(widthRef.current?.offsetWidth ?? 0))
 
   return (
     <div
