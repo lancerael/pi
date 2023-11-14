@@ -2,38 +2,21 @@ import styled, { css, keyframes } from 'styled-components'
 import { StyledLineProps } from './Shimmer.style.types'
 
 const blurPulse = keyframes`
-    0% {
-      margin-left: 0;
-      transform: scale(1);
-      filter: blur(8px);
-      color: pink;
-    }
     50% {
       margin-left: 0;
       transform: scale(1.03);
       filter: blur(4px);
-      color: antiquewhite;
-    }
-    100% {
-      margin-left: 0;
-      transform: scale(1);
-      filter: blur(8px);
-      color: pink;
+      color: var(--special);
     }
 `
 
 const textPulse = keyframes`
-    0% {
-      background-position: 0% 50%;
-      font-size: 2rem;
-    }
     50% {
       background-position: 100% 50%;
-      font-size: 2.01rem;
+      transform: scale(1.01);
     }
     100% {
       background-position: 200% 50%;
-      font-size: 2rem;
     }
 `
 
@@ -45,6 +28,7 @@ export const StyledLine = styled.div<StyledLineProps>(
   ({ $isVisible, $fadeTime = 5000 }) => css`
     height: ${$isVisible ? '2rem' : '0'};
     transition: none;
+    font-size: 2rem;
 
     &::after {
       transition: all ${$fadeTime / 1000}s linear;
@@ -73,7 +57,10 @@ export const StyledLine = styled.div<StyledLineProps>(
       animation: ${blurPulse} 2.5s linear infinite;
       opacity: ${$isVisible ? 0.5 : 0};
       position: absolute;
-      font-size: 2rem;
+      margin-left: 0;
+      transform: scale(1);
+      filter: blur(8px);
+      color: var(--text);
     }
   `
 )
