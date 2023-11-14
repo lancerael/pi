@@ -2,7 +2,7 @@
  * Transforms the keys of an object by prefixing each key with `$`.
  * This is typically used for creating transient props in styled components.
  *
- * @template T The type of the input object, defaults to BaseProps if not specified..
+ * @template T The type of the input object, should extend BaseProps.
  * @param {T} props - The object whose keys are to be transformed.
  * @returns {TransientProps<T>} - An object with the same values as the input object,
  *                                but with each key prefixed with `$`.
@@ -12,7 +12,7 @@
  * const transientProps = getTransientProps(props);
  * // transientProps will be { $color: 'red', $size: 10 }
  */
-export const getTransientProps = <T = BaseProps>(
+export const getTransientProps = <T extends BaseProps = BaseProps>(
   props: T
 ): TransientProps<T> => {
   return Object.entries(props).reduce(
