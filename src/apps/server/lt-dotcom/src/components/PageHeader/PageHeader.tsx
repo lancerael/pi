@@ -13,9 +13,9 @@ export const PageHeader = ({
   isComplete,
 }: PageHeaderProps) => {
   const iconProps = {
-    size: '2.3rem',
-    $isStroked: true,
-    $isSimpleButton: true,
+    fontSize: '2.3rem',
+    isStroked: true,
+    isSimple: true,
   }
   return (
     <StyledHeader {...getTransientProps({ ...{ ...uiTracker, isComplete } })}>
@@ -30,9 +30,9 @@ export const PageHeader = ({
               src="/backward.svg"
               title="Slower"
               {...iconProps}
-              $isStroked={travelSpeed > 0.1}
+              isStroked={travelSpeed > 0.1}
               onPointerUp={() =>
-                travelSpeed > 0.1 &&
+                travelSpeed > 0.2 &&
                 setTravelTracker({
                   isTravelling,
                   travelSpeed: travelSpeed / 1.5,
@@ -51,10 +51,10 @@ export const PageHeader = ({
               src="/backward.svg"
               title="Faster"
               {...iconProps}
-              $isStroked={travelSpeed < 5}
-              $rotate={180}
+              isStroked={travelSpeed < 5}
+              rotate={180}
               onPointerUp={() =>
-                travelSpeed < 5 &&
+                travelSpeed < 4 &&
                 setTravelTracker({
                   isTravelling,
                   travelSpeed: travelSpeed * 1.5,

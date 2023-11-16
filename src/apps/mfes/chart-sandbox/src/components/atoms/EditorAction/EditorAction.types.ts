@@ -10,11 +10,11 @@ export interface ActionProps {
   /**
    * Style prop if SVG is stroked for custom colour
    */
-  $isStroked?: boolean
+  isStroked?: boolean
   /**
    * Style prop if SVG is filled for custom colour
    */
-  $isFilled?: boolean
+  isFilled?: boolean
   /**
    * Handler for the user click/touch
    */

@@ -96,7 +96,7 @@ export const Header = () => {
                       )
                     }
                     isSmall
-                    $isFilled
+                    isFilled
                     src={`${CLOUDFRONT_URL}/font-${fontSize}.svg`}
                     title={`Switch to ${altFontSize} font`}
                   />
@@ -107,14 +107,14 @@ export const Header = () => {
                       )
                     }
                     isSmall
-                    $isStroked
+                    isStroked
                     src={`${CLOUDFRONT_URL}/scheme-${scheme}.svg`}
                     title={`Switch to ${altScheme} mode`}
                   />
                   <IconButton
                     onPointerUp={() => setTimeout(() => setIsActive(true), 100)}
                     isSmall
-                    $isFilled
+                    isFilled
                     src={`${CLOUDFRONT_URL}/info.svg`}
                     title="View tech demo architectural diagram"
                   />

@@ -1,8 +1,8 @@
 export type Status = 'default' | 'pending' | 'error' | 'success'
 
-export interface SelectorProp {
+export interface TestProp {
   /**
    * The data-selector for the component
    */
-  dataSelector?: string
+  dataTestid?: string
 }

@@ -7,12 +7,13 @@ import { StyledButtonProps } from './Button.style.types'
  * The main styles for the button
  */
 export const StyledButton = styled.button<StyledButtonProps>(
-  ({ status, isCompact, isInverted }) => {
+  ({ $status, $isCompact, $isInverted, disabled }) => {
     return css`
-      ${box({ isInverted })}
-      ${status === 'default' ? `var(--${status})` : ''};
+      ${box({ isInverted: $isInverted })}
+      ${disabled && 'pointer-events: none;'}
+      ${$status === 'default' ? `var(--${$status})` : ''};
       width: 100%;
-      padding: ${isCompact ? '4px' : '8px 16px'};
+      padding: ${$isCompact ? '4px' : '8px 16px'};
       cursor: pointer;
       display: inline-block;
       font-weight: bold;

@@ -1,24 +1,8 @@
-import { PiTheme } from '@pi-lib/styles/src/theme.types'
-import { Status } from '@pi-lib/types'
+import { ButtonProps } from './Button.types'
+import { TransientProps } from '@pi-lib/utils'
 
 /**
  * The props for the styled button
  */
-export interface StyledButtonProps {
-  /**
-   * The currently selected theme
-   */
-  theme: PiTheme
-  /**
-   * The button's status which determines colour
-   */
-  status: Status
-  /**
-   * Is this button compacted?
-   */
-  isCompact?: boolean
-  /**
-   * Is this button style inverted?
-   */
-  isInverted?: boolean
-}
+export type StyledButtonProps = React.HTMLProps<HTMLButtonElement> &
+  TransientProps<Pick<ButtonProps, 'status' | 'isCompact' | 'isInverted'>>

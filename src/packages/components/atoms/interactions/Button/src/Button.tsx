@@ -1,4 +1,4 @@
-import { useButtonProps } from '@pi-lib/utils'
+import { useButtonProps, getTransientProps } from '@pi-lib/utils'
 import { StyledButton } from './Button.style'
 import { ButtonProps } from './Button.types'
 
@@ -10,21 +10,18 @@ export const Button = ({
   status = 'default',
   isCompact = false,
   isInverted = false,
-  dataSelector = 'pi-lib-button',
+  dataTestid = 'pi-lib-button',
   ...props
 }: ButtonProps) => {
   const { buttonProps } = useButtonProps<HTMLButtonElement>(props, 'button')
-  if (props.disabled) props.onPointerUp = undefined
   return (
     <StyledButton
       {...{
-        status,
-        isCompact,
-        isInverted,
         ...buttonProps,
         ...props,
+        ...getTransientProps({ status, isCompact, isInverted }),
       }}
-      data-selector={dataSelector}
+      data-testid={dataTestid}
     >
       {children}
     </StyledButton>
