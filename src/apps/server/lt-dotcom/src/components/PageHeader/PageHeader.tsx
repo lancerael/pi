@@ -10,6 +10,7 @@ export const PageHeader = ({
   uiTracker,
   travelTracker: { travelSpeed, isTravelling },
   setTravelTracker,
+  isComplete,
 }: PageHeaderProps) => {
   const iconProps = {
     size: '2.3rem',
@@ -17,7 +18,7 @@ export const PageHeader = ({
     $isSimpleButton: true,
   }
   return (
-    <StyledHeader {...getTransientProps(uiTracker)}>
+    <StyledHeader {...getTransientProps({ ...{ ...uiTracker, isComplete } })}>
       <PageGrid>
         <Banner $useBackground={false}>
           <StyledHeaderSection>

@@ -51,7 +51,9 @@ export default function Home() {
           setUiTracker(({ fullWidth }) => ({ fullWidth, scrollTop }))
         }
       >
-        <PageHeader {...{ uiTracker, travelTracker, setTravelTracker }} />
+        <PageHeader
+          {...{ uiTracker, travelTracker, setTravelTracker, isComplete }}
+        />
         <PageGrid>
           <ShimmerOuter>
             {isComplete && <Interact />}
