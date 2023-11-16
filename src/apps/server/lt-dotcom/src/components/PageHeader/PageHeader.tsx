@@ -20,7 +20,7 @@ export const PageHeader = ({
   return (
     <StyledHeader {...getTransientProps({ ...{ ...uiTracker, isComplete } })}>
       <PageGrid>
-        <Banner $useBackground={false}>
+        <Banner hasBackground={false}>
           <StyledHeaderSection>
             <IconButton src="/cube.svg" title="Lance Taylor" {...iconProps} />
             <Shimmer lines={['LT']} behaviour="linger" delay={0} />

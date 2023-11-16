@@ -1,6 +1,4 @@
+import { TransientProps } from '@pi-lib/utils'
 import { BannerProps } from './Banner.types'
 
-export type StyledBannerProps = Pick<
-  BannerProps,
-  '$wrapItems' | '$invertGradient' | '$useBackground'
->
+export type StyledBannerProps = TransientProps<Omit<BannerProps, 'children'>>
