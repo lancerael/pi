@@ -1,8 +1,9 @@
 export const skillset = [
   {
-    title: 'Engineer',
+    title: 'Engineering',
     subTitle: 'Individual contributor',
-    summary: `Delivering to the higest standard`,
+    summary: `Delivering to the highest standard`,
+    icon: 'stars',
     bullets: [
       'FE: React, Typescript, CSS, ESNext',
       'BE: NodeJS, Express, NextJS',
@@ -14,6 +15,7 @@ export const skillset = [
     title: 'DevOps',
     subTitle: 'Infra and automation',
     summary: `Streamlining the release process`,
+    icon: 'gear',
     bullets: [
       'Serverless: AWS, Azure',
       'CI/CD: GitOps ADO',
@@ -25,6 +27,7 @@ export const skillset = [
     title: 'Agile',
     subTitle: 'Throughput and efficiency',
     summary: `Improving ways of working together`,
+    icon: 'chart',
     bullets: [
       'Scrum, Kanban',
       'Scrum master',
@@ -34,8 +37,9 @@ export const skillset = [
   },
   {
     title: 'Leadership',
-    subTitle: 'Culture and support',
-    summary: `Morale, retention and knowledge`,
+    subTitle: 'Culture and engagement',
+    summary: `Enhancing team dynamics and morale`,
+    icon: 'users',
     bullets: [
       'Cross functional team leadership',
       'Mentoring, pairing, code reviews',

@@ -8,7 +8,7 @@ import { CLOUDFRONT_URL } from '../../main'
  */
 export const Footer = () => {
   return (
-    <Banner shouldWrapItems shouldInvertGradient>
+    <Banner hasBackground shouldWrapItems shouldInvertGradient>
       <ItemList>
         <IconButton
           isExternal

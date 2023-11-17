@@ -75,7 +75,7 @@ export const Header = () => {
 
   return (
     <>
-      <Banner>
+      <Banner hasBackground>
         <StyledHeader>
           <Logo size={'1.2em'} fill="var(--outline)" /> Pi Tech Demo
         </StyledHeader>

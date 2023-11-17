@@ -41,7 +41,6 @@ export default function Home() {
     <div
       style={{
         height: '100vh',
-        fontFamily: 'optima, sans-serif',
       }}
       ref={wrapperRef}
     >
@@ -71,8 +70,17 @@ export default function Home() {
           </ShimmerOuter>
           <div style={{ margin: '1rem' }}>
             <Grid>
-              {skillset.map(({ title, subTitle, summary, bullets }) => (
-                <Card key={title} {...{ title, subTitle }} $isClear>
+              {skillset.map(({ title, subTitle, icon, summary, bullets }) => (
+                <Card
+                  key={title}
+                  {...{ title, subTitle }}
+                  icon={{
+                    src: `/${icon}.svg`,
+                    title,
+                    isStroked: true,
+                  }}
+                  isClear
+                >
                   {summary}
                   <ul
                     style={{ padding: '1rem 1rem 0', color: 'var(--textSoft)' }}

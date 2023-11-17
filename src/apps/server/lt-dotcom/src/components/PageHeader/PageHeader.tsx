@@ -6,21 +6,22 @@ import Shimmer from '@pi-lib/shimmer'
 import { StyledHeader, StyledHeaderSection } from './PageHeader.styles'
 import { PageHeaderProps } from './PageHeader.types'
 
+const iconProps = {
+  fontSize: '2.3rem',
+  isStroked: true,
+  isSimple: true,
+}
+
 export const PageHeader = ({
   uiTracker,
   travelTracker: { travelSpeed, isTravelling },
   setTravelTracker,
   isComplete,
 }: PageHeaderProps) => {
-  const iconProps = {
-    fontSize: '2.3rem',
-    isStroked: true,
-    isSimple: true,
-  }
   return (
     <StyledHeader {...getTransientProps({ ...{ ...uiTracker, isComplete } })}>
       <PageGrid>
-        <Banner hasBackground={false}>
+        <Banner>
           <StyledHeaderSection>
             <IconButton src="/cube.svg" title="Lance Taylor" {...iconProps} />
             <Shimmer lines={['LT']} behaviour="linger" delay={0} />
@@ -30,12 +31,12 @@ export const PageHeader = ({
               src="/backward.svg"
               title="Slower"
               {...iconProps}
-              isStroked={travelSpeed > 0.1}
+              isStroked={travelSpeed > 0.2}
               onPointerUp={() =>
                 travelSpeed > 0.2 &&
                 setTravelTracker({
                   isTravelling,
-                  travelSpeed: travelSpeed / 1.5,
+                  travelSpeed: travelSpeed / 2,
                 })
               }
             />
@@ -51,13 +52,13 @@ export const PageHeader = ({
               src="/backward.svg"
               title="Faster"
               {...iconProps}
-              isStroked={travelSpeed < 5}
+              isStroked={travelSpeed < 4}
               rotate={180}
               onPointerUp={() =>
                 travelSpeed < 4 &&
                 setTravelTracker({
                   isTravelling,
-                  travelSpeed: travelSpeed * 1.5,
+                  travelSpeed: travelSpeed * 2,
                 })
               }
             />
