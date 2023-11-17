@@ -44,7 +44,7 @@ React theming utility for use with Pi and styled-components
 
 A banner React component that can comtain spaced or flowing items
 
-**Dependencies:** @pi-lib/styles, react, styled-components
+**Dependencies:** @pi-lib/styles, @pi-lib/utils, react, styled-components
 
 <table>
   <tbody>
@@ -208,7 +208,7 @@ A React component for an advanced button with a built in loader
 
 A card component with a title and subtitle.
 
-**Dependencies:** @pi-lib/styles, react, styled-components
+**Dependencies:** @pi-lib/styles, @pi-lib/utils, @pi-lib/icon-button, react, styled-components
 
 <table>
   <tbody>
