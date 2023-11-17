@@ -20,7 +20,14 @@ export const IconButton = ({
   ...props
 }: IconButtonProps) => {
   const { buttonProps } = useButtonProps<HTMLAnchorElement>(props, 'a')
-  return (
+  const icon = (
+    <StyledIcon
+      {...{ src, ...getTransientProps({ fontSize, isFilled, isStroked }) }}
+    />
+  )
+  return isIconOnly ? (
+    icon
+  ) : (
     <StyledIconButton
       {...{
         ...props,
@@ -31,9 +38,7 @@ export const IconButton = ({
       target={isExternal ? '_blank' : undefined}
       data-testid={dataTestid}
     >
-      <StyledIcon
-        {...{ src, ...getTransientProps({ fontSize, isFilled, isStroked }) }}
-      />
+      {icon}
     </StyledIconButton>
   )
 }
