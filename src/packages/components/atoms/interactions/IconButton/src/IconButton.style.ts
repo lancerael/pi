@@ -17,7 +17,7 @@ export const StyledIconButton = styled.a<StyledIconButtonProps>(
       ${box()}
       background: var(--specialText);
       padding: 4px;
-      font-$fontSize: ${$fontSize};
+      font-size: ${$fontSize};
 
       &:hover {
         background: var(--outline);
