@@ -51,6 +51,7 @@ export const Default: StoryObj<typeof Banner> = {
 export const Inverted: StoryObj<typeof Banner> = {
   args: {
     shouldWrapItems: true,
+    hasBackground: true,
     shouldInvertGradient: true,
   },
   render,
