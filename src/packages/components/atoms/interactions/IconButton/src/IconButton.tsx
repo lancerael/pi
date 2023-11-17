@@ -3,7 +3,7 @@ import { useButtonProps, getTransientProps } from '@pi-lib/utils'
 import { IconButtonProps } from './IconButton.types'
 
 /**
- * This component is used to render a button with an icon.
+ * This component is used to render a button with an icon
  *
  * @param {object} props - The props for the IconButton component.
  * @param {boolean} [props.isExternal=false] - If true, the button acts as a link to an external resource and opens in a new tab.
