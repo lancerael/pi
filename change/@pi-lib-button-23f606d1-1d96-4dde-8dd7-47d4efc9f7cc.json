@@ -1,0 +1,7 @@
+{
+  "type": "major",
+  "comment": "Transient props cleanup, replace data-selector with data-testid, open up prop interfaces for default element properties, disable button actions when disabled",
+  "packageName": "@pi-lib/button",
+  "email": "lancerael@googlemail.com",
+  "dependentChangeType": "patch"
+}
