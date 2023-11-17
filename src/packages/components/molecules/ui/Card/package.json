@@ -40,6 +40,8 @@
   },
   "peerDependencies": {
     "@pi-lib/styles": "workspace:^",
+    "@pi-lib/utils": "workspace:^",
+    "@pi-lib/icon-button": "workspace:^",
     "react": "^18.2.0",
     "styled-components": "^6.1.0"
   }

@@ -1,3 +1,4 @@
+import { IconButtonProps } from '@pi-lib/icon-button/src/IconButton.types'
 import { PropsWithChildren } from 'react'
 
 export interface CardProps extends PropsWithChildren {
@@ -12,5 +13,9 @@ export interface CardProps extends PropsWithChildren {
   /**
    * Sets whether the background and border should be clear
    */
-  $isClear?: boolean
+  isClear?: boolean
+  /**
+   * Sets whether the background and border should be clear
+   */
+  icon?: Pick<IconButtonProps, 'src' | 'title' | 'isStroked' | 'isFilled'>
 }
