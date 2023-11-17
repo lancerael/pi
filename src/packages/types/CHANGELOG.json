@@ -2,6 +2,21 @@
   "name": "@pi-lib/types",
   "entries": [
     {
+      "date": "Fri, 17 Nov 2023 00:47:25 GMT",
+      "tag": "@pi-lib/types_v1.0.1",
+      "version": "1.0.1",
+      "comments": {
+        "patch": [
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/types",
+            "commit": "370e148cce246bda550f9077a0e4c95262960f65",
+            "comment": "Replace data-selector with data-testid"
+          }
+        ]
+      }
+    },
+    {
       "date": "Mon, 14 Aug 2023 23:36:59 GMT",
       "tag": "@pi-lib/types_v0.2.2",
       "version": "0.2.2",

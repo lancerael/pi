@@ -2,6 +2,21 @@
   "name": "@pi-lib/button",
   "entries": [
     {
+      "date": "Fri, 17 Nov 2023 00:47:25 GMT",
+      "tag": "@pi-lib/button_v3.0.0",
+      "version": "3.0.0",
+      "comments": {
+        "major": [
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/button",
+            "commit": "370e148cce246bda550f9077a0e4c95262960f65",
+            "comment": "Transient props cleanup, replace data-selector with data-testid, open up prop interfaces for default element properties, disable button actions when disabled"
+          }
+        ]
+      }
+    },
+    {
       "date": "Sat, 11 Nov 2023 00:16:53 GMT",
       "tag": "@pi-lib/button_v2.0.9",
       "version": "2.0.9",

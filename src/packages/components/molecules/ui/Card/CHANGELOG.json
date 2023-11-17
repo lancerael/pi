@@ -2,6 +2,21 @@
   "name": "@pi-lib/card",
   "entries": [
     {
+      "date": "Fri, 17 Nov 2023 00:47:25 GMT",
+      "tag": "@pi-lib/card_v1.1.0",
+      "version": "1.1.0",
+      "comments": {
+        "minor": [
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/card",
+            "commit": "370e148cce246bda550f9077a0e4c95262960f65",
+            "comment": "Added optional icon to Card"
+          }
+        ]
+      }
+    },
+    {
       "date": "Sat, 11 Nov 2023 00:16:54 GMT",
       "tag": "@pi-lib/card_v1.0.0",
       "version": "1.0.0",

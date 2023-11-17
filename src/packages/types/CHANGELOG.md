@@ -1,8 +1,16 @@
 # Change Log - @pi-lib/types
 
-This log was last generated on Mon, 26 Jun 2023 23:53:05 GMT and should not be manually modified.
+This log was last generated on Fri, 17 Nov 2023 00:47:25 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 1.0.1
+
+Fri, 17 Nov 2023 00:47:25 GMT
+
+### Patches
+
+- Replace data-selector with data-testid (lancerael@googlemail.com)
 
 ## 0.2.2
 

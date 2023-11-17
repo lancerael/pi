@@ -1,8 +1,16 @@
 # Change Log - @pi-lib/button
 
-This log was last generated on Sat, 11 Nov 2023 00:16:53 GMT and should not be manually modified.
+This log was last generated on Fri, 17 Nov 2023 00:47:25 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 3.0.0
+
+Fri, 17 Nov 2023 00:47:25 GMT
+
+### Major changes
+
+- Transient props cleanup, replace data-selector with data-testid, open up prop interfaces for default element properties, disable button actions when disabled (lancerael@googlemail.com)
 
 ## 2.0.9
 

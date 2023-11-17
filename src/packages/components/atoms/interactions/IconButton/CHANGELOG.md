@@ -1,8 +1,16 @@
 # Change Log - @pi-lib/icon-button
 
-This log was last generated on Mon, 13 Nov 2023 21:14:13 GMT and should not be manually modified.
+This log was last generated on Fri, 17 Nov 2023 00:47:25 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 2.0.0
+
+Fri, 17 Nov 2023 00:47:25 GMT
+
+### Major changes
+
+- Transient props cleanup, replace data-selector with data-testid, open up prop interfaces for default element properties, disable button actions when disabled (lancerael@googlemail.com)
 
 ## 1.2.0
 
