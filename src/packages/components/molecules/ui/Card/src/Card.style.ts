@@ -4,8 +4,7 @@ import { StyledCardProps } from './Card.style.types'
 
 export const StyledCard = styled.div<StyledCardProps>(
   ({ $isClear }) => css`
-    ${!$isClear && container()}
-    ${!$isClear && 'padding: 1rem;'}
+    ${!$isClear && container() && 'padding: 1rem;'}
     color: var(--textSoft);
   `
 )

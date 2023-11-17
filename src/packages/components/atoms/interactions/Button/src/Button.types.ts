@@ -1,19 +1,11 @@
-import { SelectorProp, Status } from '@pi-lib/types'
+import { TestProp, Status } from '@pi-lib/types'
 
 /**
  * The main prop interface for the component
  */
 export interface ButtonProps
-  extends Pick<
-      React.HTMLProps<HTMLButtonElement>,
-      | 'onPointerUp'
-      | 'onMouseOver'
-      | 'onMouseOut'
-      | 'disabled'
-      | 'children'
-      | 'title'
-    >,
-    SelectorProp {
+  extends React.HTMLProps<HTMLButtonElement>,
+    TestProp {
   /**
    * Use styles for special states
    */

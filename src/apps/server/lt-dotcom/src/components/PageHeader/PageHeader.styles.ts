@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components'
 import { StyledHeaderProps } from './PageHeader.types'
 
 export const StyledHeader = styled.div<StyledHeaderProps>(
-  ({ $fullWidth, $scrollTop }) => css`
+  ({ $fullWidth, $scrollTop, $isComplete }) => css`
     --mask: linear-gradient(
       to bottom,
       rgba(0, 0, 0, 1) 60%,
@@ -10,7 +10,7 @@ export const StyledHeader = styled.div<StyledHeaderProps>(
       rgba(0, 0, 0, 0) 100%
     );
     position: fixed;
-    opacity: ${$scrollTop > 24 ? 1 : 0};
+    opacity: ${$scrollTop > 24 || $isComplete ? 1 : 0};
     width: ${$fullWidth ? `${$fullWidth}px` : '100%'};
     font-size: 1.8rem;
     font-weight: bold;

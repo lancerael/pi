@@ -1,14 +1,11 @@
-import { SelectorProp } from '@pi-lib/types'
+import { TestProp } from '@pi-lib/types'
 
 /**
  * The main prop interface for the component
  */
 export interface IconButtonProps
-  extends Pick<
-      React.HTMLProps<HTMLAnchorElement>,
-      'onPointerUp' | 'onMouseOver' | 'onMouseOut' | 'href' | 'title'
-    >,
-    SelectorProp {
+  extends React.HTMLProps<HTMLAnchorElement>,
+    TestProp {
   /**
    * The source path/URL for the image
    */
@@ -24,21 +21,25 @@ export interface IconButtonProps
   /**
    * Should it automatically fill the SVG shapes
    */
-  $isFilled?: boolean
+  isFilled?: boolean
   /**
    * Should it automatically color the SVG strokes
    */
-  $isStroked?: boolean
+  isStroked?: boolean
   /**
    * Should it simplify the button style
    */
-  $isSimpleButton?: boolean
+  isSimple?: boolean
+  /**
+   * Should it be purely visual
+   */
+  isIconOnly?: boolean
   /**
    * Set a specific size for the image
    */
-  size?: string
+  fontSize?: string
   /**
    * Set a specific rotartion amount for the image in degrees
    */
-  $rotate?: number
+  rotate?: number
 }

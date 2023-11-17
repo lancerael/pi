@@ -15,7 +15,8 @@ export interface PageHeaderProps {
   uiTracker: UiTrackerProps
   travelTracker: TravelTrackerProps
   setTravelTracker: Dispatch<SetStateAction<TravelTrackerProps>>
+  isComplete: boolean
 }
 
 export type StyledHeaderProps = PropsWithChildren &
-  TransientProps<UiTrackerProps>
+  TransientProps<UiTrackerProps & Pick<PageHeaderProps, 'isComplete'>>

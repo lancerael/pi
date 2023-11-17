@@ -33,7 +33,7 @@ export const Default: StoryObj<typeof Button> = {
     isCompact: false,
     isInverted: false,
     disabled: false,
-    dataSelector: 'pi-lib-button',
+    dataTestid: 'pi-lib-button',
   },
 }
 

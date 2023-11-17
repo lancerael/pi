@@ -4,7 +4,7 @@
 
 A card component with a title and subtitle.
 
-**Dependencies:** @pi-lib/styles, react, styled-components
+**Dependencies:** @pi-lib/styles, @pi-lib/utils, @pi-lib/icon-button, react, styled-components
 
 <table>
   <tbody>

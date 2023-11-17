@@ -1,0 +1,7 @@
+{
+  "type": "major",
+  "comment": "Replace data-selector with data-testid",
+  "packageName": "@pi-lib/types",
+  "email": "lancerael@googlemail.com",
+  "dependentChangeType": "patch"
+}

@@ -19,6 +19,10 @@ export const Default: StoryObj<typeof Card> = {
     title: 'Test title',
     subTitle: 'Test Subtitle',
     children: <>Contents</>,
+    icon: {
+      title: 'Info',
+      src: `/info.svg`,
+    },
   },
   render,
 }

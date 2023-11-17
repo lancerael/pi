@@ -1,3 +1,4 @@
+import { TransientProps } from '@pi-lib/utils'
 import { CardProps } from './Card.types'
 
-export interface StyledCardProps extends Pick<CardProps, '$isClear'> {}
+export type StyledCardProps = TransientProps<Pick<CardProps, 'isClear'>>

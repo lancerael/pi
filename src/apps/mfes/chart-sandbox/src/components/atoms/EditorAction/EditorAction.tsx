@@ -14,8 +14,8 @@ export const EditorAction = ({
   title,
   label,
   onPointerUp,
-  $isStroked = false,
-  $isFilled = false,
+  isStroked = false,
+  isFilled = false,
 }: ActionProps) => {
   const iconPath = `${
     import.meta.env.VITE_CLOUDFRONT_URL ?? '__CLOUDFRONT_URL__'
@@ -24,7 +24,7 @@ export const EditorAction = ({
     <StyledAction>
       <StyledIconButton>
         <IconButton
-          {...{ title, onPointerUp, $isStroked, $isFilled }}
+          {...{ title, onPointerUp, isStroked, isFilled }}
           isSmall
           src={iconPath}
         />

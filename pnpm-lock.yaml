@@ -736,6 +736,9 @@ importers:
       '@pi-lib/styles':
         specifier: workspace:^
         version: link:../../../../styles
+      '@pi-lib/utils':
+        specifier: workspace:^
+        version: link:../../../../utils
       react:
         specifier: ^18.2.0
         version: 18.2.0
@@ -1203,9 +1206,15 @@ importers:
 
   src/packages/components/molecules/ui/Card:
     dependencies:
+      '@pi-lib/icon-button':
+        specifier: workspace:^
+        version: link:../../../atoms/interactions/IconButton
       '@pi-lib/styles':
         specifier: workspace:^
         version: link:../../../../styles
+      '@pi-lib/utils':
+        specifier: workspace:^
+        version: link:../../../../utils
       react:
         specifier: ^18.2.0
         version: 18.2.0

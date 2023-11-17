@@ -83,37 +83,37 @@ export const EditorActions = () => {
     {
       label: 'Add row',
       title: 'Add a new row to the data',
-      $isStroked: true,
+      isStroked: true,
       onPointerUp: () => dispatch(addRow()),
     },
     {
       label: 'Add column',
       title: 'Add a new column to the data',
-      $isStroked: true,
+      isStroked: true,
       onPointerUp: addColumn,
     },
     {
       label: 'Clear',
       title: 'Reset the chart and remove all data',
-      $isStroked: true,
+      isStroked: true,
       onPointerUp: () => updateChart(getEmptyData() as ChartValues),
     },
     {
       label: 'Randomise',
       title: 'Reset the chart and generate random data',
-      $isFilled: true,
+      isFilled: true,
       onPointerUp: () => getRandomData(),
     },
     {
       label: 'Export',
       title: 'Export this chart as JSON',
-      $isFilled: true,
+      isFilled: true,
       onPointerUp: () => exportRef?.current?.click(),
     },
     {
       label: 'Import',
       title: 'Import JSON for this chart',
-      $isFilled: true,
+      isFilled: true,
       onPointerUp: () => importRef?.current?.click(),
     },
   ]

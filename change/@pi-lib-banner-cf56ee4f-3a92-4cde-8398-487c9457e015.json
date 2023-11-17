@@ -1,0 +1,7 @@
+{
+  "type": "minor",
+  "comment": "Added background to banner story",
+  "packageName": "@pi-lib/banner",
+  "email": "lancerael@googlemail.com",
+  "dependentChangeType": "patch"
+}

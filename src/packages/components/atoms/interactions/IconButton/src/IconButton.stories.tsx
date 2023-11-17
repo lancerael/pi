@@ -31,7 +31,7 @@ export const Default: StoryObj<typeof IconButton> = {
     isExternal: false,
     title: 'Button title',
     isSmall: false,
-    dataSelector: 'pi-lib-icon-button',
+    dataTestid: 'pi-lib-icon-button',
   },
 }
 
@@ -41,8 +41,8 @@ export const Default: StoryObj<typeof IconButton> = {
 export const Colored: StoryObj<typeof IconButton> = {
   args: {
     src: `/info.svg`,
-    $isStroked: true,
-    $isFilled: true,
+    isStroked: true,
+    isFilled: true,
   },
 }
 
@@ -55,7 +55,7 @@ export const Small: StoryObj<typeof IconButton> = {
     src: `/info.svg`,
     isExternal: true,
     isSmall: true,
-    $isStroked: true,
+    isStroked: true,
   },
 }
 

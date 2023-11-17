@@ -7,16 +7,17 @@ import { ReactSVG } from 'react-svg'
  * The main styles for the icon button
  */
 export const StyledIconButton = styled.a<StyledIconButtonProps>(
-  ({ size, $isSimpleButton, $rotate }) => css`
+  ({ $fontSize, $isSimple, $rotate, disabled }) => css`
     cursor: pointer;
     display: inline-block;
+    ${disabled && 'pointer-events: none;'}
     ${$rotate && `transform: rotate(${$rotate}deg)`}
-    ${!$isSimpleButton &&
+    ${!$isSimple &&
     css`
       ${box()}
       background: var(--specialText);
       padding: 4px;
-      font-size: ${size};
+      font-size: ${$fontSize};
 
       &:hover {
         background: var(--outline);
@@ -32,9 +33,9 @@ export const StyledIconButton = styled.a<StyledIconButtonProps>(
 export const StyledIcon: StyledIconType = styled(ReactSVG)`
   > div {
     aspect-ratio: 1 / 1;
-    ${({ size }) => css`
+    ${({ $fontSize }) => css`
       aspect-ratio: 1 / 1;
-      height: ${size};
+      height: ${$fontSize};
     `}
   }
 
