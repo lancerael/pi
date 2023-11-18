@@ -12,7 +12,7 @@ export const StyledDismissableContent =
   styled.div<StyledDismissableContentProps>(({ $isVisible, $isPresent }) => {
     return css`
       border: 1px solid var(--textStrong);
-      ${gradient({ name: 'alt' })}
+      ${gradient({ name: 'alt', to: 'bottom' })}
       color: var(--bg);
       border-radius: 8px;
       padding: 16px;
@@ -20,7 +20,8 @@ export const StyledDismissableContent =
       margin-bottom: ${$isVisible ? '0' : '-100px'};
       display: ${$isPresent ? 'block' : 'none'};
       position: relative;
-      min-width: 25%;
+      width: clamp(25%, 50%, 75%);
+      margin: auto;
     `
   })
 
