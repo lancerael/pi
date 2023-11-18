@@ -20,3 +20,12 @@ export const ShimmerInner = styled.div`
   top: calc(50dvh - 1.5rem);
   z-index: 0;
 `
+
+export const StyledCardWrapper = styled.div`
+  @media (max-width: 1036px) {
+    margin: 0 auto;
+  }
+  & h2 {
+    font-family: T, sans-serif !important;
+  }
+`

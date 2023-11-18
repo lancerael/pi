@@ -40,14 +40,17 @@ export const CandlestickChart = ({ data = [] }: CandlestickChartProps) => {
     dataRange,
     scales
   )
+
   useTouch<SVGSVGElement>({
     targetRef: svgRef,
     controls,
     zoomRange: ZOOM_RANGE,
-    panRange: [
-      [0, dataRange.totalWidth],
-      [0, 0],
-    ],
+    panRange: dataRange.totalWidth
+      ? [
+          [0, dataRange.totalWidth],
+          [0, 0],
+        ]
+      : undefined,
     resetCallback: resetSelection,
   })
 
@@ -65,7 +68,7 @@ export const CandlestickChart = ({ data = [] }: CandlestickChartProps) => {
           }}
         />
       )}
-      <StyledCandlestickChart ref={svgRef} isVisible={!!data?.length}>
+      <StyledCandlestickChart ref={svgRef} $isVisible={!!data?.length}>
         <ClipPaths {...sizes} />
       </StyledCandlestickChart>
       <CandleTooltip {...activeItem} />

@@ -1,4 +1,5 @@
 import { getTransientProps } from '@pi-lib/utils'
+import CustomIcon from '@pi-lib/custom-icon'
 import {
   StyledCard,
   StyledContent,
@@ -7,7 +8,6 @@ import {
   StyledTitle,
 } from './Card.style'
 import { CardProps } from './Card.types'
-import IconButton from '@pi-lib/icon-button/src/IconButton'
 
 /**
  * Card component for displaying content with an optional title and subtitle.
@@ -25,14 +25,14 @@ export const Card = ({
   title,
   subTitle,
   isClear,
-  icon,
+  iconProps,
   children,
 }: CardProps) => {
   return (
     <StyledCard {...getTransientProps({ isClear })}>
-      {icon && (
+      {iconProps && (
         <div style={{ float: 'left', marginRight: '0.5rem' }}>
-          <IconButton {...icon} fontSize="3.2rem" isSimple isIconOnly />
+          <CustomIcon {...iconProps} height="3.2rem" />
         </div>
       )}
       {(!!title || !subTitle) && (

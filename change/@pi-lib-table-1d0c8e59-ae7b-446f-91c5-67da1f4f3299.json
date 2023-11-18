@@ -1,0 +1,7 @@
+{
+  "type": "minor",
+  "comment": "Docs fix",
+  "packageName": "@pi-lib/table",
+  "email": "lancerael@googlemail.com",
+  "dependentChangeType": "patch"
+}

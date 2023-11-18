@@ -1,17 +1,9 @@
+import { TestId } from '@pi-lib/types'
+
 /**
  * The main prop interface for the component
  */
-export interface InputProps
-  extends Pick<
-    React.HTMLProps<HTMLInputElement>,
-    | 'onChange'
-    | 'onPointerUp'
-    | 'onMouseOver'
-    | 'onMouseOut'
-    | 'title'
-    | 'value'
-    | 'name'
-  > {
+export interface InputProps extends React.HTMLProps<HTMLInputElement>, TestId {
   /**
    * A longer title for the browser tooltip
    */

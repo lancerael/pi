@@ -14,7 +14,7 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/lancerael/pi.git",
-    "directory": "src/components/atoms/interactions/IconButton"
+    "directory": "src/packages/components/atoms/interactions/IconButton"
   },
   "license": "ISC",
   "author": "Lance Taylor",
@@ -40,6 +40,7 @@
   "peerDependencies": {
     "@pi-lib/styles": "workspace:^",
     "@pi-lib/utils": "workspace:^",
+    "@pi-lib/custom-icon": "workspace:^",
     "react": "^18.2.0",
     "react-svg": "^16.1.15",
     "styled-components": "^6.1.0"

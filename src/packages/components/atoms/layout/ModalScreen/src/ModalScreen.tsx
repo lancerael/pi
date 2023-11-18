@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { StyledModalScreen } from './ModalScreen.style'
 import { ModalScreenProps } from './ModalScreen.types'
+import { getTransientProps } from '@pi-lib/utils'
 
 /**
  * A React component used to block out the screen with modal content
@@ -15,7 +16,7 @@ export const ModalScreen = ({
     setTimeout(() => setIsVisible(isActive), 200)
   }, [isActive])
   return (
-    <StyledModalScreen {...{ isActive, isVisible }}>
+    <StyledModalScreen {...getTransientProps({ isActive, isVisible })}>
       {children}
     </StyledModalScreen>
   )

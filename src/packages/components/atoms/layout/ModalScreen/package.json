@@ -14,7 +14,7 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/lancerael/pi.git",
-    "directory": "src/components/atoms/layout/ModalScreen"
+    "directory": "src/packages/components/atoms/layout/ModalScreen"
   },
   "license": "ISC",
   "author": "Lance Taylor",
@@ -37,6 +37,7 @@
   },
   "peerDependencies": {
     "@pi-lib/styles": "workspace:^",
+    "@pi-lib/utils": "workspace:^",
     "react": "^18.2.0",
     "styled-components": "^6.1.0"
   }

@@ -1,13 +1,9 @@
+import { TransientProps } from '@pi-lib/utils'
+import { PageContentProps } from './PageContent.types'
+
 /**
  * The prop interface for the sidebar div
  */
-export interface StyledSidebarProps {
-  /**
-   * The max width of the sidebar
-   */
-  maxWidth?: string
-  /**
-   * Should the sidebar collapse responsively
-   */
-  isCollapsible?: boolean
-}
+export type StyledSidebarProps = TransientProps<
+  Pick<PageContentProps, 'isCollapsible' | 'maxWidth'>
+>

@@ -1,5 +1,6 @@
 import { StyledPageGrid } from './PageGrid.style'
 import { PageGridProps } from './PageGrid.types'
+import { getTransientProps } from '@pi-lib/utils'
 
 /**
  * PageGrid component for laying out content in a grid format. It is used to create page
@@ -11,7 +12,7 @@ import { PageGridProps } from './PageGrid.types'
  * @returns {React.ReactNode} A styled grid container element.
  */
 export const PageGrid = ({ width = 1280, children }: PageGridProps) => (
-  <StyledPageGrid $width={width}>{children}</StyledPageGrid>
+  <StyledPageGrid {...getTransientProps({ width })}>{children}</StyledPageGrid>
 )
 
 export default PageGrid

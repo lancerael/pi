@@ -8,5 +8,5 @@ export interface CurrentIndicatorProps {
 }
 
 export interface StyledIndicatorProps {
-  isPositive: boolean
+  $isPositive: boolean
 }

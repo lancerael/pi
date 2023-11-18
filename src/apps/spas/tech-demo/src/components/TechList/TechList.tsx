@@ -3,7 +3,7 @@ import ItemList from '../ItemList'
 import { CLOUDFRONT_URL } from '../../main'
 import { ICONS } from './TechList.constants'
 
-export const Footer = () => {
+export const TechList = () => {
   return (
     <div style={{ padding: '12px' }}>
       <ItemList doWrap>
@@ -14,7 +14,12 @@ export const Footer = () => {
             .toLowerCase()}.svg`
           return (
             !!title && (
-              <IconButton key={title} isExternal {...{ src, href, title }} />
+              <IconButton
+                key={title}
+                iconProps={{ height: '2rem' }}
+                isExternal
+                {...{ src, href, title }}
+              />
             )
           )
         })}
@@ -22,4 +27,4 @@ export const Footer = () => {
     </div>
   )
 }
-export default Footer
+export default TechList

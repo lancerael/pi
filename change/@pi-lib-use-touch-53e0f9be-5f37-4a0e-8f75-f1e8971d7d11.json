@@ -1,0 +1,7 @@
+{
+  "type": "patch",
+  "comment": "Type improvements, enabled dynamic pan range",
+  "packageName": "@pi-lib/use-touch",
+  "email": "lancerael@googlemail.com",
+  "dependentChangeType": "patch"
+}

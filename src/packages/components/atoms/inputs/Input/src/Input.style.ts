@@ -18,6 +18,6 @@ export const StyledInput = styled.div<StyledTextInputProps>`
     width: 100%;
     flex-grow: 1;
 
-    ${({ type }) => formInput(type === 'color')}
+    ${({ $type }) => formInput($type === 'color')}
   }
 `

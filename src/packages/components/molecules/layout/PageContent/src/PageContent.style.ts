@@ -6,13 +6,13 @@ import { shadow } from '@pi-lib/styles'
  * The main container for the page content component
  */
 export const StyledPageContent = styled.div<StyledSidebarProps>(
-  ({ isCollapsible }) => css`
+  ({ $isCollapsible }) => css`
     flex: 1;
     display: flex;
     flex-direction: row;
     height: 100%;
 
-    ${!!isCollapsible &&
+    ${!!$isCollapsible &&
     css`
       @media (max-width: 799px) {
         flex-direction: column;
@@ -25,8 +25,8 @@ export const StyledPageContent = styled.div<StyledSidebarProps>(
  * The styled element for the sidebar
  */
 export const StyledSidebar = styled.div<StyledSidebarProps>(
-  ({ maxWidth, isCollapsible }) => css`
-    max-width: ${maxWidth ?? '100%'};
+  ({ $maxWidth, $isCollapsible }) => css`
+    max-width: ${$maxWidth ?? '100%'};
     height: auto;
     display: flex;
     flex-direction: column;
@@ -36,7 +36,7 @@ export const StyledSidebar = styled.div<StyledSidebarProps>(
     border-right: 1px solid var(--border);
     padding: 16px;
     ${shadow('2px 0px')}
-    ${!!isCollapsible &&
+    ${!!$isCollapsible &&
     css`
       @media (max-width: 800px) {
         height: auto;

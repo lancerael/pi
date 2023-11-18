@@ -9,18 +9,19 @@ import { gradient } from '@pi-lib/styles'
  * The main container element for the styles
  */
 export const StyledDismissableContent =
-  styled.div<StyledDismissableContentProps>(({ isVisible, isPresent }) => {
+  styled.div<StyledDismissableContentProps>(({ $isVisible, $isPresent }) => {
     return css`
       border: 1px solid var(--textStrong);
-      ${gradient({ name: 'alt' })}
+      ${gradient({ name: 'alt', to: 'bottom' })}
       color: var(--bg);
       border-radius: 8px;
       padding: 16px;
-      opacity: ${isVisible ? '1' : '0'};
-      margin-bottom: ${isVisible ? '0' : '-100px'};
-      display: ${isPresent ? 'block' : 'none'};
+      opacity: ${$isVisible ? '1' : '0'};
+      margin-bottom: ${$isVisible ? '0' : '-100px'};
+      display: ${$isPresent ? 'block' : 'none'};
       position: relative;
-      min-width: 25%;
+      width: clamp(25%, 50%, 75%);
+      margin: auto;
     `
   })
 
@@ -44,7 +45,7 @@ export const StyledClose = styled.div`
  * The timer element for automatically closing content
  */
 export const StyledTimer = styled.div<StyledTimerProps>(
-  ({ isTimerTriggered, timerInterval }) => {
+  ({ $isTimerTriggered, $timerInterval }) => {
     return css`
       position: absolute;
       left: 0px;
@@ -52,8 +53,8 @@ export const StyledTimer = styled.div<StyledTimerProps>(
       height: 8px;
       border-radius: 0 0 0 8px;
       border-bottom: 4px solid var(--outline);
-      width: ${isTimerTriggered ? '0%' : '100%'};
-      transition: width ${timerInterval / 1000}s linear;
+      width: ${$isTimerTriggered ? '0%' : '100%'};
+      transition: width ${$timerInterval / 1000}s linear;
     `
   }
 )

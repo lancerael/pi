@@ -1,17 +1,11 @@
+import { TestId } from '@pi-lib/types'
+
 /**
  * The main prop interface for the component
  */
 export interface SelectProps
-  extends Pick<
-    React.HTMLProps<HTMLSelectElement>,
-    | 'onChange'
-    | 'onPointerUp'
-    | 'onMouseOver'
-    | 'onMouseOut'
-    | 'title'
-    | 'value'
-    | 'name'
-  > {
+  extends React.HTMLProps<HTMLSelectElement>,
+    TestId {
   /**
    * A label for the select input
    */

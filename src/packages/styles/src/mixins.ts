@@ -40,13 +40,17 @@ export const formInput = (isExpanded?: boolean) => {
 /**
  * A mixin generator for a boxed container
  */
-export const box = ({ name = 'default', isInverted }: BoxProps = {}) => {
+export const box = ({
+  name = 'default',
+  isInverted,
+  isTransparent,
+}: BoxProps = {}) => {
   const colors = boxColors[name]
   const [colorVar, backgroundVar] = isInverted ? colors.reverse() : colors
   return css`
     border: 1px solid var(--border);
     color: var(--${colorVar});
-    background-color: var(--${backgroundVar}A);
+    background-color: var(--${backgroundVar}${isTransparent && 'A'});
     border-radius: 6px;
     padding: 8px;
     ${shadow()}

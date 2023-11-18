@@ -5,9 +5,9 @@ export interface StyledTooltipProps {
   /**
    * Is the tooltip visible?
    */
-  isVisible: boolean
+  $isVisible: boolean
   /**
    * Is the tooltip rendered?
    */
-  isRendered: boolean
+  $isRendered: boolean
 }

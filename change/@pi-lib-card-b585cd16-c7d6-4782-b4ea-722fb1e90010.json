@@ -1,0 +1,7 @@
+{
+  "type": "major",
+  "comment": "Changed icon prop to iconProps",
+  "packageName": "@pi-lib/card",
+  "email": "lancerael@googlemail.com",
+  "dependentChangeType": "patch"
+}

@@ -15,7 +15,7 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/lancerael/pi.git",
-    "directory": "src/components/molecules/ui/CollapsibleMenu"
+    "directory": "src/packages/components/molecules/ui/CollapsibleMenu"
   },
   "license": "ISC",
   "author": "Lance Taylor",

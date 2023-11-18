@@ -1,45 +1,30 @@
-import { TestProp } from '@pi-lib/types'
+import { CustomIconProps } from '@pi-lib/custom-icon/src/CustomIcon.types'
+import { TestId } from '@pi-lib/types'
 
 /**
  * The main prop interface for the component
  */
 export interface IconButtonProps
   extends React.HTMLProps<HTMLAnchorElement>,
-    TestProp {
+    TestId {
   /**
    * The source path/URL for the image
    */
-  src: string
+  src: CustomIconProps['src']
   /**
    * Should it open in an new window
    */
   isExternal?: boolean
   /**
-   * Should it show a small version of the button
-   */
-  isSmall?: boolean
-  /**
-   * Should it automatically fill the SVG shapes
-   */
-  isFilled?: boolean
-  /**
-   * Should it automatically color the SVG strokes
-   */
-  isStroked?: boolean
-  /**
-   * Should it simplify the button style
+   * Should it have reduced styling
    */
   isSimple?: boolean
   /**
-   * Should it be purely visual
+   * String for the title attribute
    */
-  isIconOnly?: boolean
+  title?: string
   /**
-   * Set a specific size for the image
+   * Props for the CustomIcon
    */
-  fontSize?: string
-  /**
-   * Set a specific rotartion amount for the image in degrees
-   */
-  rotate?: number
+  iconProps?: Omit<CustomIconProps, 'src'>
 }

@@ -1,0 +1,7 @@
+{
+  "type": "minor",
+  "comment": "Added testid, improved transient props and updated docs",
+  "packageName": "@pi-lib/select",
+  "email": "lancerael@googlemail.com",
+  "dependentChangeType": "patch"
+}

@@ -6,9 +6,21 @@ import {
 } from './DismissableContent.style'
 import { DismissableContentProps } from './DismissableContent.types'
 import Icon from '@pi-lib/icon'
+import { getTransientProps } from '@pi-lib/utils'
 
 /**
- * Internal content for a modal or a toast, that can be dismissed internally
+ * `DismissableContent` is a component that represents internal content for a modal or a toast.
+ * It can be dismissed internally or externally. The component is customizable with various
+ * props, allowing for control over its visibility, dismissal behavior, and timer-based auto-dismissal.
+ *
+ * @component
+ * @param {DismissableContentProps} props - The props for the DismissableContent component.
+ * @param {React.ReactNode} props.children - The child elements to render inside the component.
+ * @param {boolean} [props.isDismissed=false] - Indicates whether the content is initially dismissed.
+ * @param {boolean} [props.isDismissable=true] - Flag to determine if the content can be dismissed.
+ * @param {number} [props.timerInterval=0] - Duration in milliseconds after which the content is auto-dismissed.
+ * @param {Function} [props.dismissCallback] - Callback function to be executed after dismissal.
+ * @returns {React.ReactNode} The rendered JSX for the DismissableContent component.
  */
 export const DismissableContent: FC<DismissableContentProps> = forwardRef(
   (
@@ -64,7 +76,7 @@ export const DismissableContent: FC<DismissableContentProps> = forwardRef(
     return (
       <StyledDismissableContent
         ref={ref as React.RefObject<HTMLDivElement>}
-        {...{ isVisible, isPresent }}
+        {...getTransientProps({ isVisible, isPresent })}
       >
         {isDismissable && (
           <StyledClose onClick={dismiss}>
@@ -73,7 +85,9 @@ export const DismissableContent: FC<DismissableContentProps> = forwardRef(
         )}
         {children}
         {!!timerInterval && (
-          <StyledTimer {...{ isTimerTriggered, timerInterval }} />
+          <StyledTimer
+            {...getTransientProps({ isTimerTriggered, timerInterval })}
+          />
         )}
       </StyledDismissableContent>
     )

@@ -8,7 +8,11 @@ html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
-  font-family: LT, sans-serif;
+  font-family: M, sans-serif !important;
+}
+
+.is-title {
+  font-family: T, sans-serif !important;
 }
 
 h1,
@@ -23,8 +27,11 @@ a {
 }
 
 @font-face {
-  font-family: 'LT';
-  src: url('/fonts/LT.otf') format('opentype');
-  font-weight: normal;
-  font-style: normal;
+  font-family: 'M';
+  src: url('/fonts/M.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'T';
+  src: url('/fonts/T.ttf') format('truetype');
 }
