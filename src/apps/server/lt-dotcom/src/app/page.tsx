@@ -10,7 +10,12 @@ import Interact from '@/components/Interact'
 import { tickerLines } from '@/data/tickerLines'
 import { careerHighlights } from '@/data/careerHighlights'
 import { skillset } from '@/data/skillset'
-import { ShimmerInner, ShimmerOuter, StyledFullGradient } from './page.styles'
+import {
+  ShimmerInner,
+  ShimmerOuter,
+  StyledCardWrapper,
+  StyledFullGradient,
+} from './page.styles'
 import { PageHeader } from '@/components/PageHeader/PageHeader'
 import {
   TravelTrackerProps,
@@ -54,7 +59,7 @@ export default function Home() {
           {...{ uiTracker, travelTracker, setTravelTracker, isComplete }}
         />
         <PageGrid>
-          <ShimmerOuter>
+          <ShimmerOuter className="is-title">
             {isComplete && <Interact />}
             <ShimmerInner>
               <Shimmer
@@ -71,25 +76,30 @@ export default function Home() {
           <div style={{ margin: '1rem' }}>
             <Grid>
               {skillset.map(({ title, subTitle, icon, summary, bullets }) => (
-                <Card
-                  key={title}
-                  {...{ title, subTitle }}
-                  icon={{
-                    src: `/${icon}.svg`,
-                    title,
-                    isStroked: true,
-                  }}
-                  isClear
-                >
-                  {summary}
-                  <ul
-                    style={{ padding: '1rem 1rem 0', color: 'var(--textSoft)' }}
+                <StyledCardWrapper>
+                  <Card
+                    key={title}
+                    {...{ title, subTitle }}
+                    iconProps={{
+                      src: `/${icon}.svg`,
+                      color: 'var(--outline)',
+                      isStroked: true,
+                    }}
+                    isClear
                   >
-                    {bullets.map((bullet, i) => (
-                      <li key={i}>{bullet}</li>
-                    ))}
-                  </ul>
-                </Card>
+                    {summary}
+                    <ul
+                      style={{
+                        padding: '1rem 1rem 0',
+                        color: 'var(--textSoft)',
+                      }}
+                    >
+                      {bullets.map((bullet, i) => (
+                        <li key={i}>{bullet}</li>
+                      ))}
+                    </ul>
+                  </Card>
+                </StyledCardWrapper>
               ))}
             </Grid>
           </div>

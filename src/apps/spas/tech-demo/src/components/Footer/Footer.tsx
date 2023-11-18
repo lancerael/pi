@@ -7,17 +7,23 @@ import { CLOUDFRONT_URL } from '../../main'
  * The banner at the bottom of the page containing external links
  */
 export const Footer = () => {
+  const iconButtonProps = {
+    isExternal: true,
+    iconProps: {
+      height: '1.2rem',
+    },
+  }
   return (
     <Banner hasBackground shouldWrapItems shouldInvertGradient>
       <ItemList>
         <IconButton
-          isExternal
+          {...iconButtonProps}
           title="Pi Lib Monorepo - Github - external link"
           href="https://github.com/lancerael/pi"
           src={`${CLOUDFRONT_URL}/github.svg`}
         />
         <IconButton
-          isExternal
+          {...iconButtonProps}
           title="Pi Lib Design System - Storybook - external link"
           href="https://pi.lance-taylor.com"
           src={`${CLOUDFRONT_URL}/storybook.svg`}
@@ -25,7 +31,7 @@ export const Footer = () => {
       </ItemList>
       <ItemList>
         <IconButton
-          isExternal
+          {...iconButtonProps}
           title="by Lance Taylor - Linkedin - external link"
           href="https://www.linkedin.com/in/lance-taylor-47b85b40"
           src={`${CLOUDFRONT_URL}/linkedin.svg`}
