@@ -1,8 +1,16 @@
 # Change Log - @pi-lib/link
 
-This log was last generated on Sat, 11 Nov 2023 00:16:54 GMT and should not be manually modified.
+This log was last generated on Sat, 18 Nov 2023 22:36:35 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 2.0.0
+
+Sat, 18 Nov 2023 22:36:35 GMT
+
+### Major changes
+
+- Changed props to transient props (lancerael@googlemail.com)
 
 ## 1.0.10
 

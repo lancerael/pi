@@ -2,6 +2,21 @@
   "name": "@pi-lib/candlestick-chart",
   "entries": [
     {
+      "date": "Sat, 18 Nov 2023 22:36:35 GMT",
+      "tag": "@pi-lib/candlestick-chart_v2.7.0",
+      "version": "2.7.0",
+      "comments": {
+        "minor": [
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/candlestick-chart",
+            "commit": "2954d46492860e2d476fec0085b10b9b88aa5108",
+            "comment": "Changed props to transient props"
+          }
+        ]
+      }
+    },
+    {
       "date": "Sat, 11 Nov 2023 00:16:53 GMT",
       "tag": "@pi-lib/candlestick-chart_v2.6.2",
       "version": "2.6.2",

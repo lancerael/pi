@@ -2,6 +2,21 @@
   "name": "@pi-lib/link",
   "entries": [
     {
+      "date": "Sat, 18 Nov 2023 22:36:35 GMT",
+      "tag": "@pi-lib/link_v2.0.0",
+      "version": "2.0.0",
+      "comments": {
+        "major": [
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/link",
+            "commit": "2954d46492860e2d476fec0085b10b9b88aa5108",
+            "comment": "Changed props to transient props"
+          }
+        ]
+      }
+    },
+    {
       "date": "Sat, 11 Nov 2023 00:16:54 GMT",
       "tag": "@pi-lib/link_v1.0.10",
       "version": "1.0.10",

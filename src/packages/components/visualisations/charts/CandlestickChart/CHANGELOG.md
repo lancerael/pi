@@ -1,8 +1,16 @@
 # Change Log - @pi-lib/candlestick-chart
 
-This log was last generated on Sat, 11 Nov 2023 00:16:53 GMT and should not be manually modified.
+This log was last generated on Sat, 18 Nov 2023 22:36:35 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 2.7.0
+
+Sat, 18 Nov 2023 22:36:35 GMT
+
+### Minor changes
+
+- Changed props to transient props (lancerael@googlemail.com)
 
 ## 2.6.2
 

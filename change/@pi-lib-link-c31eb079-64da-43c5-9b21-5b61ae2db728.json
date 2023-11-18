@@ -1,7 +1,0 @@
-{
-  "type": "major",
-  "comment": "Changed props to transient props",
-  "packageName": "@pi-lib/link",
-  "email": "lancerael@googlemail.com",
-  "dependentChangeType": "patch"
-}

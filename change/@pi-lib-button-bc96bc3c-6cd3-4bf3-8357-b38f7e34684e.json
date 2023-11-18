@@ -1,7 +1,0 @@
-{
-  "type": "patch",
-  "comment": "Type tweaks",
-  "packageName": "@pi-lib/button",
-  "email": "lancerael@googlemail.com",
-  "dependentChangeType": "patch"
-}

@@ -1,8 +1,16 @@
 # Change Log - @pi-lib/types
 
-This log was last generated on Fri, 17 Nov 2023 00:47:25 GMT and should not be manually modified.
+This log was last generated on Sat, 18 Nov 2023 22:36:35 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 1.0.2
+
+Sat, 18 Nov 2023 22:36:35 GMT
+
+### Patches
+
+- Type tweaks (lancerael@googlemail.com)
 
 ## 1.0.1
 

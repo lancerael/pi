@@ -2,6 +2,21 @@
   "name": "@pi-lib/advanced-button",
   "entries": [
     {
+      "date": "Sat, 18 Nov 2023 22:36:35 GMT",
+      "tag": "@pi-lib/advanced-button_v1.0.24",
+      "version": "1.0.24",
+      "comments": {
+        "patch": [
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/advanced-button",
+            "commit": "2954d46492860e2d476fec0085b10b9b88aa5108",
+            "comment": "Fixing docs"
+          }
+        ]
+      }
+    },
+    {
       "date": "Sat, 11 Nov 2023 00:16:53 GMT",
       "tag": "@pi-lib/advanced-button_v1.0.20",
       "version": "1.0.20",

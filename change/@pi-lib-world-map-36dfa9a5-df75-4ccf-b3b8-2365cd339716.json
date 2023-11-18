@@ -1,7 +1,0 @@
-{
-  "type": "patch",
-  "comment": "Fix docs",
-  "packageName": "@pi-lib/world-map",
-  "email": "lancerael@googlemail.com",
-  "dependentChangeType": "patch"
-}

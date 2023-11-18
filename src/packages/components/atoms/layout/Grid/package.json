@@ -1,6 +1,6 @@
 {
   "name": "@pi-lib/grid",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A wrapper for a simple grid layout.",
   "keywords": [
     "pi",

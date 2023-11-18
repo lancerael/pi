@@ -2,6 +2,21 @@
   "name": "@pi-lib/icon-button",
   "entries": [
     {
+      "date": "Sat, 18 Nov 2023 22:36:35 GMT",
+      "tag": "@pi-lib/icon-button_v3.0.0",
+      "version": "3.0.0",
+      "comments": {
+        "major": [
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/icon-button",
+            "commit": "2954d46492860e2d476fec0085b10b9b88aa5108",
+            "comment": "Simplified icin button to use new custom icon component"
+          }
+        ]
+      }
+    },
+    {
       "date": "Fri, 17 Nov 2023 00:47:25 GMT",
       "tag": "@pi-lib/icon-button_v2.0.0",
       "version": "2.0.0",
