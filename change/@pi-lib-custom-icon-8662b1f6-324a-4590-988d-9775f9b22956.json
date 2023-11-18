@@ -1,0 +1,7 @@
+{
+  "type": "major",
+  "comment": "Adding custom icon component",
+  "packageName": "@pi-lib/custom-icon",
+  "email": "lancerael@googlemail.com",
+  "dependentChangeType": "patch"
+}

@@ -1,0 +1,7 @@
+{
+  "type": "major",
+  "comment": "Simplified icin button to use new custom icon component",
+  "packageName": "@pi-lib/icon-button",
+  "email": "lancerael@googlemail.com",
+  "dependentChangeType": "patch"
+}

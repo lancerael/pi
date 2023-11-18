@@ -1,0 +1,7 @@
+{
+  "type": "patch",
+  "comment": "Fix docs",
+  "packageName": "@pi-lib/modal",
+  "email": "lancerael@googlemail.com",
+  "dependentChangeType": "patch"
+}
