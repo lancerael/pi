@@ -159,5 +159,5 @@ export interface ChartStyleProps {
   /**
    * Whether the chart is visible
    */
-  isVisible: boolean
+  $isVisible: boolean
 }

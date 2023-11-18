@@ -18,7 +18,7 @@ export const CurrentIndicator = ({
   if (isNaN(top)) return <></>
   return (
     <StyledIndicator
-      isPositive={currentItem.close > currentItem.open}
+      $isPositive={currentItem.close > currentItem.open}
       style={{ left, top }}
     >
       {currentItem.close.toLocaleString('en-US')}

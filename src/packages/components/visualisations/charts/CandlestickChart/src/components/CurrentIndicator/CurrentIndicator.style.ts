@@ -4,8 +4,8 @@ import { StyledIndicatorProps } from './CurrentIndicator.types'
 import { AXIS_OFFSETS, CHART_PADDING } from '../../CandlestickChart.constants'
 
 export const StyledIndicator = styled.div<StyledIndicatorProps>(
-  ({ isPositive }) => {
-    const color = isPositive ? 'green' : 'red'
+  ({ $isPositive }) => {
+    const color = $isPositive ? 'green' : 'red'
     return css`
       position: absolute;
       ${box()}
