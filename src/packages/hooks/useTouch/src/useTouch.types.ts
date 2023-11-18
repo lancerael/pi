@@ -1,5 +1,7 @@
 import { PanLevel, TouchControls } from './hooks/useControls'
 
+export type PanRange = [NumberRange, NumberRange]
+
 /**
  * Props interface for the `useTouch` hook.
  */
@@ -19,7 +21,7 @@ export interface UseTouchProps<T> {
   /**
    * The range of allowable pan levels for both x and y axis.
    */
-  panRange?: [NumberRange, NumberRange]
+  panRange?: PanRange
   /**
    * An optional callback function to reset the state.
    */

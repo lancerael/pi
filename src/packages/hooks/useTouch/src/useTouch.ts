@@ -63,10 +63,13 @@ export const useTouch = <T = HTMLElement>({
         const setVal = (axis: 'x' | 'y', [min, max]: NumberRange) => {
           return clampValue(panLevel[axis] + panChange[axis], min, max)
         }
-        return { x: setVal('x', panRange[0]), y: setVal('y', panRange[1]) }
+        return {
+          x: setVal('x', panRange[0]),
+          y: setVal('y', panRange[1]),
+        }
       })
     },
-    [controls.zoomLevel]
+    [controls.zoomLevel, panRange]
   )
 
   /**
