@@ -1,13 +1,12 @@
 import { StyledIconButton } from './IconButton.style'
-import { useButtonProps } from '@pi-lib/utils'
+import { useButtonProps, getTransientProps } from '@pi-lib/utils'
 import { IconButtonProps } from './IconButton.types'
 import CustomIcon from '@pi-lib/custom-icon/src/CustomIcon'
 
 /**
  * This component is used to render a button with an icon
  *
- * @param {object} props - The props for the IconButton component.
- * @param {boolean} [props.isExternal=false] - If true, the button acts as a link to an external resource and opens in a new tab.
+ * @param {boolean} [props.isExternal] - If true, the button acts as a link to an external resource and opens in a new tab.
  * @param {string} [props.src] - The path for the icon image
  * @param {string} [props.title] - The text for tht title attribute
  * @param {string} [props.iconProps] - The props for the contained icon
@@ -17,20 +16,25 @@ import CustomIcon from '@pi-lib/custom-icon/src/CustomIcon'
  * @returns {React.Component} The IconButton component.
  */
 export const IconButton = ({
-  isExternal = false,
+  isExternal,
+  isSimple,
   src,
   title = `icon button ${src}`,
   iconProps,
   dataTestid = 'pi-lib-icon-button',
   ...props
 }: IconButtonProps) => {
-  const { buttonProps } = useButtonProps<HTMLAnchorElement>(props, 'a')
+  const { buttonProps } = useButtonProps<HTMLAnchorElement>(
+    props,
+    src ? 'a' : 'button'
+  )
   return (
     <StyledIconButton
       {...{
         ...props,
         ...buttonProps,
         title,
+        ...getTransientProps({ isSimple }),
       }}
       target={isExternal ? '_blank' : undefined}
       data-testid={dataTestid}

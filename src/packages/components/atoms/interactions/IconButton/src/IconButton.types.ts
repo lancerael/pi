@@ -16,6 +16,10 @@ export interface IconButtonProps
    */
   isExternal?: boolean
   /**
+   * Should it have reduced styling
+   */
+  isSimple?: boolean
+  /**
    * String for the title attribute
    */
   title?: string
