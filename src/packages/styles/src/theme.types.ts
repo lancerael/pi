@@ -54,6 +54,7 @@ export interface GradientProps {
 
 export interface BoxProps {
   isInverted?: boolean
+  isTransparent?: boolean
   name?: keyof typeof boxColors
 }
 
