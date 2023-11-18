@@ -17,7 +17,7 @@ export const EditorAction = ({
   isStroked = false,
   isFilled = false,
 }: ActionProps) => {
-  const iconPath = `${
+  const src = `${
     import.meta.env.VITE_CLOUDFRONT_URL ?? '__CLOUDFRONT_URL__'
   }/${label.toLowerCase().split(' ').join('-')}.svg`
   return (
@@ -25,7 +25,7 @@ export const EditorAction = ({
       <StyledIconButton>
         <IconButton
           {...{
-            src: iconPath,
+            src,
             title,
             onPointerUp,
             iconProps: { isStroked, isFilled },
