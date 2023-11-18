@@ -109,7 +109,10 @@ export default function Home() {
             <div>Something 3</div>
           </StyledFullGradient>
           <div style={{ margin: '1rem' }}>
-            <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
+            <div
+              className="is-title"
+              style={{ textAlign: 'center', marginBottom: '2rem' }}
+            >
               <Shimmer
                 lines={['Career Highlights']}
                 behaviour="linger"
