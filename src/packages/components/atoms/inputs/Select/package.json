@@ -14,7 +14,7 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/lancerael/pi.git",
-    "directory": "src/components/atoms/inputs/Select"
+    "directory": "src/packages/components/atoms/inputs/Select"
   },
   "license": "ISC",
   "author": "Lance Taylor",
@@ -26,6 +26,7 @@
   },
   "devDependencies": {
     "@pi-lib/config": "workspace:^",
+    "@pi-lib/types": "workspace:^",
     "@testing-library/react": "^13.3.0",
     "@vitejs/plugin-react": "^4.1.0",
     "jest-axe": "^8.0.0",

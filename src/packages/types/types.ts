@@ -1,6 +1,6 @@
 export type Status = 'default' | 'pending' | 'error' | 'success'
 
-export interface TestProp {
+export interface TestId {
   /**
    * The data-selector for the component
    */

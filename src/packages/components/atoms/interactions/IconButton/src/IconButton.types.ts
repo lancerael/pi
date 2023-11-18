@@ -10,7 +10,7 @@ export interface IconButtonProps
   /**
    * The source path/URL for the image
    */
-  src: string
+  src: CustomIconProps['src']
   /**
    * Should it open in an new window
    */
@@ -22,5 +22,5 @@ export interface IconButtonProps
   /**
    * Props for the CustomIcon
    */
-  iconProps?: CustomIconProps
+  iconProps?: Omit<CustomIconProps, 'src'>
 }

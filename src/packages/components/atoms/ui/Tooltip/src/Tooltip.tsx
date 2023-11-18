@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
-import { throttle } from '@pi-lib/utils'
+import { getTransientProps, throttle } from '@pi-lib/utils'
 import { StyledTooltip } from './Tooltip.style'
 import { TooltipProps } from './Tooltip.types'
 
@@ -82,7 +82,7 @@ export const Tooltip = ({
   return (
     <StyledTooltip
       ref={containerRef}
-      {...{ isVisible, isRendered }}
+      {...getTransientProps({ isVisible, isRendered })}
       style={{ left: position.x, top: position.y }}
     >
       {isRendered && children}

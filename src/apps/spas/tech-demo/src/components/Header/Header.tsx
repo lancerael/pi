@@ -53,8 +53,8 @@ export const Header = () => {
     <Link
       to="/"
       onPointerUp={() => dispatch(updatePage('/'))}
-      $isMain
-      $isInactive={page === '/'}
+      isMain
+      isInactive={page === '/'}
       key="sandbox"
     >
       Sandbox
@@ -62,8 +62,8 @@ export const Header = () => {
     <Link
       to="/candlestick"
       onPointerUp={() => dispatch(updatePage('/candlestick'))}
-      $isMain
-      $isInactive={page === '/candlestick'}
+      isMain
+      isInactive={page === '/candlestick'}
       key="candlestick"
     >
       Candlestick
@@ -95,8 +95,7 @@ export const Header = () => {
                         dispatchWithUpdate(updateFontSize(altFontSize))
                       )
                     }
-                    isSmall
-                    isFilled
+                    iconProps={{ isFilled: true }}
                     src={`${CLOUDFRONT_URL}/font-${fontSize}.svg`}
                     title={`Switch to ${altFontSize} font`}
                   />
@@ -106,15 +105,13 @@ export const Header = () => {
                         dispatchWithUpdate(updateScheme(altScheme))
                       )
                     }
-                    isSmall
-                    isStroked
+                    iconProps={{ isStroked: true }}
                     src={`${CLOUDFRONT_URL}/scheme-${scheme}.svg`}
                     title={`Switch to ${altScheme} mode`}
                   />
                   <IconButton
                     onPointerUp={() => setTimeout(() => setIsActive(true), 100)}
-                    isSmall
-                    isFilled
+                    iconProps={{ isFilled: true }}
                     src={`${CLOUDFRONT_URL}/info.svg`}
                     title="View tech demo architectural diagram"
                   />

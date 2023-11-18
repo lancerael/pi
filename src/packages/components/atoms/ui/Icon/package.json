@@ -5,11 +5,11 @@
   "keywords": [
     "react"
   ],
-  "homepage": "https://pi.lance-taylor.com/",
+  "homepage": "https://pi.lance-taylor.com/?path=/docs/atoms-ui-icon--docs",
   "repository": {
     "type": "git",
-    "url": "https://github.com/lancerael/pi.git/?path=/docs/atoms-ui-icon--docs",
-    "directory": "src/components/atoms/ui/Icon"
+    "url": "https://github.com/lancerael/pi.git/",
+    "directory": "src/packages/components/atoms/ui/Icon"
   },
   "license": "ISC",
   "author": "Lance Taylor",

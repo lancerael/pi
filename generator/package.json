@@ -21,6 +21,7 @@
   },
   "devDependencies": {
     "@pi-lib/config": "workspace:^",
+    "@pi-lib/types": "workspace:^",
     "@testing-library/react": "^13.3.0",
     "@vitejs/plugin-react": "^4.1.0",
     "jest-axe": "^8.0.0",
@@ -32,6 +33,7 @@
   },
   "peerDependencies": {
     "@pi-lib/styles": "workspace:^",
+    "@pi-lib/utils": "workspace:^",
     "react": "^18.2.0",
     "styled-components": "^6.1.0"
   }

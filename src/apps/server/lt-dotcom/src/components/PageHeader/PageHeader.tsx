@@ -7,7 +7,7 @@ import { StyledHeader, StyledHeaderSection } from './PageHeader.styles'
 import { PageHeaderProps } from './PageHeader.types'
 
 const iconProps = {
-  fontSize: '2.3rem',
+  height: '2.3rem',
   isStroked: true,
   isSimple: true,
 }
@@ -23,15 +23,18 @@ export const PageHeader = ({
       <PageGrid>
         <Banner>
           <StyledHeaderSection>
-            <IconButton src="/cube.svg" title="Lance Taylor" {...iconProps} />
+            <IconButton
+              src="/cube.svg"
+              title="Lance Taylor"
+              {...{ iconProps }}
+            />
             <Shimmer lines={['LT']} behaviour="linger" delay={0} />
           </StyledHeaderSection>
           <StyledHeaderSection>
             <IconButton
               src="/backward.svg"
               title="Slower"
-              {...iconProps}
-              isStroked={travelSpeed > 0.2}
+              iconProps={{ ...iconProps, isStroked: travelSpeed > 0.2 }}
               onPointerUp={() =>
                 travelSpeed > 0.2 &&
                 setTravelTracker({
@@ -43,7 +46,7 @@ export const PageHeader = ({
             <IconButton
               src={`/${isTravelling ? 'pause' : 'play'}.svg`}
               title={isTravelling ? 'Pause' : 'Play'}
-              {...iconProps}
+              {...{ iconProps }}
               onPointerUp={() =>
                 setTravelTracker({ travelSpeed, isTravelling: !isTravelling })
               }
@@ -51,9 +54,11 @@ export const PageHeader = ({
             <IconButton
               src="/backward.svg"
               title="Faster"
-              {...iconProps}
-              isStroked={travelSpeed < 4}
-              rotate={180}
+              iconProps={{
+                ...iconProps,
+                isStroked: travelSpeed < 4,
+                rotate: 180,
+              }}
               onPointerUp={() =>
                 travelSpeed < 4 &&
                 setTravelTracker({

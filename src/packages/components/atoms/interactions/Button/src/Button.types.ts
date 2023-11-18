@@ -1,11 +1,11 @@
-import { TestProp, Status } from '@pi-lib/types'
+import { TestId, Status } from '@pi-lib/types'
 
 /**
  * The main prop interface for the component
  */
 export interface ButtonProps
   extends React.HTMLProps<HTMLButtonElement>,
-    TestProp {
+    TestId {
   /**
    * Use styles for special states
    */
