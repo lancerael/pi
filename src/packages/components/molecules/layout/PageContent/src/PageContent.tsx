@@ -1,3 +1,4 @@
+import { getTransientProps } from '@pi-lib/utils'
 import {
   StyledMain,
   StyledPageContent,
@@ -15,9 +16,9 @@ export const PageContent = ({
   isCollapsible = true,
 }: PageContentProps) => {
   return (
-    <StyledPageContent {...{ isCollapsible }}>
+    <StyledPageContent {...getTransientProps({ isCollapsible })}>
       {!!sidebar && (
-        <StyledSidebar {...{ maxWidth, isCollapsible }}>
+        <StyledSidebar {...getTransientProps({ maxWidth, isCollapsible })}>
           {sidebar}
         </StyledSidebar>
       )}
