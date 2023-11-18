@@ -1,10 +1,14 @@
-import { container } from '@pi-lib/styles'
 import styled, { css } from 'styled-components'
 import { StyledCardProps } from './Card.style.types'
+import { container } from '@pi-lib/styles'
 
 export const StyledCard = styled.div<StyledCardProps>(
   ({ $isClear }) => css`
-    ${!$isClear && container() && 'padding: 1rem;'}
+    ${!$isClear &&
+    css`
+      ${container()}
+      padding: 1rem;
+    `}
     color: var(--textSoft);
   `
 )
@@ -19,8 +23,9 @@ export const StyledTitle = styled.h2`
   color: var(--textStrong);
 `
 
-export const StyledSubTitle = styled.em`
-  color: var(--outline);
+export const StyledSubTitle = styled.span`
+  font-size: 1.1rem;
+  color: var(--special);
 `
 
 export const StyledContent = styled.div`
