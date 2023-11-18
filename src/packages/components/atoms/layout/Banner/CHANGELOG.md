@@ -1,8 +1,16 @@
 # Change Log - @pi-lib/banner
 
-This log was last generated on Tue, 14 Nov 2023 11:57:56 GMT and should not be manually modified.
+This log was last generated on Fri, 17 Nov 2023 00:47:24 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 1.3.0
+
+Fri, 17 Nov 2023 00:47:24 GMT
+
+### Minor changes
+
+- Added background to banner story (lancerael@googlemail.com)
 
 ## 1.2.0
 

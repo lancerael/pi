@@ -1,6 +1,6 @@
 {
   "name": "@pi-lib/modal-screen",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "A React component used to block out the screen with modal content",
   "keywords": [
     "pi",

@@ -2,6 +2,21 @@
   "name": "@pi-lib/icon-button",
   "entries": [
     {
+      "date": "Fri, 17 Nov 2023 00:47:25 GMT",
+      "tag": "@pi-lib/icon-button_v2.0.0",
+      "version": "2.0.0",
+      "comments": {
+        "major": [
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/icon-button",
+            "commit": "370e148cce246bda550f9077a0e4c95262960f65",
+            "comment": "Transient props cleanup, replace data-selector with data-testid, open up prop interfaces for default element properties, disable button actions when disabled"
+          }
+        ]
+      }
+    },
+    {
       "date": "Mon, 13 Nov 2023 21:14:13 GMT",
       "tag": "@pi-lib/icon-button_v1.2.0",
       "version": "1.2.0",

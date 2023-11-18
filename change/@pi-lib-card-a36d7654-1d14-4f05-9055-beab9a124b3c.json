@@ -1,7 +1,0 @@
-{
-  "type": "minor",
-  "comment": "Added optional icon to Card",
-  "packageName": "@pi-lib/card",
-  "email": "lancerael@googlemail.com",
-  "dependentChangeType": "patch"
-}

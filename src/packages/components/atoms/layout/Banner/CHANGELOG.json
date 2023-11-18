@@ -2,6 +2,21 @@
   "name": "@pi-lib/banner",
   "entries": [
     {
+      "date": "Fri, 17 Nov 2023 00:47:24 GMT",
+      "tag": "@pi-lib/banner_v1.3.0",
+      "version": "1.3.0",
+      "comments": {
+        "minor": [
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/banner",
+            "commit": "370e148cce246bda550f9077a0e4c95262960f65",
+            "comment": "Added background to banner story"
+          }
+        ]
+      }
+    },
+    {
       "date": "Tue, 14 Nov 2023 11:57:56 GMT",
       "tag": "@pi-lib/banner_v1.2.0",
       "version": "1.2.0",
