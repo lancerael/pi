@@ -14,6 +14,9 @@ const meta: Meta<typeof IconButton> = {
     isExternal: {
       control: 'boolean',
     },
+    isSimple: {
+      control: 'boolean',
+    },
     title: {
       control: 'text',
     },
@@ -30,8 +33,23 @@ export const Default: StoryObj<typeof IconButton> = {
     href: 'http://www.google.com',
     src: `/info.svg`,
     isExternal: true,
+    isSimple: false,
     title: 'Button title',
     dataTestid: 'pi-lib-icon-button',
+  },
+}
+
+/**
+ * The simple version of the button, with custom icon props
+ */
+export const Simple: StoryObj<typeof IconButton> = {
+  args: {
+    src: `/info.svg`,
+    isSimple: true,
+    iconProps: {
+      height: '2rem',
+      isFilled: true,
+    },
   },
 }
 
