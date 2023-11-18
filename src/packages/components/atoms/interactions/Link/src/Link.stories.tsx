@@ -8,13 +8,13 @@ const meta: Meta<typeof Link> = {
     href: {
       control: 'text',
     },
-    $isExternal: {
+    isExternal: {
       control: 'boolean',
     },
-    $isMain: {
+    isMain: {
       control: 'boolean',
     },
-    $isInactive: {
+    isInactive: {
       control: 'boolean',
     },
   },
@@ -27,10 +27,10 @@ const meta: Meta<typeof Link> = {
 export const Default: StoryObj<typeof Link> = {
   args: {
     href: 'https://www.google.com',
-    $isExternal: true,
+    isExternal: true,
     children: 'Link',
-    $isMain: false,
-    $isInactive: false,
+    isMain: false,
+    isInactive: false,
   },
 }
 
@@ -40,7 +40,7 @@ export const Default: StoryObj<typeof Link> = {
 export const Inactive: StoryObj<typeof Link> = {
   args: {
     href: 'https://www.google.com',
-    $isInactive: true,
+    isInactive: true,
     children: 'Link',
   },
 }
@@ -51,8 +51,8 @@ export const Inactive: StoryObj<typeof Link> = {
 export const Main: StoryObj<typeof Link> = {
   args: {
     href: 'https://www.google.com',
-    $isMain: true,
-    $isExternal: true,
+    isMain: true,
+    isExternal: true,
     children: 'Link',
   },
 }
