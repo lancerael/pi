@@ -10,6 +10,7 @@ import {
 import {
   filterStars,
   getStarStyle,
+  makeStar,
   makeStars,
   moveStar,
   randomNumber,
@@ -24,10 +25,6 @@ import { FPS_CUTOFF, MAX_STARS } from './Stellar.constants'
  * resizing and star movement over time.
  *
  * @param {StellarProps} props - The props for the Stellar component.
- * @param {number} props.starCount - Initial number of stars to render.
- * @param {boolean} props.isTravelling - Whether the stars should move.
- * @param {boolean} props.showDebug - Whether to display debug information.
- * @param {React.ReactNode} props.children - Child components to be rendered inside the Stellar component.
  * @returns {JSX.Element} - A styled starfield animation with interactive star spawning.
  */
 export const Stellar = ({
@@ -52,6 +49,14 @@ export const Stellar = ({
   const lastScroll = useRef(0)
   const framerate = useFramerate()
 
+  /**
+   * Sets the target coordinates for star movement transition.
+   *
+   * @param {number} x - The target x-coordinate.
+   * @param {number} y - The target y-coordinate.
+   * @param {number} speed - The transition speed.
+   * @returns {void}
+   */
   const setTarget = (x: number, y: number, speed: number) => {
     targetTransition.current?.()
     targetTransition.current = doTransition({
@@ -64,6 +69,12 @@ export const Stellar = ({
     })
   }
 
+  /**
+   * Updates the dimensions of the stellar component based on its current client width and height.
+   * This function is called when the component is mounted and whenever the window is resized.
+   *
+   * @returns {void}
+   */
   const updateDimensions = useCallback(() => {
     if (!stellarRef.current) return
     const { clientWidth, clientHeight } = stellarRef.current
@@ -71,9 +82,50 @@ export const Stellar = ({
     setTarget(clientWidth / 2, clientHeight / 2, 50)
   }, [])
 
+  /**
+   * Updates the styles of the stars based on their current positions and properties.
+   *
+   * @returns {void}
+   */
   const updateStyles = () => setStars(starTracker.current.map(getStarStyle))
 
-  const scroll = useCallback(() => {
+  /**
+   * Spawns new stars in the star tracker based on the current scroll position and movement.
+   *
+   * @param {number} newStarCount - The number of new stars to spawn.
+   * @param {Coords} target - The target coordinates for star spawning.
+   * @returns {void}
+   */
+  const spawnStars = useCallback(
+    (newStarCount: number = 1, target?: Coords) => {
+      const maxIncrease = MAX_STARS - starTracker.current.length
+      const isInitialised = travelInfo.current.isTravelling !== null
+      if (
+        !isInitialised ||
+        maxIncrease < 1 ||
+        framerate.current.fps < FPS_CUTOFF
+      )
+        return
+      const newStarTotal =
+        maxIncrease > newStarCount ? newStarCount : maxIncrease
+      starTracker.current.push(
+        ...makeStars(
+          travelInfo.current.isTravelling ? 1 : -1,
+          newStarTotal,
+          stellarCoords.current.dimensions,
+          target
+        )
+      )
+    },
+    []
+  )
+
+  /**
+   * Handles the scroll event, adjusting star positions and triggering star spawning.
+   *
+   * @returns {void}
+   */
+  const handleScroll = useCallback(() => {
     if (!contentRef.current) return
     const { scrollTop } = contentRef.current
     const offset = (scrollTop - lastScroll.current) / 10
@@ -87,30 +139,25 @@ export const Stellar = ({
         }
       }
     )
+    spawnStars()
     updateDimensions()
     scrollCallback?.(scrollTop)
     updateStyles()
   }, [])
 
-  const starSpawm = useCallback(
+  /**
+   * Handles pointer events, updating the target coordinates and spawning stars.
+   *
+   * @param {MouseEvent} event - The pointer event.
+   * @param {boolean} isBurst - Indicates whether it's a burst spawn or not.
+   * @returns {void}
+   */
+  const handlePointer = useCallback(
     ({ clientX, clientY }: MouseEvent, isBurst: boolean) => {
       setTarget(clientX, clientY - 5, 15)
       clearTimeout(moveTimeout.current)
-
-      if (
-        framerate.current.fps < FPS_CUTOFF ||
-        !travelInfo.current.isTravelling
-      )
-        return
-
-      starTracker.current.push(
-        ...makeStars(
-          isTravelling ? 1 : -1,
-          isBurst ? randomNumber(5, 10) : 1,
-          stellarCoords.current.dimensions,
-          [clientX, clientY - 5]
-        )
-      )
+      if (!travelInfo.current.isTravelling) return
+      spawnStars(isBurst ? randomNumber(3, 6) : 1, [clientX, clientY - 5])
       moveTimeout.current = setTimeout(() => {
         updateDimensions()
       }, 1000)
@@ -118,49 +165,51 @@ export const Stellar = ({
     [isTravelling]
   )
 
+  /**
+   * Attach the window resize handler
+   */
   useThrottledEvents(updateDimensions)
-  useThrottledEvents(scroll, ['scroll'], false, contentRef.current, 100)
+
+  /**
+   * Attach the content scroll handler
+   */
+  useThrottledEvents(handleScroll, ['scroll'], false, contentRef.current, 100)
+
+  /**
+   * Attach the content pointer move handler
+   */
   useThrottledEvents(
-    (e) => starSpawm(e, false),
+    (e) => handlePointer(e, false),
     ['pointermove'],
     false,
     contentRef.current
   )
+  /**
+   * Attach the content pointer down handler
+   */
   useThrottledEvents(
-    (e) => starSpawm(e, true),
+    (e) => handlePointer(e, true),
     ['pointerdown'],
     false,
     contentRef.current
   )
 
+  /**
+   * Set up the animation keyframe that redraws the stars 10x per second,
+   * generating new stars in the process
+   */
   useEffect(() => {
     if (!stellarRef.current) return
     updateDimensions()
-    if (!starTracker.current.length) {
-      starTracker.current = makeStars(
-        isTravelling ? 0 : -1,
-        starCount,
-        stellarCoords.current.dimensions
-      )
-    }
     const keyframe = setInterval(() => {
-      if (!starTracker.current.length) return
-      const { dimensions, target } = stellarCoords.current
-      const { fps } = framerate.current
-      if (
-        (!fps ||
-          (fps > FPS_CUTOFF && starTracker.current.length < MAX_STARS)) &&
-        isTravelling
-      ) {
-        starTracker.current.push(
-          ...makeStars(
-            isTravelling ? 0 : -1,
-            randomNumber(1, fps > FPS_CUTOFF + 10 ? 2 : 1),
-            dimensions
-          )
-        )
+      if (!starTracker.current.length) {
+        spawnStars(starCount)
+        updateStyles()
+        return
       }
       if (isTravelling) {
+        const { dimensions, target } = stellarCoords.current
+        spawnStars()
         starTracker.current = starTracker.current
           .map((star: Star) => moveStar(star, target, travelSpeed))
           .filter(({ age, coords }) => filterStars(age, coords, dimensions))

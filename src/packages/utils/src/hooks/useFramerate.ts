@@ -10,7 +10,7 @@ export const useFramerate = (frames: number = 60) => {
   const frame = useRef(0)
 
   const framerates = useRef({
-    fps: 0,
+    fps: 60,
     average: 0,
     totalTime: 0,
   })
