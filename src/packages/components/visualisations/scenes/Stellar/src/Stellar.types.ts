@@ -12,7 +12,7 @@ export interface StellarProps extends PropsWithChildren {
   /**
    * Flag indicating movement through stars, defaulting to true.
    **/
-  isTravelling?: boolean
+  isTravelling?: boolean | null
   /**
    * The speed of travel through space
    **/
@@ -83,6 +83,11 @@ export interface StarStyle extends Pick<Star, 'id'> {
    **/
   style: React.CSSProperties
 }
+
+export type TravelTrackerProps = Pick<
+  StellarProps,
+  'travelSpeed' | 'isTravelling'
+>
 
 /**
  * Set the starting age for a star - for -1 the age is random

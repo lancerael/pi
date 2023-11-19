@@ -1,5 +1,6 @@
 import styled, { css, keyframes } from 'styled-components'
 import { StyledLineProps } from './Shimmer.style.types'
+import { REDUCED_MOTION } from '@pi-lib/styles'
 
 const blurPulse = keyframes`
     50% {
@@ -26,9 +27,15 @@ export const StyledShimmer = styled.div`
 
 export const StyledLine = styled.div<StyledLineProps>(
   ({ $isVisible, $fadeTime = 5000 }) => css`
-    height: ${$isVisible ? '2rem' : '0'};
+    --size: 2rem;
+
+    @media screen and (max-width: 800px) {
+      --size: 1.4rem;
+    }
+
+    height: ${$isVisible ? 'var(--size)' : '0'};
     transition: none;
-    font-size: 2rem;
+    font-size: var(--size);
 
     &::after {
       transition: all ${$fadeTime / 1000}s linear;
@@ -48,14 +55,14 @@ export const StyledLine = styled.div<StyledLineProps>(
       background-position: 0% 50%;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      animation: ${textPulse} 5s linear infinite;
+      animation: ${textPulse} ${REDUCED_MOTION ? 15 : 5}s linear infinite;
     }
 
     &::before {
       transition: all 0.5s ease-in;
       content: attr(data-content);
-      animation: ${blurPulse} 2.5s linear infinite;
-      opacity: ${$isVisible ? 0.5 : 0};
+      animation: ${blurPulse} ${REDUCED_MOTION ? 15 : 2.5}s linear infinite;
+      opacity: ${$isVisible ? 0.7 : 0};
       position: absolute;
       margin-left: 0;
       transform: scale(1);

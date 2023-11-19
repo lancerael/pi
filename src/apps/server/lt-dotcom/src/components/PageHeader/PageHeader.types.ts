@@ -1,10 +1,6 @@
 import { BaseProps, TransientProps } from '@pi-lib/utils'
+import { TravelTrackerProps } from '@pi-lib/stellar'
 import { Dispatch, PropsWithChildren, SetStateAction } from 'react'
-
-export interface TravelTrackerProps {
-  travelSpeed: number
-  isTravelling: boolean
-}
 
 export interface UiTrackerProps extends BaseProps {
   fullWidth: number

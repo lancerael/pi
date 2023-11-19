@@ -7,23 +7,29 @@ import Shimmer from '@pi-lib/shimmer'
 import { StyledHeader, StyledHeaderSection } from './PageHeader.styles'
 import { PageHeaderProps } from './PageHeader.types'
 
-const iconProps = {
+const ICON_PROPS = {
   height: '2.3rem',
   isStroked: true,
 }
 
+const MIN_SPEED = 0.2
+const MAX_SPEED = 4
+const MULTIPLIER = 2
+
 export const PageHeader = ({
   uiTracker,
-  travelTracker: { travelSpeed, isTravelling },
+  travelTracker: { travelSpeed = 1, isTravelling },
   setTravelTracker,
   isComplete,
 }: PageHeaderProps) => {
+  const canReduce = !!isTravelling && travelSpeed > MIN_SPEED
+  const canIncrease = !!isTravelling && travelSpeed < MAX_SPEED
   return (
     <StyledHeader {...getTransientProps({ ...{ ...uiTracker, isComplete } })}>
       <PageGrid>
         <Banner>
           <StyledHeaderSection title="Lance Taylor">
-            <CustomIcon src="/cube.svg" {...iconProps} />
+            <CustomIcon src="/cube.svg" {...ICON_PROPS} />
             <Shimmer lines={['LT']} behaviour="linger" delay={0} />
           </StyledHeaderSection>
           <StyledHeaderSection>
@@ -31,12 +37,12 @@ export const PageHeader = ({
               src="/backward.svg"
               title="Slower"
               isSimple
-              iconProps={{ ...iconProps, isStroked: travelSpeed > 0.2 }}
+              iconProps={{ ...ICON_PROPS, isStroked: canReduce }}
               onPointerUp={() =>
-                travelSpeed > 0.2 &&
+                canReduce &&
                 setTravelTracker({
                   isTravelling,
-                  travelSpeed: travelSpeed / 2,
+                  travelSpeed: travelSpeed / MULTIPLIER,
                 })
               }
             />
@@ -44,7 +50,7 @@ export const PageHeader = ({
               src={`/${isTravelling ? 'pause' : 'play'}.svg`}
               title={isTravelling ? 'Pause' : 'Play'}
               isSimple
-              {...{ iconProps }}
+              iconProps={ICON_PROPS}
               onPointerUp={() =>
                 setTravelTracker({ travelSpeed, isTravelling: !isTravelling })
               }
@@ -54,15 +60,15 @@ export const PageHeader = ({
               title="Faster"
               isSimple
               iconProps={{
-                ...iconProps,
-                isStroked: travelSpeed < 4,
+                ...ICON_PROPS,
+                isStroked: canIncrease,
                 rotate: 180,
               }}
               onPointerUp={() =>
-                travelSpeed < 4 &&
+                canIncrease &&
                 setTravelTracker({
                   isTravelling,
-                  travelSpeed: travelSpeed * 2,
+                  travelSpeed: travelSpeed * MULTIPLIER,
                 })
               }
             />
@@ -70,6 +76,7 @@ export const PageHeader = ({
         </Banner>
       </PageGrid>
       <div style={{ display: 'none' }} aria-hidden>
+        <IconButton src={`/pause.svg`} />
         <IconButton src={`/play.svg`} />
       </div>
     </StyledHeader>

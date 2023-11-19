@@ -3,10 +3,9 @@ import { _NAME_Props } from './_NAME_.types'
 
 /**
  * _NAME_
- * @param {InputProps} props - The properties for the _NAME_ component.
  *
- * @param {string} [props.dataTestid] - The test id attribute for e2e testing
- * @returns {JSX.Element}
+ * @param {InputProps} props - The properties for the _NAME_ component.
+ * @returns {JSX.Element} an instance of the the _NAME_ component.
  */
 export const _NAME_ = ({
   ...props,

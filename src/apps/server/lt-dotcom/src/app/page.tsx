@@ -1,11 +1,12 @@
 'use client'
-import { useRef, useState } from 'react'
-import Stellar from '@pi-lib/stellar'
+import { useEffect, useRef, useState } from 'react'
+import Stellar, { TravelTrackerProps } from '@pi-lib/stellar'
 import Grid from '@pi-lib/grid'
 import Shimmer from '@pi-lib/shimmer'
 import PageGrid from '@pi-lib/page-grid'
 import Card from '@pi-lib/card'
 import { useThrottledEvents } from '@pi-lib/utils'
+import { IS_CLIENT, REDUCED_MOTION } from '@pi-lib/styles'
 import Interact from '@/components/Interact'
 import { tickerLines } from '@/data/tickerLines'
 import { careerHighlights } from '@/data/careerHighlights'
@@ -17,10 +18,7 @@ import {
   StyledFullGradient,
 } from './page.styles'
 import { PageHeader } from '@/components/PageHeader/PageHeader'
-import {
-  TravelTrackerProps,
-  UiTrackerProps,
-} from '@/components/PageHeader/PageHeader.types'
+import { UiTrackerProps } from '@/components/PageHeader/PageHeader.types'
 
 export default function Home() {
   const [isComplete, setIsComplete] = useState(false)
@@ -30,7 +28,7 @@ export default function Home() {
   })
   const [travelTracker, setTravelTracker] = useState<TravelTrackerProps>({
     travelSpeed: 1,
-    isTravelling: true,
+    isTravelling: null,
   })
   const wrapperRef = useRef<HTMLDivElement>(null)
   const widthRef = useRef<HTMLDivElement>(null)
@@ -41,6 +39,22 @@ export default function Home() {
       fullWidth: widthRef.current?.offsetWidth ?? 0,
     }))
   })
+
+  useEffect(() => {
+    if (IS_CLIENT) {
+      setTravelTracker({ travelSpeed: 1, isTravelling: !REDUCED_MOTION })
+    }
+  }, [])
+
+  const getShimmerTimes = () => {
+    const { travelSpeed = 1, isTravelling } = travelTracker
+    return {
+      delay: 2000,
+      holdFirst: isTravelling ? 4000 / travelSpeed : 100000,
+      fadeTime: isTravelling ? 800 / travelSpeed : 0,
+      pause: isTravelling ? 2500 / travelSpeed : 100000,
+    }
+  }
 
   return (
     <div
@@ -65,10 +79,7 @@ export default function Home() {
               <Shimmer
                 lines={tickerLines}
                 behaviour="fade"
-                delay={2000}
-                holdFirst={4000}
-                fadeTime={800}
-                pause={2500}
+                {...getShimmerTimes()}
                 callback={() => setIsComplete(true)}
               />
             </ShimmerInner>
@@ -76,9 +87,8 @@ export default function Home() {
           <div style={{ margin: '1rem' }}>
             <Grid>
               {skillset.map(({ title, subTitle, icon, summary, bullets }) => (
-                <StyledCardWrapper>
+                <StyledCardWrapper key={title}>
                   <Card
-                    key={title}
                     {...{ title, subTitle }}
                     iconProps={{
                       src: `/${icon}.svg`,

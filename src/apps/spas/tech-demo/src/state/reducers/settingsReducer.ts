@@ -1,4 +1,5 @@
 import { Scheme, ThemeType } from '@pi-lib/styles'
+import { USER_SCHEME } from '@pi-lib/styles/src/constants'
 import { createSlice } from '@reduxjs/toolkit'
 
 export type FontSize = 'small' | 'large'
@@ -21,9 +22,7 @@ const storedSettings = localStorage.getItem('piLibDemoSettings')
 
 const initialState: SettingsState = {
   themeName: 'andro',
-  scheme: !!matchMedia('(prefers-color-scheme: dark)').matches
-    ? 'dark'
-    : 'light',
+  scheme: USER_SCHEME,
   fontSize: 'small',
   consent: false,
   ...JSON.parse(storedSettings ?? '{}'),

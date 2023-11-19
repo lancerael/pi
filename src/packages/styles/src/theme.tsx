@@ -3,6 +3,7 @@ import { ThemeProvider } from 'styled-components'
 import { globalFontSizes, globalStyles } from './styles'
 import { themes, ThemeType } from './themes'
 import { PiTheme, Scheme, ThemeProps } from './theme.types'
+import { USER_SCHEME } from './constants'
 
 /**
  * The parameters of the base theme
@@ -79,7 +80,7 @@ export const getTheme = (
 
 /**
  * Theme provider component to wrap child components in a theme.
- * @component
+ *
  * @param {ThemeProps} props - The props for the Theme component.
  * @returns {JSX.Element} A ThemeProvider wrapped component.
  */
@@ -88,15 +89,11 @@ export const Theme = ({
   themeName = 'andro',
   themeOverrides,
   theme = getTheme(themeName, themeOverrides),
-  scheme = 'light',
+  scheme = USER_SCHEME,
   fontSize = 'small',
 }: ThemeProps) => {
-  const isWindow = typeof window !== 'undefined'
-  const isDark =
-    isWindow && !!matchMedia('(prefers-color-scheme: dark)').matches
-  const defaultTheme = isDark ? 'dark' : 'light'
   const style = globalStyles[themeName]
-  const GlobalStyle = style ? style[scheme || defaultTheme] : () => <></>
+  const GlobalStyle = style ? style[scheme] : () => <></>
   const SizeStyle = globalFontSizes[fontSize]
   return (
     <ThemeProvider {...{ theme }}>
