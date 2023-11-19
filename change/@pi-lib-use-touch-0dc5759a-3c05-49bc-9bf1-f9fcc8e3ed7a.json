@@ -1,0 +1,7 @@
+{
+  "type": "patch",
+  "comment": "JSDoc cleanup",
+  "packageName": "@pi-lib/use-touch",
+  "email": "lancerael@hotmail.com",
+  "dependentChangeType": "patch"
+}

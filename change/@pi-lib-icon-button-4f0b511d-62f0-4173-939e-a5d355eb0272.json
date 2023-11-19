@@ -1,0 +1,7 @@
+{
+  "type": "minor",
+  "comment": "JSDoc cleanup",
+  "packageName": "@pi-lib/icon-button",
+  "email": "lancerael@hotmail.com",
+  "dependentChangeType": "patch"
+}

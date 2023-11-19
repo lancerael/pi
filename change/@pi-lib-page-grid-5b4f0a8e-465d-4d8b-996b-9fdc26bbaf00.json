@@ -1,0 +1,7 @@
+{
+  "type": "minor",
+  "comment": "JSDoc cleanup",
+  "packageName": "@pi-lib/page-grid",
+  "email": "lancerael@hotmail.com",
+  "dependentChangeType": "patch"
+}

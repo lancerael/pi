@@ -1,0 +1,7 @@
+{
+  "type": "minor",
+  "comment": "Adding reduced motion capabilities",
+  "packageName": "@pi-lib/stellar",
+  "email": "lancerael@hotmail.com",
+  "dependentChangeType": "patch"
+}
