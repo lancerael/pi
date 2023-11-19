@@ -84,7 +84,10 @@ export interface StarStyle extends Pick<Star, 'id'> {
   style: React.CSSProperties
 }
 
-export type TravelTrackerProps = Pick<StellarProps, 'travelSpeed' | 'isTravelling'> 
+export type TravelTrackerProps = Pick<
+  StellarProps,
+  'travelSpeed' | 'isTravelling'
+>
 
 /**
  * Set the starting age for a star - for -1 the age is random
