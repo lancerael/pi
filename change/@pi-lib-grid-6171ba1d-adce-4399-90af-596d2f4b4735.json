@@ -1,7 +1,0 @@
-{
-  "type": "patch",
-  "comment": "JSDoc cleanup",
-  "packageName": "@pi-lib/grid",
-  "email": "lancerael@hotmail.com",
-  "dependentChangeType": "patch"
-}

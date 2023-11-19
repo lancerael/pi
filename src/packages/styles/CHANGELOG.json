@@ -2,6 +2,21 @@
   "name": "@pi-lib/styles",
   "entries": [
     {
+      "date": "Sun, 19 Nov 2023 17:46:18 GMT",
+      "tag": "@pi-lib/styles_v3.1.0",
+      "version": "3.1.0",
+      "comments": {
+        "minor": [
+          {
+            "author": "lancerael@hotmail.com",
+            "package": "@pi-lib/styles",
+            "commit": "f48b7197a8e3ca7aaa702a7b0ce1027bdfde6e12",
+            "comment": "Adding reduced motion capabilities"
+          }
+        ]
+      }
+    },
+    {
       "date": "Sat, 18 Nov 2023 22:36:35 GMT",
       "tag": "@pi-lib/styles_v3.0.2",
       "version": "3.0.2",

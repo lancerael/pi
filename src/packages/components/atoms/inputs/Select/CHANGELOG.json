@@ -2,6 +2,21 @@
   "name": "@pi-lib/select",
   "entries": [
     {
+      "date": "Sun, 19 Nov 2023 17:46:18 GMT",
+      "tag": "@pi-lib/select_v1.3.1",
+      "version": "1.3.1",
+      "comments": {
+        "patch": [
+          {
+            "author": "lancerael@hotmail.com",
+            "package": "@pi-lib/select",
+            "commit": "f48b7197a8e3ca7aaa702a7b0ce1027bdfde6e12",
+            "comment": "JSDoc cleanup"
+          }
+        ]
+      }
+    },
+    {
       "date": "Sat, 18 Nov 2023 22:36:35 GMT",
       "tag": "@pi-lib/select_v1.3.0",
       "version": "1.3.0",

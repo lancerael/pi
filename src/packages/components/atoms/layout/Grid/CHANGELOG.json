@@ -2,6 +2,21 @@
   "name": "@pi-lib/grid",
   "entries": [
     {
+      "date": "Sun, 19 Nov 2023 17:46:18 GMT",
+      "tag": "@pi-lib/grid_v1.0.3",
+      "version": "1.0.3",
+      "comments": {
+        "patch": [
+          {
+            "author": "lancerael@hotmail.com",
+            "package": "@pi-lib/grid",
+            "commit": "f48b7197a8e3ca7aaa702a7b0ce1027bdfde6e12",
+            "comment": "JSDoc cleanup"
+          }
+        ]
+      }
+    },
+    {
       "date": "Sat, 11 Nov 2023 00:16:54 GMT",
       "tag": "@pi-lib/grid_v1.0.0",
       "version": "1.0.0",

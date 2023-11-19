@@ -2,6 +2,21 @@
   "name": "@pi-lib/shimmer",
   "entries": [
     {
+      "date": "Sun, 19 Nov 2023 17:46:18 GMT",
+      "tag": "@pi-lib/shimmer_v0.3.0",
+      "version": "0.3.0",
+      "comments": {
+        "minor": [
+          {
+            "author": "lancerael@hotmail.com",
+            "package": "@pi-lib/shimmer",
+            "commit": "f48b7197a8e3ca7aaa702a7b0ce1027bdfde6e12",
+            "comment": "Adding reduced motion capabilities"
+          }
+        ]
+      }
+    },
+    {
       "date": "Tue, 14 Nov 2023 23:51:57 GMT",
       "tag": "@pi-lib/shimmer_v0.2.0",
       "version": "0.2.0",

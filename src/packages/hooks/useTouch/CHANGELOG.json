@@ -2,6 +2,21 @@
   "name": "@pi-lib/use-touch",
   "entries": [
     {
+      "date": "Sun, 19 Nov 2023 17:46:18 GMT",
+      "tag": "@pi-lib/use-touch_v1.2.5",
+      "version": "1.2.5",
+      "comments": {
+        "patch": [
+          {
+            "author": "lancerael@hotmail.com",
+            "package": "@pi-lib/use-touch",
+            "commit": "f48b7197a8e3ca7aaa702a7b0ce1027bdfde6e12",
+            "comment": "JSDoc cleanup"
+          }
+        ]
+      }
+    },
+    {
       "date": "Sat, 18 Nov 2023 22:36:35 GMT",
       "tag": "@pi-lib/use-touch_v1.2.4",
       "version": "1.2.4",

@@ -1,7 +1,0 @@
-{
-  "type": "minor",
-  "comment": "Adding reduced motion capabilities",
-  "packageName": "@pi-lib/styles",
-  "email": "lancerael@hotmail.com",
-  "dependentChangeType": "patch"
-}
