@@ -1,4 +1,4 @@
-'use client' 
+'use client'
 export const IS_CLIENT = typeof window !== 'undefined' && window.matchMedia
 export const DARK_MODE =
   IS_CLIENT && matchMedia('(prefers-color-scheme: dark)').matches
