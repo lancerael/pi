@@ -46,6 +46,16 @@ export default function Home() {
     }
   }, [])
 
+  const getShimmerTimes = () => {
+    const { travelSpeed = 1, isTravelling } = travelTracker
+    return {
+      delay: 2000,
+      holdFirst: isTravelling ? 4000 / travelSpeed : 100000,
+      fadeTime: isTravelling ? 800 / travelSpeed : 0,
+      pause: isTravelling ? 2500 / travelSpeed : 100000,
+    }
+  }
+
   return (
     <div
       style={{
@@ -69,10 +79,7 @@ export default function Home() {
               <Shimmer
                 lines={tickerLines}
                 behaviour="fade"
-                delay={REDUCED_MOTION ? 0 : 2000}
-                holdFirst={REDUCED_MOTION ? 10000 : 4000}
-                fadeTime={REDUCED_MOTION ? 0 : 800}
-                pause={REDUCED_MOTION ? 10000 : 2500}
+                {...getShimmerTimes()}
                 callback={() => setIsComplete(true)}
               />
             </ShimmerInner>

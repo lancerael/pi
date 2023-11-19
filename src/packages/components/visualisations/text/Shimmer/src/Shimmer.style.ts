@@ -27,9 +27,15 @@ export const StyledShimmer = styled.div`
 
 export const StyledLine = styled.div<StyledLineProps>(
   ({ $isVisible, $fadeTime = 5000 }) => css`
-    height: ${$isVisible ? '2rem' : '0'};
+    --size: 2rem;
+
+    @media screen and (max-width: 800px) {
+      --size: 1.4rem;
+    }
+
+    height: ${$isVisible ? 'var(--size)' : '0'};
     transition: none;
-    font-size: 2rem;
+    font-size: var(--size);
 
     &::after {
       transition: all ${$fadeTime / 1000}s linear;
