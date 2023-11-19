@@ -4,10 +4,11 @@ import { ShimmerProps } from './Shimmer.types'
 
 /**
  * Shimmer component to create a shimmering effect over a series of lines.
- * The component cycles through each line, making one line visible at a time in a loop, or in a fade manner depending on the behavior prop.
+ * The component cycles through each line, making one line visible at a time in a loop,
+ * or in a fade manner depending on the behavior prop.
  *
  * @param {ShimmerProps} props - The props for the Shimmer component.
- * @returns {JSX.Element} A styled shimmer effect wrapping each provided line, cycling visibility according to specified behavior.
+ * @returns {JSX.Element} A styled shimmer effect wrapping each provided line.
  */
 export const Shimmer = ({
   lines,
