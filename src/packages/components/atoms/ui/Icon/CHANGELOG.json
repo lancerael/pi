@@ -2,6 +2,21 @@
   "name": "@pi-lib/icon",
   "entries": [
     {
+      "date": "Sun, 19 Nov 2023 17:46:18 GMT",
+      "tag": "@pi-lib/icon_v1.0.9",
+      "version": "1.0.9",
+      "comments": {
+        "patch": [
+          {
+            "author": "lancerael@hotmail.com",
+            "package": "@pi-lib/icon",
+            "commit": "f48b7197a8e3ca7aaa702a7b0ce1027bdfde6e12",
+            "comment": "JSDoc cleanup"
+          }
+        ]
+      }
+    },
+    {
       "date": "Sat, 18 Nov 2023 22:36:35 GMT",
       "tag": "@pi-lib/icon_v1.0.8",
       "version": "1.0.8",

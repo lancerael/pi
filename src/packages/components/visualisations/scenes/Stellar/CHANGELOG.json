@@ -2,6 +2,21 @@
   "name": "@pi-lib/stellar",
   "entries": [
     {
+      "date": "Sun, 19 Nov 2023 17:46:18 GMT",
+      "tag": "@pi-lib/stellar_v1.6.0",
+      "version": "1.6.0",
+      "comments": {
+        "minor": [
+          {
+            "author": "lancerael@hotmail.com",
+            "package": "@pi-lib/stellar",
+            "commit": "f48b7197a8e3ca7aaa702a7b0ce1027bdfde6e12",
+            "comment": "Adding reduced motion capabilities"
+          }
+        ]
+      }
+    },
+    {
       "date": "Tue, 14 Nov 2023 23:51:57 GMT",
       "tag": "@pi-lib/stellar_v1.5.0",
       "version": "1.5.0",

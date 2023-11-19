@@ -1,7 +1,0 @@
-{
-  "type": "patch",
-  "comment": "JSDoc cleanup",
-  "packageName": "@pi-lib/types",
-  "email": "lancerael@hotmail.com",
-  "dependentChangeType": "patch"
-}
