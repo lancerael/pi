@@ -1,5 +1,5 @@
 {
-  "type": "minor",
+  "type": "patch",
   "comment": "JSDoc cleanup",
   "packageName": "@pi-lib/custom-icon",
   "email": "lancerael@hotmail.com",
