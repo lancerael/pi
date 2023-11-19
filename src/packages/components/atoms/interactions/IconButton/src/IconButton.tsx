@@ -6,13 +6,7 @@ import CustomIcon from '@pi-lib/custom-icon/src/CustomIcon'
 /**
  * This component is used to render a button with an icon
  *
- * @param {boolean} [props.isExternal] - If true, the button acts as a link to an external resource and opens in a new tab.
- * @param {string} [props.src] - The path for the icon image
- * @param {string} [props.title] - The text for tht title attribute
- * @param {string} [props.iconProps] - The props for the contained icon
- * @param {string} [props.dataTestid='pi-lib-icon-button'] - Test ID for testing purposes.
- * @param {...any} props - Additional props passed to the component.
- *
+ * @param {IconButtonProps} props - The props object for this component.
  * @returns {React.Component} The IconButton component.
  */
 export const IconButton = ({

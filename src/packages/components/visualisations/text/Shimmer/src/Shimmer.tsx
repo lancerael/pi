@@ -7,10 +7,6 @@ import { ShimmerProps } from './Shimmer.types'
  * The component cycles through each line, making one line visible at a time in a loop, or in a fade manner depending on the behavior prop.
  *
  * @param {ShimmerProps} props - The props for the Shimmer component.
- * @param {string[]} props.lines - An array of strings that represent the content for each line.
- * @param {number} [props.delay=1000] - Initial delay in milliseconds before the shimmer effect starts.
- * @param {number} [props.pause=5000] - Delay in milliseconds between each shimmer effect cycle.
- * @param {'loop'|'linger'|'fade'} [props.behaviour='loop'] - Determines the cycle behavior of the shimmer effect.
  * @returns {JSX.Element} A styled shimmer effect wrapping each provided line, cycling visibility according to specified behavior.
  */
 export const Shimmer = ({

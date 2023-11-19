@@ -6,9 +6,6 @@ import * as icons from './icons'
  * It allows customization of the icon's color and size.
  *
  * @param {IconProps} props - The properties for the Icon component.
- * @param {string} props.iconName - The name of the icon to be rendered. This should match one of the keys in the imported `icons` object.
- * @param {string} [props.color='var(--outline)'] - The color of the icon.
- * @param {string} [props.size='calc(20px + 0.6rem)'] - The size of the icon.
  * @returns {React.ReactNode} The rendered icon as a React component.
  */
 export const Icon = ({

@@ -1,23 +1,34 @@
 const timeouts: { [key: string]: NodeJS.Timeout } = {}
 
 export interface TransitionProps {
+  /**
+   * The starting values an array
+   */
   values: number[]
+  /**
+   * The target values
+   */
   targets: number[]
+  /**
+   * The method to call with each intermediate number
+   */
   callback: (newValue: number[]) => void
+  /**
+   * The speed to transition (number of increments)
+   */
   speed?: number
+  /**
+   * The wait time between each increment
+   */
   interval?: number
+  /**
+   * The id for the interval
+   */
   intervalId?: string
 }
 
 /**
  * Used to transition a value with a callback
- * @param {Object} props - The properties object
- * @param {number[]} props.value - The starting values an array
- * @param {number[]} props.target - The target values
- * @param {Function} props.callback - The method to call with each intermediate number
- * @param {number} [props.speed=10] - The speed to transition (number of increments)
- * @param {number} [props.interval=15] - The wait time between each increment
- * @param {string} [props.intervalId='default'] - The id for the interval
  * @returns {Function} A function that, when called, will clear the timeout
  */
 export const doTransition = ({

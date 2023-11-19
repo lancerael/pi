@@ -8,7 +8,6 @@ import { getTransientProps } from '@pi-lib/utils'
  * Add a class of `pi-page-grid-full` on a direct descendent to use full width styles.
  *
  * @param {PageGridProps} props - The properties passed to the PageGrid component.
- * @param {React.ReactNode} props.children - The content to be displayed in a grid layout.
  * @returns {React.ReactNode} A styled grid container element.
  */
 export const PageGrid = ({ width = 1280, children }: PageGridProps) => (

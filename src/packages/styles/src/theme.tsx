@@ -80,7 +80,7 @@ export const getTheme = (
 
 /**
  * Theme provider component to wrap child components in a theme.
- * @component
+ *
  * @param {ThemeProps} props - The props for the Theme component.
  * @returns {JSX.Element} A ThemeProvider wrapped component.
  */

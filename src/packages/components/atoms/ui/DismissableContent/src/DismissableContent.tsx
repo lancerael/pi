@@ -15,11 +15,6 @@ import { getTransientProps } from '@pi-lib/utils'
  *
  * @component
  * @param {DismissableContentProps} props - The props for the DismissableContent component.
- * @param {React.ReactNode} props.children - The child elements to render inside the component.
- * @param {boolean} [props.isDismissed=false] - Indicates whether the content is initially dismissed.
- * @param {boolean} [props.isDismissable=true] - Flag to determine if the content can be dismissed.
- * @param {number} [props.timerInterval=0] - Duration in milliseconds after which the content is auto-dismissed.
- * @param {Function} [props.dismissCallback] - Callback function to be executed after dismissal.
  * @returns {React.ReactNode} The rendered JSX for the DismissableContent component.
  */
 export const DismissableContent: FC<DismissableContentProps> = forwardRef(
