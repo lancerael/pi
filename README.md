@@ -51,7 +51,7 @@ A banner React component that can comtain spaced or flowing items
     <tr>
       <td><a href="https://pi.lance-taylor.com/?path=/docs/atoms-layout-banner" target="_blank">Docs</a></td>
       <td><a href="https://www.npmjs.com/package/@pi-lib/banner?activeTab=readme" target="_blank">NPM</a></td>
-      <td><a href="https://github.com/lancerael/pi/tree/main/src/components/atoms/layout/Banner" target="_blank">Github</a></td>
+      <td><a href="https://github.com/lancerael/pi/tree/main/src/packages/components/atoms/layout/Banner" target="_blank">Github</a></td>
     </tr>
   </tbody>
 </table>
@@ -69,7 +69,23 @@ A React button component with a status
     <tr>
       <td><a href="https://pi.lance-taylor.com/?path=/docs/atoms-interactions-button" target="_blank">Docs</a></td>
       <td><a href="https://www.npmjs.com/package/@pi-lib/button?activeTab=readme" target="_blank">NPM</a></td>
-      <td><a href="https://github.com/lancerael/pi/tree/main/src/components/atoms/interactions/Button" target="_blank">Github</a></td>
+      <td><a href="https://github.com/lancerael/pi/tree/main/src/packages/components/atoms/interactions/Button" target="_blank">Github</a></td>
+    </tr>
+  </tbody>
+</table>
+
+### CustomIcon
+
+**@pi-lib/custom-icon**
+
+**Dependencies:** @pi-lib/styles, @pi-lib/utils, react, react-svg, styled-components
+
+<table>
+  <tbody>
+    <tr>
+      <td><a href="https://pi.lance-taylor.com/?path=/docs/atoms-ui-customicon" target="_blank">Docs</a></td>
+      <td><a href="https://www.npmjs.com/package/@pi-lib/custom-icon?activeTab=readme" target="_blank">NPM</a></td>
+      <td><a href="https://github.com/lancerael/pi/tree/main/./src/packages/components/atoms/ui/CustomIcon" target="_blank">Github</a></td>
     </tr>
   </tbody>
 </table>
@@ -98,14 +114,14 @@ A wrapper for a simple grid layout.
 
 A React component for a special button with an icon
 
-**Dependencies:** @pi-lib/styles, @pi-lib/utils, react, react-svg, styled-components
+**Dependencies:** @pi-lib/styles, @pi-lib/utils, @pi-lib/custom-icon, react, react-svg, styled-components
 
 <table>
   <tbody>
     <tr>
       <td><a href="https://pi.lance-taylor.com/?path=/docs/atoms-interactions-iconbutton" target="_blank">Docs</a></td>
       <td><a href="https://www.npmjs.com/package/@pi-lib/icon-button?activeTab=readme" target="_blank">NPM</a></td>
-      <td><a href="https://github.com/lancerael/pi/tree/main/src/components/atoms/interactions/IconButton" target="_blank">Github</a></td>
+      <td><a href="https://github.com/lancerael/pi/tree/main/src/packages/components/atoms/interactions/IconButton" target="_blank">Github</a></td>
     </tr>
   </tbody>
 </table>
@@ -116,14 +132,14 @@ A React component for a special button with an icon
 
 A React component for a router optional link
 
-**Dependencies:** @pi-lib/styles, react, react-router-dom, styled-components
+**Dependencies:** @pi-lib/styles, @pi-lib/utils, react, react-router-dom, styled-components
 
 <table>
   <tbody>
     <tr>
       <td><a href="https://pi.lance-taylor.com/?path=/docs/atoms-interactions-link" target="_blank">Docs</a></td>
       <td><a href="https://www.npmjs.com/package/@pi-lib/link?activeTab=readme" target="_blank">NPM</a></td>
-      <td><a href="https://github.com/lancerael/pi/tree/main/src/components/atoms/interactions/Link" target="_blank">Github</a></td>
+      <td><a href="https://github.com/lancerael/pi/tree/main/src/packages/components/atoms/interactions/Link" target="_blank">Github</a></td>
     </tr>
   </tbody>
 </table>
@@ -134,14 +150,14 @@ A React component for a router optional link
 
 A React component used to block out the screen with modal content
 
-**Dependencies:** @pi-lib/styles, react, styled-components
+**Dependencies:** @pi-lib/styles, @pi-lib/utils, react, styled-components
 
 <table>
   <tbody>
     <tr>
       <td><a href="https://pi.lance-taylor.com/?path=/docs/atoms-layout-modalscreen" target="_blank">Docs</a></td>
       <td><a href="https://www.npmjs.com/package/@pi-lib/modal-screen?activeTab=readme" target="_blank">NPM</a></td>
-      <td><a href="https://github.com/lancerael/pi/tree/main/src/components/atoms/layout/ModalScreen" target="_blank">Github</a></td>
+      <td><a href="https://github.com/lancerael/pi/tree/main/src/packages/components/atoms/layout/ModalScreen" target="_blank">Github</a></td>
     </tr>
   </tbody>
 </table>
@@ -152,7 +168,7 @@ A React component used to block out the screen with modal content
 
 A wrapper for a page grid layout.
 
-**Dependencies:** @pi-lib/styles, react, styled-components
+**Dependencies:** @pi-lib/styles, @pi-lib/utils, react, styled-components
 
 <table>
   <tbody>
@@ -177,7 +193,7 @@ A React component used to show and position a tooltip containing content
     <tr>
       <td><a href="https://pi.lance-taylor.com/?path=/docs/atoms-ui-tooltip" target="_blank">Docs</a></td>
       <td><a href="https://www.npmjs.com/package/@pi-lib/tooltip?activeTab=readme" target="_blank">NPM</a></td>
-      <td><a href="https://github.com/lancerael/pi/tree/main/src/components/atoms/ui/Tooltip" target="_blank">Github</a></td>
+      <td><a href="https://github.com/lancerael/pi/tree/main/src/packages/components/atoms/ui/Tooltip" target="_blank">Github</a></td>
     </tr>
   </tbody>
 </table>
@@ -197,7 +213,7 @@ A React component for an advanced button with a built in loader
     <tr>
       <td><a href="https://pi.lance-taylor.com/?path=/docs/molecules/interactions-advancedbutton" target="_blank">Docs</a></td>
       <td><a href="https://www.npmjs.com/package/@pi-lib/advanced-button?activeTab=readme" target="_blank">NPM</a></td>
-      <td><a href="https://github.com/lancerael/pi/tree/main/src/components/molecules/interactions/AdvancedButton" target="_blank">Github</a></td>
+      <td><a href="https://github.com/lancerael/pi/tree/main/src/packages/components/molecules/interactions/AdvancedButton" target="_blank">Github</a></td>
     </tr>
   </tbody>
 </table>
@@ -208,7 +224,7 @@ A React component for an advanced button with a built in loader
 
 A card component with a title and subtitle.
 
-**Dependencies:** @pi-lib/styles, @pi-lib/utils, @pi-lib/icon-button, react, styled-components
+**Dependencies:** @pi-lib/styles, @pi-lib/utils, @pi-lib/custom-icon, react, styled-components
 
 <table>
   <tbody>
@@ -216,6 +232,22 @@ A card component with a title and subtitle.
       <td><a href="https://pi.lance-taylor.com/?path=/docs/molecules-ui-card" target="_blank">Docs</a></td>
       <td><a href="https://www.npmjs.com/package/@pi-lib/card?activeTab=readme" target="_blank">NPM</a></td>
       <td><a href="https://github.com/lancerael/pi/tree/main/./src/packages/components/molecules/ui/Card" target="_blank">Github</a></td>
+    </tr>
+  </tbody>
+</table>
+
+### Carousel
+
+**@pi-lib/carousel**
+
+**Dependencies:** @pi-lib/styles, @pi-lib/utils, react, styled-components
+
+<table>
+  <tbody>
+    <tr>
+      <td><a href="https://pi.lance-taylor.com/?path=/docs/molecules-layout-pagecontent" target="_blank">Docs</a></td>
+      <td><a href="https://www.npmjs.com/package/@pi-lib/carousel?activeTab=readme" target="_blank">NPM</a></td>
+      <td><a href="https://github.com/lancerael/pi/tree/main/./src/packages/components/molecules/ui/Carousel" target="_blank">Github</a></td>
     </tr>
   </tbody>
 </table>
@@ -233,7 +265,7 @@ A React component for an expanding/collapsing menu with icons
     <tr>
       <td><a href="https://pi.lance-taylor.com/?path=/docs/molecules-ui-collapsiblemenu" target="_blank">Docs</a></td>
       <td><a href="https://www.npmjs.com/package/@pi-lib/collapsible-menu?activeTab=readme" target="_blank">NPM</a></td>
-      <td><a href="https://github.com/lancerael/pi/tree/main/src/components/molecules/ui/CollapsibleMenu" target="_blank">Github</a></td>
+      <td><a href="https://github.com/lancerael/pi/tree/main/src/packages/components/molecules/ui/CollapsibleMenu" target="_blank">Github</a></td>
     </tr>
   </tbody>
 </table>
@@ -251,7 +283,7 @@ Modal for custom content that allows dismissal internally or externally
     <tr>
       <td><a href="https://pi.lance-taylor.com/?path=/docs/molecules-ui-modal" target="_blank">Docs</a></td>
       <td><a href="https://www.npmjs.com/package/@pi-lib/modal?activeTab=readme" target="_blank">NPM</a></td>
-      <td><a href="https://github.com/lancerael/pi/tree/main/src/components/molecules/Modal" target="_blank">Github</a></td>
+      <td><a href="https://github.com/lancerael/pi/tree/main/src/packages/components/molecules/Modal" target="_blank">Github</a></td>
     </tr>
   </tbody>
 </table>
@@ -269,7 +301,7 @@ A React component for a page layout with a sidebar
     <tr>
       <td><a href="https://pi.lance-taylor.com/?path=/docs/molecules-layout-pagecontent" target="_blank">Docs</a></td>
       <td><a href="https://www.npmjs.com/package/@pi-lib/page-content?activeTab=readme" target="_blank">NPM</a></td>
-      <td><a href="https://github.com/lancerael/pi/tree/main/src/components/molecules/layout/PageContent" target="_blank">Github</a></td>
+      <td><a href="https://github.com/lancerael/pi/tree/main/src/packages/components/molecules/layout/PageContent" target="_blank">Github</a></td>
     </tr>
   </tbody>
 </table>
@@ -287,7 +319,7 @@ A React component for a page blocking loader
     <tr>
       <td><a href="https://pi.lance-taylor.com/?path=/docs/molecules-ui-pageloader" target="_blank">Docs</a></td>
       <td><a href="https://www.npmjs.com/package/@pi-lib/page-loader?activeTab=readme" target="_blank">NPM</a></td>
-      <td><a href="https://github.com/lancerael/pi/tree/main/src/components/molecules/ui/PageLoader" target="_blank">Github</a></td>
+      <td><a href="https://github.com/lancerael/pi/tree/main/src/packages/components/molecules/ui/PageLoader" target="_blank">Github</a></td>
     </tr>
   </tbody>
 </table>
@@ -305,7 +337,7 @@ A React component for a table with expandable rows
     <tr>
       <td><a href="https://pi.lance-taylor.com/?path=/docs/molecules-layout-table" target="_blank">Docs</a></td>
       <td><a href="https://www.npmjs.com/package/@pi-lib/table?activeTab=readme" target="_blank">NPM</a></td>
-      <td><a href="https://github.com/lancerael/pi/tree/main/src/components/molecules/layout/Table" target="_blank">Github</a></td>
+      <td><a href="https://github.com/lancerael/pi/tree/main/src/packages/components/molecules/layout/Table" target="_blank">Github</a></td>
     </tr>
   </tbody>
 </table>
@@ -338,38 +370,6 @@ Shared Pi constants
     <tr>
       <td><a href="https://www.npmjs.com/package/@pi-lib/constants?activeTab=readme" target="_blank">NPM</a></td>
       <td><a href="https://github.com/lancerael/pi/tree/main/src/config" target="_blank">Github</a></td>
-    </tr>
-  </tbody>
-</table>
-
-### types
-
-**@pi-lib/types**
-
-Global types for Pi
-
-<table>
-  <tbody>
-    <tr>
-      <td><a href="https://www.npmjs.com/package/@pi-lib/types?activeTab=readme" target="_blank">NPM</a></td>
-      <td><a href="https://github.com/lancerael/pi/tree/main/src/types" target="_blank">Github</a></td>
-    </tr>
-  </tbody>
-</table>
-
-### utils
-
-**@pi-lib/utils**
-
-Utilities for use with Pi
-
-**Dependencies:** react, react-aria
-
-<table>
-  <tbody>
-    <tr>
-      <td><a href="https://www.npmjs.com/package/@pi-lib/utils?activeTab=readme" target="_blank">NPM</a></td>
-      <td><a href="https://github.com/lancerael/pi/tree/main/src/utils" target="_blank">Github</a></td>
     </tr>
   </tbody>
 </table>
