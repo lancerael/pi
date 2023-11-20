@@ -24,8 +24,8 @@ export const Carousel = ({
   ...props
 }: CarouselProps) => {
   const targetRef = useRef<HTMLUListElement>(null)
-  const scrollIntervalRef = useRef<NodeJS.Timer>()
-  const scrollTimeoutRef = useRef<NodeJS.Timer>()
+  const scrollIntervalRef = useRef<NodeJS.Timeout>()
+  const scrollTimeoutRef = useRef<NodeJS.Timeout>()
   const [isScrolling, setIsScrolling] = useState(false)
   const controls = useControls()
 
