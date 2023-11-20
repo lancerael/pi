@@ -3,6 +3,7 @@ import {
   StyledCard,
   StyledContent,
   StyledHeader,
+  StyledIcon,
   StyledSubTitle,
   StyledTitle,
   StyledTopSection,
@@ -24,17 +25,21 @@ export const Card = ({
   iconProps,
   children,
 }: CardProps) => {
+  const icon = iconProps && <CustomIcon {...iconProps} height="3.2rem" />
+  const hasHeader = !!title || !!subTitle
   return (
     <StyledCard {...getTransientProps({ isClear })}>
-      <StyledTopSection>
-        {iconProps && <CustomIcon {...iconProps} height="3.2rem" />}
-        {(!!title || !subTitle) && (
+      {hasHeader ? (
+        <StyledTopSection>
+          {icon}
           <StyledHeader>
             {!!title && <StyledTitle>{title}</StyledTitle>}
             {!!subTitle && <StyledSubTitle>{subTitle}</StyledSubTitle>}
           </StyledHeader>
-        )}
-      </StyledTopSection>
+        </StyledTopSection>
+      ) : (
+        <StyledIcon>{icon}</StyledIcon>
+      )}
       <StyledContent>{children}</StyledContent>
     </StyledCard>
   )

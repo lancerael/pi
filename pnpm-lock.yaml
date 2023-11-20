@@ -360,6 +360,12 @@ importers:
       '@pi-lib/card':
         specifier: workspace:^
         version: link:../../../packages/components/molecules/ui/Card
+      '@pi-lib/carousel':
+        specifier: workspace:^
+        version: link:../../../packages/components/molecules/ui/Carousel
+      '@pi-lib/constants':
+        specifier: workspace:^
+        version: link:../../../packages/constants
       '@pi-lib/custom-icon':
         specifier: workspace:^
         version: link:../../../packages/components/atoms/ui/CustomIcon
@@ -430,6 +436,9 @@ importers:
       '@pi-lib/collapsible-menu':
         specifier: workspace:^
         version: link:../../../packages/components/molecules/ui/CollapsibleMenu
+      '@pi-lib/constants':
+        specifier: workspace:^
+        version: link:../../../packages/constants
       '@pi-lib/icon-button':
         specifier: workspace:^
         version: link:../../../packages/components/atoms/interactions/IconButton
@@ -1307,6 +1316,55 @@ importers:
       '@pi-lib/config':
         specifier: workspace:^
         version: link:../../../../config
+      '@testing-library/react':
+        specifier: ^13.3.0
+        version: 13.4.0(react-dom@18.2.0)(react@18.2.0)
+      '@vitejs/plugin-react':
+        specifier: ^4.1.0
+        version: 4.1.0(vite@4.4.10)
+      jest-axe:
+        specifier: ^8.0.0
+        version: 8.0.0
+      jsdom:
+        specifier: ^20.0.0
+        version: 20.0.3
+      rimraf:
+        specifier: ^3.0.2
+        version: 3.0.2
+      typescript:
+        specifier: ^5
+        version: 5.2.2
+      vite:
+        specifier: ^4.4.10
+        version: 4.4.10(@types/node@18.15.3)
+      vitest:
+        specifier: ^0.34.6
+        version: 0.34.6(jsdom@20.0.3)
+
+  src/packages/components/molecules/ui/Carousel:
+    dependencies:
+      '@pi-lib/styles':
+        specifier: workspace:^
+        version: link:../../../../styles
+      '@pi-lib/use-touch':
+        specifier: workspace:^
+        version: link:../../../../hooks/useTouch
+      '@pi-lib/utils':
+        specifier: workspace:^
+        version: link:../../../../utils
+      react:
+        specifier: ^18.2.0
+        version: 18.2.0
+      styled-components:
+        specifier: ^6.1.0
+        version: 6.1.0(react-dom@18.2.0)(react@18.2.0)
+    devDependencies:
+      '@pi-lib/config':
+        specifier: workspace:^
+        version: link:../../../../config
+      '@pi-lib/types':
+        specifier: workspace:^
+        version: link:../../../../types
       '@testing-library/react':
         specifier: ^13.3.0
         version: 13.4.0(react-dom@18.2.0)(react@18.2.0)

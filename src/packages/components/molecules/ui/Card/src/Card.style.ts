@@ -45,3 +45,7 @@ export const StyledSubTitle = styled.span`
 export const StyledContent = styled.div`
   color: var(--text);
 `
+
+export const StyledIcon = styled.div`
+  float: left;
+`

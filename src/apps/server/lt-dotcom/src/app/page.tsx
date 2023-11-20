@@ -1,12 +1,14 @@
 'use client'
-import { useEffect, useRef, useState } from 'react'
+import { ReactElement, useEffect, useRef, useState } from 'react'
 import Stellar, { TravelTrackerProps } from '@pi-lib/stellar'
 import Grid from '@pi-lib/grid'
 import Shimmer from '@pi-lib/shimmer'
 import PageGrid from '@pi-lib/page-grid'
 import Card from '@pi-lib/card'
+import Carousel from '@pi-lib/carousel'
 import { useThrottledEvents } from '@pi-lib/utils'
 import { IS_CLIENT, REDUCED_MOTION } from '@pi-lib/styles'
+import { ICONS } from '@pi-lib/constants'
 import Interact from '@/components/Interact'
 import { tickerLines } from '@/data/tickerLines'
 import { careerHighlights } from '@/data/careerHighlights'
@@ -20,6 +22,7 @@ import {
 } from './page.styles'
 import { PageHeader } from '@/components/PageHeader/PageHeader'
 import { UiTrackerProps } from '@/components/PageHeader/PageHeader.types'
+import IconButton from '@pi-lib/icon-button'
 
 export default function Home() {
   const [isComplete, setIsComplete] = useState(false)
@@ -58,6 +61,25 @@ export default function Home() {
       pause: isTravelling ? 2500 / travelSpeed : 100000,
     }
   }
+
+  const techList = Object.entries(ICONS)
+    .map(([title, href], i) => {
+      const src = `https://d3bjzq1zo2el1w.cloudfront.net/${title
+        .split(' ')
+        .join('-')
+        .toLowerCase()}.svg`
+      return (
+        !!title && (
+          <IconButton
+            key={title}
+            iconProps={{ height: '2rem' }}
+            isExternal
+            {...{ src, href, title }}
+          />
+        )
+      )
+    })
+    .filter(Boolean) as ReactElement[]
 
   return (
     <div
@@ -117,14 +139,12 @@ export default function Home() {
             </Grid>
           </SkillsContainer>
           <StyledFullGradient className="pi-page-grid-full">
-            <div>Something 1</div>
-            <div>Something 2</div>
-            <div>Something 3</div>
+            <Carousel itemList={techList} />
           </StyledFullGradient>
           <div style={{ margin: '1rem 0' }}>
             <div
               className="is-title"
-              style={{ textAlign: 'center', marginBottom: '2rem' }}
+              style={{ textAlign: 'center', margin: '2rem' }}
             >
               <Shimmer
                 lines={['Career Highlights']}

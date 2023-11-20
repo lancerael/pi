@@ -3,7 +3,11 @@ import { gradient } from '@pi-lib/styles'
 
 export const StyledFullGradient = styled.div`
   ${gradient({ isTransparent: true })}
-  padding: 5rem 0;
+  padding: 2rem 0;
+
+  & svg {
+    filter: saturate(40%) brightness(80%) contrast(140%);
+  }
 `
 
 export const ShimmerOuter = styled.div`

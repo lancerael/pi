@@ -45,6 +45,8 @@ export const getGlobalStyle = (
   & table,
   & select,
   & input {
+  & ul,
+  & li
     transition: all 0.5s;
   }
 

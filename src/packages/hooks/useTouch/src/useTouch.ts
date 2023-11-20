@@ -25,10 +25,11 @@ export const useTouch = <T = HTMLElement>({
   controls,
   zoomRange = [0.25, 2],
   panRange = [
-    [0, 2000],
-    [0, 2000],
+    [-2000, 2000],
+    [-2000, 2000],
   ],
   resetCallback,
+  stopCallback,
 }: UseTouchProps<T>) => {
   const trackers = useRef<Trackers>({
     isPressed: false,
@@ -95,6 +96,7 @@ export const useTouch = <T = HTMLElement>({
    */
   const stop = useCallback(
     (e: PointerEvent) => {
+      stopCallback?.()
       const { x, y } = trackers.current.oldPanChange
       if (Math.abs(x) + Math.abs(y) > 10) {
         const values = Object.values(controls.panLevel)
