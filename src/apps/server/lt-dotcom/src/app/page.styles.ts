@@ -3,8 +3,7 @@ import { gradient } from '@pi-lib/styles'
 
 export const StyledFullGradient = styled.div`
   ${gradient({ isTransparent: true })}
-  margin: 5rem 0;
-  padding: 5rem 1rem;
+  padding: 5rem 0;
 `
 
 export const ShimmerOuter = styled.div`
@@ -21,11 +20,26 @@ export const ShimmerInner = styled.div`
   z-index: 0;
 `
 
+export const SkillsContainer = styled.div`
+  padding: 5rem 1rem 3rem;
+  --mask: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.5) 3%,
+    rgba(0, 0, 0, 1) 10%
+  );
+  background: rgba(0, 0, 0, 0.05);
+  mask-image: var(--mask);
+  -webkit-mask-image: var(--mask);
+`
+
 export const StyledCardWrapper = styled.div`
   @media (max-width: 1036px) {
     margin: 0 auto;
   }
   & h2 {
+    margin: 0;
+    padding: 0;
     font-family: T, sans-serif !important;
   }
 `

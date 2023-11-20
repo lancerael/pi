@@ -1,13 +1,14 @@
 import { getTransientProps } from '@pi-lib/utils'
-import CustomIcon from '@pi-lib/custom-icon'
 import {
   StyledCard,
   StyledContent,
   StyledHeader,
   StyledSubTitle,
   StyledTitle,
+  StyledTopSection,
 } from './Card.style'
 import { CardProps } from './Card.types'
+import CustomIcon from '@pi-lib/custom-icon'
 
 /**
  * Card component for displaying content with an optional title and subtitle.
@@ -25,17 +26,15 @@ export const Card = ({
 }: CardProps) => {
   return (
     <StyledCard {...getTransientProps({ isClear })}>
-      {iconProps && (
-        <div style={{ float: 'left', marginRight: '0.5rem' }}>
-          <CustomIcon {...iconProps} height="3.2rem" />
-        </div>
-      )}
-      {(!!title || !subTitle) && (
-        <StyledHeader>
-          {!!title && <StyledTitle>{title}</StyledTitle>}
-          {!!subTitle && <StyledSubTitle>{subTitle}</StyledSubTitle>}
-        </StyledHeader>
-      )}
+      <StyledTopSection>
+        {iconProps && <CustomIcon {...iconProps} height="3.2rem" />}
+        {(!!title || !subTitle) && (
+          <StyledHeader>
+            {!!title && <StyledTitle>{title}</StyledTitle>}
+            {!!subTitle && <StyledSubTitle>{subTitle}</StyledSubTitle>}
+          </StyledHeader>
+        )}
+      </StyledTopSection>
       <StyledContent>{children}</StyledContent>
     </StyledCard>
   )

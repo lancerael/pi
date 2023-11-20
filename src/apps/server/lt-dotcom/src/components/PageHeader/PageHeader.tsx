@@ -1,10 +1,13 @@
 import { getTransientProps } from '@pi-lib/utils'
 import PageGrid from '@pi-lib/page-grid'
-import Banner from '@pi-lib/banner'
 import CustomIcon from '@pi-lib/custom-icon'
 import IconButton from '@pi-lib/icon-button'
 import Shimmer from '@pi-lib/shimmer'
-import { StyledHeader, StyledHeaderSection } from './PageHeader.styles'
+import {
+  StyledHeader,
+  StyledHeaderInner,
+  StyledHeaderSection,
+} from './PageHeader.styles'
 import { PageHeaderProps } from './PageHeader.types'
 
 const ICON_PROPS = {
@@ -27,7 +30,7 @@ export const PageHeader = ({
   return (
     <StyledHeader {...getTransientProps({ ...{ ...uiTracker, isComplete } })}>
       <PageGrid>
-        <Banner>
+        <StyledHeaderInner>
           <StyledHeaderSection title="Lance Taylor">
             <CustomIcon src="/cube.svg" {...ICON_PROPS} />
             <Shimmer lines={['LT']} behaviour="linger" delay={0} />
@@ -73,7 +76,7 @@ export const PageHeader = ({
               }
             />
           </StyledHeaderSection>
-        </Banner>
+        </StyledHeaderInner>
       </PageGrid>
       <div style={{ display: 'none' }} aria-hidden>
         <IconButton src={`/pause.svg`} />

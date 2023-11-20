@@ -22,7 +22,7 @@ const textPulse = keyframes`
 `
 
 export const StyledShimmer = styled.div`
-  /* height: 4rem; */
+  margin: 0.5rem 0;
 `
 
 export const StyledLine = styled.div<StyledLineProps>(
