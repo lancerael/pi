@@ -9,8 +9,8 @@ export const StyledBanner = styled.div<StyledBannerProps>(
   ({ $shouldWrapItems, $shouldInvertGradient, $hasBackground }) => css`
     color: var(--${$hasBackground ? 'light' : 'textSoft'});
     display: flex;
-    gap: 4px;
-    padding: 8px 16px;
+    gap: 0.5rem;
+    padding: 1rem;
     position: relative;
     justify-content: space-between;
     align-items: center;

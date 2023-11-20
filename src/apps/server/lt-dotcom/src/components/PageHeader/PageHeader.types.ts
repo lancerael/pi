@@ -4,6 +4,7 @@ import { Dispatch, PropsWithChildren, SetStateAction } from 'react'
 
 export interface UiTrackerProps extends BaseProps {
   fullWidth: number
+  fullHeight: number
   scrollTop: number
 }
 

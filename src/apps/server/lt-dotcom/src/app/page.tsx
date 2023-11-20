@@ -14,6 +14,7 @@ import { skillset } from '@/data/skillset'
 import {
   ShimmerInner,
   ShimmerOuter,
+  SkillsContainer,
   StyledCardWrapper,
   StyledFullGradient,
 } from './page.styles'
@@ -25,6 +26,7 @@ export default function Home() {
   const [uiTracker, setUiTracker] = useState<UiTrackerProps>({
     scrollTop: 0,
     fullWidth: 0,
+    fullHeight: 0,
   })
   const [travelTracker, setTravelTracker] = useState<TravelTrackerProps>({
     travelSpeed: 1,
@@ -37,6 +39,7 @@ export default function Home() {
     setUiTracker(({ scrollTop }) => ({
       scrollTop,
       fullWidth: widthRef.current?.offsetWidth ?? 0,
+      fullHeight: wrapperRef.current?.offsetHeight ?? 0,
     }))
   })
 
@@ -66,7 +69,7 @@ export default function Home() {
       <Stellar
         {...travelTracker}
         scrollCallback={(scrollTop) =>
-          setUiTracker(({ fullWidth }) => ({ fullWidth, scrollTop }))
+          setUiTracker((uiTracker) => ({ ...uiTracker, scrollTop }))
         }
       >
         <PageHeader
@@ -84,7 +87,7 @@ export default function Home() {
               />
             </ShimmerInner>
           </ShimmerOuter>
-          <div style={{ margin: '1rem' }}>
+          <SkillsContainer className="pi-page-grid-full">
             <Grid>
               {skillset.map(({ title, subTitle, icon, summary, bullets }) => (
                 <StyledCardWrapper key={title}>
@@ -112,13 +115,13 @@ export default function Home() {
                 </StyledCardWrapper>
               ))}
             </Grid>
-          </div>
+          </SkillsContainer>
           <StyledFullGradient className="pi-page-grid-full">
             <div>Something 1</div>
             <div>Something 2</div>
             <div>Something 3</div>
           </StyledFullGradient>
-          <div style={{ margin: '1rem' }}>
+          <div style={{ margin: '1rem 0' }}>
             <div
               className="is-title"
               style={{ textAlign: 'center', marginBottom: '2rem' }}

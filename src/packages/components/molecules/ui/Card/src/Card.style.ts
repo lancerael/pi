@@ -4,23 +4,37 @@ import { container } from '@pi-lib/styles'
 
 export const StyledCard = styled.div<StyledCardProps>(
   ({ $isClear }) => css`
+    color: var(--textSoft);
     ${!$isClear &&
     css`
       ${container()}
       padding: 1rem;
     `}
-    color: var(--textSoft);
   `
 )
 
+export const StyledTopSection = styled.div`
+  align-items: center;
+  display: flex;
+  margin: 0 0 0.5rem -0.25rem;
+
+  & > * {
+    padding-right: 0.25rem;
+  }
+`
+
 export const StyledHeader = styled.div`
-  margin: 0 0 1rem 0;
   color: var(--text);
 `
 
 export const StyledTitle = styled.h2`
   margin: 0;
+  padding: 0 0 0.15rem 0 !important;
   color: var(--textStrong);
+  @media (max-width: 1036px) {
+    font-size: 1.2rem;
+    padding-top: 0.25rem !important;
+  }
 `
 
 export const StyledSubTitle = styled.span`
