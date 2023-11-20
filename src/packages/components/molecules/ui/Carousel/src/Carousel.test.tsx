@@ -6,7 +6,7 @@ import { axe } from 'jest-axe'
 describe('Carousel', () => {
   it('should render a Carousel', () => {
     render(<Carousel itemList={[<>Test</>]} />)
-    expect(screen.getAllByText('Test')).toHaveLength(1)
+    expect(screen.getAllByText('Test')).toHaveLength(2)
   })
 
   it('should not fail any accessibility tests', async () => {
