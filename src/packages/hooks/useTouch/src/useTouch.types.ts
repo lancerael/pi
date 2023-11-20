@@ -26,6 +26,10 @@ export interface UseTouchProps<T> {
    * An optional callback function to reset the state.
    */
   resetCallback?: () => void
+  /**
+   * An optional callback function to signal the touch stop
+   */
+  stopCallback?: () => void
 }
 
 /**

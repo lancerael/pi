@@ -1,7 +1,7 @@
 import IconButton from '@pi-lib/icon-button'
+import { ICONS } from '@pi-lib/constants'
 import ItemList from '../ItemList'
 import { CLOUDFRONT_URL } from '../../main'
-import { ICONS } from './TechList.constants'
 
 export const TechList = () => {
   return (

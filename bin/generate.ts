@@ -42,7 +42,10 @@ const generate = async () => {
         oldFileName.match('index') ? '' : id
       )
       const fileContents = await fs.readFile(oldFileName, 'utf8')
-      await fs.writeFile(newFileName, fileContents.replace(/_NAME_/g, id))
+      await fs.writeFile(
+        newFileName,
+        fileContents.replace(/_LC_NAME_/g, lcName).replace(/_NAME_/g, id)
+      )
       await fs.unlink(oldFileName)
     }
     console.log('Success!')
