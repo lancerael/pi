@@ -2,6 +2,21 @@
   "name": "@pi-lib/icon-button",
   "entries": [
     {
+      "date": "Mon, 20 Nov 2023 23:01:46 GMT",
+      "tag": "@pi-lib/icon-button_v3.1.0",
+      "version": "3.1.0",
+      "comments": {
+        "minor": [
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/icon-button",
+            "commit": "a23d56ef1d844b24f78c39a4ad2b26c09cb791dd",
+            "comment": "Added custom icon"
+          }
+        ]
+      }
+    },
+    {
       "date": "Sun, 19 Nov 2023 17:46:18 GMT",
       "tag": "@pi-lib/icon-button_v3.0.1",
       "version": "3.0.1",

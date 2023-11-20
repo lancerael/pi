@@ -1,8 +1,16 @@
 # Change Log - @pi-lib/world-map
 
-This log was last generated on Sat, 18 Nov 2023 22:36:35 GMT and should not be manually modified.
+This log was last generated on Mon, 20 Nov 2023 23:01:46 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 1.0.14
+
+Mon, 20 Nov 2023 23:01:46 GMT
+
+### Patches
+
+- Docs update (lancerael@googlemail.com)
 
 ## 1.0.12
 

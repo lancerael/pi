@@ -1,6 +1,6 @@
 {
   "name": "@pi-lib/world-map",
-  "version": "1.0.13",
+  "version": "1.0.14",
   "description": "A React component for an SVG world map chart",
   "keywords": [
     "pi",

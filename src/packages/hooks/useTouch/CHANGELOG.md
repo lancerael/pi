@@ -1,8 +1,16 @@
 # Change Log - @pi-lib/use-touch
 
-This log was last generated on Sun, 19 Nov 2023 17:46:18 GMT and should not be manually modified.
+This log was last generated on Mon, 20 Nov 2023 23:01:46 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 1.3.0
+
+Mon, 20 Nov 2023 23:01:46 GMT
+
+### Minor changes
+
+- Added stopcallback (lancerael@googlemail.com)
 
 ## 1.2.5
 

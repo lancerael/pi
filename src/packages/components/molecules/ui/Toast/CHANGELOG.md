@@ -1,8 +1,16 @@
 # Change Log - @pi-lib/toast
 
-This log was last generated on Sat, 18 Nov 2023 22:36:35 GMT and should not be manually modified.
+This log was last generated on Mon, 20 Nov 2023 23:01:46 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 1.1.7
+
+Mon, 20 Nov 2023 23:01:46 GMT
+
+### Patches
+
+- Docs update (lancerael@googlemail.com)
 
 ## 1.1.5
 

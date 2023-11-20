@@ -1,7 +1,0 @@
-{
-  "type": "minor",
-  "comment": "Added stopcallback",
-  "packageName": "@pi-lib/use-touch",
-  "email": "lancerael@googlemail.com",
-  "dependentChangeType": "patch"
-}

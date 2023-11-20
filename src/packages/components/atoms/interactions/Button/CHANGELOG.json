@@ -2,6 +2,21 @@
   "name": "@pi-lib/button",
   "entries": [
     {
+      "date": "Mon, 20 Nov 2023 23:01:46 GMT",
+      "tag": "@pi-lib/button_v3.0.3",
+      "version": "3.0.3",
+      "comments": {
+        "patch": [
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/button",
+            "commit": "a23d56ef1d844b24f78c39a4ad2b26c09cb791dd",
+            "comment": "Docs update"
+          }
+        ]
+      }
+    },
+    {
       "date": "Sun, 19 Nov 2023 17:46:18 GMT",
       "tag": "@pi-lib/button_v3.0.2",
       "version": "3.0.2",

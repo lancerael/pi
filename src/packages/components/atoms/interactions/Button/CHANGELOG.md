@@ -1,8 +1,16 @@
 # Change Log - @pi-lib/button
 
-This log was last generated on Sun, 19 Nov 2023 17:46:18 GMT and should not be manually modified.
+This log was last generated on Mon, 20 Nov 2023 23:01:46 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 3.0.3
+
+Mon, 20 Nov 2023 23:01:46 GMT
+
+### Patches
+
+- Docs update (lancerael@googlemail.com)
 
 ## 3.0.2
 
