@@ -2,6 +2,21 @@
   "name": "@pi-lib/shimmer",
   "entries": [
     {
+      "date": "Mon, 20 Nov 2023 02:34:36 GMT",
+      "tag": "@pi-lib/shimmer_v0.3.1",
+      "version": "0.3.1",
+      "comments": {
+        "patch": [
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/shimmer",
+            "commit": "143a47449b28ce172adec5ca295cb91f86973576",
+            "comment": "Style tweaks"
+          }
+        ]
+      }
+    },
+    {
       "date": "Sun, 19 Nov 2023 17:46:18 GMT",
       "tag": "@pi-lib/shimmer_v0.3.0",
       "version": "0.3.0",
