@@ -1,0 +1,7 @@
+{
+  "type": "minor",
+  "comment": "Added custom icon",
+  "packageName": "@pi-lib/icon-button",
+  "email": "lancerael@googlemail.com",
+  "dependentChangeType": "patch"
+}

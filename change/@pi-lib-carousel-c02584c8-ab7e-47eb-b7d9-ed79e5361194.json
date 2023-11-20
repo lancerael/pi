@@ -1,0 +1,7 @@
+{
+  "type": "major",
+  "comment": "Added carousel, added stopCallback to touch component, card style tweaks",
+  "packageName": "@pi-lib/carousel",
+  "email": "lancerael@googlemail.com",
+  "dependentChangeType": "patch"
+}
