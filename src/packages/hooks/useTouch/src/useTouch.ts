@@ -199,6 +199,8 @@ export const useTouch = <T = HTMLElement>({
       window[actionMethod]('pointermove', pointerMove, args(false))
       target?.[actionMethod]('pointerdown', start, args(false))
       target?.[actionMethod]('wheel', pinch, args(false))
+      target.style.userSelect = 'none'
+      target.style.touchAction = 'none'
     }
     updateListeners('add')
     return () => updateListeners('remove')
