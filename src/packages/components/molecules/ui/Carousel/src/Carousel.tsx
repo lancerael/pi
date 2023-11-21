@@ -50,8 +50,8 @@ export const Carousel = ({
     setIsScrolling(true)
     clearTimeout(scrollTimeoutRef.current)
     scrollIntervalRef.current = setInterval(() => {
-      customControls.setPanLevel(({ x, y }) => ({ x: x - 1, y }))
-    }, 150)
+      customControls.setPanLevel(({ x, y }) => ({ x: x - 5, y }))
+    }, 250)
     return stopScroll
   }
 
@@ -64,7 +64,7 @@ export const Carousel = ({
   /**
    * Adding a timeout to allow for swipe transition
    */
-  const stopCallback = () => {
+  const startScrollDelayed = () => {
     scrollTimeoutRef.current = setTimeout(startScroll, 1000)
   }
 
@@ -72,7 +72,7 @@ export const Carousel = ({
     targetRef,
     controls: customControls,
     resetCallback: stopScroll,
-    stopCallback,
+    stopCallback: startScrollDelayed,
   })
 
   useEffect(startScroll, [])
@@ -82,6 +82,7 @@ export const Carousel = ({
       <StyledCarouselInner
         ref={targetRef}
         style={{
+          transition: isScrolling ? 'all 0.25s linear' : 'none',
           transform: `translate(${controls.panLevel.x}px)`,
         }}
       >
