@@ -2,6 +2,21 @@
   "name": "@pi-lib/use-touch",
   "entries": [
     {
+      "date": "Tue, 21 Nov 2023 22:51:44 GMT",
+      "tag": "@pi-lib/use-touch_v1.3.1",
+      "version": "1.3.1",
+      "comments": {
+        "patch": [
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/use-touch",
+            "commit": "4b4a8d1b06dd63017e13cd2f46610467debab09d",
+            "comment": "Improve mobile pan controls"
+          }
+        ]
+      }
+    },
+    {
       "date": "Mon, 20 Nov 2023 23:01:46 GMT",
       "tag": "@pi-lib/use-touch_v1.3.0",
       "version": "1.3.0",
