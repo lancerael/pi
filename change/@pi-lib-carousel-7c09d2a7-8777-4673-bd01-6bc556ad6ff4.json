@@ -1,0 +1,7 @@
+{
+  "type": "major",
+  "comment": "Enhancing carousel with smoother looping and external controls",
+  "packageName": "@pi-lib/carousel",
+  "email": "lancerael@googlemail.com",
+  "dependentChangeType": "patch"
+}

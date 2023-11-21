@@ -139,7 +139,11 @@ export default function Home() {
             </Grid>
           </SkillsContainer>
           <StyledFullGradient className="pi-page-grid-full">
-            <Carousel itemList={techList} />
+            <Carousel
+              itemList={techList}
+              speed={travelTracker.travelSpeed}
+              isScroller={!!travelTracker.isTravelling}
+            />
           </StyledFullGradient>
           <div style={{ margin: '1rem 0' }}>
             <div

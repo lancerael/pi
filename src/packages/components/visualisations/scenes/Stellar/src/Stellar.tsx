@@ -139,7 +139,7 @@ export const Stellar = ({
         }
       }
     )
-    spawnStars()
+    if (!travelInfo.current.isTravelling) spawnStars()
     updateDimensions()
     scrollCallback?.(scrollTop)
     updateStyles()
@@ -189,7 +189,7 @@ export const Stellar = ({
    */
   useThrottledEvents(
     (e) => handlePointer(e, true),
-    ['pointerdown'],
+    ['pointerup'],
     false,
     contentRef.current
   )
