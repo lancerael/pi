@@ -13,21 +13,14 @@ import { PanLevel } from './hooks/useControls'
  * It provides functionalities for zooming, panning, and handling various touch gestures.
  *
  * @template T - The type of the HTML element this hook is used with.
- * @param {Object} options - The options object.
- * @param {React.RefObject<T>} options.targetRef - The reference to the target element the touch controls are added to.
- * @param {TouchControls} options.controls - The touch controls object that includes methods for setting zoom and pan levels.
- * @param {NumberRange} [options.zoomRange=[0.25, 2]] - The range of allowable zoom levels.
- * @param {[NumberRange, NumberRange]} [options.panRange=[[0, 2000], [0, 2000]]] - The range of allowable pan levels for both x and y axis.
+ * @param {UseTouchProps} options - The options object.
  * @param {() => void} [options.resetCallback] - An optional callback function to reset the state.
  */
 export const useTouch = <T = HTMLElement>({
   targetRef,
   controls,
   zoomRange = [0.25, 2],
-  panRange = [
-    [-2000, 2000],
-    [-2000, 2000],
-  ],
+  panRange,
   resetCallback,
   stopCallback,
 }: UseTouchProps<T>) => {
@@ -61,12 +54,12 @@ export const useTouch = <T = HTMLElement>({
       resetCallback?.()
       trackers.current.oldPanChange = { ...panChange }
       controls.setPanLevel((panLevel) => {
-        const setVal = (axis: 'x' | 'y', [min, max]: NumberRange) => {
+        const setVal = (axis: 'x' | 'y', [min, max]: NumberRange = [-99999, 99999]) => {
           return clampValue(panLevel[axis] + panChange[axis], min, max)
         }
         return {
-          x: setVal('x', panRange[0]),
-          y: setVal('y', panRange[1]),
+          x: setVal('x', panRange?.[0]),
+          y: setVal('y', panRange?.[1]),
         }
       })
     },
