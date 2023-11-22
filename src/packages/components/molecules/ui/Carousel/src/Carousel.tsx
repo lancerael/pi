@@ -1,16 +1,11 @@
-import {
-  useTouch,
-  useControls,
-  TouchControls,
-  PanLevel,
-} from '@pi-lib/use-touch'
+import { useTouch, useControls, PanLevel } from '@pi-lib/use-touch'
 import {
   StyledCarousel,
   StyledCarouselInner,
   StyledCarouselItem,
 } from './Carousel.style'
-import { CarouselProps } from './Carousel.types'
-import { useEffect, useRef, useState } from 'react'
+import { CarouselProps, CustomPanHandler } from './Carousel.types'
+import { useCallback, useEffect, useRef } from 'react'
 
 /**
  * Carousel
@@ -20,18 +15,23 @@ import { useEffect, useRef, useState } from 'react'
  */
 export const Carousel = ({
   dataTestid = 'pi-lib-carousel',
+  isDraggable = true,
+  isScroller = true,
+  speed = 1,
   itemList,
   ...props
 }: CarouselProps) => {
   const targetRef = useRef<HTMLUListElement>(null)
   const scrollIntervalRef = useRef<NodeJS.Timeout>()
   const scrollTimeoutRef = useRef<NodeJS.Timeout>()
-  const [isScrolling, setIsScrolling] = useState(false)
+  const isScrolling = useRef(true)
   const controls = useControls()
 
-  const customControls: TouchControls = {
-    ...controls,
-    setPanLevel: ((update: (panLevel: PanLevel) => PanLevel) => {
+  /**
+   * Enhance the pan controls to allow a smooth loop
+   */
+  const setPanLevel = useCallback(
+    (update: (panLevel: PanLevel) => PanLevel) => {
       controls.setPanLevel(({ x, y }) => {
         const width = (targetRef.current?.offsetWidth ?? 0) / 2
         if (!width) return { x, y }
@@ -41,48 +41,78 @@ export const Carousel = ({
         } else if (newX < -width) {
           newX = 0
         }
-        return update({ x: newX, y })
+        // When scrolling, disable scroll to reset loop
+        if (newX !== x && isScrolling.current) {
+          setTimeout(() => {
+            stopScroll()
+            requestAnimationFrame(() => {
+              controls.setPanLevel({ x: newX, y })
+              requestAnimationFrame(() => {
+                startScroll()
+              })
+            })
+          }, 230)
+        }
+        // Otherwise if dragging, just update the value
+        return update({ x: isScrolling.current ? x : newX, y })
       })
-    }) as React.Dispatch<React.SetStateAction<PanLevel>>,
-  }
+    },
+    [isScroller, isDraggable, speed]
+  )
 
-  const startScroll = () => {
-    setIsScrolling(true)
-    clearTimeout(scrollTimeoutRef.current)
+  /**
+   * Start the automatic scroller
+   */
+  const startScroll = useCallback(() => {
+    stopScroll()
+    if (!isScroller) return
+    isScrolling.current = true
     scrollIntervalRef.current = setInterval(() => {
-      customControls.setPanLevel(({ x, y }) => ({ x: x - 5, y }))
+      setPanLevel(({ x, y }) => ({ x: x - 5 * speed, y }))
     }, 250)
     return stopScroll
-  }
+  }, [isScroller, isDraggable, speed])
 
-  const stopScroll = () => {
-    setIsScrolling(false)
+  /**
+   * Stop and cleanup the auto scroller
+   */
+  const stopScroll = useCallback(() => {
+    isScrolling.current = false
     clearInterval(scrollIntervalRef.current)
     clearTimeout(scrollTimeoutRef.current)
-  }
+  }, [isScroller, isDraggable, speed])
 
   /**
    * Adding a timeout to allow for swipe transition
    */
-  const startScrollDelayed = () => {
+  const startScrollDelayed = useCallback(() => {
     scrollTimeoutRef.current = setTimeout(startScroll, 1000)
-  }
+  }, [isScroller, isDraggable, speed])
 
+  /**
+   * Attach the touch handlers to the controls
+   */
   useTouch<HTMLUListElement>({
     targetRef,
-    controls: customControls,
-    resetCallback: stopScroll,
-    stopCallback: startScrollDelayed,
+    controls: {
+      ...controls,
+      setPanLevel: (isDraggable ? setPanLevel : () => {}) as CustomPanHandler,
+    },
+    resetCallback: isDraggable ? stopScroll : undefined,
+    stopCallback: isDraggable ? startScrollDelayed : undefined,
   })
 
-  useEffect(startScroll, [])
+  /**
+   * Init the scroller
+   */
+  useEffect(startScroll, [isScroller, isDraggable, speed])
 
   return (
     <StyledCarousel data-testid={dataTestid} {...props}>
       <StyledCarouselInner
         ref={targetRef}
         style={{
-          transition: isScrolling ? 'all 0.25s linear' : 'none',
+          transition: isScrolling.current ? 'all 0.25s linear' : 'none',
           transform: `translate(${controls.panLevel.x}px)`,
         }}
       >
