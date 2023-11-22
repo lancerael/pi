@@ -1,7 +1,0 @@
-{
-  "type": "patch",
-  "comment": "Improve mobile pan controls",
-  "packageName": "@pi-lib/use-touch",
-  "email": "lancerael@googlemail.com",
-  "dependentChangeType": "patch"
-}

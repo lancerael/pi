@@ -2,6 +2,21 @@
   "name": "@pi-lib/carousel",
   "entries": [
     {
+      "date": "Tue, 21 Nov 2023 22:51:44 GMT",
+      "tag": "@pi-lib/carousel_v2.0.0",
+      "version": "2.0.0",
+      "comments": {
+        "major": [
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/carousel",
+            "commit": "4b4a8d1b06dd63017e13cd2f46610467debab09d",
+            "comment": "Enhancing carousel with smoother looping and external controls"
+          }
+        ]
+      }
+    },
+    {
       "date": "Mon, 20 Nov 2023 23:01:46 GMT",
       "tag": "@pi-lib/carousel_v1.0.0",
       "version": "1.0.0",
