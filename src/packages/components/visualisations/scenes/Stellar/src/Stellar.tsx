@@ -215,7 +215,6 @@ export const Stellar = ({
       updateStyles()
     }, 100)
     travelInfo.current = { isTravelling, travelSpeed }
-    // stellarRef.current.addEventListener('touchmove', (e) => console.log(e))
     return () => clearInterval(keyframe)
   }, [isTravelling, travelSpeed])
 
