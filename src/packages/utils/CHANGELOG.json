@@ -2,6 +2,21 @@
   "name": "@pi-lib/utils",
   "entries": [
     {
+      "date": "Thu, 23 Nov 2023 01:46:19 GMT",
+      "tag": "@pi-lib/utils_v3.2.2",
+      "version": "3.2.2",
+      "comments": {
+        "patch": [
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/utils",
+            "commit": "342921ffaccb42f289728186f1e2594f863b1f8d",
+            "comment": "Added args to event callbacks"
+          }
+        ]
+      }
+    },
+    {
       "date": "Sun, 19 Nov 2023 17:46:18 GMT",
       "tag": "@pi-lib/utils_v3.2.1",
       "version": "3.2.1",

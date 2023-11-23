@@ -1,8 +1,16 @@
 # Change Log - @pi-lib/utils
 
-This log was last generated on Sun, 19 Nov 2023 17:46:18 GMT and should not be manually modified.
+This log was last generated on Thu, 23 Nov 2023 01:46:19 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 3.2.2
+
+Thu, 23 Nov 2023 01:46:19 GMT
+
+### Patches
+
+- Added args to event callbacks (lancerael@googlemail.com)
 
 ## 3.2.1
 

@@ -2,6 +2,21 @@
   "name": "@pi-lib/stellar",
   "entries": [
     {
+      "date": "Thu, 23 Nov 2023 01:46:19 GMT",
+      "tag": "@pi-lib/stellar_v1.6.3",
+      "version": "1.6.3",
+      "comments": {
+        "patch": [
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/stellar",
+            "commit": "342921ffaccb42f289728186f1e2594f863b1f8d",
+            "comment": "Enabled touch events on stellar while scrolling"
+          }
+        ]
+      }
+    },
+    {
       "date": "Tue, 21 Nov 2023 22:51:44 GMT",
       "tag": "@pi-lib/stellar_v1.6.2",
       "version": "1.6.2",

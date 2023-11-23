@@ -1,8 +1,16 @@
 # Change Log - @pi-lib/use-touch
 
-This log was last generated on Tue, 21 Nov 2023 22:51:44 GMT and should not be manually modified.
+This log was last generated on Thu, 23 Nov 2023 01:46:19 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 1.3.2
+
+Thu, 23 Nov 2023 01:46:19 GMT
+
+### Patches
+
+- Expanded default pan ranges (lancerael@googlemail.com)
 
 ## 1.3.1
 
