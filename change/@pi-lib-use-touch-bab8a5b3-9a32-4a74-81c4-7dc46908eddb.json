@@ -1,6 +1,6 @@
 {
   "type": "patch",
-  "comment": "Added options to events",
+  "comment": "Expanded default pan ranges",
   "packageName": "@pi-lib/use-touch",
   "email": "lancerael@googlemail.com",
   "dependentChangeType": "patch"
