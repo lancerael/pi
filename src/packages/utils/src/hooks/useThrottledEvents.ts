@@ -18,13 +18,16 @@ export const useThrottledEvents = (
   target: Window | HTMLElement | null = typeof window !== 'undefined'
     ? window
     : null,
-  timeout = 150
+  timeout = 150,
+  args?: EventListenerOptions
 ) => {
   useEffect(() => {
     if (!target) return
     doInit && callback()
     const throttledCallback: CallbackFunction = throttle(callback, timeout)
-    events.forEach((event) => target.addEventListener(event, throttledCallback))
+    events.forEach((event) =>
+      target.addEventListener(event, throttledCallback, args)
+    )
     return () =>
       events.forEach((event) =>
         target.removeEventListener(event, throttledCallback)

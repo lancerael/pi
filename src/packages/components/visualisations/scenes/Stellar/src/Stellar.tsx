@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
+import { doTransition, useFramerate, useThrottledEvents } from '@pi-lib/utils'
 import { StyledContent, StyledStar, StyledStellar } from './Stellar.style'
 import {
   Coords,
@@ -10,12 +11,10 @@ import {
 import {
   filterStars,
   getStarStyle,
-  makeStar,
   makeStars,
   moveStar,
   randomNumber,
 } from './Stellar.helpers'
-import { doTransition, useFramerate, useThrottledEvents } from '@pi-lib/utils'
 import { FPS_CUTOFF, MAX_STARS } from './Stellar.constants'
 
 /**
@@ -147,13 +146,21 @@ export const Stellar = ({
 
   /**
    * Handles pointer events, updating the target coordinates and spawning stars.
+   * We re using both Touch and Mouse rather than Pointer, so we can continue to
+   * spawn stars during touch scroll.
    *
-   * @param {MouseEvent} event - The pointer event.
+   * @param {TouchEvent | MouseEvent} event - The pointer event.
    * @param {boolean} isBurst - Indicates whether it's a burst spawn or not.
    * @returns {void}
    */
   const handlePointer = useCallback(
-    ({ clientX, clientY }: MouseEvent, isBurst: boolean) => {
+    (e: TouchEvent | MouseEvent, isBurst: boolean) => {
+      if (!e) return
+      const clientSource =
+        e.type === 'touchmove'
+          ? (e as TouchEvent).touches?.[0]
+          : (e as MouseEvent)
+      const { clientX, clientY } = clientSource
       setTarget(clientX, clientY - 5, 15)
       clearTimeout(moveTimeout.current)
       if (!travelInfo.current.isTravelling) return
@@ -178,21 +185,12 @@ export const Stellar = ({
   /**
    * Attach the content pointer move handler
    */
-  useThrottledEvents(
-    (e) => handlePointer(e, false),
-    ['pointermove'],
-    false,
-    contentRef.current
-  )
+  useThrottledEvents((e) => handlePointer(e, false), ['mousemove', 'touchmove'])
+
   /**
    * Attach the content pointer down handler
    */
-  useThrottledEvents(
-    (e) => handlePointer(e, true),
-    ['pointerup'],
-    false,
-    contentRef.current
-  )
+  useThrottledEvents((e) => handlePointer(e, true), ['mouseup', 'touchup'])
 
   /**
    * Set up the animation keyframe that redraws the stars 10x per second,
