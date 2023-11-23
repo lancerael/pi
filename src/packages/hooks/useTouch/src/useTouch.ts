@@ -54,7 +54,10 @@ export const useTouch = <T = HTMLElement>({
       resetCallback?.()
       trackers.current.oldPanChange = { ...panChange }
       controls.setPanLevel((panLevel) => {
-        const setVal = (axis: 'x' | 'y', [min, max]: NumberRange = [-99999, 99999]) => {
+        const setVal = (
+          axis: 'x' | 'y',
+          [min, max]: NumberRange = [-99999, 99999]
+        ) => {
           return clampValue(panLevel[axis] + panChange[axis], min, max)
         }
         return {
