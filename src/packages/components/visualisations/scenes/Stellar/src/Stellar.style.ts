@@ -41,5 +41,4 @@ export const StyledContent = styled.div`
   z-index: 2;
   overflow: auto;
   box-sizing: border-box;
-  touch-action: none;
 `
