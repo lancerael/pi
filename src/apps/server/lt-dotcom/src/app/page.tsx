@@ -6,7 +6,8 @@ import Shimmer from '@pi-lib/shimmer'
 import PageGrid from '@pi-lib/page-grid'
 import Card from '@pi-lib/card'
 import Carousel from '@pi-lib/carousel'
-import { useThrottledEvents } from '@pi-lib/utils'
+import IconButton from '@pi-lib/icon-button'
+import { useThrottledEvents } from '@pi-lib/use-throttled-events'
 import { IS_CLIENT, REDUCED_MOTION } from '@pi-lib/styles'
 import { ICONS } from '@pi-lib/constants'
 import Interact from '@/components/Interact'
@@ -20,9 +21,8 @@ import {
   StyledCardWrapper,
   StyledFullGradient,
 } from './page.styles'
-import { PageHeader } from '@/components/PageHeader/PageHeader'
 import { UiTrackerProps } from '@/components/PageHeader/PageHeader.types'
-import IconButton from '@pi-lib/icon-button'
+import { PageHeader } from '@/components/PageHeader/PageHeader'
 
 export default function Home() {
   const [isComplete, setIsComplete] = useState(false)
@@ -34,13 +34,14 @@ export default function Home() {
   const [travelTracker, setTravelTracker] = useState<TravelTrackerProps>({
     travelSpeed: 1,
     isTravelling: null,
+    dimmer: 0,
   })
   const wrapperRef = useRef<HTMLDivElement>(null)
   const widthRef = useRef<HTMLDivElement>(null)
 
   useThrottledEvents(() => {
-    setUiTracker(({ scrollTop }) => ({
-      scrollTop,
+    setUiTracker((uiTracker) => ({
+      ...uiTracker,
       fullWidth: widthRef.current?.offsetWidth ?? 0,
       fullHeight: wrapperRef.current?.offsetHeight ?? 0,
     }))
@@ -89,9 +90,16 @@ export default function Home() {
       ref={wrapperRef}
     >
       <Stellar
-        {...travelTracker}
+        {...{ ...travelTracker }}
         scrollCallback={(scrollTop) =>
-          setUiTracker((uiTracker) => ({ ...uiTracker, scrollTop }))
+          setUiTracker(({ fullHeight, fullWidth }) => {
+            const dimmer =
+              scrollTop > fullHeight
+                ? 0.33
+                : ((100 / fullHeight) * scrollTop) / 300
+            setTravelTracker((travelTracker) => ({ ...travelTracker, dimmer }))
+            return { fullHeight, fullWidth, scrollTop }
+          })
         }
       >
         <PageHeader
@@ -109,7 +117,10 @@ export default function Home() {
               />
             </ShimmerInner>
           </ShimmerOuter>
-          <SkillsContainer className="pi-page-grid-full">
+          <SkillsContainer
+            dimmer={(travelTracker.dimmer ?? 0) / 2}
+            className="pi-page-grid-full"
+          >
             <Grid>
               {skillset.map(({ title, subTitle, icon, summary, bullets }) => (
                 <StyledCardWrapper key={title}>

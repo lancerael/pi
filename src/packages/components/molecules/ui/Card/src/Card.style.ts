@@ -18,7 +18,8 @@ export const StyledTopSection = styled.div`
   display: flex;
   margin: 0 0 0.5rem -0.25rem;
 
-  & > * {
+  & svg {
+    margin-top: 0.1rem;
     padding-right: 0.25rem;
   }
 `

@@ -48,7 +48,7 @@ const render = () => {
 }
 
 const meta: Meta<typeof useTouch> = {
-  title: 'hooks/useTouch',
+  title: 'Utils/Hooks/useTouch',
   argTypes: {},
   tags: ['autodocs'],
 }

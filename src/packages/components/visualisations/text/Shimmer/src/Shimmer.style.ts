@@ -26,7 +26,7 @@ export const StyledShimmer = styled.div`
 `
 
 export const StyledLine = styled.div<StyledLineProps>(
-  ({ $isVisible, $fadeTime = 5000 }) => css`
+  ({ $isVisible, $holdTime = 5000, $fadeTime = 5000 }) => css`
     --size: 2rem;
 
     @media screen and (max-width: 800px) {
@@ -55,13 +55,15 @@ export const StyledLine = styled.div<StyledLineProps>(
       background-position: 0% 50%;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      animation: ${textPulse} ${REDUCED_MOTION ? 15 : 5}s linear infinite;
+      animation: ${textPulse} ${REDUCED_MOTION ? 15 : $holdTime / 1000}s linear
+        infinite;
     }
 
     &::before {
       transition: all 0.5s ease-in;
       content: attr(data-content);
-      animation: ${blurPulse} ${REDUCED_MOTION ? 15 : 2.5}s linear infinite;
+      animation: ${blurPulse} ${REDUCED_MOTION ? 15 : $holdTime / 2}s linear
+        infinite;
       opacity: ${$isVisible ? 0.7 : 0};
       position: absolute;
       margin-left: 0;
