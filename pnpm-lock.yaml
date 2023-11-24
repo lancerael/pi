@@ -2027,9 +2027,6 @@ importers:
 
   src/packages/utils:
     dependencies:
-      '@pi-lib/use-throttled-events':
-        specifier: workspace:^
-        version: link:../hooks/useThrottledEvents
       react:
         specifier: ^18.2.0
         version: 18.2.0

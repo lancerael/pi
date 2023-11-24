@@ -15,7 +15,6 @@
   "author": "Lance Taylor",
   "main": "src/index.ts",
   "peerDependencies": {
-    "@pi-lib/use-throttled-events": "workspace:^",
     "react": "^18.2.0",
     "react-aria": "^3.26.0"
   }
