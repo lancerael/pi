@@ -1,0 +1,7 @@
+{
+  "type": "patch",
+  "comment": "Updated docs",
+  "packageName": "@pi-lib/icon-button",
+  "email": "lancerael@googlemail.com",
+  "dependentChangeType": "patch"
+}

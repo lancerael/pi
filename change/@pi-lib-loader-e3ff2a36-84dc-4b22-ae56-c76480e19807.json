@@ -1,0 +1,7 @@
+{
+  "type": "patch",
+  "comment": "Updated docs",
+  "packageName": "@pi-lib/loader",
+  "email": "lancerael@googlemail.com",
+  "dependentChangeType": "patch"
+}
