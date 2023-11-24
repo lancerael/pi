@@ -258,7 +258,7 @@ A card component with a title and subtitle.
 
 A React component for an expanding/collapsing menu with icons
 
-**Peer Dependencies:** @pi-lib/icon, @pi-lib/styles, @pi-lib/utils, react, react-aria, react-aria-components, react-stately, styled-components
+**Peer Dependencies:** @pi-lib/icon, @pi-lib/styles, @pi-lib/use-window-click, react, react-aria, react-aria-components, react-stately, styled-components
 
 <table>
   <tbody>
@@ -276,7 +276,7 @@ A React component for an expanding/collapsing menu with icons
 
 Modal for custom content that allows dismissal internally or externally
 
-**Peer Dependencies:** @pi-lib/dismissable-content, @pi-lib/modal-screen, @pi-lib/styles, @pi-lib/utils, react, styled-components
+**Peer Dependencies:** @pi-lib/dismissable-content, @pi-lib/modal-screen, @pi-lib/styles, @pi-lib/use-window-click, react, styled-components
 
 <table>
   <tbody>
@@ -375,6 +375,24 @@ Hook used to add touch controls to a React component
     <tr>
       <td><a href="https://pi.lance-taylor.com/?path=/docs/utils-hooks-usethrottledevents--docs" target="_blank">Docs</a></td>
       <td><a href="https://www.npmjs.com/package/@pi-lib/use-touch?activeTab=readme" target="_blank">NPM</a></td>
+      <td><a href="https://github.com/lancerael/pi/tree/main/src/packages/hooks/useTouch" target="_blank">Github</a></td>
+    </tr>
+  </tbody>
+</table>
+
+### useWindowClick
+
+**@pi-lib/use-window-click**
+
+Hook used to add throttled escape (window) clicks to a React component
+
+**Peer Dependencies:** @pi-lib/use-throttled-events, react
+
+<table>
+  <tbody>
+    <tr>
+      <td><a href="https://pi.lance-taylor.com/?path=/docs/utils-hooks-usethrottledevents--docs" target="_blank">Docs</a></td>
+      <td><a href="https://www.npmjs.com/package/@pi-lib/use-window-click?activeTab=readme" target="_blank">NPM</a></td>
       <td><a href="https://github.com/lancerael/pi/tree/main/src/packages/hooks/useTouch" target="_blank">Github</a></td>
     </tr>
   </tbody>

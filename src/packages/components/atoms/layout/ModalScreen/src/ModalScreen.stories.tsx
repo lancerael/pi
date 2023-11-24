@@ -4,7 +4,7 @@ import { ModalScreenProps } from './ModalScreen.types'
 import { ModalScreen } from './ModalScreen'
 import { createGlobalStyle } from 'styled-components'
 //@ts-ignore
-import { useWindowClick } from '../../../../../utils/src/hooks/useWindowClick'
+import { useWindowClick } from '../../../../../hooks/useWindowClick'
 
 const GlobalStyle = createGlobalStyle`
   body {

@@ -4,7 +4,7 @@ import { PageLoader } from './PageLoader'
 import { createGlobalStyle } from 'styled-components'
 import { PageLoaderProps } from './PageLoader.types'
 //@ts-ignore
-import { useWindowClick } from '../../../../../utils/src/hooks/useWindowClick'
+import { useWindowClick } from '../../../../../hooks/useWindowClick'
 
 const GlobalStyle = createGlobalStyle`
   body {

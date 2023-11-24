@@ -3,7 +3,7 @@ import ModalScreen from '@pi-lib/modal-screen'
 import DismissableContent, {
   DismissableContentProps,
 } from '@pi-lib/dismissable-content'
-import { useWindowClick } from '@pi-lib/utils'
+import { useWindowClick } from '@pi-lib/use-window-click'
 
 /**
  * Modal for custom content that allows dismissal internally or externally
