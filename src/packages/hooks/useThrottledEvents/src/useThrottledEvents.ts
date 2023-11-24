@@ -1,6 +1,9 @@
-import { CallbackFunction, throttle } from '@pi-lib/utils'
+import { throttle } from '@pi-lib/utils'
 import { useEffect } from 'react'
-import { UseThrottledEventsOpts } from './useThrottledEvents.types'
+import {
+  CallbackFunction,
+  UseThrottledEventsOpts,
+} from './useThrottledEvents.types'
 
 /**
  * A React hook that binds a callback to a range of throttled events and cleans itself up
