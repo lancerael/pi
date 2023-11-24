@@ -4,7 +4,7 @@
 
 Internal content for a modal or a toast, that can be dismissed internally
 
-**Dependencies:** @pi-lib/icon, @pi-lib/styles, @pi-lib/utils, react, styled-components
+**Peer Dependencies:** @pi-lib/icon, @pi-lib/styles, @pi-lib/utils, react, styled-components
 
 <table>
   <tbody>

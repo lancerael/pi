@@ -126,9 +126,12 @@ export const filterStars = (
  * @param {Star} star - The star from which to derive the style.
  * @returns {Object} An object containing the `id` and `style` properties for the star.
  */
-export const getStarStyle = ({ id, coords: [left, top], age, color }: Star) => {
+export const getStarStyle = (
+  { id, coords: [left, top], age, color }: Star,
+  dimmer = 0
+) => {
   const scale = (age + age * (age / 10)) / 25
-  const opacity = age >= 1 ? 1 - age / 25 : 0
+  const opacity = age >= 1 ? 1 - age / 25 - dimmer : 0
   return {
     id,
     style: {

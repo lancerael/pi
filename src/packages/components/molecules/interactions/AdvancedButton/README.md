@@ -4,7 +4,7 @@
 
 A React component for an advanced button with a built in loader
 
-**Dependencies:** @pi-lib/button, @pi-lib/loader, react, styled-components
+**Peer Dependencies:** @pi-lib/button, @pi-lib/loader, react, styled-components
 
 <table>
   <tbody>

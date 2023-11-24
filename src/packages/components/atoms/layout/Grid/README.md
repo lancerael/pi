@@ -4,7 +4,7 @@
 
 A wrapper for a simple grid layout.
 
-**Dependencies:** @pi-lib/styles, react, styled-components
+**Peer Dependencies:** @pi-lib/styles, react, styled-components
 
 <table>
   <tbody>

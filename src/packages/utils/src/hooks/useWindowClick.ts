@@ -1,4 +1,7 @@
-import { CallbackFunction, useThrottledEvents } from './useThrottledEvents'
+import {
+  CallbackFunction,
+  useThrottledEvents,
+} from '@pi-lib/use-throttled-events'
 
 /**
  * Custom React hook that registers a callback function to be called when a click event occurs outside a specified container element,
@@ -19,6 +22,12 @@ export const useWindowClick = (
   const onEscapePress = ({ key }: KeyboardEvent) => {
     if (key === 'Escape') callback()
   }
-  useThrottledEvents(onWindowClick as CallbackFunction, ['click'], false)
-  useThrottledEvents(onEscapePress as CallbackFunction, ['keydown'], false)
+  useThrottledEvents(onWindowClick as CallbackFunction, {
+    events: ['click'],
+    doInit: false,
+  })
+  useThrottledEvents(onEscapePress as CallbackFunction, {
+    events: ['keydown'],
+    doInit: false,
+  })
 }

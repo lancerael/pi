@@ -4,7 +4,7 @@
 
 A React component to handle toast notifications
 
-**Dependencies:** @pi-lib/dismissable-content, @pi-lib/styles, react, styled-components
+**Peer Dependencies:** @pi-lib/dismissable-content, @pi-lib/styles, react, styled-components
 
 <table>
   <tbody>

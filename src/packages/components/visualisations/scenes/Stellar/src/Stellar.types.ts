@@ -25,6 +25,10 @@ export interface StellarProps extends PropsWithChildren {
    * Callback to fire when the user scrolls
    **/
   scrollCallback?: (scrollTop: number) => void
+  /**
+   * Dimmer factor for the stars - so we can scroll over text
+   **/
+  dimmer?: number
 }
 
 /**
@@ -72,6 +76,10 @@ export interface Star extends StarPos {
    * Color of the star for styling.
    **/
   color: string
+  /**
+   * Dimmer factor for the star
+   **/
+  dimmer?: StellarProps['dimmer']
 }
 
 /**
@@ -86,10 +94,12 @@ export interface StarStyle extends Pick<Star, 'id'> {
 
 export type TravelTrackerProps = Pick<
   StellarProps,
-  'travelSpeed' | 'isTravelling'
+  'travelSpeed' | 'isTravelling' | 'dimmer'
 >
 
 /**
  * Set the starting age for a star - for -1 the age is random
  */
 export type SpawnAge = number
+
+export type UserEvent = TouchEvent | MouseEvent

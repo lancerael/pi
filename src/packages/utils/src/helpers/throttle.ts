@@ -12,20 +12,22 @@ export const throttle = (
 ) => {
   let timeout: NodeJS.Timeout
   let lastExecTime = 0
-  let isInitComplete = false
+
   return (...args: any[]) => {
+    const currentTime = Date.now()
     const execute = () => {
-      lastExecTime = currentTime
+      lastExecTime = Date.now()
       callback(...args)
     }
-    const currentTime = Date.now()
-    if (!isInitComplete) {
-      execute()
-      isInitComplete = true
-    }
-    if (currentTime - lastExecTime < delay) {
+
+    if (timeout) {
       clearTimeout(timeout)
-      timeout = setTimeout(execute, delay)
-    } else execute()
+    }
+
+    if (currentTime - lastExecTime >= delay) {
+      execute()
+    } else {
+      timeout = setTimeout(execute, delay - (currentTime - lastExecTime))
+    }
   }
 }

@@ -24,7 +24,7 @@ Once you have set up a theme, you can build your app with the React components. 
 
 React theming utility for use with Pi and styled-components
 
-**Dependencies:** react, styled-components
+**Peer Dependencies:** react, styled-components
 
 <table>
   <tbody>
@@ -44,7 +44,7 @@ React theming utility for use with Pi and styled-components
 
 A banner React component that can comtain spaced or flowing items
 
-**Dependencies:** @pi-lib/styles, @pi-lib/utils, react, styled-components
+**Peer Dependencies:** @pi-lib/styles, @pi-lib/utils, react, styled-components
 
 <table>
   <tbody>
@@ -62,7 +62,7 @@ A banner React component that can comtain spaced or flowing items
 
 A React button component with a status
 
-**Dependencies:** @pi-lib/styles, @pi-lib/utils, react, styled-components
+**Peer Dependencies:** @pi-lib/styles, @pi-lib/utils, react, styled-components
 
 <table>
   <tbody>
@@ -78,7 +78,7 @@ A React button component with a status
 
 **@pi-lib/custom-icon**
 
-**Dependencies:** @pi-lib/styles, @pi-lib/utils, react, react-svg, styled-components
+**Peer Dependencies:** @pi-lib/styles, @pi-lib/utils, react, react-svg, styled-components
 
 <table>
   <tbody>
@@ -96,7 +96,7 @@ A React button component with a status
 
 A wrapper for a simple grid layout.
 
-**Dependencies:** @pi-lib/styles, react, styled-components
+**Peer Dependencies:** @pi-lib/styles, react, styled-components
 
 <table>
   <tbody>
@@ -114,7 +114,7 @@ A wrapper for a simple grid layout.
 
 A React component for a special button with an icon
 
-**Dependencies:** @pi-lib/styles, @pi-lib/utils, @pi-lib/custom-icon, react, react-svg, styled-components
+**Peer Dependencies:** @pi-lib/styles, @pi-lib/utils, @pi-lib/custom-icon, react, react-svg, styled-components
 
 <table>
   <tbody>
@@ -132,7 +132,7 @@ A React component for a special button with an icon
 
 A React component for a router optional link
 
-**Dependencies:** @pi-lib/styles, @pi-lib/utils, react, react-router-dom, styled-components
+**Peer Dependencies:** @pi-lib/styles, @pi-lib/utils, react, react-router-dom, styled-components
 
 <table>
   <tbody>
@@ -150,7 +150,7 @@ A React component for a router optional link
 
 A React component used to block out the screen with modal content
 
-**Dependencies:** @pi-lib/styles, @pi-lib/utils, react, styled-components
+**Peer Dependencies:** @pi-lib/styles, @pi-lib/utils, react, styled-components
 
 <table>
   <tbody>
@@ -168,7 +168,7 @@ A React component used to block out the screen with modal content
 
 A wrapper for a page grid layout.
 
-**Dependencies:** @pi-lib/styles, @pi-lib/utils, react, styled-components
+**Peer Dependencies:** @pi-lib/styles, @pi-lib/utils, react, styled-components
 
 <table>
   <tbody>
@@ -186,7 +186,7 @@ A wrapper for a page grid layout.
 
 A React component used to show and position a tooltip containing content
 
-**Dependencies:** @pi-lib/styles, @pi-lib/utils, react, styled-components
+**Peer Dependencies:** @pi-lib/styles, @pi-lib/utils, react, styled-components
 
 <table>
   <tbody>
@@ -206,7 +206,7 @@ A React component used to show and position a tooltip containing content
 
 A React component for an advanced button with a built in loader
 
-**Dependencies:** @pi-lib/button, @pi-lib/loader, react, styled-components
+**Peer Dependencies:** @pi-lib/button, @pi-lib/loader, react, styled-components
 
 <table>
   <tbody>
@@ -224,7 +224,7 @@ A React component for an advanced button with a built in loader
 
 A card component with a title and subtitle.
 
-**Dependencies:** @pi-lib/styles, @pi-lib/utils, @pi-lib/custom-icon, react, styled-components
+**Peer Dependencies:** @pi-lib/styles, @pi-lib/utils, @pi-lib/custom-icon, react, styled-components
 
 <table>
   <tbody>
@@ -240,7 +240,7 @@ A card component with a title and subtitle.
 
 **@pi-lib/carousel**
 
-**Dependencies:** @pi-lib/styles, @pi-lib/utils, react, styled-components
+**Peer Dependencies:** @pi-lib/styles, @pi-lib/utils, react, styled-components
 
 <table>
   <tbody>
@@ -258,7 +258,7 @@ A card component with a title and subtitle.
 
 A React component for an expanding/collapsing menu with icons
 
-**Dependencies:** @pi-lib/icon, @pi-lib/styles, @pi-lib/utils, react, react-aria, react-aria-components, react-stately, styled-components
+**Peer Dependencies:** @pi-lib/icon, @pi-lib/styles, @pi-lib/utils, react, react-aria, react-aria-components, react-stately, styled-components
 
 <table>
   <tbody>
@@ -276,7 +276,7 @@ A React component for an expanding/collapsing menu with icons
 
 Modal for custom content that allows dismissal internally or externally
 
-**Dependencies:** @pi-lib/dismissable-content, @pi-lib/modal-screen, @pi-lib/styles, @pi-lib/utils, react, styled-components
+**Peer Dependencies:** @pi-lib/dismissable-content, @pi-lib/modal-screen, @pi-lib/styles, @pi-lib/utils, react, styled-components
 
 <table>
   <tbody>
@@ -294,7 +294,7 @@ Modal for custom content that allows dismissal internally or externally
 
 A React component for a page layout with a sidebar
 
-**Dependencies:** @pi-lib/styles, react, styled-components
+**Peer Dependencies:** @pi-lib/styles, react, styled-components
 
 <table>
   <tbody>
@@ -312,7 +312,7 @@ A React component for a page layout with a sidebar
 
 A React component for a page blocking loader
 
-**Dependencies:** @pi-lib/loader, @pi-lib/modal-screen, @pi-lib/styles, react, styled-components
+**Peer Dependencies:** @pi-lib/loader, @pi-lib/modal-screen, @pi-lib/styles, react, styled-components
 
 <table>
   <tbody>
@@ -330,7 +330,7 @@ A React component for a page blocking loader
 
 A React component for a table with expandable rows
 
-**Dependencies:** @pi-lib/styles, react, styled-components
+**Peer Dependencies:** @pi-lib/styles, react, styled-components
 
 <table>
   <tbody>
@@ -338,6 +338,44 @@ A React component for a table with expandable rows
       <td><a href="https://pi.lance-taylor.com/?path=/docs/molecules-layout-table" target="_blank">Docs</a></td>
       <td><a href="https://www.npmjs.com/package/@pi-lib/table?activeTab=readme" target="_blank">NPM</a></td>
       <td><a href="https://github.com/lancerael/pi/tree/main/src/packages/components/molecules/layout/Table" target="_blank">Github</a></td>
+    </tr>
+  </tbody>
+</table>
+
+## Hooks
+
+### useThrottledEvents
+
+**@pi-lib/use-throttled-events**
+
+Hook used to add throttled events to a React component
+
+**Peer Dependencies:** @pi-lib/utils, react
+
+<table>
+  <tbody>
+    <tr>
+      <td><a href="https://pi.lance-taylor.com/?path=/docs/utils-hooks-usethrottledevents--docs" target="_blank">Docs</a></td>
+      <td><a href="https://www.npmjs.com/package/@pi-lib/use-throttled-events?activeTab=readme" target="_blank">NPM</a></td>
+      <td><a href="https://github.com/lancerael/pi/tree/main/src/packages/hooks/useTouch" target="_blank">Github</a></td>
+    </tr>
+  </tbody>
+</table>
+
+### useTouch
+
+**@pi-lib/use-touch**
+
+Hook used to add touch controls to a React component
+
+**Peer Dependencies:** @pi-lib/utils, react, react-aria
+
+<table>
+  <tbody>
+    <tr>
+      <td><a href="https://pi.lance-taylor.com/?path=/docs/utils-hooks-usethrottledevents--docs" target="_blank">Docs</a></td>
+      <td><a href="https://www.npmjs.com/package/@pi-lib/use-touch?activeTab=readme" target="_blank">NPM</a></td>
+      <td><a href="https://github.com/lancerael/pi/tree/main/src/packages/hooks/useTouch" target="_blank">Github</a></td>
     </tr>
   </tbody>
 </table>
@@ -395,7 +433,7 @@ Global types for Pi
 
 Utilities for use with Pi
 
-**Dependencies:** react, react-aria
+**Peer Dependencies:** @pi-lib/use-throttled-events, react, react-aria
 
 <table>
   <tbody>

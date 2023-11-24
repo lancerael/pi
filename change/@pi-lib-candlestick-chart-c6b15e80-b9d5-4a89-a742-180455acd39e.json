@@ -1,0 +1,7 @@
+{
+  "type": "minor",
+  "comment": "Switch to standalone events hook",
+  "packageName": "@pi-lib/candlestick-chart",
+  "email": "lancerael@googlemail.com",
+  "dependentChangeType": "patch"
+}

@@ -47,12 +47,14 @@ export const Shimmer = ({
       clearInterval(linesPause)
     }
   }, [lines, delay, pause, behaviour])
+
   return (
     <StyledShimmer>
       {lines.map((line, i) => (
         <StyledLine
           key={i}
           $isVisible={visibleLine === i}
+          $holdTime={i === 0 ? holdFirst : pause}
           $fadeTime={fadeTime}
           data-content={line}
           data-testid={line}

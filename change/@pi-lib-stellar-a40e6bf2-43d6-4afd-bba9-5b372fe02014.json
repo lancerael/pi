@@ -1,0 +1,7 @@
+{
+  "type": "patch",
+  "comment": "Standalone useThrottledEvents, improved stellar star dimming",
+  "packageName": "@pi-lib/stellar",
+  "email": "lancerael@googlemail.com",
+  "dependentChangeType": "patch"
+}

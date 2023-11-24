@@ -49,7 +49,7 @@ ${description}
 
 ${
   !!peerDependencies
-    ? `**Dependencies:** ${Object.keys(peerDependencies).join(', ')}`
+    ? `**Peer Dependencies:** ${Object.keys(peerDependencies).join(', ')}`
     : ''
 }
 
@@ -78,6 +78,7 @@ ${
       Theming: [],
       Atoms: [],
       Molecules: [],
+      Hooks: [],
       Utilities: [],
     }
     const packageJsonFiles = await getPackageJsonFiles()

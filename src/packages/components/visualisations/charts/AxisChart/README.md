@@ -4,7 +4,7 @@
 
 A React component used to display a bar ot line chart
 
-**Dependencies:** @pi-lib/styles, @pi-lib/utils, d-theia, react, styled-components
+**Peer Dependencies:** @pi-lib/styles, @pi-lib/utils, d-theia, react, styled-components
 
 <table>
   <tbody>

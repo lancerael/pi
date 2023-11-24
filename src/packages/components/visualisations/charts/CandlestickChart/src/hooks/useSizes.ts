@@ -1,4 +1,4 @@
-import { useThrottledEvents } from '@pi-lib/utils'
+import { useThrottledEvents } from '@pi-lib/use-throttled-events'
 import { useCallback, useState } from 'react'
 import { ContainerRef, SvgRef } from '../CandlestickChart.types'
 

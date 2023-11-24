@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
-import { doTransition, useFramerate, useThrottledEvents } from '@pi-lib/utils'
+import { doTransition, useFramerate } from '@pi-lib/utils'
 import { StyledContent, StyledStar, StyledStellar } from './Stellar.style'
 import {
   Coords,
@@ -7,6 +7,7 @@ import {
   StarStyle,
   StellarProps,
   StellarCoords,
+  UserEvent,
 } from './Stellar.types'
 import {
   filterStars,
@@ -16,6 +17,7 @@ import {
   randomNumber,
 } from './Stellar.helpers'
 import { FPS_CUTOFF, MAX_STARS } from './Stellar.constants'
+import { useThrottledEvents } from '@pi-lib/use-throttled-events'
 
 /**
  * A spacefaring scene that takes you through the stars.
@@ -32,6 +34,7 @@ export const Stellar = ({
   isTravelling = true,
   showDebug = false,
   scrollCallback,
+  dimmer = 0,
   children,
 }: StellarProps) => {
   const [stars, setStars] = useState<StarStyle[]>([])
@@ -46,6 +49,7 @@ export const Stellar = ({
   const moveTimeout = useRef<NodeJS.Timeout>()
   const travelInfo = useRef({ isTravelling, travelSpeed })
   const lastScroll = useRef(0)
+  const starDimmer = useRef(0)
   const framerate = useFramerate()
 
   /**
@@ -86,7 +90,12 @@ export const Stellar = ({
    *
    * @returns {void}
    */
-  const updateStyles = () => setStars(starTracker.current.map(getStarStyle))
+  const updateStyles = () =>
+    setStars(
+      starTracker.current.map((star: Star) =>
+        getStarStyle(star, starDimmer.current)
+      )
+    )
 
   /**
    * Spawns new stars in the star tracker based on the current scroll position and movement.
@@ -149,12 +158,12 @@ export const Stellar = ({
    * We re using both Touch and Mouse rather than Pointer, so we can continue to
    * spawn stars during touch scroll.
    *
-   * @param {TouchEvent | MouseEvent} event - The pointer event.
+   * @param {UserEvent} event - The pointer event.
    * @param {boolean} isBurst - Indicates whether it's a burst spawn or not.
    * @returns {void}
    */
   const handlePointer = useCallback(
-    (e: TouchEvent | MouseEvent, isBurst: boolean) => {
+    (e: UserEvent, isBurst: boolean) => {
       if (!e) return
       const clientSource =
         e.type === 'touchmove'
@@ -180,17 +189,26 @@ export const Stellar = ({
   /**
    * Attach the content scroll handler
    */
-  useThrottledEvents(handleScroll, ['scroll'], false, contentRef.current, 100)
+  useThrottledEvents(handleScroll, {
+    events: ['scroll'],
+    doInit: false,
+    target: contentRef.current,
+    timeout: 100,
+  })
 
   /**
    * Attach the content pointer move handler
    */
-  useThrottledEvents((e) => handlePointer(e, false), ['mousemove', 'touchmove'])
+  useThrottledEvents((e: UserEvent) => handlePointer(e, false), {
+    events: ['mousemove', 'touchmove'],
+  })
 
   /**
    * Attach the content pointer down handler
    */
-  useThrottledEvents((e) => handlePointer(e, true), ['mouseup', 'touchup'])
+  useThrottledEvents((e: UserEvent) => handlePointer(e, true), {
+    events: ['mouseup', 'touchup'],
+  })
 
   /**
    * Set up the animation keyframe that redraws the stars 10x per second,
@@ -218,11 +236,19 @@ export const Stellar = ({
     return () => clearInterval(keyframe)
   }, [isTravelling, travelSpeed])
 
+  /**
+   * Maintain the dimmer value so we dont have to recreate the interval
+   */
+  useEffect(() => {
+    starDimmer.current = dimmer
+  }, [dimmer])
+
   return (
     <StyledStellar ref={stellarRef}>
       {showDebug && (
         <div>
-          Framerate: {framerate.current.fps}. Total stars: {stars.length}
+          Framerate: {framerate.current.fps}. Total stars: {stars.length}.
+          Dimmer: {dimmer}
         </div>
       )}
       {stars.map(({ id, style }) => (

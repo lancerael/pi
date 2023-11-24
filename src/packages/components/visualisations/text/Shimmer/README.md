@@ -4,7 +4,7 @@
 
 A shimmering text ticker animation.
 
-**Dependencies:** @pi-lib/styles, react, styled-components
+**Peer Dependencies:** @pi-lib/styles, react, styled-components
 
 <table>
   <tbody>
