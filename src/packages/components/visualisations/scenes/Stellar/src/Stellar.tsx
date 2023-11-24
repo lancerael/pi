@@ -251,10 +251,9 @@ export const Stellar = ({
           Dimmer: {dimmer}
         </div>
       )}
-      {stars.map(({ id, style }) => {
-        // console.log(style)
-        return <StyledStar key={id} {...{ style }} />
-      })}
+      {stars.map(({ id, style }) => (
+        <StyledStar key={id} {...{ style }} />
+      ))}
       <StyledContent ref={contentRef}>{children}</StyledContent>
     </StyledStellar>
   )

@@ -20,7 +20,6 @@
     "build": "rimraf vanilla && vite build",
     "test": "vitest"
   },
-  "dependencies": {},
   "devDependencies": {
     "@pi-lib/config": "workspace:^",
     "@testing-library/react": "^13.3.0",
