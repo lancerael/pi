@@ -1,0 +1,7 @@
+{
+  "type": "minor",
+  "comment": "Added useWindowClick standalone",
+  "packageName": "@pi-lib/modal",
+  "email": "lancerael@googlemail.com",
+  "dependentChangeType": "patch"
+}
