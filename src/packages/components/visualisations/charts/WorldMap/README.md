@@ -4,7 +4,7 @@
 
 A React component for an SVG world map chart
 
-**Dependencies:** @pi-lib/styles, d3-geo, d3-selection, react, styled-components
+**Peer Dependencies:** @pi-lib/styles, d3-geo, d3-selection, react, styled-components
 
 <table>
   <tbody>

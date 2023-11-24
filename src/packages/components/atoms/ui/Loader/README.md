@@ -4,7 +4,7 @@
 
 Basic loading spinner React component
 
-**Dependencies:** @pi-lib/utils, react, styled-components
+**Peer Dependencies:** @pi-lib/utils, react, styled-components
 
 <table>
   <tbody>

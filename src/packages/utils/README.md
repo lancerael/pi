@@ -4,7 +4,7 @@
 
 Utilities for use with Pi
 
-**Dependencies:** react, react-aria
+**Peer Dependencies:** @pi-lib/use-throttled-events, react, react-aria
 
 <table>
   <tbody>

@@ -4,7 +4,7 @@
 
 An icon component with a selection of icons
 
-**Dependencies:** @pi-lib/styles, react, styled-components
+**Peer Dependencies:** @pi-lib/styles, react, styled-components
 
 <table>
   <tbody>

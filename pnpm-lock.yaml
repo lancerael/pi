@@ -1883,9 +1883,6 @@ importers:
       react:
         specifier: ^18.2.0
         version: 18.2.0
-      react-aria:
-        specifier: ^3.26.0
-        version: 3.26.0(react-dom@18.2.0)(react@18.2.0)
     devDependencies:
       '@pi-lib/config':
         specifier: workspace:^

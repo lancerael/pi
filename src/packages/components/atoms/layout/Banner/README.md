@@ -4,7 +4,7 @@
 
 A banner React component that can comtain spaced or flowing items
 
-**Dependencies:** @pi-lib/styles, @pi-lib/utils, react, styled-components
+**Peer Dependencies:** @pi-lib/styles, @pi-lib/utils, react, styled-components
 
 <table>
   <tbody>

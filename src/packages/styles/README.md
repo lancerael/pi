@@ -4,7 +4,7 @@
 
 React theming utility for use with Pi and styled-components
 
-**Dependencies:** react, styled-components
+**Peer Dependencies:** react, styled-components
 
 <table>
   <tbody>

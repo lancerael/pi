@@ -2,7 +2,7 @@
 
 **@pi-lib/carousel**
 
-**Dependencies:** @pi-lib/styles, @pi-lib/utils, react, styled-components
+**Peer Dependencies:** @pi-lib/styles, @pi-lib/utils, react, styled-components
 
 <table>
   <tbody>

@@ -4,7 +4,7 @@
 
 A React component used to block out the screen with modal content
 
-**Dependencies:** @pi-lib/styles, @pi-lib/utils, react, styled-components
+**Peer Dependencies:** @pi-lib/styles, @pi-lib/utils, react, styled-components
 
 <table>
   <tbody>
