@@ -1,7 +1,0 @@
-{
-  "type": "patch",
-  "comment": "Added useWindowClick standalone",
-  "packageName": "@pi-lib/utils",
-  "email": "lancerael@googlemail.com",
-  "dependentChangeType": "patch"
-}
