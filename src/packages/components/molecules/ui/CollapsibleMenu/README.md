@@ -4,7 +4,7 @@
 
 A React component for an expanding/collapsing menu with icons
 
-**Peer Dependencies:** @pi-lib/icon, @pi-lib/styles, @pi-lib/utils, react, react-aria, react-aria-components, react-stately, styled-components
+**Peer Dependencies:** @pi-lib/icon, @pi-lib/styles, @pi-lib/use-window-click, react, react-aria, react-aria-components, react-stately, styled-components
 
 <table>
   <tbody>

@@ -1,6 +1,6 @@
 {
   "type": "major",
-  "comment": "Standalone useThrottledEvents, improved stellar star dimming",
+  "comment": "Standalone useThrottledEvents, useWindowClick",
   "packageName": "@pi-lib/utils",
   "email": "lancerael@googlemail.com",
   "dependentChangeType": "patch"

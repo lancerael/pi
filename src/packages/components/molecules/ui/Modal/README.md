@@ -4,7 +4,7 @@
 
 Modal for custom content that allows dismissal internally or externally
 
-**Peer Dependencies:** @pi-lib/dismissable-content, @pi-lib/modal-screen, @pi-lib/styles, @pi-lib/utils, react, styled-components
+**Peer Dependencies:** @pi-lib/dismissable-content, @pi-lib/modal-screen, @pi-lib/styles, @pi-lib/use-window-click, react, styled-components
 
 <table>
   <tbody>

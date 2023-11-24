@@ -39,7 +39,7 @@
     "@pi-lib/dismissable-content": "workspace:^",
     "@pi-lib/modal-screen": "workspace:^",
     "@pi-lib/styles": "workspace:^",
-    "@pi-lib/utils": "workspace:^",
+    "@pi-lib/use-window-click": "workspace:^",
     "react": "^18.2.0",
     "styled-components": "^6.1.0"
   }

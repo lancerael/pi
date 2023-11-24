@@ -1,7 +1,7 @@
 import { useRef } from 'react'
 import { useMenuTrigger } from 'react-aria'
 import { useMenuTriggerState } from 'react-stately'
-import { useWindowClick } from '@pi-lib/utils'
+import { useWindowClick } from '@pi-lib/use-window-click'
 import {
   StyledCollapsibleMenu,
   StyledContainer,
