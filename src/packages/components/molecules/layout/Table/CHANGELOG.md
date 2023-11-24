@@ -1,8 +1,16 @@
 # Change Log - @pi-lib/table
 
-This log was last generated on Mon, 20 Nov 2023 23:01:46 GMT and should not be manually modified.
+This log was last generated on Fri, 24 Nov 2023 22:47:20 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 2.1.4
+
+Fri, 24 Nov 2023 22:47:20 GMT
+
+### Patches
+
+- Updated docs (lancerael@googlemail.com)
 
 ## 2.1.2
 

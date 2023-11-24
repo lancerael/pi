@@ -1,8 +1,16 @@
 # Change Log - @pi-lib/utils
 
-This log was last generated on Thu, 23 Nov 2023 01:46:19 GMT and should not be manually modified.
+This log was last generated on Fri, 24 Nov 2023 22:47:20 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 4.0.0
+
+Fri, 24 Nov 2023 22:47:20 GMT
+
+### Major changes
+
+- Standalone useThrottledEvents, useWindowClick (lancerael@googlemail.com)
 
 ## 3.2.2
 

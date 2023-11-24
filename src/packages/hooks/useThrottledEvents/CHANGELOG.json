@@ -1,0 +1,20 @@
+{
+  "name": "@pi-lib/use-throttled-events",
+  "entries": [
+    {
+      "date": "Fri, 24 Nov 2023 22:47:20 GMT",
+      "tag": "@pi-lib/use-throttled-events_v1.0.0",
+      "version": "1.0.0",
+      "comments": {
+        "major": [
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/use-throttled-events",
+            "commit": "d39a71199683c87ed51732bbd95b2d767b2810ca",
+            "comment": "Standalone useThrottledEvents, improved stellar star dimming"
+          }
+        ]
+      }
+    }
+  ]
+}

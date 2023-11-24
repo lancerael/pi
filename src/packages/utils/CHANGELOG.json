@@ -2,6 +2,21 @@
   "name": "@pi-lib/utils",
   "entries": [
     {
+      "date": "Fri, 24 Nov 2023 22:47:20 GMT",
+      "tag": "@pi-lib/utils_v4.0.0",
+      "version": "4.0.0",
+      "comments": {
+        "major": [
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/utils",
+            "commit": "d39a71199683c87ed51732bbd95b2d767b2810ca",
+            "comment": "Standalone useThrottledEvents, useWindowClick"
+          }
+        ]
+      }
+    },
+    {
       "date": "Thu, 23 Nov 2023 01:46:19 GMT",
       "tag": "@pi-lib/utils_v3.2.2",
       "version": "3.2.2",

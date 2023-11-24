@@ -2,6 +2,21 @@
   "name": "@pi-lib/page-loader",
   "entries": [
     {
+      "date": "Fri, 24 Nov 2023 22:47:20 GMT",
+      "tag": "@pi-lib/page-loader_v1.1.0",
+      "version": "1.1.0",
+      "comments": {
+        "minor": [
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/page-loader",
+            "commit": "d39a71199683c87ed51732bbd95b2d767b2810ca",
+            "comment": "Added useWindowClick standalone"
+          }
+        ]
+      }
+    },
+    {
       "date": "Mon, 20 Nov 2023 23:01:46 GMT",
       "tag": "@pi-lib/page-loader_v1.0.13",
       "version": "1.0.13",

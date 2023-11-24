@@ -1,8 +1,16 @@
 # Change Log - @pi-lib/candlestick-chart
 
-This log was last generated on Mon, 20 Nov 2023 23:01:46 GMT and should not be manually modified.
+This log was last generated on Fri, 24 Nov 2023 22:47:20 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 2.8.0
+
+Fri, 24 Nov 2023 22:47:20 GMT
+
+### Minor changes
+
+- Switch to standalone events hook (lancerael@googlemail.com)
 
 ## 2.7.2
 

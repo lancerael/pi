@@ -1,7 +1,0 @@
-{
-  "type": "minor",
-  "comment": "Added useWindowClick standalone",
-  "packageName": "@pi-lib/modal-screen",
-  "email": "lancerael@googlemail.com",
-  "dependentChangeType": "patch"
-}

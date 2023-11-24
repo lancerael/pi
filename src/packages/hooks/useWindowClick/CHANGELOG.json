@@ -1,0 +1,20 @@
+{
+  "name": "@pi-lib/use-window-click",
+  "entries": [
+    {
+      "date": "Fri, 24 Nov 2023 22:47:20 GMT",
+      "tag": "@pi-lib/use-window-click_v1.0.0",
+      "version": "1.0.0",
+      "comments": {
+        "major": [
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/use-window-click",
+            "commit": "d39a71199683c87ed51732bbd95b2d767b2810ca",
+            "comment": "Added useWindowClick standalone"
+          }
+        ]
+      }
+    }
+  ]
+}

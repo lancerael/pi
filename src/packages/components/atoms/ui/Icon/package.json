@@ -1,6 +1,6 @@
 {
   "name": "@pi-lib/icon",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "An icon component with a selection of icons",
   "keywords": [
     "react"
