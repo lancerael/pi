@@ -40,8 +40,8 @@ export default function Home() {
   const widthRef = useRef<HTMLDivElement>(null)
 
   useThrottledEvents(() => {
-    setUiTracker((uiTracker) => ({
-      ...uiTracker,
+    setUiTracker(({ scrollTop }) => ({
+      scrollTop,
       fullWidth: widthRef.current?.offsetWidth ?? 0,
       fullHeight: wrapperRef.current?.offsetHeight ?? 0,
     }))
@@ -90,7 +90,7 @@ export default function Home() {
       ref={wrapperRef}
     >
       <Stellar
-        {...{ ...travelTracker }}
+        {...travelTracker}
         scrollCallback={(scrollTop) =>
           setUiTracker(({ fullHeight, fullWidth }) => {
             const dimmer =
