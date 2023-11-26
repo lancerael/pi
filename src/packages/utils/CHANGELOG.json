@@ -2,6 +2,21 @@
   "name": "@pi-lib/utils",
   "entries": [
     {
+      "date": "Sun, 26 Nov 2023 23:39:52 GMT",
+      "tag": "@pi-lib/utils_v4.0.1",
+      "version": "4.0.1",
+      "comments": {
+        "patch": [
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/utils",
+            "commit": "806eea818fead9161668721f9920555607286035",
+            "comment": "Added end callback to transition"
+          }
+        ]
+      }
+    },
+    {
       "date": "Fri, 24 Nov 2023 22:47:20 GMT",
       "tag": "@pi-lib/utils_v4.0.0",
       "version": "4.0.0",

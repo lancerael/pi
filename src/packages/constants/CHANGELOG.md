@@ -1,8 +1,16 @@
 # Change Log - @pi-lib/constants
 
-This log was last generated on Mon, 20 Nov 2023 23:01:46 GMT and should not be manually modified.
+This log was last generated on Sun, 26 Nov 2023 23:39:52 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 2.1.1
+
+Sun, 26 Nov 2023 23:39:52 GMT
+
+### Patches
+
+- Added global const for useTimer (lancerael@googlemail.com)
 
 ## 2.1.0
 

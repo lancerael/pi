@@ -2,6 +2,21 @@
   "name": "@pi-lib/constants",
   "entries": [
     {
+      "date": "Sun, 26 Nov 2023 23:39:52 GMT",
+      "tag": "@pi-lib/constants_v2.1.1",
+      "version": "2.1.1",
+      "comments": {
+        "patch": [
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/constants",
+            "commit": "806eea818fead9161668721f9920555607286035",
+            "comment": "Added global const for useTimer"
+          }
+        ]
+      }
+    },
+    {
       "date": "Mon, 20 Nov 2023 23:01:46 GMT",
       "tag": "@pi-lib/constants_v2.1.0",
       "version": "2.1.0",

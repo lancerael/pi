@@ -1,7 +1,0 @@
-{
-  "type": "minor",
-  "comment": "Added useTimer hook",
-  "packageName": "@pi-lib/axis-chart",
-  "email": "lancerael@googlemail.com",
-  "dependentChangeType": "patch"
-}
