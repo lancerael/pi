@@ -1,22 +1,21 @@
 {
   "name": "@pi-lib/use-timer",
-  "version": "1.0.0",
-  "description": "Hook used to add throttled escape (window) clicks to a React component",
+  "version": "0.0.0",
+  "description": "Hook used to add setTimeout or setInterval a React component",
   "keywords": [
     "react",
     "hooks",
     "pi",
-    "throttle",
-    "events",
     "utils",
-    "window",
-    "escape"
+    "timer",
+    "timeout",
+    "interval"
   ],
-  "homepage": "https://pi.lance-taylor.com/?path=/docs/utils-hooks-usewindowclick--docs",
+  "homepage": "https://pi.lance-taylor.com/?path=/docs/utils-hooks-usetimer--docs",
   "repository": {
     "type": "git",
     "url": "https://github.com/lancerael/pi.git",
-    "directory": "src/packages/hooks/useTouch"
+    "directory": "src/packages/hooks/useTimer"
   },
   "license": "ISC",
   "author": "Lance Taylor",

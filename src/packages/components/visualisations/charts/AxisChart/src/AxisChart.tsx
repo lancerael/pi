@@ -36,7 +36,10 @@ export const AxisChart = ({
   }, [chartData, chartConfig])
 
   // Keep chart in proportion in case of font resize
-  useTimer(() => dtChart.current?.onResize(), { type: 'Interval', waitTime: 5000 })
+  useTimer(() => dtChart.current?.onResize(), {
+    type: 'Interval',
+    waitTime: 5000,
+  })
 
   return <StyledAxisChart id={chartId} ref={container} />
 }
