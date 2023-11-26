@@ -37,13 +37,12 @@ export const useFramerate = (frames: number = 60) => {
         framerates.current = {
           fps: fps.lastTime
             ? Math.round((fps.counter / (time - fps.lastTime)) * 1000)
-            : 0,
+            : 60,
           average: Math.round((average.counter / totalTime) * 1000),
           totalTime: Math.round(totalTime / 1000),
         }
         fps.counter = 0
         fps.lastTime = time
-        // console.log(framerates.current)
       }
 
       frame.current = requestAnimationFrame(checkFrame)

@@ -89,7 +89,7 @@ export const moveStar = (
   const xDist = left - x
   const yDist = top - y
   const radius = Math.sqrt(xDist * xDist + yDist * yDist)
-  const multiplier = (age + age * age) / 8
+  const multiplier = (age + age * age) / 36
   return {
     coords: [
       left + (xDist * multiplier * travelSpeed) / radius,
@@ -130,8 +130,8 @@ export const getStarStyle = (
   { id, coords: [left, top], age, color }: Star,
   dimmer = 0
 ) => {
-  const scale = (age + age * (age / 10)) / 25
-  const opacity = age >= 1 ? 1 - age / 25 - dimmer : 0
+  const scale = (age + age * (age / 15)) / 50
+  const opacity = age >= 1 ? 1 - age / 40 - dimmer : 0
   return {
     id,
     style: {
