@@ -2,7 +2,7 @@
 
 **@pi-lib/use-timer**
 
-Hook used to add setTimeout or setInterval a React component
+Hook used to add setTimeout or setInterval to a React component
 
 **Peer Dependencies:** @pi-lib/constants, react
 
