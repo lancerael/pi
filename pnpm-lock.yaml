@@ -1591,6 +1591,9 @@ importers:
       '@pi-lib/styles':
         specifier: workspace:^
         version: link:../../../../styles
+      '@pi-lib/use-timer':
+        specifier: workspace:^
+        version: link:../../../../hooks/useTimer
       '@pi-lib/utils':
         specifier: workspace:^
         version: link:../../../../utils
@@ -1909,6 +1912,40 @@ importers:
         specifier: ^0.34.6
         version: 0.34.6(jsdom@20.0.3)
 
+  src/packages/hooks/useTimer:
+    dependencies:
+      '@pi-lib/constants':
+        specifier: workspace:^
+        version: link:../../constants
+      react:
+        specifier: ^18.2.0
+        version: 18.2.0
+    devDependencies:
+      '@pi-lib/config':
+        specifier: workspace:^
+        version: link:../../config
+      '@testing-library/react':
+        specifier: ^13.3.0
+        version: 13.4.0(react-dom@18.2.0)(react@18.2.0)
+      '@vitejs/plugin-react':
+        specifier: ^4.1.0
+        version: 4.1.0(vite@4.4.10)
+      jsdom:
+        specifier: ^20.0.0
+        version: 20.0.3
+      rimraf:
+        specifier: ^3.0.2
+        version: 3.0.2
+      typescript:
+        specifier: ^5
+        version: 5.2.2
+      vite:
+        specifier: ^4.4.10
+        version: 4.4.10(@types/node@18.15.3)
+      vitest:
+        specifier: ^0.34.6
+        version: 0.34.6(jsdom@20.0.3)
+
   src/packages/hooks/useTouch:
     dependencies:
       '@pi-lib/utils':
@@ -2027,6 +2064,9 @@ importers:
 
   src/packages/utils:
     dependencies:
+      '@pi-lib/use-throttled-events':
+        specifier: workspace:^
+        version: link:../hooks/useThrottledEvents
       react:
         specifier: ^18.2.0
         version: 18.2.0
@@ -9931,6 +9971,7 @@ packages:
   /domexception@4.0.0:
     resolution: {integrity: sha512-A2is4PLG+eeSfoTMA95/s4pvAoSo2mKtiM5jlHkAVewmiO8ISFTFKZjH7UAM1Atli/OT/7JHOrJRJiMKUZKYBw==}
     engines: {node: '>=12'}
+    deprecated: Use your platform's native DOMException instead
     dependencies:
       webidl-conversions: 7.0.0
     dev: true

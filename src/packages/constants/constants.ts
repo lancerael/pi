@@ -5,6 +5,11 @@ export const STATUS_MAP = {
   404: 'error',
 }
 
+/**
+ * Window, or global, or self
+ */
+export const GLOBAL_OBJ = window ?? global ?? self
+
 export const ICONS: { [key: string]: string } = {
   'AWS AMPLIFY': 'https://aws.amazon.com/amplify',
   'AWS API GATEWAY': 'https://aws.amazon.com/api-gateway',

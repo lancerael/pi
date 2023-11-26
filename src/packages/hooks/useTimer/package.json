@@ -1,21 +1,22 @@
 {
-  "name": "@pi-lib/axis-chart",
-  "version": "1.1.14",
-  "description": "A React component used to display a bar ot line chart",
+  "name": "@pi-lib/use-timer",
+  "version": "1.0.0",
+  "description": "Hook used to add throttled escape (window) clicks to a React component",
   "keywords": [
-    "pi",
     "react",
-    "component",
-    "organisms",
-    "chart",
-    "charts",
-    "axis"
+    "hooks",
+    "pi",
+    "throttle",
+    "events",
+    "utils",
+    "window",
+    "escape"
   ],
-  "homepage": "https://pi.lance-taylor.com/?path=/story/visualisations-charts-axischart",
+  "homepage": "https://pi.lance-taylor.com/?path=/docs/utils-hooks-usewindowclick--docs",
   "repository": {
     "type": "git",
     "url": "https://github.com/lancerael/pi.git",
-    "directory": "src/packages/components/visualisations/charts/AxisChart"
+    "directory": "src/packages/hooks/useTouch"
   },
   "license": "ISC",
   "author": "Lance Taylor",
@@ -29,7 +30,6 @@
     "@pi-lib/config": "workspace:^",
     "@testing-library/react": "^13.3.0",
     "@vitejs/plugin-react": "^4.1.0",
-    "jest-axe": "^8.0.0",
     "jsdom": "^20.0.0",
     "rimraf": "^3.0.2",
     "typescript": "^5",
@@ -37,11 +37,7 @@
     "vitest": "^0.34.6"
   },
   "peerDependencies": {
-    "@pi-lib/styles": "workspace:^",
-    "@pi-lib/use-timer": "workspace:^",
-    "@pi-lib/utils": "workspace:^",
-    "d-theia": "^3.6.0",
-    "react": "^18.2.0",
-    "styled-components": "^6.1.0"
+    "@pi-lib/constants": "workspace:^",
+    "react": "^18.2.0"
   }
 }

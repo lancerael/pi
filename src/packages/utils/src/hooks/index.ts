@@ -1,5 +1,3 @@
 export * from './useButtonProps'
-export * from './useTimeout'
-export * from './useInterval'
 export * from './useHashComparison'
 export * from './useFramerate'
