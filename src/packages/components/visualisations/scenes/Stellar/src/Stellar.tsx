@@ -90,12 +90,13 @@ export const Stellar = ({
    *
    * @returns {void}
    */
-  const updateStyles = () =>
+  const updateStyles = () => {
     setStars(
       starTracker.current.map((star: Star) =>
         getStarStyle(star, starDimmer.current)
       )
     )
+  }
 
   /**
    * Spawns new stars in the star tracker based on the current scroll position and movement.
@@ -148,7 +149,6 @@ export const Stellar = ({
       }
     )
     if (!travelInfo.current.isTravelling) spawnStars()
-    updateDimensions()
     scrollCallback?.(scrollTop)
     updateStyles()
   }, [])
@@ -193,7 +193,7 @@ export const Stellar = ({
     events: ['scroll'],
     doInit: false,
     target: contentRef.current,
-    timeout: 100,
+    timeout: 45,
   })
 
   /**
@@ -231,7 +231,7 @@ export const Stellar = ({
           .filter(({ age, coords }) => filterStars(age, coords, dimensions))
       }
       updateStyles()
-    }, 100)
+    }, 50)
     travelInfo.current = { isTravelling, travelSpeed }
     return () => clearInterval(keyframe)
   }, [isTravelling, travelSpeed])
