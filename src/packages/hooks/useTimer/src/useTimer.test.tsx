@@ -15,7 +15,7 @@ describe('useTimer hook', () => {
 
   test('initializes the hook with default wait time', () => {
     const callback = vi.fn()
-    renderHook(() => useTimer(callback, 'Timeout'))
+    renderHook(() => useTimer(callback))
 
     vi.advanceTimersByTime(1000) // Default wait time
     expect(callback).toHaveBeenCalled()
@@ -24,7 +24,7 @@ describe('useTimer hook', () => {
   describe('Timeout functionality', () => {
     test('executes callback after specified timeout', () => {
       const callback = vi.fn()
-      renderHook(() => useTimer(callback, 'Timeout', 2000))
+      renderHook(() => useTimer(callback, { waitTime: 2000 }))
 
       vi.advanceTimersByTime(2000)
       expect(callback).toHaveBeenCalled()
@@ -34,7 +34,7 @@ describe('useTimer hook', () => {
   describe('Interval functionality', () => {
     test('executes callback at each interval', () => {
       const callback = vi.fn()
-      renderHook(() => useTimer(callback, 'Interval', 1000))
+      renderHook(() => useTimer(callback, { type: 'Interval', waitTime: 1000 }))
 
       vi.advanceTimersByTime(3000) // Should trigger 3 times
       expect(callback).toHaveBeenCalledTimes(3)
@@ -44,7 +44,7 @@ describe('useTimer hook', () => {
   test('updates the timer when wait time changes', () => {
     const callback = vi.fn()
     const { rerender } = renderHook(
-      ({ waitTime }) => useTimer(callback, 'Timeout', waitTime),
+      ({ waitTime }) => useTimer(callback, { type: 'Timeout', waitTime }),
       { initialProps: { waitTime: 1000 } }
     )
 
@@ -59,7 +59,7 @@ describe('useTimer hook', () => {
 
   test('clears the timer on unmount', () => {
     const callback = vi.fn()
-    const { unmount } = renderHook(() => useTimer(callback, 'Timeout'))
+    const { unmount } = renderHook(() => useTimer(callback))
 
     unmount()
     vi.advanceTimersByTime(1000)
