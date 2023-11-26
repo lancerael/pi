@@ -92,7 +92,7 @@ export const useTouch = <T = HTMLElement>({
    */
   const stop = useCallback(
     (e: PointerEvent) => {
-      if (trackers.current.isPressed) stopCallback?.()
+      stopCallback?.()
       const { x, y } = trackers.current.oldPanChange
       if (Math.abs(x) + Math.abs(y) > 10) {
         const values = Object.values(controls.panLevel)
