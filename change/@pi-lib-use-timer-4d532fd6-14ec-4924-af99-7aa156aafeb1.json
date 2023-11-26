@@ -1,0 +1,7 @@
+{
+  "type": "major",
+  "comment": "Added useTimer hook",
+  "packageName": "@pi-lib/use-timer",
+  "email": "lancerael@googlemail.com",
+  "dependentChangeType": "patch"
+}

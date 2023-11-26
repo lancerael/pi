@@ -1,20 +1,21 @@
 {
-  "name": "@pi-lib/use-throttled-events",
-  "version": "1.0.0",
-  "description": "Hook used to add throttled events to a React component",
+  "name": "@pi-lib/use-timer",
+  "version": "0.0.0",
+  "description": "Hook used to add setTimeout or setInterval to a React component",
   "keywords": [
     "react",
     "hooks",
     "pi",
-    "throttle",
-    "events",
-    "utils"
+    "utils",
+    "timer",
+    "timeout",
+    "interval"
   ],
-  "homepage": "https://pi.lance-taylor.com/?path=/docs/utils-hooks-usethrottledevents--docs",
+  "homepage": "https://pi.lance-taylor.com/?path=/docs/utils-hooks-usetimer--docs",
   "repository": {
     "type": "git",
     "url": "https://github.com/lancerael/pi.git",
-    "directory": "src/packages/hooks/usethrottledEvents"
+    "directory": "src/packages/hooks/useTimer"
   },
   "license": "ISC",
   "author": "Lance Taylor",
@@ -35,7 +36,7 @@
     "vitest": "^0.34.6"
   },
   "peerDependencies": {
-    "@pi-lib/utils": "workspace:^",
+    "@pi-lib/constants": "workspace:^",
     "react": "^18.2.0"
   }
 }

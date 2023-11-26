@@ -3,6 +3,7 @@ import Theia from 'd-theia'
 import Chart from 'd-theia/src/components/Chart'
 import { StyledAxisChart } from './AxisChart.style'
 import { AxisChartProps } from './AxisChart.types'
+import { useTimer } from '@pi-lib/use-timer'
 
 /**
  * A React component used to display a bar ot line chart
@@ -35,7 +36,10 @@ export const AxisChart = ({
   }, [chartData, chartConfig])
 
   // Keep chart in proportion in case of font resize
-  setInterval(() => dtChart.current?.onResize(), 10000)
+  useTimer(() => dtChart.current?.onResize(), {
+    type: 'Interval',
+    waitTime: 5000,
+  })
 
   return <StyledAxisChart id={chartId} ref={container} />
 }

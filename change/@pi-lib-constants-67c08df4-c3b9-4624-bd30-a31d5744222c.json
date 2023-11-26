@@ -1,0 +1,7 @@
+{
+  "type": "patch",
+  "comment": "Added global const for useTimer",
+  "packageName": "@pi-lib/constants",
+  "email": "lancerael@googlemail.com",
+  "dependentChangeType": "patch"
+}

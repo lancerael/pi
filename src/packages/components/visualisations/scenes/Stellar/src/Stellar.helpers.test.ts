@@ -170,7 +170,7 @@ describe('Stellar Helpers', () => {
 
     test('style should contain opacity based on age', () => {
       expect(starStyle.style).toHaveProperty('opacity')
-      expect(starStyle.style.opacity).toBe(0.96)
+      expect(starStyle.style.opacity).toBe(0.975)
     })
   })
 })

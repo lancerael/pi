@@ -15,6 +15,7 @@ export const ModalScreen = ({
   useEffect(() => {
     setTimeout(() => setIsVisible(isActive), 200)
   }, [isActive])
+
   return (
     <StyledModalScreen {...getTransientProps({ isActive, isVisible })}>
       {children}

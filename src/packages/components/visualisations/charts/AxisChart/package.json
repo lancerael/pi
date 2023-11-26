@@ -38,6 +38,7 @@
   },
   "peerDependencies": {
     "@pi-lib/styles": "workspace:^",
+    "@pi-lib/use-timer": "workspace:^",
     "@pi-lib/utils": "workspace:^",
     "d-theia": "^3.6.0",
     "react": "^18.2.0",
