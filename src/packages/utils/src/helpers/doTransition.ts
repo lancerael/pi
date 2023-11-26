@@ -14,6 +14,10 @@ export interface TransitionProps {
    */
   callback: (newValue: number[]) => void
   /**
+   * The method to call when the transition is complete
+   */
+  endCallback?: () => void
+  /**
    * The speed to transition (number of increments)
    */
   speed?: number
@@ -35,6 +39,7 @@ export const doTransition = ({
   values,
   targets,
   callback,
+  endCallback,
   speed = 10,
   interval = 15,
   intervalId = 'default',
@@ -59,6 +64,7 @@ export const doTransition = ({
         values: newValues,
         targets,
         callback,
+        endCallback,
         speed,
         interval,
         intervalId,
@@ -66,6 +72,7 @@ export const doTransition = ({
     }, interval)
   } else {
     callback(targets)
+    endCallback?.()
   }
 
   return clear
