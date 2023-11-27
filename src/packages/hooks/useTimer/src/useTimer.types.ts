@@ -9,8 +9,4 @@ export interface TimerOpts {
    * How long to wait between callbacks
    */
   waitTime?: number
-  /**
-   * Any dependencies that will trigger a reset of the timer
-   */
-  deps?: unknown[]
 }

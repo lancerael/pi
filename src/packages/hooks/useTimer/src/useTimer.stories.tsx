@@ -1,9 +1,9 @@
 // useTimer.stories.jsx
 import React, { useCallback, useState } from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
-import { useTimer } from './'
+import { TimerOpts, useTimer } from './'
 
-const render = ({ type, waitTime }) => {
+const render = ({ type, waitTime }: TimerOpts) => {
   const [count, setCount] = useState(0)
 
   const updateTimer = useCallback(
@@ -12,7 +12,7 @@ const render = ({ type, waitTime }) => {
   )
 
   // Use the timer hook to increment the count
-  useTimer(updateTimer, type, waitTime)
+  useTimer(updateTimer, { type, waitTime })
 
   return (
     <div
