@@ -65,7 +65,7 @@ export default function Home() {
 
   const techList = Object.entries(ICONS)
     .map(([title, href], i) => {
-      const src = `https://d3bjzq1zo2el1w.cloudfront.net/${title
+      const src = `${process.env.NEXT_PUBLIC_CLOUDFRONT_URL}${title
         .split(' ')
         .join('-')
         .toLowerCase()}.svg`
