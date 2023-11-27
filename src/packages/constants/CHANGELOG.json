@@ -2,6 +2,21 @@
   "name": "@pi-lib/constants",
   "entries": [
     {
+      "date": "Mon, 27 Nov 2023 00:41:59 GMT",
+      "tag": "@pi-lib/constants_v2.1.2",
+      "version": "2.1.2",
+      "comments": {
+        "patch": [
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/constants",
+            "commit": "729962828a851173990e9de46c3dcdf79360115c",
+            "comment": "Performance and style tweaks"
+          }
+        ]
+      }
+    },
+    {
       "date": "Sun, 26 Nov 2023 23:39:52 GMT",
       "tag": "@pi-lib/constants_v2.1.1",
       "version": "2.1.1",
