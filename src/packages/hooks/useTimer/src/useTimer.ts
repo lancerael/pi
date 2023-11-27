@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { DependencyList, useEffect } from 'react'
 import { GLOBAL_OBJ } from '@pi-lib/constants'
 import { TimerOpts } from './useTimer.types'
 
@@ -8,14 +8,15 @@ import { TimerOpts } from './useTimer.types'
  *
  * @param {() => void} callback - The callback function to be executed after the delay.
  * @param {TimerOpts} type - The options to be passed to the hook
+ * 
  */
 export const useTimer = (
   callback: () => void,
   {
     type = 'Timeout',
-    waitTime = 1000,
-    deps = [callback, type, waitTime],
-  }: TimerOpts = {}
+    waitTime = 1000
+  }: TimerOpts = {},
+  deps: DependencyList = [callback, type, waitTime],
 ) => {
   if (!['Timeout', 'Interval'].includes(type)) {
     throw new Error('Invalid timer type. Use Interval or Timeout.')
