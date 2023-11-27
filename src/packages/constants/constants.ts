@@ -8,7 +8,8 @@ export const STATUS_MAP = {
 /**
  * Window, or global, or self
  */
-export const GLOBAL_OBJ = window ?? global ?? self
+export const GLOBAL_OBJ =
+  typeof window !== 'undefined' ? window : global ?? self
 
 export const ICONS: { [key: string]: string } = {
   'AWS AMPLIFY': 'https://aws.amazon.com/amplify',

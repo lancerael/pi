@@ -118,7 +118,7 @@ export default function Home() {
             </ShimmerInner>
           </ShimmerOuter>
           <SkillsContainer
-            dimmer={(travelTracker.dimmer ?? 0) / 2}
+            $dimmer={(travelTracker.dimmer ?? 0) / 2}
             className="pi-page-grid-full"
           >
             <Grid>

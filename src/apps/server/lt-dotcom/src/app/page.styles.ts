@@ -24,8 +24,8 @@ export const ShimmerInner = styled.div`
   z-index: 0;
 `
 
-export const SkillsContainer = styled.div<{ dimmer?: number }>(
-  ({ dimmer = 0.05 }) => css`
+export const SkillsContainer = styled.div<{ $dimmer?: number }>(
+  ({ $dimmer = 0.05 }) => css`
     padding: 3rem 1rem;
     --mask: linear-gradient(
       to bottom,
@@ -33,7 +33,7 @@ export const SkillsContainer = styled.div<{ dimmer?: number }>(
       rgba(0, 0, 0, 0.5) 7%,
       rgba(0, 0, 0, 1) 10%
     );
-    background: rgba(0, 0, 0, ${dimmer});
+    background: rgba(0, 0, 0, ${$dimmer});
     mask-image: var(--mask);
     -webkit-mask-image: var(--mask);
   `

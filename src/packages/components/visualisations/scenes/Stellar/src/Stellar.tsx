@@ -225,7 +225,7 @@ export const Stellar = ({
       }
       if (isTravelling) {
         const { dimensions, target } = stellarCoords.current
-        spawnStars()
+        if (!randomNumber(0, 1)) spawnStars()
         starTracker.current = starTracker.current
           .map((star: Star) => moveStar(star, target, travelSpeed))
           .filter(({ age, coords }) => filterStars(age, coords, dimensions))
