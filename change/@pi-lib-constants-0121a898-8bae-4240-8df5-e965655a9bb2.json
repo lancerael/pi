@@ -1,0 +1,7 @@
+{
+  "type": "patch",
+  "comment": "Performance and style tweaks",
+  "packageName": "@pi-lib/constants",
+  "email": "lancerael@googlemail.com",
+  "dependentChangeType": "patch"
+}
