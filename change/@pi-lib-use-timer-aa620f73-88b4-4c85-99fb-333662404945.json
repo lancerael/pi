@@ -1,0 +1,7 @@
+{
+  "type": "major",
+  "comment": "Moved deps argument outside of opts",
+  "packageName": "@pi-lib/use-timer",
+  "email": "lancerael@hotmail.com",
+  "dependentChangeType": "patch"
+}
