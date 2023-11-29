@@ -20,7 +20,8 @@ const MAX_SPEED = 4
 const MULTIPLIER = 2
 
 export const PageHeader = ({
-  uiTracker,
+  fullWidth,
+  headerState,
   travelTracker: { travelSpeed = 1, isTravelling },
   setTravelTracker,
   isComplete,
@@ -28,7 +29,9 @@ export const PageHeader = ({
   const canReduce = !!isTravelling && travelSpeed > MIN_SPEED
   const canIncrease = !!isTravelling && travelSpeed < MAX_SPEED
   return (
-    <StyledHeader {...getTransientProps({ ...{ ...uiTracker, isComplete } })}>
+    <StyledHeader
+      {...getTransientProps({ fullWidth, headerState, isComplete })}
+    >
       <PageGrid>
         <StyledHeaderInner>
           <StyledHeaderSection title="Lance Taylor">

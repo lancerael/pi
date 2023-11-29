@@ -27,8 +27,7 @@ describe('useThrottledEvents', () => {
   it('re-binds event listeners when dependencies change', () => {
     const callback = vi.fn()
     const { rerender } = renderHook(
-      ({ value }) =>
-        useThrottledEvents(callback, { deps: [value], doInit: false }),
+      ({ value }) => useThrottledEvents(callback, { doInit: false }, [value]),
       { initialProps: { value: 0 } }
     )
     act(() => {

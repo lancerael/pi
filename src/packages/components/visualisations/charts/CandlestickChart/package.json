@@ -42,6 +42,7 @@
   },
   "peerDependencies": {
     "@pi-lib/button": "workspace:^",
+    "@pi-lib/do-transition": "workspace:^",
     "@pi-lib/loader": "workspace:^",
     "@pi-lib/select": "workspace:^",
     "@pi-lib/styles": "workspace:^",

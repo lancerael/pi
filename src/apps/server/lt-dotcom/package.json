@@ -25,6 +25,7 @@
     "next": "14.0.1",
     "react": "^18",
     "react-dom": "^18",
+    "signals-react-safe": "^1.1.2",
     "styled-components": "^6.1.0"
   },
   "devDependencies": {

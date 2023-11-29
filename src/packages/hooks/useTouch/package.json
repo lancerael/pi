@@ -33,6 +33,7 @@
     "vitest": "^0.34.6"
   },
   "peerDependencies": {
+    "@pi-lib/do-transition": "workspace:^",
     "@pi-lib/utils": "workspace:^",
     "react": "^18.2.0",
     "react-aria": "^3.26.0"

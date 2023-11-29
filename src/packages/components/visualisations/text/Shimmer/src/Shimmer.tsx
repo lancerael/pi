@@ -1,6 +1,7 @@
-import { useEffect, useState } from 'react'
+import { useCallback, useState } from 'react'
 import { StyledLine, StyledShimmer } from './Shimmer.style'
 import { ShimmerProps } from './Shimmer.types'
+import { useTimer } from '@pi-lib/use-timer'
 
 /**
  * Shimmer component to create a shimmering effect over a series of lines.
@@ -21,7 +22,7 @@ export const Shimmer = ({
 }: ShimmerProps) => {
   const [visibleLine, setVisibleLine] = useState(-1)
 
-  const progressLines = () => {
+  const goToNextLine = useCallback(() => {
     setVisibleLine((currentLine) => {
       const nextLine = currentLine + 1
       if (behaviour === 'loop' || nextLine < lines.length)
@@ -30,23 +31,16 @@ export const Shimmer = ({
       if (behaviour === 'fade') return nextLine
       return currentLine
     })
-  }
+  }, [])
 
-  useEffect(() => {
-    let linesPause: NodeJS.Timeout
-    let firstLineDelay: NodeJS.Timeout
-    const initDelay = setTimeout(() => {
-      progressLines()
-      firstLineDelay = setTimeout(() => {
-        linesPause = setInterval(progressLines, pause)
-      }, holdFirst)
-    }, delay)
-    return () => {
-      clearTimeout(initDelay)
-      clearTimeout(firstLineDelay)
-      clearInterval(linesPause)
-    }
-  }, [lines, delay, pause, behaviour])
+  useTimer(
+    goToNextLine,
+    {
+      type: visibleLine === -1 ? 'Timeout' : 'Interval',
+      waitTime: [delay, holdFirst][visibleLine + 1] ?? pause,
+    },
+    [delay, pause, holdFirst, visibleLine]
+  )
 
   return (
     <StyledShimmer>

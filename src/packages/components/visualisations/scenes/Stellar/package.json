@@ -32,6 +32,7 @@
     "vitest": "^0.34.6"
   },
   "peerDependencies": {
+    "@pi-lib/do-transition": "workspace:^",
     "@pi-lib/styles": "workspace:^",
     "@pi-lib/use-throttled-events": "workspace:^",
     "@pi-lib/utils": "workspace:^",

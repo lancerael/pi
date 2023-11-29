@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
-import { doTransition, useFramerate } from '@pi-lib/utils'
+import { useFramerate } from '@pi-lib/utils'
 import { StyledContent, StyledStar, StyledStellar } from './Stellar.style'
 import {
   Coords,
@@ -18,6 +18,7 @@ import {
 } from './Stellar.helpers'
 import { FPS_CUTOFF, MAX_STARS } from './Stellar.constants'
 import { useThrottledEvents } from '@pi-lib/use-throttled-events'
+import doTransition from '@pi-lib/do-transition'
 
 /**
  * A spacefaring scene that takes you through the stars.
@@ -34,7 +35,7 @@ export const Stellar = ({
   isTravelling = true,
   showDebug = false,
   scrollCallback,
-  dimmer = 0,
+  isAutoDimmed,
   children,
 }: StellarProps) => {
   const [stars, setStars] = useState<StarStyle[]>([])
@@ -60,7 +61,7 @@ export const Stellar = ({
    * @param {number} speed - The transition speed.
    * @returns {void}
    */
-  const setTarget = (x: number, y: number, speed: number) => {
+  const setTarget = (x: number, y: number, increments: number) => {
     targetTransition.current?.()
     targetTransition.current = doTransition({
       values: stellarCoords.current.target,
@@ -68,7 +69,7 @@ export const Stellar = ({
       callback: (newTarget) =>
         (stellarCoords.current.target = newTarget as Coords),
       intervalId: `stellarTarget`,
-      speed,
+      increments,
     })
   }
 
@@ -78,12 +79,15 @@ export const Stellar = ({
    *
    * @returns {void}
    */
-  const updateDimensions = useCallback(() => {
-    if (!stellarRef.current) return
-    const { clientWidth, clientHeight } = stellarRef.current
-    stellarCoords.current.dimensions = [clientWidth, clientHeight]
-    setTarget(clientWidth / 2, clientHeight / 2, 50)
-  }, [])
+  const updateDimensions = useCallback(
+    (hasTargetTansition: boolean = false) => {
+      if (!stellarRef.current) return
+      const { clientWidth, clientHeight } = stellarRef.current
+      stellarCoords.current.dimensions = [clientWidth, clientHeight]
+      setTarget(clientWidth / 2, clientHeight / 2, hasTargetTansition ? 25 : 5)
+    },
+    []
+  )
 
   /**
    * Updates the styles of the stars based on their current positions and properties.
@@ -130,27 +134,13 @@ export const Stellar = ({
   )
 
   /**
-   * Handles the scroll event, adjusting star positions and triggering star spawning.
+   * Handles the scroll event, spawning stars if necessary and firing the callback
    *
    * @returns {void}
    */
   const handleScroll = useCallback(() => {
-    if (!contentRef.current) return
-    const { scrollTop } = contentRef.current
-    const offset = (scrollTop - lastScroll.current) / 10
-    lastScroll.current = scrollTop
-    starTracker.current = starTracker.current.map(
-      ({ coords: [left, top], age, ...star }: Star) => {
-        return {
-          coords: [left, top - offset * age] as Coords,
-          age,
-          ...star,
-        }
-      }
-    )
     if (!travelInfo.current.isTravelling) spawnStars()
-    scrollCallback?.(scrollTop)
-    updateStyles()
+    scrollCallback?.(contentRef.current?.scrollTop ?? 0)
   }, [])
 
   /**
@@ -170,12 +160,12 @@ export const Stellar = ({
           ? (e as TouchEvent).touches?.[0]
           : (e as MouseEvent)
       const { clientX, clientY } = clientSource
-      setTarget(clientX, clientY - 5, 15)
+      setTarget(clientX, clientY - 5, 5)
       clearTimeout(moveTimeout.current)
       if (!travelInfo.current.isTravelling) return
       spawnStars(isBurst ? randomNumber(3, 6) : 1, [clientX, clientY - 5])
       moveTimeout.current = setTimeout(() => {
-        updateDimensions()
+        updateDimensions(true)
       }, 1000)
     },
     [isTravelling]
@@ -193,20 +183,28 @@ export const Stellar = ({
     events: ['scroll'],
     doInit: false,
     target: contentRef.current,
-    timeout: 45,
+    timeout: 500,
   })
 
   /**
    * Attach the content pointer move handler
    */
-  useThrottledEvents((e: UserEvent) => handlePointer(e, false), {
+  const handleMove = useCallback(
+    (e: UserEvent) => handlePointer(e, false),
+    [handlePointer]
+  )
+  useThrottledEvents(handleMove, {
     events: ['mousemove', 'touchmove'],
   })
 
   /**
-   * Attach the content pointer down handler
+   * Attach the content pointer up handler
    */
-  useThrottledEvents((e: UserEvent) => handlePointer(e, true), {
+  const handleClick = useCallback(
+    (e: UserEvent) => handlePointer(e, true),
+    [handlePointer]
+  )
+  useThrottledEvents(handleClick, {
     events: ['mouseup', 'touchup'],
   })
 
@@ -217,18 +215,35 @@ export const Stellar = ({
   useEffect(() => {
     if (!stellarRef.current) return
     updateDimensions()
+    // The keyframe update the position of all the stars
     const keyframe = setInterval(() => {
+      // Initialise the stars
       if (!starTracker.current.length) {
         spawnStars(starCount)
         updateStyles()
         return
       }
-      if (isTravelling) {
-        const { dimensions, target } = stellarCoords.current
-        if (!randomNumber(0, 1)) spawnStars()
-        starTracker.current = starTracker.current
-          .map((star: Star) => moveStar(star, target, travelSpeed))
-          .filter(({ age, coords }) => filterStars(age, coords, dimensions))
+      if (!contentRef.current || !stellarRef.current) return
+      // Get scroll offset for star parralax
+      const { dimensions, target } = stellarCoords.current
+      const { scrollTop } = contentRef.current
+      const offset = (scrollTop - lastScroll.current) / 10
+      lastScroll.current = scrollTop
+      // Spawn star with a 50% chance
+      if (isTravelling && !randomNumber(0, 1)) spawnStars()
+      // Update the star tracker with new positions & filter old stars
+      starTracker.current = starTracker.current
+        .map((star: Star) =>
+          moveStar(star, target, isTravelling ? travelSpeed : 0, offset)
+        )
+        .filter(({ age, coords }) => filterStars(age, coords, dimensions))
+      // Update the dimmer values for stars if auto dimmed
+      if (isAutoDimmed) {
+        const { offsetHeight } = stellarRef.current
+        starDimmer.current =
+          scrollTop > offsetHeight
+            ? 0.33
+            : ((100 / offsetHeight) * scrollTop) / 300
       }
       updateStyles()
     }, 50)
@@ -236,25 +251,20 @@ export const Stellar = ({
     return () => clearInterval(keyframe)
   }, [isTravelling, travelSpeed])
 
-  /**
-   * Maintain the dimmer value so we dont have to recreate the interval
-   */
-  useEffect(() => {
-    starDimmer.current = dimmer
-  }, [dimmer])
-
   return (
     <StyledStellar ref={stellarRef}>
       {showDebug && (
         <div>
           Framerate: {framerate.current.fps}. Total stars: {stars.length}.
-          Dimmer: {dimmer}
+          Dimmer: {starDimmer.current}
         </div>
       )}
       {stars.map(({ id, style }) => (
         <StyledStar key={id} {...{ style }} />
       ))}
-      <StyledContent ref={contentRef}>{children}</StyledContent>
+      <StyledContent ref={contentRef} data-selector="stellar-content">
+        {children}
+      </StyledContent>
     </StyledStellar>
   )
 }

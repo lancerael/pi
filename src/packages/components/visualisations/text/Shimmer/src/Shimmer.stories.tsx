@@ -5,7 +5,8 @@ import { ShimmerProps } from './Shimmer.types'
 const render = (props: ShimmerProps) => (
   <div
     style={{
-      backgroundImage: 'linear-gradient(to right, #0f0c29, #302b63, #24243e)',
+      backgroundImage:
+        'linear-gradient(to right, var(--bg), #var(--special), var(--bg))',
       padding: '25px',
       minHeight: '2rem',
     }}
@@ -37,6 +38,10 @@ export const Default: StoryObj<typeof Shimmer> = {
       'Like this...',
       ' ',
     ],
+    delay: 1000,
+    pause: 2500,
+    holdFirst: 5000,
+    fadeTime: 500,
   },
   render,
 }

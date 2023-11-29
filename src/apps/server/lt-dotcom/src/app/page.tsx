@@ -1,6 +1,14 @@
 'use client'
-import { ReactElement, useEffect, useRef, useState } from 'react'
-import Stellar, { TravelTrackerProps } from '@pi-lib/stellar'
+import {
+  ReactElement,
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from 'react'
+import { signal, useSignalValue } from 'signals-react-safe'
+import Stellar from '@pi-lib/stellar'
 import Grid from '@pi-lib/grid'
 import Shimmer from '@pi-lib/shimmer'
 import PageGrid from '@pi-lib/page-grid'
@@ -21,39 +29,57 @@ import {
   StyledCardWrapper,
   StyledFullGradient,
 } from './page.styles'
-import { UiTrackerProps } from '@/components/PageHeader/PageHeader.types'
+import {
+  HeaderState,
+  TravelTrackerProps,
+} from '@/components/PageHeader/PageHeader.types'
 import { PageHeader } from '@/components/PageHeader/PageHeader'
+
+const uiSizes = signal({
+  fullWidth: 0,
+  fullHeight: 0,
+})
 
 export default function Home() {
   const [isComplete, setIsComplete] = useState(false)
-  const [uiTracker, setUiTracker] = useState<UiTrackerProps>({
-    scrollTop: 0,
-    fullWidth: 0,
-    fullHeight: 0,
-  })
   const [travelTracker, setTravelTracker] = useState<TravelTrackerProps>({
     travelSpeed: 1,
     isTravelling: null,
-    dimmer: 0,
   })
+  const [headerState, setHeaderState] = useState<HeaderState>('hidden')
   const wrapperRef = useRef<HTMLDivElement>(null)
   const widthRef = useRef<HTMLDivElement>(null)
+  const uiSizeValues = useSignalValue(uiSizes)
 
-  useThrottledEvents(() => {
-    setUiTracker(({ scrollTop }) => ({
-      scrollTop,
+  /**
+   * Track the page dimensions on init and resize
+   */
+  const updateDimensions = useCallback(() => {
+    uiSizes.value = {
       fullWidth: widthRef.current?.offsetWidth ?? 0,
       fullHeight: wrapperRef.current?.offsetHeight ?? 0,
-    }))
-  })
-
-  useEffect(() => {
-    if (IS_CLIENT) {
-      setTravelTracker({ travelSpeed: 1, isTravelling: !REDUCED_MOTION })
     }
   }, [])
+  useThrottledEvents(updateDimensions)
 
-  const getShimmerTimes = () => {
+  /**
+   * Performant header visibilty toggle
+   **/
+  const updateHeader = useCallback(
+    (scrollTop: number) => {
+      let newState: HeaderState = 'dark'
+      if (scrollTop <= 24) newState = 'hidden'
+      else if (scrollTop > 24 && scrollTop < uiSizes.value.fullHeight)
+        newState = 'visible'
+      setHeaderState(newState)
+    },
+    [uiSizes.value.fullHeight]
+  )
+
+  /**
+   * Get the shimmer times based on user preferences
+   */
+  const getShimmerTimes = useCallback(() => {
     const { travelSpeed = 1, isTravelling } = travelTracker
     return {
       delay: 2000,
@@ -61,26 +87,43 @@ export default function Home() {
       fadeTime: isTravelling ? 800 / travelSpeed : 0,
       pause: isTravelling ? 2500 / travelSpeed : 100000,
     }
-  }
+  }, [travelTracker])
 
-  const techList = Object.entries(ICONS)
-    .map(([title, href], i) => {
-      const src = `https://d3bjzq1zo2el1w.cloudfront.net/${title
-        .split(' ')
-        .join('-')
-        .toLowerCase()}.svg`
-      return (
-        !!title && (
-          <IconButton
-            key={title}
-            iconProps={{ height: '2rem' }}
-            isExternal
-            {...{ src, href, title }}
-          />
-        )
-      )
-    })
-    .filter(Boolean) as ReactElement[]
+  /**
+   * Get an array of icons for the tech list
+   */
+  const techList = useMemo(
+    () =>
+      Object.entries(ICONS)
+        .map(([title, href], i) => {
+          const src = `${process.env.NEXT_PUBLIC_CLOUDFRONT_URL}${title
+            .split(' ')
+            .join('-')
+            .toLowerCase()}.svg`
+          return (
+            !!title && (
+              <IconButton
+                key={title}
+                iconProps={{ height: '2rem' }}
+                isExternal
+                {...{ src, href, title }}
+              />
+            )
+          )
+        })
+        .filter(Boolean) as ReactElement[],
+    []
+  )
+
+  /**
+   * Initialise the page
+   */
+  useEffect(() => {
+    if (IS_CLIENT) {
+      setTravelTracker({ travelSpeed: 1, isTravelling: !REDUCED_MOTION })
+      updateDimensions()
+    }
+  }, [])
 
   return (
     <div
@@ -91,19 +134,16 @@ export default function Home() {
     >
       <Stellar
         {...travelTracker}
-        scrollCallback={(scrollTop) =>
-          setUiTracker(({ fullHeight, fullWidth }) => {
-            const dimmer =
-              scrollTop > fullHeight
-                ? 0.33
-                : ((100 / fullHeight) * scrollTop) / 300
-            setTravelTracker((travelTracker) => ({ ...travelTracker, dimmer }))
-            return { fullHeight, fullWidth, scrollTop }
-          })
-        }
+        scrollCallback={(scrollTop) => updateHeader(scrollTop)}
       >
         <PageHeader
-          {...{ uiTracker, travelTracker, setTravelTracker, isComplete }}
+          fullWidth={uiSizeValues.fullWidth}
+          {...{
+            headerState,
+            travelTracker,
+            setTravelTracker,
+            isComplete,
+          }}
         />
         <PageGrid>
           <ShimmerOuter className="is-title">
@@ -117,10 +157,7 @@ export default function Home() {
               />
             </ShimmerInner>
           </ShimmerOuter>
-          <SkillsContainer
-            $dimmer={(travelTracker.dimmer ?? 0) / 2}
-            className="pi-page-grid-full"
-          >
+          <SkillsContainer className="pi-page-grid-full">
             <Grid>
               {skillset.map(({ title, subTitle, icon, summary, bullets }) => (
                 <StyledCardWrapper key={title}>

@@ -402,6 +402,9 @@ importers:
       react-dom:
         specifier: ^18
         version: 18.2.0(react@18.2.0)
+      signals-react-safe:
+        specifier: ^1.1.2
+        version: 1.1.2(react@18.2.0)
       styled-components:
         specifier: ^6.1.0
         version: 6.1.0(react-dom@18.2.0)(react@18.2.0)
@@ -1349,6 +1352,9 @@ importers:
       '@pi-lib/styles':
         specifier: workspace:^
         version: link:../../../../styles
+      '@pi-lib/use-throttled-events':
+        specifier: workspace:^
+        version: link:../../../../hooks/useThrottledEvents
       '@pi-lib/use-touch':
         specifier: workspace:^
         version: link:../../../../hooks/useTouch
@@ -1640,6 +1646,9 @@ importers:
       '@pi-lib/button':
         specifier: workspace:^
         version: link:../../../atoms/interactions/Button
+      '@pi-lib/do-transition':
+        specifier: workspace:^
+        version: link:../../../../helpers/doTransition
       '@pi-lib/loader':
         specifier: workspace:^
         version: link:../../../atoms/ui/Loader
@@ -1765,6 +1774,9 @@ importers:
 
   src/packages/components/visualisations/scenes/Stellar:
     dependencies:
+      '@pi-lib/do-transition':
+        specifier: workspace:^
+        version: link:../../../../helpers/doTransition
       '@pi-lib/styles':
         specifier: workspace:^
         version: link:../../../../styles
@@ -1814,6 +1826,9 @@ importers:
       '@pi-lib/styles':
         specifier: workspace:^
         version: link:../../../../styles
+      '@pi-lib/use-timer':
+        specifier: workspace:^
+        version: link:../../../../hooks/useTimer
       react:
         specifier: ^18.2.0
         version: 18.2.0
@@ -1878,8 +1893,47 @@ importers:
 
   src/packages/constants: {}
 
+  src/packages/helpers/doTransition:
+    devDependencies:
+      '@pi-lib/config':
+        specifier: workspace:^
+        version: link:../../config
+      '@pi-lib/types':
+        specifier: workspace:^
+        version: link:../../types
+      '@testing-library/react':
+        specifier: ^13.3.0
+        version: 13.4.0(react-dom@18.2.0)(react@18.2.0)
+      '@vitejs/plugin-react':
+        specifier: ^4.1.0
+        version: 4.1.0(vite@4.4.10)
+      jest-axe:
+        specifier: ^8.0.0
+        version: 8.0.0
+      jsdom:
+        specifier: ^20.0.0
+        version: 20.0.3
+      react:
+        specifier: ^18.2.0
+        version: 18.2.0
+      rimraf:
+        specifier: ^3.0.2
+        version: 3.0.2
+      typescript:
+        specifier: ^5
+        version: 5.2.2
+      vite:
+        specifier: ^4.4.10
+        version: 4.4.10(@types/node@18.15.3)
+      vitest:
+        specifier: ^0.34.6
+        version: 0.34.6(jsdom@20.0.3)
+
   src/packages/hooks/useThrottledEvents:
     dependencies:
+      '@pi-lib/use-hash-comparison':
+        specifier: workspace:^
+        version: link:../usehashComparison
       '@pi-lib/utils':
         specifier: workspace:^
         version: link:../../utils
@@ -1948,6 +2002,9 @@ importers:
 
   src/packages/hooks/useTouch:
     dependencies:
+      '@pi-lib/do-transition':
+        specifier: workspace:^
+        version: link:../../helpers/doTransition
       '@pi-lib/utils':
         specifier: workspace:^
         version: link:../../utils
@@ -2001,6 +2058,46 @@ importers:
       '@vitejs/plugin-react':
         specifier: ^4.1.0
         version: 4.1.0(vite@4.4.10)
+      jsdom:
+        specifier: ^20.0.0
+        version: 20.0.3
+      rimraf:
+        specifier: ^3.0.2
+        version: 3.0.2
+      typescript:
+        specifier: ^5
+        version: 5.2.2
+      vite:
+        specifier: ^4.4.10
+        version: 4.4.10(@types/node@18.15.3)
+      vitest:
+        specifier: ^0.34.6
+        version: 0.34.6(jsdom@20.0.3)
+
+  src/packages/hooks/usehashComparison:
+    dependencies:
+      '@pi-lib/utils':
+        specifier: workspace:^
+        version: link:../../utils
+      react:
+        specifier: ^18.2.0
+        version: 18.2.0
+    devDependencies:
+      '@pi-lib/config':
+        specifier: workspace:^
+        version: link:../../config
+      '@pi-lib/types':
+        specifier: workspace:^
+        version: link:../../types
+      '@testing-library/react':
+        specifier: ^13.3.0
+        version: 13.4.0(react-dom@18.2.0)(react@18.2.0)
+      '@vitejs/plugin-react':
+        specifier: ^4.1.0
+        version: 4.1.0(vite@4.4.10)
+      jest-axe:
+        specifier: ^8.0.0
+        version: 8.0.0
       jsdom:
         specifier: ^20.0.0
         version: 20.0.3
@@ -5402,6 +5499,10 @@ packages:
       node-gyp-build: 4.6.0
     dev: true
 
+  /@preact/signals-core@1.5.0:
+    resolution: {integrity: sha512-U2diO1Z4i1n2IoFgMYmRdHWGObNrcuTRxyNEn7deSq2cru0vj0583HYQZHsAqcs7FE+hQyX3mjIV7LAfHCvy8w==}
+    dev: false
+
   /@react-aria/breadcrumbs@3.5.3(react@18.2.0):
     resolution: {integrity: sha512-rmkApAflZm7Finn3vxLGv7MbsMaPo5Bn7/lf8GBztNfzmLWP/dAA5bgvi1sj1T6sWJOuFJT8u04ImUwBCLh8cQ==}
     peerDependencies:
@@ -8363,6 +8464,7 @@ packages:
 
   /abab@2.0.6:
     resolution: {integrity: sha512-j2afSsaIENvHZN2B8GOpF566vZ5WVk5opAiMTvWgaQT8DkbOqsTfvNAvHoRGU2zzP8cPoqys+xHTRDWW8L+/BA==}
+    deprecated: Use your platform's native atob() and btoa() methods instead
     dev: true
 
   /abbrev@1.1.1:
@@ -14385,6 +14487,15 @@ packages:
   /signal-exit@3.0.7:
     resolution: {integrity: sha512-wnD2ZE+l+SPC/uoS0vXeE9L1+0wuaMqKlfz9AMUo38JsyLSBWSFcHR1Rri62LZc12vLr1gb3jl7iwQhgwpAbGQ==}
     dev: true
+
+  /signals-react-safe@1.1.2(react@18.2.0):
+    resolution: {integrity: sha512-SjMrxubsFFGW3g+ZBGtGkiE8N6h0srWm1znFs3KVG73sZPfQ6Gn6sHi/xy7lZMaGuoMjrBBEndO6YZwRs85n2Q==}
+    peerDependencies:
+      react: '>=16.8'
+    dependencies:
+      '@preact/signals-core': 1.5.0
+      react: 18.2.0
+    dev: false
 
   /simple-update-notifier@1.1.0:
     resolution: {integrity: sha512-VpsrsJSUcJEseSbMHkrsrAVSdvVS5I96Qo1QAQ4FxQ9wXFcB+pjj7FB7/us9+GcgfW4ziHtYMc1J0PLczb55mg==}

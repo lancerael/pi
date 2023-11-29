@@ -1,6 +1,6 @@
 import { ChangeEvent, useCallback, useEffect } from 'react'
 import Button from '@pi-lib/button'
-import { doTransition } from '@pi-lib/utils'
+import doTransition from '@pi-lib/do-transition'
 import Select from '@pi-lib/select'
 import { StyledControls, StyledEmoji } from './Controls.style'
 import { ControlsProps } from './Controls.types'

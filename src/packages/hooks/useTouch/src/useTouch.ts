@@ -5,7 +5,8 @@ import {
   Trackers,
   UseTouchProps,
 } from './useTouch.types'
-import { clampValue, doTransition, throttle } from '@pi-lib/utils'
+import { clampValue, throttle } from '@pi-lib/utils'
+import doTransition from '@pi-lib/do-transition'
 import { PanLevel } from './hooks/useControls'
 
 /**
@@ -102,12 +103,13 @@ export const useTouch = <T = HTMLElement>({
         trackers.current.clearTransition = doTransition({
           values,
           targets,
-          callback: ([newX, newY]) =>
+          callback: ([newX, newY]) => {
             controls.setPanLevel(() => ({
               x: newX,
               y: newY,
-            })),
-          speed: 10,
+            }))
+          },
+          increments: 10,
           intervalId: `swipe`,
         })
       }

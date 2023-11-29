@@ -4,7 +4,7 @@
 
 Hook used to add touch controls to a React component
 
-**Peer Dependencies:** @pi-lib/utils, react, react-aria
+**Peer Dependencies:** @pi-lib/do-transition, @pi-lib/utils, react, react-aria
 
 <table>
   <tbody>

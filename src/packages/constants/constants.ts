@@ -22,7 +22,7 @@ export const ICONS: { [key: string]: string } = {
   'CYPRESS': 'https://www.cypress.io',
   'D3': 'https://d3js.org',
   'GITHUB ACTIONS': 'https://github.com/features/actions',
-  'GITHUB': 'https://www.github..com',
+  'GITHUB': 'https://www.github.com',
   'HTML 5': 'https://html.spec.whatwg.org/',
   'NODE': 'https://nodejs.org/',
   'NPM': 'https://www.npmjs.com/',
