@@ -1,0 +1,7 @@
+{
+  "type": "major",
+  "comment": "Added new doTransition helper standalone",
+  "packageName": "@pi-lib/do-transition",
+  "email": "lancerael@googlemail.com",
+  "dependentChangeType": "patch"
+}

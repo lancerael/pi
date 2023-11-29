@@ -1,0 +1,7 @@
+{
+  "type": "major",
+  "comment": "New hash comparison hook standalone",
+  "packageName": "@pi-lib/use-hash-comparison",
+  "email": "lancerael@googlemail.com",
+  "dependentChangeType": "patch"
+}

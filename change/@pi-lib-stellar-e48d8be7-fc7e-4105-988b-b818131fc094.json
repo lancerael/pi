@@ -1,0 +1,7 @@
+{
+  "type": "major",
+  "comment": "Improved performance and added auto dimmer",
+  "packageName": "@pi-lib/stellar",
+  "email": "lancerael@googlemail.com",
+  "dependentChangeType": "patch"
+}
