@@ -1,8 +1,8 @@
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
+import { StyledContainer } from './Interact.styles'
 import { spiralStyle } from './Interact.helpers'
 import { MAX_COUNT } from './Interact.constants'
-import { StyledContainer } from './Interact.styles'
 
 export const Interact = () => {
   const [tracker, setStracker] = useState({

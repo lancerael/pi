@@ -240,7 +240,7 @@ A card component with a title and subtitle.
 
 **@pi-lib/carousel**
 
-**Peer Dependencies:** @pi-lib/styles, @pi-lib/utils, react, styled-components
+**Peer Dependencies:** @pi-lib/styles, @pi-lib/use-touch, @pi-lib/utils, react, styled-components
 
 <table>
   <tbody>
@@ -380,24 +380,6 @@ Hook used to add setTimeout or setInterval to a React component
   </tbody>
 </table>
 
-### useTouch
-
-**@pi-lib/use-touch**
-
-Hook used to add touch controls to a React component
-
-**Peer Dependencies:** @pi-lib/utils, react, react-aria
-
-<table>
-  <tbody>
-    <tr>
-      <td><a href="https://pi.lance-taylor.com/?path=/docs/utils-hooks-usethrottledevents--docs" target="_blank">Docs</a></td>
-      <td><a href="https://www.npmjs.com/package/@pi-lib/use-touch?activeTab=readme" target="_blank">NPM</a></td>
-      <td><a href="https://github.com/lancerael/pi/tree/main/src/packages/hooks/useTouch" target="_blank">Github</a></td>
-    </tr>
-  </tbody>
-</table>
-
 ### useWindowClick
 
 **@pi-lib/use-window-click**
@@ -412,6 +394,24 @@ Hook used to add throttled escape (window) clicks to a React component
       <td><a href="https://pi.lance-taylor.com/?path=/docs/utils-hooks-usewindowclick--docs" target="_blank">Docs</a></td>
       <td><a href="https://www.npmjs.com/package/@pi-lib/use-window-click?activeTab=readme" target="_blank">NPM</a></td>
       <td><a href="https://github.com/lancerael/pi/tree/main/src/packages/hooks/useTouch" target="_blank">Github</a></td>
+    </tr>
+  </tbody>
+</table>
+
+### usehashComparison
+
+**@pi-lib/use-hash-comparison**
+
+Create a hash of any object - can be used to compare dependencies and ensure correct re-rendering.
+
+**Peer Dependencies:** @pi-lib/styles, @pi-lib/utils, react
+
+<table>
+  <tbody>
+    <tr>
+      <td><a href="https://pi.lance-taylor.com/?path=/docs/utils-hooks-usehashcomparison--docs" target="_blank">Docs</a></td>
+      <td><a href="https://www.npmjs.com/package/@pi-lib/use-hash-comparison?activeTab=readme" target="_blank">NPM</a></td>
+      <td><a href="https://github.com/lancerael/pi/tree/main/./src/packages/hooks/usehashComparison" target="_blank">Github</a></td>
     </tr>
   </tbody>
 </table>

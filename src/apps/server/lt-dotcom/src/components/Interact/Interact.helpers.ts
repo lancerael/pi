@@ -5,10 +5,10 @@ export const spiralStyle = (
   stepAngle = 0.2,
   stepRadius = 45
 ) => {
-  const angle = count * stepAngle
+  const angle = -Math.PI / 2 - count * -stepAngle
   const radius = stepRadius * Math.sqrt(count)
-  const left = radius * Math.cos(angle)
-  const top = radius * Math.sin(angle)
+  const left = radius * Math.sin(angle)
+  const top = radius * Math.cos(angle)
 
   return {
     opacity: !count ? 0 : 1 - count / 40,

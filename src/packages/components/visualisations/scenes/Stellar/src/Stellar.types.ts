@@ -26,9 +26,9 @@ export interface StellarProps extends PropsWithChildren {
    **/
   scrollCallback?: (scrollTop: number) => void
   /**
-   * Dimmer factor for the stars - so we can scroll over text
+   * Automatically dim the stars so we can scroll over text
    **/
-  dimmer?: number
+  isAutoDimmed?: boolean
 }
 
 /**
@@ -79,7 +79,7 @@ export interface Star extends StarPos {
   /**
    * Dimmer factor for the star
    **/
-  dimmer?: StellarProps['dimmer']
+  dimmer?: number
 }
 
 /**
@@ -91,11 +91,6 @@ export interface StarStyle extends Pick<Star, 'id'> {
    **/
   style: React.CSSProperties
 }
-
-export type TravelTrackerProps = Pick<
-  StellarProps,
-  'travelSpeed' | 'isTravelling' | 'dimmer'
->
 
 /**
  * Set the starting age for a star - for -1 the age is random

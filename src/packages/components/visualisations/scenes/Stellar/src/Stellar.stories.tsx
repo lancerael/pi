@@ -93,6 +93,7 @@ export const Default: StoryObj<typeof Stellar> = {
   args: {
     starCount: 10,
     isTravelling: true,
+    isAutoDimmed: true,
     showDebug: true,
   },
   render,

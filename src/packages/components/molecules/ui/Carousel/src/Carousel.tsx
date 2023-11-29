@@ -6,6 +6,8 @@ import {
 } from './Carousel.style'
 import { CarouselProps, CustomPanHandler } from './Carousel.types'
 import { useCallback, useEffect, useRef } from 'react'
+import { useThrottledEvents } from '@pi-lib/use-throttled-events'
+import { REM_IN_PIXELS } from '@pi-lib/styles'
 
 /**
  * Carousel
@@ -24,6 +26,7 @@ export const Carousel = ({
   const targetRef = useRef<HTMLUListElement>(null)
   const scrollIntervalRef = useRef<NodeJS.Timeout>()
   const scrollTimeoutRef = useRef<NodeJS.Timeout>()
+  const width = useRef(0)
   const isScrolling = useRef(true)
   const controls = useControls()
 
@@ -33,28 +36,7 @@ export const Carousel = ({
   const setPanLevel = useCallback(
     (update: (panLevel: PanLevel) => PanLevel) => {
       controls.setPanLevel(({ x, y }) => {
-        const width = (targetRef.current?.offsetWidth ?? 0) / 2
-        if (!width) return { x, y }
-        let newX = x
-        if (newX > 0) {
-          newX -= width
-        } else if (newX < -width) {
-          newX = 0
-        }
-        // When scrolling, disable scroll to reset loop
-        if (newX !== x && isScrolling.current) {
-          setTimeout(() => {
-            stopScroll()
-            requestAnimationFrame(() => {
-              controls.setPanLevel({ x: newX, y })
-              requestAnimationFrame(() => {
-                startScroll()
-              })
-            })
-          }, 230)
-        }
-        // Otherwise if dragging, just update the value
-        return update({ x: isScrolling.current ? x : newX, y })
+        return update({ x: getLoopedX(x), y })
       })
     },
     [isScroller, isDraggable, speed]
@@ -90,6 +72,21 @@ export const Carousel = ({
   }, [isScroller, isDraggable, speed])
 
   /**
+   * Get the correct looped version of the x scroll value
+   */
+  const getLoopedX = useCallback((x: number) => {
+    const iconsWidth = width.current / 2
+    if (!iconsWidth) return x
+    let newX = x
+    if (newX > REM_IN_PIXELS / 2) {
+      newX -= iconsWidth
+    } else if (newX < -iconsWidth) {
+      newX += iconsWidth + REM_IN_PIXELS / 2
+    }
+    return newX
+  }, [])
+
+  /**
    * Attach the touch handlers to the controls
    */
   useTouch<HTMLUListElement>({
@@ -103,17 +100,35 @@ export const Carousel = ({
   })
 
   /**
+   * Keep width up to date
+   */
+  useThrottledEvents(
+    () => (width.current = targetRef.current?.offsetWidth ?? 0),
+    {},
+    [targetRef.current]
+  )
+
+  /**
    * Init the scroller
    */
   useEffect(startScroll, [isScroller, isDraggable, speed])
+
+  /**
+   * Make sure there is no looping animation
+   */
+  const shouldTransition =
+    controls.panLevel.x < 0 && controls.panLevel.x > width.current / -2
 
   return (
     <StyledCarousel data-testid={dataTestid} {...props}>
       <StyledCarouselInner
         ref={targetRef}
         style={{
-          transition: isScrolling.current ? 'all 0.25s linear' : 'none',
-          transform: `translate(${controls.panLevel.x}px)`,
+          transition:
+            isScrolling.current && shouldTransition
+              ? 'all 0.25s linear'
+              : 'none',
+          transform: `translate(${getLoopedX(controls.panLevel.x)}px)`,
         }}
       >
         {[...itemList, ...itemList].map((item, i) => (

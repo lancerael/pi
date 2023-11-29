@@ -1,19 +1,28 @@
 import { BaseProps, TransientProps } from '@pi-lib/utils'
-import { TravelTrackerProps } from '@pi-lib/stellar'
+import { StellarProps } from '@pi-lib/stellar'
 import { Dispatch, PropsWithChildren, SetStateAction } from 'react'
 
 export interface UiTrackerProps extends BaseProps {
   fullWidth: number
   fullHeight: number
-  scrollTop: number
 }
 
+export type TravelTrackerProps = Pick<
+  StellarProps,
+  'travelSpeed' | 'isTravelling'
+>
+
 export interface PageHeaderProps {
-  uiTracker: UiTrackerProps
+  fullWidth: number
+  headerState: HeaderState
   travelTracker: TravelTrackerProps
   setTravelTracker: Dispatch<SetStateAction<TravelTrackerProps>>
   isComplete: boolean
 }
 
 export type StyledHeaderProps = PropsWithChildren &
-  TransientProps<UiTrackerProps & Pick<PageHeaderProps, 'isComplete'>>
+  TransientProps<
+    Pick<PageHeaderProps, 'fullWidth' | 'isComplete' | 'headerState'>
+  >
+
+export type HeaderState = 'hidden' | 'visible' | 'dark'

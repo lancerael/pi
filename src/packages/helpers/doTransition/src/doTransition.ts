@@ -1,35 +1,6 @@
-const timeouts: { [key: string]: NodeJS.Timeout } = {}
+import { TransitionProps } from './doTransition.types'
 
-export interface TransitionProps {
-  /**
-   * The starting values an array
-   */
-  values: number[]
-  /**
-   * The target values
-   */
-  targets: number[]
-  /**
-   * The method to call with each intermediate number
-   */
-  callback: (newValue: number[]) => void
-  /**
-   * The method to call when the transition is complete
-   */
-  endCallback?: () => void
-  /**
-   * The speed to transition (number of increments)
-   */
-  speed?: number
-  /**
-   * The wait time between each increment
-   */
-  interval?: number
-  /**
-   * The id for the interval
-   */
-  intervalId?: string
-}
+const timeouts: Record<string, NodeJS.Timeout> = {}
 
 /**
  * Used to transition a value with a callback
@@ -40,21 +11,23 @@ export const doTransition = ({
   targets,
   callback,
   endCallback,
-  speed = 10,
+  increments = 10,
+  isGradual = true,
   interval = 15,
   intervalId = 'default',
 }: TransitionProps): (() => void) => {
   if (values.length !== targets.length)
-    throw new Error('Transition values do not match targets.')
+    throw new Error('Transition values length does not match targets length.')
+
   const clear = () => clearTimeout(timeouts[intervalId])
   clear()
-  let isFinished = true
+  let isFinished = true // unless otherwise proven
 
   const newValues = values.map((oldValue, i) => {
     const distance = targets[i] - oldValue
     if (Math.abs(distance) < 5) return targets[i]
     isFinished = false
-    return oldValue + distance / Math.abs(speed)
+    return oldValue + distance / increments
   })
 
   if (!isFinished) {
@@ -65,7 +38,7 @@ export const doTransition = ({
         targets,
         callback,
         endCallback,
-        speed,
+        increments: increments - (isGradual ? 0 : 1),
         interval,
         intervalId,
       })
@@ -77,3 +50,5 @@ export const doTransition = ({
 
   return clear
 }
+
+export default doTransition

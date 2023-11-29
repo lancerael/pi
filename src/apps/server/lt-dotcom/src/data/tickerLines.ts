@@ -5,7 +5,7 @@ export const tickerLines = [
   'Full stack, FE',
   'React, Typescript, NodeJS',
   'CI/CD, TDD/BDD, Docker',
-  'Serverless, AWS/Azure',
+  'Cloud, AWS/Azure',
   'NoSQL, MySQL, GraphQL',
   'UI/UX, Accessibility',
   'Agile, Kanban, Scrum',

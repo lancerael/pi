@@ -38,11 +38,4 @@ export interface UseThrottledEventsOpts {
    * This could be options such as passive or capture for event listeners.
    */
   args?: AddEventListenerOptions
-
-  /**
-   * An array of dependencies that, when changed, will re-bind the event listeners.
-   * Using `unknown[]` encourages type checking and is safer than `any[]`.
-   * Useful for ensuring the event listeners stay updated with the latest configurations or states.
-   */
-  deps?: unknown[]
 }
