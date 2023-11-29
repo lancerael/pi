@@ -35,7 +35,7 @@ import {
 } from '@/components/PageHeader/PageHeader.types'
 import { PageHeader } from '@/components/PageHeader/PageHeader'
 
-export const uiSizes = signal({
+const uiSizes = signal({
   fullWidth: 0,
   fullHeight: 0,
 })

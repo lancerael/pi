@@ -20,7 +20,7 @@ export interface TransitionProps {
    */
   increments?: number
   /**
-   * The wait time between each increment
+   * Whether to ease the transition rather than default linear
    */
   isGradual?: boolean
   /**
