@@ -1,7 +1,0 @@
-{
-  "type": "patch",
-  "comment": "Improved icon looping",
-  "packageName": "@pi-lib/carousel",
-  "email": "lancerael@googlemail.com",
-  "dependentChangeType": "patch"
-}

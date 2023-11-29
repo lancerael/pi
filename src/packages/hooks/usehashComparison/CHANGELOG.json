@@ -1,0 +1,20 @@
+{
+  "name": "@pi-lib/use-hash-comparison",
+  "entries": [
+    {
+      "date": "Wed, 29 Nov 2023 16:32:24 GMT",
+      "tag": "@pi-lib/use-hash-comparison_v1.0.0",
+      "version": "1.0.0",
+      "comments": {
+        "major": [
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/use-hash-comparison",
+            "commit": "6c65bca3889dc3b2b3617e1ea3d4f022a4dae6c5",
+            "comment": "New hash comparison hook standalone"
+          }
+        ]
+      }
+    }
+  ]
+}

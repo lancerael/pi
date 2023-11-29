@@ -1,7 +1,0 @@
-{
-  "type": "patch",
-  "comment": "Improved Shimmer with useTimer",
-  "packageName": "@pi-lib/shimmer",
-  "email": "lancerael@hotmail.com",
-  "dependentChangeType": "patch"
-}

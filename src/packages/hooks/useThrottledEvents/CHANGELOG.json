@@ -2,6 +2,21 @@
   "name": "@pi-lib/use-throttled-events",
   "entries": [
     {
+      "date": "Wed, 29 Nov 2023 16:32:24 GMT",
+      "tag": "@pi-lib/use-throttled-events_v2.0.0",
+      "version": "2.0.0",
+      "comments": {
+        "major": [
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/use-throttled-events",
+            "commit": "6c65bca3889dc3b2b3617e1ea3d4f022a4dae6c5",
+            "comment": "Moved deps to main interface"
+          }
+        ]
+      }
+    },
+    {
       "date": "Fri, 24 Nov 2023 22:47:20 GMT",
       "tag": "@pi-lib/use-throttled-events_v1.0.0",
       "version": "1.0.0",

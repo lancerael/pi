@@ -2,6 +2,21 @@
   "name": "@pi-lib/shimmer",
   "entries": [
     {
+      "date": "Wed, 29 Nov 2023 16:32:23 GMT",
+      "tag": "@pi-lib/shimmer_v0.3.5",
+      "version": "0.3.5",
+      "comments": {
+        "patch": [
+          {
+            "author": "lancerael@hotmail.com",
+            "package": "@pi-lib/shimmer",
+            "commit": "6c65bca3889dc3b2b3617e1ea3d4f022a4dae6c5",
+            "comment": "Improved Shimmer with useTimer"
+          }
+        ]
+      }
+    },
+    {
       "date": "Fri, 24 Nov 2023 22:47:20 GMT",
       "tag": "@pi-lib/shimmer_v0.3.4",
       "version": "0.3.4",

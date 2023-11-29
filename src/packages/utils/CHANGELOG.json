@@ -2,6 +2,21 @@
   "name": "@pi-lib/utils",
   "entries": [
     {
+      "date": "Wed, 29 Nov 2023 16:32:24 GMT",
+      "tag": "@pi-lib/utils_v5.0.0",
+      "version": "5.0.0",
+      "comments": {
+        "major": [
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/utils",
+            "commit": "6c65bca3889dc3b2b3617e1ea3d4f022a4dae6c5",
+            "comment": "Moved hooks and helpers to standalone"
+          }
+        ]
+      }
+    },
+    {
       "date": "Sun, 26 Nov 2023 23:39:52 GMT",
       "tag": "@pi-lib/utils_v4.0.1",
       "version": "4.0.1",

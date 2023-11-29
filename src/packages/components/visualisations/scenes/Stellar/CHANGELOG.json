@@ -2,6 +2,21 @@
   "name": "@pi-lib/stellar",
   "entries": [
     {
+      "date": "Wed, 29 Nov 2023 16:32:23 GMT",
+      "tag": "@pi-lib/stellar_v2.0.0",
+      "version": "2.0.0",
+      "comments": {
+        "major": [
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/stellar",
+            "commit": "6c65bca3889dc3b2b3617e1ea3d4f022a4dae6c5",
+            "comment": "Improved performance and added auto dimmer"
+          }
+        ]
+      }
+    },
+    {
       "date": "Mon, 27 Nov 2023 00:41:59 GMT",
       "tag": "@pi-lib/stellar_v1.6.6",
       "version": "1.6.6",

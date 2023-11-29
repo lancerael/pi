@@ -1,7 +1,0 @@
-{
-  "type": "patch",
-  "comment": "Updated to use doTransition standalone",
-  "packageName": "@pi-lib/use-touch",
-  "email": "lancerael@googlemail.com",
-  "dependentChangeType": "patch"
-}
