@@ -1,8 +1,16 @@
 # Change Log - @pi-lib/utils
 
-This log was last generated on Sun, 26 Nov 2023 23:39:52 GMT and should not be manually modified.
+This log was last generated on Wed, 29 Nov 2023 16:32:24 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 5.0.0
+
+Wed, 29 Nov 2023 16:32:24 GMT
+
+### Major changes
+
+- Moved hooks and helpers to standalone (lancerael@googlemail.com)
 
 ## 4.0.1
 

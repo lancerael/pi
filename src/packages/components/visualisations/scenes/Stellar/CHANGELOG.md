@@ -1,8 +1,16 @@
 # Change Log - @pi-lib/stellar
 
-This log was last generated on Mon, 27 Nov 2023 00:41:59 GMT and should not be manually modified.
+This log was last generated on Wed, 29 Nov 2023 16:32:23 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 2.0.0
+
+Wed, 29 Nov 2023 16:32:23 GMT
+
+### Major changes
+
+- Improved performance and added auto dimmer (lancerael@googlemail.com)
 
 ## 1.6.6
 

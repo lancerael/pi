@@ -2,6 +2,21 @@
   "name": "@pi-lib/carousel",
   "entries": [
     {
+      "date": "Wed, 29 Nov 2023 16:32:23 GMT",
+      "tag": "@pi-lib/carousel_v2.0.4",
+      "version": "2.0.4",
+      "comments": {
+        "patch": [
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/carousel",
+            "commit": "6c65bca3889dc3b2b3617e1ea3d4f022a4dae6c5",
+            "comment": "Improved icon looping"
+          }
+        ]
+      }
+    },
+    {
       "date": "Fri, 24 Nov 2023 22:47:20 GMT",
       "tag": "@pi-lib/carousel_v2.0.2",
       "version": "2.0.2",

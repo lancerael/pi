@@ -1,7 +1,0 @@
-{
-  "type": "major",
-  "comment": "Moved deps to main interface",
-  "packageName": "@pi-lib/use-throttled-events",
-  "email": "lancerael@googlemail.com",
-  "dependentChangeType": "patch"
-}
