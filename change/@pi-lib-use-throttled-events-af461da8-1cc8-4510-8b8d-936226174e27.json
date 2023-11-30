@@ -1,0 +1,7 @@
+{
+  "type": "patch",
+  "comment": "Fixed useThrottledEvents callback",
+  "packageName": "@pi-lib/use-throttled-events",
+  "email": "lancerael@googlemail.com",
+  "dependentChangeType": "patch"
+}
