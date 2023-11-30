@@ -33,6 +33,7 @@ export const StyledLine = styled.div<StyledLineProps>(
       --size: 1.4rem;
     }
 
+    line-height: 1.65rem;
     height: ${$isVisible ? 'var(--size)' : '0'};
     transition: none;
     font-size: var(--size);
@@ -57,6 +58,7 @@ export const StyledLine = styled.div<StyledLineProps>(
       -webkit-text-fill-color: transparent;
       animation: ${textPulse} ${REDUCED_MOTION ? 15 : $holdTime / 1000}s linear
         infinite;
+      padding: 0.5rem 0;
     }
 
     &::before {

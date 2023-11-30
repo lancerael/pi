@@ -7,7 +7,6 @@ import {
 import { CarouselProps, CustomPanHandler } from './Carousel.types'
 import { useCallback, useEffect, useRef } from 'react'
 import { useThrottledEvents } from '@pi-lib/use-throttled-events'
-import { REM_IN_PIXELS } from '@pi-lib/styles'
 
 /**
  * Carousel
@@ -74,14 +73,14 @@ export const Carousel = ({
   /**
    * Get the correct looped version of the x scroll value
    */
-  const getLoopedX = useCallback((x: number) => {
+  const getLoopedX = useCallback((x: number, isTemp?: boolean) => {
     const iconsWidth = width.current / 2
     if (!iconsWidth) return x
     let newX = x
-    if (newX > REM_IN_PIXELS / 2) {
-      newX -= iconsWidth
+    if (newX > 0) {
+      newX = isTemp ? -iconsWidth : newX - iconsWidth
     } else if (newX < -iconsWidth) {
-      newX += iconsWidth + REM_IN_PIXELS / 2
+      newX = isTemp ? 0 : newX + iconsWidth
     }
     return newX
   }, [])
@@ -116,9 +115,8 @@ export const Carousel = ({
   /**
    * Make sure there is no looping animation
    */
-  const shouldTransition =
-    controls.panLevel.x < 0 && controls.panLevel.x > width.current / -2
-
+  const loopedX = getLoopedX(controls.panLevel.x, isScrolling.current)
+  const shouldTransition = loopedX !== 0 && loopedX !== width.current / -2
   return (
     <StyledCarousel data-testid={dataTestid} {...props}>
       <StyledCarouselInner
@@ -128,7 +126,7 @@ export const Carousel = ({
             isScrolling.current && shouldTransition
               ? 'all 0.25s linear'
               : 'none',
-          transform: `translate(${getLoopedX(controls.panLevel.x)}px)`,
+          transform: `translate(${getLoopedX(loopedX)}px)`,
         }}
       >
         {[...itemList, ...itemList].map((item, i) => (

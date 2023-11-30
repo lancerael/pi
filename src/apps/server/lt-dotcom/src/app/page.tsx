@@ -17,7 +17,7 @@ import Carousel from '@pi-lib/carousel'
 import IconButton from '@pi-lib/icon-button'
 import { useThrottledEvents } from '@pi-lib/use-throttled-events'
 import { IS_CLIENT, REDUCED_MOTION } from '@pi-lib/styles'
-import { ICONS } from '@pi-lib/constants'
+import { ICONS_EXTENDED } from '@pi-lib/constants'
 import Interact from '@/components/Interact'
 import { tickerLines } from '@/data/tickerLines'
 import { careerHighlights } from '@/data/careerHighlights'
@@ -28,12 +28,13 @@ import {
   SkillsContainer,
   StyledCardWrapper,
   StyledFullGradient,
-} from './page.styles'
+} from './page.style'
 import {
   HeaderState,
   TravelTrackerProps,
 } from '@/components/PageHeader/PageHeader.types'
 import { PageHeader } from '@/components/PageHeader/PageHeader'
+import Footer from '@/components/Footer'
 
 const uiSizes = signal({
   fullWidth: 0,
@@ -69,7 +70,7 @@ export default function Home() {
     (scrollTop: number) => {
       let newState: HeaderState = 'dark'
       if (scrollTop <= 24) newState = 'hidden'
-      else if (scrollTop > 24 && scrollTop < uiSizes.value.fullHeight)
+      else if (scrollTop > 24 && scrollTop < uiSizes.value.fullHeight - 24)
         newState = 'visible'
       setHeaderState(newState)
     },
@@ -94,7 +95,8 @@ export default function Home() {
    */
   const techList = useMemo(
     () =>
-      Object.entries(ICONS)
+      Object.entries(ICONS_EXTENDED)
+        .sort(([a], [b]) => (a < b ? -1 : a > b ? 1 : 0))
         .map(([title, href], i) => {
           const src = `${process.env.NEXT_PUBLIC_CLOUDFRONT_URL}${title
             .split(' ')
@@ -157,7 +159,7 @@ export default function Home() {
               />
             </ShimmerInner>
           </ShimmerOuter>
-          <SkillsContainer className="pi-page-grid-full">
+          <SkillsContainer>
             <Grid>
               {skillset.map(({ title, subTitle, icon, summary, bullets }) => (
                 <StyledCardWrapper key={title}>
@@ -187,13 +189,15 @@ export default function Home() {
             </Grid>
           </SkillsContainer>
           <StyledFullGradient className="pi-page-grid-full">
-            <Carousel
-              itemList={techList}
-              speed={travelTracker.travelSpeed}
-              isScroller={!!travelTracker.isTravelling}
-            />
+            <div style={{ margin: '1rem 0' }}>
+              <Carousel
+                itemList={techList}
+                speed={travelTracker.travelSpeed}
+                isScroller={!!travelTracker.isTravelling}
+              />
+            </div>
           </StyledFullGradient>
-          <div style={{ margin: '1rem 0' }}>
+          <div style={{ margin: '3rem 0 5rem' }}>
             <div
               className="is-title"
               style={{ textAlign: 'center', margin: '2rem' }}
@@ -220,13 +224,7 @@ export default function Home() {
             </Grid>
           </div>
 
-          <StyledFullGradient className="pi-page-grid-full">
-            <Grid>
-              <div>Something 1</div>
-              <div>Something 2</div>
-              <div>Something 3</div>
-            </Grid>
-          </StyledFullGradient>
+          <Footer />
         </PageGrid>
         <div ref={widthRef}></div>
       </Stellar>

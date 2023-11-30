@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components'
-import { box } from '@pi-lib/styles'
+import { box, maskGradient } from '@pi-lib/styles'
 import { StyledIconButtonProps } from './IconButton.style.types'
 
 /**

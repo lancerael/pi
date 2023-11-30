@@ -56,6 +56,7 @@ export interface BoxProps {
   isInverted?: boolean
   isTransparent?: boolean
   name?: keyof typeof boxColors
+  shadowProps?: ShadowProps
 }
 
 export type CustomStyledType<
@@ -65,3 +66,8 @@ export type CustomStyledType<
   'web',
   Substitute<React.DetailedHTMLProps<HTMLAttributes<T1>, T1>, T2>
 >
+
+export interface ShadowProps {
+  offset?: string
+  opacity?: string
+}

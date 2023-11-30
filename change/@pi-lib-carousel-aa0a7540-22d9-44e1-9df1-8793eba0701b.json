@@ -1,0 +1,7 @@
+{
+  "type": "patch",
+  "comment": "Better styles",
+  "packageName": "@pi-lib/carousel",
+  "email": "lancerael@googlemail.com",
+  "dependentChangeType": "patch"
+}

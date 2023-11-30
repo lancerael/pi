@@ -1,0 +1,7 @@
+{
+  "type": "patch",
+  "comment": "Fixed swipe callbck",
+  "packageName": "@pi-lib/use-touch",
+  "email": "lancerael@googlemail.com",
+  "dependentChangeType": "patch"
+}

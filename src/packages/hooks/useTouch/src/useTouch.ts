@@ -93,7 +93,12 @@ export const useTouch = <T = HTMLElement>({
    */
   const stop = useCallback(
     (e: PointerEvent) => {
-      if (trackers.current.isPressed) stopCallback?.()
+      const endCallback = () => {
+        if (trackers.current.isPressed) stopCallback?.()
+        trackers.current.isPressed = false
+        trackers.current.oldPanChange = { x: 0, y: 0 }
+        delete trackers.current.activePointers[e.pointerId]
+      }
       const { x, y } = trackers.current.oldPanChange
       if (Math.abs(x) + Math.abs(y) > 10) {
         const values = Object.values(controls.panLevel)
@@ -109,15 +114,19 @@ export const useTouch = <T = HTMLElement>({
               y: newY,
             }))
           },
+          endCallback,
           increments: 10,
           intervalId: `swipe`,
         })
+      } else {
+        endCallback()
       }
-      trackers.current.oldPanChange = { x: 0, y: 0 }
-      trackers.current.isPressed = false
-      delete trackers.current.activePointers[e.pointerId]
     },
-    [controls.zoomLevel, trackers.current.oldPanChange.x]
+    [
+      controls.zoomLevel,
+      trackers.current.oldPanChange.x,
+      trackers.current.oldPanChange.y,
+    ]
   ) as EventListener
 
   /**

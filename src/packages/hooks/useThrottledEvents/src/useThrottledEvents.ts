@@ -38,7 +38,7 @@ export const useThrottledEvents = (
       events.forEach((event) =>
         target.removeEventListener(event, throttledCallback)
       )
-  }, [callback, target, optsHash, ...deps])
+  }, [callback.toString(), target, optsHash, ...deps])
 
   useEffect(() => {
     doInit && callback()

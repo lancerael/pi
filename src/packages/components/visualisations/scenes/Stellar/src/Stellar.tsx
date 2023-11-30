@@ -139,7 +139,7 @@ export const Stellar = ({
    * @returns {void}
    */
   const handleScroll = useCallback(() => {
-    if (!travelInfo.current.isTravelling) spawnStars()
+    if (!travelInfo.current.isTravelling) spawnStars(randomNumber(3, 6))
     scrollCallback?.(contentRef.current?.scrollTop ?? 0)
   }, [])
 
@@ -229,8 +229,10 @@ export const Stellar = ({
       const { scrollTop } = contentRef.current
       const offset = (scrollTop - lastScroll.current) / 10
       lastScroll.current = scrollTop
-      // Spawn star with a 50% chance
-      if (isTravelling && !randomNumber(0, 1)) spawnStars()
+      // Spawn star with a 50% chance (which scales at slower speeds)
+      if (isTravelling && !randomNumber(0, Math.ceil(1 / travelSpeed))) {
+        spawnStars()
+      }
       // Update the star tracker with new positions & filter old stars
       starTracker.current = starTracker.current
         .map((star: Star) =>

@@ -11,7 +11,10 @@ export const STATUS_MAP = {
 export const GLOBAL_OBJ =
   typeof window !== 'undefined' ? window : global ?? self
 
-export const ICONS: { [key: string]: string } = {
+/**
+ * A list of tech icons
+ */
+export const ICONS: Record<string, string> = {
   'AWS AMPLIFY': 'https://aws.amazon.com/amplify',
   'AWS API GATEWAY': 'https://aws.amazon.com/api-gateway',
   'AWS CLOUDFRONT': 'https://aws.amazon.com/cloudfront',
@@ -37,4 +40,28 @@ export const ICONS: { [key: string]: string } = {
   'VISUAL STUDIO CODE': 'https://code.visualstudio.com/',
   'VITE': 'https://vitejs.dev/',
   'VITEST': 'https://vitest.dev/',
+}
+
+/**
+ * An extended list of tech icons
+ */
+export const ICONS_EXTENDED: Record<string, string> = {
+  ...ICONS,
+  'DOCKER': 'https://docker.com',
+  'AWS EC2': 'https://aws.amazon.com/ec2/',
+  'MYSQL': 'http://dev.mysql.com/',
+  'AWS COGNITO': 'https://aws.amazon.com/cognito/',
+  'AWS DYNAMODB': 'https://aws.amazon.com/dynamodb/',
+  'AWS EKS': 'https://aws.amazon.com/eks/',
+  'AWS ELB': 'https://aws.amazon.com/elasticloadbalancing/',
+  'AWS FARGATE': 'https://aws.amazon.com/fargate/',
+  'AWS SNS': 'https://aws.amazon.com/sns/',
+  'AWS SQS': 'https://aws.amazon.com/sqs/',
+  'NEXTJS': 'https://nextjs.org/',
+  'GRAPHQL': 'http://graphql.org/',
+  'FIGMA': 'https://www.figma.com/',
+  'MICROSOFT AZURE': 'https://azure.microsoft.com/',
+  'JEST': 'http://facebook.github.io/jest/',
+  'KUBERNETES': 'http://kubernetes.io/',
+  'WEBPACK': 'http://webpack.github.io/',
 }
