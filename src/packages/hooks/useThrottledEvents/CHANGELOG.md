@@ -1,8 +1,16 @@
 # Change Log - @pi-lib/use-throttled-events
 
-This log was last generated on Wed, 29 Nov 2023 16:32:24 GMT and should not be manually modified.
+This log was last generated on Thu, 30 Nov 2023 16:50:50 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 2.0.1
+
+Thu, 30 Nov 2023 16:50:50 GMT
+
+### Patches
+
+- Fixed useThrottledEvents callback (lancerael@googlemail.com)
 
 ## 2.0.0
 

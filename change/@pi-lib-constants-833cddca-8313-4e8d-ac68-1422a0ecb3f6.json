@@ -1,7 +1,0 @@
-{
-  "type": "minor",
-  "comment": "Added extended tech list",
-  "packageName": "@pi-lib/constants",
-  "email": "lancerael@googlemail.com",
-  "dependentChangeType": "patch"
-}

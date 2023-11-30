@@ -2,6 +2,21 @@
   "name": "@pi-lib/page-content",
   "entries": [
     {
+      "date": "Thu, 30 Nov 2023 16:50:50 GMT",
+      "tag": "@pi-lib/page-content_v1.1.8",
+      "version": "1.1.8",
+      "comments": {
+        "patch": [
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/page-content",
+            "commit": "52e2059811ae2806fd22c0e364e9b1b9e71cee1f",
+            "comment": "Better styles"
+          }
+        ]
+      }
+    },
+    {
       "date": "Fri, 24 Nov 2023 22:47:20 GMT",
       "tag": "@pi-lib/page-content_v1.1.5",
       "version": "1.1.5",
