@@ -94,7 +94,6 @@ export const useTouch = <T = HTMLElement>({
   const stop = useCallback(
     (e: PointerEvent) => {
       const endCallback = () => {
-        console.log('stop')
         if (trackers.current.isPressed) stopCallback?.()
         trackers.current.isPressed = false
         trackers.current.oldPanChange = { x: 0, y: 0 }
