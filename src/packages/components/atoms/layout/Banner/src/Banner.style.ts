@@ -22,7 +22,7 @@ export const StyledBanner = styled.div<StyledBannerProps>(
         $shouldInvertGradient ? 'top' : 'bottom'
       }: 1px solid var(--specialShadow);
       ${gradient({ to: $shouldInvertGradient ? 'bottom' : 'top' })}
-      ${shadow('0px 2px', '0.1')}
+      ${shadow({ offset: '0px 2px', opacity: '0.1' })}
     `}
   `
 )

@@ -18,7 +18,7 @@ export const StyledHeader = styled.div<StyledHeaderProps>(
     padding: 0.5rem 0 2rem;
     top: -1rem;
     box-sizing: border-box;
-    background: rgba(0, 0, 0, ${$headerState === 'dark' ? 0.25 : 0});
+    background: rgba(0, 0, 0, ${$headerState === 'dark' ? 0.35 : 0});
     backdrop-filter: blur(8px);
     z-index: 1;
     mask-image: var(--mask);
@@ -32,9 +32,14 @@ export const StyledHeaderSection = styled.div`
   align-items: center;
 
   & [data-content='LT'] {
-    font-size: 1.8rem;
-    height: 1.8rem;
-    margin-top: -0.3rem;
+    font-size: 1.7rem;
+    height: 1.7rem;
+    line-height: 2.1rem;
+
+    @media (width > 400px) {
+      line-height: auto;
+      height: auto;
+    }
   }
 `
 

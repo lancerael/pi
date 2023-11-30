@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components'
 import { StyledCardProps } from './Card.style.types'
-import { container } from '@pi-lib/styles'
+import { container, maskGradient } from '@pi-lib/styles'
 
 export const StyledCard = styled.div<StyledCardProps>(
   ({ $isClear }) => css`
@@ -31,7 +31,8 @@ export const StyledHeader = styled.div`
 export const StyledTitle = styled.h2`
   margin: 0;
   padding: 0 0 0.15rem 0 !important;
-  color: var(--textStrong);
+  color: var(--text);
+  ${maskGradient()}
   @media (max-width: 1036px) {
     font-size: 1.2rem;
     padding-top: 0.25rem !important;
@@ -48,5 +49,7 @@ export const StyledContent = styled.div`
 `
 
 export const StyledIcon = styled.div`
+  padding-top: -0.25rem;
   float: left;
+  ${maskGradient()}
 `

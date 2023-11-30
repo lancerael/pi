@@ -35,7 +35,7 @@ export const StyledSidebar = styled.div<StyledSidebarProps>(
     color: var(--textSoft);
     border-right: 1px solid var(--border);
     padding: 16px;
-    ${shadow('2px 0px')}
+    ${shadow({ offset: '2px 0px' })}
     ${!!$isCollapsible &&
     css`
       @media (max-width: 800px) {
@@ -44,7 +44,7 @@ export const StyledSidebar = styled.div<StyledSidebarProps>(
         border-bottom: 1px solid var(--border);
         max-width: 100%;
 
-        ${shadow('0px 2px')}
+        ${shadow({ offset: '0px 2px' })}
       }
     `}
   `

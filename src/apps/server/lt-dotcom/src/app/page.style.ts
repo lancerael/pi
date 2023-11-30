@@ -3,7 +3,7 @@ import { gradient } from '@pi-lib/styles'
 
 export const StyledFullGradient = styled.div`
   ${gradient({ isTransparent: true })}
-  padding: 2rem 0;
+  padding: 1rem 0;
 
   & svg {
     filter: saturate(40%) brightness(80%) contrast(140%);
@@ -25,13 +25,13 @@ export const ShimmerInner = styled.div`
 `
 
 export const SkillsContainer = styled.div`
-  padding: 3rem 1rem;
+  padding: 0 0 5rem 0;
+  @media (max-width: 1036px) {
+    margin: auto;
+  }
 `
 
 export const StyledCardWrapper = styled.div`
-  @media (max-width: 1036px) {
-    margin: 0 auto;
-  }
   & h2 {
     margin: 0;
     padding: 0;
