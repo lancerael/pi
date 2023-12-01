@@ -28,7 +28,7 @@ const HashComparisonDemo = () => {
 }
 
 const meta: Meta<typeof useHashComparison> = {
-  title: 'Utils/Hooks/useHashComparison',
+  title: 'Utilities/Hooks/useHashComparison',
   argTypes: {},
   tags: ['autodocs'],
 }

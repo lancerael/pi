@@ -26,7 +26,7 @@ const Render = () => {
 }
 
 const meta: Meta<typeof useThrottledEvents> = {
-  title: 'Utils/Hooks/useThrottledEvents',
+  title: 'Utilities/Hooks/useThrottledEvents',
   argTypes: {},
   tags: ['autodocs'],
 }

@@ -6,7 +6,7 @@
     "react",
     "hooks",
     "pi",
-    "utils",
+    "utilities",
     "timer",
     "timeout",
     "interval"

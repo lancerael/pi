@@ -2,7 +2,7 @@
 
 **@pi-lib/carousel**
 
-**Peer Dependencies:** @pi-lib/styles, @pi-lib/use-touch, @pi-lib/utils, react, styled-components
+**Peer Dependencies:** @pi-lib/styles, @pi-lib/use-throttled-events, @pi-lib/use-touch, @pi-lib/utils, react, styled-components
 
 <table>
   <tbody>

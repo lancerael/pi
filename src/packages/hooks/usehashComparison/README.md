@@ -4,7 +4,7 @@
 
 Create a hash of any object - can be used to compare dependencies and ensure correct re-rendering.
 
-**Peer Dependencies:** @pi-lib/styles, @pi-lib/utils, react
+**Peer Dependencies:** @pi-lib/utils, react
 
 <table>
   <tbody>

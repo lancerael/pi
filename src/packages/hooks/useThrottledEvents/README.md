@@ -4,7 +4,7 @@
 
 Hook used to add throttled events to a React component
 
-**Peer Dependencies:** @pi-lib/utils, react
+**Peer Dependencies:** @pi-lib/use-hash-comparison, @pi-lib/utils, react
 
 <table>
   <tbody>

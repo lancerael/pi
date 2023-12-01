@@ -29,7 +29,7 @@ const render = ({ type, waitTime }: TimerOpts) => {
 }
 
 const meta: Meta<typeof useTimer> = {
-  title: 'Utils/Hooks/useTimer',
+  title: 'Utilities/Hooks/useTimer',
   argTypes: {
     type: {
       control: 'select',
