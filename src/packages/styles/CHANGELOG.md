@@ -1,8 +1,16 @@
 # Change Log - @pi-lib/styles
 
-This log was last generated on Fri, 24 Nov 2023 22:47:20 GMT and should not be manually modified.
+This log was last generated on Thu, 30 Nov 2023 16:50:50 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 3.1.4
+
+Thu, 30 Nov 2023 16:50:50 GMT
+
+### Patches
+
+- Better styles (lancerael@googlemail.com)
 
 ## 3.1.3
 
