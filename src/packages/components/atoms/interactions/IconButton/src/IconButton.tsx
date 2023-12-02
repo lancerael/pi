@@ -1,7 +1,8 @@
 import { StyledIconButton } from './IconButton.style'
-import { useButtonProps, getTransientProps } from '@pi-lib/utils'
+import { getTransientProps } from '@pi-lib/utils'
 import { IconButtonProps } from './IconButton.types'
-import CustomIcon from '@pi-lib/custom-icon/src/CustomIcon'
+import CustomIcon from '@pi-lib/custom-icon'
+import { useButtonProps } from '@pi-lib/button'
 
 /**
  * This component is used to render a button with an icon
@@ -18,10 +19,10 @@ export const IconButton = ({
   dataTestid = 'pi-lib-icon-button',
   ...props
 }: IconButtonProps) => {
-  const { buttonProps } = useButtonProps<HTMLAnchorElement>(
-    props,
-    src ? 'a' : 'button'
-  )
+  const { buttonProps } = useButtonProps<
+    HTMLAnchorElement,
+    React.HTMLProps<HTMLAnchorElement>
+  >(props, 'button')
   return (
     <StyledIconButton
       {...{

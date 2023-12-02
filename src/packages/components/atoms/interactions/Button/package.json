@@ -43,5 +43,10 @@
     "@pi-lib/utils": "workspace:^",
     "react": "^18.2.0",
     "styled-components": "^6.1.0"
+  },
+  "dependencies": {
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-typescript2": "^0.36.0",
+    "ts-transformer-keys": "^0.4.4"
   }
 }

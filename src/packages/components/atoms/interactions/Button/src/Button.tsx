@@ -1,6 +1,7 @@
-import { useButtonProps, getTransientProps } from '@pi-lib/utils'
+import { getTransientProps } from '@pi-lib/utils'
 import { StyledButton } from './Button.style'
 import { ButtonProps } from './Button.types'
+import { useButtonProps } from './hooks/useButtonProps'
 
 /**
  * A React button component with a status
@@ -13,6 +14,8 @@ export const Button = ({
   status = 'default',
   isCompact = false,
   isInverted = false,
+  isShadowed = false,
+  buttonSize = 'medium',
   dataTestid = 'pi-lib-button',
   ...props
 }: ButtonProps) => {
@@ -22,7 +25,13 @@ export const Button = ({
       {...{
         ...buttonProps,
         ...props,
-        ...getTransientProps({ status, isCompact, isInverted }),
+        ...getTransientProps({
+          status,
+          isCompact,
+          isInverted,
+          buttonSize,
+          isShadowed,
+        }),
       }}
       data-testid={dataTestid}
     >

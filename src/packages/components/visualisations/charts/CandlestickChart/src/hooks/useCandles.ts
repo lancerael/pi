@@ -1,7 +1,7 @@
 import { useEffect, useRef, useCallback, useState } from 'react'
 import { select } from 'd3-selection'
 import 'd3-transition'
-import { getAttributes, useHashComparison } from '@pi-lib/utils'
+import { getAttributes } from '@pi-lib/utils'
 import { useThrottledEvents } from '@pi-lib/use-throttled-events'
 import {
   ActiveItem,
@@ -18,6 +18,7 @@ import {
   CANDLE_WIDTH,
   TRANSITION_TIME,
 } from '../CandlestickChart.constants'
+import useHashComparison from '@pi-lib/use-hash-comparison'
 
 const typeMap = {
   wicks: 'line',

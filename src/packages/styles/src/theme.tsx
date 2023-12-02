@@ -11,9 +11,9 @@ import { USER_SCHEME } from './constants'
 export const baseTheme = {
   fonts: ['sans-serif', 'Roboto'],
   fontSizes: {
-    small: '1em',
-    medium: '2em',
-    large: '3em',
+    small: '0.7em',
+    medium: '1em',
+    large: '1.5em',
   },
 }
 

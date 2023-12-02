@@ -69,14 +69,15 @@ export const box = ({
   shadowProps,
 }: BoxProps = {}) => {
   const colors = boxColors[name]
-  const [colorVar, backgroundVar] = isInverted ? colors.reverse() : colors
+  const [colorVar, backgroundVar] = isInverted ? colors.toReversed() : colors
+
   return css`
     border: 1px solid var(--border);
     color: var(--${colorVar});
     background-color: var(--${backgroundVar}${isTransparent && 'A'});
     border-radius: 6px;
     padding: 8px;
-    ${shadow(shadowProps)}
+    ${shadowProps !== null && shadow(shadowProps)}
   `
 }
 

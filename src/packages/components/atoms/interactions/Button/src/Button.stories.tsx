@@ -18,6 +18,10 @@ const meta: Meta<typeof Button> = {
     isInverted: {
       control: 'boolean',
     },
+    buttonSize: {
+      options: ['small', 'medium', 'large'],
+      control: 'radio',
+    },
     onPointerUp: { action: 'clicked' },
   },
   tags: ['autodocs'],
@@ -33,6 +37,7 @@ export const Default: StoryObj<typeof Button> = {
     isCompact: false,
     isInverted: false,
     disabled: false,
+    buttonSize: 'medium',
     dataTestid: 'pi-lib-button',
   },
 }

@@ -1,3 +1,4 @@
+import { Size } from '@pi-lib/styles'
 import { TestId, Status } from '@pi-lib/types'
 
 /**
@@ -18,4 +19,12 @@ export interface ButtonProps
    * Show a special inverted version of the button
    */
   isInverted?: boolean
+  /**
+   * Show a shadowed version of the button
+   */
+  isShadowed?: boolean
+  /**
+   * Show a specific size of button from the theme
+   */
+  buttonSize?: Size
 }

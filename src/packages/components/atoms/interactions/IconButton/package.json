@@ -38,11 +38,14 @@
     "vitest": "^0.34.6"
   },
   "peerDependencies": {
+    "@pi-lib/custom-icon": "workspace:^",
     "@pi-lib/styles": "workspace:^",
     "@pi-lib/utils": "workspace:^",
-    "@pi-lib/custom-icon": "workspace:^",
     "react": "^18.2.0",
     "react-svg": "^16.1.15",
     "styled-components": "^6.1.0"
+  },
+  "dependencies": {
+    "@pi-lib/button": "workspace:^"
   }
 }

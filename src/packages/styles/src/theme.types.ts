@@ -2,17 +2,13 @@ import { ExecutionProps, IStyledComponent } from 'styled-components'
 import { ThemeType } from './themes'
 import { HTMLAttributes, PropsWithChildren } from 'react'
 import { boxColors, gradients } from './theme'
-import { Substitute } from 'styled-components/dist/types'
+import { DefaultTheme, Substitute } from 'styled-components/dist/types'
 
-export type SchemeValues = { [key: string]: string }
+export type SchemeValues = Record<string, string>
 
-export interface PiTheme {
+export interface PiTheme extends DefaultTheme {
   fonts: string[]
-  fontSizes: {
-    small: string
-    medium: string
-    large: string
-  }
+  fontSizes: Record<Size, string>
   colors: {
     light: SchemeValues
     dark: SchemeValues
@@ -26,6 +22,8 @@ export interface ThemedComponent {
 export type ThemedComponentWithChildren = ThemedComponent & PropsWithChildren
 
 export type Scheme = 'light' | 'dark'
+
+export type Size = 'small' | 'medium' | 'large'
 
 export interface ThemeProps extends Partial<ThemedComponentWithChildren> {
   themeName: ThemeType
@@ -56,7 +54,7 @@ export interface BoxProps {
   isInverted?: boolean
   isTransparent?: boolean
   name?: keyof typeof boxColors
-  shadowProps?: ShadowProps
+  shadowProps?: ShadowProps | null
 }
 
 export type CustomStyledType<
