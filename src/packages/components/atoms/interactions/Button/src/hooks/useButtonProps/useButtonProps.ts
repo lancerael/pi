@@ -62,6 +62,7 @@ export const useButtonProps = <E extends HTMLElementType>(
     buttonProps: {
       ...buttonProps,
       ...rest,
+      title: props.title,
       ref: buttonRef,
     },
   }

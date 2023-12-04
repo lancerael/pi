@@ -24,6 +24,7 @@ export const Default: StoryObj<typeof Button> = {
     boxName: 'default',
     buttonSize: 'medium',
     dataTestid: 'pi-lib-button',
+    title: 'Default',
   },
 }
 
