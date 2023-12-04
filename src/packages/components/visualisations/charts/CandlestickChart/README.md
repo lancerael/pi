@@ -4,7 +4,7 @@
 
 A candlestick chart React component used to show the movement of traded assets over time.
 
-**Peer Dependencies:** @pi-lib/button, @pi-lib/do-transition, @pi-lib/loader, @pi-lib/select, @pi-lib/styles, @pi-lib/tooltip, @pi-lib/use-throttled-events, @pi-lib/use-touch, @pi-lib/utils, d3-axis, d3-scale, d3-selection, d3-transition, react, styled-components
+**Peer Dependencies:** @pi-lib/button, @pi-lib/do-transition, @pi-lib/loader, @pi-lib/select, @pi-lib/styles, @pi-lib/tooltip, @pi-lib/use-hash-comparison, @pi-lib/use-throttled-events, @pi-lib/use-touch, @pi-lib/utils, d3-axis, d3-scale, d3-selection, d3-transition, react, styled-components
 
 <table>
   <tbody>

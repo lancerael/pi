@@ -114,7 +114,7 @@ A wrapper for a simple grid layout.
 
 A React component for a special button with an icon
 
-**Peer Dependencies:** @pi-lib/styles, @pi-lib/utils, @pi-lib/custom-icon, react, react-svg, styled-components
+**Peer Dependencies:** @pi-lib/custom-icon, @pi-lib/styles, @pi-lib/utils, react, react-svg, styled-components
 
 <table>
   <tbody>
