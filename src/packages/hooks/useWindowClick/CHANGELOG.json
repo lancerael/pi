@@ -2,6 +2,21 @@
   "name": "@pi-lib/use-window-click",
   "entries": [
     {
+      "date": "Mon, 04 Dec 2023 01:02:23 GMT",
+      "tag": "@pi-lib/use-window-click_v1.0.4",
+      "version": "1.0.4",
+      "comments": {
+        "none": [
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/use-window-click",
+            "commit": "e6547fef05b0bce3c80e71d42d73766bff00ffb6",
+            "comment": "Docs update"
+          }
+        ]
+      }
+    },
+    {
       "date": "Sun, 26 Nov 2023 23:39:52 GMT",
       "tag": "@pi-lib/use-window-click_v1.0.1",
       "version": "1.0.1",

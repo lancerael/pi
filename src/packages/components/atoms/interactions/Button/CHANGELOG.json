@@ -2,6 +2,21 @@
   "name": "@pi-lib/button",
   "entries": [
     {
+      "date": "Mon, 04 Dec 2023 01:02:23 GMT",
+      "tag": "@pi-lib/button_v4.0.0",
+      "version": "4.0.0",
+      "comments": {
+        "major": [
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/button",
+            "commit": "e6547fef05b0bce3c80e71d42d73766bff00ffb6",
+            "comment": "Improved button accessibility"
+          }
+        ]
+      }
+    },
+    {
       "date": "Fri, 24 Nov 2023 22:47:20 GMT",
       "tag": "@pi-lib/button_v3.0.6",
       "version": "3.0.6",
