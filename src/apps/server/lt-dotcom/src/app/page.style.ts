@@ -6,7 +6,7 @@ export const StyledFullGradient = styled.div`
   padding: 1rem 0;
 
   & svg {
-    filter: saturate(40%) brightness(80%) contrast(140%);
+    filter: saturate(50%) brightness(80%) contrast(160%);
   }
 `
 

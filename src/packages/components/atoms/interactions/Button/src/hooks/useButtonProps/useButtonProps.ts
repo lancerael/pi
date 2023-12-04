@@ -1,28 +1,22 @@
-import { useRef, RefObject, ElementType } from 'react'
-import { useButton, useKeyboard, AriaButtonProps } from 'react-aria'
+import { useRef, ElementType, HTMLProps } from 'react'
+import { useButton, AriaButtonProps } from 'react-aria'
 import { UseButtonProps } from './useButtonProps.types'
-import * as keys from 'ts-transformer-keys'
-
-console.log(typeof keys)
+import { ariaKeys, ariaMap } from './useButtonProps.constants'
+import { HTMLElementType } from '../../Button.types'
 
 const getProps = (target: Record<string, unknown>, propList: string[]) => {
-  return propList.reduce((acc: Record<string, unknown>, curr: string) => {
-    const newProps = acc
-    if (target[curr]) newProps[curr] = target[curr]
-    return newProps
-  }, {} as Record<string, unknown>)
+  const getPropList = (isSelected: (curr: string) => boolean) => {
+    return propList.reduce((acc: Record<string, unknown>, curr: string) => {
+      const selectedProps = acc
+      if (isSelected(curr)) selectedProps[curr] = target[curr]
+      return selectedProps
+    }, {} as Record<string, unknown>)
+  }
+  return {
+    selected: getPropList((curr) => !!target[curr]),
+    rest: getPropList((curr) => !propList.includes(curr)),
+  }
 }
-
-export type AriaKeys = (keyof AriaButtonProps)[]
-const ariaKeys: AriaKeys = [
-  'isDisabled',
-  'onPress',
-  'onPressStart',
-  'onPressEnd',
-  'onPressChange',
-  'onPressUp',
-  'autoFocus',
-]
 
 /**
  * Use to create a set of default aria props for a button
@@ -30,30 +24,44 @@ const ariaKeys: AriaKeys = [
  * @param elementType
  * @returns the object containing formatted buttonProps
  */
-export const useButtonProps = <E extends HTMLElement>(
+export const useButtonProps = <E extends HTMLElementType>(
   props: React.HTMLProps<E>,
   elementType: ElementType
 ): UseButtonProps<E> => {
   const buttonRef = useRef<E>(null)
-  const ariaProps: AriaButtonProps = getProps(
-    props as Record<string, unknown>,
-    ariaKeys as unknown as string[]
+
+  // Substitute generic handlers with aria ones
+  let baseProps = Object.entries(props).reduce((acc, [key, val]) => {
+    return {
+      ...acc,
+      [ariaMap[key as keyof HTMLProps<HTMLElementType>] ?? key]: val,
+    }
+  }, {})
+
+  // Strip out the aria specific props
+  const {
+    selected: ariaProps,
+    rest,
+  }: { selected: AriaButtonProps; rest: typeof props } = getProps(
+    baseProps,
+    ariaKeys
   )
-  let { buttonProps } = useButton(
+
+  /**
+   * Get the React aria props
+   */
+  const { buttonProps } = useButton(
     {
       ...ariaProps,
       elementType,
     },
-    buttonRef as RefObject<E>
+    buttonRef
   )
-  const { keyboardProps } = useKeyboard({
-    onKeyUp: (e: any) =>
-      [' ', 'Enter'].includes(e.key) && ariaProps.onPress?.(e),
-  })
+
   return {
     buttonProps: {
       ...buttonProps,
-      ...keyboardProps,
+      ...rest,
       ref: buttonRef,
     },
   }

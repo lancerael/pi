@@ -25,6 +25,8 @@ export type Scheme = 'light' | 'dark'
 
 export type Size = 'small' | 'medium' | 'large'
 
+export type BoxNames = 'default' | 'alt' | 'light'
+
 export interface ThemeProps extends Partial<ThemedComponentWithChildren> {
   themeName: ThemeType
   themeOverrides?: PiTheme

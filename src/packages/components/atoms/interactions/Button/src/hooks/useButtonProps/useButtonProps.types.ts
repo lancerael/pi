@@ -1,7 +1,15 @@
-import { DOMAttributes } from 'react'
+import { HTMLProps } from 'react'
+import { AriaButtonProps } from 'react-aria'
+import { HTMLElementType } from '../../Button.types'
 
-export interface UseButtonProps<T> {
-  buttonProps: DOMAttributes<T> & {
-    ref: React.RefObject<T>
+export interface UseButtonProps<E> {
+  buttonProps: React.HTMLProps<E> & {
+    ref: React.RefObject<E>
   }
 }
+
+export type AriaKeys = (keyof AriaButtonProps)[]
+
+export type AriaMap = Partial<
+  Record<keyof HTMLProps<HTMLElementType>, keyof AriaButtonProps<'button'>>
+>

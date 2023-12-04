@@ -1,0 +1,41 @@
+import { AriaKeys, AriaMap } from './useButtonProps.types'
+
+export const ariaKeys: AriaKeys = [
+  'isDisabled',
+  'onPress',
+  'onPressStart',
+  'onPressEnd',
+  'onPressChange',
+  'onPressUp',
+  'autoFocus',
+  'onFocus',
+  'onBlur',
+  'onFocusChange',
+  'onKeyDown',
+  'onKeyUp',
+  'href',
+  'target',
+  'rel',
+  'elementType',
+  'aria-expanded',
+  'aria-haspopup',
+  'aria-controls',
+  'aria-pressed',
+  'type',
+  'excludeFromTabOrder',
+  'id',
+  'aria-label',
+  'aria-labelledby',
+  'aria-details',
+]
+
+export const ariaMap: AriaMap = {
+  onClick: 'onPress',
+  onMouseDown: 'onPressStart',
+  onMouseUp: 'onPressUp',
+  onTouchStart: 'onPressStart',
+  onTouchEnd: 'onPressEnd',
+  onPointerDown: 'onPressStart',
+  onPointerUp: 'onPressUp',
+  disabled: 'isDisabled',
+}

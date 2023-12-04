@@ -40,50 +40,60 @@ export const PageHeader = ({
           </StyledHeaderSection>
           <StyledHeaderSection>
             <IconButton
-              src="/backward.svg"
-              title="Slower"
-              isSimple
-              iconProps={{ ...ICON_PROPS, isStroked: canReduce }}
-              onPointerUp={() =>
-                canReduce &&
-                setTravelTracker({
-                  isTravelling,
-                  travelSpeed: travelSpeed / MULTIPLIER,
-                })
-              }
-            />
-            <IconButton
-              src={`/${isTravelling ? 'pause' : 'play'}.svg`}
-              title={isTravelling ? 'Pause' : 'Play'}
-              isSimple
-              iconProps={ICON_PROPS}
-              onPointerUp={() =>
-                setTravelTracker({ travelSpeed, isTravelling: !isTravelling })
-              }
-            />
-            <IconButton
-              src="/backward.svg"
-              title="Faster"
-              isSimple
+              buttonProps={{
+                title: 'Slower',
+                isSimple: true,
+                onClick: () =>
+                  canReduce &&
+                  setTravelTracker({
+                    isTravelling,
+                    travelSpeed: travelSpeed / MULTIPLIER,
+                  }),
+              }}
               iconProps={{
                 ...ICON_PROPS,
+                src: '/backward.svg',
+                isStroked: canReduce,
+              }}
+            />
+            <IconButton
+              buttonProps={{
+                title: isTravelling ? 'Pause' : 'Play',
+                isSimple: true,
+                onClick: () => {
+                  setTravelTracker({ travelSpeed, isTravelling: !isTravelling })
+                },
+              }}
+              iconProps={{
+                ...ICON_PROPS,
+                src: `/${isTravelling ? 'pause' : 'play'}.svg`,
+              }}
+            />
+            <IconButton
+              buttonProps={{
+                title: 'Faster',
+                isSimple: true,
+                onPointerUp: () =>
+                  canIncrease &&
+                  setTravelTracker({
+                    isTravelling,
+                    travelSpeed: travelSpeed * MULTIPLIER,
+                  }),
+              }}
+              iconProps={{
+                ...ICON_PROPS,
+                src: '/backward.svg',
                 isStroked: canIncrease,
                 rotate: 180,
               }}
-              onPointerUp={() =>
-                canIncrease &&
-                setTravelTracker({
-                  isTravelling,
-                  travelSpeed: travelSpeed * MULTIPLIER,
-                })
-              }
             />
           </StyledHeaderSection>
         </StyledHeaderInner>
       </PageGrid>
       <div style={{ display: 'none' }} aria-hidden>
-        <IconButton src={`/pause.svg`} />
-        <IconButton src={`/play.svg`} />
+        {/* preload images */}
+        <IconButton iconProps={{ src: `/pause.svg` }} buttonProps={{}} />
+        <IconButton iconProps={{ src: `/play.svg` }} buttonProps={{}} />
       </div>
     </StyledHeader>
   )

@@ -1,6 +1,6 @@
 import { getTransientProps } from '@pi-lib/utils'
-import { StyledButton } from './Button.style'
-import { ButtonProps } from './Button.types'
+import { getStyledButton } from './Button.style'
+import { ButtonProps, HTMLElementType } from './Button.types'
 import { useButtonProps } from './hooks/useButtonProps'
 
 /**
@@ -15,22 +15,39 @@ export const Button = ({
   isCompact = false,
   isInverted = false,
   isShadowed = false,
+  isExternal = false,
+  isInline = false,
+  isSimple = false,
+  boxName = 'default',
   buttonSize = 'medium',
   dataTestid = 'pi-lib-button',
   ...props
 }: ButtonProps) => {
-  const { buttonProps } = useButtonProps<HTMLButtonElement>(props, 'button')
+  const isLink = !!props.href
+  const linkProps = isLink && {
+    href: props.href,
+    rel: isExternal ? 'external' : props.rel,
+    target: isExternal ? '_blank' : undefined,
+  }
+  const StyledButton = getStyledButton(isLink ? 'a' : 'button')
+  const { buttonProps } = useButtonProps<HTMLElementType>(
+    { ...props, ...linkProps },
+    'button'
+  )
   return (
     <StyledButton
       {...{
         ...buttonProps,
-        ...props,
+        ...linkProps,
         ...getTransientProps({
           status,
           isCompact,
           isInverted,
-          buttonSize,
           isShadowed,
+          isSimple,
+          isInline,
+          boxName,
+          buttonSize,
         }),
       }}
       data-testid={dataTestid}

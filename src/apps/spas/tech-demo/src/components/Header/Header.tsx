@@ -90,30 +90,44 @@ export const Header = () => {
               items={[
                 <ItemList>
                   <IconButton
-                    onPointerUp={() =>
-                      setTimeout(() =>
-                        dispatchWithUpdate(updateFontSize(altFontSize))
-                      )
-                    }
-                    iconProps={{ isFilled: true }}
-                    src={`${CLOUDFRONT_URL}/font-${fontSize}.svg`}
-                    title={`Switch to ${altFontSize} font`}
+                    buttonProps={{
+                      title: `Switch to ${altFontSize} font`,
+                      onClick: () => {
+                        setTimeout(() =>
+                          dispatchWithUpdate(updateFontSize(altFontSize))
+                        )
+                      },
+                    }}
+                    iconProps={{
+                      isFilled: true,
+                      src: `${CLOUDFRONT_URL}/font-${fontSize}.svg`,
+                    }}
                   />
                   <IconButton
-                    onPointerUp={() =>
-                      setTimeout(() =>
-                        dispatchWithUpdate(updateScheme(altScheme))
-                      )
-                    }
-                    iconProps={{ isStroked: true }}
-                    src={`${CLOUDFRONT_URL}/scheme-${scheme}.svg`}
-                    title={`Switch to ${altScheme} mode`}
+                    buttonProps={{
+                      onClick: () => {
+                        setTimeout(() =>
+                          dispatchWithUpdate(updateScheme(altScheme))
+                        )
+                      },
+                      title: `Switch to ${altScheme} mode`,
+                    }}
+                    iconProps={{
+                      isStroked: true,
+                      src: `${CLOUDFRONT_URL}/scheme-${scheme}.svg`,
+                    }}
                   />
                   <IconButton
-                    onPointerUp={() => setTimeout(() => setIsActive(true), 100)}
-                    iconProps={{ isFilled: true }}
-                    src={`${CLOUDFRONT_URL}/info.svg`}
-                    title="View tech demo architectural diagram"
+                    buttonProps={{
+                      onClick: () => {
+                        setTimeout(() => setIsActive(true), 100)
+                      },
+                      title: `View tech demo architectural diagram`,
+                    }}
+                    iconProps={{
+                      isFilled: true,
+                      src: `${CLOUDFRONT_URL}/info.svg`,
+                    }}
                   />
                 </ItemList>,
                 <ItemList title="Choose theme palette">

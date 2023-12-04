@@ -4,38 +4,25 @@ import { IconButton } from './IconButton'
 const meta: Meta<typeof IconButton> = {
   title: 'Atoms/Interactions/IconButton',
   component: IconButton,
-  argTypes: {
-    href: {
-      control: 'text',
-    },
-    src: {
-      control: 'text',
-    },
-    isExternal: {
-      control: 'boolean',
-    },
-    isSimple: {
-      control: 'boolean',
-    },
-    title: {
-      control: 'text',
-    },
-    onPointerUp: { action: 'clicked' },
-  },
+
   tags: ['autodocs'],
 }
 
 /**
- * The default state for the button with a pointer up (click) handler
+ * The default state for the button
  */
 export const Default: StoryObj<typeof IconButton> = {
   args: {
-    href: 'http://www.google.com',
-    src: `/info.svg`,
-    isExternal: true,
-    isSimple: false,
-    title: 'Button title',
-    dataTestid: 'pi-lib-icon-button',
+    buttonProps: {
+      href: 'http://www.google.com',
+      isExternal: true,
+      isSimple: false,
+      title: 'Button title',
+      dataTestid: 'pi-lib-icon-button',
+    },
+    iconProps: {
+      src: `/info.svg`,
+    },
   },
 }
 
@@ -44,9 +31,11 @@ export const Default: StoryObj<typeof IconButton> = {
  */
 export const Simple: StoryObj<typeof IconButton> = {
   args: {
-    src: `/info.svg`,
-    isSimple: true,
+    buttonProps: {
+      isSimple: true,
+    },
     iconProps: {
+      src: `/info.svg`,
       height: '2rem',
       isFilled: true,
     },

@@ -16,9 +16,8 @@ export const TechList = () => {
             !!title && (
               <IconButton
                 key={title}
-                iconProps={{ height: '2rem' }}
-                isExternal
-                {...{ src, href, title }}
+                iconProps={{ src, height: '2rem' }}
+                buttonProps={{ href, title, isExternal: true }}
               />
             )
           )
