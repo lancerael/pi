@@ -1,0 +1,7 @@
+{
+  "type": "minor",
+  "comment": "Improved theming",
+  "packageName": "@pi-lib/styles",
+  "email": "lancerael@googlemail.com",
+  "dependentChangeType": "patch"
+}
