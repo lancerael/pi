@@ -1,30 +1,16 @@
+import { ButtonProps } from '@pi-lib/button/src/Button.types'
 import { CustomIconProps } from '@pi-lib/custom-icon/src/CustomIcon.types'
-import { TestId } from '@pi-lib/types'
 
 /**
  * The main prop interface for the component
  */
-export interface IconButtonProps
-  extends React.HTMLProps<HTMLAnchorElement>,
-    TestId {
+export interface IconButtonProps {
   /**
-   * The source path/URL for the image
+   * Standard props for the Button component
    */
-  src: CustomIconProps['src']
+  buttonProps: ButtonProps
   /**
-   * Should it open in an new window
+   * Standard props for the CustomIcon component
    */
-  isExternal?: boolean
-  /**
-   * Should it have reduced styling
-   */
-  isSimple?: boolean
-  /**
-   * String for the title attribute
-   */
-  title?: string
-  /**
-   * Props for the CustomIcon
-   */
-  iconProps?: Omit<CustomIconProps, 'src'>
+  iconProps: CustomIconProps
 }

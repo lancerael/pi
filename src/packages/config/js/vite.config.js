@@ -1,7 +1,7 @@
 /// <reference types="vitest" />
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
-export default (libName, customRollup) => {
+export default (libName, customRollup, extraPlugins = []) => {
     return defineConfig({
         test: {
             globals: true,
@@ -34,6 +34,6 @@ export default (libName, customRollup) => {
                 },
             },
         },
-        plugins: [react()],
+        plugins: [react(), ...extraPlugins],
     });
 };

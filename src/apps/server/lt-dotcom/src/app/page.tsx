@@ -106,9 +106,13 @@ export default function Home() {
             !!title && (
               <IconButton
                 key={title}
-                iconProps={{ height: '2rem' }}
-                isExternal
-                {...{ src, href, title }}
+                buttonProps={{
+                  isExternal: true,
+                  boxName: 'light',
+                  href,
+                  title,
+                }}
+                iconProps={{ src, height: '2rem' }}
               />
             )
           )

@@ -2,7 +2,7 @@ import React from 'react'
 import { ThemeProvider } from 'styled-components'
 import { globalFontSizes, globalStyles } from './styles'
 import { themes, ThemeType } from './themes'
-import { PiTheme, Scheme, ThemeProps } from './theme.types'
+import { BoxNames, PiTheme, Scheme, ThemeProps } from './theme.types'
 import { USER_SCHEME } from './constants'
 
 /**
@@ -11,9 +11,9 @@ import { USER_SCHEME } from './constants'
 export const baseTheme = {
   fonts: ['sans-serif', 'Roboto'],
   fontSizes: {
-    small: '1em',
-    medium: '2em',
-    large: '3em',
+    small: '0.7rem',
+    medium: '1rem',
+    large: '1.5rem',
   },
 }
 
@@ -44,9 +44,10 @@ export const gradients = {
 /**
  * A map of the available box colours
  */
-export const boxColors = {
+export const boxColors: Record<BoxNames, [string, string]> = {
   default: ['textSoft', 'subtle'],
-  alt: ['text', 'border'],
+  alt: ['specialText', 'specialBg'],
+  light: ['dark', 'light'],
 }
 
 /**

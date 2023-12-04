@@ -38,7 +38,7 @@ const render = () => {
 }
 
 const meta: Meta<typeof useWindowClick> = {
-  title: 'Utils/Hooks/useWindowClick',
+  title: 'Utilities/Hooks/useWindowClick',
   argTypes: {},
   tags: ['autodocs'],
 }

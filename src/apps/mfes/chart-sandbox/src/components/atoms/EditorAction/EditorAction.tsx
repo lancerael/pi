@@ -24,12 +24,11 @@ export const EditorAction = ({
     <StyledAction>
       <StyledIconButton>
         <IconButton
-          {...{
-            src,
+          buttonProps={{
             title,
             onPointerUp,
-            iconProps: { isStroked, isFilled },
           }}
+          iconProps={{ src, isStroked, isFilled }}
         />
       </StyledIconButton>
       <StyledButton>

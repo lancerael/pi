@@ -1,7 +1,6 @@
 import Banner from '@pi-lib/banner'
 import IconButton from '@pi-lib/icon-button'
 import ItemList from '../ItemList'
-import { CLOUDFRONT_URL } from '../../main'
 
 /**
  * The banner at the bottom of the page containing external links
@@ -17,24 +16,46 @@ export const Footer = () => {
     <Banner hasBackground shouldWrapItems shouldInvertGradient>
       <ItemList>
         <IconButton
-          {...iconButtonProps}
-          title="Pi Lib Monorepo - Github - external link"
-          href="https://github.com/lancerael/pi"
-          src={`${CLOUDFRONT_URL}/github.svg`}
+          iconProps={{
+            ...iconButtonProps,
+            src: `${process.env.NEXT_PUBLIC_CLOUDFRONT_URL}github.svg`,
+          }}
+          buttonProps={{
+            title: 'Pi Lib Monorepo - Github - external link',
+            href: 'https://github.com/lancerael/pi',
+          }}
         />
         <IconButton
-          {...iconButtonProps}
-          title="Pi Lib Design System - Storybook - external link"
-          href="https://pi.lance-taylor.com"
-          src={`${CLOUDFRONT_URL}/storybook.svg`}
+          iconProps={{
+            ...iconButtonProps,
+            src: `${process.env.NEXT_PUBLIC_CLOUDFRONT_URL}storybook.svg`,
+          }}
+          buttonProps={{
+            title: 'Pi Lib Design System - Storybook - external link',
+            href: 'https://pi.lance-taylor.com',
+          }}
+        />
+        <IconButton
+          iconProps={{
+            ...iconButtonProps,
+            src: `${process.env.NEXT_PUBLIC_CLOUDFRONT_URL}npm.svg`,
+          }}
+          buttonProps={{
+            title: 'Pi Lib Public Packages - NPM - external link',
+            href: 'https://www.npmjs.com/~pi-lib',
+          }}
         />
       </ItemList>
       <ItemList>
         <IconButton
-          {...iconButtonProps}
-          title="by Lance Taylor - Linkedin - external link"
-          href="https://www.linkedin.com/in/lance-taylor-47b85b40"
-          src={`${CLOUDFRONT_URL}/linkedin.svg`}
+          iconProps={{
+            ...iconButtonProps,
+            src: `${process.env.NEXT_PUBLIC_CLOUDFRONT_URL}linkedin.svg`,
+          }}
+          buttonProps={{
+            title: 'by Lance Taylor - Linkedin - external link',
+            href: 'https://www.linkedin.com/in/lance-taylor-47b85b40',
+          }}
         />
       </ItemList>
     </Banner>

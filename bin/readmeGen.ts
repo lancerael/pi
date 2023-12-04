@@ -78,7 +78,6 @@ ${
       Theming: [],
       Atoms: [],
       Molecules: [],
-      Hooks: [],
       Utilities: [],
     }
     const packageJsonFiles = await getPackageJsonFiles()

@@ -41,7 +41,7 @@ const TransitionDemo = () => {
 }
 
 const meta: Meta<typeof doTransition> = {
-  title: 'Utils/Helpers/doTransition',
+  title: 'Utilities/Helpers/doTransition',
   argTypes: {},
   tags: ['autodocs'],
 }

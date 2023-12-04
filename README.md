@@ -31,7 +31,7 @@ React theming utility for use with Pi and styled-components
     <tr>
       <td><a href="http://pi.lance-taylor.com/?path=/story/theming-getting-started" target="_blank">Docs</a></td>
       <td><a href="https://www.npmjs.com/package/@pi-lib/styles?activeTab=readme" target="_blank">NPM</a></td>
-      <td><a href="https://github.com/lancerael/pi/tree/main/src/styles" target="_blank">Github</a></td>
+      <td><a href="https://github.com/lancerael/pi/tree/main/src/packages/styles" target="_blank">Github</a></td>
     </tr>
   </tbody>
 </table>
@@ -114,7 +114,7 @@ A wrapper for a simple grid layout.
 
 A React component for a special button with an icon
 
-**Peer Dependencies:** @pi-lib/styles, @pi-lib/utils, @pi-lib/custom-icon, react, react-svg, styled-components
+**Peer Dependencies:** @pi-lib/custom-icon, @pi-lib/styles, @pi-lib/utils, react, react-svg, styled-components
 
 <table>
   <tbody>
@@ -240,7 +240,7 @@ A card component with a title and subtitle.
 
 **@pi-lib/carousel**
 
-**Peer Dependencies:** @pi-lib/styles, @pi-lib/use-touch, @pi-lib/utils, react, styled-components
+**Peer Dependencies:** @pi-lib/styles, @pi-lib/use-throttled-events, @pi-lib/use-touch, @pi-lib/utils, react, styled-components
 
 <table>
   <tbody>
@@ -342,7 +342,52 @@ A React component for a table with expandable rows
   </tbody>
 </table>
 
-## Hooks
+## Utilities
+
+### config
+
+**@pi-lib/config**
+
+Shared Pi config
+
+<table>
+  <tbody>
+    <tr>
+      <td><a href="https://www.npmjs.com/package/@pi-lib/config?activeTab=readme" target="_blank">NPM</a></td>
+      <td><a href="https://github.com/lancerael/pi/tree/main/src/config" target="_blank">Github</a></td>
+    </tr>
+  </tbody>
+</table>
+
+### constants
+
+**@pi-lib/constants**
+
+Shared Pi constants
+
+<table>
+  <tbody>
+    <tr>
+      <td><a href="https://www.npmjs.com/package/@pi-lib/constants?activeTab=readme" target="_blank">NPM</a></td>
+      <td><a href="https://github.com/lancerael/pi/tree/main/src/config" target="_blank">Github</a></td>
+    </tr>
+  </tbody>
+</table>
+
+### types
+
+**@pi-lib/types**
+
+Global types for Pi
+
+<table>
+  <tbody>
+    <tr>
+      <td><a href="https://www.npmjs.com/package/@pi-lib/types?activeTab=readme" target="_blank">NPM</a></td>
+      <td><a href="https://github.com/lancerael/pi/tree/main/src/types" target="_blank">Github</a></td>
+    </tr>
+  </tbody>
+</table>
 
 ### useThrottledEvents
 
@@ -350,7 +395,7 @@ A React component for a table with expandable rows
 
 Hook used to add throttled events to a React component
 
-**Peer Dependencies:** @pi-lib/utils, react
+**Peer Dependencies:** @pi-lib/use-hash-comparison, @pi-lib/utils, react
 
 <table>
   <tbody>
@@ -404,7 +449,7 @@ Hook used to add throttled escape (window) clicks to a React component
 
 Create a hash of any object - can be used to compare dependencies and ensure correct re-rendering.
 
-**Peer Dependencies:** @pi-lib/styles, @pi-lib/utils, react
+**Peer Dependencies:** @pi-lib/utils, react
 
 <table>
   <tbody>
@@ -412,53 +457,6 @@ Create a hash of any object - can be used to compare dependencies and ensure cor
       <td><a href="https://pi.lance-taylor.com/?path=/docs/utils-hooks-usehashcomparison--docs" target="_blank">Docs</a></td>
       <td><a href="https://www.npmjs.com/package/@pi-lib/use-hash-comparison?activeTab=readme" target="_blank">NPM</a></td>
       <td><a href="https://github.com/lancerael/pi/tree/main/./src/packages/hooks/usehashComparison" target="_blank">Github</a></td>
-    </tr>
-  </tbody>
-</table>
-
-## Utilities
-
-### config
-
-**@pi-lib/config**
-
-Shared Pi config
-
-<table>
-  <tbody>
-    <tr>
-      <td><a href="https://www.npmjs.com/package/@pi-lib/config?activeTab=readme" target="_blank">NPM</a></td>
-      <td><a href="https://github.com/lancerael/pi/tree/main/src/config" target="_blank">Github</a></td>
-    </tr>
-  </tbody>
-</table>
-
-### constants
-
-**@pi-lib/constants**
-
-Shared Pi constants
-
-<table>
-  <tbody>
-    <tr>
-      <td><a href="https://www.npmjs.com/package/@pi-lib/constants?activeTab=readme" target="_blank">NPM</a></td>
-      <td><a href="https://github.com/lancerael/pi/tree/main/src/config" target="_blank">Github</a></td>
-    </tr>
-  </tbody>
-</table>
-
-### types
-
-**@pi-lib/types**
-
-Global types for Pi
-
-<table>
-  <tbody>
-    <tr>
-      <td><a href="https://www.npmjs.com/package/@pi-lib/types?activeTab=readme" target="_blank">NPM</a></td>
-      <td><a href="https://github.com/lancerael/pi/tree/main/src/types" target="_blank">Github</a></td>
     </tr>
   </tbody>
 </table>

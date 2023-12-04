@@ -8,7 +8,7 @@
     "pi",
     "throttle",
     "events",
-    "utils"
+    "utilities"
   ],
   "homepage": "https://pi.lance-taylor.com/?path=/docs/utils-hooks-usethrottledevents--docs",
   "repository": {
