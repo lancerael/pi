@@ -39,6 +39,7 @@ export const statusColors = {
 export const gradients = {
   default: ['dark', 'specialShadow'],
   alt: ['text', 'textSoft'],
+  special: ['special', 'specialA'],
 }
 
 /**
@@ -46,6 +47,7 @@ export const gradients = {
  */
 export const boxColors: Record<BoxNames, [string, string]> = {
   default: ['textSoft', 'subtle'],
+  hi: ['bg', 'text'],
   alt: ['specialText', 'specialBg'],
   light: ['dark', 'light'],
 }

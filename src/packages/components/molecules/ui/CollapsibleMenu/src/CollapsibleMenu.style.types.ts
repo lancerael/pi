@@ -7,7 +7,7 @@ export interface StyledCollapsibleMenuProps {
   /**
    * The menu is collapsed or open
    */
-  isOpen?: boolean
+  $isOpen?: boolean
 }
 
 export type StyledLinkType = CustomStyledType<

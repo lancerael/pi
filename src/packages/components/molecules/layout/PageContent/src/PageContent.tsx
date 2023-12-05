@@ -10,13 +10,16 @@ import { PageContentProps } from './PageContent.types'
  * A React component for a page layout with a sidebar
  */
 export const PageContent = ({
-  sidebar,
   children,
+  sidebar,
   maxWidth = '38%',
   isCollapsible = true,
+  ...props
 }: PageContentProps) => {
   return (
-    <StyledPageContent {...getTransientProps({ isCollapsible })}>
+    <StyledPageContent
+      {...{ ...props, ...getTransientProps({ isCollapsible }) }}
+    >
       {!!sidebar && (
         <StyledSidebar {...getTransientProps({ maxWidth, isCollapsible })}>
           {sidebar}

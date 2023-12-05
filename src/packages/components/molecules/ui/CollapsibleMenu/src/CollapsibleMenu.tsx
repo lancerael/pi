@@ -12,6 +12,7 @@ import {
 } from './CollapsibleMenu.style'
 import Icon from '@pi-lib/icon'
 import { CollapsibleMenuProps } from './CollapsibleMenu.types'
+import { PressEvent } from '@react-types/shared'
 
 /**
  * A React component for an expanding/collapsing menu with icons
@@ -27,7 +28,7 @@ export const CollapsibleMenu = ({
 
   let menuState = useMenuTriggerState(menutriggerProps)
   let { menuTriggerProps, menuProps } = useMenuTrigger({}, menuState, openerRef)
-  const { isOpen, setOpen } = menuState
+  const { isOpen: $isOpen, setOpen } = menuState
 
   useWindowClick(() => setOpen(false), containerRef)
 
@@ -35,16 +36,25 @@ export const CollapsibleMenu = ({
     <StyledContainer ref={containerRef}>
       <StyledOpener
         aria-label={title}
-        {...{ isOpen, ...menuTriggerProps }}
+        {...{
+          ...menuTriggerProps,
+          onPress: (e: PressEvent) => {
+            // fix aria event bubbling
+            containerRef.current?.dispatchEvent(new MouseEvent('click'))
+            menuTriggerProps.onPress?.(e)
+          },
+          $isOpen,
+        }}
         ref={openerRef}
       >
         <Icon
-          iconName={isOpen ? 'Close' : iconName}
-          color={isOpen ? 'var(--shadows)' : undefined}
+          isBrighter
+          iconName={$isOpen ? 'Close' : iconName}
+          color={$isOpen ? 'var(--shadow)' : undefined}
         />
       </StyledOpener>
-      <StyledCollapsibleMenu {...{ isOpen }} aria-hidden={!isOpen}>
-        <StyledMenuInner {...{ isOpen, ...menuProps }}>
+      <StyledCollapsibleMenu {...{ $isOpen }} aria-hidden={!$isOpen}>
+        <StyledMenuInner {...{ ...menuProps, $isOpen }}>
           <StyledMenu>
             {items?.map((item, i) => (
               <StyledMenuItem key={i}>{item}</StyledMenuItem>

@@ -9,7 +9,7 @@ export const StyledAxisChart = styled.div`
   flex-grow: 1;
   position: relative;
   height: 100%;
-  padding-left: 4px;
+  padding: 4px !important;
 
   & svg {
     & rect,

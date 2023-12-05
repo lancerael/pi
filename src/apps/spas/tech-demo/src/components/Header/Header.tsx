@@ -6,9 +6,8 @@ import Link from '@pi-lib/link'
 import CollapsibleMenu from '@pi-lib/collapsible-menu'
 import Modal from '@pi-lib/modal'
 import Select from '@pi-lib/select'
-import Banner from '@pi-lib/banner'
+import PageBanner from '@pi-lib/page-banner'
 import IconButton from '@pi-lib/icon-button'
-import Toast from '@pi-lib/toast'
 import {
   updatePage,
   updateScheme,
@@ -30,6 +29,7 @@ import {
   StyledToolbar,
 } from './Header.style'
 import { Logo } from './Logo'
+import Toast from '@pi-lib/toast'
 import CookieToast from '../CookieToast'
 
 /**
@@ -49,13 +49,14 @@ export const Header = () => {
   const altScheme = scheme === 'dark' ? 'light' : 'dark'
   const altFontSize = fontSize === 'large' ? 'small' : 'large'
 
-  const links = [
+  const links = (color?: string) => [
     <Link
       to="/"
       onPointerUp={() => dispatch(updatePage('/'))}
       isMain
       isInactive={page === '/'}
       key="sandbox"
+      color={color}
     >
       Sandbox
     </Link>,
@@ -65,6 +66,7 @@ export const Header = () => {
       isMain
       isInactive={page === '/candlestick'}
       key="candlestick"
+      color={color}
     >
       Candlestick
     </Link>,
@@ -73,60 +75,69 @@ export const Header = () => {
   const arcTitle = 'Demo architecture diagram'
   const settingsRef = useRef<HTMLDivElement>(null)
 
+  window.addEventListener('keydown', () => console.log('wc'), true)
+
   return (
     <>
-      <Banner hasBackground>
+      <PageBanner hasBackground>
         <StyledHeader>
-          <Logo size={'1.2em'} fill="var(--outline)" /> Pi Tech Demo
+          <Logo size={'1.2em'} fill="var(--special)" /> Pi Tech Demo
         </StyledHeader>
         <StyledToolbar>
-          <StyledLinks>{links}</StyledLinks>
+          <StyledLinks>{links('light')}</StyledLinks>
           <StyledMenu>
-            <CollapsibleMenu items={links} />
+            <CollapsibleMenu items={links('specialText')} />
           </StyledMenu>
           <div ref={settingsRef}>
             <CollapsibleMenu
               iconName="Cog"
+              title="Site settings"
               items={[
                 <ItemList>
                   <IconButton
                     buttonProps={{
                       title: `Switch to ${altFontSize} font`,
-                      onClick: () => {
+                      onPress: () => {
                         setTimeout(() =>
                           dispatchWithUpdate(updateFontSize(altFontSize))
                         )
                       },
+                      boxName: 'hi',
                     }}
                     iconProps={{
                       isFilled: true,
-                      src: `${CLOUDFRONT_URL}/font-${fontSize}.svg`,
+                      src: `${CLOUDFRONT_URL}/font-${altFontSize}.svg`,
+                      color: 'var(--bg)',
                     }}
                   />
                   <IconButton
                     buttonProps={{
-                      onClick: () => {
+                      onPress: () => {
                         setTimeout(() =>
                           dispatchWithUpdate(updateScheme(altScheme))
                         )
                       },
                       title: `Switch to ${altScheme} mode`,
+                      boxName: 'hi',
                     }}
                     iconProps={{
                       isStroked: true,
-                      src: `${CLOUDFRONT_URL}/scheme-${scheme}.svg`,
+                      src: `${CLOUDFRONT_URL}/scheme-${altScheme}.svg`,
+                      color: 'var(--bg)',
                     }}
                   />
                   <IconButton
                     buttonProps={{
-                      onClick: () => {
+                      onPress: () => {
                         setTimeout(() => setIsActive(true), 100)
                       },
                       title: `View tech demo architectural diagram`,
+                      boxName: 'hi',
                     }}
                     iconProps={{
                       isFilled: true,
                       src: `${CLOUDFRONT_URL}/info.svg`,
+                      color: 'var(--bg)',
                     }}
                   />
                 </ItemList>,
@@ -167,7 +178,7 @@ export const Header = () => {
             <TechList />
           </StyledInfo>
         </Modal>
-      </Banner>
+      </PageBanner>
       <Toast
         toasts={{
           consent: {

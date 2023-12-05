@@ -68,7 +68,7 @@ export const box = ({
   isTransparent,
   shadowProps,
 }: BoxProps = {}) => {
-  const colors = boxColors[name]
+  const colors = [...boxColors[name]]
   if (isInverted) colors.reverse()
   const [colorVar, backgroundVar] = colors
 

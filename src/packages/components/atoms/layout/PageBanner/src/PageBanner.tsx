@@ -1,12 +1,12 @@
 import { getTransientProps } from '@pi-lib/utils'
-import { StyledBanner } from './Banner.style'
-import { BannerProps } from './Banner.types'
+import { StyledBanner } from './PageBanner.style'
+import { BannerProps } from './PageBanner.types'
 
 /**
  * A banner React component that can comtain spaced or flowing items
  */
-export const Banner = ({ children, ...styleProps }: BannerProps) => (
+export const PageBanner = ({ children, ...styleProps }: BannerProps) => (
   <StyledBanner {...getTransientProps(styleProps)}>{children}</StyledBanner>
 )
 
-export default Banner
+export default PageBanner

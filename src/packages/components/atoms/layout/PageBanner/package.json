@@ -1,6 +1,6 @@
 {
-  "name": "@pi-lib/banner",
-  "version": "1.3.10",
+  "name": "@pi-lib/page-banner",
+  "version": "0.0.0",
   "description": "A banner React component that can comtain spaced or flowing items",
   "keywords": [
     "pi",
@@ -14,7 +14,7 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/lancerael/pi.git",
-    "directory": "src/packages/components/atoms/layout/Banner"
+    "directory": "src/packages/components/atoms/layout/PageBanner"
   },
   "license": "ISC",
   "author": "Lance Taylor",

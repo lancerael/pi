@@ -20,6 +20,9 @@ export const Default: StoryObj<typeof Button> = {
     isCompact: false,
     isInverted: false,
     isShadowed: false,
+    isSimple: false,
+    isExternal: false,
+    isInline: false,
     disabled: false,
     boxName: 'default',
     buttonSize: 'medium',
@@ -157,6 +160,26 @@ export const Compact: StoryObj<typeof Button> = {
   args: {
     children: 'Compact',
     isCompact: true,
+  },
+}
+
+/**
+ * The small version of the button
+ */
+export const Small: StoryObj<typeof Button> = {
+  args: {
+    children: 'Small',
+    buttonSize: 'small',
+  },
+}
+
+/**
+ * The large version of the button
+ */
+export const Large: StoryObj<typeof Button> = {
+  args: {
+    children: 'Large',
+    buttonSize: 'large',
   },
 }
 

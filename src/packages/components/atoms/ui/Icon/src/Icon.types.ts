@@ -13,6 +13,10 @@ export interface IconProps {
    */
   color?: string
   /**
+   * If the icon brightness should be boosted
+   */
+  isBrighter?: boolean
+  /**
    * The size of the icon
    */
   size?: string

@@ -18,5 +18,5 @@ export interface ActionProps {
   /**
    * Handler for the user click/touch
    */
-  onPointerUp: (...args: unknown[]) => unknown
+  onClick: (...args: unknown[]) => unknown
 }

@@ -19,13 +19,17 @@ export const useWindowClick = (
       callback()
     }
   }
+
   const onEscapePress = ({ key }: KeyboardEvent) => {
     if (key === 'Escape') callback()
   }
+
   useThrottledEvents(onWindowClick as CallbackFunction, {
     events: ['click'],
     doInit: false,
+    args: { capture: true },
   })
+
   useThrottledEvents(onEscapePress as CallbackFunction, {
     events: ['keydown'],
     doInit: false,

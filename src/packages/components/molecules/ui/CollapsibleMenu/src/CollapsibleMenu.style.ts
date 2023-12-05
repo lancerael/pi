@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components'
 import { Button } from 'react-aria-components'
-import { box } from '@pi-lib/styles'
+import { gradient } from '@pi-lib/styles'
 import {
   StyledCollapsibleMenuProps,
   StyledLinkType,
@@ -28,23 +28,13 @@ export const StyledOpener: StyledLinkType = styled(Button)`
   z-index: 999;
   right: 0;
   top: -2px;
-  border-radius: 5px;
-  border: 1px solid rgba(0, 0, 0, 0%);
+  shadow: none;
+  border: none;
   transition-delay: 0.05s;
-  ${({ isOpen }) =>
-    isOpen &&
+  ${({ $isOpen }) =>
+    $isOpen &&
     css`
-      ${box({ name: 'alt' })}
-      box-shadow: none;
-      border-radius: 5px 5px 0 0;
-      border-bottom: 1px solid var(--border);
-      svg {
-        fill: var(--text) !important;
-      }
-      .strokes path,
-      .strokes polyline {
-        stroke: var(--text) !important;
-      }
+      background: var(--special);
     `}
   padding: 0;
   margin: 0;
@@ -54,16 +44,18 @@ export const StyledOpener: StyledLinkType = styled(Button)`
  * The container for the styles in the collapsible part of the menu
  */
 export const StyledCollapsibleMenu = styled.div<StyledCollapsibleMenuProps>(
-  ({ isOpen }) => css`
-    ${box({ name: 'alt' })}
+  ({ $isOpen }) => css`
+    ${gradient({ name: 'special', to: 'bottom' })}
+    color: var(--specialText) !important;
+    padding: 0.5rem;
     border-radius: 5px 0 5px 5px;
-    opacity: ${isOpen ? 1 : 0};
+    opacity: ${$isOpen ? 1 : 0};
     position: absolute;
     top: calc(22px + 0.6rem);
     right: 0;
     overflow: hidden;
     z-index: 998;
-    visibility: ${isOpen ? 'visible' : 'hidden'};
+    visibility: ${$isOpen ? 'visible' : 'hidden'};
   `
 )
 
@@ -71,8 +63,8 @@ export const StyledCollapsibleMenu = styled.div<StyledCollapsibleMenuProps>(
  * The styles for the innper part of the collapsible menu
  */
 export const StyledMenuInner = styled.div<StyledCollapsibleMenuProps>(
-  ({ isOpen }) => css`
-    margin-top: ${isOpen ? '0' : '-200px'};
+  ({ $isOpen }) => css`
+    margin-top: ${$isOpen ? '0' : '-200px'};
     display: flex;
     flex-direction: column;
     gap: 8px;

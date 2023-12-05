@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components'
 import { gradient, shadow } from '@pi-lib/styles'
-import { StyledBannerProps } from './Banner.styles.types'
+import { StyledBannerProps } from './PageBanner.styles.types'
 
 /**
  * The main container element for the banner styles

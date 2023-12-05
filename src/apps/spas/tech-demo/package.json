@@ -15,8 +15,9 @@
   },
   "dependencies": {
     "@originjs/vite-plugin-federation": "^1.2.2",
-    "@pi-lib/banner": "workspace:^",
+    "@pi-lib/page-banner": "workspace:^",
     "@pi-lib/button": "workspace:^",
+    "@pi-lib/carousel": "workspace:^",
     "@pi-lib/collapsible-menu": "workspace:^",
     "@pi-lib/constants": "workspace:^",
     "@pi-lib/icon-button": "workspace:^",

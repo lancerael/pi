@@ -29,11 +29,13 @@ export const Button = ({
     rel: isExternal ? 'external' : props.rel,
     target: isExternal ? '_blank' : undefined,
   }
-  const StyledButton = getStyledButton(isLink ? 'a' : 'button')
+  const elementType = isLink ? 'a' : 'button'
+  const StyledButton = getStyledButton(elementType)
   const { buttonProps } = useButtonProps<HTMLElementType>(
     { ...props, ...linkProps },
-    'button'
+    elementType
   )
+
   return (
     <StyledButton
       {...{

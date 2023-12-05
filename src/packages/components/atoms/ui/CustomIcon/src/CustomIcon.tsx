@@ -15,14 +15,16 @@ export const CustomIcon = ({
   rotate,
   isFilled,
   isStroked,
-}: CustomIconProps) => (
-  <StyledCustomIcon
-    data-testid="pi-lib-custom-icon"
-    {...{
-      src,
-      ...getTransientProps({ color, height, rotate, isFilled, isStroked }),
-    }}
-  />
-)
+}: CustomIconProps) => {
+  return (
+    <StyledCustomIcon
+      data-testid="pi-lib-custom-icon"
+      {...{
+        src,
+        ...getTransientProps({ color, height, rotate, isFilled, isStroked }),
+      }}
+    />
+  )
+}
 
 export default CustomIcon

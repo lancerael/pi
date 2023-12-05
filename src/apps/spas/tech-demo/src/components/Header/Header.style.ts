@@ -12,6 +12,7 @@ export const StyledHeader = styled.h1`
   text-shadow: 1px 1px rgb(0 0 0 / 30%);
   position: relative;
   margin: 0;
+  filter: brightness(150%);
 
   svg {
     padding-top: 8px;
@@ -67,7 +68,7 @@ export const StyledPalette: CustomStyledType<
   { src: string }
 > = styled(ReactSVG)`
   svg {
-    fill: var(--textSoft);
+    fill: var(--bg);
     width: 1em;
     height: 1em;
     margin-top: 1px;

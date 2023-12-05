@@ -20,8 +20,12 @@ export const StyledDismissableContent =
       margin-bottom: ${$isVisible ? '0' : '-100px'};
       display: ${$isPresent ? 'block' : 'none'};
       position: relative;
-      width: clamp(25%, 50%, 75%);
+      width: clamp(50%, 65%, 75%);
       margin: auto;
+
+      @media (max-width: 800px) {
+        width: clamp(75%, 80%, 85%);
+      }
     `
   })
 
