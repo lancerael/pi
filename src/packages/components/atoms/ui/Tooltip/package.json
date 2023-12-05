@@ -1,6 +1,6 @@
 {
   "name": "@pi-lib/tooltip",
-  "version": "2.2.9",
+  "version": "2.2.10",
   "description": "A React component used to show and position a tooltip containing content",
   "keywords": [
     "pi",

@@ -1,8 +1,16 @@
 # Change Log - @pi-lib/utils
 
-This log was last generated on Mon, 04 Dec 2023 01:02:23 GMT and should not be manually modified.
+This log was last generated on Tue, 05 Dec 2023 22:02:14 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 6.1.0
+
+Tue, 05 Dec 2023 22:02:14 GMT
+
+### Minor changes
+
+- Added object split helper (lancerael@googlemail.com)
 
 ## 6.0.0
 

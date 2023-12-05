@@ -1,8 +1,16 @@
 # Change Log - @pi-lib/dismissable-content
 
-This log was last generated on Fri, 24 Nov 2023 22:47:20 GMT and should not be manually modified.
+This log was last generated on Tue, 05 Dec 2023 22:02:14 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 1.2.10
+
+Tue, 05 Dec 2023 22:02:14 GMT
+
+### Patches
+
+- Fix hidden element bug (lancerael@googlemail.com)
 
 ## 1.2.5
 

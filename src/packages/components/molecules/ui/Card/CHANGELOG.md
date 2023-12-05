@@ -1,8 +1,16 @@
 # Change Log - @pi-lib/card
 
-This log was last generated on Thu, 30 Nov 2023 16:50:50 GMT and should not be manually modified.
+This log was last generated on Tue, 05 Dec 2023 22:02:14 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 2.1.0
+
+Tue, 05 Dec 2023 22:02:14 GMT
+
+### Minor changes
+
+- Opened default prop interface (lancerael@googlemail.com)
 
 ## 2.0.9
 

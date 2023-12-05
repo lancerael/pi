@@ -1,8 +1,16 @@
 # Change Log - @pi-lib/page-banner
 
-This log was last generated on Thu, 30 Nov 2023 16:50:50 GMT and should not be manually modified.
+This log was last generated on Tue, 05 Dec 2023 22:02:14 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 1.0.0
+
+Tue, 05 Dec 2023 22:02:14 GMT
+
+### Major changes
+
+- Renamed banner component (lancerael@googlemail.com)
 
 ## 1.3.10
 

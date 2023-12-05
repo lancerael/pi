@@ -1,8 +1,16 @@
 # Change Log - @pi-lib/collapsible-menu
 
-This log was last generated on Fri, 24 Nov 2023 22:47:20 GMT and should not be manually modified.
+This log was last generated on Tue, 05 Dec 2023 22:02:14 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 1.1.5
+
+Tue, 05 Dec 2023 22:02:14 GMT
+
+### Patches
+
+- Fix aria event bubbling (lancerael@googlemail.com)
 
 ## 1.1.0
 

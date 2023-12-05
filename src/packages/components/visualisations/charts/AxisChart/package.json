@@ -1,6 +1,6 @@
 {
   "name": "@pi-lib/axis-chart",
-  "version": "1.2.4",
+  "version": "1.2.5",
   "description": "A React component used to display a bar ot line chart",
   "keywords": [
     "pi",

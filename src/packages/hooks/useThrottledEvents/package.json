@@ -1,6 +1,6 @@
 {
   "name": "@pi-lib/use-throttled-events",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "Hook used to add throttled events to a React component",
   "keywords": [
     "react",

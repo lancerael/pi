@@ -2,6 +2,21 @@
   "name": "@pi-lib/custom-icon",
   "entries": [
     {
+      "date": "Tue, 05 Dec 2023 22:02:14 GMT",
+      "tag": "@pi-lib/custom-icon_v1.0.10",
+      "version": "1.0.10",
+      "comments": {
+        "patch": [
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/custom-icon",
+            "commit": "25f8b461137680aed0f20e42b4921de9f047f88e",
+            "comment": "Code tweaks"
+          }
+        ]
+      }
+    },
+    {
       "date": "Fri, 24 Nov 2023 22:47:20 GMT",
       "tag": "@pi-lib/custom-icon_v1.0.5",
       "version": "1.0.5",

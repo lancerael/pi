@@ -2,6 +2,21 @@
   "name": "@pi-lib/carousel",
   "entries": [
     {
+      "date": "Tue, 05 Dec 2023 22:02:14 GMT",
+      "tag": "@pi-lib/carousel_v2.0.7",
+      "version": "2.0.7",
+      "comments": {
+        "patch": [
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/carousel",
+            "commit": "25f8b461137680aed0f20e42b4921de9f047f88e",
+            "comment": "Better typings"
+          }
+        ]
+      }
+    },
+    {
       "date": "Mon, 04 Dec 2023 01:02:23 GMT",
       "tag": "@pi-lib/carousel_v2.0.6",
       "version": "2.0.6",

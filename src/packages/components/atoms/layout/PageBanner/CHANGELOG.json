@@ -2,6 +2,21 @@
   "name": "@pi-lib/page-banner",
   "entries": [
     {
+      "date": "Tue, 05 Dec 2023 22:02:14 GMT",
+      "tag": "@pi-lib/page-banner_v1.0.0",
+      "version": "1.0.0",
+      "comments": {
+        "major": [
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/page-banner",
+            "commit": "25f8b461137680aed0f20e42b4921de9f047f88e",
+            "comment": "Renamed banner component"
+          }
+        ]
+      }
+    },
+    {
       "date": "Thu, 30 Nov 2023 16:50:50 GMT",
       "tag": "@pi-lib/banner_v1.3.10",
       "version": "1.3.10",

@@ -2,6 +2,21 @@
   "name": "@pi-lib/utils",
   "entries": [
     {
+      "date": "Tue, 05 Dec 2023 22:02:14 GMT",
+      "tag": "@pi-lib/utils_v6.1.0",
+      "version": "6.1.0",
+      "comments": {
+        "minor": [
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/utils",
+            "commit": "25f8b461137680aed0f20e42b4921de9f047f88e",
+            "comment": "Added object split helper"
+          }
+        ]
+      }
+    },
+    {
       "date": "Mon, 04 Dec 2023 01:02:23 GMT",
       "tag": "@pi-lib/utils_v6.0.0",
       "version": "6.0.0",

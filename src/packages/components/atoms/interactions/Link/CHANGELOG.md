@@ -1,8 +1,16 @@
 # Change Log - @pi-lib/link
 
-This log was last generated on Fri, 24 Nov 2023 22:47:20 GMT and should not be manually modified.
+This log was last generated on Tue, 05 Dec 2023 22:02:14 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 2.1.0
+
+Tue, 05 Dec 2023 22:02:14 GMT
+
+### Minor changes
+
+- Added color prop (lancerael@googlemail.com)
 
 ## 2.0.5
 

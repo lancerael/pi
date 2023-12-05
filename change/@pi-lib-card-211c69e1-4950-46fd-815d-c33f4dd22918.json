@@ -1,7 +1,0 @@
-{
-  "type": "minor",
-  "comment": "Opened default prop interface",
-  "packageName": "@pi-lib/card",
-  "email": "lancerael@googlemail.com",
-  "dependentChangeType": "patch"
-}

@@ -2,6 +2,21 @@
   "name": "@pi-lib/dismissable-content",
   "entries": [
     {
+      "date": "Tue, 05 Dec 2023 22:02:14 GMT",
+      "tag": "@pi-lib/dismissable-content_v1.2.10",
+      "version": "1.2.10",
+      "comments": {
+        "patch": [
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/dismissable-content",
+            "commit": "25f8b461137680aed0f20e42b4921de9f047f88e",
+            "comment": "Fix hidden element bug"
+          }
+        ]
+      }
+    },
+    {
       "date": "Fri, 24 Nov 2023 22:47:20 GMT",
       "tag": "@pi-lib/dismissable-content_v1.2.5",
       "version": "1.2.5",
