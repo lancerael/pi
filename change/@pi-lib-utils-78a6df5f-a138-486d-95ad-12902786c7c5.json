@@ -1,0 +1,7 @@
+{
+  "type": "minor",
+  "comment": "Added object split helper",
+  "packageName": "@pi-lib/utils",
+  "email": "lancerael@googlemail.com",
+  "dependentChangeType": "patch"
+}

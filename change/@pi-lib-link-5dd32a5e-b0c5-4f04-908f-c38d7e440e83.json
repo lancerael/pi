@@ -1,0 +1,7 @@
+{
+  "type": "minor",
+  "comment": "Added color prop",
+  "packageName": "@pi-lib/link",
+  "email": "lancerael@googlemail.com",
+  "dependentChangeType": "patch"
+}

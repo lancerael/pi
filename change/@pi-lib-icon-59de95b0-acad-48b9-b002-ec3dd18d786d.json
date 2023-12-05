@@ -1,0 +1,7 @@
+{
+  "type": "minor",
+  "comment": "Added isBrighter prop",
+  "packageName": "@pi-lib/icon",
+  "email": "lancerael@googlemail.com",
+  "dependentChangeType": "patch"
+}

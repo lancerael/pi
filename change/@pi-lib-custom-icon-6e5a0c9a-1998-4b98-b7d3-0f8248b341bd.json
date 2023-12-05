@@ -1,0 +1,7 @@
+{
+  "type": "patch",
+  "comment": "Code tweaks",
+  "packageName": "@pi-lib/custom-icon",
+  "email": "lancerael@googlemail.com",
+  "dependentChangeType": "patch"
+}
