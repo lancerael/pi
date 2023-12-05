@@ -24,6 +24,7 @@ export const Card = ({
   isClear,
   iconProps,
   children,
+  ...props
 }: CardProps) => {
   const icon = iconProps && (
     <StyledIcon>
@@ -32,7 +33,7 @@ export const Card = ({
   )
   const hasHeader = !!title || !!subTitle
   return (
-    <StyledCard {...getTransientProps({ isClear })}>
+    <StyledCard {...{ ...getTransientProps({ isClear }), ...props }}>
       {hasHeader ? (
         <StyledTopSection>
           {icon}

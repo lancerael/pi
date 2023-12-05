@@ -3,7 +3,9 @@ import { PropsWithChildren } from 'react'
 /**
  * The main prop interface for the component
  */
-export interface PageContentProps extends PropsWithChildren {
+export interface PageContentProps
+  extends PropsWithChildren,
+    React.HTMLProps<HTMLInputElement> {
   /**
    * The content of the sidebar
    */

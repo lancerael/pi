@@ -29,7 +29,7 @@ export const DismissableContent: FC<DismissableContentProps> = forwardRef(
     ref
   ) => {
     const [isVisible, setIsVisible] = useState(!isDismissed)
-    const [isPresent, setIsPresent] = useState(true)
+    const [isPresent, setIsPresent] = useState(false)
     const [isTimerTriggered, setIsTimerTriggered] = useState(false)
     const transitionTimer = useRef<NodeJS.Timer>()
 
@@ -70,6 +70,7 @@ export const DismissableContent: FC<DismissableContentProps> = forwardRef(
 
     return (
       <StyledDismissableContent
+        data-testid="pi-dismissable-content"
         ref={ref as React.RefObject<HTMLDivElement>}
         {...getTransientProps({ isVisible, isPresent })}
       >

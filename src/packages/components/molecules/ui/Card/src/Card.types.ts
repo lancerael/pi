@@ -1,7 +1,9 @@
 import { CustomIconProps } from '@pi-lib/custom-icon/src/CustomIcon.types'
 import { PropsWithChildren } from 'react'
 
-export interface CardProps extends PropsWithChildren {
+export interface CardProps
+  extends PropsWithChildren,
+    React.HTMLProps<HTMLInputElement> {
   /**
    * The title for the card
    */

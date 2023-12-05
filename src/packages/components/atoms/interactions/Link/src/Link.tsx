@@ -13,6 +13,7 @@ export const Link = ({
   isExternal = false,
   isMain = false,
   isInactive = false,
+  color,
   to,
   dataTestid = 'pi-lib-link',
   children,
@@ -25,6 +26,7 @@ export const Link = ({
     'data-testid': dataTestid,
     ...getTransientProps({
       isMain,
+      color,
       isInactive,
     }),
     children,

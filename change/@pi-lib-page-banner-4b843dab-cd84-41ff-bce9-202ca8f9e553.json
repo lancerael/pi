@@ -1,0 +1,7 @@
+{
+  "type": "major",
+  "comment": "Renamed banner component",
+  "packageName": "@pi-lib/page-banner",
+  "email": "lancerael@googlemail.com",
+  "dependentChangeType": "patch"
+}

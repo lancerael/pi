@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Banner } from './Banner'
-import { BannerProps } from './Banner.types'
+import { PageBanner } from './PageBanner'
+import { BannerProps } from './PageBanner.types'
 
 const render = (props: BannerProps) => (
-  <Banner {...props}>
+  <PageBanner {...props}>
     <div>Content 1</div>
     <div>Content 2</div>
     <div>Content 3</div>
@@ -13,12 +13,12 @@ const render = (props: BannerProps) => (
     <div>Content 7</div>
     <div>Content 8</div>
     <div>Content 9</div>
-  </Banner>
+  </PageBanner>
 )
 
-const meta: Meta<typeof Banner> = {
-  title: 'Atoms/Layout/Banner',
-  component: Banner,
+const meta: Meta<typeof PageBanner> = {
+  title: 'Atoms/Layout/PageBanner',
+  component: PageBanner,
   argTypes: {
     shouldWrapItems: {
       control: 'boolean',
@@ -36,7 +36,7 @@ const meta: Meta<typeof Banner> = {
 /**
  * The default state for the component
  */
-export const Default: StoryObj<typeof Banner> = {
+export const Default: StoryObj<typeof PageBanner> = {
   args: {
     shouldWrapItems: false,
     hasBackground: false,
@@ -48,7 +48,7 @@ export const Default: StoryObj<typeof Banner> = {
 /**
  * An alternative view of the banner with wrapped responsive children and inverted gradient
  */
-export const Inverted: StoryObj<typeof Banner> = {
+export const Inverted: StoryObj<typeof PageBanner> = {
   args: {
     shouldWrapItems: true,
     hasBackground: true,

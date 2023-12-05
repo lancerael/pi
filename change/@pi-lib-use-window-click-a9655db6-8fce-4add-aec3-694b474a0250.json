@@ -1,0 +1,7 @@
+{
+  "type": "patch",
+  "comment": "Added args",
+  "packageName": "@pi-lib/use-window-click",
+  "email": "lancerael@googlemail.com",
+  "dependentChangeType": "patch"
+}

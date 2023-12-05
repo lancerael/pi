@@ -9,13 +9,15 @@
     "start": "next start"
   },
   "dependencies": {
-    "@pi-lib/banner": "workspace:^",
     "@pi-lib/card": "workspace:^",
     "@pi-lib/carousel": "workspace:^",
     "@pi-lib/constants": "workspace:^",
     "@pi-lib/custom-icon": "workspace:^",
     "@pi-lib/grid": "workspace:^",
     "@pi-lib/icon-button": "workspace:^",
+    "@pi-lib/link": "workspace:^",
+    "@pi-lib/page-banner": "workspace:^",
+    "@pi-lib/page-content": "^1.1.9",
     "@pi-lib/page-grid": "workspace:^",
     "@pi-lib/shimmer": "workspace:^",
     "@pi-lib/stellar": "workspace:^",

@@ -1,20 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { CollapsibleMenu } from './CollapsibleMenu'
 import { CollapsibleMenuProps } from './CollapsibleMenu.types'
-//@ts-ignore
-import Link from '../../../../atoms/interactions/Link/src'
 
 const render = (props: CollapsibleMenuProps) => (
   <div style={{ width: '100%', display: 'flex', justifyContent: 'flex-end' }}>
     <div style={{ display: 'inline-block' }}>
-      <CollapsibleMenu
-        {...props}
-        items={[
-          <Link href="https://www.google.com">Item 1</Link>,
-          <Link href="https://www.google.com">Item 2</Link>,
-          <Link href="https://www.google.com">Item 3</Link>,
-        ]}
-      />
+      <CollapsibleMenu {...props} items={['Item 1', 'Item 2', 'Item 3']} />
     </div>
   </div>
 )

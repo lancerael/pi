@@ -11,10 +11,10 @@ export const getStyledLink = ($isInactive: boolean) =>
 /**
  * A helper to get the link style for any element type
  */
-const getLinkStyle = ({ $isMain, $isInactive }: StyledLinkProps) => {
+const getLinkStyle = ({ $isMain, $isInactive, $color }: StyledLinkProps) => {
   return css`
     text-decoration: none;
-    color: var(--outline);
+    color: var(--${$color ?? 'textStrong'});
 
     ${$isMain &&
     css`
@@ -25,7 +25,7 @@ const getLinkStyle = ({ $isMain, $isInactive }: StyledLinkProps) => {
 
     ${$isInactive
       ? css`
-          color: var(--special);
+          color: var(--${$color ?? 'textStrong'}A);
           cursor: default;
         `
       : css`

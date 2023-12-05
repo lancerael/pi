@@ -10,11 +10,16 @@ import * as icons from './icons'
  */
 export const Icon = ({
   iconName,
-  color = 'var(--outline)',
+  color = 'var(--special)',
+  isBrighter = false,
   size = 'calc(20px + 0.6rem)',
 }: IconProps) => {
   const NamedIcon = icons[iconName]
-  return <NamedIcon {...{ color, size }} />
+  return (
+    <span style={{ filter: isBrighter ? 'brightness(150%)' : undefined }}>
+      <NamedIcon {...{ color, size }} />
+    </span>
+  )
 }
 
 export default Icon

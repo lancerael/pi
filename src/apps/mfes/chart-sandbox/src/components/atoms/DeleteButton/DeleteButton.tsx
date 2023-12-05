@@ -7,10 +7,15 @@ import { DeleteButtonProps } from './DeleteButton.types'
  */
 export const DeleteButton = ({ callback, label }: DeleteButtonProps) => (
   <Button
-    onPointerUp={callback}
+    onClick={callback}
     title={`Delete this ${label}`}
     status="error"
     isCompact
+    isInverted
+    isShadowed
+    boxName="alt"
+    buttonSize="small"
+    style={{ fontSize: '0.7rem' }}
   >
     ❌
   </Button>

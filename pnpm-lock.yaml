@@ -354,9 +354,6 @@ importers:
 
   src/apps/server/lt-dotcom:
     dependencies:
-      '@pi-lib/banner':
-        specifier: workspace:^
-        version: link:../../../packages/components/atoms/layout/Banner
       '@pi-lib/card':
         specifier: workspace:^
         version: link:../../../packages/components/molecules/ui/Card
@@ -375,6 +372,15 @@ importers:
       '@pi-lib/icon-button':
         specifier: workspace:^
         version: link:../../../packages/components/atoms/interactions/IconButton
+      '@pi-lib/link':
+        specifier: workspace:^
+        version: link:../../../packages/components/atoms/interactions/Link
+      '@pi-lib/page-banner':
+        specifier: workspace:^
+        version: link:../../../packages/components/atoms/layout/PageBanner
+      '@pi-lib/page-content':
+        specifier: ^1.1.9
+        version: 1.1.9(@pi-lib/styles@src+packages+styles)(react-aria@3.26.0)(react@18.2.0)(styled-components@6.1.0)
       '@pi-lib/page-grid':
         specifier: workspace:^
         version: link:../../../packages/components/atoms/layout/PageGrid
@@ -433,12 +439,12 @@ importers:
       '@originjs/vite-plugin-federation':
         specifier: ^1.2.2
         version: 1.2.2
-      '@pi-lib/banner':
-        specifier: workspace:^
-        version: link:../../../packages/components/atoms/layout/Banner
       '@pi-lib/button':
         specifier: workspace:^
         version: link:../../../packages/components/atoms/interactions/Button
+      '@pi-lib/carousel':
+        specifier: workspace:^
+        version: link:../../../packages/components/molecules/ui/Carousel
       '@pi-lib/collapsible-menu':
         specifier: workspace:^
         version: link:../../../packages/components/molecules/ui/CollapsibleMenu
@@ -457,6 +463,9 @@ importers:
       '@pi-lib/modal':
         specifier: workspace:^
         version: link:../../../packages/components/molecules/ui/Modal
+      '@pi-lib/page-banner':
+        specifier: workspace:^
+        version: link:../../../packages/components/atoms/layout/PageBanner
       '@pi-lib/page-loader':
         specifier: workspace:^
         version: link:../../../packages/components/molecules/ui/PageLoader
@@ -770,7 +779,47 @@ importers:
         specifier: ^0.34.6
         version: 0.34.6(jsdom@20.0.3)
 
-  src/packages/components/atoms/layout/Banner:
+  src/packages/components/atoms/layout/Grid:
+    dependencies:
+      '@pi-lib/styles':
+        specifier: workspace:^
+        version: link:../../../../styles
+      react:
+        specifier: ^18.2.0
+        version: 18.2.0
+      styled-components:
+        specifier: ^6.1.0
+        version: 6.1.0(react-dom@18.2.0)(react@18.2.0)
+    devDependencies:
+      '@pi-lib/config':
+        specifier: workspace:^
+        version: link:../../../../config
+      '@testing-library/react':
+        specifier: ^13.3.0
+        version: 13.4.0(react-dom@18.2.0)(react@18.2.0)
+      '@vitejs/plugin-react':
+        specifier: ^4.1.0
+        version: 4.1.0(vite@4.4.10)
+      jest-axe:
+        specifier: ^8.0.0
+        version: 8.0.0
+      jsdom:
+        specifier: ^20.0.0
+        version: 20.0.3
+      rimraf:
+        specifier: ^3.0.2
+        version: 3.0.2
+      typescript:
+        specifier: ^5
+        version: 5.2.2
+      vite:
+        specifier: ^4.4.10
+        version: 4.4.10(@types/node@18.15.3)
+      vitest:
+        specifier: ^0.34.6
+        version: 0.34.6(jsdom@20.0.3)
+
+  src/packages/components/atoms/layout/ModalScreen:
     dependencies:
       '@pi-lib/styles':
         specifier: workspace:^
@@ -813,47 +862,7 @@ importers:
         specifier: ^0.34.6
         version: 0.34.6(jsdom@20.0.3)
 
-  src/packages/components/atoms/layout/Grid:
-    dependencies:
-      '@pi-lib/styles':
-        specifier: workspace:^
-        version: link:../../../../styles
-      react:
-        specifier: ^18.2.0
-        version: 18.2.0
-      styled-components:
-        specifier: ^6.1.0
-        version: 6.1.0(react-dom@18.2.0)(react@18.2.0)
-    devDependencies:
-      '@pi-lib/config':
-        specifier: workspace:^
-        version: link:../../../../config
-      '@testing-library/react':
-        specifier: ^13.3.0
-        version: 13.4.0(react-dom@18.2.0)(react@18.2.0)
-      '@vitejs/plugin-react':
-        specifier: ^4.1.0
-        version: 4.1.0(vite@4.4.10)
-      jest-axe:
-        specifier: ^8.0.0
-        version: 8.0.0
-      jsdom:
-        specifier: ^20.0.0
-        version: 20.0.3
-      rimraf:
-        specifier: ^3.0.2
-        version: 3.0.2
-      typescript:
-        specifier: ^5
-        version: 5.2.2
-      vite:
-        specifier: ^4.4.10
-        version: 4.4.10(@types/node@18.15.3)
-      vitest:
-        specifier: ^0.34.6
-        version: 0.34.6(jsdom@20.0.3)
-
-  src/packages/components/atoms/layout/ModalScreen:
+  src/packages/components/atoms/layout/PageBanner:
     dependencies:
       '@pi-lib/styles':
         specifier: workspace:^
@@ -5504,6 +5513,31 @@ packages:
       node-addon-api: 3.2.1
       node-gyp-build: 4.6.0
     dev: true
+
+  /@pi-lib/page-content@1.1.9(@pi-lib/styles@src+packages+styles)(react-aria@3.26.0)(react@18.2.0)(styled-components@6.1.0):
+    resolution: {integrity: sha512-/WJegJqznwrwnulOeAH14xsU8T6xR57kz3PXLIcYJNUCEcN6CrAHrsbH8O5hCMwHxddkaqCoEUPMKPFJZYlb6A==}
+    peerDependencies:
+      '@pi-lib/styles': ^3.2.0
+      react: ^18.2.0
+      styled-components: ^6.1.0
+    dependencies:
+      '@pi-lib/styles': link:src/packages/styles
+      '@pi-lib/utils': 6.0.0(react-aria@3.26.0)(react@18.2.0)
+      react: 18.2.0
+      styled-components: 6.1.0(react-dom@18.2.0)(react@18.2.0)
+    transitivePeerDependencies:
+      - react-aria
+    dev: false
+
+  /@pi-lib/utils@6.0.0(react-aria@3.26.0)(react@18.2.0):
+    resolution: {integrity: sha512-uyFb2lTYWN+x5NhoerCC5ZRaNpyHIZ+5qOGGRbNJ8//twCdrYafvQVdLnUKt/0DUuVfUnkcSpWHjPmPDiSSRww==}
+    peerDependencies:
+      react: ^18.2.0
+      react-aria: ^3.26.0
+    dependencies:
+      react: 18.2.0
+      react-aria: 3.26.0(react-dom@18.2.0)(react@18.2.0)
+    dev: false
 
   /@preact/signals-core@1.5.0:
     resolution: {integrity: sha512-U2diO1Z4i1n2IoFgMYmRdHWGObNrcuTRxyNEn7deSq2cru0vj0583HYQZHsAqcs7FE+hQyX3mjIV7LAfHCvy8w==}

@@ -1,4 +1,4 @@
-# Change Log - @pi-lib/banner
+# Change Log - @pi-lib/page-banner
 
 This log was last generated on Thu, 30 Nov 2023 16:50:50 GMT and should not be manually modified.
 

@@ -1,0 +1,7 @@
+{
+  "type": "patch",
+  "comment": "Fix aria event bubbling",
+  "packageName": "@pi-lib/collapsible-menu",
+  "email": "lancerael@googlemail.com",
+  "dependentChangeType": "patch"
+}

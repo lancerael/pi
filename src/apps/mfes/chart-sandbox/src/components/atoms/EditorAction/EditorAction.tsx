@@ -13,7 +13,7 @@ import Button from '@pi-lib/button'
 export const EditorAction = ({
   title,
   label,
-  onPointerUp,
+  onClick,
   isStroked = false,
   isFilled = false,
 }: ActionProps) => {
@@ -26,13 +26,14 @@ export const EditorAction = ({
         <IconButton
           buttonProps={{
             title,
-            onPointerUp,
+            onClick,
+            boxName: 'hi',
           }}
-          iconProps={{ src, isStroked, isFilled }}
+          iconProps={{ src, isStroked, isFilled, color: 'var(--bg)' }}
         />
       </StyledIconButton>
       <StyledButton>
-        <Button {...{ title, onPointerUp, isInverted: true }}>
+        <Button {...{ title, onClick, boxName: 'hi' }}>
           {label.toUpperCase()}
         </Button>
       </StyledButton>

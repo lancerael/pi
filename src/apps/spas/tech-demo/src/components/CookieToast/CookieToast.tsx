@@ -14,8 +14,8 @@ export const CookieToast = ({ callback }: CookieToastProps) => (
     <div style={{ textAlign: 'center' }}>
       Store your preferences on this device?
     </div>
-    <div style={{ padding: '0 20%' }}>
-      <Button onPointerUp={callback}>Yes please! 🍪</Button>
+    <div style={{ padding: '0 10%' }}>
+      <Button onClick={callback}>Yes please! 🍪</Button>
     </div>
   </div>
 )

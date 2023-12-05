@@ -18,6 +18,10 @@ export interface LinkProps extends React.HTMLProps<HTMLAnchorElement>, TestId {
    */
   isInactive?: boolean
   /**
+   * Choose a specific color variable
+   */
+  color?: string
+  /**
    * Is it a react router link?
    */
   to?: RouterLinkProps['to']
