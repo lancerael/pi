@@ -8,7 +8,7 @@ export const Demo = () => {
     <Card
       title="Open source"
       subTitle="JavaScript tools and libraries"
-      style={{ margin: '0 0 5rem', padding: '3rem' }}
+      style={{ margin: '1rem 0 3rem' }}
     >
       <Grid>
         <div>
