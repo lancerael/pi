@@ -75,8 +75,6 @@ export const Header = () => {
   const arcTitle = 'Demo architecture diagram'
   const settingsRef = useRef<HTMLDivElement>(null)
 
-  window.addEventListener('keydown', () => console.log('wc'), true)
-
   return (
     <>
       <PageBanner hasBackground>

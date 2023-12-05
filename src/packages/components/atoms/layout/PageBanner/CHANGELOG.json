@@ -9,7 +9,7 @@
         "patch": [
           {
             "author": "lancerael@googlemail.com",
-            "package": "@pi-lib/page-banner",
+            "package": "@pi-lib/banner",
             "commit": "52e2059811ae2806fd22c0e364e9b1b9e71cee1f",
             "comment": "Better styles"
           }
@@ -24,7 +24,7 @@
         "patch": [
           {
             "author": "lancerael@googlemail.com",
-            "package": "@pi-lib/page-banner",
+            "package": "@pi-lib/banner",
             "commit": "d39a71199683c87ed51732bbd95b2d767b2810ca",
             "comment": "Updated docs"
           }
@@ -39,7 +39,7 @@
         "patch": [
           {
             "author": "lancerael@googlemail.com",
-            "package": "@pi-lib/page-banner",
+            "package": "@pi-lib/banner",
             "commit": "a23d56ef1d844b24f78c39a4ad2b26c09cb791dd",
             "comment": "Docs update"
           }
@@ -54,7 +54,7 @@
         "patch": [
           {
             "author": "lancerael@googlemail.com",
-            "package": "@pi-lib/page-banner",
+            "package": "@pi-lib/banner",
             "commit": "143a47449b28ce172adec5ca295cb91f86973576",
             "comment": "Style tweaks"
           }
@@ -69,7 +69,7 @@
         "patch": [
           {
             "author": "lancerael@googlemail.com",
-            "package": "@pi-lib/page-banner",
+            "package": "@pi-lib/banner",
             "commit": "2954d46492860e2d476fec0085b10b9b88aa5108",
             "comment": "Fix docs"
           }
@@ -84,7 +84,7 @@
         "minor": [
           {
             "author": "lancerael@googlemail.com",
-            "package": "@pi-lib/page-banner",
+            "package": "@pi-lib/banner",
             "commit": "370e148cce246bda550f9077a0e4c95262960f65",
             "comment": "Added background to banner story"
           }
@@ -99,7 +99,7 @@
         "minor": [
           {
             "author": "lancerael@hotmail.com",
-            "package": "@pi-lib/page-banner",
+            "package": "@pi-lib/banner",
             "commit": "aa5f4cb9b76bc53bea636b3d2b7abee49fe50e86",
             "comment": "LTdotcom style fixes"
           }
@@ -114,7 +114,7 @@
         "minor": [
           {
             "author": "lancerael@googlemail.com",
-            "package": "@pi-lib/page-banner",
+            "package": "@pi-lib/banner",
             "commit": "361c0e4498d835296f3e16c144fae2932c60efed",
             "comment": "Adding transparent option and transient props"
           }
@@ -129,7 +129,7 @@
         "patch": [
           {
             "author": "lancerael@hotmail.com",
-            "package": "@pi-lib/page-banner",
+            "package": "@pi-lib/banner",
             "commit": "e836b150a71dd18f58867aa340b0aaca72b636f0",
             "comment": "Bumped styled components"
           }
@@ -144,31 +144,31 @@
         "none": [
           {
             "author": "lancerael@googlemail.com",
-            "package": "@pi-lib/page-banner",
+            "package": "@pi-lib/banner",
             "commit": "00c6b0c9ba824ac921df52b9d75c3dbd3b7b1089",
             "comment": "CI tweaks & build"
           },
           {
             "author": "lancerael@googlemail.com",
-            "package": "@pi-lib/page-banner",
+            "package": "@pi-lib/banner",
             "commit": "00c6b0c9ba824ac921df52b9d75c3dbd3b7b1089",
             "comment": "ci tweaks"
           },
           {
             "author": "lancerael@googlemail.com",
-            "package": "@pi-lib/page-banner",
+            "package": "@pi-lib/banner",
             "commit": "00c6b0c9ba824ac921df52b9d75c3dbd3b7b1089",
             "comment": "ci fixes"
           },
           {
             "author": "lancerael@googlemail.com",
-            "package": "@pi-lib/page-banner",
+            "package": "@pi-lib/banner",
             "commit": "00c6b0c9ba824ac921df52b9d75c3dbd3b7b1089",
             "comment": "CI tweaks"
           },
           {
             "author": "lancerael@googlemail.com",
-            "package": "@pi-lib/page-banner",
+            "package": "@pi-lib/banner",
             "commit": "00c6b0c9ba824ac921df52b9d75c3dbd3b7b1089",
             "comment": "ci tweaks"
           }
@@ -183,7 +183,7 @@
         "none": [
           {
             "author": "lancerael@googlemail.com",
-            "package": "@pi-lib/page-banner",
+            "package": "@pi-lib/banner",
             "commit": "74c25e2d8e485c28cd2a03c5c7eb002fba54dc5d",
             "comment": "Generator dep upgrades"
           }
@@ -198,7 +198,7 @@
         "none": [
           {
             "author": "lancerael@googlemail.com",
-            "package": "@pi-lib/page-banner",
+            "package": "@pi-lib/banner",
             "commit": "9064b25428af87da4828f852d6ba104b107dff52",
             "comment": "Update prop definitions"
           }
@@ -213,7 +213,7 @@
         "minor": [
           {
             "author": "lancerael@googlemail.com",
-            "package": "@pi-lib/page-banner",
+            "package": "@pi-lib/banner",
             "commit": "6e2a24df8d3883a19f8d8954a49810adde993874",
             "comment": "Fix button width"
           }
@@ -228,7 +228,7 @@
         "patch": [
           {
             "author": "lancerael@googlemail.com",
-            "package": "@pi-lib/page-banner",
+            "package": "@pi-lib/banner",
             "commit": "c61100221c615a33b5412a9bb838250d18f8adf6",
             "comment": "Added documentation comments"
           }
@@ -243,7 +243,7 @@
         "none": [
           {
             "author": "lancerael@googlemail.com",
-            "package": "@pi-lib/page-banner",
+            "package": "@pi-lib/banner",
             "commit": "eb610a4007b4f96ce71d17e27052db9107dfc530",
             "comment": "Project structure improvements"
           }
@@ -258,7 +258,7 @@
         "patch": [
           {
             "author": "lancerael@googlemail.com",
-            "package": "@pi-lib/page-banner",
+            "package": "@pi-lib/banner",
             "commit": "fa495d9fd000ec3c46c2225f99ce410f82a87275",
             "comment": "Style tweaks"
           }
@@ -273,7 +273,7 @@
         "patch": [
           {
             "author": "lancerael@googlemail.com",
-            "package": "@pi-lib/page-banner",
+            "package": "@pi-lib/banner",
             "commit": "58b655736766600dec95853d23fa57db70587662",
             "comment": "Improved shadow style"
           }
@@ -288,7 +288,7 @@
         "minor": [
           {
             "author": "122271901+lancerael-undo@users.noreply.github.com",
-            "package": "@pi-lib/page-banner",
+            "package": "@pi-lib/banner",
             "commit": "9e1a739e7f831da1f346545745e0bd0963a63fb8",
             "comment": "* Updated component generator * Added DismissableContent * Added Modal * Added Toast * Improved structure for docs consistency * Demo enhancements"
           }
@@ -303,7 +303,7 @@
         "patch": [
           {
             "author": "122271901+lancerael-undo@users.noreply.github.com",
-            "package": "@pi-lib/page-banner",
+            "package": "@pi-lib/banner",
             "commit": "a06a3c941f5f034a411f39a97632a7d7afb773d9",
             "comment": "Updated docGen to fix links"
           }
@@ -318,7 +318,7 @@
         "minor": [
           {
             "author": "122271901+lancerael-undo@users.noreply.github.com",
-            "package": "@pi-lib/page-banner",
+            "package": "@pi-lib/banner",
             "commit": "cccff744c29975036c54c26949413b882242ff5a",
             "comment": "* Improved docs/docgen * Cleanup * Added cloudfront"
           }
@@ -333,7 +333,7 @@
         "patch": [
           {
             "author": "122271901+lancerael-undo@users.noreply.github.com",
-            "package": "@pi-lib/page-banner",
+            "package": "@pi-lib/banner",
             "commit": "e07726c36df96d861d1c157cd54add35caa5ddda",
             "comment": "Fixed theming in demo"
           }
@@ -348,7 +348,7 @@
         "minor": [
           {
             "author": "lancerael@hotmail.com",
-            "package": "@pi-lib/page-banner",
+            "package": "@pi-lib/banner",
             "commit": "047bd7276853327cdfb74d96125a8ba20cdfff15",
             "comment": "Updating component documentation"
           }
@@ -363,7 +363,7 @@
         "minor": [
           {
             "author": "lancerael@hotmail.com",
-            "package": "@pi-lib/page-banner",
+            "package": "@pi-lib/banner",
             "commit": "6e8ec8b6ec82532d31d23c7f65ed5e8a45f8c4d9",
             "comment": "Style tweaks"
           }
@@ -378,13 +378,13 @@
         "minor": [
           {
             "author": "lancerael@hotmail.com",
-            "package": "@pi-lib/page-banner",
+            "package": "@pi-lib/banner",
             "commit": "907fad13c37ae914492e80b1548355eb9366169e",
             "comment": "Added d-theia sandbox"
           },
           {
             "author": "beachball",
-            "package": "@pi-lib/page-banner",
+            "package": "@pi-lib/banner",
             "comment": "Bump @pi-lib/config to v0.4.0",
             "commit": "907fad13c37ae914492e80b1548355eb9366169e"
           }
