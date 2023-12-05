@@ -1,7 +1,0 @@
-{
-  "type": "major",
-  "comment": "Improved button accessibility",
-  "packageName": "@pi-lib/button",
-  "email": "lancerael@googlemail.com",
-  "dependentChangeType": "patch"
-}

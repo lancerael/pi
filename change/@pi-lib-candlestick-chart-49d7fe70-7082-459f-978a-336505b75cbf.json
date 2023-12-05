@@ -1,7 +1,0 @@
-{
-  "type": "minor",
-  "comment": "Improved hash comparison",
-  "packageName": "@pi-lib/candlestick-chart",
-  "email": "lancerael@googlemail.com",
-  "dependentChangeType": "patch"
-}

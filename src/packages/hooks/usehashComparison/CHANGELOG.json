@@ -2,6 +2,21 @@
   "name": "@pi-lib/use-hash-comparison",
   "entries": [
     {
+      "date": "Mon, 04 Dec 2023 01:02:23 GMT",
+      "tag": "@pi-lib/use-hash-comparison_v1.0.1",
+      "version": "1.0.1",
+      "comments": {
+        "none": [
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/use-hash-comparison",
+            "commit": "e6547fef05b0bce3c80e71d42d73766bff00ffb6",
+            "comment": "Docs update"
+          }
+        ]
+      }
+    },
+    {
       "date": "Wed, 29 Nov 2023 16:32:24 GMT",
       "tag": "@pi-lib/use-hash-comparison_v1.0.0",
       "version": "1.0.0",

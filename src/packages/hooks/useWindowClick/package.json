@@ -1,6 +1,6 @@
 {
   "name": "@pi-lib/use-window-click",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Hook used to add throttled escape (window) clicks to a React component",
   "keywords": [
     "react",

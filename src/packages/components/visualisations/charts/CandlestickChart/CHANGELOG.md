@@ -1,8 +1,16 @@
 # Change Log - @pi-lib/candlestick-chart
 
-This log was last generated on Wed, 29 Nov 2023 16:32:23 GMT and should not be manually modified.
+This log was last generated on Mon, 04 Dec 2023 01:02:23 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 2.9.0
+
+Mon, 04 Dec 2023 01:02:23 GMT
+
+### Minor changes
+
+- Improved hash comparison (lancerael@googlemail.com)
 
 ## 2.8.2
 

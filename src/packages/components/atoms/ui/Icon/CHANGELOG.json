@@ -2,6 +2,21 @@
   "name": "@pi-lib/icon",
   "entries": [
     {
+      "date": "Mon, 04 Dec 2023 01:02:23 GMT",
+      "tag": "@pi-lib/icon_v1.0.14",
+      "version": "1.0.14",
+      "comments": {
+        "none": [
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/icon",
+            "commit": "e6547fef05b0bce3c80e71d42d73766bff00ffb6",
+            "comment": "Updated docs"
+          }
+        ]
+      }
+    },
+    {
       "date": "Fri, 24 Nov 2023 22:47:20 GMT",
       "tag": "@pi-lib/icon_v1.0.12",
       "version": "1.0.12",

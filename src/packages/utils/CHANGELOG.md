@@ -1,8 +1,16 @@
 # Change Log - @pi-lib/utils
 
-This log was last generated on Wed, 29 Nov 2023 16:32:24 GMT and should not be manually modified.
+This log was last generated on Mon, 04 Dec 2023 01:02:23 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 6.0.0
+
+Mon, 04 Dec 2023 01:02:23 GMT
+
+### Major changes
+
+- MOved useButtonProps to button component (lancerael@googlemail.com)
 
 ## 5.0.0
 
