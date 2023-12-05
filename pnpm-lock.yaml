@@ -379,8 +379,8 @@ importers:
         specifier: workspace:^
         version: link:../../../packages/components/atoms/layout/PageBanner
       '@pi-lib/page-content':
-        specifier: ^1.1.9
-        version: 1.1.9(@pi-lib/styles@src+packages+styles)(react-aria@3.26.0)(react@18.2.0)(styled-components@6.1.0)
+        specifier: ^1.2.0
+        version: link:../../../packages/components/molecules/layout/PageContent
       '@pi-lib/page-grid':
         specifier: workspace:^
         version: link:../../../packages/components/atoms/layout/PageGrid
@@ -5513,31 +5513,6 @@ packages:
       node-addon-api: 3.2.1
       node-gyp-build: 4.6.0
     dev: true
-
-  /@pi-lib/page-content@1.1.9(@pi-lib/styles@src+packages+styles)(react-aria@3.26.0)(react@18.2.0)(styled-components@6.1.0):
-    resolution: {integrity: sha512-/WJegJqznwrwnulOeAH14xsU8T6xR57kz3PXLIcYJNUCEcN6CrAHrsbH8O5hCMwHxddkaqCoEUPMKPFJZYlb6A==}
-    peerDependencies:
-      '@pi-lib/styles': ^3.2.0
-      react: ^18.2.0
-      styled-components: ^6.1.0
-    dependencies:
-      '@pi-lib/styles': link:src/packages/styles
-      '@pi-lib/utils': 6.0.0(react-aria@3.26.0)(react@18.2.0)
-      react: 18.2.0
-      styled-components: 6.1.0(react-dom@18.2.0)(react@18.2.0)
-    transitivePeerDependencies:
-      - react-aria
-    dev: false
-
-  /@pi-lib/utils@6.0.0(react-aria@3.26.0)(react@18.2.0):
-    resolution: {integrity: sha512-uyFb2lTYWN+x5NhoerCC5ZRaNpyHIZ+5qOGGRbNJ8//twCdrYafvQVdLnUKt/0DUuVfUnkcSpWHjPmPDiSSRww==}
-    peerDependencies:
-      react: ^18.2.0
-      react-aria: ^3.26.0
-    dependencies:
-      react: 18.2.0
-      react-aria: 3.26.0(react-dom@18.2.0)(react@18.2.0)
-    dev: false
 
   /@preact/signals-core@1.5.0:
     resolution: {integrity: sha512-U2diO1Z4i1n2IoFgMYmRdHWGObNrcuTRxyNEn7deSq2cru0vj0583HYQZHsAqcs7FE+hQyX3mjIV7LAfHCvy8w==}
