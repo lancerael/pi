@@ -14,7 +14,7 @@ export const getStyledLink = ($isInactive: boolean) =>
 const getLinkStyle = ({ $isMain, $isInactive, $color }: StyledLinkProps) => {
   return css`
     text-decoration: none;
-    color: var(--${$color ?? 'textStrong'});
+    color: var(--${$color ?? 'special'});
 
     ${$isMain &&
     css`
@@ -25,7 +25,7 @@ const getLinkStyle = ({ $isMain, $isInactive, $color }: StyledLinkProps) => {
 
     ${$isInactive
       ? css`
-          color: var(--${$color ?? 'textStrong'}A);
+          color: var(--${$color ?? 'special'}A);
           cursor: default;
         `
       : css`

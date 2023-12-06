@@ -5,7 +5,6 @@ import Stellar from '@pi-lib/stellar'
 import PageGrid from '@pi-lib/page-grid'
 import { useThrottledEvents } from '@pi-lib/use-throttled-events'
 import { IS_CLIENT, REDUCED_MOTION } from '@pi-lib/styles'
-import { StyledFullGradient } from './page.style'
 import {
   HeaderState,
   TravelTrackerProps,
@@ -93,9 +92,7 @@ export default function Home() {
         <PageGrid>
           <Ticker {...{ isComplete, setIsComplete, travelTracker }} />
           <Skillset />
-          <StyledFullGradient className="pi-page-grid-full">
-            <TechList {...travelTracker} />
-          </StyledFullGradient>
+          <TechList {...travelTracker} />
           <Highlights />
           <Demo />
           <Footer />

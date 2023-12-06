@@ -1,14 +1,11 @@
 import { careerHighlights } from '@/data/careerHighlights'
 import Card from '@pi-lib/card'
 import Grid from '@pi-lib/grid'
-import Shimmer from '@pi-lib/shimmer'
+import PageSection from '../PageSection'
 
 export const Highlights = () => {
   return (
-    <div style={{ margin: '3rem 0 1rem' }}>
-      <div className="is-title" style={{ textAlign: 'center', margin: '2rem' }}>
-        <Shimmer lines={['Career Highlights']} behaviour="linger" delay={0} />
-      </div>
+    <PageSection title={'Career Highlights'}>
       <Grid>
         {careerHighlights.map(({ title, subTitle, summary, bullets }) => (
           <Card key={title} {...{ title, subTitle }}>
@@ -21,7 +18,7 @@ export const Highlights = () => {
           </Card>
         ))}
       </Grid>
-    </div>
+    </PageSection>
   )
 }
 
