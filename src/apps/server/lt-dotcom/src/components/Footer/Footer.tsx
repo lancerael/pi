@@ -6,7 +6,10 @@ import IconButton from '@pi-lib/icon-button'
  */
 export const Footer = () => {
   return (
-    <StyledFullGradient className="pi-page-grid-full">
+    <StyledFullGradient
+      className="pi-page-grid-full"
+      style={{ marginTop: '3rem' }}
+    >
       <div style={{ display: 'flex', justifyContent: 'space-between' }}>
         <div style={{ display: 'flex', gap: '1rem' }}>
           <IconButton

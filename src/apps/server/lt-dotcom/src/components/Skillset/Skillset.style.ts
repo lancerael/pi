@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const SkillsContainer = styled.div`
-  padding: 0 0 5rem 0;
+  padding: 0 0 3rem 0;
   @media (max-width: 1036px) {
     margin: auto;
   }

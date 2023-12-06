@@ -3,6 +3,7 @@ import { ICONS_EXTENDED } from '@pi-lib/constants'
 import IconButton from '@pi-lib/icon-button'
 import { ReactElement } from 'react'
 import { TravelTrackerProps } from '../PageHeader/PageHeader.types'
+import { StyledFullGradient } from '@/app/page.style'
 
 /**
  * Get an array of icons for the tech list
@@ -36,9 +37,9 @@ export const TechList = ({
   isTravelling: isScroller,
 }: TravelTrackerProps) => {
   return (
-    <div style={{ margin: '1rem 0' }}>
+    <StyledFullGradient className="pi-page-grid-full">
       <Carousel {...{ itemList, speed, isScroller }} />
-    </div>
+    </StyledFullGradient>
   )
 }
 

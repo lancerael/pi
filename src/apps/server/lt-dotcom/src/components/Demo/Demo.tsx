@@ -1,44 +1,48 @@
 import Card from '@pi-lib/card'
-import Grid from '@pi-lib/grid'
 import Link from '@pi-lib/link'
-import { StyledImages } from './Demo.styles'
+import { StyledImages, StyledLinkWrapper } from './Demo.styles'
+import PageSection from '../PageSection'
+import Grid from '@pi-lib/grid'
 
 export const Demo = () => {
   return (
-    <Card
-      title="Open source"
-      subTitle="JavaScript tools and libraries"
-      style={{ margin: '1rem 0 3rem' }}
-    >
-      <Grid>
-        <div>
-          <div>
-            <strong>Pi Charts</strong> - JS Charting Library
-          </div>
-          <div>
-            <strong>Pi Lib</strong> - React Component Library
-          </div>
-          <br />
-          <br />
-          <Link
-            style={{ fontSize: '2rem' }}
-            href="http://demo.lance-taylor.com"
-            isMain
+    <PageSection title={'Open Source'}>
+      <Card title="Tech Demo" subTitle="JavaScript tools and libraries">
+        <Grid>
+          <div
+            style={{
+              marginTop: '1rem',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '1rem',
+            }}
           >
-            Click for Tech Demo
-          </Link>
-          <br />
-          <br />
-          <br />
-          <br />
-        </div>
-        <StyledImages>
-          <img src="/demo1.png" alt="Demo 1 diagram" />
-          <img src="/demo2.png" alt="Demo 1 diagram" />
-          <img src="/demo3.png" alt="Demo 1 diagram" />
-        </StyledImages>
-      </Grid>
-    </Card>
+            <div>
+              <strong>Pi Charts</strong> - <em>JS Charting</em>
+            </div>
+            <div>
+              <strong>Pi Lib</strong> - <em>React Components</em>
+            </div>
+            <StyledLinkWrapper>
+              <Link
+                style={{ fontSize: '2rem' }}
+                href="http://demo.lance-taylor.com"
+                isMain
+                isExternal
+                title="Link to the Pi tech demo"
+              >
+                Click for Demo
+              </Link>
+            </StyledLinkWrapper>
+          </div>
+          <StyledImages>
+            <img src="/demo1.png" alt="Demo 1 diagram" />
+            <img src="/demo2.png" alt="Demo 2 diagram" />
+            <img src="/demo3.png" alt="Demo 3 diagram" />
+          </StyledImages>
+        </Grid>
+      </Card>
+    </PageSection>
   )
 }
 
