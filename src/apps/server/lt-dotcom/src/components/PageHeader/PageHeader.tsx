@@ -73,7 +73,7 @@ export const PageHeader = ({
               buttonProps={{
                 title: 'Faster',
                 isSimple: true,
-                onPointerUp: () =>
+                onClick: () =>
                   canIncrease &&
                   setTravelTracker({
                     isTravelling,
