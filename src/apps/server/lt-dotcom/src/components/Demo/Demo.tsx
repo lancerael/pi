@@ -37,8 +37,8 @@ export const Demo = () => {
           </div>
           <StyledImages>
             <img src="/demo1.png" alt="Demo 1 diagram" />
-            <img src="/demo2.png" alt="Demo 1 diagram" />
-            <img src="/demo3.png" alt="Demo 1 diagram" />
+            <img src="/demo2.png" alt="Demo 2 diagram" />
+            <img src="/demo3.png" alt="Demo 3 diagram" />
           </StyledImages>
         </Grid>
       </Card>
