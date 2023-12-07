@@ -95,9 +95,6 @@ export const useTouch = <T = HTMLElement>({
     (e: PointerEvent) => {
       const endCallback = () => {
         if (trackers.current.isPressed) stopCallback?.()
-        trackers.current.isPressed = false
-        trackers.current.oldPanChange = { x: 0, y: 0 }
-        delete trackers.current.activePointers[e.pointerId]
       }
       const { x, y } = trackers.current.oldPanChange
       if (Math.abs(x) + Math.abs(y) > 10) {
@@ -121,6 +118,9 @@ export const useTouch = <T = HTMLElement>({
       } else {
         endCallback()
       }
+      trackers.current.isPressed = false
+      trackers.current.oldPanChange = { x: 0, y: 0 }
+      !!e && delete trackers.current.activePointers[e.pointerId]
     },
     [
       controls.zoomLevel,
@@ -145,28 +145,25 @@ export const useTouch = <T = HTMLElement>({
         const xDist = pointerVals[0].pageX - pointerVals[1].pageX
         const yDist = pointerVals[0].pageY - pointerVals[1].pageY
         const pinchDist = Math.sqrt(xDist * xDist + yDist * yDist)
-        const zoomChange = oldPinchDist ? (oldPinchDist - pinchDist) / 200 : 0
+        const zoomChange = oldPinchDist ? (oldPinchDist - pinchDist) / 3000 : 0
         trackers.current.oldPinchDist = pinchDist
         zoom(zoomChange)
       } else if (isPressed) {
         // User is dragging
-        const x = pointerVals[0].oldPageX
-          ? e.pageX - pointerVals[0].oldPageX
-          : 0
-        const y = pointerVals[0].oldPageY
-          ? e.pageY - pointerVals[0].oldPageY
-          : 0
+        const { oldPageX: oldX, oldPageY: oldY } = pointerVals[0]
+        const x = oldX ? e.pageX - oldX : 0
+        const y = oldY ? e.pageY - oldY : 0
         pointerVals[0].oldPageX = e.pageX
         pointerVals[0].oldPageY = e.pageY
         pan({ x, y })
       }
     },
-    [controls.panLevel.x, trackers.current]
+    [controls.panLevel.x]
   )
 
-  const throttledZoom = useCallback(throttle(zoom, 10), [zoom])
-  const throttledMove = useCallback(throttle(move, 10), [move])
-  const throttledPan = useCallback(throttle(pan, 10), [pan])
+  const throttledZoom = useCallback(throttle(zoom, 100), [zoom])
+  const throttledMove = useCallback(throttle(move, 100), [move])
+  const throttledPan = useCallback(throttle(pan, 100), [pan])
 
   /**
    * Handler for trackpad pinch or mousewheel zoom.
