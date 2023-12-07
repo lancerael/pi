@@ -12,12 +12,18 @@ export const Icon = ({
   iconName,
   color = 'var(--special)',
   isBrighter = false,
-  size = 'calc(20px + 0.6rem)',
+  iconSize = 'calc(20px + 0.6rem)',
+  dataTestid = `${iconName} icon`,
+  ...props
 }: IconProps) => {
   const NamedIcon = icons[iconName]
   return (
-    <span style={{ filter: isBrighter ? 'brightness(150%)' : undefined }}>
-      <NamedIcon {...{ color, size }} />
+    <span
+      {...props}
+      data-testid={dataTestid}
+      style={{ filter: isBrighter ? 'brightness(150%)' : undefined }}
+    >
+      <NamedIcon {...{ color, iconSize }} />
     </span>
   )
 }

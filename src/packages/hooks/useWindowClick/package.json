@@ -37,7 +37,7 @@
     "vitest": "^0.34.6"
   },
   "peerDependencies": {
-    "@pi-lib/use-throttled-events": "workspace:^",
+    "@pi-lib/use-limited-events": "workspace:^",
     "react": "^18.2.0"
   }
 }

@@ -1,10 +1,10 @@
 import { IconProps } from '../Icon.types'
 
-export const Chevron = ({ color, size }: Omit<IconProps, 'iconName'>) => {
+export const Chevron = ({ color, iconSize }: Omit<IconProps, 'iconName'>) => {
   return (
     <svg
-      width={size}
-      height={size}
+      width={iconSize}
+      height={iconSize}
       viewBox="0 0 24 24"
       xmlns="http://www.w3.org/2000/svg"
       className="strokes"

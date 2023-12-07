@@ -1,4 +1,5 @@
 import { useTouch, useControls, PanLevel } from '@pi-lib/use-touch'
+import useLimitedEvents from '@pi-lib/use-limited-events'
 import {
   StyledCarousel,
   StyledCarouselInner,
@@ -6,7 +7,6 @@ import {
 } from './Carousel.style'
 import { CarouselProps, CustomPanHandler } from './Carousel.types'
 import { useCallback, useEffect, useRef } from 'react'
-import { useThrottledEvents } from '@pi-lib/use-throttled-events'
 
 /**
  * Carousel
@@ -101,9 +101,9 @@ export const Carousel = ({
   /**
    * Keep width up to date
    */
-  useThrottledEvents(
+  useLimitedEvents(
     () => (width.current = targetRef.current?.offsetWidth ?? 0),
-    {},
+    { doInit: true },
     [targetRef.current]
   )
 

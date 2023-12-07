@@ -1,9 +1,10 @@
 import * as icons from './icons'
+import { TestId } from '@pi-lib/types'
 
 /**
  * The main prop interface for the component
  */
-export interface IconProps {
+export interface IconProps extends React.HTMLProps<HTMLElement>, TestId {
   /**
    * The name of the icon
    */
@@ -19,5 +20,5 @@ export interface IconProps {
   /**
    * The size of the icon
    */
-  size?: string
+  iconSize?: string
 }

@@ -5,7 +5,7 @@
 export type CallbackFunction = (...args: any[]) => unknown
 
 /**
- * Type definition for properties used by useThrottledEvents React hook.
+ * Type definition for properties used by useLimitedEvents React hook.
  */
 export interface UseThrottledEventsOpts {
   /**
@@ -27,11 +27,21 @@ export interface UseThrottledEventsOpts {
   target?: EventTarget | null
 
   /**
-   * The throttle timeout in milliseconds.
+   * The limiter timeout in milliseconds.
    * This is the minimum delay between successive invocations of the callback function.
    * Defaults to 150ms.
    */
   timeout?: number
+
+  /**
+   * The type of limiter - either throttle or debounce
+   */
+  type?: 'throttle' | 'debounce'
+
+  /**
+   * Set it to false to remove the listener
+   */
+  isActive?: boolean
 
   /**
    * Optional additional arguments to pass to the event listener.

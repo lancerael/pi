@@ -1,13 +1,13 @@
-// useThrottledEvents.stories.jsx
+// useLimitedEvents.stories.jsx
 import React, { useEffect, useState } from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
-import { useThrottledEvents } from './useThrottledEvents' // Adjust the import path as needed
+import { useLimitedEvents } from './useLimitedEvents' // Adjust the import path as needed
 
 const Render = () => {
   const [count, setCount] = useState(0)
   const callback = () => setCount((prevCount) => prevCount + 1)
 
-  useThrottledEvents(callback, { timeout: 500, doInit: false })
+  useLimitedEvents(callback, { timeout: 500, doInit: false })
 
   const [standardCount, setStandardCount] = useState(0)
 
@@ -25,8 +25,8 @@ const Render = () => {
   )
 }
 
-const meta: Meta<typeof useThrottledEvents> = {
-  title: 'Utilities/Hooks/useThrottledEvents',
+const meta: Meta<typeof useLimitedEvents> = {
+  title: 'Utilities/Hooks/useLimitedEvents',
   argTypes: {},
   tags: ['autodocs'],
 }
@@ -34,7 +34,7 @@ const meta: Meta<typeof useThrottledEvents> = {
 /**
  * Resize the window to see the count increase (throttled).
  */
-export const Default: StoryObj<typeof useThrottledEvents> = {
+export const Default: StoryObj<typeof useLimitedEvents> = {
   args: {},
   render: Render,
 }

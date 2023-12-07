@@ -369,6 +369,9 @@ importers:
       '@pi-lib/grid':
         specifier: workspace:^
         version: link:../../../packages/components/atoms/layout/Grid
+      '@pi-lib/icon':
+        specifier: workspace:^
+        version: link:../../../packages/components/atoms/ui/Icon
       '@pi-lib/icon-button':
         specifier: workspace:^
         version: link:../../../packages/components/atoms/interactions/IconButton
@@ -393,9 +396,12 @@ importers:
       '@pi-lib/styles':
         specifier: workspace:^
         version: link:../../../packages/styles
-      '@pi-lib/use-throttled-events':
+      '@pi-lib/types':
         specifier: workspace:^
-        version: link:../../../packages/hooks/useThrottledEvents
+        version: link:../../../packages/types
+      '@pi-lib/use-limited-events':
+        specifier: workspace:^
+        version: link:../../../packages/hooks/useLimitedEvents
       '@pi-lib/utils':
         specifier: workspace:^
         version: link:../../../packages/utils
@@ -1045,6 +1051,9 @@ importers:
       '@pi-lib/styles':
         specifier: workspace:^
         version: link:../../../../styles
+      '@pi-lib/types':
+        specifier: workspace:^
+        version: link:../../../../types
       react:
         specifier: ^18.2.0
         version: 18.2.0
@@ -1364,9 +1373,9 @@ importers:
       '@pi-lib/styles':
         specifier: workspace:^
         version: link:../../../../styles
-      '@pi-lib/use-throttled-events':
+      '@pi-lib/use-limited-events':
         specifier: workspace:^
-        version: link:../../../../hooks/useThrottledEvents
+        version: link:../../../../hooks/useLimitedEvents
       '@pi-lib/use-touch':
         specifier: workspace:^
         version: link:../../../../hooks/useTouch
@@ -1676,9 +1685,9 @@ importers:
       '@pi-lib/use-hash-comparison':
         specifier: workspace:^
         version: link:../../../../hooks/usehashComparison
-      '@pi-lib/use-throttled-events':
+      '@pi-lib/use-limited-events':
         specifier: workspace:^
-        version: link:../../../../hooks/useThrottledEvents
+        version: link:../../../../hooks/useLimitedEvents
       '@pi-lib/use-touch':
         specifier: workspace:^
         version: link:../../../../hooks/useTouch
@@ -1795,9 +1804,9 @@ importers:
       '@pi-lib/styles':
         specifier: workspace:^
         version: link:../../../../styles
-      '@pi-lib/use-throttled-events':
+      '@pi-lib/use-limited-events':
         specifier: workspace:^
-        version: link:../../../../hooks/useThrottledEvents
+        version: link:../../../../hooks/useLimitedEvents
       '@pi-lib/utils':
         specifier: workspace:^
         version: link:../../../../utils
@@ -1944,7 +1953,7 @@ importers:
         specifier: ^0.34.6
         version: 0.34.6(jsdom@20.0.3)
 
-  src/packages/hooks/useThrottledEvents:
+  src/packages/hooks/useLimitedEvents:
     dependencies:
       '@pi-lib/use-hash-comparison':
         specifier: workspace:^
@@ -2057,9 +2066,9 @@ importers:
 
   src/packages/hooks/useWindowClick:
     dependencies:
-      '@pi-lib/use-throttled-events':
+      '@pi-lib/use-limited-events':
         specifier: workspace:^
-        version: link:../useThrottledEvents
+        version: link:../useLimitedEvents
       react:
         specifier: ^18.2.0
         version: 18.2.0
@@ -12619,6 +12628,7 @@ packages:
 
   /loupe@2.3.6:
     resolution: {integrity: sha512-RaPMZKiMy8/JruncMU5Bt6na1eftNoo++R4Y+N2FrxkDVTrGvcyzFTsaGif4QTeKESheMGegbhw6iUAq+5A8zA==}
+    deprecated: Please upgrade to 2.3.7 which fixes GHSA-4q6p-r6v2-jvc5
     dependencies:
       get-func-name: 2.0.2
     dev: true

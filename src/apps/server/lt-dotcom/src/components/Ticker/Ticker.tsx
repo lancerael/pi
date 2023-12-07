@@ -1,9 +1,17 @@
-import { ShimmerInner, ShimmerOuter } from './Ticker.style'
+import {
+  ShimmerInner,
+  ShimmerOuter,
+  StyledChevron,
+  StyledChevronInner,
+} from './Ticker.style'
 import Interact from '../Interact'
 import Shimmer from '@pi-lib/shimmer'
+import Icon from '@pi-lib/icon'
 import { tickerLines } from '@/data/tickerLines'
 import { TickerProps } from './Ticker.types'
 import { TravelTrackerProps } from '../PageHeader/PageHeader.types'
+import { useState } from 'react'
+import useLimitedEvents from '@pi-lib/use-limited-events'
 
 /**
  * Get the shimmer times based on user preferences
@@ -24,7 +32,15 @@ export const Ticker = ({
   isComplete,
   setIsComplete,
   travelTracker,
+  headerState,
 }: TickerProps) => {
+  const [isChevronVisible, setIsChevronVisible] = useState(false)
+  useLimitedEvents(() => setIsChevronVisible(true), {
+    events: ['click', 'mousemove'],
+    type: 'debounce',
+    timeout: 2500,
+    isActive: !isChevronVisible,
+  })
   return (
     <ShimmerOuter className="is-title">
       {isComplete && <Interact />}
@@ -36,6 +52,14 @@ export const Ticker = ({
           callback={() => setIsComplete(true)}
         />
       </ShimmerInner>
+      <StyledChevron
+        id="skills"
+        $isVisible={isChevronVisible && headerState === 'hidden'}
+      >
+        <StyledChevronInner href="#skills" title="Scroll down">
+          <Icon iconName="Chevron" />
+        </StyledChevronInner>
+      </StyledChevron>
     </ShimmerOuter>
   )
 }

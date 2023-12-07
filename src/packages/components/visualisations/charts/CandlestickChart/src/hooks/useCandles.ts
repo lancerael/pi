@@ -2,7 +2,6 @@ import { useEffect, useRef, useCallback, useState } from 'react'
 import { select } from 'd3-selection'
 import 'd3-transition'
 import { getAttributes } from '@pi-lib/utils'
-import { useThrottledEvents } from '@pi-lib/use-throttled-events'
 import {
   ActiveItem,
   BarSelection,
@@ -19,6 +18,7 @@ import {
   TRANSITION_TIME,
 } from '../CandlestickChart.constants'
 import useHashComparison from '@pi-lib/use-hash-comparison'
+import useLimitedEvents from '@pi-lib/use-limited-events'
 
 const typeMap = {
   wicks: 'line',
@@ -98,9 +98,8 @@ export const useCandles = (
     }
   }, [])
 
-  useThrottledEvents(resetSelection, {
+  useLimitedEvents(resetSelection, {
     events: ['resize', 'pointerdown'],
-    doInit: false,
   })
 
   // Place the bars based on latest data
