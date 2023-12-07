@@ -1,0 +1,7 @@
+{
+  "type": "patch",
+  "comment": "Improved touch handling",
+  "packageName": "@pi-lib/do-transition",
+  "email": "lancerael@googlemail.com",
+  "dependentChangeType": "patch"
+}
