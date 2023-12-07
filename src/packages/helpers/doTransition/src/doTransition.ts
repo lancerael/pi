@@ -39,6 +39,7 @@ export const doTransition = ({
         callback,
         endCallback,
         increments: increments - (isGradual ? 0 : 1),
+        isGradual,
         interval,
         intervalId,
       })

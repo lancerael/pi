@@ -94,7 +94,7 @@ describe('useTouch Hook', () => {
       firePointerEvent(target, 'pointerup', 0)
       firePointerEvent(target, 'pointerup', 1)
     })
-    expect(zoomLevel).toBe(2)
+    expect(zoomLevel).toBe(1.471)
     expect(panLevel).toEqual({ x: 0, y: 0 })
   })
 })

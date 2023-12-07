@@ -28,7 +28,7 @@ jobs:
 
       - name: Lint
         if: steps.changed-files.outputs.any_changed == 'true'
-        run: pnpm lint
+        run: pnpm lint:pr
 
       - name: Test build
         if: steps.changed-files.outputs.any_changed == 'true'

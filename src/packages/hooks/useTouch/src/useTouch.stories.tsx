@@ -13,7 +13,7 @@ const render = () => {
   useTouch<any>({
     targetRef,
     controls,
-    zoomRange: [0.5, 20],
+    zoomRange: [0.25, 2],
     panRange: [
       [-2000, 2000],
       [-2000, 2000],
