@@ -1,0 +1,7 @@
+{
+  "type": "major",
+  "comment": "changes size to iconSize and adds universal props",
+  "packageName": "@pi-lib/icon",
+  "email": "lancerael@googlemail.com",
+  "dependentChangeType": "patch"
+}

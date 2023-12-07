@@ -3,7 +3,6 @@ import { useCallback, useEffect, useRef, useState } from 'react'
 import { signal, useSignalValue } from 'signals-react-safe'
 import Stellar from '@pi-lib/stellar'
 import PageGrid from '@pi-lib/page-grid'
-import { useThrottledEvents } from '@pi-lib/use-throttled-events'
 import { IS_CLIENT, REDUCED_MOTION } from '@pi-lib/styles'
 import {
   HeaderState,
@@ -16,6 +15,7 @@ import Highlights from '@/components/Highlights'
 import { TechList } from '@/components/TechList/TechList'
 import Ticker from '@/components/Ticker'
 import Demo from '@/components/Demo'
+import useLimitedEvents from '@pi-lib/use-limited-events'
 
 // Using signal for UI sizes to improve performance
 const uiSizes = signal({
@@ -43,7 +43,7 @@ export default function Home() {
       fullHeight: wrapperRef.current?.offsetHeight ?? 0,
     }
   }, [])
-  useThrottledEvents(updateDimensions)
+  useLimitedEvents(updateDimensions, { doInit: true })
 
   /**
    * Performant header visibilty toggle
@@ -90,7 +90,9 @@ export default function Home() {
           }}
         />
         <PageGrid>
-          <Ticker {...{ isComplete, setIsComplete, travelTracker }} />
+          <Ticker
+            {...{ headerState, isComplete, setIsComplete, travelTracker }}
+          />
           <Skillset />
           <TechList {...travelTracker} />
           <Highlights />

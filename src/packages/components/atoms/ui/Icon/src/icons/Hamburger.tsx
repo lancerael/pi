@@ -1,6 +1,6 @@
 import { IconProps } from '../Icon.types'
 
-export const Hamburger = ({ color, size }: Omit<IconProps, 'iconName'>) => {
+export const Hamburger = ({ color, iconSize }: Omit<IconProps, 'iconName'>) => {
   const pathProps: React.SVGProps<SVGPathElement> = {
     stroke: color,
     strokeWidth: 2,
@@ -8,8 +8,8 @@ export const Hamburger = ({ color, size }: Omit<IconProps, 'iconName'>) => {
   }
   return (
     <svg
-      width={size}
-      height={size}
+      width={iconSize}
+      height={iconSize}
       viewBox="0 0 24 24"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

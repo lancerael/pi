@@ -1,20 +1,21 @@
 {
-  "name": "@pi-lib/use-throttled-events",
-  "version": "2.0.3",
-  "description": "Hook used to add throttled events to a React component",
+  "name": "@pi-lib/use-limited-events",
+  "version": "0.0.0",
+  "description": "Hook used to add debounced or throttled events to a React component",
   "keywords": [
     "react",
     "hooks",
     "pi",
     "throttle",
+    "debounce",
     "events",
     "utilities"
   ],
-  "homepage": "https://pi.lance-taylor.com/?path=/docs/utils-hooks-usethrottledevents--docs",
+  "homepage": "https://pi.lance-taylor.com/?path=/docs/utils-hooks-uselimitedevents--docs",
   "repository": {
     "type": "git",
     "url": "https://github.com/lancerael/pi.git",
-    "directory": "src/packages/hooks/usethrottledEvents"
+    "directory": "src/packages/hooks/useLimitedEvents"
   },
   "license": "ISC",
   "author": "Lance Taylor",

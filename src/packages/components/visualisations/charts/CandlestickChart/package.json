@@ -48,7 +48,7 @@
     "@pi-lib/styles": "workspace:^",
     "@pi-lib/tooltip": "workspace:^",
     "@pi-lib/use-hash-comparison": "workspace:^",
-    "@pi-lib/use-throttled-events": "workspace:^",
+    "@pi-lib/use-limited-events": "workspace:^",
     "@pi-lib/use-touch": "workspace:^",
     "@pi-lib/utils": "workspace:^",
     "d3-axis": "^3.0.0",

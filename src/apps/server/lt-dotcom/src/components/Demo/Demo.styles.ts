@@ -22,19 +22,19 @@ export const StyledImages = styled.div`
 
   & img:nth-of-type(1) {
     transform: rotate(17deg);
-    left: 2rem;
+    left: 1.5rem;
     z-index: 99;
   }
 
   & img:nth-of-type(2) {
     transform: rotate(-17deg);
-    left: 25%;
+    left: 22%;
     z-index: 100;
   }
 
   & img:nth-of-type(3) {
     transform: rotate(10deg);
-    left: 55%;
+    left: 52%;
     top: 10%;
     z-index: 101;
 
@@ -54,12 +54,13 @@ export const StyledLinkWrapper = styled.div`
   }
 
   & a {
+    text-align: center;
     display: inline;
     width: 100%;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 1rem 0;
+    padding: 1rem 0;
   }
 `

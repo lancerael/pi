@@ -38,7 +38,7 @@
   },
   "peerDependencies": {
     "@pi-lib/styles": "workspace:^",
-    "@pi-lib/use-throttled-events": "workspace:^",
+    "@pi-lib/use-limited-events": "workspace:^",
     "@pi-lib/use-touch": "workspace:^",
     "@pi-lib/utils": "workspace:^",
     "react": "^18.2.0",

@@ -4,7 +4,7 @@
 
 Hook used to add throttled escape (window) clicks to a React component
 
-**Peer Dependencies:** @pi-lib/use-throttled-events, react
+**Peer Dependencies:** @pi-lib/use-limited-events, react
 
 <table>
   <tbody>

@@ -17,8 +17,8 @@ import {
   randomNumber,
 } from './Stellar.helpers'
 import { FPS_CUTOFF, MAX_STARS } from './Stellar.constants'
-import { useThrottledEvents } from '@pi-lib/use-throttled-events'
 import doTransition from '@pi-lib/do-transition'
+import useLimitedEvents from '@pi-lib/use-limited-events'
 
 /**
  * A spacefaring scene that takes you through the stars.
@@ -174,14 +174,13 @@ export const Stellar = ({
   /**
    * Attach the window resize handler
    */
-  useThrottledEvents(updateDimensions)
+  useLimitedEvents(updateDimensions, { doInit: true })
 
   /**
    * Attach the content scroll handler
    */
-  useThrottledEvents(handleScroll, {
+  useLimitedEvents(handleScroll, {
     events: ['scroll'],
-    doInit: false,
     target: contentRef.current,
     timeout: 500,
   })
@@ -193,8 +192,9 @@ export const Stellar = ({
     (e: UserEvent) => handlePointer(e, false),
     [handlePointer]
   )
-  useThrottledEvents(handleMove, {
+  useLimitedEvents(handleMove, {
     events: ['mousemove', 'touchmove'],
+    doInit: true,
   })
 
   /**
@@ -204,8 +204,9 @@ export const Stellar = ({
     (e: UserEvent) => handlePointer(e, true),
     [handlePointer]
   )
-  useThrottledEvents(handleClick, {
+  useLimitedEvents(handleClick, {
     events: ['mouseup', 'touchup'],
+    doInit: true,
   })
 
   /**

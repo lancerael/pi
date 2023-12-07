@@ -1,10 +1,12 @@
-import { throttle } from '@pi-lib/utils'
+import { throttle, debounce } from '@pi-lib/utils'
 import { DependencyList, useEffect } from 'react'
 import {
   CallbackFunction,
   UseThrottledEventsOpts,
-} from './useThrottledEvents.types'
+} from './useLimitedEvents.types'
 import useHashComparison from '@pi-lib/use-hash-comparison'
+
+const limiters = { throttle, debounce }
 
 /**
  * A React hook that binds a callback to a range of throttled events and cleans itself up
@@ -12,27 +14,38 @@ import useHashComparison from '@pi-lib/use-hash-comparison'
  * @param callback {CallbackFunction} the function that is called on the event
  * @param options {UseThrottledEventsProps}
  */
-export const useThrottledEvents = (
+export const useLimitedEvents = (
   callback: CallbackFunction,
   {
     events = ['resize'],
-    doInit = true,
+    doInit = false,
     target = typeof window !== 'undefined' ? window : null,
     timeout = 150,
+    type = 'throttle',
+    isActive = true,
     args,
   }: UseThrottledEventsOpts = {},
   deps: DependencyList = []
 ) => {
-  const optsHash = useHashComparison(events, doInit, timeout, args)
+  const optsHash = useHashComparison(
+    events,
+    doInit,
+    timeout,
+    type,
+    isActive,
+    args
+  )
 
   useEffect(() => {
     if (!target) return
 
-    const throttledCallback = throttle(callback, timeout)
+    const throttledCallback = limiters[type](callback, timeout)
 
-    events.forEach((event) =>
-      target.addEventListener(event, throttledCallback, args)
-    )
+    if (isActive) {
+      events.forEach((event) =>
+        target.addEventListener(event, throttledCallback, args)
+      )
+    }
 
     return () =>
       events.forEach((event) =>
@@ -44,3 +57,5 @@ export const useThrottledEvents = (
     doInit && callback()
   }, [])
 }
+
+export default useLimitedEvents

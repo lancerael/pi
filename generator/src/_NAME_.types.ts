@@ -1,6 +1,6 @@
 import { TestId } from '@pi-lib/types'
 
-export interface _NAME_Props extends TestId {
+export interface _NAME_Props extends React.HTMLProps<HTMLElement>, TestId {
   /**
    * The description of the prop
    */

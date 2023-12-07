@@ -1,11 +1,11 @@
 import { IconProps } from '../Icon.types'
 
-export const Ellipsis = ({ color, size }: Omit<IconProps, 'iconName'>) => {
+export const Ellipsis = ({ color, iconSize }: Omit<IconProps, 'iconName'>) => {
   return (
     <svg
       fill={color}
-      width={size}
-      height={size}
+      width={iconSize}
+      height={iconSize}
       viewBox="-5 -4 42 36"
       version="1.1"
       xmlns="http://www.w3.org/2000/svg"
