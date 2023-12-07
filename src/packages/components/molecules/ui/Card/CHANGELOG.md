@@ -1,8 +1,16 @@
 # Change Log - @pi-lib/card
 
-This log was last generated on Tue, 05 Dec 2023 22:02:14 GMT and should not be manually modified.
+This log was last generated on Wed, 06 Dec 2023 20:55:05 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 2.1.1
+
+Wed, 06 Dec 2023 20:55:05 GMT
+
+### Patches
+
+- Style tweaks (lancerael@googlemail.com)
 
 ## 2.1.0
 

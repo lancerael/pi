@@ -2,6 +2,21 @@
   "name": "@pi-lib/card",
   "entries": [
     {
+      "date": "Wed, 06 Dec 2023 20:55:05 GMT",
+      "tag": "@pi-lib/card_v2.1.1",
+      "version": "2.1.1",
+      "comments": {
+        "patch": [
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/card",
+            "commit": "cc3a87a409890469a651f42cb913692ed8763311",
+            "comment": "Style tweaks"
+          }
+        ]
+      }
+    },
+    {
       "date": "Tue, 05 Dec 2023 22:02:14 GMT",
       "tag": "@pi-lib/card_v2.1.0",
       "version": "2.1.0",
