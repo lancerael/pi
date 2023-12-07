@@ -161,9 +161,9 @@ export const useTouch = <T = HTMLElement>({
     [controls.panLevel.x]
   )
 
-  const throttledZoom = useCallback(throttle(zoom, 100), [zoom])
-  const throttledMove = useCallback(throttle(move, 100), [move])
-  const throttledPan = useCallback(throttle(pan, 100), [pan])
+  const throttledZoom = useCallback(throttle(zoom, 20), [zoom])
+  const throttledMove = useCallback(throttle(move, 20), [move])
+  const throttledPan = useCallback(throttle(pan, 20), [pan])
 
   /**
    * Handler for trackpad pinch or mousewheel zoom.
