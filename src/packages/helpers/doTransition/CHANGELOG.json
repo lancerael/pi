@@ -2,6 +2,21 @@
   "name": "@pi-lib/do-transition",
   "entries": [
     {
+      "date": "Thu, 07 Dec 2023 16:21:43 GMT",
+      "tag": "@pi-lib/do-transition_v1.0.1",
+      "version": "1.0.1",
+      "comments": {
+        "patch": [
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/do-transition",
+            "commit": "44e3446ae3560d0ab8a888671429067d3380d866",
+            "comment": "Improved touch handling"
+          }
+        ]
+      }
+    },
+    {
       "date": "Mon, 04 Dec 2023 01:02:23 GMT",
       "tag": "@pi-lib/do-transition_v1.0.0",
       "version": "1.0.0",

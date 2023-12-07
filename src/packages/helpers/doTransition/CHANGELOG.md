@@ -1,8 +1,16 @@
 # Change Log - @pi-lib/do-transition
 
-This log was last generated on Wed, 29 Nov 2023 16:32:23 GMT and should not be manually modified.
+This log was last generated on Thu, 07 Dec 2023 16:21:43 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 1.0.1
+
+Thu, 07 Dec 2023 16:21:43 GMT
+
+### Patches
+
+- Improved touch handling (lancerael@googlemail.com)
 
 ## 1.0.0
 
