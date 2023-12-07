@@ -1,7 +1,0 @@
-{
-  "type": "patch",
-  "comment": "Added useLimitedEvents hook",
-  "packageName": "@pi-lib/use-window-click",
-  "email": "lancerael@googlemail.com",
-  "dependentChangeType": "patch"
-}

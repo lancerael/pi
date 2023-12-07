@@ -1,8 +1,16 @@
 # Change Log - @pi-lib/stellar
 
-This log was last generated on Thu, 30 Nov 2023 16:50:50 GMT and should not be manually modified.
+This log was last generated on Thu, 07 Dec 2023 20:51:02 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 2.0.5
+
+Thu, 07 Dec 2023 20:51:02 GMT
+
+### Patches
+
+- Added useLimitedEvents hook (lancerael@googlemail.com)
 
 ## 2.0.1
 

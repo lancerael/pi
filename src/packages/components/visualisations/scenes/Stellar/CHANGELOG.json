@@ -2,6 +2,21 @@
   "name": "@pi-lib/stellar",
   "entries": [
     {
+      "date": "Thu, 07 Dec 2023 20:51:02 GMT",
+      "tag": "@pi-lib/stellar_v2.0.5",
+      "version": "2.0.5",
+      "comments": {
+        "patch": [
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/stellar",
+            "commit": "e32d88980c5895b08e3192ca46e84dccebd29eed",
+            "comment": "Added useLimitedEvents hook"
+          }
+        ]
+      }
+    },
+    {
       "date": "Thu, 30 Nov 2023 16:50:50 GMT",
       "tag": "@pi-lib/stellar_v2.0.1",
       "version": "2.0.1",

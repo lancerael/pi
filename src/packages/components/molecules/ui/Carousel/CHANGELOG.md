@@ -1,8 +1,16 @@
 # Change Log - @pi-lib/carousel
 
-This log was last generated on Tue, 05 Dec 2023 22:02:14 GMT and should not be manually modified.
+This log was last generated on Thu, 07 Dec 2023 20:51:02 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 2.0.9
+
+Thu, 07 Dec 2023 20:51:02 GMT
+
+### Patches
+
+- Added useLimitedEvents hook (lancerael@googlemail.com)
 
 ## 2.0.7
 
