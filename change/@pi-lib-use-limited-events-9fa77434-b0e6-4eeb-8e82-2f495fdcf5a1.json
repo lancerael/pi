@@ -1,0 +1,7 @@
+{
+  "type": "major",
+  "comment": "Added useLimitedEvents hook",
+  "packageName": "@pi-lib/use-limited-events",
+  "email": "lancerael@googlemail.com",
+  "dependentChangeType": "patch"
+}
