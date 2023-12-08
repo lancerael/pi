@@ -42,7 +42,6 @@ export const getGlobalStyle = (
   { colors, fonts }: PiTheme = getTheme(),
   scheme: Scheme
 ) => {
-  // console.log(colors, scheme)
   return createGlobalStyle`
   body {
     ${getColorVars(colors[scheme], scheme)}
