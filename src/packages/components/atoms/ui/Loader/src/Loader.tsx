@@ -5,7 +5,7 @@ import {
   StyledLoaderInner,
 } from './Loader.style'
 import { LoaderProps } from './Loader.types'
-import { getTransientProps } from '@pi-lib/utils'
+import { getTransientProps } from '@pi-lib/styles'
 
 /**
  * Basic loading spinner React component

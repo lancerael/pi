@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { themes, ThemeType, Theme } from '../src'
+import { themes, ThemeName, Theme } from '../src'
 //@ts-ignore
 import Table from '../../components/molecules/layout/Table/src/Table'
 
-const StyleDemo = ({ themeName }: { themeName: ThemeType }) => {
+const StyleDemo = ({ themeName }: { themeName: ThemeName }) => {
   const theme = themes[themeName]
   const keys = Object.keys(theme.light) as Array<keyof typeof theme.light>
   const name = themeName.split('')

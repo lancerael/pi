@@ -1,4 +1,4 @@
-import { getTransientProps } from '@pi-lib/utils'
+import { getTransientProps } from '@pi-lib/styles'
 import PageGrid from '@pi-lib/page-grid'
 import CustomIcon from '@pi-lib/custom-icon'
 import IconButton from '@pi-lib/icon-button'

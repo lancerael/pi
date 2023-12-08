@@ -1,4 +1,4 @@
-import { getTransientProps } from '@pi-lib/utils'
+import { getTransientProps } from '@pi-lib/styles'
 import { StyledRouterLink, getStyledLink } from './Link.style'
 import { LinkProps } from './Link.types'
 

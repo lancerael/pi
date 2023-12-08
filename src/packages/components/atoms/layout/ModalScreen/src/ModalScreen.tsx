@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { StyledModalScreen } from './ModalScreen.style'
 import { ModalScreenProps } from './ModalScreen.types'
-import { getTransientProps } from '@pi-lib/utils'
+import { getTransientProps } from '@pi-lib/styles'
 
 /**
  * A React component used to block out the screen with modal content

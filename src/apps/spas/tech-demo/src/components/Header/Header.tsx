@@ -1,7 +1,7 @@
 import { SyntheticEvent, useRef, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Action } from '@reduxjs/toolkit'
-import { ThemeType, themeList } from '@pi-lib/styles'
+import { ThemeName, themeList } from '@pi-lib/styles'
 import Link from '@pi-lib/link'
 import CollapsibleMenu from '@pi-lib/collapsible-menu'
 import Modal from '@pi-lib/modal'
@@ -150,7 +150,7 @@ export const Header = () => {
                       value={themeName}
                       onChange={(e: SyntheticEvent<HTMLSelectElement>) =>
                         dispatchWithUpdate(
-                          updateTheme(e.currentTarget.value as ThemeType)
+                          updateTheme(e.currentTarget.value as ThemeName)
                         )
                       }
                       options={themeList.map((theme) => ({

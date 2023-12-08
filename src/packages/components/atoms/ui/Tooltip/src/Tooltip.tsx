@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
-import { getTransientProps, throttle } from '@pi-lib/utils'
+import { getTransientProps } from '@pi-lib/styles'
+import { throttle } from '@pi-lib/utils'
 import { StyledTooltip } from './Tooltip.style'
 import { TooltipProps } from './Tooltip.types'
 

@@ -1,6 +1,6 @@
 import { PiTheme } from '@pi-lib/styles'
 import { ButtonProps, HTMLElementType } from './Button.types'
-import { TransientProps } from '@pi-lib/utils'
+import { TransientProps } from '@pi-lib/styles'
 import styled from 'styled-components'
 
 /**

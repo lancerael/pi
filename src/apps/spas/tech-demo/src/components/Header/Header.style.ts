@@ -68,7 +68,7 @@ export const StyledPalette: CustomStyledType<
   { src: string }
 > = styled(ReactSVG)`
   svg {
-    fill: var(--bg);
+    fill: var(--light);
     width: 1em;
     height: 1em;
     margin-top: 1px;

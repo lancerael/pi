@@ -1,6 +1,6 @@
 import { StyledPageGrid } from './PageGrid.style'
 import { PageGridProps } from './PageGrid.types'
-import { getTransientProps } from '@pi-lib/utils'
+import { getTransientProps } from '@pi-lib/styles'
 
 /**
  * PageGrid component for laying out content in a grid format. It is used to create page

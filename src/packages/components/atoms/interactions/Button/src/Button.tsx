@@ -1,4 +1,4 @@
-import { getTransientProps } from '@pi-lib/utils'
+import { getTransientProps } from '@pi-lib/styles'
 import { getStyledButton } from './Button.style'
 import { ButtonProps, HTMLElementType } from './Button.types'
 import { useButtonProps } from './hooks/useButtonProps'
