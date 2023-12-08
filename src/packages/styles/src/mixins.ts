@@ -73,7 +73,7 @@ export const box = ({
   const [colorVar, backgroundVar] = colors
 
   return css`
-    border: 1px solid var(--border);
+    border: 1px solid var(--${isInverted ? 'textStrong' : 'border'});
     color: var(--${colorVar});
     background-color: var(--${backgroundVar}${isTransparent && 'A'});
     border-radius: 6px;

@@ -39,7 +39,7 @@ export const statusColors = {
 export const gradients = {
   default: ['dark', 'specialShadow'],
   alt: ['text', 'textSoft'],
-  special: ['special', 'specialA'],
+  special: ['special', 'specialD'],
 }
 
 /**

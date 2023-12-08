@@ -13,25 +13,38 @@ import { hexToRgba } from './helpers'
 
 /**
  * A helper to ger the CSS variables from the values from the color scheme
+ * Adds alternative versions to palette with suffix:
+ * {color}A - alpha
+ * {color}D - dark version
+ * {color}L - light version
+ * {color}HC - high contrast version
+ * {color}LC - low contrast version
  */
-const getVars = (schemeValues: SchemeValues) =>
-  Object.entries(schemeValues).reduce(
+const getColorVars = (schemeValues: SchemeValues, scheme: Scheme) => {
+  const isDark = scheme === 'dark'
+  return Object.entries(schemeValues).reduce(
     (acc, [key, val]) => `${acc}
       --${key}: ${val};
       --${key}A: ${hexToRgba(val, 0.5)};
+      --${key}D: ${hexToRgba(val, 1, 0.5)};
+      --${key}L: ${hexToRgba(val, 1, 2)};
+      --${key}HC: ${hexToRgba(val, 1, isDark ? 0.5 : 2)};
+      --${key}LC: ${hexToRgba(val, 1, isDark ? 2 : 1.5)};
     `,
     ''
   )
+}
 
 /**
  * A helper used to get the global style containing the theme
  */
 export const getGlobalStyle = (
-  { colors: { light, dark = light }, fonts }: PiTheme = getTheme(),
-  scheme?: Scheme
-) => createGlobalStyle`
+  { colors, fonts }: PiTheme = getTheme(),
+  scheme: Scheme
+) => {
+  return createGlobalStyle`
   body {
-    ${getVars(scheme === 'dark' ? dark : light)}
+    ${getColorVars(colors[scheme], scheme)}
     font-family: ${fonts.join(', ')};
     background-color: var(--bg);
     color: var(--text);
@@ -49,13 +62,8 @@ export const getGlobalStyle = (
   & li {
     transition: all 0.5s;
   }
-
-  @media (prefers-color-scheme: dark) {
-    body {
-      ${getVars(scheme === 'light' ? light : dark)}
-    }
-  }
 `
+}
 
 /**
  * A helper to get the global font size

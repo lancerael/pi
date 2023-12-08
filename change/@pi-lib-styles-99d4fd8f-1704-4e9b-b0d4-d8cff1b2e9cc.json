@@ -1,0 +1,7 @@
+{
+  "type": "patch",
+  "comment": "Added new colours to palette",
+  "packageName": "@pi-lib/styles",
+  "email": "lancerael@googlemail.com",
+  "dependentChangeType": "patch"
+}

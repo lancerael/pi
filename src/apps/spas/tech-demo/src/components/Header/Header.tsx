@@ -101,11 +101,12 @@ export const Header = () => {
                         )
                       },
                       boxName: 'hi',
+                      isInverted: true,
                     }}
                     iconProps={{
                       isFilled: true,
                       src: `${CLOUDFRONT_URL}/font-${altFontSize}.svg`,
-                      color: 'var(--bg)',
+                      color: 'var(--text)',
                     }}
                   />
                   <IconButton
@@ -117,11 +118,12 @@ export const Header = () => {
                       },
                       title: `Switch to ${altScheme} mode`,
                       boxName: 'hi',
+                      isInverted: true,
                     }}
                     iconProps={{
                       isStroked: true,
                       src: `${CLOUDFRONT_URL}/scheme-${altScheme}.svg`,
-                      color: 'var(--bg)',
+                      color: 'var(--text)',
                     }}
                   />
                   <IconButton
@@ -131,11 +133,12 @@ export const Header = () => {
                       },
                       title: `View tech demo architectural diagram`,
                       boxName: 'hi',
+                      isInverted: true,
                     }}
                     iconProps={{
                       isFilled: true,
                       src: `${CLOUDFRONT_URL}/info.svg`,
-                      color: 'var(--bg)',
+                      color: 'var(--text)',
                     }}
                   />
                 </ItemList>,
