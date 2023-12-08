@@ -62,12 +62,6 @@ export const getGlobalStyle = (
   & li {
     transition: all 0.5s;
   }
-
-  /* @media (prefers-color-scheme: dark) {
-    body {
-      ${getColorVars(colors[scheme], scheme)}
-    }
-  } */
 `
 }
 
