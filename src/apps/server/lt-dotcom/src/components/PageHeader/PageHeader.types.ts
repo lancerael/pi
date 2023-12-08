@@ -1,4 +1,4 @@
-import { BaseProps, TransientProps } from '@pi-lib/utils'
+import { BaseProps, TransientProps } from '@pi-lib/styles'
 import { StellarProps } from '@pi-lib/stellar'
 import { Dispatch, PropsWithChildren, SetStateAction } from 'react'
 

@@ -1,4 +1,4 @@
-import { TransientProps } from '@pi-lib/utils'
+import { TransientProps } from '@pi-lib/styles'
 import { CustomStyledType } from '@pi-lib/styles'
 import { CustomIconProps } from './CustomIcon.types'
 

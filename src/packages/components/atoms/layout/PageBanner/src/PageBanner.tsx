@@ -1,4 +1,4 @@
-import { getTransientProps } from '@pi-lib/utils'
+import { getTransientProps } from '@pi-lib/styles'
 import { StyledBanner } from './PageBanner.style'
 import { BannerProps } from './PageBanner.types'
 

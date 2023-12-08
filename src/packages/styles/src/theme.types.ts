@@ -1,5 +1,5 @@
 import { ExecutionProps, IStyledComponent } from 'styled-components'
-import { ThemeType } from './themes'
+import { ThemeName } from './themes'
 import { HTMLAttributes, PropsWithChildren } from 'react'
 import { boxColors, gradients } from './theme'
 import { DefaultTheme, Substitute } from 'styled-components/dist/types'
@@ -9,10 +9,7 @@ export type SchemeValues = Record<string, string>
 export interface PiTheme extends DefaultTheme {
   fonts: string[]
   fontSizes: Record<Size, string>
-  colors: {
-    light: SchemeValues
-    dark: SchemeValues
-  }
+  colors: SchemeValues
 }
 
 export interface ThemedComponent {
@@ -28,7 +25,7 @@ export type Size = 'small' | 'medium' | 'large'
 export type BoxNames = 'default' | 'hi' | 'alt' | 'light'
 
 export interface ThemeProps extends Partial<ThemedComponentWithChildren> {
-  themeName: ThemeType
+  themeName: ThemeName
   themeOverrides?: PiTheme
   scheme?: Scheme
   fontSize?: FontSize
@@ -40,7 +37,7 @@ export type ContrastMap = {
   [key in Scheme]: GlobalStyleComponent
 }
 
-export type ThemeMap = { [key in ThemeType]: ContrastMap }
+export type ThemeMap = { [key in ThemeName]: ContrastMap }
 
 export type FontSize = 'small' | 'large'
 
@@ -71,3 +68,20 @@ export interface ShadowProps {
   offset?: string
   opacity?: string
 }
+
+/**
+ * Represents a type where each key of an object is prefixed with `$`.
+ * Useful for representing transient props in styled components.
+ *
+ * @template T Base type from which the transient props are derived.
+ *             Defaults to BaseProps if not specified.
+ */
+export type TransientProps<T = BaseProps> = {
+  [K in keyof T as `$${string & K}`]: T[K]
+}
+
+/**
+ * Represents the base type for props. This is a generic record type
+ * with string keys and values of any type.
+ */
+export type BaseProps = Record<string, unknown>

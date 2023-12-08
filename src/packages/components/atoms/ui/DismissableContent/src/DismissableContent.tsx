@@ -6,7 +6,7 @@ import {
 } from './DismissableContent.style'
 import { DismissableContentProps } from './DismissableContent.types'
 import Icon from '@pi-lib/icon'
-import { getTransientProps } from '@pi-lib/utils'
+import { getTransientProps } from '@pi-lib/styles'
 
 /**
  * `DismissableContent` is a component that represents internal content for a modal or a toast.

@@ -1,4 +1,4 @@
-import { TransientProps } from '@pi-lib/utils'
+import { TransientProps } from '@pi-lib/styles'
 import { LinkProps } from './Link.types'
 import { CustomStyledType } from '@pi-lib/styles'
 

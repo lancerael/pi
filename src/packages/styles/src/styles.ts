@@ -1,18 +1,9 @@
 import { createGlobalStyle } from 'styled-components'
-import { getTheme } from './theme'
-import {
-  Scheme,
-  FontSize,
-  SizeMap,
-  ThemeMap,
-  PiTheme,
-  SchemeValues,
-} from './theme.types'
-import { ThemeType, themeList } from './themes'
+import { Scheme } from './theme.types'
 import { hexToRgba } from './helpers'
 
 /**
- * A helper to ger the CSS variables from the values from the color scheme
+ * Get the CSS variables from the values of the color scheme
  * Adds alternative versions to palette with suffix:
  * {color}A - alpha
  * {color}D - dark version
@@ -20,9 +11,9 @@ import { hexToRgba } from './helpers'
  * {color}HC - high contrast version
  * {color}LC - low contrast version
  */
-const getColorVars = (schemeValues: SchemeValues, scheme: Scheme) => {
+const getThemeColorVars = (colors: Record<string, string>, scheme: Scheme) => {
   const isDark = scheme === 'dark'
-  return Object.entries(schemeValues).reduce(
+  return Object.entries(colors).reduce(
     (acc, [key, val]) => `${acc}
       --${key}: ${val};
       --${key}A: ${hexToRgba(val, 0.5)};
@@ -35,17 +26,11 @@ const getColorVars = (schemeValues: SchemeValues, scheme: Scheme) => {
   )
 }
 
-/**
- * A helper used to get the global style containing the theme
- */
-export const getGlobalStyle = (
-  { colors, fonts }: PiTheme = getTheme(),
-  scheme: Scheme
-) => {
-  return createGlobalStyle`
-  body {
-    ${getColorVars(colors[scheme], scheme)}
-    font-family: ${fonts.join(', ')};
+export const GlobalStyle = createGlobalStyle<any>`
+  :root {
+    font-size: ${({ $fontSize }) => ($fontSize === 'large' ? '24px' : '16px')};
+    ${({ theme, $scheme }) => getThemeColorVars(theme.colors, $scheme)}
+    font-family: ${({ theme }) => theme.fonts.join(', ')};
     background-color: var(--bg);
     color: var(--text);
   }
@@ -63,37 +48,3 @@ export const getGlobalStyle = (
     transition: all 0.5s;
   }
 `
-}
-
-/**
- * A helper to get the global font size
- */
-const getGlobalFontSize = (size: FontSize) => createGlobalStyle`
-  :root {
-    font-size: ${size === 'large' ? '24px' : '16px'};
-  }
-`
-
-/**
- * A map of the global styles for the themes
- */
-export const globalStyles: ThemeMap = themeList.reduce(
-  (accStyles, themeName: ThemeType) => {
-    return {
-      ...accStyles,
-      [themeName]: {
-        light: getGlobalStyle(getTheme(themeName), 'light'),
-        dark: getGlobalStyle(getTheme(themeName), 'dark'),
-      },
-    }
-  },
-  {} as ThemeMap
-)
-
-/**
- * A map of the global font sizes for both sizes
- */
-export const globalFontSizes: SizeMap = {
-  small: getGlobalFontSize('small'),
-  large: getGlobalFontSize('large'),
-}

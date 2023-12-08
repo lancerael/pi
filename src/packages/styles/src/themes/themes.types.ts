@@ -10,4 +10,4 @@ export const themeList = [
   'stellar',
 ] as const
 
-export type ThemeType = (typeof themeList)[number]
+export type ThemeName = (typeof themeList)[number]

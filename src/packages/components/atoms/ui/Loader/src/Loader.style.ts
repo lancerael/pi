@@ -1,7 +1,7 @@
 import styled, { keyframes, css } from 'styled-components'
 import { StyledCircleProps } from './Loader.style.types'
 import { LoaderProps } from './Loader.types'
-import { TransientProps } from '@pi-lib/utils'
+import { TransientProps } from '@pi-lib/styles'
 
 /**
  * The keyframe animation for the loader

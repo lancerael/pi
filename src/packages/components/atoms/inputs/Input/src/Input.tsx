@@ -1,4 +1,4 @@
-import { getTransientProps } from '@pi-lib/utils'
+import { getTransientProps } from '@pi-lib/styles'
 import { StyledInput } from './Input.style'
 import { InputProps } from './Input.types'
 

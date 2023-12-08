@@ -1,11 +1,11 @@
-import { Scheme, ThemeType } from '@pi-lib/styles'
+import { Scheme, ThemeName } from '@pi-lib/styles'
 import { USER_SCHEME } from '@pi-lib/styles/src/constants'
 import { createSlice } from '@reduxjs/toolkit'
 
 export type FontSize = 'small' | 'large'
 
 export interface SettingsState {
-  themeName: ThemeType
+  themeName: ThemeName
   fontSize: FontSize
   scheme: Scheme
   page: string
@@ -37,7 +37,7 @@ const settingsSlice = createSlice({
   name: 'theming',
   initialState,
   reducers: {
-    updateTheme(state: SettingsState, { payload }: Payload<ThemeType>) {
+    updateTheme(state: SettingsState, { payload }: Payload<ThemeName>) {
       state.themeName = payload
       storeSettings(state)
     },

@@ -382,7 +382,7 @@ importers:
         specifier: workspace:^
         version: link:../../../packages/components/atoms/layout/PageBanner
       '@pi-lib/page-content':
-        specifier: ^1.2.1
+        specifier: workspace:^
         version: link:../../../packages/components/molecules/layout/PageContent
       '@pi-lib/page-grid':
         specifier: workspace:^

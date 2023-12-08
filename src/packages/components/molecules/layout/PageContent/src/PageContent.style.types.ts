@@ -1,4 +1,4 @@
-import { TransientProps } from '@pi-lib/utils'
+import { TransientProps } from '@pi-lib/styles'
 import { PageContentProps } from './PageContent.types'
 
 /**

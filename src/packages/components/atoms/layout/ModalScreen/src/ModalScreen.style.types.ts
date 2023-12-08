@@ -1,4 +1,4 @@
-import { TransientProps } from '@pi-lib/utils'
+import { TransientProps } from '@pi-lib/styles'
 import { ModalScreenProps } from './ModalScreen.types'
 
 /**
