@@ -1,7 +1,0 @@
-{
-  "type": "patch",
-  "comment": "fix deps",
-  "packageName": "@pi-lib/custom-icon",
-  "email": "lancerael@googlemail.com",
-  "dependentChangeType": "patch"
-}

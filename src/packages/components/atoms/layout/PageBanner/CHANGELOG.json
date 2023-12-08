@@ -2,6 +2,21 @@
   "name": "@pi-lib/page-banner",
   "entries": [
     {
+      "date": "Fri, 08 Dec 2023 23:52:49 GMT",
+      "tag": "@pi-lib/page-banner_v1.0.2",
+      "version": "1.0.2",
+      "comments": {
+        "patch": [
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/page-banner",
+            "commit": "4fad74433a69cb458d2787a02a1ff13f1c8bba6d",
+            "comment": "fix deps"
+          }
+        ]
+      }
+    },
+    {
       "date": "Tue, 05 Dec 2023 22:02:14 GMT",
       "tag": "@pi-lib/page-banner_v1.0.0",
       "version": "1.0.0",

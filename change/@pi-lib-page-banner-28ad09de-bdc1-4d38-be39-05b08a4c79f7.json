@@ -1,7 +1,0 @@
-{
-  "type": "patch",
-  "comment": "fix deps",
-  "packageName": "@pi-lib/page-banner",
-  "email": "lancerael@googlemail.com",
-  "dependentChangeType": "patch"
-}

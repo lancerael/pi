@@ -2,6 +2,21 @@
   "name": "@pi-lib/dismissable-content",
   "entries": [
     {
+      "date": "Fri, 08 Dec 2023 23:52:49 GMT",
+      "tag": "@pi-lib/dismissable-content_v1.2.13",
+      "version": "1.2.13",
+      "comments": {
+        "patch": [
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/dismissable-content",
+            "commit": "4fad74433a69cb458d2787a02a1ff13f1c8bba6d",
+            "comment": "fix deps"
+          }
+        ]
+      }
+    },
+    {
       "date": "Tue, 05 Dec 2023 22:02:14 GMT",
       "tag": "@pi-lib/dismissable-content_v1.2.10",
       "version": "1.2.10",

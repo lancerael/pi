@@ -2,6 +2,21 @@
   "name": "@pi-lib/link",
   "entries": [
     {
+      "date": "Fri, 08 Dec 2023 23:52:49 GMT",
+      "tag": "@pi-lib/link_v2.1.3",
+      "version": "2.1.3",
+      "comments": {
+        "patch": [
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/link",
+            "commit": "4fad74433a69cb458d2787a02a1ff13f1c8bba6d",
+            "comment": "fix deps"
+          }
+        ]
+      }
+    },
+    {
       "date": "Wed, 06 Dec 2023 20:55:05 GMT",
       "tag": "@pi-lib/link_v2.1.1",
       "version": "2.1.1",

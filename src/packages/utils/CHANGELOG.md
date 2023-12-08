@@ -1,8 +1,16 @@
 # Change Log - @pi-lib/utils
 
-This log was last generated on Tue, 05 Dec 2023 22:02:14 GMT and should not be manually modified.
+This log was last generated on Fri, 08 Dec 2023 23:52:49 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 7.0.0
+
+Fri, 08 Dec 2023 23:52:49 GMT
+
+### Major changes
+
+- Moved transient prop helper to styles (lancerael@googlemail.com)
 
 ## 6.1.0
 
