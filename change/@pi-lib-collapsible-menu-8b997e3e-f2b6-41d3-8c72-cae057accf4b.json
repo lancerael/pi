@@ -1,7 +1,0 @@
-{
-  "type": "patch",
-  "comment": "Added new colours to palette",
-  "packageName": "@pi-lib/collapsible-menu",
-  "email": "lancerael@googlemail.com",
-  "dependentChangeType": "patch"
-}

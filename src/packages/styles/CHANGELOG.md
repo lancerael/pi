@@ -1,8 +1,16 @@
 # Change Log - @pi-lib/styles
 
-This log was last generated on Tue, 05 Dec 2023 22:02:14 GMT and should not be manually modified.
+This log was last generated on Fri, 08 Dec 2023 16:38:45 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 3.3.1
+
+Fri, 08 Dec 2023 16:38:45 GMT
+
+### Patches
+
+- Added new colours to palette (lancerael@googlemail.com)
 
 ## 3.3.0
 

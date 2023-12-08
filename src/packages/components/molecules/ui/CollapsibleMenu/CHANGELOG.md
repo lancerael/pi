@@ -1,8 +1,16 @@
 # Change Log - @pi-lib/collapsible-menu
 
-This log was last generated on Tue, 05 Dec 2023 22:02:14 GMT and should not be manually modified.
+This log was last generated on Fri, 08 Dec 2023 16:38:44 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 1.1.7
+
+Fri, 08 Dec 2023 16:38:44 GMT
+
+### Patches
+
+- Added new colours to palette (lancerael@googlemail.com)
 
 ## 1.1.5
 

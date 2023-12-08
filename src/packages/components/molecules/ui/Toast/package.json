@@ -1,6 +1,6 @@
 {
   "name": "@pi-lib/toast",
-  "version": "1.1.16",
+  "version": "1.1.17",
   "description": "A React component to handle toast notifications",
   "keywords": [
     "react",

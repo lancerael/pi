@@ -18,7 +18,7 @@
     "@pi-lib/icon-button": "workspace:^",
     "@pi-lib/link": "workspace:^",
     "@pi-lib/page-banner": "workspace:^",
-    "@pi-lib/page-content": "^1.2.0",
+    "@pi-lib/page-content": "^1.2.1",
     "@pi-lib/page-grid": "workspace:^",
     "@pi-lib/shimmer": "workspace:^",
     "@pi-lib/stellar": "workspace:^",
