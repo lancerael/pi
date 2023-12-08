@@ -29,7 +29,7 @@ const getColorVars = (schemeValues: SchemeValues, scheme: Scheme) => {
       --${key}D: ${hexToRgba(val, 1, 0.5)};
       --${key}L: ${hexToRgba(val, 1, 2)};
       --${key}HC: ${hexToRgba(val, 1, isDark ? 0.5 : 2)};
-      --${key}LC: ${hexToRgba(val, 1, isDark ? 2 : 1.5)};
+      --${key}LC: ${hexToRgba(val, 1, isDark ? 2 : 0.5)};
     `,
     ''
   )
