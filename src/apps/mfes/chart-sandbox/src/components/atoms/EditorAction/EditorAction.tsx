@@ -28,12 +28,13 @@ export const EditorAction = ({
             title,
             onClick,
             boxName: 'hi',
+            isInverted: true,
           }}
-          iconProps={{ src, isStroked, isFilled, color: 'var(--bg)' }}
+          iconProps={{ src, isStroked, isFilled, color: 'var(--text)' }}
         />
       </StyledIconButton>
       <StyledButton>
-        <Button {...{ title, onClick, boxName: 'hi' }}>
+        <Button {...{ title, onClick, boxName: 'hi', isInverted: true }}>
           {label.toUpperCase()}
         </Button>
       </StyledButton>
