@@ -2,6 +2,21 @@
   "name": "@pi-lib/icon",
   "entries": [
     {
+      "date": "Thu, 07 Dec 2023 20:51:02 GMT",
+      "tag": "@pi-lib/icon_v2.0.0",
+      "version": "2.0.0",
+      "comments": {
+        "major": [
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/icon",
+            "commit": "e32d88980c5895b08e3192ca46e84dccebd29eed",
+            "comment": "changes size to iconSize and adds universal props"
+          }
+        ]
+      }
+    },
+    {
       "date": "Tue, 05 Dec 2023 22:02:14 GMT",
       "tag": "@pi-lib/icon_v1.1.0",
       "version": "1.1.0",

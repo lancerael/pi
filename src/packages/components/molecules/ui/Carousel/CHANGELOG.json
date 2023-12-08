@@ -2,6 +2,21 @@
   "name": "@pi-lib/carousel",
   "entries": [
     {
+      "date": "Thu, 07 Dec 2023 20:51:02 GMT",
+      "tag": "@pi-lib/carousel_v2.0.9",
+      "version": "2.0.9",
+      "comments": {
+        "patch": [
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/carousel",
+            "commit": "e32d88980c5895b08e3192ca46e84dccebd29eed",
+            "comment": "Added useLimitedEvents hook"
+          }
+        ]
+      }
+    },
+    {
       "date": "Tue, 05 Dec 2023 22:02:14 GMT",
       "tag": "@pi-lib/carousel_v2.0.7",
       "version": "2.0.7",
