@@ -15,7 +15,10 @@ const Sandbox = () => {
     (state: AppState) => state
   )
   return (
-    <Theme themeName={settings.themeName} includeGlobal={false}>
+    <Theme
+      themeName={settings?.themeName ?? 'andro'}
+      includeGlobal={!settings?.themeName}
+    >
       <PageContent
         sidebar={
           <>
