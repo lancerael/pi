@@ -1,8 +1,16 @@
 # Change Log - @pi-lib/candlestick-chart
 
-This log was last generated on Thu, 07 Dec 2023 20:51:02 GMT and should not be manually modified.
+This log was last generated on Sat, 09 Dec 2023 22:36:32 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 2.10.3
+
+Sat, 09 Dec 2023 22:36:32 GMT
+
+### Patches
+
+- Fix buttons (lancerael@googlemail.com)
 
 ## 2.10.0
 

@@ -1,6 +1,6 @@
 {
   "name": "@pi-lib/page-content",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "A React component for a page layout with a sidebar",
   "keywords": [
     "pi",

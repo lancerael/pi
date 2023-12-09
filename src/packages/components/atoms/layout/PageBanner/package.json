@@ -1,6 +1,6 @@
 {
   "name": "@pi-lib/page-banner",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A banner React component that can comtain spaced or flowing items",
   "keywords": [
     "pi",
