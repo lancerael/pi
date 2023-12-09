@@ -8,10 +8,16 @@ const candlestickDataSlice = createSlice({
   name: 'candlestickData',
   initialState,
   reducers: {
-    setData(state: CandlestickDataState, { payload }: { payload: CandlestickDataState }) {
+    setData(
+      state: CandlestickDataState,
+      { payload }: { payload: CandlestickDataState }
+    ) {
       return structuredClone(payload)
     },
-    updateToday(state: CandlestickDataState, { payload }: { payload: CandlestickDayData }) {
+    updateToday(
+      state: CandlestickDataState,
+      { payload }: { payload: CandlestickDayData }
+    ) {
       state[state.length - 1] = payload
     },
   },

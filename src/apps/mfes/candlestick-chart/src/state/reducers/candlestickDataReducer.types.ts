@@ -3,4 +3,7 @@ import { ThemeName } from '@pi-lib/styles'
 
 export type CandlestickDataState = CandlestickDayData[]
 
-export type AppState = { candlestickData: CandlestickDataState; settings: { themeName: ThemeName } }
+export type AppState = {
+  candlestickData: CandlestickDataState
+  settings: { themeName: ThemeName }
+}

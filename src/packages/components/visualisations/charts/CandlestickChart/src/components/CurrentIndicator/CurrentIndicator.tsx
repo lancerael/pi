@@ -2,7 +2,11 @@ import { AXIS_OFFSETS, CHART_PADDING } from '../../CandlestickChart.constants'
 import { StyledIndicator } from './CurrentIndicator.style'
 import { CurrentIndicatorProps } from './CurrentIndicator.types'
 
-export const CurrentIndicator = ({ currentItem, yScale, sizes }: CurrentIndicatorProps) => {
+export const CurrentIndicator = ({
+  currentItem,
+  yScale,
+  sizes,
+}: CurrentIndicatorProps) => {
   if (!currentItem) return <></>
   const indicatorBottom = sizes.height - AXIS_OFFSETS[0] - CHART_PADDING
   const indicatorTop = CHART_PADDING
@@ -13,7 +17,10 @@ export const CurrentIndicator = ({ currentItem, yScale, sizes }: CurrentIndicato
   top += +sizes.top
   if (isNaN(top)) return <></>
   return (
-    <StyledIndicator $isPositive={currentItem.close > currentItem.open} style={{ left, top }}>
+    <StyledIndicator
+      $isPositive={currentItem.close > currentItem.open}
+      style={{ left, top }}
+    >
       {currentItem.close.toLocaleString('en-US')}
     </StyledIndicator>
   )

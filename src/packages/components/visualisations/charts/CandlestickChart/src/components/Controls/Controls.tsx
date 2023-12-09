@@ -11,7 +11,14 @@ const zoomSpeed = 0.2
 const panSpeed = 250
 
 export const Controls = ({
-  controls: { setPanLevel, setZoomLevel, setPeriod, panLevel, zoomLevel, period },
+  controls: {
+    setPanLevel,
+    setZoomLevel,
+    setPeriod,
+    panLevel,
+    zoomLevel,
+    period,
+  },
   dataRange: { start, end, length },
 }: ControlsProps) => {
   const buttonStyle = {
@@ -85,16 +92,36 @@ export const Controls = ({
 
   return (
     <StyledControls>
-      <Button style={buttonStyle} isCompact onClick={panBack} disabled={!canPanBack}>
+      <Button
+        style={buttonStyle}
+        isCompact
+        onClick={panBack}
+        disabled={!canPanBack}
+      >
         <StyledEmoji rotate={-90}>🔺</StyledEmoji>
       </Button>
-      <Button style={buttonStyle} isCompact onClick={zoomOut} disabled={!canZoomOut}>
+      <Button
+        style={buttonStyle}
+        isCompact
+        onClick={zoomOut}
+        disabled={!canZoomOut}
+      >
         ➖
       </Button>
-      <Button style={buttonStyle} isCompact onClick={zoomIn} disabled={!canZoomIn}>
+      <Button
+        style={buttonStyle}
+        isCompact
+        onClick={zoomIn}
+        disabled={!canZoomIn}
+      >
         ➕
       </Button>
-      <Button style={buttonStyle} isCompact onClick={panForward} disabled={!canPanForward}>
+      <Button
+        style={buttonStyle}
+        isCompact
+        onClick={panForward}
+        disabled={!canPanForward}
+      >
         <StyledEmoji rotate={90}>🔺</StyledEmoji>
       </Button>
       <Select

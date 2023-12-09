@@ -1,13 +1,16 @@
 import { AppState } from '../state/reducers/candlestickDataReducer.types'
 
-export const Sidebar = ({ candlestickData }: Pick<AppState, 'candlestickData'>) => {
+export const Sidebar = ({
+  candlestickData,
+}: Pick<AppState, 'candlestickData'>) => {
   const subStyles = {
     fontWeight: 'bold',
     textTransform: 'uppercase',
     color: 'var(--textStrong)',
   } as {}
   const rowStyles = { color: 'var(--textSoft)' } as {}
-  const { open, close, low, high } = candlestickData?.[candlestickData?.length - 1] ?? {}
+  const { open, close, low, high } =
+    candlestickData?.[candlestickData?.length - 1] ?? {}
   return (
     <div style={{ minWidth: '300px' }}>
       <h2 style={{ textTransform: 'uppercase' }}>
