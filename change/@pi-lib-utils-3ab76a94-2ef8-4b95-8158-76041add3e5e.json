@@ -1,7 +1,0 @@
-{
-  "type": "major",
-  "comment": "Moved transient prop helper to styles",
-  "packageName": "@pi-lib/utils",
-  "email": "lancerael@googlemail.com",
-  "dependentChangeType": "patch"
-}
