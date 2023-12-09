@@ -1,12 +1,13 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import Candlestick from './components/Candlestick'
-import { Theme } from '@pi-lib/styles'
+import { Provider } from 'react-redux'
+import store from './state'
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
-    <Theme themeName="andro">
+    <Provider {...{ store }}>
       <Candlestick />
-    </Theme>
+    </Provider>
   </React.StrictMode>
 )

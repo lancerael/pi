@@ -1,3 +1,4 @@
+import { ThemeName } from '@pi-lib/styles'
 import { ChartConfig, DataItem, Hash } from 'd-theia/src/types'
 
 export interface ChartValues {
@@ -10,3 +11,5 @@ export interface ChartValues {
    */
   chartData: (DataItem & Hash)[]
 }
+
+export type AppState = ChartValues & { settings: { themeName: ThemeName } }

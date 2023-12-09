@@ -29,6 +29,7 @@ export interface ThemeProps extends Partial<ThemedComponentWithChildren> {
   themeOverrides?: PiTheme
   scheme?: Scheme
   fontSize?: FontSize
+  includeGlobal?: boolean
 }
 
 type GlobalStyleComponent = React.NamedExoticComponent<ExecutionProps & object>

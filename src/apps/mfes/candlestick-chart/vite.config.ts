@@ -16,6 +16,8 @@ export default defineConfig({
       filename: 'remoteCandlestick.js',
       exposes: {
         './Candlestick': './src/components/Candlestick',
+        './candlestickDataReducer':
+          './src/state/reducers/candlestickDataReducer',
       },
       shared: [
         'react',

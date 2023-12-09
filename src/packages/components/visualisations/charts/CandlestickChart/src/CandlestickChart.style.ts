@@ -71,6 +71,7 @@ export const StyledContainer = styled.div`
   ${container()}
   width: 100%;
   height: 100%;
+  box-sizing: border-box;
   font-family: sans-serif;
 `
 

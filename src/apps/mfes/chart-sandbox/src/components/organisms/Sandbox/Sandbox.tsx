@@ -4,25 +4,41 @@ import { useSelector } from 'react-redux'
 import AxisChart from '@pi-lib/axis-chart'
 import ConfigEditor from '../../molecules/ConfigEditor'
 import DataTable from '../../molecules/DataTable'
-import { ChartValues } from './Sandbox.types'
+import { AppState } from './Sandbox.types'
+import { Theme } from '@pi-lib/styles'
 
 /**
  * Layout element for the whole sandbox page
  */
 const Sandbox = () => {
-  const chartValues = useSelector((state) => state as ChartValues)
+  const { chartConfig, chartData, settings } = useSelector(
+    (state: AppState) => state
+  )
   return (
-    <PageContent
-      sidebar={
-        <>
-          <ConfigEditor />
-          <DataTable />
-        </>
-      }
+    <Theme
+      themeName={settings?.themeName ?? 'andro'}
+      includeGlobal={!settings?.themeName}
     >
-      <AxisChart chartId="container-bar" chartType="bar" {...chartValues} />
-      <AxisChart chartId="container-line" chartType="line" {...chartValues} />
-    </PageContent>
+      <PageContent
+        sidebar={
+          <>
+            <ConfigEditor />
+            <DataTable />
+          </>
+        }
+      >
+        <AxisChart
+          chartId="container-bar"
+          chartType="bar"
+          {...{ chartConfig, chartData }}
+        />
+        <AxisChart
+          chartId="container-line"
+          chartType="line"
+          {...{ chartConfig, chartData }}
+        />
+      </PageContent>
+    </Theme>
   )
 }
 

@@ -10,10 +10,10 @@ export const CurrentIndicator = ({
   if (!currentItem) return <></>
   const indicatorBottom = sizes.height - AXIS_OFFSETS[0] - CHART_PADDING
   const indicatorTop = CHART_PADDING
-  const left = sizes.width - AXIS_OFFSETS[1] + CHART_PADDING + 4 + sizes.left
-  let top = yScale(currentItem?.close) + -13
+  const left = sizes.width - AXIS_OFFSETS[1] + CHART_PADDING + 12 + sizes.left
+  let top = yScale(currentItem?.close) - 15
   top = top > indicatorBottom ? indicatorBottom : top
-  top = top < indicatorTop ? indicatorTop : top + 4
+  top = top < indicatorTop ? indicatorTop : top + 14
   top += +sizes.top
   if (isNaN(top)) return <></>
   return (
