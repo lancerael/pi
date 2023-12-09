@@ -89,9 +89,7 @@ export const Theme = ({
 }: ThemeProps) => {
   return (
     <ThemeProvider {...{ theme }}>
-      {includeGlobal && (
-        <GlobalStyle {...getTransientProps({ fontSize, scheme })} />
-      )}
+      {includeGlobal && <GlobalStyle {...getTransientProps({ fontSize, scheme })} />}
       {children}
     </ThemeProvider>
   )

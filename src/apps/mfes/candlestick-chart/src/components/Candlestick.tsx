@@ -1,16 +1,14 @@
 import PageContent from '@pi-lib/page-content'
 import { Sidebar } from './Sidebar'
-import CandlestickChart, { generateCandlestickData, movePrevValue } from '@pi-lib/candlestick-chart'
-import { Theme, ThemeName } from '@pi-lib/styles'
+import CandlestickChart, {
+  generateCandlestickData,
+  movePrevValue,
+} from '@pi-lib/candlestick-chart'
+import { Theme } from '@pi-lib/styles'
 import { useDispatch, useSelector } from 'react-redux'
-import { CandlestickDataState, setData, updateToday } from '../state'
+import { setData, updateToday } from '../state'
 import { useEffect } from 'react'
-
-export interface CandlestickProps {
-  candlestickData: CandlestickDataState
-}
-
-export type AppState = CandlestickProps & { settings: { themeName: ThemeName } }
+import { AppState } from '../state/reducers/candlestickDataReducer.types'
 
 export const Candlestick = () => {
   const { candlestickData, settings } = useSelector((state: AppState) => state)

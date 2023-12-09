@@ -1,6 +1,6 @@
-import { CandlestickProps } from './Candlestick'
+import { AppState } from '../state/reducers/candlestickDataReducer.types'
 
-export const Sidebar = ({ candlestickData }: CandlestickProps) => {
+export const Sidebar = ({ candlestickData }: Pick<AppState, 'candlestickData'>) => {
   const subStyles = {
     fontWeight: 'bold',
     textTransform: 'uppercase',

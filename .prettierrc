@@ -4,5 +4,5 @@
   "singleQuote": true,
   "endOfLine": "auto",
   "quoteProps": "consistent",
-  "printWidth": 100
+  "printWidth": 90
 }

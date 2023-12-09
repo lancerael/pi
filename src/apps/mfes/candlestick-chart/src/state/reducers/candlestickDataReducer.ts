@@ -1,7 +1,6 @@
 import { CandlestickDayData } from '@pi-lib/candlestick-chart/src/CandlestickChart.types'
 import { createSlice } from '@reduxjs/toolkit'
-
-export type CandlestickDataState = CandlestickDayData[]
+import { CandlestickDataState } from './candlestickDataReducer.types'
 
 const initialState: CandlestickDataState = []
 
