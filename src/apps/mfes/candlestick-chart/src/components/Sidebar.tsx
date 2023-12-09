@@ -1,13 +1,13 @@
-import { CandlestickDayData } from '@pi-lib/candlestick-chart/src/CandlestickChart.types'
+import { CandlestickProps } from './Candlestick'
 
-export const Sidebar = ({ chartData }: { chartData: CandlestickDayData[] }) => {
+export const Sidebar = ({ candlestickData }: CandlestickProps) => {
   const subStyles = {
     fontWeight: 'bold',
     textTransform: 'uppercase',
     color: 'var(--textStrong)',
   } as {}
   const rowStyles = { color: 'var(--textSoft)' } as {}
-  const { open, close, low, high } = chartData?.[chartData?.length - 1] ?? {}
+  const { open, close, low, high } = candlestickData?.[candlestickData?.length - 1] ?? {}
   return (
     <div style={{ minWidth: '300px' }}>
       <h2 style={{ textTransform: 'uppercase' }}>
@@ -32,7 +32,7 @@ export const Sidebar = ({ chartData }: { chartData: CandlestickDayData[] }) => {
       <p style={rowStyles}>
         Previous close{' '}
         <span style={{ float: 'right' }}>
-          {chartData?.[chartData?.length - 2]?.close}
+          {candlestickData?.[candlestickData?.length - 2]?.close}
         </span>
       </p>
       <p style={rowStyles}>

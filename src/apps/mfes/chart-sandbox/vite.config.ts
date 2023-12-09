@@ -14,13 +14,7 @@ export default defineConfig({
         './chartConfigReducer': './src/state/reducers/chartConfigReducer',
         './chartDataReducer': './src/state/reducers/chartDataReducer',
       },
-      shared: [
-        'react',
-        'react-dom',
-        '@reduxjs/toolkit',
-        'react-redux',
-        'redux',
-      ],
+      shared: ['react', 'react-dom', '@reduxjs/toolkit', 'react-redux', 'redux'],
     }),
   ],
   build: {

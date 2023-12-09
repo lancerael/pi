@@ -79,16 +79,19 @@ export const getTheme = (
  * @returns {JSX.Element} A ThemeProvider wrapped component.
  */
 export const Theme = ({
-  children,
   themeName = 'andro',
   fontSize = 'small',
   scheme = USER_SCHEME,
+  includeGlobal = true,
   themeOverrides,
   theme = getTheme(themeName, scheme, themeOverrides),
+  children,
 }: ThemeProps) => {
   return (
     <ThemeProvider {...{ theme }}>
-      <GlobalStyle {...getTransientProps({ fontSize, scheme })} />
+      {includeGlobal && (
+        <GlobalStyle {...getTransientProps({ fontSize, scheme })} />
+      )}
       {children}
     </ThemeProvider>
   )
@@ -101,7 +104,7 @@ export const Theme = ({
  * @returns {Function} A function that takes props and returns a themed component.
  */
 export const withThemeProvider =
-  (Component: React.JSXElementConstructor<any>, themeName: ThemeName) =>
+  (Component: React.JSXElementConstructor<unknown>, themeName: ThemeName) =>
   (props: Record<string, unknown>) =>
     (
       <Theme {...{ themeName }}>

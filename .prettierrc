@@ -3,5 +3,6 @@
   "semi": false,
   "singleQuote": true,
   "endOfLine": "auto",
-  "quoteProps": "consistent"
+  "quoteProps": "consistent",
+  "printWidth": 100
 }
