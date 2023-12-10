@@ -3,6 +3,7 @@ import { ThemeName } from './themes'
 import { HTMLAttributes, PropsWithChildren } from 'react'
 import { boxColors, gradients } from './theme'
 import { DefaultTheme, Substitute } from 'styled-components/dist/types'
+import { FontSize, Scheme } from './components/GlobalStyle'
 
 export type SchemeValues = Record<string, string>
 
@@ -17,8 +18,6 @@ export interface ThemedComponent {
 }
 
 export type ThemedComponentWithChildren = ThemedComponent & PropsWithChildren
-
-export type Scheme = 'light' | 'dark'
 
 export type Size = 'small' | 'medium' | 'large'
 
@@ -39,8 +38,6 @@ export type ContrastMap = {
 }
 
 export type ThemeMap = { [key in ThemeName]: ContrastMap }
-
-export type FontSize = 'small' | 'large'
 
 export type SizeMap = Record<FontSize, GlobalStyleComponent>
 

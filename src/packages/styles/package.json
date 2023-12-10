@@ -20,7 +20,8 @@
   "type": "module",
   "main": "./src/index.ts",
   "scripts": {
-    "build": "rimraf vanilla && vite build"
+    "build": "rimraf vanilla && vite build",
+    "test": "vitest"
   },
   "devDependencies": {
     "@pi-lib/config": "workspace:^",

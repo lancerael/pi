@@ -13,14 +13,14 @@ Install `@pi-lib/styles` and use the `Theme` provider:
 ```
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { Theme } from '@pi-lib/styles'
+import { ThemeProvider } from '@pi-lib/styles'
 import App from './App'
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
-    <Theme themeName="electron">
+    <ThemeProvider themeName="electron">
       <App />
-    </Theme>
+    </ThemeProvider>
   </React.StrictMode>
 )
 ```

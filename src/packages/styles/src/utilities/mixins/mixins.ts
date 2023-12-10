@@ -1,6 +1,6 @@
 import { css } from 'styled-components'
-import { BoxProps, GradientProps, ShadowProps } from './theme.types'
-import { boxColors, gradients } from './theme'
+import { BoxProps, GradientProps, ShadowProps } from '../../theme.types'
+import { boxColors, gradients } from '../../theme'
 
 /**
  * A mixin generator for a css background gradient
@@ -42,7 +42,9 @@ export const shadow = ({
   offset = '2px 2px',
   opacity = '0.1',
 }: ShadowProps = {}) =>
-  `box-shadow: ${offset} 5px 1px rgba(0, 0, 0, ${opacity});`
+  css`
+    box-shadow: ${offset} 5px 1px rgba(0, 0, 0, ${opacity});
+  `
 
 /**
  * A mixin generator for a form input
