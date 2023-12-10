@@ -2,6 +2,21 @@
   "name": "@pi-lib/styles",
   "entries": [
     {
+      "date": "Sat, 09 Dec 2023 22:36:32 GMT",
+      "tag": "@pi-lib/styles_v4.0.1",
+      "version": "4.0.1",
+      "comments": {
+        "patch": [
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/styles",
+            "commit": "914fd895f15eee9df290d145cdedf0eaa5baeadf",
+            "comment": "Make global styles optional in theme provider"
+          }
+        ]
+      }
+    },
+    {
       "date": "Fri, 08 Dec 2023 23:52:49 GMT",
       "tag": "@pi-lib/styles_v4.0.0",
       "version": "4.0.0",

@@ -1,6 +1,6 @@
 {
   "name": "@pi-lib/input",
-  "version": "1.4.12",
+  "version": "1.4.13",
   "description": "A React component to handle various types of form input",
   "keywords": [
     "pi",

@@ -1,7 +1,0 @@
-{
-  "type": "patch",
-  "comment": "Make global styles optional in theme provider",
-  "packageName": "@pi-lib/styles",
-  "email": "lancerael@googlemail.com",
-  "dependentChangeType": "patch"
-}
