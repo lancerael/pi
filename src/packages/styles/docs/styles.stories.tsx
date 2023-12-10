@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import ThemeProvider, { themes, ThemeName } from '../src'
+import Theme, { themes, ThemeName } from '../src'
 //@ts-ignore
 import Table from '../../components/molecules/layout/Table/src/Table'
 
@@ -24,7 +24,7 @@ const StyleDemo = ({ themeName }: { themeName: ThemeName }) => {
   )
 
   return (
-    <ThemeProvider themeName={themeName}>
+    <Theme themeName={themeName}>
       <h3>
         Theme:{' '}
         <em>
@@ -38,7 +38,7 @@ const StyleDemo = ({ themeName }: { themeName: ThemeName }) => {
           cols: [key, color(theme.light[key]), color(theme.dark[key])],
         }))}
       />
-    </ThemeProvider>
+    </Theme>
   )
 }
 

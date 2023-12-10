@@ -24,7 +24,7 @@ export type Size = 'small' | 'medium' | 'large'
 export type BoxNames = 'default' | 'hi' | 'alt' | 'light'
 
 export interface ThemeProps extends Partial<ThemedComponentWithChildren> {
-  themeName: ThemeName
+  themeName?: ThemeName
   themeOverrides?: PiTheme
   scheme?: Scheme
   fontSize?: FontSize

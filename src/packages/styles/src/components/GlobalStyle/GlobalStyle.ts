@@ -12,7 +12,7 @@ import GlobalStyleProps from './GlobalStyle.types'
 export const GlobalStyle = createGlobalStyle<GlobalStyleProps>`
   :root {
     font-size: ${({ $fontSize }) => ($fontSize === 'large' ? '24px' : '16px')};
-    ${({ theme, $scheme }) => getThemeColorVars(theme.colors, $scheme)}
+    ${({ theme }) => getThemeColorVars(theme.colors)}
     font-family: ${({ theme }) => theme.fonts.join(', ')};
     background-color: var(--bg);
     color: var(--text);

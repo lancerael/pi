@@ -5,7 +5,7 @@ import AxisChart from '@pi-lib/axis-chart'
 import ConfigEditor from '../../molecules/ConfigEditor'
 import DataTable from '../../molecules/DataTable'
 import { AppState } from './Sandbox.types'
-import ThemeProvider from '@pi-lib/styles'
+import Theme from '@pi-lib/styles'
 
 /**
  * Layout element for the whole sandbox page
@@ -15,7 +15,7 @@ const Sandbox = () => {
     (state: AppState) => state
   )
   return (
-    <ThemeProvider
+    <Theme
       themeName={settings?.themeName ?? 'andro'}
       includeGlobal={!settings?.themeName}
     >
@@ -38,7 +38,7 @@ const Sandbox = () => {
           {...{ chartConfig, chartData }}
         />
       </PageContent>
-    </ThemeProvider>
+    </Theme>
   )
 }
 

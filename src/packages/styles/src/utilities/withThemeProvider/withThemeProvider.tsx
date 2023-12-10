@@ -1,4 +1,5 @@
-import ThemeProvider from '../../components/ThemeProvider'
+import Theme from '../../components/Theme'
+import getTheme from '../../helpers/getTheme'
 import { ThemeName } from '../../themes'
 
 /**
@@ -8,12 +9,16 @@ import { ThemeName } from '../../themes'
  * @returns {Function} A function that takes props and returns a themed component.
  */
 export const withThemeProvider =
-  (Component: React.JSXElementConstructor<unknown>, themeName: ThemeName) =>
+  (
+    Component: React.JSXElementConstructor<unknown>,
+    themeName: ThemeName,
+    theme = getTheme(themeName)
+  ) =>
   (props: Record<string, unknown>) => {
     return (
-      <ThemeProvider {...{ themeName }}>
+      <Theme {...{ themeName, theme }}>
         <Component {...props} />
-      </ThemeProvider>
+      </Theme>
     )
   }
 

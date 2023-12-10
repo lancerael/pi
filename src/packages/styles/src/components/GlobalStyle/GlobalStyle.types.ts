@@ -11,17 +11,12 @@ interface GlobalStyleProps {
   /**
    * The font size for the root element ('large' or 'small').
    */
-  $fontSize: FontSize
+  $fontSize?: FontSize
 
   /**
    * The theme object containing color and font information.
    */
-  theme: DefaultTheme
-
-  /**
-   * The color scheme to use between light or dark.
-   */
-  $scheme: Scheme
+  theme?: DefaultTheme
 }
 
 export default GlobalStyleProps

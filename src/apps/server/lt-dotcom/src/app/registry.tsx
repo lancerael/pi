@@ -3,7 +3,7 @@
 import { PropsWithChildren, useState } from 'react'
 import { useServerInsertedHTML } from 'next/navigation'
 import { ServerStyleSheet, StyleSheetManager } from 'styled-components'
-import ThemeProvider from '@pi-lib/styles'
+import Theme from '@pi-lib/styles'
 
 export default function StyleRegistry({ children }: PropsWithChildren) {
   const [styleSheet] = useState(() => new ServerStyleSheet())
@@ -18,9 +18,9 @@ export default function StyleRegistry({ children }: PropsWithChildren) {
 
   return (
     <StyleSheetManager sheet={styleSheet.instance}>
-      <ThemeProvider themeName="stellar" scheme="dark">
+      <Theme themeName="stellar" scheme="dark">
         {children}
-      </ThemeProvider>
+      </Theme>
     </StyleSheetManager>
   )
 }

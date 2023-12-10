@@ -24,7 +24,7 @@ export const hexToRgba = (
     newVal *= brightness
     return newVal > 255 ? 255 : newVal
   })
-  return `rgb(${r}, ${g}, ${b}, ${opacity})`
+  return `rgba(${r}, ${g}, ${b}, ${opacity})`
 }
 
 export default hexToRgba

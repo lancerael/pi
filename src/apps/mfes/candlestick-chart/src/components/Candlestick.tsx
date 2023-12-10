@@ -8,7 +8,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { setData, updateToday } from '../state'
 import { useEffect } from 'react'
 import { AppState } from '../state/reducers/candlestickDataReducer.types'
-import ThemeProvider from '@pi-lib/styles'
+import Theme from '@pi-lib/styles'
 
 export const Candlestick = () => {
   const { candlestickData, settings } = useSelector((state: AppState) => state)
@@ -37,14 +37,14 @@ export const Candlestick = () => {
   }, [candlestickData])
 
   return (
-    <ThemeProvider
+    <Theme
       themeName={settings?.themeName ?? 'andro'}
       includeGlobal={!settings?.themeName}
     >
       <PageContent sidebar={<Sidebar {...{ candlestickData }} />}>
         <CandlestickChart data={candlestickData} />
       </PageContent>
-    </ThemeProvider>
+    </Theme>
   )
 }
 

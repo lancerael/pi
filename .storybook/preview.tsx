@@ -1,6 +1,6 @@
 import { Decorator } from '@storybook/react'
 import * as jest from 'jest-mock'
-import ThemeProvider, { themeList } from '@pi-lib/styles'
+import Theme, { themeList } from '@pi-lib/styles'
 
 //@ts-ignore
 window.jest = jest
@@ -10,9 +10,9 @@ const withTheme: Decorator = (StoryFn, context) => {
   const scheme = context.parameters.scheme ?? context.globals.scheme
   const fontSize = context.parameters.fontSize ?? context.globals.fontSize
   return (
-    <ThemeProvider {...{ themeName, scheme, fontSize }}>
+    <Theme {...{ themeName, scheme, fontSize }}>
       <StoryFn />
-    </ThemeProvider>
+    </Theme>
   )
 }
 
