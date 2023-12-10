@@ -38,7 +38,8 @@ export const Candlestick = () => {
 
   return (
     <Theme
-      themeName={settings?.themeName ?? 'andro'}
+      themeName={settings?.themeName}
+      scheme={settings?.scheme}
       includeGlobal={!settings?.themeName}
     >
       <PageContent sidebar={<Sidebar {...{ candlestickData }} />}>

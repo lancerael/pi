@@ -6,6 +6,7 @@ import {
 } from './EditorAction.style'
 import { ActionProps } from './EditorAction.types'
 import Button from '@pi-lib/button'
+import { useTheme } from 'styled-components'
 
 /**
  * A component to handle each of the actions on the table
@@ -17,6 +18,7 @@ export const EditorAction = ({
   isStroked = false,
   isFilled = false,
 }: ActionProps) => {
+  const { colors } = useTheme()
   const src = `${
     import.meta.env.VITE_CLOUDFRONT_URL ?? '__CLOUDFRONT_URL__'
   }/${label.toLowerCase().split(' ').join('-')}.svg`
@@ -30,7 +32,7 @@ export const EditorAction = ({
             boxName: 'hi',
             isInverted: true,
           }}
-          iconProps={{ src, isStroked, isFilled, color: 'var(--text)' }}
+          iconProps={{ src, isStroked, isFilled, color: colors.text }}
         />
       </StyledIconButton>
       <StyledButton>

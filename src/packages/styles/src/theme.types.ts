@@ -7,14 +7,14 @@ import { FontSize, Scheme } from './components/GlobalStyle'
 
 export type SchemeValues = Record<string, string>
 
-export interface PiTheme extends DefaultTheme {
+export interface PiTheme {
   fonts: string[]
   fontSizes: Record<Size, string>
   colors: SchemeValues
 }
 
 export interface ThemedComponent {
-  theme: PiTheme
+  theme: PiTheme | DefaultTheme
 }
 
 export type ThemedComponentWithChildren = ThemedComponent & PropsWithChildren

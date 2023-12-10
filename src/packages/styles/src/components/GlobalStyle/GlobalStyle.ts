@@ -1,6 +1,6 @@
-import { createGlobalStyle } from 'styled-components'
-import getThemeColorVars from '../../helpers/getThemeColorVars'
-import GlobalStyleProps from './GlobalStyle.types'
+import { createGlobalStyle } from 'styled-components';
+import getThemeColorVars from '../../helpers/getThemeColorVars';
+import GlobalStyleProps from './GlobalStyle.types';
 
 /**
  * Global styles for the entire application.
@@ -14,8 +14,8 @@ export const GlobalStyle = createGlobalStyle<GlobalStyleProps>`
     font-size: ${({ $fontSize }) => ($fontSize === 'large' ? '24px' : '16px')};
     ${({ theme }) => getThemeColorVars(theme.colors)}
     font-family: ${({ theme }) => theme.fonts.join(', ')};
-    background-color: var(--bg);
-    color: var(--text);
+    background-color: ${({ theme }) => theme.colors.bg};
+    color: ${({ theme }) => theme.colors.text};
   }
 
   & div,

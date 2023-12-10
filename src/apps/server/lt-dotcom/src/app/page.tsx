@@ -3,7 +3,7 @@ import { useCallback, useEffect, useRef, useState } from 'react'
 import { signal, useSignalValue } from 'signals-react-safe'
 import Stellar from '@pi-lib/stellar'
 import PageGrid from '@pi-lib/page-grid'
-import { IS_CLIENT, REDUCED_MOTION } from '@pi-lib/styles'
+import Theme, { IS_CLIENT, REDUCED_MOTION } from '@pi-lib/styles'
 import {
   HeaderState,
   TravelTrackerProps,
@@ -70,37 +70,40 @@ export default function Home() {
   }, [])
 
   return (
-    <div
-      style={{
-        height: '100vh',
-      }}
-      ref={wrapperRef}
-    >
-      <Stellar
-        {...travelTracker}
-        scrollCallback={(scrollTop) => updateHeader(scrollTop)}
+    <Theme themeName="stellar" scheme="dark">
+      <div
+        style={{
+          height: '100vh',
+        }}
+        ref={wrapperRef}
       >
-        <PageHeader
-          fullWidth={uiSizeValues.fullWidth}
-          {...{
-            headerState,
-            travelTracker,
-            setTravelTracker,
-            isComplete,
-          }}
-        />
-        <PageGrid>
-          <Ticker
-            {...{ headerState, isComplete, setIsComplete, travelTracker }}
+        <Stellar
+          {...travelTracker}
+          scrollCallback={(scrollTop) => updateHeader(scrollTop)}
+        >
+          <PageHeader
+            fullWidth={uiSizeValues.fullWidth}
+            {...{
+              headerState,
+              travelTracker,
+              setTravelTracker,
+              isComplete,
+            }}
           />
-          <Skillset />
-          <TechList {...travelTracker} />
-          <Highlights />
-          <Demo />
-          <Footer />
-        </PageGrid>
-        <div ref={widthRef}></div>
-      </Stellar>
-    </div>
+          <PageGrid>
+            {/* <TestComponent>HELLO</TestComponent> */}
+            <Ticker
+              {...{ headerState, isComplete, setIsComplete, travelTracker }}
+            />
+            <Skillset />
+            <TechList {...travelTracker} />
+            <Highlights />
+            <Demo />
+            <Footer />
+          </PageGrid>
+          <div ref={widthRef}></div>
+        </Stellar>
+      </div>
+    </Theme>
   )
 }
