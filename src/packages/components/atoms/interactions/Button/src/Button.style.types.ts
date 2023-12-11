@@ -1,4 +1,4 @@
-import { PiTheme } from '@pi-lib/styles'
+import { ThemedComponent } from '@pi-lib/styles'
 import { ButtonProps, HTMLElementType } from './Button.types'
 import { TransientProps } from '@pi-lib/styles'
 import styled from 'styled-components'
@@ -6,9 +6,9 @@ import styled from 'styled-components'
 /**
  * The props for the styled button
  */
-export type StyledButtonProps = React.HTMLProps<HTMLElementType> & {
-  theme?: PiTheme
-} & TransientProps<
+export type StyledButtonProps = React.HTMLProps<HTMLElementType> &
+  ThemedComponent &
+  TransientProps<
     Pick<
       ButtonProps,
       | 'status'

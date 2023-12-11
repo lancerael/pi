@@ -1,3 +1,4 @@
+import { getDefaultColorVar } from '@pi-lib/styles'
 import { AXIS_OFFSETS, CHART_PADDING } from '../../CandlestickChart.constants'
 import { ClipPathsProps } from './ClipPaths.types'
 
@@ -10,6 +11,7 @@ export const ClipPaths = ({ width, height }: ClipPathsProps) => {
     width: width ? width - AXIS_OFFSETS[1] : 0,
     height: height ? height - AXIS_OFFSETS[0] : 0,
   }
+  const borderColor = getDefaultColorVar('border')
   return (
     <>
       <line
@@ -17,7 +19,7 @@ export const ClipPaths = ({ width, height }: ClipPathsProps) => {
         y1={y}
         x2={x + baseCoords.width}
         y2={y}
-        stroke="var(--border)"
+        stroke={borderColor}
         strokeWidth={1}
       />
       <line
@@ -25,7 +27,7 @@ export const ClipPaths = ({ width, height }: ClipPathsProps) => {
         y1={y}
         x2={x}
         y2={y + baseCoords.height - CHART_PADDING}
-        stroke="var(--border)"
+        stroke={borderColor}
         strokeWidth={1}
       />
       <defs>

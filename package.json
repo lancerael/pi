@@ -34,7 +34,7 @@
     "lint:fix": "npx prettier -w . && npx eslint --fix",
     "lint:pr": "npx prettier -c . && npx eslint",
     "pre": "------------------------------------------------------PRE-----------",
-    "pre:release": "pnpm i && pnpm test:min && pnpm docs:gen && pnpm lint:fix && pnpm bb:change",
+    "pre:release": "pnpm i && pnpm build && pnpm test:min && pnpm docs:gen && pnpm lint:fix && pnpm bb:change",
     "sb": "---------------------------------------------------------STORYBOOK-----",
     "sb:build": "cross-env NODE_OPTIONS=--openssl-legacy-provider storybook build",
     "sb:dev": "cross-env NODE_OPTIONS=--openssl-legacy-provider storybook dev -p 6006",

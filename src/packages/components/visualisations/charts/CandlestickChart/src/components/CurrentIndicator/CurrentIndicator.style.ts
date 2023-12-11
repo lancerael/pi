@@ -1,4 +1,4 @@
-import { box } from '@pi-lib/styles'
+import { DEFAULT_THEME, box } from '@pi-lib/styles'
 import styled, { css } from 'styled-components'
 import { StyledIndicatorProps } from './CurrentIndicator.types'
 import { AXIS_OFFSETS, CHART_PADDING } from '../../CandlestickChart.constants'
@@ -15,8 +15,10 @@ export const StyledIndicator = styled.div<StyledIndicatorProps>(
       transition: all 0.2s;
       color: ${color};
       border-color: ${color};
-      background-color: var(--bg);
+      background-color: ${({ theme }) => theme.colors.bg};
       min-width: ${AXIS_OFFSETS[1] - CHART_PADDING * 2 - 16}px;
     `
   }
 )
+
+StyledIndicator.defaultProps = DEFAULT_THEME

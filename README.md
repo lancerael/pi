@@ -8,7 +8,7 @@ Monorepo containing a design system of React UI components and supporting utilit
 
 All packages prefixed with `@pi-lib/...` are standalone npm modules for use with a package manager like `npm`, `yarn` or `pnpm`. They intended for use with TypeScript, but they are also bundled in vanilla JS - import from the package name with a suffix of `/vanilla`
 
-Once you have set up a theme, you can build your app with the React components. Check out the docs for more details on usage.
+Whether you want to create a theme, use one of the provided themes or stick with the default, you can build your app with the React components. Check out the docs for more details on usage.
 
 - <a href="https://demo.lance-taylor.com" target="_blank">Demo</a>
 - <a href="https://pi.lance-taylor.com" target="_blank">Docs</a>

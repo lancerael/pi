@@ -5,6 +5,7 @@ import { StyledWorldMapContainer } from './WorldMap.style'
 import { WorldMapData, WorldMapFeature, WorldMapProps } from './WorldMap.types'
 
 import countries from './data/world.json'
+import { getDefaultColorVar } from '@pi-lib/styles'
 
 /**
  * A React component for an SVG world map chart
@@ -35,14 +36,14 @@ export const WorldMap = ({ label, country }: WorldMapProps) => {
       .data((countries as WorldMapData).features)
       .join('path')
       .attr('fill', (d: WorldMapFeature) =>
-        d.id === country ? 'var(--special)' : 'var(--textSoft)'
+        getDefaultColorVar(d.id === country ? 'special' : 'textSoft')
       )
       .attr(
         'd',
         geoPath().projection(projection) as ValueFn<BaseType, any, string>
       )
       .style('stroke', (d: WorldMapFeature) =>
-        d.id === country ? 'var(--subtle)' : 'var(--specialText)'
+        getDefaultColorVar(d.id === country ? 'subtle' : 'specialText')
       )
   }, [projection, country])
 

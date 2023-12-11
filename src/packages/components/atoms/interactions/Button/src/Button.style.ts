@@ -1,8 +1,13 @@
 import styled, { css } from 'styled-components'
-import { box } from '@pi-lib/styles'
-
+import { DEFAULT_THEME, box } from '@pi-lib/styles'
 import { StyledButtonProps } from './Button.style.types'
 
+/**
+ * Generates the button styles based on the provided props.
+ *
+ * @param {StyledButtonProps} options - The props to customize the button styles.
+ * @returns {FlattenSimpleInterpolation} The styled-components CSS.
+ */
 const getButtonStyle = ({
   $status,
   $isCompact,
@@ -15,7 +20,7 @@ const getButtonStyle = ({
   disabled,
   theme,
 }: StyledButtonProps) => {
-  const size = theme?.fontSizes?.[$buttonSize!] ?? '1rem'
+  const size = theme.fontSizes[$buttonSize! ?? 'medium']
   let padding = $isCompact ? `calc(${size} / 4)` : `calc(${size} / 2) ${size}`
   return css`
     ${$isSimple
@@ -29,7 +34,9 @@ const getButtonStyle = ({
           shadowProps: $isShadowed ? undefined : null,
         })}
     ${disabled && 'pointer-events: none;'}
-    ${$status !== 'default' ? `color: var(--${$status})` : ''};
+    ${$status && $status !== 'default'
+      ? `color: ${theme.colors[$status]};`
+      : ''};
     ${!$isInline && 'width: 100%;'}
     cursor: pointer;
     display: inline-block;
@@ -43,9 +50,9 @@ const getButtonStyle = ({
       filter: brightness(80%) contrast(150%) saturate(135%);
     }
     &:disabled {
-      background-color: var(--border);
-      border-color: var(--border);
-      color: var(--shadow);
+      background-color: ${theme!.colors['border']};
+      border-color: ${theme!.colors['border']};
+      color: ${theme!.colors['shadow']};
       cursor: default;
     }
     padding: ${$isSimple ? 0 : padding} !important;
@@ -53,7 +60,10 @@ const getButtonStyle = ({
 }
 
 /**
- * The main styles for the button
+ * Retrieves the styled component for the specified element type.
+ *
+ * @param {'button' | 'a'} elementType - The type of element ('button' or 'a').
+ * @returns {React.FC<StyledButtonProps>} The styled component for the specified element type.
  */
 export const getStyledButton = (elementType: 'button' | 'a') => {
   return {
@@ -62,5 +72,20 @@ export const getStyledButton = (elementType: 'button' | 'a') => {
   }[elementType]
 }
 
+/**
+ * Styled button component with customizable styles.
+ *
+ * @type {React.FC<StyledButtonProps>}
+ */
 const StyledButton = styled.button<StyledButtonProps>(getButtonStyle)
+
+/**
+ * Styled link component with customizable styles.
+ *
+ * @type {React.FC<StyledButtonProps>}
+ */
 const StyledLink = styled.a<StyledButtonProps>(getButtonStyle)
+
+// Set default theme for the styled components
+StyledButton.defaultProps = DEFAULT_THEME
+StyledLink.defaultProps = DEFAULT_THEME

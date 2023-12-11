@@ -8,7 +8,7 @@ import { ThemeName } from '../../themes'
  * @param {ThemeName} themeName - The name of the theme to be applied.
  * @returns {Function} A function that takes props and returns a themed component.
  */
-export const withThemeProvider =
+export const withTheme =
   (
     Component: React.JSXElementConstructor<unknown>,
     themeName: ThemeName,
@@ -22,4 +22,4 @@ export const withThemeProvider =
     )
   }
 
-export default withThemeProvider
+export default withTheme

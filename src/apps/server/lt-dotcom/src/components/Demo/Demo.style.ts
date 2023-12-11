@@ -46,11 +46,11 @@ export const StyledImages = styled.div`
 
 export const StyledLinkWrapper = styled.div`
   flex: 1;
-  background: ${({ theme }) => theme.colors.darkA};
+  background: var(--darkA);
   border-radius: 5px;
 
   & :hover {
-    background: ${({ theme }) => theme.colors.subtleA};
+    background: var(--subtleA);
   }
 
   & a {

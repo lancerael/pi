@@ -1,5 +1,7 @@
 'use client'
 
+import { getTheme } from './helpers'
+
 /**
  * Is the code running in a client environment
  */
@@ -28,3 +30,10 @@ export const USER_SCHEME = DARK_MODE ? 'dark' : 'light'
 export const REM_IN_PIXELS = IS_CLIENT
   ? parseFloat(getComputedStyle(document.documentElement).fontSize)
   : 10
+
+/**
+ * Default theme for the component styles.
+ *
+ * @type {PiTheme}
+ */
+export const DEFAULT_THEME = { theme: getTheme('andro') }

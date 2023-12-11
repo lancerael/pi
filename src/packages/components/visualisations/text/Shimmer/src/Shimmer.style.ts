@@ -1,13 +1,17 @@
 import styled, { css, keyframes } from 'styled-components'
 import { StyledLineProps } from './Shimmer.style.types'
-import { REDUCED_MOTION } from '@pi-lib/styles'
+import {
+  getDefaultColorVar,
+  DEFAULT_THEME,
+  REDUCED_MOTION,
+} from '@pi-lib/styles'
 
 const blurPulse = keyframes`
     50% {
       margin-left: 0;
       transform: scale(1.03);
       filter: blur(4px);
-      color: var(--special);
+      color: ${getDefaultColorVar('special')};
     }
 `
 
@@ -45,11 +49,11 @@ export const StyledLine = styled.div<StyledLineProps>(
       filter: blur(${$isVisible ? '0' : '20px'});
       background-image: linear-gradient(
         90deg,
-        var(--text),
-        var(--text),
-        var(--special),
-        var(--text),
-        var(--text)
+        ${({ theme }) => theme.colors.text},
+        ${({ theme }) => theme.colors.text},
+        ${({ theme }) => theme.colors.special},
+        ${({ theme }) => theme.colors.text},
+        ${({ theme }) => theme.colors.text}
       );
       background-clip: text;
       background-size: 200%;
@@ -71,7 +75,9 @@ export const StyledLine = styled.div<StyledLineProps>(
       margin-left: 0;
       transform: scale(1);
       filter: blur(8px);
-      color: var(--text);
+      color: ${({ theme }) => theme.colors.text};
     }
   `
 )
+
+StyledLine.defaultProps = DEFAULT_THEME

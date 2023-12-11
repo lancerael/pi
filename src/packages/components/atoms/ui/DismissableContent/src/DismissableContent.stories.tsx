@@ -39,7 +39,7 @@ export const Timed: StoryObj<typeof DismissableContent> = {
     children: 'Timed',
     isDismissed: false,
     isDismissable: true,
-    timerInterval: 20000,
+    timerInterval: 50000,
     dismissCallback: action('closed'),
   },
 }

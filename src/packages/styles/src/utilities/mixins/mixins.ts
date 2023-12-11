@@ -1,6 +1,7 @@
 import { css } from 'styled-components'
 import { BoxProps, GradientProps, ShadowProps } from '../../theme.types'
 import { boxColors, gradients } from '../../theme'
+import { getDefaultColorVar } from './../getDefaultColorVar/getDefaultColorVar'
 
 /**
  * A mixin generator for a css background gradient
@@ -14,8 +15,8 @@ export const gradient = ({
   return css`
     background: linear-gradient(
       to ${to},
-      var(--${start}${isTransparent ? 'A' : ''}),
-      var(--${end}${isTransparent ? 'A' : ''})
+      ${getDefaultColorVar(`${start}${isTransparent ? 'A' : ''}`)},
+      ${getDefaultColorVar(`${end}${isTransparent ? 'A' : ''}`)}
     );
   `
 }
@@ -52,9 +53,9 @@ export const shadow = ({
 export const formInput = (isExpanded?: boolean) => {
   return css`
     height: ${isExpanded ? '1.4em' : '1.2em'};
-    background: var(--bg);
-    color: var(--text);
-    border: 1px solid var(--text);
+    background: ${getDefaultColorVar('bg')};
+    color: ${getDefaultColorVar('text')};
+    border: 1px solid ${getDefaultColorVar('text')};
     border-radius: 4px;
     padding: 0 ${isExpanded ? '0.1em' : '0.2em'};
     font-size: 1em;
@@ -75,9 +76,12 @@ export const box = ({
   const [colorVar, backgroundVar] = colors
 
   return css`
-    border: 1px solid var(--${isInverted ? 'textStrong' : 'border'});
-    color: var(--${colorVar});
-    background-color: var(--${backgroundVar}${isTransparent && 'A'});
+    border: 1px solid
+      ${getDefaultColorVar(isInverted ? 'textStrong' : 'border')};
+    color: ${getDefaultColorVar(colorVar)};
+    background-color: ${getDefaultColorVar(
+      `${backgroundVar}${isTransparent ? 'A' : ''}`
+    )};
     border-radius: 6px;
     padding: 8px;
     ${shadowProps !== null && shadow(shadowProps)}
@@ -92,10 +96,10 @@ export const container = () => {
     ${box()}
     background: linear-gradient(
       135deg,
-      var(--subtleA) 0%,
-      var(--bgA) 50%,
-      var(--mark) 51%,
-      var(--bgA) 100%
+      ${getDefaultColorVar('subtleA')} 0%,
+      ${getDefaultColorVar('bgA')} 50%,
+      ${getDefaultColorVar('mark')} 51%,
+      ${getDefaultColorVar('bgA')} 100%
     );
   `
 }

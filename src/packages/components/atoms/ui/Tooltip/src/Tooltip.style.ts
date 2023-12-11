@@ -15,7 +15,7 @@ export const StyledTooltip = styled.div<StyledTooltipProps>(
     ${box()}
     padding: ${$isRendered ? '4px' : '0px'};
 
-    ::after {
+    &::after {
       content: '';
       ${box()}
       width: 10px;

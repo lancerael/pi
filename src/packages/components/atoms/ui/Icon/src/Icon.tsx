@@ -1,3 +1,4 @@
+import { getDefaultColorVar } from '@pi-lib/styles'
 import { IconProps } from './Icon.types'
 import * as icons from './icons'
 
@@ -10,7 +11,7 @@ import * as icons from './icons'
  */
 export const Icon = ({
   iconName,
-  color = 'var(--special)',
+  color = getDefaultColorVar('special'),
   isBrighter = false,
   iconSize = 'calc(20px + 0.6rem)',
   dataTestid = `${iconName} icon`,

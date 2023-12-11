@@ -1,6 +1,6 @@
 import Card from '@pi-lib/card'
 import Link from '@pi-lib/link'
-import { StyledImages, StyledLinkWrapper } from './Demo.styles'
+import { StyledImages, StyledLinkWrapper } from './Demo.style'
 import PageSection from '../PageSection'
 import Grid from '@pi-lib/grid'
 

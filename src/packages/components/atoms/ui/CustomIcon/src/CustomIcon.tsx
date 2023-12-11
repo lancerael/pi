@@ -1,6 +1,7 @@
 import { getTransientProps } from '@pi-lib/styles'
 import { StyledCustomIcon } from './CustomIcon.style'
 import { CustomIconProps } from './CustomIcon.types'
+import { withTheme } from 'styled-components'
 
 /**
  * Renders a styled icon based on given properties.
@@ -10,21 +11,24 @@ import { CustomIconProps } from './CustomIcon.types'
  */
 export const CustomIcon = ({
   src,
-  color = 'var(--special)',
-  height = '1rem',
+  color,
+  height,
   rotate,
   isFilled,
   isStroked,
+  dataTestid = 'pi-lib-custom-icon',
+  ...props
 }: CustomIconProps) => {
   return (
     <StyledCustomIcon
-      data-testid="pi-lib-custom-icon"
+      data-testid={dataTestid}
       {...{
         src,
         ...getTransientProps({ color, height, rotate, isFilled, isStroked }),
+        ...props,
       }}
     />
   )
 }
 
-export default CustomIcon
+export default withTheme(CustomIcon)
