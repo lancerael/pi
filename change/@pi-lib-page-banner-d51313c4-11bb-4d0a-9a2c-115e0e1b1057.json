@@ -1,0 +1,7 @@
+{
+  "type": "patch",
+  "comment": "Improved theming",
+  "packageName": "@pi-lib/page-banner",
+  "email": "lancerael@googlemail.com",
+  "dependentChangeType": "patch"
+}
