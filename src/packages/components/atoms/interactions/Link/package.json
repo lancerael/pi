@@ -1,6 +1,6 @@
 {
   "name": "@pi-lib/link",
-  "version": "2.1.4",
+  "version": "2.1.5",
   "description": "A React component for a router optional link",
   "keywords": [
     "pi",

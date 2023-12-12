@@ -1,6 +1,6 @@
 {
   "name": "@pi-lib/do-transition",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A recursive helper function to transition between 2 values or collections of values.",
   "keywords": [
     "react"
