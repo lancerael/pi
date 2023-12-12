@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Icon } from './Icon'
-import { getDefaultColorVar } from './../../../../../styles/src/utilities/getDefaultColorVar/getDefaultColorVar'
+import { getDefaultColorVar } from '@pi-lib/styles'
 
 const meta: Meta<typeof Icon> = {
   title: 'Atoms/UI/Icon',
