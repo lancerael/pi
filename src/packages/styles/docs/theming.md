@@ -9,10 +9,10 @@ Themes can be previewed on component stories in Storybook. Changes are best view
 
 Install `@pi-lib/styles` and use the `Theme` provider, choosing a theme:
 
-```
+```jsx
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { Theme } from '@pi-lib/styles'
+import Theme from '@pi-lib/styles'
 import App from './App'
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
@@ -26,17 +26,13 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
 
 Or install the theme on individual components using `withTheme`:
 
-```
+```jsx
 import React from 'react'
 import Button from '@pi-lib/button'
 import { withTheme } from '@pi-lib/styles'
 
 const Component = () => {
-  return (
-    <Button>
-      My component.
-    </Button>
-  )
+  return <Button>My component.</Button>
 }
 
 export default withTheme(Component, 'pebble')
@@ -47,7 +43,7 @@ export default withTheme(Component, 'pebble')
 Pi Themes contain both a dark and light colour palette. You can access the props directly from the theme object in styled components as usual. The dark/light version will be used according to the user's preferences. You'll need to access the
 theme like this for generic components with a default theme.
 
-```
+```jsx
 import styled, { css } from 'styled-components'
 
 export const StyledDiv = styled.div`
@@ -57,7 +53,7 @@ export const StyledDiv = styled.div`
 
 If you use the theme provider and aren't making a generic component with default props, you can use the CSS variables instead. Variable colours will also be automatically adjusted for light/dark variations.
 
-```
+```jsx
 import styledfrom 'styled-components'
 export const StyledDiv = styled.div`
   color: var(--special);
@@ -66,7 +62,7 @@ export const StyledDiv = styled.div`
 
 If you want to provide a UI to allow the user to chose dark/light colour schemes, you can pass this to the `scheme` prop of the `Theme` provider.
 
-```
+```jsx
 <Theme themeName="electron" scheme="dark">
   <App />
 </Theme>

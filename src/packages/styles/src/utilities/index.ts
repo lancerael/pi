@@ -1,3 +1,3 @@
 export * from './mixins'
-export * from './withThemeProvider'
+export * from './withTheme'
 export * from './getDefaultColorVar'

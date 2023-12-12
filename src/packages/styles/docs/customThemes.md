@@ -2,7 +2,7 @@
 
 You can create themes from scratch if you follow this format.
 
-```
+```jsx
 export const themeName = {
   light: {
     bg: 'color',
