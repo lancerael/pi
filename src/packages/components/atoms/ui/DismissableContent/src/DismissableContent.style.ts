@@ -50,7 +50,6 @@ export const StyledClose = styled.div`
  */
 export const StyledTimer = styled.div<StyledTimerProps>(
   ({ $isTimerTriggered, $timerInterval }) => {
-    console.log($isTimerTriggered, $timerInterval)
     return css`
       position: absolute;
       left: 0px;
