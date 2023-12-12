@@ -1,6 +1,6 @@
 import { Decorator } from '@storybook/react'
 import * as jest from 'jest-mock'
-import { Theme, themeList } from '@pi-lib/styles'
+import Theme, { themeList } from '@pi-lib/styles'
 
 //@ts-ignore
 window.jest = jest

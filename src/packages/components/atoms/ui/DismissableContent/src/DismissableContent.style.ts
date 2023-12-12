@@ -3,7 +3,7 @@ import {
   StyledDismissableContentProps,
   StyledTimerProps,
 } from './DismissableContent.style.types'
-import { gradient } from '@pi-lib/styles'
+import { DEFAULT_THEME, gradient } from '@pi-lib/styles'
 
 /**
  * The main container element for the styles
@@ -11,9 +11,9 @@ import { gradient } from '@pi-lib/styles'
 export const StyledDismissableContent =
   styled.div<StyledDismissableContentProps>(({ $isVisible, $isPresent }) => {
     return css`
-      border: 1px solid var(--textStrong);
+      border: 1px solid ${({ theme }) => theme.colors.textStrong};
       ${gradient({ name: 'alt', to: 'bottom' })}
-      color: var(--bg);
+      color: ${({ theme }) => theme.colors.bg};
       border-radius: 8px;
       padding: 16px;
       opacity: ${$isVisible ? '1' : '0'};
@@ -40,7 +40,7 @@ export const StyledClose = styled.div`
 
   :hover {
     path {
-      fill: var(--subtle);
+      fill: ${({ theme }) => theme.colors.subtle};
     }
   }
 `
@@ -56,9 +56,16 @@ export const StyledTimer = styled.div<StyledTimerProps>(
       bottom: 0px;
       height: 8px;
       border-radius: 0 0 0 8px;
-      border-bottom: 4px solid var(--outline);
+      border-bottom: 4px solid ${({ theme }) => theme.colors.outline};
       width: ${$isTimerTriggered ? '0%' : '100%'};
       transition: width ${$timerInterval / 1000}s linear;
     `
   }
 )
+
+/**
+ * Addd default themes to components
+ */
+StyledDismissableContent.defaultProps = DEFAULT_THEME
+StyledClose.defaultProps = DEFAULT_THEME
+StyledTimer.defaultProps = DEFAULT_THEME

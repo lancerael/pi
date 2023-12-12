@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components'
-import { gradient, shadow } from '@pi-lib/styles'
+import { DEFAULT_THEME, gradient, shadow } from '@pi-lib/styles'
 import { StyledBannerProps } from './PageBanner.styles.types'
 
 /**
@@ -7,7 +7,8 @@ import { StyledBannerProps } from './PageBanner.styles.types'
  */
 export const StyledBanner = styled.div<StyledBannerProps>(
   ({ $shouldWrapItems, $shouldInvertGradient, $hasBackground }) => css`
-    color: var(--${$hasBackground ? 'light' : 'textSoft'});
+    color: ${({ theme }) =>
+      theme.colors[$hasBackground ? 'light' : 'textSoft']};
     display: flex;
     gap: 0.5rem;
     padding: 1rem;
@@ -18,11 +19,12 @@ export const StyledBanner = styled.div<StyledBannerProps>(
     ${!!$shouldWrapItems && 'flex-wrap: wrap;'};
     ${$hasBackground &&
     css`
-      border-${
-        $shouldInvertGradient ? 'top' : 'bottom'
-      }: 1px solid var(--specialShadow);
+      border-${$shouldInvertGradient ? 'top' : 'bottom'}:
+        1px solid ${({ theme }) => theme.colors['specialShadow']});
       ${gradient({ to: $shouldInvertGradient ? 'bottom' : 'top' })}
       ${shadow({ offset: '0px 2px', opacity: '0.1' })}
     `}
   `
 )
+
+StyledBanner.defaultProps = DEFAULT_THEME

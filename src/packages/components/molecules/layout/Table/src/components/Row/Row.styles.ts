@@ -1,26 +1,27 @@
 import styled, { css } from 'styled-components'
 import { StyledRowProps } from './Row.styles.types'
+import { DEFAULT_THEME } from '@pi-lib/styles'
 
 /**
  * The main styles for the table row
  */
 export const StyledRow = styled.tr<StyledRowProps>(
   ({ $isOdd, $isExpandable }) => css`
-    background: var(--subtle);
-    border: 1px solid var(--border);
+    background: ${({ theme }) => theme.colors.subtle};
+    border: 1px solid ${({ theme }) => theme.colors.border};
     border-width: 0 1px;
 
     ${$isExpandable &&
     css`
       cursor: pointer;
       &:hover {
-        background: var(--border);
+        background: ${({ theme }) => theme.colors.border};
       }
     `}
 
     ${$isOdd &&
     css`
-      background: var(--mark);
+      background: ${({ theme }) => theme.colors.mark};
     `}
   `
 )
@@ -35,7 +36,7 @@ export const StyledDetails = styled.tr`
   }
 
   & > td {
-    background: var(--shadow);
+    background: ${({ theme }) => theme.colors.shadow};
     position: relative;
     overflow: hidden;
 
@@ -44,3 +45,6 @@ export const StyledDetails = styled.tr`
     }
   }
 `
+
+StyledRow.defaultProps = DEFAULT_THEME
+StyledDetails.defaultProps = DEFAULT_THEME

@@ -1,7 +1,7 @@
 import styled, { keyframes, css } from 'styled-components'
 import { StyledCircleProps } from './Loader.style.types'
 import { LoaderProps } from './Loader.types'
-import { TransientProps } from '@pi-lib/styles'
+import { DEFAULT_THEME, TransientProps } from '@pi-lib/styles'
 
 /**
  * The keyframe animation for the loader
@@ -72,9 +72,11 @@ export const StyledCircle = styled.div<StyledCircleProps>(
     opacity: 0.7;
     display: inline-block;
     border-radius: 50%;
-    background: var(--special);
+    background: ${({ theme }) => theme.colors.special};
     animation: ${circle($isLarge)} 0.3s linear alternate infinite;
-    box-shadow: inset 0 0 0px 1px var(--specialShadow);
+    box-shadow: inset 0 0 0px 1px ${({ theme }) => theme.colors.specialShadow};
     ${$hasDelay ? 'animation-delay: 0.3s;' : ''}
   `
 )
+
+StyledCircle.defaultProps = DEFAULT_THEME

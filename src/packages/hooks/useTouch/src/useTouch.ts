@@ -93,9 +93,6 @@ export const useTouch = <T = HTMLElement>({
    */
   const stop = useCallback(
     (e: PointerEvent) => {
-      const endCallback = () => {
-        if (trackers.current.isPressed) stopCallback?.()
-      }
       const { x, y } = trackers.current.oldPanChange
       if (Math.abs(x) + Math.abs(y) > 10) {
         const values = Object.values(controls.panLevel)
@@ -111,12 +108,12 @@ export const useTouch = <T = HTMLElement>({
               y: newY,
             }))
           },
-          endCallback,
+          endCallback: () => stopCallback?.(),
           increments: 10,
           intervalId: `swipe`,
         })
       } else {
-        endCallback()
+        stopCallback?.()
       }
       trackers.current.isPressed = false
       trackers.current.oldPanChange = { x: 0, y: 0 }
@@ -171,6 +168,7 @@ export const useTouch = <T = HTMLElement>({
    */
   const pinch = useCallback(
     (e: WheelEvent) => {
+      console.log(e)
       if (e.ctrlKey) {
         throttledZoom(e.deltaY * 0.0003)
       } else {

@@ -1,4 +1,4 @@
-import { box, container } from '@pi-lib/styles'
+import { DEFAULT_THEME, box, container } from '@pi-lib/styles'
 import styled from 'styled-components'
 
 /**
@@ -28,14 +28,14 @@ export const StyledAxisChart = styled.div`
     text-align: center;
     width: 96%;
     margin-top: 8px;
-    color: var(--textSoft);
+    color: ${({ theme }) => theme.colors.textSoft};
     font-size: 0.8em;
     font-weight: bold;
   }
 
   line,
   path:not(.line) {
-    stroke: var(--special);
+    stroke: ${({ theme }) => theme.colors.special};
   }
 
   .tick text,
@@ -48,7 +48,7 @@ export const StyledAxisChart = styled.div`
   }
 
   text {
-    fill: var(--textStrong) !important;
+    fill: ${({ theme }) => theme.colors.textStrong} !important;
     font-weight: bold;
     font-size: 0.8em;
   }
@@ -83,3 +83,5 @@ export const StyledAxisChart = styled.div`
     stroke-width: 2px;
   }
 `
+
+StyledAxisChart.defaultProps = DEFAULT_THEME

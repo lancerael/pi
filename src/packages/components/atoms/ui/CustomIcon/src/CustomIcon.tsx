@@ -10,18 +10,21 @@ import { CustomIconProps } from './CustomIcon.types'
  */
 export const CustomIcon = ({
   src,
-  color = 'var(--special)',
-  height = '1rem',
+  color,
+  height,
   rotate,
   isFilled,
   isStroked,
+  dataTestid = 'pi-lib-custom-icon',
+  ...props
 }: CustomIconProps) => {
   return (
     <StyledCustomIcon
-      data-testid="pi-lib-custom-icon"
+      data-testid={dataTestid}
       {...{
         src,
         ...getTransientProps({ color, height, rotate, isFilled, isStroked }),
+        ...props,
       }}
     />
   )

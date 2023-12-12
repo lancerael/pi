@@ -3,29 +3,28 @@ import { ThemeName } from './themes'
 import { HTMLAttributes, PropsWithChildren } from 'react'
 import { boxColors, gradients } from './theme'
 import { DefaultTheme, Substitute } from 'styled-components/dist/types'
+import { FontSize, Scheme } from './components/GlobalStyle'
 
 export type SchemeValues = Record<string, string>
 
-export interface PiTheme extends DefaultTheme {
+export interface PiTheme {
   fonts: string[]
   fontSizes: Record<Size, string>
   colors: SchemeValues
 }
 
 export interface ThemedComponent {
-  theme: PiTheme
+  theme: PiTheme | DefaultTheme
 }
 
 export type ThemedComponentWithChildren = ThemedComponent & PropsWithChildren
-
-export type Scheme = 'light' | 'dark'
 
 export type Size = 'small' | 'medium' | 'large'
 
 export type BoxNames = 'default' | 'hi' | 'alt' | 'light'
 
 export interface ThemeProps extends Partial<ThemedComponentWithChildren> {
-  themeName: ThemeName
+  themeName?: ThemeName
   themeOverrides?: PiTheme
   scheme?: Scheme
   fontSize?: FontSize
@@ -39,8 +38,6 @@ export type ContrastMap = {
 }
 
 export type ThemeMap = { [key in ThemeName]: ContrastMap }
-
-export type FontSize = 'small' | 'large'
 
 export type SizeMap = Record<FontSize, GlobalStyleComponent>
 

@@ -1,7 +1,9 @@
+import { TestId } from '@pi-lib/types'
+
 /**
  * The main prop interface for the component
  */
-export interface CustomIconProps {
+export interface CustomIconProps extends React.HTMLProps<HTMLElement>, TestId {
   /**
    * The source path/URL for the image
    */

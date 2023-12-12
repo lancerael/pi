@@ -1,10 +1,10 @@
 import { useSelector } from 'react-redux'
 import { Outlet } from 'react-router-dom'
-import { Theme } from '@pi-lib/styles'
 import { SettingsState } from '../../state/reducers/settingsReducer'
 import Header from '../Header'
 import Footer from '../Footer'
 import { StyledColumn } from './Layout.style'
+import Theme from '@pi-lib/styles'
 
 /**
  * The main component for the site layout

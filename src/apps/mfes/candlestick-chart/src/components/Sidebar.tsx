@@ -1,14 +1,16 @@
+import { useTheme } from 'styled-components'
 import { AppState } from '../state/reducers/candlestickDataReducer.types'
 
 export const Sidebar = ({
   candlestickData,
 }: Pick<AppState, 'candlestickData'>) => {
+  const { colors } = useTheme()
   const subStyles = {
     fontWeight: 'bold',
     textTransform: 'uppercase',
-    color: 'var(--textStrong)',
+    color: colors.textStrong,
   } as {}
-  const rowStyles = { color: 'var(--textSoft)' } as {}
+  const rowStyles = { color: colors.textSoft }
   const { open, close, low, high } =
     candlestickData?.[candlestickData?.length - 1] ?? {}
   return (

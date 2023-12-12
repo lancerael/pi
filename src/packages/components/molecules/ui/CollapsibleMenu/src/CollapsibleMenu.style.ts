@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components'
 import { Button } from 'react-aria-components'
-import { gradient } from '@pi-lib/styles'
+import { DEFAULT_THEME, gradient } from '@pi-lib/styles'
 import {
   StyledCollapsibleMenuProps,
   StyledLinkType,
@@ -34,7 +34,7 @@ export const StyledOpener: StyledLinkType = styled(Button)`
   ${({ $isOpen }) =>
     $isOpen &&
     css`
-      background: var(--special);
+      background: ${({ theme }) => theme.colors.special};
     `}
   padding: 0;
   margin: 0;
@@ -46,7 +46,7 @@ export const StyledOpener: StyledLinkType = styled(Button)`
 export const StyledCollapsibleMenu = styled.div<StyledCollapsibleMenuProps>(
   ({ $isOpen }) => css`
     ${gradient({ name: 'special', to: 'bottom' })}
-    color: var(--specialText) !important;
+    color: ${({ theme }) => theme.colors.specialText} !important;
     padding: 0.5rem;
     border-radius: 5px 0 5px 5px;
     opacity: ${$isOpen ? 1 : 0};
@@ -89,3 +89,6 @@ export const StyledMenuItem = styled.li`
   margin: 0;
   padding: 0;
 `
+
+StyledOpener.defaultProps = DEFAULT_THEME
+StyledCollapsibleMenu.defaultProps = DEFAULT_THEME

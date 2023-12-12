@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components'
 import { StyledSidebarProps } from './PageContent.style.types'
-import { shadow } from '@pi-lib/styles'
+import { DEFAULT_THEME, shadow } from '@pi-lib/styles'
 
 /**
  * The main container for the page content component
@@ -31,17 +31,17 @@ export const StyledSidebar = styled.div<StyledSidebarProps>(
     display: flex;
     flex-direction: column;
     flexgrow: 1;
-    background: var(--subtle);
-    color: var(--textSoft);
-    border-right: 1px solid var(--border);
-    padding: 16px;
+    background: ${({ theme }) => theme.colors.subtle};
+    color: ${({ theme }) => theme.colors.textSoft};
+    border-right: 1px solid ${({ theme }) => theme.colors.border};
+    padding: 1rem;
     ${shadow({ offset: '2px 0px' })}
     ${!!$isCollapsible &&
     css`
       @media (max-width: 800px) {
         height: auto;
         border-right: none;
-        border-bottom: 1px solid var(--border);
+        border-bottom: 1px solid ${({ theme }) => theme.colors.border};
         max-width: 100%;
 
         ${shadow({ offset: '0px 2px' })}
@@ -58,10 +58,12 @@ export const StyledMain = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 16px;
-  gap: 16px;
+  padding: 1rem;
+  gap: 1rem;
 
   @media (max-width: 800px) {
     height: calc(225px + 80vw);
   }
 `
+
+StyledSidebar.defaultProps = DEFAULT_THEME

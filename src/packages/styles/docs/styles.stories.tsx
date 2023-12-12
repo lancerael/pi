@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { themes, ThemeName, Theme } from '../src'
+import Theme, { themes, ThemeName } from '../src'
 //@ts-ignore
 import Table from '../../components/molecules/layout/Table/src/Table'
 

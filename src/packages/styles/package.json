@@ -20,11 +20,13 @@
   "type": "module",
   "main": "./src/index.ts",
   "scripts": {
-    "build": "rimraf vanilla && vite build"
+    "build": "rimraf vanilla && vite build",
+    "test": "vitest"
   },
   "devDependencies": {
     "@pi-lib/config": "workspace:^",
     "@pi-lib/types": "workspace:^",
+    "@pi-lib/utils": "workspace:^",
     "@testing-library/react": "^13.3.0",
     "@vitejs/plugin-react": "^4.1.0",
     "@vitest/coverage-istanbul": "^0.29.3",

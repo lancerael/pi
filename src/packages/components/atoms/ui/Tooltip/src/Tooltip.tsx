@@ -15,10 +15,10 @@ export const Tooltip = ({
 }: TooltipProps) => {
   const containerRef = useRef<HTMLDivElement>(null)
   const lastWidth = useRef<number>()
+  const timeouts = useRef<{ [key: string]: NodeJS.Timeout }>({})
   const [position, setPosition] = useState({ x, y })
   const [isRendered, setIsRendered] = useState(false)
   const [isVisible, setIsVisible] = useState(false)
-  const timeouts = useRef<{ [key: string]: NodeJS.Timeout }>({})
 
   /**
    * Update the tooltip to the correct position

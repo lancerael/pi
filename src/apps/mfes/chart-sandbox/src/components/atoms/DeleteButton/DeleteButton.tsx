@@ -13,7 +13,7 @@ export const DeleteButton = ({ callback, label }: DeleteButtonProps) => (
     isCompact
     isInverted
     isShadowed
-    boxName="alt"
+    boxName="hi"
     buttonSize="small"
     style={{ fontSize: '0.7rem' }}
   >

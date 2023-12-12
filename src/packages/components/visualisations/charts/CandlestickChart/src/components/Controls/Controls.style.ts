@@ -10,7 +10,8 @@ export const StyledControls = styled.div`
   z-index: 1000;
 
   select {
-    padding: 4px !important;
+    margin: 4px;
+    padding: 5px !important;
     height: auto;
     ${box()}
   }

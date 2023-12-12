@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Icon } from './Icon'
+import { getDefaultColorVar } from '@pi-lib/styles'
 
 const meta: Meta<typeof Icon> = {
   title: 'Atoms/UI/Icon',
@@ -64,8 +65,8 @@ export const Hamburger: StoryObj<typeof Icon> = {
 export const Alternative: StoryObj<typeof Icon> = {
   args: {
     iconName: 'Hamburger',
-    color: 'var(--specialBg)',
-    size: '3em',
+    color: getDefaultColorVar('outline'),
+    iconSize: '3rem',
   },
 }
 

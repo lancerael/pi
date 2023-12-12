@@ -25,7 +25,7 @@ export const doTransition = ({
 
   const newValues = values.map((oldValue, i) => {
     const distance = targets[i] - oldValue
-    if (Math.abs(distance) < 5) return targets[i]
+    if (Math.abs(distance) < 1) return targets[i]
     isFinished = false
     return oldValue + distance / increments
   })

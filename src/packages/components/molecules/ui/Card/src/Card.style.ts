@@ -1,10 +1,10 @@
 import styled, { css } from 'styled-components'
 import { StyledCardProps } from './Card.style.types'
-import { container, maskGradient } from '@pi-lib/styles'
+import { DEFAULT_THEME, container, maskGradient } from '@pi-lib/styles'
 
 export const StyledCard = styled.div<StyledCardProps>(
   ({ $isClear }) => css`
-    color: var(--textSoft);
+    color: ${({ theme }) => theme.colors.textSoft};
     ${!$isClear &&
     css`
       ${container()}
@@ -25,13 +25,13 @@ export const StyledTopSection = styled.div`
 `
 
 export const StyledHeader = styled.div`
-  color: var(--text);
+  color: ${({ theme }) => theme.colors.text};
 `
 
 export const StyledTitle = styled.h2`
   margin: 0;
   padding: 0 0 0.15rem 0 !important;
-  color: var(--text);
+  color: ${({ theme }) => theme.colors.text};
   ${maskGradient()}
   @media (max-width: 1036px) {
     font-size: 1.2rem;
@@ -41,11 +41,11 @@ export const StyledTitle = styled.h2`
 
 export const StyledSubTitle = styled.span`
   font-size: 1.1rem;
-  color: var(--special);
+  color: ${({ theme }) => theme.colors.special};
 `
 
 export const StyledContent = styled.div`
-  color: var(--text);
+  color: ${({ theme }) => theme.colors.text};
 `
 
 export const StyledIcon = styled.div`
@@ -53,3 +53,9 @@ export const StyledIcon = styled.div`
   float: left;
   ${maskGradient()}
 `
+
+StyledCard.defaultProps = DEFAULT_THEME
+StyledHeader.defaultProps = DEFAULT_THEME
+StyledTitle.defaultProps = DEFAULT_THEME
+StyledSubTitle.defaultProps = DEFAULT_THEME
+StyledContent.defaultProps = DEFAULT_THEME

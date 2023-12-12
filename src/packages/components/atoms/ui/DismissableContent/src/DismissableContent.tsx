@@ -6,7 +6,7 @@ import {
 } from './DismissableContent.style'
 import { DismissableContentProps } from './DismissableContent.types'
 import Icon from '@pi-lib/icon'
-import { getTransientProps } from '@pi-lib/styles'
+import { getDefaultColorVar, getTransientProps } from '@pi-lib/styles'
 
 /**
  * `DismissableContent` is a component that represents internal content for a modal or a toast.
@@ -61,7 +61,9 @@ export const DismissableContent: FC<DismissableContentProps> = forwardRef(
     // Handle timer interval
     useEffect(() => {
       if (isVisible && !!timerInterval) {
-        setIsTimerTriggered(true)
+        requestAnimationFrame(() => {
+          setIsTimerTriggered(true)
+        })
         transitionTimer.current = setTimeout(() => {
           dismiss()
         }, timerInterval)
@@ -76,7 +78,7 @@ export const DismissableContent: FC<DismissableContentProps> = forwardRef(
       >
         {isDismissable && (
           <StyledClose onClick={dismiss}>
-            <Icon iconName="Close" color="var(--shadow)" />
+            <Icon iconName="Close" color={getDefaultColorVar('shadow')} />
           </StyledClose>
         )}
         {children}

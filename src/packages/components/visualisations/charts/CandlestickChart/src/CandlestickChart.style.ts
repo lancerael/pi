@@ -1,4 +1,4 @@
-import { container } from '@pi-lib/styles'
+import { DEFAULT_THEME, container } from '@pi-lib/styles'
 import styled from 'styled-components'
 import { ChartStyleProps } from './CandlestickChart.types'
 
@@ -43,18 +43,18 @@ export const StyledCandlestickChart = styled.svg<ChartStyleProps>`
 
     &.is-active {
       filter: brightness(1);
-      stroke: var(--textSoft) !important;
+      stroke: ${({ theme }) => theme.colors.textSoft} !important;
       stroke-width: 2;
     }
   }
 
   & line.wicks {
-    stroke: var(--text);
+    stroke: ${({ theme }) => theme.colors.text};
     stroke-width: 1;
   }
 
   & line.clone {
-    stroke: var(--border);
+    stroke: ${({ theme }) => theme.colors.border};
   }
 
   & text.emphasise {
@@ -84,3 +84,5 @@ export const StyledLoaderContainer = styled.div`
   justify-content: center;
   align-items: center;
 `
+
+StyledCandlestickChart.defaultProps = DEFAULT_THEME

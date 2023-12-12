@@ -13,6 +13,7 @@ import {
 import Icon from '@pi-lib/icon'
 import { CollapsibleMenuProps } from './CollapsibleMenu.types'
 import { PressEvent } from '@react-types/shared'
+import { getDefaultColorVar } from '@pi-lib/styles'
 
 /**
  * A React component for an expanding/collapsing menu with icons
@@ -39,7 +40,7 @@ export const CollapsibleMenu = ({
         {...{
           ...menuTriggerProps,
           onPress: (e: PressEvent) => {
-            // fix aria event bubbling
+            // aria event bubbling
             containerRef.current?.dispatchEvent(new MouseEvent('click'))
             menuTriggerProps.onPress?.(e)
           },
@@ -50,7 +51,7 @@ export const CollapsibleMenu = ({
         <Icon
           isBrighter
           iconName={$isOpen ? 'Close' : iconName}
-          color={$isOpen ? 'var(--shadow)' : undefined}
+          color={$isOpen ? getDefaultColorVar('shadow') : undefined}
         />
       </StyledOpener>
       <StyledCollapsibleMenu {...{ $isOpen }} aria-hidden={!$isOpen}>
