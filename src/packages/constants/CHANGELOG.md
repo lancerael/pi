@@ -1,8 +1,16 @@
 # Change Log - @pi-lib/constants
 
-This log was last generated on Thu, 30 Nov 2023 16:50:50 GMT and should not be manually modified.
+This log was last generated on Tue, 12 Dec 2023 18:34:30 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 2.3.1
+
+Tue, 12 Dec 2023 18:34:30 GMT
+
+### Patches
+
+- Docs update (lancerael@googlemail.com)
 
 ## 2.3.0
 

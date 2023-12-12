@@ -1,7 +1,0 @@
-{
-  "type": "patch",
-  "comment": "Docs update",
-  "packageName": "@pi-lib/constants",
-  "email": "lancerael@googlemail.com",
-  "dependentChangeType": "patch"
-}

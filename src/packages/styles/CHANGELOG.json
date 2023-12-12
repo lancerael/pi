@@ -2,6 +2,21 @@
   "name": "@pi-lib/styles",
   "entries": [
     {
+      "date": "Tue, 12 Dec 2023 18:34:30 GMT",
+      "tag": "@pi-lib/styles_v5.0.1",
+      "version": "5.0.1",
+      "comments": {
+        "patch": [
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/styles",
+            "commit": "053ab75aab27d6dfd77aa4270050a241d8ee0ab6",
+            "comment": "Docs update"
+          }
+        ]
+      }
+    },
+    {
       "date": "Tue, 12 Dec 2023 01:14:05 GMT",
       "tag": "@pi-lib/styles_v5.0.0",
       "version": "5.0.0",

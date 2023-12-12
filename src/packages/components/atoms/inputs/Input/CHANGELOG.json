@@ -2,6 +2,21 @@
   "name": "@pi-lib/input",
   "entries": [
     {
+      "date": "Tue, 12 Dec 2023 18:34:30 GMT",
+      "tag": "@pi-lib/input_v1.4.15",
+      "version": "1.4.15",
+      "comments": {
+        "none": [
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/input",
+            "commit": "053ab75aab27d6dfd77aa4270050a241d8ee0ab6",
+            "comment": "Docs update"
+          }
+        ]
+      }
+    },
+    {
       "date": "Fri, 08 Dec 2023 23:52:49 GMT",
       "tag": "@pi-lib/input_v1.4.12",
       "version": "1.4.12",

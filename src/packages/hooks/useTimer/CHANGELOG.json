@@ -2,6 +2,21 @@
   "name": "@pi-lib/use-timer",
   "entries": [
     {
+      "date": "Tue, 12 Dec 2023 18:34:30 GMT",
+      "tag": "@pi-lib/use-timer_v2.0.2",
+      "version": "2.0.2",
+      "comments": {
+        "patch": [
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/use-timer",
+            "commit": "053ab75aab27d6dfd77aa4270050a241d8ee0ab6",
+            "comment": "Docs update"
+          }
+        ]
+      }
+    },
+    {
       "date": "Mon, 04 Dec 2023 01:02:23 GMT",
       "tag": "@pi-lib/use-timer_v2.0.1",
       "version": "2.0.1",

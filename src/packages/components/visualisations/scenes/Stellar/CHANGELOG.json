@@ -2,6 +2,21 @@
   "name": "@pi-lib/stellar",
   "entries": [
     {
+      "date": "Tue, 12 Dec 2023 18:34:30 GMT",
+      "tag": "@pi-lib/stellar_v2.0.10",
+      "version": "2.0.10",
+      "comments": {
+        "patch": [
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/stellar",
+            "commit": "053ab75aab27d6dfd77aa4270050a241d8ee0ab6",
+            "comment": "Docs update"
+          }
+        ]
+      }
+    },
+    {
       "date": "Thu, 07 Dec 2023 20:51:02 GMT",
       "tag": "@pi-lib/stellar_v2.0.5",
       "version": "2.0.5",

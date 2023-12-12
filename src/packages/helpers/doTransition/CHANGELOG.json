@@ -2,6 +2,21 @@
   "name": "@pi-lib/do-transition",
   "entries": [
     {
+      "date": "Tue, 12 Dec 2023 18:34:30 GMT",
+      "tag": "@pi-lib/do-transition_v1.0.3",
+      "version": "1.0.3",
+      "comments": {
+        "patch": [
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/do-transition",
+            "commit": "053ab75aab27d6dfd77aa4270050a241d8ee0ab6",
+            "comment": "Docs update"
+          }
+        ]
+      }
+    },
+    {
       "date": "Tue, 12 Dec 2023 01:14:05 GMT",
       "tag": "@pi-lib/do-transition_v1.0.2",
       "version": "1.0.2",
