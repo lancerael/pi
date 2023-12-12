@@ -60,6 +60,23 @@ jobs:
       - name: Setup beachball
         uses: ecraig12345/beachball-actions/install-beachball@v1
 
+      - name: Bump versions for lockfile
+        run: npx beachball bump
+
+      - name: Install new dependencies and commit lockfile
+        run: |
+          pnpm i
+          git add pnpm-lock.yaml
+          git commit -m "Update pnpm lockfile"
+          git push origin main
+
+      - name: Discard uncommitted changes
+        run: git reset --hard
+
+      - name: Remove "workspace:" from package.json
+        run: |
+          find . -name "package.json" -type f -exec sed -i 's/workspace://g' {} \;
+
       - name: Publish packages
         run: npm run bb:publish -- -n ${{ secrets.PI_PUB }} -yes
 
