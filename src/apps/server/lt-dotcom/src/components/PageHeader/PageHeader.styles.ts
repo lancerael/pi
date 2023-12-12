@@ -26,7 +26,7 @@ export const StyledHeader = styled.div<StyledHeaderProps>(
   `
 )
 
-export const StyledHeaderSection = styled.div`
+export const StyledHeaderSection = styled.a`
   display: flex;
   gap: 0.3rem;
   align-items: center;

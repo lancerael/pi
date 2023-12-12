@@ -17,7 +17,6 @@ import Ticker from '@/components/Ticker'
 import Demo from '@/components/Demo'
 import useLimitedEvents from '@pi-lib/use-limited-events'
 
-// Using signal for UI sizes to improve performance
 const uiSizes = signal({
   fullWidth: 0,
   fullHeight: 0,
@@ -52,8 +51,9 @@ export default function Home() {
     (scrollTop: number) => {
       let newState: HeaderState = 'dark'
       if (scrollTop <= 24) newState = 'hidden'
-      else if (scrollTop > 24 && scrollTop < uiSizes.value.fullHeight - 24)
+      else if (scrollTop > 24 && scrollTop < uiSizes.value.fullHeight - 24) {
         newState = 'visible'
+      }
       setHeaderState(newState)
     },
     [uiSizes.value.fullHeight]
@@ -91,7 +91,7 @@ export default function Home() {
             }}
           />
           <PageGrid>
-            {/* <TestComponent>HELLO</TestComponent> */}
+            <span id="top" />
             <Ticker
               {...{ headerState, isComplete, setIsComplete, travelTracker }}
             />
