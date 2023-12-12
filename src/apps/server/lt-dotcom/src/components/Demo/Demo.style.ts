@@ -50,7 +50,8 @@ export const StyledLinkWrapper = styled.div`
   border-radius: 5px;
 
   & :hover {
-    background: var(--subtleA);
+    background: var(--borderA);
+    border-radius: 5px;
   }
 
   & a {
