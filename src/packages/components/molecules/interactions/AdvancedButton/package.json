@@ -38,7 +38,7 @@
     "vitest": "^0.34.6"
   },
   "peerDependencies": {
-    "@pi-lib/button": "workspace:^",
+    "@pi-lib/button": "workspace:^4.1.4",
     "@pi-lib/loader": "workspace:^",
     "react": "^18.2.0",
     "styled-components": "^6.1.0"
