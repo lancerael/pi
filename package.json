@@ -11,7 +11,7 @@
   "author": "Lance Taylor",
   "scripts": {
     "bb": "---------------------------------------------------------BEACHBALL-----",
-    "bb:change": "beachball sync && beachball change",
+    "bb:change": "beachball sync && beachball change --no-commit",
     "bb:publish": "npx beachball publish",
     "build": "npx nx run-many --target=build",
     "demo": "-------------------------------------------------------TECH DEMO-----",

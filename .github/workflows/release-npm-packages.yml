@@ -55,8 +55,6 @@ jobs:
         uses: ./.github/actions/pnpm-setup
 
       - name: Build for vanilla dist
-        env:
-          CLOUDFRONT_URL: ${{ secrets.CLOUDFRONT_URL }}
         run: pnpm build
 
       - name: Setup beachball

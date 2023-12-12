@@ -28,7 +28,7 @@ runs:
         CLOUDFRONT_URL: ${{ inputs.cloudfront_url }}
         LAMBDA_URL: ${{ inputs.lambda_url }}
       shell: bash
-      run: pnpm --filter @pi-lib/${{ inputs.mfe_name }}-mfe build
+      run: pnpm --filter @pi-lib/${{ inputs.mfe_name }}-mfe build:mfe
 
     - name: Configure AWS credentials
       shell: bash
