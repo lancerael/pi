@@ -20,7 +20,7 @@ const getButtonStyle = ({
   disabled,
   theme,
 }: StyledButtonProps) => {
-  const size = theme.fontSizes[$buttonSize! ?? 'medium']
+  const size = theme!.fontSizes[$buttonSize! ?? 'medium']
   let padding = $isCompact ? `calc(${size} / 4)` : `calc(${size} / 2) ${size}`
   return css`
     ${$isSimple
@@ -35,7 +35,7 @@ const getButtonStyle = ({
         })}
     ${disabled && 'pointer-events: none;'}
     ${$status && $status !== 'default'
-      ? `color: ${theme.colors[$status]};`
+      ? `color: ${theme!.colors[$status]};`
       : ''};
     ${!$isInline && 'width: 100%;'}
     cursor: pointer;

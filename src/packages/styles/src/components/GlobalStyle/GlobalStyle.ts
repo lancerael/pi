@@ -1,6 +1,6 @@
-import { createGlobalStyle } from 'styled-components';
-import getThemeColorVars from '../../helpers/getThemeColorVars';
-import GlobalStyleProps from './GlobalStyle.types';
+import { createGlobalStyle } from 'styled-components'
+import getThemeColorVars from '../../helpers/getThemeColorVars'
+import GlobalStyleProps from './GlobalStyle.types'
 
 /**
  * Global styles for the entire application.

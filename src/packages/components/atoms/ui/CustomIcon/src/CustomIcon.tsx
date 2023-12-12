@@ -1,7 +1,6 @@
 import { getTransientProps } from '@pi-lib/styles'
 import { StyledCustomIcon } from './CustomIcon.style'
 import { CustomIconProps } from './CustomIcon.types'
-import { withTheme } from 'styled-components'
 
 /**
  * Renders a styled icon based on given properties.
@@ -31,4 +30,4 @@ export const CustomIcon = ({
   )
 }
 
-export default withTheme(CustomIcon)
+export default CustomIcon
