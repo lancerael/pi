@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "tsc && vite build",
+    "build:mfe": "tsc && vite build",
     "ci-setup": "pnpm install && npx cypress install",
     "dev": "vite --port 5001 --strictPort --host",
     "e2e": "npx cypress run",

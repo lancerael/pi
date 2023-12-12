@@ -4,11 +4,9 @@
 
 # pi-lib
 
-Monorepo containing a design system of React UI components and supporting utilities. Pi supports theming and comes with some starter themes.
+A monorepo design system of React UI components and supporting utilities. Pi supports theming and comes with some starter themes. All packages prefixed with `@pi-lib/...` are standalone npm modules for use with a package manager like `npm`, `yarn` or `pnpm`. They intended for use with TypeScript, but they are also usable in vanilla JS if you build your project in somthing like `Vite`.
 
-All packages prefixed with `@pi-lib/...` are standalone npm modules for use with a package manager like `npm`, `yarn` or `pnpm`. They intended for use with TypeScript, but they are also bundled in vanilla JS - import from the package name with a suffix of `/vanilla`
-
-Whether you want to create a theme, use one of the provided themes or stick with the default, you can build your app with the React components. Check out the docs for more details on usage.
+Create a theme, use one of the provided themes or stick with the default, then build your app with the React components by importing them individually. Check out the docs for more details on usage.
 
 - <a href="https://demo.lance-taylor.com" target="_blank">Demo</a>
 - <a href="https://pi.lance-taylor.com" target="_blank">Docs</a>
@@ -42,7 +40,7 @@ React theming utility for use with Pi and styled-components
 
 **@pi-lib/button**
 
-A React button component with a status
+A styled React button component with a status
 
 **Peer Dependencies:** @pi-lib/styles, @pi-lib/utils, react, styled-components
 
@@ -155,7 +153,7 @@ A banner React component that can comtain spaced or flowing items
 <table>
   <tbody>
     <tr>
-      <td><a href="https://pi.lance-taylor.com/?path=/docs/atoms-layout-banner" target="_blank">Docs</a></td>
+      <td><a href="https://pi.lance-taylor.com/?path=/docs/atoms-layout-pagebanner" target="_blank">Docs</a></td>
       <td><a href="https://www.npmjs.com/package/@pi-lib/page-banner?activeTab=readme" target="_blank">NPM</a></td>
       <td><a href="https://github.com/lancerael/pi/tree/main/src/packages/components/atoms/layout/PageBanner" target="_blank">Github</a></td>
     </tr>
@@ -173,7 +171,7 @@ A wrapper for a page grid layout.
 <table>
   <tbody>
     <tr>
-      <td><a href="https://pi.lance-taylor.com/?path=/docs/atoms-layout-page-grid" target="_blank">Docs</a></td>
+      <td><a href="https://pi.lance-taylor.com/?path=/docs/atoms-layout-pagegrid" target="_blank">Docs</a></td>
       <td><a href="https://www.npmjs.com/package/@pi-lib/page-grid?activeTab=readme" target="_blank">NPM</a></td>
       <td><a href="https://github.com/lancerael/pi/tree/main/./src/packages/components/atoms/layout/PageGrid" target="_blank">Github</a></td>
     </tr>
@@ -245,7 +243,7 @@ A card component with a title and subtitle.
 <table>
   <tbody>
     <tr>
-      <td><a href="https://pi.lance-taylor.com/?path=/docs/molecules-layout-pagecontent" target="_blank">Docs</a></td>
+      <td><a href="https://pi.lance-taylor.com/?path=/docs/molecules-ui-carousel" target="_blank">Docs</a></td>
       <td><a href="https://www.npmjs.com/package/@pi-lib/carousel?activeTab=readme" target="_blank">NPM</a></td>
       <td><a href="https://github.com/lancerael/pi/tree/main/./src/packages/components/molecules/ui/Carousel" target="_blank">Github</a></td>
     </tr>
@@ -283,7 +281,7 @@ Modal for custom content that allows dismissal internally or externally
     <tr>
       <td><a href="https://pi.lance-taylor.com/?path=/docs/molecules-ui-modal" target="_blank">Docs</a></td>
       <td><a href="https://www.npmjs.com/package/@pi-lib/modal?activeTab=readme" target="_blank">NPM</a></td>
-      <td><a href="https://github.com/lancerael/pi/tree/main/src/packages/components/molecules/Modal" target="_blank">Github</a></td>
+      <td><a href="https://github.com/lancerael/pi/tree/main/src/packages/components/molecules/ui/Modal" target="_blank">Github</a></td>
     </tr>
   </tbody>
 </table>
@@ -354,7 +352,7 @@ Shared Pi config
   <tbody>
     <tr>
       <td><a href="https://www.npmjs.com/package/@pi-lib/config?activeTab=readme" target="_blank">NPM</a></td>
-      <td><a href="https://github.com/lancerael/pi/tree/main/src/config" target="_blank">Github</a></td>
+      <td><a href="https://github.com/lancerael/pi/tree/main/src/packages/config" target="_blank">Github</a></td>
     </tr>
   </tbody>
 </table>
@@ -369,7 +367,7 @@ Shared Pi constants
   <tbody>
     <tr>
       <td><a href="https://www.npmjs.com/package/@pi-lib/constants?activeTab=readme" target="_blank">NPM</a></td>
-      <td><a href="https://github.com/lancerael/pi/tree/main/src/config" target="_blank">Github</a></td>
+      <td><a href="https://github.com/lancerael/pi/tree/main/src/packages/config" target="_blank">Github</a></td>
     </tr>
   </tbody>
 </table>
@@ -384,7 +382,7 @@ Global types for Pi
   <tbody>
     <tr>
       <td><a href="https://www.npmjs.com/package/@pi-lib/types?activeTab=readme" target="_blank">NPM</a></td>
-      <td><a href="https://github.com/lancerael/pi/tree/main/src/types" target="_blank">Github</a></td>
+      <td><a href="https://github.com/lancerael/pi/tree/main/src/packages/types" target="_blank">Github</a></td>
     </tr>
   </tbody>
 </table>
@@ -400,7 +398,7 @@ Hook used to add debounced or throttled events to a React component
 <table>
   <tbody>
     <tr>
-      <td><a href="https://pi.lance-taylor.com/?path=/docs/utils-hooks-uselimitedevents--docs" target="_blank">Docs</a></td>
+      <td><a href="https://pi.lance-taylor.com/?path=/docs/utilities-hooks-uselimitedevents--docs" target="_blank">Docs</a></td>
       <td><a href="https://www.npmjs.com/package/@pi-lib/use-limited-events?activeTab=readme" target="_blank">NPM</a></td>
       <td><a href="https://github.com/lancerael/pi/tree/main/src/packages/hooks/useLimitedEvents" target="_blank">Github</a></td>
     </tr>
@@ -418,7 +416,7 @@ Hook used to add setTimeout or setInterval to a React component
 <table>
   <tbody>
     <tr>
-      <td><a href="https://pi.lance-taylor.com/?path=/docs/utils-hooks-usetimer--docs" target="_blank">Docs</a></td>
+      <td><a href="https://pi.lance-taylor.com/?path=/docs/utilities-hooks-usetimer--docs" target="_blank">Docs</a></td>
       <td><a href="https://www.npmjs.com/package/@pi-lib/use-timer?activeTab=readme" target="_blank">NPM</a></td>
       <td><a href="https://github.com/lancerael/pi/tree/main/src/packages/hooks/useTimer" target="_blank">Github</a></td>
     </tr>
@@ -436,7 +434,7 @@ Hook used to add throttled escape (window) clicks to a React component
 <table>
   <tbody>
     <tr>
-      <td><a href="https://pi.lance-taylor.com/?path=/docs/utils-hooks-usewindowclick--docs" target="_blank">Docs</a></td>
+      <td><a href="https://pi.lance-taylor.com/?path=/docs/utilities-hooks-usewindowclick--docs" target="_blank">Docs</a></td>
       <td><a href="https://www.npmjs.com/package/@pi-lib/use-window-click?activeTab=readme" target="_blank">NPM</a></td>
       <td><a href="https://github.com/lancerael/pi/tree/main/src/packages/hooks/useTouch" target="_blank">Github</a></td>
     </tr>
@@ -454,7 +452,7 @@ Create a hash of any object - can be used to compare dependencies and ensure cor
 <table>
   <tbody>
     <tr>
-      <td><a href="https://pi.lance-taylor.com/?path=/docs/utils-hooks-usehashcomparison--docs" target="_blank">Docs</a></td>
+      <td><a href="https://pi.lance-taylor.com/?path=/docs/utilities-hooks-usehashcomparison--docs" target="_blank">Docs</a></td>
       <td><a href="https://www.npmjs.com/package/@pi-lib/use-hash-comparison?activeTab=readme" target="_blank">NPM</a></td>
       <td><a href="https://github.com/lancerael/pi/tree/main/./src/packages/hooks/usehashComparison" target="_blank">Github</a></td>
     </tr>
@@ -487,8 +485,7 @@ Pi uses `PNPM` to manage the monorepo, with some performance enhancements from `
 - _Installation_ - Clone the repo and use `pnpm i` to install.
 - _Storybook_ - Use `pnpm sb:dev` to launch Storybook.
 - _New components_ - Use `pnpm gen:new [path] [ComponentName]` to scaffold a new component.
-- _Vanilla versions_ - run `pnpm build` to generate the alternative vanilla JS export.
 
 ## Contribution
 
-If you have a contribution, make a branch and raise a pull request into `main`. Run `pnpm change` to register the changes with the pipeline, the push the change files to the PR source branch. This will automatically publish version bumps when the PR is merged.
+If you have a contribution, make a branch and raise a pull request into `main`. Run `pnpm change` to register the changes with the pipeline, then push the change files to the PR source branch. This will automatically publish version bumps when the PR is merged.

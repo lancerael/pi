@@ -1,0 +1,7 @@
+{
+  "type": "patch",
+  "comment": "Docs update",
+  "packageName": "@pi-lib/use-limited-events",
+  "email": "lancerael@googlemail.com",
+  "dependentChangeType": "patch"
+}

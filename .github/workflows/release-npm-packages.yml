@@ -8,7 +8,7 @@ on:
 
 jobs:
   check-changes:
-    name: Check for changes
+    name: Check for package changes
     runs-on: ubuntu-latest
     if: github.event.pull_request.merged == true
 
@@ -54,11 +54,6 @@ jobs:
       - name: Set up pnpm
         uses: ./.github/actions/pnpm-setup
 
-      - name: Build for vanilla dist
-        env:
-          CLOUDFRONT_URL: ${{ secrets.CLOUDFRONT_URL }}
-        run: pnpm build
-
       - name: Setup beachball
         uses: ecraig12345/beachball-actions/install-beachball@v1
 
@@ -69,6 +64,7 @@ jobs:
     name: Code coverage report
     needs: release
     runs-on: ubuntu-latest
+    if: needs.check-changes.outputs.changed
     steps:
       - uses: actions/checkout@v1
 

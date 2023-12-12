@@ -1,0 +1,7 @@
+{
+  "type": "patch",
+  "comment": "Docs update",
+  "packageName": "@pi-lib/toast",
+  "email": "lancerael@googlemail.com",
+  "dependentChangeType": "patch"
+}

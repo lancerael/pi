@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "tsc && vite build",
+    "build:app": "tsc && vite build",
     "build:local": "tsc && cross-env NODE_ENV=development vite build",
     "dev": "vite --host",
     "dev:local": "cross-env NODE_ENV=development vite --host",
@@ -15,7 +15,6 @@
   },
   "dependencies": {
     "@originjs/vite-plugin-federation": "^1.2.2",
-    "@pi-lib/page-banner": "workspace:^",
     "@pi-lib/button": "workspace:^",
     "@pi-lib/carousel": "workspace:^",
     "@pi-lib/collapsible-menu": "workspace:^",
@@ -24,6 +23,7 @@
     "@pi-lib/input": "workspace:^",
     "@pi-lib/link": "workspace:^",
     "@pi-lib/modal": "workspace:^",
+    "@pi-lib/page-banner": "workspace:^",
     "@pi-lib/page-loader": "workspace:^",
     "@pi-lib/select": "workspace:^",
     "@pi-lib/styles": "workspace:^",

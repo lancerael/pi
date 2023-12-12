@@ -30,10 +30,6 @@ jobs:
         if: steps.changed-files.outputs.any_changed == 'true'
         run: pnpm lint:pr
 
-      - name: Test build
-        if: steps.changed-files.outputs.any_changed == 'true'
-        run: pnpm build
-
       - name: Test
         if: steps.changed-files.outputs.any_changed == 'true'
         run: pnpm test:nx

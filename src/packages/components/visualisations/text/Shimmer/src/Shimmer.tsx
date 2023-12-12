@@ -6,7 +6,7 @@ import { useTimer } from '@pi-lib/use-timer'
 /**
  * Shimmer component to create a shimmering effect over a series of lines.
  * The component cycles through each line, making one line visible at a time in a loop,
- * or in a fade manner depending on the behavior prop. Really designed for light text on a dark background.
+ * or in a fade manner depending on the behavior prop. Best for light text on a dark background.
  *
  * @param {ShimmerProps} props - The props for the Shimmer component.
  * @returns {JSX.Element} A styled shimmer effect wrapping each provided line.
