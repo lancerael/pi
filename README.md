@@ -4,11 +4,9 @@
 
 # pi-lib
 
-Monorepo containing a design system of React UI components and supporting utilities. Pi supports theming and comes with some starter themes.
+A monorepo design system of React UI components and supporting utilities. Pi supports theming and comes with some starter themes. All packages prefixed with `@pi-lib/...` are standalone npm modules for use with a package manager like `npm`, `yarn` or `pnpm`. They intended for use with TypeScript, but they are also usable in vanilla JS if you build your project in somthing like `Vite`.
 
-All packages prefixed with `@pi-lib/...` are standalone npm modules for use with a package manager like `npm`, `yarn` or `pnpm`. They intended for use with TypeScript, but they are also bundled in vanilla JS - import from the package name with a suffix of `/vanilla`
-
-Whether you want to create a theme, use one of the provided themes or stick with the default, you can build your app with the React components. Check out the docs for more details on usage.
+Create a theme, use one of the provided themes or stick with the default, then build your app with the React components by importing them individually. Check out the docs for more details on usage.
 
 - <a href="https://demo.lance-taylor.com" target="_blank">Demo</a>
 - <a href="https://pi.lance-taylor.com" target="_blank">Docs</a>
