@@ -1,7 +1,0 @@
-{
-  "type": "patch",
-  "comment": "Improved theming",
-  "packageName": "@pi-lib/modal-screen",
-  "email": "lancerael@googlemail.com",
-  "dependentChangeType": "patch"
-}

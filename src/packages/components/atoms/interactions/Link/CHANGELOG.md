@@ -1,8 +1,16 @@
 # Change Log - @pi-lib/link
 
-This log was last generated on Fri, 08 Dec 2023 23:52:49 GMT and should not be manually modified.
+This log was last generated on Tue, 12 Dec 2023 01:14:05 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 2.1.5
+
+Tue, 12 Dec 2023 01:14:05 GMT
+
+### Patches
+
+- Improved theming (lancerael@googlemail.com)
 
 ## 2.1.3
 

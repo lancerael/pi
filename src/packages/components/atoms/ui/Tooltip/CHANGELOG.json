@@ -2,6 +2,21 @@
   "name": "@pi-lib/tooltip",
   "entries": [
     {
+      "date": "Tue, 12 Dec 2023 01:14:05 GMT",
+      "tag": "@pi-lib/tooltip_v2.2.14",
+      "version": "2.2.14",
+      "comments": {
+        "patch": [
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/tooltip",
+            "commit": "c5edc2c092871f4d4ef3d3562c2a3e8ba8b7f0df",
+            "comment": "Improved theming"
+          }
+        ]
+      }
+    },
+    {
       "date": "Fri, 08 Dec 2023 23:52:49 GMT",
       "tag": "@pi-lib/tooltip_v2.2.12",
       "version": "2.2.12",
