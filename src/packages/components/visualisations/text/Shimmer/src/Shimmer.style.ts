@@ -49,11 +49,17 @@ export const StyledLine = styled.div<StyledLineProps>(
       filter: blur(${$isVisible ? '0' : '20px'});
       background-image: linear-gradient(
         90deg,
-        ${({ theme }) => theme.colors.text},
-        ${({ theme }) => theme.colors.text},
-        ${({ theme }) => theme.colors.special},
-        ${({ theme }) => theme.colors.text},
-        ${({ theme }) => theme.colors.text}
+        ${({
+          theme: {
+            colors: { text, special },
+          },
+        }) => `
+          ${text},
+          ${text},
+          ${special},
+          ${text},
+          ${text}
+        `}
       );
       background-clip: text;
       background-size: 200%;
