@@ -34,7 +34,7 @@ export const PageHeader = ({
     >
       <PageGrid>
         <StyledHeaderInner>
-          <StyledHeaderSection title="Lance Taylor">
+          <StyledHeaderSection title="Lance Taylor" href="#top">
             <CustomIcon src="/cube.svg" {...ICON_PROPS} />
             <Shimmer lines={['LT']} behaviour="linger" delay={0} />
           </StyledHeaderSection>
