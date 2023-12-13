@@ -80,6 +80,7 @@ export default function Home() {
         <Stellar
           {...travelTracker}
           scrollCallback={(scrollTop) => updateHeader(scrollTop)}
+          isAutoDimmed
         >
           <PageHeader
             fullWidth={uiSizeValues.fullWidth}
