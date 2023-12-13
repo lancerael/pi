@@ -139,7 +139,7 @@ export const Stellar = ({
    * @returns {void}
    */
   const handleScroll = useCallback(() => {
-    if (!travelInfo.current.isTravelling) spawnStars(randomNumber(3, 6))
+    if (!travelInfo.current.isTravelling) spawnStars(randomNumber(1, 3))
     scrollCallback?.(contentRef.current?.scrollTop ?? 0)
   }, [])
 
@@ -252,7 +252,7 @@ export const Stellar = ({
     }, 50)
     travelInfo.current = { isTravelling, travelSpeed }
     return () => clearInterval(keyframe)
-  }, [isTravelling, travelSpeed])
+  }, [isTravelling, travelSpeed, isAutoDimmed])
 
   return (
     <StyledStellar ref={stellarRef}>
