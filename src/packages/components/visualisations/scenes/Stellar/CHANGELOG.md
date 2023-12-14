@@ -1,8 +1,16 @@
 # Change Log - @pi-lib/stellar
 
-This log was last generated on Tue, 12 Dec 2023 18:34:30 GMT and should not be manually modified.
+This log was last generated on Wed, 13 Dec 2023 00:18:18 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 2.0.11
+
+Wed, 13 Dec 2023 00:18:18 GMT
+
+### Patches
+
+- Website fixes (lancerael@googlemail.com)
 
 ## 2.0.10
 
