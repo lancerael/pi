@@ -54,7 +54,9 @@ export const Ticker = ({
       </ShimmerInner>
       <StyledChevron
         id="skills"
-        $isVisible={isChevronVisible && headerState === 'hidden'}
+        $isVisible={
+          (isChevronVisible || isComplete) && headerState === 'hidden'
+        }
       >
         <StyledChevronInner href="#skills" title="Scroll down">
           <Icon iconName="Chevron" />

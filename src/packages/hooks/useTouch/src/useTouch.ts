@@ -113,7 +113,7 @@ export const useTouch = <T = HTMLElement>({
           intervalId: `swipe`,
         })
       } else {
-        stopCallback?.()
+        if (trackers.current.isPressed) stopCallback?.()
       }
       trackers.current.isPressed = false
       trackers.current.oldPanChange = { x: 0, y: 0 }
@@ -168,7 +168,6 @@ export const useTouch = <T = HTMLElement>({
    */
   const pinch = useCallback(
     (e: WheelEvent) => {
-      console.log(e)
       if (e.ctrlKey) {
         throttledZoom(e.deltaY * 0.0003)
       } else {

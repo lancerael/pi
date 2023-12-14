@@ -80,6 +80,7 @@ export const StyledMenu = styled.ul`
   display: flex;
   flex-direction: column;
   gap: 8px;
+  list-style-type: none;
 `
 
 /**

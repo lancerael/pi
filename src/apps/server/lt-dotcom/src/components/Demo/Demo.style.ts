@@ -22,13 +22,17 @@ export const StyledImages = styled.div`
 
   & img:nth-of-type(1) {
     transform: rotate(17deg);
-    left: 1.5rem;
+    left: 0.5rem;
     z-index: 99;
+
+    @media (max-width: 640px) {
+      left: 5%;
+    }
   }
 
   & img:nth-of-type(2) {
     transform: rotate(-17deg);
-    left: 22%;
+    left: 20%;
     z-index: 100;
   }
 
@@ -39,7 +43,10 @@ export const StyledImages = styled.div`
     z-index: 101;
 
     @media (max-width: 640px) {
-      left: 40%;
+      left: 47%;
+      width: 40vw;
+      top: 20%;
+      transform: rotate(-20deg);
     }
   }
 `
