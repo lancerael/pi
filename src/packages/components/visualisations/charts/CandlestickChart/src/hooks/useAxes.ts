@@ -18,13 +18,11 @@ const getDateLabel = (d: string = '', i: number, xScale: Scales['xScale']) => {
   const mapKey = `${d}-${i}-${c}`
   if (dateMap[mapKey] !== undefined) return dateMap[mapKey]
   let dateLabel = ''
-
-  const date = new Date(d)
   const [year, month, day] = d.split('-')
   if (day === '01') {
     if (month === '01') dateLabel = year
     else
-      dateLabel = date.toLocaleString('en-UK', {
+      dateLabel = new Date(d).toLocaleString('en-UK', {
         month: 'short',
       })
   }

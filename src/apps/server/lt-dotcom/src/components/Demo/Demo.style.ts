@@ -22,7 +22,7 @@ export const StyledImages = styled.div`
 
   & img:nth-of-type(1) {
     transform: rotate(17deg);
-    left: 0.5rem;
+    left: 1.5rem;
     z-index: 99;
 
     @media (max-width: 640px) {

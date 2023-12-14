@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef } from 'react'
+import { useMemo } from 'react'
 import {
   CANDLE_PADDING,
   CANDLE_WIDTH,
@@ -24,16 +24,9 @@ export const useDataRange = (
   controls: ChartControls
 ): DataRange => {
   const { panLevel, zoomLevel, period } = controls
-  const lastPeriod = useRef<ChartControls['period']>()
-  const lastIndex = useRef(data.length + 2)
-  const end = useRef<number>(lastIndex.current)
-  const prevPan = useRef(0)
-  const latestOffset = useRef(0)
   const candleWidth = (CANDLE_WIDTH + CANDLE_WIDTH * CANDLE_PADDING) * zoomLevel
   const perPage = Math.round(width / candleWidth) || 0
-  const isPanningLeft = prevPan.current < panLevel.x
-  const isPanningRight = prevPan.current > panLevel.x
-  let offset = latestOffset.current
+  const lastItem = data[data.length - 1]
 
   // Get the data filtered by period (days/weeks/months)
   const thisData = useMemo(() => {
@@ -49,7 +42,10 @@ export const useDataRange = (
         const getIndex = (dateMatch: string) =>
           data.findIndex(({ date }) => date === dateMatch)
         const rangeStartIndex = getIndex(item?.date)
-        const rangeEndIndex = getIndex(filteredData[i + 1]?.date)
+        const rangeEndIndex =
+          i === filteredData.length - 1
+            ? data.length
+            : getIndex(filteredData[i + 1]?.date)
         const currentRange = data.slice(rangeStartIndex, rangeEndIndex)
         const getValueRange = (key: 'high' | 'low') =>
           currentRange.map((item) => item[key])
@@ -63,44 +59,17 @@ export const useDataRange = (
         }
       })
     }
-    // Reset period ref
-    if (lastPeriod.current !== period) {
-      lastIndex.current = filteredData.length + 2
-      end.current = lastIndex.current
-    }
-    lastPeriod.current = period
     return [EMPTY_ITEM, ...filteredData, EMPTY_ITEM]
-  }, [data, period])
+  }, [JSON.stringify(lastItem), period])
 
-  // Update chartoffset
-  if (end.current === 1) end.current = lastIndex.current
-  if (
-    (end.current < lastIndex.current || isPanningLeft) &&
-    (end.current - perPage > 0 || isPanningRight)
-  ) {
-    offset = latestOffset.current + (panLevel.x - prevPan.current) / zoomLevel
-    latestOffset.current = offset
-  }
-  prevPan.current = panLevel.x
-
-  // Move range left or right
-  const indexMultiplier = Math.round(1 / (zoomLevel <= 1 ? zoomLevel : 1))
-  if (offset > candleWidth) {
-    end.current - perPage > 0 && (end.current = end.current - indexMultiplier)
-    latestOffset.current = 0
-  }
-  if (offset < -candleWidth) {
-    end.current < lastIndex.current &&
-      (end.current = end.current + indexMultiplier)
-    latestOffset.current = 0
-  }
-
-  // set starting item
-  let start = end.current - perPage
-  start = start < 0 ? 0 : start
+  const panExtent = candleWidth * (thisData.length - perPage)
+  const panX = Math.max(Math.min(panExtent, panLevel.x), 0)
+  const offset = Math.round(panX % candleWidth)
+  const end = Math.round(thisData.length - (panX - offset) / candleWidth)
+  const start = end - perPage
 
   // Slice the data that is visible
-  const dataSlice = thisData.slice(start, end.current)
+  const dataSlice = thisData.slice(start, end)
 
   // Set the min and max values for the Y axis
   const min = Math.min(
@@ -108,20 +77,15 @@ export const useDataRange = (
   )
   const max = Math.max(...dataSlice.map(({ high }) => high))
 
-  // Reset last index if the data length changes
-  useEffect(() => {
-    end.current = lastIndex.current
-  }, [data.length])
-
   return {
     start,
-    end: end.current,
+    end,
     min,
     max,
-    offset: latestOffset.current,
+    offset,
     dataSlice,
     lastItem: thisData[thisData.length - 2],
     length: thisData.length,
-    totalWidth: candleWidth * thisData.length,
+    panExtent,
   }
 }

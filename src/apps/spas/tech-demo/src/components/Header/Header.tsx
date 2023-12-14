@@ -95,7 +95,7 @@ export const Header = () => {
                   <IconButton
                     buttonProps={{
                       title: `Switch to ${altFontSize} font`,
-                      onPress: () => {
+                      onClick: () => {
                         setTimeout(() =>
                           dispatchWithUpdate(updateFontSize(altFontSize))
                         )
@@ -111,7 +111,7 @@ export const Header = () => {
                   />
                   <IconButton
                     buttonProps={{
-                      onPress: () => {
+                      onClick: () => {
                         setTimeout(() =>
                           dispatchWithUpdate(updateScheme(altScheme))
                         )
@@ -128,7 +128,7 @@ export const Header = () => {
                   />
                   <IconButton
                     buttonProps={{
-                      onPress: () => {
+                      onClick: () => {
                         setTimeout(() => setIsActive(true), 100)
                       },
                       title: `View tech demo architectural diagram`,
@@ -144,7 +144,7 @@ export const Header = () => {
                 </ItemList>,
                 <ItemList title="Choose theme palette">
                   <StyledPalette src={`${CLOUDFRONT_URL}/palette.svg`} />
-                  <StyledSelect {...{ scheme }}>
+                  <StyledSelect $scheme={scheme}>
                     <Select
                       name="theme"
                       value={themeName}

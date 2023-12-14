@@ -97,6 +97,7 @@ export const Controls = ({
         isCompact
         onClick={panBack}
         disabled={!canPanBack}
+        isShadowed
       >
         <StyledEmoji rotate={-90}>🔺</StyledEmoji>
       </Button>
@@ -105,6 +106,7 @@ export const Controls = ({
         isCompact
         onClick={zoomOut}
         disabled={!canZoomOut}
+        isShadowed
       >
         ➖
       </Button>
@@ -113,6 +115,7 @@ export const Controls = ({
         isCompact
         onClick={zoomIn}
         disabled={!canZoomIn}
+        isShadowed
       >
         ➕
       </Button>
@@ -121,6 +124,7 @@ export const Controls = ({
         isCompact
         onClick={panForward}
         disabled={!canPanForward}
+        isShadowed
       >
         <StyledEmoji rotate={90}>🔺</StyledEmoji>
       </Button>

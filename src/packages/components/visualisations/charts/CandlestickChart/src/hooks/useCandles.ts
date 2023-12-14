@@ -111,15 +111,21 @@ export const useCandles = (
         bars = bars.enter().append(typeMap[type])
       }
 
-      const getTransition = () =>
-        hasTransition ? bars.transition().duration(TRANSITION_TIME) : bars
+      const getTransition = () => {
+        return hasTransition
+          ? bars.transition().duration(TRANSITION_TIME)
+          : bars
+      }
 
-      const x = (d: CandlestickDayData) =>
-        Number(xScale(d.date)) +
-        (type === 'wicks' ? +xScale.bandwidth() / 2 : 0) +
-        offset +
-        CANDLE_WIDTH -
-        CANDLE_WIDTH * CANDLE_PADDING
+      const x = (d: CandlestickDayData) => {
+        return (
+          Number(xScale(d.date)) +
+          (type === 'wicks' ? +xScale.bandwidth() / 2 : 0) +
+          offset +
+          CANDLE_WIDTH -
+          CANDLE_WIDTH * CANDLE_PADDING
+        )
+      }
 
       const y = (d: CandlestickDayData) => scaledY(d[keys[0]], d[keys[1]])
 

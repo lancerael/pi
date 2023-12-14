@@ -46,6 +46,7 @@ const getButtonStyle = ({
     font-weight: bold;
     font-size: ${size};
     transition: all 0.3s;
+    user-select: none;
     &:hover:not([disabled]) {
       filter: brightness(80%) contrast(150%) saturate(135%);
     }

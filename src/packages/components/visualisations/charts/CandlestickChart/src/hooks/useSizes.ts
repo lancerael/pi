@@ -1,6 +1,7 @@
 import { useCallback, useState } from 'react'
 import { ContainerRef, SvgRef } from '../CandlestickChart.types'
 import useLimitedEvents from '@pi-lib/use-limited-events'
+import { debounce } from '@pi-lib/utils'
 
 /**
  * Set the sizes for the chart and container, and bind resize events
@@ -17,19 +18,22 @@ export const useSizes = (svgRef: SvgRef, containerRef: ContainerRef) => {
   })
 
   // The callback to bind to the resize event
-  const updateSizes = useCallback(() => {
-    const { clientWidth: width = 0, clientHeight: height = 0 } =
-      svgRef?.current ?? {}
-    const { offsetLeft: left = 0, offsetTop: top = 0 } =
-      containerRef?.current ?? {}
+  const updateSizes = useCallback(
+    debounce(() => {
+      const { clientWidth: width = 0, clientHeight: height = 0 } =
+        svgRef?.current ?? {}
+      const { offsetLeft: left = 0, offsetTop: top = 0 } =
+        containerRef?.current ?? {}
 
-    setSizes({
-      width,
-      height,
-      left,
-      top,
-    })
-  }, [svgRef.current, containerRef.current])
+      setSizes({
+        width,
+        height,
+        left,
+        top,
+      })
+    }, 300),
+    [svgRef.current, containerRef.current]
+  )
 
   useLimitedEvents(updateSizes, { doInit: true })
 

@@ -19,9 +19,7 @@ export const Candlestick = () => {
   useEffect(() => {
     let updateInterval: NodeJS.Timeout
     const delayTimeout = setTimeout(() => {
-      if (!candlestickData.length) {
-        dispatch(setData(generateCandlestickData(800).dates))
-      }
+      dispatch(setData(generateCandlestickData(800).dates))
       updateInterval = setInterval(() => {
         const lastItem = structuredClone(candlestickData).pop()!
         lastItem.close = movePrevValue(lastItem.close, 10)
@@ -34,7 +32,7 @@ export const Candlestick = () => {
       clearInterval(updateInterval)
       clearTimeout(delayTimeout)
     }
-  }, [candlestickData])
+  }, [])
 
   return (
     <Theme
