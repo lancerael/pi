@@ -13,7 +13,7 @@ export const StyledControls = styled.div`
     padding: 5px !important;
     height: auto;
     ${box()}
-    border: 1px solid ${({ theme }) => theme.colors.border};
+    border: 1px solid ${({ theme }) => theme.colors?.border};
   }
 `
 

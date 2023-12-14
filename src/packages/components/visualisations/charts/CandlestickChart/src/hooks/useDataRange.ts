@@ -68,8 +68,6 @@ export const useDataRange = (
   const end = Math.round(thisData.length - (panX - offset) / candleWidth)
   const start = end - perPage
 
-  console.log(panExtent, panLevel.x, panX, offset)
-
   // Slice the data that is visible
   const dataSlice = thisData.slice(start, end)
 
