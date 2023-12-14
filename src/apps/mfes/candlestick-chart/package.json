@@ -11,7 +11,7 @@
     "lint": "npx prettier -c . && npx eslint",
     "lint:fix": "npx prettier -w . && npx eslint --fix",
     "preview": "vite preview --port 5002 --strictPort --host",
-    "start": "pnpm build && pnpm preview",
+    "start": "pnpm build:mfe && pnpm preview",
     "test-": "vitest"
   },
   "dependencies": {

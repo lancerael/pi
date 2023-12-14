@@ -5,7 +5,6 @@ export const StyledControls = styled.div`
   margin: 8px;
   position: absolute;
   display: flex;
-  gap: 8px;
   padding: 8px;
   z-index: 1000;
 
@@ -14,6 +13,7 @@ export const StyledControls = styled.div`
     padding: 5px !important;
     height: auto;
     ${box()}
+    border: 1px solid ${({ theme }) => theme.colors.border};
   }
 `
 
