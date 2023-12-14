@@ -1,6 +1,6 @@
 import { BaseProps, TransientProps } from '@pi-lib/styles'
 import { StellarProps } from '@pi-lib/stellar'
-import { Dispatch, PropsWithChildren, SetStateAction } from 'react'
+import { PropsWithChildren } from 'react'
 
 export interface UiTrackerProps extends BaseProps {
   fullWidth: number
@@ -16,7 +16,7 @@ export interface PageHeaderProps {
   fullWidth: number
   headerState: HeaderState
   travelTracker: TravelTrackerProps
-  setTravelTracker: Dispatch<SetStateAction<TravelTrackerProps>>
+  setTravelTracker: (newTracker: TravelTrackerProps) => void
   isComplete: boolean
 }
 

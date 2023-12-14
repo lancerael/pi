@@ -1,0 +1,7 @@
+{
+  "type": "patch",
+  "comment": "Fix unexpected callback",
+  "packageName": "@pi-lib/use-touch",
+  "email": "lancerael@googlemail.com",
+  "dependentChangeType": "patch"
+}
