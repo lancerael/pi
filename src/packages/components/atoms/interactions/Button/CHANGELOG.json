@@ -2,6 +2,21 @@
   "name": "@pi-lib/button",
   "entries": [
     {
+      "date": "Thu, 14 Dec 2023 21:24:52 GMT",
+      "tag": "@pi-lib/button_v4.1.6",
+      "version": "4.1.6",
+      "comments": {
+        "patch": [
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/button",
+            "commit": "f5ae0a459de5c006b629c18e4897a9a2b8b8bf2d",
+            "comment": "Disable user select"
+          }
+        ]
+      }
+    },
+    {
       "date": "Tue, 12 Dec 2023 18:34:30 GMT",
       "tag": "@pi-lib/button_v4.1.5",
       "version": "4.1.5",

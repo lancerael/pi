@@ -1,8 +1,16 @@
 # Change Log - @pi-lib/button
 
-This log was last generated on Tue, 12 Dec 2023 18:34:30 GMT and should not be manually modified.
+This log was last generated on Thu, 14 Dec 2023 21:24:52 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 4.1.6
+
+Thu, 14 Dec 2023 21:24:52 GMT
+
+### Patches
+
+- Disable user select (lancerael@googlemail.com)
 
 ## 4.1.5
 

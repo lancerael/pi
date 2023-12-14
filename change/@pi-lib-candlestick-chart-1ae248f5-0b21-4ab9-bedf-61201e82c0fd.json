@@ -1,7 +1,0 @@
-{
-  "type": "minor",
-  "comment": "Candlestick chart performance tweaks and minor fixes",
-  "packageName": "@pi-lib/candlestick-chart",
-  "email": "lancerael@googlemail.com",
-  "dependentChangeType": "patch"
-}
