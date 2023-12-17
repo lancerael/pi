@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { TouchControls } from './useControls.types'
+import { TouchControls, TouchState } from './useControls.types'
 
 /**
  * `useControls` is a custom React hook that manages the zoom and pan levels of a chart.
@@ -11,13 +11,13 @@ import { TouchControls } from './useControls.types'
  * and the corresponding state setter functions.
  */
 export const useControls = (): TouchControls => {
-  const [panLevel, setPanLevel] = useState({ x: 0, y: 0 })
-  const [zoomLevel, setZoomLevel] = useState(1)
+  const [touchState, setTouchState] = useState<TouchState>({
+    pan: { x: 0, y: 0 },
+    zoom: 1,
+  })
 
   return {
-    panLevel,
-    setPanLevel,
-    zoomLevel,
-    setZoomLevel,
+    touchState,
+    setTouchState,
   }
 }

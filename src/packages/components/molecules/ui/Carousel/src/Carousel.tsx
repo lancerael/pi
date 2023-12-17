@@ -1,4 +1,4 @@
-import { useTouch, useControls, PanLevel } from '@pi-lib/use-touch'
+import { useTouch, useControls, TouchState } from '@pi-lib/use-touch'
 import useLimitedEvents from '@pi-lib/use-limited-events'
 import {
   StyledCarousel,
@@ -32,10 +32,10 @@ export const Carousel = ({
   /**
    * Enhance the pan controls to allow a smooth loop
    */
-  const setPanLevel = useCallback(
-    (update: (panLevel: PanLevel) => PanLevel) => {
-      controls.setPanLevel(({ x, y }) => {
-        return update({ x: getLoopedX(x), y })
+  const setTouchState = useCallback(
+    (update: (touchState: TouchState) => TouchState) => {
+      controls.setTouchState(({ zoom, pan: { x, y } }) => {
+        return update({ zoom, pan: { x: getLoopedX(x), y } })
       })
     },
     [isScroller, isDraggable, speed]
@@ -49,7 +49,10 @@ export const Carousel = ({
     if (!isScroller) return
     isScrolling.current = true
     scrollIntervalRef.current = setInterval(() => {
-      setPanLevel(({ x, y }) => ({ x: x - 5 * speed, y }))
+      setTouchState(({ zoom, pan: { x, y } }) => ({
+        zoom,
+        pan: { x: x - 5 * speed, y },
+      }))
     }, 250)
     return stopScroll
   }, [isScroller, isDraggable, speed])
@@ -92,7 +95,9 @@ export const Carousel = ({
     targetRef,
     controls: {
       ...controls,
-      setPanLevel: (isDraggable ? setPanLevel : () => {}) as CustomPanHandler,
+      setTouchState: (isDraggable
+        ? setTouchState
+        : () => {}) as CustomPanHandler,
     },
     resetCallback: isDraggable ? stopScroll : undefined,
     stopCallback: isDraggable ? startScrollDelayed : undefined,
@@ -115,7 +120,7 @@ export const Carousel = ({
   /**
    * Make sure there is no looping animation
    */
-  const loopedX = getLoopedX(controls.panLevel.x, isScrolling.current)
+  const loopedX = getLoopedX(controls.touchState.pan.x, isScrolling.current)
   const shouldTransition = loopedX !== 0 && loopedX !== width.current / -2
   return (
     <StyledCarousel data-testid={dataTestid} {...props}>

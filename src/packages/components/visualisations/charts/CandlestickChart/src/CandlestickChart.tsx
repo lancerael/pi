@@ -22,6 +22,7 @@ import {
 import Loader from '@pi-lib/loader'
 import { ZOOM_RANGE } from './CandlestickChart.constants'
 import { useTouch } from '@pi-lib/use-touch'
+import { flushTransition } from '@pi-lib/do-transition'
 
 /**
  * A candlestick chart React component used to show the movement of traded assets over time.
@@ -51,7 +52,11 @@ export const CandlestickChart = ({ data = [] }: CandlestickChartProps) => {
           [0, 0],
         ]
       : undefined,
-    resetCallback: resetSelection,
+    resetCallback: () => {
+      resetSelection()
+      flushTransition('zoom')
+      flushTransition('pan')
+    },
   })
 
   return (
@@ -61,12 +66,7 @@ export const CandlestickChart = ({ data = [] }: CandlestickChartProps) => {
           <Loader isLarge />
         </StyledLoaderContainer>
       ) : (
-        <Controls
-          {...{
-            controls,
-            dataRange,
-          }}
-        />
+        <Controls {...{ resetSelection, controls, dataRange }} />
       )}
       <StyledCandlestickChart ref={svgRef} $isVisible={!!data?.length}>
         <ClipPaths {...sizes} />

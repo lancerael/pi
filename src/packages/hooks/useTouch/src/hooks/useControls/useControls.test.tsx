@@ -14,21 +14,21 @@ describe('useControls Hook', () => {
   })
 
   test('should initialize zoomLevel and panLevel correctly', () => {
-    expect(hook.current.zoomLevel).toBe(1)
-    expect(hook.current.panLevel).toEqual({ x: 0, y: 0 })
+    expect(hook.current.touchState.zoom).toBe(1)
+    expect(hook.current.touchState.pan).toEqual({ x: 0, y: 0 })
   })
 
   test('should update zoomLevel correctly', () => {
     act(() => {
-      hook.current.setZoomLevel(2)
+      hook.current.setTouchState({ zoom: 2, pan: { x: 0, y: 0 } })
     })
-    expect(hook.current.zoomLevel).toBe(2)
+    expect(hook.current.touchState.zoom).toBe(2)
   })
 
   test('should update panLevel correctly', () => {
     act(() => {
-      hook.current.setPanLevel({ x: 50, y: 50 })
+      hook.current.setTouchState({ zoom: 1, pan: { x: 50, y: 50 } })
     })
-    expect(hook.current.panLevel).toEqual({ x: 50, y: 50 })
+    expect(hook.current.touchState.pan).toEqual({ x: 50, y: 50 })
   })
 })

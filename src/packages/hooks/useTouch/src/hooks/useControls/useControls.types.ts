@@ -3,21 +3,13 @@
  */
 export interface TouchControls {
   /**
-   * The current zoom level.
+   * The current state for the zoom and pan levels
    */
-  zoomLevel: number
+  touchState: TouchState
   /**
-   * The current pan levels on both x and y axis.
+   * Function to set the zoom and pan levels.
    */
-  panLevel: PanLevel
-  /**
-   * Function to set the zoom level.
-   */
-  setZoomLevel: React.Dispatch<React.SetStateAction<number>>
-  /**
-   * Function to set the pan level.
-   */
-  setPanLevel: React.Dispatch<React.SetStateAction<PanLevel>>
+  setTouchState: React.Dispatch<React.SetStateAction<TouchState>>
 }
 
 /**
@@ -32,4 +24,9 @@ export interface PanLevel {
    * The pan level on the y-axis.
    */
   y: number
+}
+
+export interface TouchState {
+  pan: PanLevel
+  zoom: number
 }
