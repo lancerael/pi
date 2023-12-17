@@ -1,6 +1,6 @@
 import { act, renderHook, fireEvent } from '@testing-library/react'
 import { expect } from 'vitest'
-import { PanLevel, TouchControls, useTouch } from './'
+import { TouchControls, TouchState, useTouch } from './'
 
 if (typeof PointerEvent === 'undefined') {
   global.window.PointerEvent = class extends global.window.Event {
@@ -33,25 +33,21 @@ const firePointerEvent = (
 describe('useTouch Hook', () => {
   let target: HTMLDivElement
   let targetRef: React.RefObject<HTMLDivElement>
-  let panLevel: PanLevel
-  let zoomLevel: number
+  let touchState: TouchState
   let controls: TouchControls
 
   beforeEach(() => {
-    panLevel = {
-      x: 0,
-      y: 0,
-    }
-    zoomLevel = 1
     controls = {
-      setZoomLevel: (setter: any) => {
-        zoomLevel = setter(zoomLevel)
+      touchState: {
+        pan: {
+          x: 0,
+          y: 0,
+        },
+        zoom: 1,
       },
-      setPanLevel: (setter: any) => {
-        panLevel = setter(panLevel)
+      setTouchState: (setter: any) => {
+        touchState = setter(touchState)
       },
-      zoomLevel,
-      panLevel,
     }
     target = document.createElement('div')
     document.body.appendChild(target)
@@ -70,8 +66,8 @@ describe('useTouch Hook', () => {
       firePointerEvent(global.window, 'pointermove', 0, 100, 100)
       firePointerEvent(target, 'pointerup', 0)
     })
-    expect(zoomLevel).toBe(1)
-    expect(panLevel).toEqual({ x: 90, y: 90 })
+    expect(touchState.zoom).toBe(1)
+    expect(touchState.pan).toEqual({ x: 90, y: 90 })
   })
 
   test('should handle swipe correctly', async () => {
@@ -80,8 +76,8 @@ describe('useTouch Hook', () => {
       firePointerEvent(global.window, 'pointermove', 0, 50, 50)
       firePointerEvent(target, 'pointerup', 0)
     })
-    expect(zoomLevel).toBe(1)
-    expect(panLevel).toEqual({ x: 20, y: 20 })
+    expect(touchState.zoom).toBe(1)
+    expect(touchState.pan).toEqual({ x: 20, y: 20 })
   })
 
   test('should handle pinch correctly', async () => {
@@ -94,7 +90,7 @@ describe('useTouch Hook', () => {
       firePointerEvent(target, 'pointerup', 0)
       firePointerEvent(target, 'pointerup', 1)
     })
-    expect(zoomLevel).toBe(1.471)
-    expect(panLevel).toEqual({ x: 0, y: 0 })
+    expect(touchState.zoom).toBe(1.471)
+    expect(touchState.pan).toEqual({ x: 0, y: 0 })
   })
 })

@@ -33,16 +33,22 @@ export const useTouch = <T = HTMLElement>({
     clearTransition: () => {},
   })
 
+  const ranges = useRef({ panRange, zoomRange })
+  ranges.current = { panRange, zoomRange }
+
   /**
    * Changes the zoom level.
    * @param {number} zoomChange - The change in zoom level.
    */
   const zoom = useCallback((zoomChange: number) => {
     resetCallback?.()
-    const [min, max] = zoomRange
-    controls.setZoomLevel((zoomLevel) => {
-      const newZoom = zoomLevel - zoomChange * 50
-      return clampValue(Math.round(newZoom * 1000) / 1000, min, max)
+    const [min, max] = ranges.current.zoomRange
+    controls.setTouchState(({ pan, zoom }) => {
+      const newZoom = zoom - zoomChange * 50
+      return {
+        pan,
+        zoom: clampValue(Math.round(newZoom * 1000) / 1000, min, max),
+      }
     })
   }, [])
 
@@ -50,25 +56,25 @@ export const useTouch = <T = HTMLElement>({
    * Changes the pan level.
    * @param {PanLevel} panChange - The change in pan levels along x and y axes.
    */
-  const pan = useCallback(
-    (panChange: PanLevel) => {
-      resetCallback?.()
-      trackers.current.oldPanChange = { ...panChange }
-      controls.setPanLevel((panLevel) => {
-        const setVal = (
-          axis: 'x' | 'y',
-          [min, max]: NumberRange = [-99999, 99999]
-        ) => {
-          return clampValue(panLevel[axis] + panChange[axis], min, max)
-        }
-        return {
-          x: setVal('x', panRange?.[0]),
-          y: setVal('y', panRange?.[1]),
-        }
-      })
-    },
-    [controls.zoomLevel, panRange]
-  )
+  const pan = useCallback((panChange: PanLevel) => {
+    resetCallback?.()
+    trackers.current.oldPanChange = { ...panChange }
+    controls.setTouchState(({ pan, zoom }) => {
+      const setVal = (
+        axis: 'x' | 'y',
+        [min, max]: NumberRange = [-99999, 99999]
+      ) => {
+        return clampValue(pan[axis] + panChange[axis], min, max)
+      }
+      return {
+        zoom,
+        pan: {
+          x: setVal('x', ranges.current.panRange?.[0]),
+          y: setVal('y', ranges.current.panRange?.[1]),
+        },
+      }
+    })
+  }, [])
 
   /**
    * Handles the start of a touch or pointer event.
@@ -95,17 +101,20 @@ export const useTouch = <T = HTMLElement>({
     (e: PointerEvent) => {
       const { x, y } = trackers.current.oldPanChange
       if (Math.abs(x) + Math.abs(y) > 10) {
-        const values = Object.values(controls.panLevel)
+        const values = Object.values(controls.touchState.pan)
         const targets = [x, y].map(
-          (old, i) => values[i] + Math.round(old * 5) * controls.zoomLevel
+          (old, i) => values[i] + Math.round(old * 5) * controls.touchState.zoom
         )
         trackers.current.clearTransition = doTransition({
           values,
           targets,
           callback: ([newX, newY]) => {
-            controls.setPanLevel(() => ({
-              x: newX,
-              y: newY,
+            controls.setTouchState(({ zoom, pan }) => ({
+              zoom,
+              pan: {
+                x: newX,
+                y: newY,
+              },
             }))
           },
           endCallback: () => stopCallback?.(),
@@ -120,7 +129,7 @@ export const useTouch = <T = HTMLElement>({
       !!e && delete trackers.current.activePointers[e.pointerId]
     },
     [
-      controls.zoomLevel,
+      JSON.stringify(controls.touchState),
       trackers.current.oldPanChange.x,
       trackers.current.oldPanChange.y,
     ]
@@ -130,33 +139,30 @@ export const useTouch = <T = HTMLElement>({
    * Handles movement events to zoom or pan based on the number of pointers active.
    * @param {PointerEvent} event - The pointer event object.
    */
-  const move = useCallback(
-    (e: PointerEvent) => {
-      e.preventDefault()
-      const { activePointers, isPressed, oldPinchDist } = trackers.current
-      const pointerVals = Object.values(activePointers)
-      if (pointerVals?.length > 1) {
-        //User is pinching
-        if (Object.keys(activePointers)[1] !== String(e.pointerId)) return
-        activePointers[e.pointerId] = { pageX: e.pageX, pageY: e.pageY }
-        const xDist = pointerVals[0].pageX - pointerVals[1].pageX
-        const yDist = pointerVals[0].pageY - pointerVals[1].pageY
-        const pinchDist = Math.sqrt(xDist * xDist + yDist * yDist)
-        const zoomChange = oldPinchDist ? (oldPinchDist - pinchDist) / 3000 : 0
-        trackers.current.oldPinchDist = pinchDist
-        zoom(zoomChange)
-      } else if (isPressed) {
-        // User is dragging
-        const { oldPageX: oldX, oldPageY: oldY } = pointerVals[0]
-        const x = oldX ? e.pageX - oldX : 0
-        const y = oldY ? e.pageY - oldY : 0
-        pointerVals[0].oldPageX = e.pageX
-        pointerVals[0].oldPageY = e.pageY
-        pan({ x, y })
-      }
-    },
-    [controls.panLevel.x]
-  )
+  const move = useCallback((e: PointerEvent) => {
+    e.preventDefault()
+    const { activePointers, isPressed, oldPinchDist } = trackers.current
+    const pointerVals = Object.values(activePointers)
+    if (pointerVals?.length > 1) {
+      //User is pinching
+      if (Object.keys(activePointers)[1] !== String(e.pointerId)) return
+      activePointers[e.pointerId] = { pageX: e.pageX, pageY: e.pageY }
+      const xDist = pointerVals[0].pageX - pointerVals[1].pageX
+      const yDist = pointerVals[0].pageY - pointerVals[1].pageY
+      const pinchDist = Math.sqrt(xDist * xDist + yDist * yDist)
+      const zoomChange = oldPinchDist ? (oldPinchDist - pinchDist) / 3000 : 0
+      trackers.current.oldPinchDist = pinchDist
+      zoom(zoomChange)
+    } else if (isPressed) {
+      // User is dragging
+      const { oldPageX: oldX, oldPageY: oldY } = pointerVals[0]
+      const x = oldX ? e.pageX - oldX : 0
+      const y = oldY ? e.pageY - oldY : 0
+      pointerVals[0].oldPageX = e.pageX
+      pointerVals[0].oldPageY = e.pageY
+      pan({ x, y })
+    }
+  }, [])
 
   const throttledZoom = useCallback(throttle(zoom, 20), [zoom])
   const throttledMove = useCallback(throttle(move, 20), [move])
@@ -169,7 +175,7 @@ export const useTouch = <T = HTMLElement>({
   const pinch = useCallback(
     (e: WheelEvent) => {
       if (e.ctrlKey) {
-        throttledZoom(e.deltaY * 0.0003)
+        throttledZoom(e.deltaY * 0.0001)
       } else {
         throttledPan({ x: e.deltaY * 0.05, y: 0 })
       }

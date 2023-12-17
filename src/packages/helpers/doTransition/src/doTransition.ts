@@ -13,6 +13,7 @@ export const doTransition = ({
   endCallback,
   increments = 10,
   isGradual = true,
+  sensitivity = 1,
   interval = 15,
   intervalId = 'default',
 }: TransitionProps): (() => void) => {
@@ -25,7 +26,7 @@ export const doTransition = ({
 
   const newValues = values.map((oldValue, i) => {
     const distance = targets[i] - oldValue
-    if (Math.abs(distance) < 1) return targets[i]
+    if (Math.abs(distance) < sensitivity) return targets[i]
     isFinished = false
     return oldValue + distance / increments
   })
@@ -40,6 +41,7 @@ export const doTransition = ({
         endCallback,
         increments: increments - (isGradual ? 0 : 1),
         isGradual,
+        sensitivity,
         interval,
         intervalId,
       })
@@ -50,6 +52,10 @@ export const doTransition = ({
   }
 
   return clear
+}
+
+export const flushTransition = (intervalId: string = 'default') => {
+  clearTimeout(timeouts[intervalId])
 }
 
 export default doTransition

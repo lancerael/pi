@@ -23,10 +23,11 @@ export const useDataRange = (
   data: CandlestickDayData[],
   controls: ChartControls
 ): DataRange => {
-  const { panLevel, zoomLevel, period } = controls
-  const candleWidth = (CANDLE_WIDTH + CANDLE_WIDTH * CANDLE_PADDING) * zoomLevel
-  const perPage = Math.round(width / candleWidth) || 0
-  const lastItem = data[data.length - 1]
+  const {
+    touchState: { pan, zoom },
+    period,
+  } = controls
+  const lastItem = JSON.stringify(data[data.length - 1])
 
   // Get the data filtered by period (days/weeks/months)
   const thisData = useMemo(() => {
@@ -60,10 +61,15 @@ export const useDataRange = (
       })
     }
     return [EMPTY_ITEM, ...filteredData, EMPTY_ITEM]
-  }, [JSON.stringify(lastItem), period])
+  }, [lastItem, period])
 
-  const panExtent = candleWidth * (thisData.length - perPage)
-  const panX = Math.max(Math.min(panExtent, panLevel.x), 0)
+  const baseCandleWidth = CANDLE_WIDTH + CANDLE_WIDTH * CANDLE_PADDING
+  const zoomExtent = (1 / (baseCandleWidth * thisData.length)) * width
+  const candleWidth = baseCandleWidth * Math.max(zoom, zoomExtent)
+  const perPage = Math.round(width / candleWidth) || 0
+  const fullWidth = candleWidth * thisData.length
+  const panExtent = Math.round(fullWidth - candleWidth * perPage)
+  const panX = Math.max(Math.min(panExtent, pan.x), 0)
   const offset = Math.round(panX % candleWidth)
   const end = Math.round(thisData.length - (panX - offset) / candleWidth)
   const start = end - perPage

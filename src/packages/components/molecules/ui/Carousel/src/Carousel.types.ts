@@ -1,5 +1,5 @@
 import { TestId } from '@pi-lib/types'
-import { PanLevel } from '@pi-lib/use-touch'
+import { TouchState } from '@pi-lib/use-touch'
 import { Dispatch } from 'react'
 
 export interface CarouselProps extends TestId {
@@ -21,4 +21,4 @@ export interface CarouselProps extends TestId {
   speed?: number
 }
 
-export type CustomPanHandler = Dispatch<React.SetStateAction<PanLevel>>
+export type CustomPanHandler = Dispatch<React.SetStateAction<TouchState>>

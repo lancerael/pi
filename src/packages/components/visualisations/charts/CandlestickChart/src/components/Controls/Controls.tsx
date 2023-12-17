@@ -1,6 +1,6 @@
 import { ChangeEvent, useCallback, useEffect } from 'react'
 import Button from '@pi-lib/button'
-import doTransition from '@pi-lib/do-transition'
+import doTransition, { flushTransition } from '@pi-lib/do-transition'
 import Select from '@pi-lib/select'
 import { StyledControls, StyledEmoji } from './Controls.style'
 import { ControlsProps } from './Controls.types'
@@ -11,15 +11,9 @@ const zoomSpeed = 0.2
 const panSpeed = 250
 
 export const Controls = ({
-  controls: {
-    setPanLevel,
-    setZoomLevel,
-    setPeriod,
-    panLevel,
-    zoomLevel,
-    period,
-  },
+  controls: { setTouchState, touchState, setPeriod, period },
   dataRange: { start, end, length },
+  resetSelection,
 }: ControlsProps) => {
   const buttonStyle = {
     minWidth: 'auto',
@@ -28,49 +22,62 @@ export const Controls = ({
 
   const canPanBack = start > 0
   const canPanForward = end < length && end - start < length
-  const canZoomIn = zoomLevel < ZOOM_RANGE[1]
-  const canZoomOut = zoomLevel > ZOOM_RANGE[0]
+  const canZoomIn = touchState.zoom < ZOOM_RANGE[1]
+  const canZoomOut = touchState.zoom > ZOOM_RANGE[0]
+
+  const pan = useCallback(
+    (isForwards?: Boolean) => {
+      flushTransition('zoom')
+      flushTransition('pan')
+      resetSelection()
+      doTransition({
+        values: [touchState.pan.x],
+        targets: [touchState.pan.x + panSpeed * (isForwards ? -1 : 1)],
+        callback: ([x]) => {
+          setTouchState(({ zoom, pan }) => ({
+            zoom,
+            pan: { ...pan, x },
+          }))
+        },
+        intervalId: 'pan',
+      })
+    },
+    [touchState.pan.x]
+  )
+
+  const zoom = useCallback(
+    (isOut?: Boolean) => {
+      const newZoom = touchState.zoom + zoomSpeed * (isOut ? -1 : 1)
+      flushTransition('zoom')
+      flushTransition('pan')
+      resetSelection()
+      doTransition({
+        values: [touchState.zoom],
+        targets: [newZoom],
+        callback: ([zoom]) => setTouchState(({ pan }) => ({ pan, zoom })),
+        sensitivity: 0.001,
+        intervalId: 'zoom',
+      })
+    },
+    [touchState.pan.x, touchState.zoom]
+  )
 
   const panBack = useCallback(() => {
-    canPanBack &&
-      doTransition({
-        values: [panLevel.x],
-        targets: [panLevel.x + panSpeed],
-        callback: ([x]) => setPanLevel({ ...panLevel, x }),
-        intervalId: 'panBack',
-      })
-  }, [panLevel.x])
+    canPanBack && pan()
+  }, [touchState.pan.x])
 
   const panForward = useCallback(() => {
-    canPanForward &&
-      doTransition({
-        values: [panLevel.x],
-        targets: [panLevel.x - panSpeed],
-        callback: ([x]) => setPanLevel({ ...panLevel, x }),
-        intervalId: 'panForward',
-      })
-  }, [panLevel.x])
+    canPanForward && pan(true)
+  }, [touchState.pan.x])
 
   const zoomIn = useCallback(
-    () =>
-      canZoomIn &&
-      doTransition({
-        values: [zoomLevel],
-        targets: [zoomLevel + zoomSpeed],
-        callback: ([z]) => setZoomLevel(z),
-      }),
-    [zoomLevel]
+    () => canZoomIn && zoom(),
+    [touchState.pan.x, touchState.zoom]
   )
 
   const zoomOut = useCallback(
-    () =>
-      canZoomOut &&
-      doTransition({
-        values: [zoomLevel],
-        targets: [zoomLevel - zoomSpeed],
-        callback: ([z]) => setZoomLevel(z),
-      }),
-    [zoomLevel]
+    () => canZoomOut && zoom(true),
+    [touchState.pan.x, touchState.zoom]
   )
 
   useEffect(() => {
@@ -88,7 +95,7 @@ export const Controls = ({
 
     addEventListener('keydown', keyHandler)
     return () => removeEventListener('keydown', keyHandler)
-  }, [panLevel, zoomLevel])
+  }, [touchState.pan.x, touchState.zoom])
 
   return (
     <StyledControls>

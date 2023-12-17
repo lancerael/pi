@@ -24,6 +24,10 @@ export interface TransitionProps {
    */
   isGradual?: boolean
   /**
+   * The sensitivity of the success (lower values for more delicate transitions < 1)
+   */
+  sensitivity?: number
+  /**
    * The wait time between each increment
    */
   interval?: number

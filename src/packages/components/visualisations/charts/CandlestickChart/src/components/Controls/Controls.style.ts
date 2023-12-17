@@ -12,6 +12,7 @@ export const StyledControls = styled.div`
     margin: 4px;
     padding: 5px !important;
     height: auto;
+    user-select: none;
     ${box()}
     border: 1px solid ${({ theme }) => theme.colors?.border};
   }

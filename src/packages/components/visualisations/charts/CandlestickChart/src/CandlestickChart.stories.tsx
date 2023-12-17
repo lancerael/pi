@@ -4,7 +4,7 @@ import data from './mocks/data.json'
 
 const render = () => {
   return (
-    <div style={{ width: '80%', height: '40vw' }}>
+    <div style={{ margin: '2.5dvh 2.5dvw', width: '90dvw', height: '90dvh' }}>
       <CandlestickChart {...{ data }} />
     </div>
   )

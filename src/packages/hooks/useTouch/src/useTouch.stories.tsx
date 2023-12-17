@@ -19,27 +19,27 @@ const render = () => {
       [-2000, 2000],
     ],
   })
-  const { zoomLevel, panLevel } = controls
+  const { zoom, pan } = controls.touchState
   return (
     <div style={{ width: '100%', height: '500px', position: 'relative' }}>
       <div
         ref={targetRef}
         style={{
-          width: `${boxWidth * zoomLevel}px`,
-          height: `${boxWidth * zoomLevel}px`,
+          width: `${boxWidth * zoom}px`,
+          height: `${boxWidth * zoom}px`,
           borderRadius: '25%',
           transition: 'none',
           background: 'purple',
           cursor: 'pointer',
           position: 'absolute',
-          left: `${halfWidth + panLevel.x - zoomLevel * halfWidth}px`,
-          top: `${halfWidth + panLevel.y - zoomLevel * halfWidth}px`,
+          left: `${halfWidth + pan.x - zoom * halfWidth}px`,
+          top: `${halfWidth + pan.y - zoom * halfWidth}px`,
           color: 'white',
           textAlign: 'center',
           padding: `${padding}px`,
           boxSizing: 'border-box',
           userSelect: 'none',
-          fontSize: `${14 * zoomLevel}px`,
+          fontSize: `${14 * zoom}px`,
           touchAction: 'none',
         }}
       ></div>
