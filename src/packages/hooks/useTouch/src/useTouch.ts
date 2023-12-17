@@ -109,7 +109,7 @@ export const useTouch = <T = HTMLElement>({
           values,
           targets,
           callback: ([newX, newY]) => {
-            controls.setTouchState(({ zoom, pan }) => ({
+            controls.setTouchState(({ zoom }) => ({
               zoom,
               pan: {
                 x: newX,

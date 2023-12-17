@@ -37,16 +37,18 @@ describe('useTouch Hook', () => {
   let controls: TouchControls
 
   beforeEach(() => {
-    controls = {
-      touchState: {
-        pan: {
-          x: 0,
-          y: 0,
-        },
-        zoom: 1,
+    touchState = {
+      pan: {
+        x: 0,
+        y: 0,
       },
+      zoom: 1,
+    }
+    controls = {
+      touchState,
       setTouchState: (setter: any) => {
         touchState = setter(touchState)
+        console.log(touchState)
       },
     }
     target = document.createElement('div')

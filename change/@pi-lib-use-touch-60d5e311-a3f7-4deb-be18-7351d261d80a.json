@@ -1,0 +1,7 @@
+{
+  "type": "major",
+  "comment": "Merged zoom/pan touch controls",
+  "packageName": "@pi-lib/use-touch",
+  "email": "lancerael@googlemail.com",
+  "dependentChangeType": "patch"
+}
