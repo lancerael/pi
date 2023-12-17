@@ -2,6 +2,21 @@
   "name": "@pi-lib/candlestick-chart",
   "entries": [
     {
+      "date": "Sun, 17 Dec 2023 15:42:19 GMT",
+      "tag": "@pi-lib/candlestick-chart_v2.12.0",
+      "version": "2.12.0",
+      "comments": {
+        "minor": [
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/candlestick-chart",
+            "commit": "2cbc32d1c50b1598b0640744e6e4809c79864516",
+            "comment": "Merged zoom/pan touch controls"
+          }
+        ]
+      }
+    },
+    {
       "date": "Thu, 14 Dec 2023 21:24:52 GMT",
       "tag": "@pi-lib/candlestick-chart_v2.11.0",
       "version": "2.11.0",

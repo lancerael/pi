@@ -2,6 +2,21 @@
   "name": "@pi-lib/carousel",
   "entries": [
     {
+      "date": "Sun, 17 Dec 2023 15:42:19 GMT",
+      "tag": "@pi-lib/carousel_v2.1.0",
+      "version": "2.1.0",
+      "comments": {
+        "minor": [
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/carousel",
+            "commit": "2cbc32d1c50b1598b0640744e6e4809c79864516",
+            "comment": "Merged zoom/pan touch controls"
+          }
+        ]
+      }
+    },
+    {
       "date": "Tue, 12 Dec 2023 18:34:30 GMT",
       "tag": "@pi-lib/carousel_v2.0.14",
       "version": "2.0.14",

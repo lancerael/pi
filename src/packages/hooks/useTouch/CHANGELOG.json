@@ -2,6 +2,21 @@
   "name": "@pi-lib/use-touch",
   "entries": [
     {
+      "date": "Sun, 17 Dec 2023 15:42:19 GMT",
+      "tag": "@pi-lib/use-touch_v2.0.0",
+      "version": "2.0.0",
+      "comments": {
+        "major": [
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/use-touch",
+            "commit": "2cbc32d1c50b1598b0640744e6e4809c79864516",
+            "comment": "Merged zoom/pan touch controls"
+          }
+        ]
+      }
+    },
+    {
       "date": "Thu, 14 Dec 2023 00:32:19 GMT",
       "tag": "@pi-lib/use-touch_v1.3.13",
       "version": "1.3.13",

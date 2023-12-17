@@ -1,8 +1,16 @@
 # Change Log - @pi-lib/use-touch
 
-This log was last generated on Thu, 14 Dec 2023 00:32:19 GMT and should not be manually modified.
+This log was last generated on Sun, 17 Dec 2023 15:42:19 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 2.0.0
+
+Sun, 17 Dec 2023 15:42:19 GMT
+
+### Major changes
+
+- Merged zoom/pan touch controls (lancerael@googlemail.com)
 
 ## 1.3.13
 

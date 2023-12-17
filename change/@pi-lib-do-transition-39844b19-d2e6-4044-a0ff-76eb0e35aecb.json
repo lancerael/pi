@@ -1,7 +1,0 @@
-{
-  "type": "minor",
-  "comment": "Added ability to flush transition",
-  "packageName": "@pi-lib/do-transition",
-  "email": "lancerael@googlemail.com",
-  "dependentChangeType": "patch"
-}

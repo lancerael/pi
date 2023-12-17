@@ -1,8 +1,16 @@
 # Change Log - @pi-lib/do-transition
 
-This log was last generated on Tue, 12 Dec 2023 18:34:30 GMT and should not be manually modified.
+This log was last generated on Sun, 17 Dec 2023 15:42:19 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 1.1.0
+
+Sun, 17 Dec 2023 15:42:19 GMT
+
+### Minor changes
+
+- Added ability to flush transition (lancerael@googlemail.com)
 
 ## 1.0.3
 

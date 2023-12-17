@@ -2,6 +2,21 @@
   "name": "@pi-lib/do-transition",
   "entries": [
     {
+      "date": "Sun, 17 Dec 2023 15:42:19 GMT",
+      "tag": "@pi-lib/do-transition_v1.1.0",
+      "version": "1.1.0",
+      "comments": {
+        "minor": [
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/do-transition",
+            "commit": "2cbc32d1c50b1598b0640744e6e4809c79864516",
+            "comment": "Added ability to flush transition"
+          }
+        ]
+      }
+    },
+    {
       "date": "Tue, 12 Dec 2023 18:34:30 GMT",
       "tag": "@pi-lib/do-transition_v1.0.3",
       "version": "1.0.3",
