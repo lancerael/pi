@@ -1,4 +1,4 @@
-import { PanLevel, TouchControls } from './hooks/useControls'
+import { Coords, SimpleTouchState, TouchControls } from './hooks/useControls'
 
 export type PanRange = [NumberRange, NumberRange]
 
@@ -15,6 +15,10 @@ export interface UseTouchProps<T> {
    */
   controls: TouchControls
   /**
+   * The central point to zoom from for a zoom offset
+   */
+  zoomCenter?: NumberRange
+  /**
    * The range of allowable zoom levels..
    */
   zoomRange?: NumberRange
@@ -22,6 +26,14 @@ export interface UseTouchProps<T> {
    * The range of allowable pan levels for both x and y axis.
    */
   panRange?: PanRange
+  /**
+   * A custom operation to run when updating the state
+   */
+  modifier?: (modifierVal: SimpleTouchState) => SimpleTouchState
+  /**
+   * If the UI is a scroller, we offset the center when zooming
+   */
+  isScroller?: boolean
   /**
    * An optional callback function to reset the state.
    */
@@ -47,7 +59,7 @@ export interface Trackers {
   /**
    * The previous pan change level.
    */
-  oldPanChange: PanLevel
+  oldPanChange: Coords
   /**
    * The active pointers with their pageX and pageY values, as well as previous values.
    */
@@ -61,6 +73,13 @@ export interface Trackers {
    * Function to clear the transition.
    */
   clearTransition: () => void
+  /**
+   * Ranges for the extennd of the zoom and pan
+   */
+  ranges: {
+    panRange?: PanRange
+    zoomRange: NumberRange
+  }
 }
 
 /**

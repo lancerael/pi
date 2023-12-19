@@ -135,12 +135,7 @@ export const useCandles = (
       const y2 = (d: CandlestickDayData) => y(d) + height(d)
 
       const activateItem = (d: CandlestickDayData, candle: SVGRectElement) => {
-        const { x, y, width, height } = getAttributes(candle, [
-          'x',
-          'y',
-          'width',
-          'height',
-        ])
+        const { x, y, height } = getAttributes(candle, ['x', 'y', 'height'])
         setActiveItem({
           item: d,
           position: {

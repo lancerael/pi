@@ -7,11 +7,11 @@ import { ControlsProps } from './Controls.types'
 import { ZOOM_RANGE } from '../../CandlestickChart.constants'
 import { ChartControls } from '../../CandlestickChart.types'
 
-const zoomSpeed = 0.2
+const zoomSpeed = 0.3
 const panSpeed = 250
 
 export const Controls = ({
-  controls: { setTouchState, touchState, setPeriod, period },
+  controls: { setTouchState, touchState, touchStateSignal, setPeriod, period },
   dataRange: { start, end, length },
   resetSelection,
 }: ControlsProps) => {
@@ -34,10 +34,7 @@ export const Controls = ({
         values: [touchState.pan.x],
         targets: [touchState.pan.x + panSpeed * (isForwards ? -1 : 1)],
         callback: ([x]) => {
-          setTouchState(({ zoom, pan }) => ({
-            zoom,
-            pan: { ...pan, x },
-          }))
+          setTouchState({ pan: { y: touchStateSignal.value.pan.y, x } })
         },
         intervalId: 'pan',
       })
@@ -47,14 +44,14 @@ export const Controls = ({
 
   const zoom = useCallback(
     (isOut?: Boolean) => {
-      const newZoom = touchState.zoom + zoomSpeed * (isOut ? -1 : 1)
+      const newZoom = touchStateSignal.value.zoom + zoomSpeed * (isOut ? -1 : 1)
       flushTransition('zoom')
       flushTransition('pan')
       resetSelection()
       doTransition({
         values: [touchState.zoom],
         targets: [newZoom],
-        callback: ([zoom]) => setTouchState(({ pan }) => ({ pan, zoom })),
+        callback: ([zoom]) => setTouchState({ zoom }),
         sensitivity: 0.001,
         intervalId: 'zoom',
       })

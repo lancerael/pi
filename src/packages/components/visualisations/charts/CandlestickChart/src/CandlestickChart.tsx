@@ -45,10 +45,14 @@ export const CandlestickChart = ({ data = [] }: CandlestickChartProps) => {
   useTouch<SVGSVGElement>({
     targetRef: svgRef,
     controls,
+    isScroller: true,
     zoomRange: ZOOM_RANGE,
     panRange: dataRange.panExtent
       ? [
-          [0, dataRange.panExtent],
+          [
+            controls.touchState.zoomOffset.x,
+            dataRange.panExtent - controls.touchState.zoomOffset.x,
+          ],
           [0, 0],
         ]
       : undefined,

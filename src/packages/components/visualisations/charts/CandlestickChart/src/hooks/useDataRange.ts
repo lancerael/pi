@@ -24,7 +24,7 @@ export const useDataRange = (
   controls: ChartControls
 ): DataRange => {
   const {
-    touchState: { pan, zoom },
+    touchState: { pan, zoom, zoomOffset },
     period,
   } = controls
   const lastItem = JSON.stringify(data[data.length - 1])
@@ -63,19 +63,30 @@ export const useDataRange = (
     return [EMPTY_ITEM, ...filteredData, EMPTY_ITEM]
   }, [lastItem, period])
 
+  // const centerX = zoomCenter.x + pan.x
+  // const zoomOffset = 0 //centerX - centerX * zoom
   const baseCandleWidth = CANDLE_WIDTH + CANDLE_WIDTH * CANDLE_PADDING
   const zoomExtent = (1 / (baseCandleWidth * thisData.length)) * width
   const candleWidth = baseCandleWidth * Math.max(zoom, zoomExtent)
   const perPage = Math.round(width / candleWidth) || 0
   const fullWidth = candleWidth * thisData.length
   const panExtent = Math.round(fullWidth - candleWidth * perPage)
-  const panX = Math.max(Math.min(panExtent, pan.x), 0)
+  const panX = Math.max(Math.min(panExtent, pan.x - zoomOffset.x), 0)
   const offset = Math.round(panX % candleWidth)
   const end = Math.round(thisData.length - (panX - offset) / candleWidth)
   const start = end - perPage
 
   // Slice the data that is visible
   const dataSlice = thisData.slice(start, end)
+
+  // console.log(
+  //   panX,
+  //   pan.x,
+  //   Math.min(panExtent, pan.x),
+  //   0 + zoomOffset,
+  //   Math.max(Math.min(panExtent, pan.x), 0 + zoomOffset),
+  //   Math.max(Math.min(panExtent, pan.x), 0 + zoomOffset) - zoomOffset
+  // )
 
   // Set the min and max values for the Y axis
   const min = Math.min(

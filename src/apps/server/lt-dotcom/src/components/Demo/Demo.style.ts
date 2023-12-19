@@ -72,3 +72,9 @@ export const StyledLinkWrapper = styled.div`
     padding: 1rem 0;
   }
 `
+
+export const StyledChart = styled.div`
+  @media (max-width: 640px) {
+    min-height: 250px;
+  }
+`

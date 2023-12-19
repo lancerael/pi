@@ -1,14 +1,20 @@
 import Card from '@pi-lib/card'
 import Link from '@pi-lib/link'
-import { StyledImages, StyledLinkWrapper } from './Demo.style'
+import { StyledChart, StyledLinkWrapper } from './Demo.style'
 import PageSection from '../PageSection'
 import Grid from '@pi-lib/grid'
+import { useFakeApi } from '@pi-lib/candlestick-chart/src/hooks'
+import CandlestickChart from '@pi-lib/candlestick-chart'
 
 export const Demo = () => {
+  const chartData = useFakeApi()
   return (
     <PageSection title={'Open Source'}>
-      <Card title="Tech Demo" subTitle="JavaScript tools and libraries">
-        <Grid>
+      <Grid>
+        <StyledChart>
+          <CandlestickChart data={chartData} />
+        </StyledChart>
+        <Card title="Tech Demo" subTitle="JavaScript tools and libraries">
           <div
             style={{
               marginTop: '1rem',
@@ -18,10 +24,9 @@ export const Demo = () => {
             }}
           >
             <div>
-              <strong>Pi Charts</strong> - <em>JS Charting</em>
-            </div>
-            <div>
-              <strong>Pi Lib</strong> - <em>React Components</em>
+              The candlestick chart, touch controls and other components seen
+              here are from my own library. Visit the sandbox to see more
+              examples, theming and other customisations.
             </div>
             <StyledLinkWrapper>
               <Link
@@ -29,19 +34,14 @@ export const Demo = () => {
                 href="http://demo.lance-taylor.com"
                 isMain
                 isExternal
-                title="Link to the Pi tech demo"
+                title="Link to the Pi tech demo sandbox"
               >
-                Click for Demo
+                Sandbox Demo
               </Link>
             </StyledLinkWrapper>
           </div>
-          <StyledImages>
-            <img src="/demo1.png" alt="Demo 1 diagram" />
-            <img src="/demo2.png" alt="Demo 2 diagram" />
-            <img src="/demo3.png" alt="Demo 3 diagram" />
-          </StyledImages>
-        </Grid>
-      </Card>
+        </Card>
+      </Grid>
     </PageSection>
   )
 }
