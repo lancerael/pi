@@ -21,31 +21,29 @@ const render = () => {
   })
   const { zoom, panWithOffset } = controls.touchStateSignal.value
   return (
-    <>
-      <div style={{ width: '100%', height: '500px', position: 'relative' }}>
-        <div
-          ref={targetRef}
-          style={{
-            width: `${boxWidth * zoom}px`,
-            height: `${boxWidth * zoom}px`,
-            borderRadius: '25%',
-            transition: 'none',
-            background: 'purple',
-            cursor: 'pointer',
-            position: 'absolute',
-            left: `${panWithOffset.x}px`,
-            top: `${panWithOffset.y}px`,
-            color: 'white',
-            textAlign: 'center',
-            padding: `${padding}px`,
-            boxSizing: 'border-box',
-            userSelect: 'none',
-            fontSize: `${14 * zoom}px`,
-            touchAction: 'none',
-          }}
-        ></div>
-      </div>
-    </>
+    <div style={{ width: '100%', height: '500px', position: 'relative' }}>
+      <div
+        ref={targetRef}
+        style={{
+          width: `${boxWidth * zoom}px`,
+          height: `${boxWidth * zoom}px`,
+          borderRadius: '25%',
+          transition: 'none',
+          background: 'purple',
+          cursor: 'pointer',
+          position: 'absolute',
+          left: `${panWithOffset.x}px`,
+          top: `${panWithOffset.y}px`,
+          color: 'white',
+          textAlign: 'center',
+          padding: `${padding}px`,
+          boxSizing: 'border-box',
+          userSelect: 'none',
+          fontSize: `${14 * zoom}px`,
+          touchAction: 'none',
+        }}
+      ></div>
+    </div>
   )
 }
 

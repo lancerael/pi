@@ -4,7 +4,7 @@
 
 A spacefaring scene that takes you through the stars.
 
-**Peer Dependencies:** @pi-lib/do-transition, @pi-lib/styles, @pi-lib/use-limited-events, @pi-lib/utils, @preact/signals-react, react, styled-components
+**Peer Dependencies:** @pi-lib/do-transition, @pi-lib/styles, @pi-lib/use-limited-events, @pi-lib/utils, react, styled-components
 
 <table>
   <tbody>

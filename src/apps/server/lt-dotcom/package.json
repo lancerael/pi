@@ -9,7 +9,6 @@
     "start": "next start"
   },
   "dependencies": {
-    "@pi-lib/candlestick-chart": "workspace:^",
     "@pi-lib/card": "workspace:^",
     "@pi-lib/carousel": "workspace:^",
     "@pi-lib/constants": "workspace:^",
