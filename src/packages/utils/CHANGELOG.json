@@ -2,6 +2,21 @@
   "name": "@pi-lib/utils",
   "entries": [
     {
+      "date": "Wed, 20 Dec 2023 02:00:28 GMT",
+      "tag": "@pi-lib/utils_v7.1.0",
+      "version": "7.1.0",
+      "comments": {
+        "minor": [
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/utils",
+            "commit": "ef4c95afdeca7bafeb78ef4619cc856c32fb5eea",
+            "comment": "Added randomiser helpers"
+          }
+        ]
+      }
+    },
+    {
       "date": "Tue, 12 Dec 2023 18:34:30 GMT",
       "tag": "@pi-lib/utils_v7.0.1",
       "version": "7.0.1",
