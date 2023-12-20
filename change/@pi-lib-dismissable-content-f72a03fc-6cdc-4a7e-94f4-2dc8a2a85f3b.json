@@ -1,0 +1,7 @@
+{
+  "type": "minor",
+  "comment": "style tweaks",
+  "packageName": "@pi-lib/dismissable-content",
+  "email": "lancerael@googlemail.com",
+  "dependentChangeType": "patch"
+}
