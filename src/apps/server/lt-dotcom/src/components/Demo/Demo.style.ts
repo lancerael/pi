@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const StyledImages = styled.div`
   position: relative;
   min-height: 45vw;
-  margin-top: 2rem;
+  margin-top: 3rem;
 
   @media (min-width: 640px) {
     min-height: 16vw;
