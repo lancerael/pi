@@ -92,7 +92,10 @@ export const useCandles = (
 
   // Clear the tooltip selection on window resize or click
   const resetSelection = useCallback((e?: UIEvent) => {
-    if (!e || (e?.target as SVGElement)?.nodeName !== 'rect') {
+    if (
+      !e ||
+      ((e?.target as SVGElement)?.nodeName !== 'rect' && !!activeItem.item)
+    ) {
       selectedItem.current = undefined
       setActiveItem(() => ({}))
     }

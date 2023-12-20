@@ -9,7 +9,8 @@
     "organisms",
     "chart",
     "charts",
-    "axis"
+    "axis",
+    "visualisations"
   ],
   "homepage": "https://pi.lance-taylor.com/?path=/story/visualisations-charts-axischart",
   "repository": {

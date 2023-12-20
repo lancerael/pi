@@ -2039,6 +2039,9 @@ importers:
       '@pi-lib/do-transition':
         specifier: workspace:^
         version: link:../../helpers/doTransition
+      '@pi-lib/use-limited-events':
+        specifier: workspace:^
+        version: link:../useLimitedEvents
       '@pi-lib/utils':
         specifier: workspace:^
         version: link:../../utils

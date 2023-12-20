@@ -43,14 +43,13 @@ describe('useTouch Hook', () => {
         y: 0,
       },
       zoom: 1,
-    }
+    } as TouchState
     controls = {
       touchState,
       setTouchState: (setter: any) => {
         touchState = setter(touchState)
-        console.log(touchState)
       },
-    }
+    } as TouchControls
     target = document.createElement('div')
     document.body.appendChild(target)
     targetRef = { current: target }

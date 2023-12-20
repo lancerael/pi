@@ -10,14 +10,19 @@ import { randomString } from '@pi-lib/utils'
 import { useEffect, useRef } from 'react'
 
 /**
+ * Is the code running in a client environment
+ */
+export const IS_CLIENT = typeof window !== 'undefined' && window.matchMedia
+
+/**
  * The scaffold for a new signal
  */
 const basicState: TouchState = {
   pan: { x: 0, y: 0 },
   zoom: 1,
-  zoomCenter: { x: 0, y: 0 },
   zoomOffset: { x: 0, y: 0 },
   panWithOffset: { x: 0, y: 0 },
+  sizes: { width: 0, height: 0 },
 }
 
 /**
@@ -41,34 +46,41 @@ const addSignal = (id: string) => {
  * @returns {TouchControls} - An object containing the current pan and zoom state,
  * and the corresponding state setter function.
  */
-export const useControls = (): TouchControls => {
-  const touchIdRef = useRef(randomString())
+export const useControls = (
+  isScroller?: boolean,
+  id: string = randomString()
+): TouchControls => {
+  const touchIdRef = useRef(id)
   const targetId = touchIdRef.current
   if (!touchStateSignals[targetId]) addSignal(targetId)
   const touchState = useSignalValue(touchStateSignals[targetId])
-  const signal = touchStateSignals[targetId]
 
   const setTouchState = ({
-    zoom = signal.value.zoom,
-    pan = { ...signal.value.pan },
-    zoomCenter = { ...signal.value.zoomCenter },
+    zoom = touchStateSignals[targetId]?.value.zoom,
+    pan = { ...touchStateSignals[targetId]?.value.pan },
+    sizes = { ...touchStateSignals[targetId]?.value.sizes },
     modifier = (state: SimpleTouchState) => state,
   }: TouchOptions) => {
-    const { x: centerX, y: centerY } = zoomCenter
-    const zoomOffset = {
-      x: centerX - centerX * zoom,
-      y: centerY - centerY * zoom,
+    if (!IS_CLIENT || !touchStateSignals[targetId]) return
+    const zoomCenter = {
+      x: sizes.width / 2 + (isScroller ? pan.x : 0),
+      y: sizes.height / 2 + (isScroller ? pan.y : 0),
     }
+    const zoomOffset = {
+      x: zoomCenter.x - zoomCenter.x * zoom,
+      y: zoomCenter.y - zoomCenter.y * zoom,
+    }
+    const modifiedValues = modifier({
+      zoom,
+      pan,
+    })
     touchStateSignals[targetId].value = {
-      ...modifier({
-        zoom,
-        pan,
-      }),
-      zoomCenter,
+      ...modifiedValues,
+      sizes,
       zoomOffset,
       panWithOffset: {
-        x: pan.x + zoomOffset.x,
-        y: pan.y + zoomOffset.y,
+        x: modifiedValues.pan.x + zoomOffset.x,
+        y: modifiedValues.pan.y + zoomOffset.y,
       },
     }
   }

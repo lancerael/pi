@@ -4,7 +4,8 @@
   "description": "A shimmering text ticker animation.",
   "keywords": [
     "pi",
-    "react"
+    "react",
+    "visualisations"
   ],
   "homepage": "https://pi.lance-taylor.com/?path=/story/visualisations-text-shimmer",
   "repository": {

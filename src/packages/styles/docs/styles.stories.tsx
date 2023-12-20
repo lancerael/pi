@@ -52,57 +52,57 @@ const meta: Meta<typeof StyleDemo> = {
 export default meta
 
 /* generated content below */
+    
+    export const Andro: StoryObj<typeof StyleDemo> = {
+      args: {
+        themeName: 'andro',
+      },
+    }
 
-export const Andro: StoryObj<typeof StyleDemo> = {
-  args: {
-    themeName: 'andro',
-  },
-}
+    export const Avocado: StoryObj<typeof StyleDemo> = {
+      args: {
+        themeName: 'avocado',
+      },
+    }
 
-export const Avocado: StoryObj<typeof StyleDemo> = {
-  args: {
-    themeName: 'avocado',
-  },
-}
+    export const Candy: StoryObj<typeof StyleDemo> = {
+      args: {
+        themeName: 'candy',
+      },
+    }
 
-export const Candy: StoryObj<typeof StyleDemo> = {
-  args: {
-    themeName: 'candy',
-  },
-}
+    export const Earth: StoryObj<typeof StyleDemo> = {
+      args: {
+        themeName: 'earth',
+      },
+    }
 
-export const Earth: StoryObj<typeof StyleDemo> = {
-  args: {
-    themeName: 'earth',
-  },
-}
+    export const Electron: StoryObj<typeof StyleDemo> = {
+      args: {
+        themeName: 'electron',
+      },
+    }
 
-export const Electron: StoryObj<typeof StyleDemo> = {
-  args: {
-    themeName: 'electron',
-  },
-}
+    export const Pebble: StoryObj<typeof StyleDemo> = {
+      args: {
+        themeName: 'pebble',
+      },
+    }
 
-export const Pebble: StoryObj<typeof StyleDemo> = {
-  args: {
-    themeName: 'pebble',
-  },
-}
+    export const Retro: StoryObj<typeof StyleDemo> = {
+      args: {
+        themeName: 'retro',
+      },
+    }
 
-export const Retro: StoryObj<typeof StyleDemo> = {
-  args: {
-    themeName: 'retro',
-  },
-}
+    export const Rose: StoryObj<typeof StyleDemo> = {
+      args: {
+        themeName: 'rose',
+      },
+    }
 
-export const Rose: StoryObj<typeof StyleDemo> = {
-  args: {
-    themeName: 'rose',
-  },
-}
-
-export const Stellar: StoryObj<typeof StyleDemo> = {
-  args: {
-    themeName: 'stellar',
-  },
-}
+    export const Stellar: StoryObj<typeof StyleDemo> = {
+      args: {
+        themeName: 'stellar',
+      },
+    }

@@ -15,3 +15,4 @@ A React component for a page blocking loader
     </tr>
   </tbody>
 </table>
+

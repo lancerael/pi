@@ -15,3 +15,4 @@ An icon component with a selection of icons
     </tr>
   </tbody>
 </table>
+

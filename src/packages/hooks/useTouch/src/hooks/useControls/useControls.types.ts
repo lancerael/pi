@@ -28,10 +28,6 @@ export interface TouchState {
    */
   zoom: number
   /**
-   * The center of the zoom target
-   */
-  zoomCenter: Coords
-  /**
    * Pan offset based on the zoom level
    */
   zoomOffset: Coords
@@ -39,6 +35,10 @@ export interface TouchState {
    * Pan coords with the offset applied
    */
   panWithOffset: Coords
+  /**
+   * Sizes for the ocntainer to calculate offset
+   */
+  sizes: Sizes
 }
 
 export interface TouchOptions
@@ -47,6 +47,10 @@ export interface TouchOptions
    * The modifier for updating the touch values - like middleware
    */
   modifier?: (modifierVal: SimpleTouchState) => SimpleTouchState
+  /**
+   * If the interface is a scroller, we offset the center
+   */
+  isScroller?: boolean
 }
 
 /**
@@ -61,6 +65,20 @@ export interface Coords {
    * The value on the y-axis.
    */
   y: number
+}
+
+/**
+ * The combination of width and height
+ */
+export interface Sizes {
+  /**
+   * The width
+   */
+  width: number
+  /**
+   * The height
+   */
+  height: number
 }
 
 export type SimpleTouchState = Pick<TouchState, 'pan' | 'zoom'>

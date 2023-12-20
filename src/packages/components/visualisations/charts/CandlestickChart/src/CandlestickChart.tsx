@@ -21,16 +21,20 @@ import {
 } from './components'
 import Loader from '@pi-lib/loader'
 import { ZOOM_RANGE } from './CandlestickChart.constants'
-import { useTouch } from '@pi-lib/use-touch'
+import { PanRange, useTouch } from '@pi-lib/use-touch'
 import { flushTransition } from '@pi-lib/do-transition'
 
 /**
  * A candlestick chart React component used to show the movement of traded assets over time.
  */
-export const CandlestickChart = ({ data = [] }: CandlestickChartProps) => {
+export const CandlestickChart = ({ data = [], id }: CandlestickChartProps) => {
   const svgRef = useRef<SVGSVGElement>(null)
   const containerRef = useRef<HTMLDivElement>(null)
-  const controls = useChartControls()
+  const panRange = useRef<PanRange>([
+    [0, 0],
+    [0, 0],
+  ])
+  const controls = useChartControls(id)
   const sizes = useSizes(svgRef, containerRef)
   const dataRange = useDataRange(sizes.width, data, controls)
   const scales = useScales(sizes, dataRange)
@@ -42,20 +46,22 @@ export const CandlestickChart = ({ data = [] }: CandlestickChartProps) => {
     scales
   )
 
+  if (dataRange.panExtent) {
+    panRange.current = [
+      [
+        controls.touchState.zoomOffset.x,
+        dataRange.panExtent + controls.touchState.zoomOffset.x,
+      ],
+      [0, 0],
+    ]
+  }
+
   useTouch<SVGSVGElement>({
     targetRef: svgRef,
     controls,
     isScroller: true,
     zoomRange: ZOOM_RANGE,
-    panRange: dataRange.panExtent
-      ? [
-          [
-            controls.touchState.zoomOffset.x,
-            dataRange.panExtent - controls.touchState.zoomOffset.x,
-          ],
-          [0, 0],
-        ]
-      : undefined,
+    panRange: panRange.current,
     resetCallback: () => {
       resetSelection()
       flushTransition('zoom')
@@ -70,7 +76,7 @@ export const CandlestickChart = ({ data = [] }: CandlestickChartProps) => {
           <Loader isLarge />
         </StyledLoaderContainer>
       ) : (
-        <Controls {...{ resetSelection, controls, dataRange }} />
+        <Controls {...{ resetSelection, controls, dataRange, panRange }} />
       )}
       <StyledCandlestickChart ref={svgRef} $isVisible={!!data?.length}>
         <ClipPaths {...sizes} />

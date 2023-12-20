@@ -2,6 +2,8 @@
 
 **@pi-lib/carousel**
 
+
+
 **Peer Dependencies:** @pi-lib/styles, @pi-lib/use-limited-events, @pi-lib/use-touch, @pi-lib/utils, react, styled-components
 
 <table>
@@ -13,3 +15,4 @@
     </tr>
   </tbody>
 </table>
+

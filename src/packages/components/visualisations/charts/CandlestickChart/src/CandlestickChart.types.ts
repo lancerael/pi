@@ -4,6 +4,7 @@ import { CandleTooltipProps } from './components/CandleTooltip/CandleTooltip.typ
 import { Transition } from 'd3-transition'
 import { FILTER_PERIOD_MAP } from './CandlestickChart.constants'
 import { TouchControls } from '@pi-lib/use-touch'
+import { AxisScale } from 'd3-axis'
 
 /**
  * The individual items in the array of chart data
@@ -40,6 +41,10 @@ export interface CandlestickChartProps {
    *
    */
   data?: CandlestickDayData[]
+  /**
+   * An optional ID for the chart - needed for SSR
+   */
+  id?: string
 }
 
 /**
@@ -114,7 +119,7 @@ export type BarSelection = Selection<
  */
 export interface Scales {
   xScale: ScaleBand<string>
-  yScale: (y: number) => number
+  yScale: AxisScale<number>
 }
 
 /**

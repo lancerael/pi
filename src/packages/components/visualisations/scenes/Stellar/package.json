@@ -4,7 +4,8 @@
   "description": "A spacefaring scene that takes you through the stars.",
   "keywords": [
     "pi",
-    "react"
+    "react",
+    "visualisations"
   ],
   "homepage": "https://pi.lance-taylor.com/?path=/story/visualisations-scenes-shimmer",
   "repository": {

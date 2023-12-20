@@ -11,8 +11,6 @@ describe('getAltColors', () => {
       Object.keys(baseColors).length * 6
     )
 
-    console.log(altColors)
-
     // Check specific alternative versions
     assert.equal(altColors.primary, '#3498db')
     assert.equal(altColors.primaryA, 'rgba(52, 152, 219, 0.5)')

@@ -77,9 +77,13 @@ export interface Trackers {
    * Ranges for the extennd of the zoom and pan
    */
   ranges: {
-    panRange?: PanRange
+    panRange: PanRange
     zoomRange: NumberRange
   }
+  /**
+   * Track the controls so we always have access to the latest value
+   */
+  controls: SimpleTouchState
 }
 
 /**

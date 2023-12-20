@@ -25,57 +25,61 @@ export const Controls = ({
   const canZoomIn = touchState.zoom < ZOOM_RANGE[1]
   const canZoomOut = touchState.zoom > ZOOM_RANGE[0]
 
+  const {
+    zoom: zoomLevel,
+    pan: { x, y },
+  } = touchStateSignal.value
+
   const pan = useCallback(
     (isForwards?: Boolean) => {
       flushTransition('zoom')
       flushTransition('pan')
       resetSelection()
       doTransition({
-        values: [touchState.pan.x],
-        targets: [touchState.pan.x + panSpeed * (isForwards ? -1 : 1)],
+        values: [x],
+        targets: [x + panSpeed * (isForwards ? -1 : 1)],
         callback: ([x]) => {
-          setTouchState({ pan: { y: touchStateSignal.value.pan.y, x } })
+          setTouchState({
+            pan: { y, x },
+          })
         },
         intervalId: 'pan',
       })
     },
-    [touchState.pan.x]
+    [x]
   )
 
   const zoom = useCallback(
     (isOut?: Boolean) => {
-      const newZoom = touchStateSignal.value.zoom + zoomSpeed * (isOut ? -1 : 1)
+      const factor = isOut ? 1 / (1 + zoomSpeed) : 1 + zoomSpeed
       flushTransition('zoom')
       flushTransition('pan')
       resetSelection()
       doTransition({
-        values: [touchState.zoom],
-        targets: [newZoom],
-        callback: ([zoom]) => setTouchState({ zoom }),
-        sensitivity: 0.001,
+        values: [zoomLevel],
+        targets: [zoomLevel * factor],
+        callback: ([zoom]) => {
+          setTouchState({ zoom })
+        },
+        sensitivity: 0.0001,
         intervalId: 'zoom',
+        isGradual: false,
       })
     },
-    [touchState.pan.x, touchState.zoom]
+    [x, zoomLevel]
   )
 
   const panBack = useCallback(() => {
     canPanBack && pan()
-  }, [touchState.pan.x])
+  }, [x, canPanBack])
 
   const panForward = useCallback(() => {
     canPanForward && pan(true)
-  }, [touchState.pan.x])
+  }, [x, canPanForward])
 
-  const zoomIn = useCallback(
-    () => canZoomIn && zoom(),
-    [touchState.pan.x, touchState.zoom]
-  )
+  const zoomIn = useCallback(() => canZoomIn && zoom(), [x, zoomLevel])
 
-  const zoomOut = useCallback(
-    () => canZoomOut && zoom(true),
-    [touchState.pan.x, touchState.zoom]
-  )
+  const zoomOut = useCallback(() => canZoomOut && zoom(true), [x, zoomLevel])
 
   useEffect(() => {
     const keyHandler = ({ key }: { key: string }) => {
@@ -92,7 +96,7 @@ export const Controls = ({
 
     addEventListener('keydown', keyHandler)
     return () => removeEventListener('keydown', keyHandler)
-  }, [touchState.pan.x, touchState.zoom])
+  }, [x, zoomLevel])
 
   return (
     <StyledControls>
