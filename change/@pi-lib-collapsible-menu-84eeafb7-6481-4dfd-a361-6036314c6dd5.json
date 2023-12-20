@@ -1,7 +1,0 @@
-{
-  "type": "minor",
-  "comment": "style tweaks",
-  "packageName": "@pi-lib/collapsible-menu",
-  "email": "lancerael@googlemail.com",
-  "dependentChangeType": "patch"
-}

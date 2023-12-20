@@ -1,8 +1,16 @@
 # Change Log - @pi-lib/collapsible-menu
 
-This log was last generated on Thu, 14 Dec 2023 00:32:19 GMT and should not be manually modified.
+This log was last generated on Wed, 20 Dec 2023 16:05:01 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 1.2.0
+
+Wed, 20 Dec 2023 16:05:01 GMT
+
+### Minor changes
+
+- style tweaks (lancerael@googlemail.com)
 
 ## 1.1.12
 

@@ -1,6 +1,6 @@
 {
   "name": "@pi-lib/dismissable-content",
-  "version": "1.2.17",
+  "version": "1.3.0",
   "description": "Internal content for a modal or a toast, that can be dismissed internally",
   "keywords": [
     "react",
