@@ -1,11 +1,11 @@
-import { useTouch, useControls, TouchState } from '@pi-lib/use-touch'
+import { useTouch, useControls, SimpleTouchState } from '@pi-lib/use-touch'
 import useLimitedEvents from '@pi-lib/use-limited-events'
 import {
   StyledCarousel,
   StyledCarouselInner,
   StyledCarouselItem,
 } from './Carousel.style'
-import { CarouselProps, CustomPanHandler } from './Carousel.types'
+import { CarouselProps } from './Carousel.types'
 import { useCallback, useEffect, useRef } from 'react'
 
 /**
@@ -32,13 +32,12 @@ export const Carousel = ({
   /**
    * Enhance the pan controls to allow a smooth loop
    */
-  const setTouchState = useCallback(
-    (update: (touchState: TouchState) => TouchState) => {
-      controls.setTouchState(({ zoom, pan: { x, y } }) => {
-        return update({ zoom, pan: { x: getLoopedX(x), y } })
-      })
-    },
-    [isScroller, isDraggable, speed]
+  const modifier = useCallback(
+    ({ zoom, pan }: SimpleTouchState) => ({
+      zoom,
+      pan: { x: getLoopedX(pan.x), y: pan.y },
+    }),
+    []
   )
 
   /**
@@ -49,10 +48,11 @@ export const Carousel = ({
     if (!isScroller) return
     isScrolling.current = true
     scrollIntervalRef.current = setInterval(() => {
-      setTouchState(({ zoom, pan: { x, y } }) => ({
-        zoom,
+      const { x, y } = controls.touchStateSignal.value.pan
+      controls.setTouchState({
         pan: { x: x - 5 * speed, y },
-      }))
+        modifier,
+      })
     }, 250)
     return stopScroll
   }, [isScroller, isDraggable, speed])
@@ -76,14 +76,14 @@ export const Carousel = ({
   /**
    * Get the correct looped version of the x scroll value
    */
-  const getLoopedX = useCallback((x: number, isTemp?: boolean) => {
+  const getLoopedX = useCallback((x: number) => {
     const iconsWidth = width.current / 2
     if (!iconsWidth) return x
     let newX = x
     if (newX > 0) {
-      newX = isTemp ? -iconsWidth : newX - iconsWidth
+      newX = newX - iconsWidth
     } else if (newX < -iconsWidth) {
-      newX = isTemp ? 0 : newX + iconsWidth
+      newX = newX + iconsWidth
     }
     return newX
   }, [])
@@ -95,10 +95,9 @@ export const Carousel = ({
     targetRef,
     controls: {
       ...controls,
-      setTouchState: (isDraggable
-        ? setTouchState
-        : () => {}) as CustomPanHandler,
+      setTouchState: isDraggable ? controls.setTouchState : () => {},
     },
+    modifier,
     resetCallback: isDraggable ? stopScroll : undefined,
     stopCallback: isDraggable ? startScrollDelayed : undefined,
   })
@@ -120,8 +119,9 @@ export const Carousel = ({
   /**
    * Make sure there is no looping animation
    */
-  const loopedX = getLoopedX(controls.touchState.pan.x, isScrolling.current)
-  const shouldTransition = loopedX !== 0 && loopedX !== width.current / -2
+
+  const { x } = controls.touchStateSignal.value.pan
+  const shouldTransition = x < 5 * -speed
   return (
     <StyledCarousel data-testid={dataTestid} {...props}>
       <StyledCarouselInner
@@ -131,7 +131,7 @@ export const Carousel = ({
             isScrolling.current && shouldTransition
               ? 'all 0.25s linear'
               : 'none',
-          transform: `translate(${getLoopedX(loopedX)}px)`,
+          transform: `translate(${x}px)`,
         }}
       >
         {[...itemList, ...itemList].map((item, i) => (

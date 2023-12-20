@@ -15,3 +15,4 @@ A React component for an advanced button with a built in loader
     </tr>
   </tbody>
 </table>
+

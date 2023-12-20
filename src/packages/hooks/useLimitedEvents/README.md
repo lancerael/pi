@@ -15,3 +15,4 @@ Hook used to add debounced or throttled events to a React component
     </tr>
   </tbody>
 </table>
+

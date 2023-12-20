@@ -3,9 +3,10 @@ import styled from 'styled-components'
 export const StyledImages = styled.div`
   position: relative;
   min-height: 45vw;
+  margin-top: 2rem;
 
   @media (min-width: 640px) {
-    min-height: 18vw;
+    min-height: 16vw;
   }
 
   & img {
@@ -22,7 +23,7 @@ export const StyledImages = styled.div`
 
   & img:nth-of-type(1) {
     transform: rotate(17deg);
-    left: 1.5rem;
+    left: 1.8rem;
     z-index: 99;
 
     @media (max-width: 640px) {
@@ -32,7 +33,7 @@ export const StyledImages = styled.div`
 
   & img:nth-of-type(2) {
     transform: rotate(-17deg);
-    left: 20%;
+    left: 23%;
     z-index: 100;
   }
 
@@ -43,11 +44,22 @@ export const StyledImages = styled.div`
     z-index: 101;
 
     @media (max-width: 640px) {
-      left: 47%;
+      left: 50%;
       width: 40vw;
       top: 20%;
       transform: rotate(-20deg);
     }
+  }
+`
+
+export const StyledBlurb = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  text-align: right;
+
+  @media (max-width: 640px) {
+    text-align: left;
   }
 `
 
@@ -70,5 +82,11 @@ export const StyledLinkWrapper = styled.div`
     justify-content: center;
     align-items: center;
     padding: 1rem 0;
+  }
+`
+
+export const StyledChart = styled.div`
+  @media (max-width: 640px) {
+    min-height: 250px;
   }
 `

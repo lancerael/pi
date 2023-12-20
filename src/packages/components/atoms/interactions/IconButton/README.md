@@ -15,3 +15,4 @@ A React component for a special button with an icon
     </tr>
   </tbody>
 </table>
+

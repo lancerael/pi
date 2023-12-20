@@ -15,3 +15,4 @@ A candlestick chart React component used to show the movement of traded assets o
     </tr>
   </tbody>
 </table>
+

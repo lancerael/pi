@@ -10,7 +10,8 @@
     "organisms",
     "chart",
     "charts",
-    "candlestick"
+    "candlestick",
+    "visualisations"
   ],
   "homepage": "https://pi.lance-taylor.com/?path=/story/visualisations-charts-candlestickchart",
   "repository": {

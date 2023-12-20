@@ -15,3 +15,4 @@ A shimmering text ticker animation.
     </tr>
   </tbody>
 </table>
+

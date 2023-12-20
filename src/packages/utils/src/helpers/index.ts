@@ -1,5 +1,6 @@
 export * from './simpleHash'
 export * from './getAttributes'
+export * from './randomisers'
 export * from './clampValue'
 export * from './splitObject'
 export * from './debounce'

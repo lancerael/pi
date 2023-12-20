@@ -15,3 +15,4 @@ A React component for an SVG world map chart
     </tr>
   </tbody>
 </table>
+

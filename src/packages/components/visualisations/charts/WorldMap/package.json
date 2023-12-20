@@ -10,7 +10,8 @@
     "chart",
     "charts",
     "world",
-    "map"
+    "map",
+    "visualisations"
   ],
   "homepage": "https://pi.lance-taylor.com/?path=/story/visualisations-charts-worldmap",
   "repository": {

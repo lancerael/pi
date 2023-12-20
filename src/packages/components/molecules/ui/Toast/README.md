@@ -15,3 +15,4 @@ A React component to handle toast notifications
     </tr>
   </tbody>
 </table>
+

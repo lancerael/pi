@@ -1,14 +1,14 @@
 import styled, { css } from 'styled-components'
 import { StyledCardProps } from './Card.style.types'
-import { DEFAULT_THEME, container, maskGradient } from '@pi-lib/styles'
+import { DEFAULT_THEME, box, container, maskGradient } from '@pi-lib/styles'
 
 export const StyledCard = styled.div<StyledCardProps>(
-  ({ $isClear }) => css`
+  ({ $isClear, $isSolid }) => css`
     color: ${({ theme }) => theme.colors.textSoft};
     ${!$isClear &&
     css`
-      ${container()}
-      padding: 1rem 1.5rem;
+      ${$isSolid ? box() : container()}
+      padding: 1rem 1.5rem 1.5rem;
     `}
   `
 )

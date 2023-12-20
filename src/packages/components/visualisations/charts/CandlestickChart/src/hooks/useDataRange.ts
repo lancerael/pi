@@ -10,6 +10,7 @@ import {
   DataRange,
   ChartControls,
 } from '../CandlestickChart.types'
+import { clampValue } from '@pi-lib/utils'
 
 /**
  * A React hook used to isolate the numbers related to the active range
@@ -24,7 +25,7 @@ export const useDataRange = (
   controls: ChartControls
 ): DataRange => {
   const {
-    touchState: { pan, zoom },
+    touchState: { pan, zoom, zoomOffset },
     period,
   } = controls
   const lastItem = JSON.stringify(data[data.length - 1])
@@ -64,15 +65,15 @@ export const useDataRange = (
   }, [lastItem, period])
 
   const baseCandleWidth = CANDLE_WIDTH + CANDLE_WIDTH * CANDLE_PADDING
-  const zoomExtent = (1 / (baseCandleWidth * thisData.length)) * width
+  const zoomExtent = (1 / (baseCandleWidth * (thisData.length || 1))) * width
   const candleWidth = baseCandleWidth * Math.max(zoom, zoomExtent)
-  const perPage = Math.round(width / candleWidth) || 0
+  const perPage = width / candleWidth || 0
   const fullWidth = candleWidth * thisData.length
-  const panExtent = Math.round(fullWidth - candleWidth * perPage)
-  const panX = Math.max(Math.min(panExtent, pan.x), 0)
-  const offset = Math.round(panX % candleWidth)
-  const end = Math.round(thisData.length - (panX - offset) / candleWidth)
-  const start = end - perPage
+  const panExtent = fullWidth - candleWidth * perPage
+  const panX = clampValue(pan.x - zoomOffset.x, 0, panExtent)
+  const offset = panX % candleWidth
+  const end = Math.ceil(thisData.length - (panX - offset) / candleWidth)
+  const start = Math.floor(end - perPage)
 
   // Slice the data that is visible
   const dataSlice = thisData.slice(start, end)

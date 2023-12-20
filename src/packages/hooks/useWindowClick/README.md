@@ -15,3 +15,4 @@ Hook used to add throttled escape (window) clicks to a React component
     </tr>
   </tbody>
 </table>
+
