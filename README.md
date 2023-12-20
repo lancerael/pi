@@ -16,6 +16,24 @@ Create a theme, use one of the provided themes or stick with the default, then b
 
 ## Theming
 
+### styles
+
+**@pi-lib/styles**
+
+React theming utility for use with Pi and styled-components
+
+**Peer Dependencies:** react, styled-components
+
+<table>
+  <tbody>
+    <tr>
+      <td><a href="http://pi.lance-taylor.com/?path=/story/theming-getting-started" target="_blank">Docs</a></td>
+      <td><a href="https://www.npmjs.com/package/@pi-lib/styles?activeTab=readme" target="_blank">NPM</a></td>
+      <td><a href="https://github.com/lancerael/pi/tree/main/src/packages/styles" target="_blank">Github</a></td>
+    </tr>
+  </tbody>
+</table>
+
 ## Atoms
 
 ### Button
@@ -442,6 +460,21 @@ Shared Pi constants
     <tr>
       <td><a href="https://www.npmjs.com/package/@pi-lib/constants?activeTab=readme" target="_blank">NPM</a></td>
       <td><a href="https://github.com/lancerael/pi/tree/main/src/packages/config" target="_blank">Github</a></td>
+    </tr>
+  </tbody>
+</table>
+
+### types
+
+**@pi-lib/types**
+
+Global types for Pi
+
+<table>
+  <tbody>
+    <tr>
+      <td><a href="https://www.npmjs.com/package/@pi-lib/types?activeTab=readme" target="_blank">NPM</a></td>
+      <td><a href="https://github.com/lancerael/pi/tree/main/src/packages/types" target="_blank">Github</a></td>
     </tr>
   </tbody>
 </table>

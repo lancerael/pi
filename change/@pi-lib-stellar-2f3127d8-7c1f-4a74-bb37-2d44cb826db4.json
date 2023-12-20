@@ -1,0 +1,7 @@
+{
+  "type": "major",
+  "comment": "Moved helpers to utils",
+  "packageName": "@pi-lib/stellar",
+  "email": "lancerael@googlemail.com",
+  "dependentChangeType": "patch"
+}
