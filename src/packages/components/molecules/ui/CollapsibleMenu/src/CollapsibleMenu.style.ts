@@ -46,7 +46,7 @@ export const StyledOpener: StyledLinkType = styled(Button)`
 export const StyledCollapsibleMenu = styled.div<StyledCollapsibleMenuProps>(
   ({ $isOpen }) => css`
     ${gradient({ name: 'special', to: 'bottom' })}
-    color: ${({ theme }) => theme.colors.specialText} !important;
+    color: ${({ theme }) => theme.colors.shadowHC};
     padding: 0.5rem;
     border-radius: 5px 0 5px 5px;
     opacity: ${$isOpen ? 1 : 0};

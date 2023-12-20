@@ -12,8 +12,8 @@ export const StyledDismissableContent =
   styled.div<StyledDismissableContentProps>(({ $isVisible, $isPresent }) => {
     return css`
       border: 1px solid ${({ theme }) => theme.colors.textStrong};
-      ${gradient({ name: 'alt', to: 'bottom' })}
-      color: ${({ theme }) => theme.colors.bg};
+      ${gradient({ name: 'special', to: 'bottom' })}
+      color: ${({ theme }) => theme.colors.shadowHC};
       border-radius: 8px;
       padding: 16px;
       opacity: ${$isVisible ? '1' : '0'};

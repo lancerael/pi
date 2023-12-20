@@ -56,10 +56,14 @@ export const StyledBlurb = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  text-align: right;
 
-  @media (max-width: 640px) {
-    text-align: left;
+  & ul {
+    margin: 1rem;
+
+    & li {
+      font-weight: bold;
+      color: var(--special);
+    }
   }
 `
 
