@@ -1,6 +1,5 @@
+import { randomNumber, randomString } from '@pi-lib/utils'
 import {
-  randomNumber,
-  randomString,
   scatter,
   makeStar,
   makeStars,

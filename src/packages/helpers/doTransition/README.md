@@ -4,8 +4,6 @@
 
 A recursive helper function to transition between 2 values or collections of values.
 
-
-
 <table>
   <tbody>
     <tr>
@@ -15,4 +13,3 @@ A recursive helper function to transition between 2 values or collections of val
     </tr>
   </tbody>
 </table>
-

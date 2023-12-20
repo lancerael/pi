@@ -4,8 +4,6 @@
 
 Global types for Pi
 
-
-
 <table>
   <tbody>
     <tr>
@@ -14,4 +12,3 @@ Global types for Pi
     </tr>
   </tbody>
 </table>
-

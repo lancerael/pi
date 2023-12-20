@@ -15,4 +15,3 @@ Modal for custom content that allows dismissal internally or externally
     </tr>
   </tbody>
 </table>
-

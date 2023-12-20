@@ -15,4 +15,3 @@ A React component for a table with expandable rows
     </tr>
   </tbody>
 </table>
-

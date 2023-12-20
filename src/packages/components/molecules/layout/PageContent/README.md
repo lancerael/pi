@@ -15,4 +15,3 @@ A React component for a page layout with a sidebar
     </tr>
   </tbody>
 </table>
-

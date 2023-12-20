@@ -15,4 +15,3 @@ A card component with a title and subtitle.
     </tr>
   </tbody>
 </table>
-

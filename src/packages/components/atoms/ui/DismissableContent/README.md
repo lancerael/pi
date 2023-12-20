@@ -15,4 +15,3 @@ Internal content for a modal or a toast, that can be dismissed internally
     </tr>
   </tbody>
 </table>
-

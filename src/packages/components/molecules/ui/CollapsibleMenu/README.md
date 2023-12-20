@@ -15,4 +15,3 @@ A React component for an expanding/collapsing menu with icons
     </tr>
   </tbody>
 </table>
-

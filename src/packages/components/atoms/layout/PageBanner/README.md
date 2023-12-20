@@ -15,4 +15,3 @@ A banner React component that can comtain spaced or flowing items
     </tr>
   </tbody>
 </table>
-

@@ -15,4 +15,3 @@ A wrapper for a page grid layout.
     </tr>
   </tbody>
 </table>
-

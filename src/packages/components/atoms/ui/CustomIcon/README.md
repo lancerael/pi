@@ -2,8 +2,6 @@
 
 **@pi-lib/custom-icon**
 
-
-
 **Peer Dependencies:** @pi-lib/styles, @pi-lib/utils, react, react-svg, styled-components
 
 <table>
@@ -15,4 +13,3 @@
     </tr>
   </tbody>
 </table>
-

@@ -13,27 +13,11 @@ Create a theme, use one of the provided themes or stick with the default, then b
 - <a href="https://github.com/lancerael/pi" target="_blank">Code</a>
 
 <!--- readmeGen --->
+
 ## Theming
-### styles
-
-**@pi-lib/styles**
-
-React theming utility for use with Pi and styled-components
-
-**Peer Dependencies:** react, styled-components
-
-<table>
-  <tbody>
-    <tr>
-      <td><a href="http://pi.lance-taylor.com/?path=/story/theming-getting-started" target="_blank">Docs</a></td>
-      <td><a href="https://www.npmjs.com/package/@pi-lib/styles?activeTab=readme" target="_blank">NPM</a></td>
-      <td><a href="https://github.com/lancerael/pi/tree/main/src/packages/styles" target="_blank">Github</a></td>
-    </tr>
-  </tbody>
-</table>
-
 
 ## Atoms
+
 ### Button
 
 **@pi-lib/button**
@@ -52,13 +36,9 @@ A styled React button component with a status
   </tbody>
 </table>
 
-
-
 ### CustomIcon
 
 **@pi-lib/custom-icon**
-
-
 
 **Peer Dependencies:** @pi-lib/styles, @pi-lib/utils, react, react-svg, styled-components
 
@@ -71,8 +51,6 @@ A styled React button component with a status
     </tr>
   </tbody>
 </table>
-
-
 
 ### Grid
 
@@ -92,8 +70,6 @@ A wrapper for a simple grid layout.
   </tbody>
 </table>
 
-
-
 ### IconButton
 
 **@pi-lib/icon-button**
@@ -111,8 +87,6 @@ A React component for a special button with an icon
     </tr>
   </tbody>
 </table>
-
-
 
 ### Link
 
@@ -132,8 +106,6 @@ A React component for a router optional link
   </tbody>
 </table>
 
-
-
 ### ModalScreen
 
 **@pi-lib/modal-screen**
@@ -151,8 +123,6 @@ A React component used to block out the screen with modal content
     </tr>
   </tbody>
 </table>
-
-
 
 ### PageBanner
 
@@ -172,8 +142,6 @@ A banner React component that can comtain spaced or flowing items
   </tbody>
 </table>
 
-
-
 ### PageGrid
 
 **@pi-lib/page-grid**
@@ -191,8 +159,6 @@ A wrapper for a page grid layout.
     </tr>
   </tbody>
 </table>
-
-
 
 ### Tooltip
 
@@ -212,8 +178,8 @@ A React component used to show and position a tooltip containing content
   </tbody>
 </table>
 
-
 ## Molecules
+
 ### AdvancedButton
 
 **@pi-lib/advanced-button**
@@ -231,8 +197,6 @@ A React component for an advanced button with a built in loader
     </tr>
   </tbody>
 </table>
-
-
 
 ### Card
 
@@ -252,13 +216,9 @@ A card component with a title and subtitle.
   </tbody>
 </table>
 
-
-
 ### Carousel
 
 **@pi-lib/carousel**
-
-
 
 **Peer Dependencies:** @pi-lib/styles, @pi-lib/use-limited-events, @pi-lib/use-touch, @pi-lib/utils, react, styled-components
 
@@ -271,8 +231,6 @@ A card component with a title and subtitle.
     </tr>
   </tbody>
 </table>
-
-
 
 ### CollapsibleMenu
 
@@ -292,8 +250,6 @@ A React component for an expanding/collapsing menu with icons
   </tbody>
 </table>
 
-
-
 ### Modal
 
 **@pi-lib/modal**
@@ -311,8 +267,6 @@ Modal for custom content that allows dismissal internally or externally
     </tr>
   </tbody>
 </table>
-
-
 
 ### PageContent
 
@@ -332,8 +286,6 @@ A React component for a page layout with a sidebar
   </tbody>
 </table>
 
-
-
 ### PageLoader
 
 **@pi-lib/page-loader**
@@ -351,8 +303,6 @@ A React component for a page blocking loader
     </tr>
   </tbody>
 </table>
-
-
 
 ### Table
 
@@ -372,8 +322,8 @@ A React component for a table with expandable rows
   </tbody>
 </table>
 
-
 ## Visualisations
+
 ### AxisChart
 
 **@pi-lib/axis-chart**
@@ -391,8 +341,6 @@ A React component used to display a bar ot line chart
     </tr>
   </tbody>
 </table>
-
-
 
 ### CandlestickChart
 
@@ -412,8 +360,6 @@ A candlestick chart React component used to show the movement of traded assets o
   </tbody>
 </table>
 
-
-
 ### Shimmer
 
 **@pi-lib/shimmer**
@@ -432,15 +378,13 @@ A shimmering text ticker animation.
   </tbody>
 </table>
 
-
-
 ### Stellar
 
 **@pi-lib/stellar**
 
 A spacefaring scene that takes you through the stars.
 
-**Peer Dependencies:** @pi-lib/do-transition, @pi-lib/styles, @pi-lib/use-limited-events, @pi-lib/utils, react, styled-components
+**Peer Dependencies:** @pi-lib/do-transition, @pi-lib/styles, @pi-lib/use-limited-events, @pi-lib/utils, @preact/signals-react, react, styled-components
 
 <table>
   <tbody>
@@ -451,8 +395,6 @@ A spacefaring scene that takes you through the stars.
     </tr>
   </tbody>
 </table>
-
-
 
 ### WorldMap
 
@@ -472,15 +414,13 @@ A React component for an SVG world map chart
   </tbody>
 </table>
 
-
 ## Utilities
+
 ### config
 
 **@pi-lib/config**
 
 Shared Pi config
-
-
 
 <table>
   <tbody>
@@ -491,15 +431,11 @@ Shared Pi config
   </tbody>
 </table>
 
-
-
 ### constants
 
 **@pi-lib/constants**
 
 Shared Pi constants
-
-
 
 <table>
   <tbody>
@@ -509,27 +445,6 @@ Shared Pi constants
     </tr>
   </tbody>
 </table>
-
-
-
-### types
-
-**@pi-lib/types**
-
-Global types for Pi
-
-
-
-<table>
-  <tbody>
-    <tr>
-      <td><a href="https://www.npmjs.com/package/@pi-lib/types?activeTab=readme" target="_blank">NPM</a></td>
-      <td><a href="https://github.com/lancerael/pi/tree/main/src/packages/types" target="_blank">Github</a></td>
-    </tr>
-  </tbody>
-</table>
-
-
 
 ### useLimitedEvents
 
@@ -549,8 +464,6 @@ Hook used to add debounced or throttled events to a React component
   </tbody>
 </table>
 
-
-
 ### useTimer
 
 **@pi-lib/use-timer**
@@ -568,8 +481,6 @@ Hook used to add setTimeout or setInterval to a React component
     </tr>
   </tbody>
 </table>
-
-
 
 ### useWindowClick
 
@@ -589,8 +500,6 @@ Hook used to add throttled escape (window) clicks to a React component
   </tbody>
 </table>
 
-
-
 ### usehashComparison
 
 **@pi-lib/use-hash-comparison**
@@ -608,8 +517,6 @@ Create a hash of any object - can be used to compare dependencies and ensure cor
     </tr>
   </tbody>
 </table>
-
-
 
 ### utils
 

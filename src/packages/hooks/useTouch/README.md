@@ -15,4 +15,3 @@ Hook used to add touch controls to a React component
     </tr>
   </tbody>
 </table>
-
