@@ -1,7 +1,0 @@
-{
-  "type": "minor",
-  "comment": "Added solid card option",
-  "packageName": "@pi-lib/card",
-  "email": "lancerael@googlemail.com",
-  "dependentChangeType": "patch"
-}

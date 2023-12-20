@@ -1,6 +1,6 @@
 {
   "name": "@pi-lib/use-limited-events",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Hook used to add debounced or throttled events to a React component",
   "keywords": [
     "react",

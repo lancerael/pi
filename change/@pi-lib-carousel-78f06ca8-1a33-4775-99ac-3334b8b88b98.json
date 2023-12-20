@@ -1,7 +1,0 @@
-{
-  "type": "minor",
-  "comment": "Improved touch controls",
-  "packageName": "@pi-lib/carousel",
-  "email": "lancerael@googlemail.com",
-  "dependentChangeType": "patch"
-}

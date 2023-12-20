@@ -1,7 +1,0 @@
-{
-  "type": "minor",
-  "comment": "Added randomiser helpers",
-  "packageName": "@pi-lib/utils",
-  "email": "lancerael@googlemail.com",
-  "dependentChangeType": "patch"
-}
