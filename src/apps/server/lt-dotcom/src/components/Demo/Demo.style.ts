@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const StyledImages = styled.div`
   position: relative;
   min-height: 45vw;
-  margin-top: 2rem;
+  margin-top: 3rem;
 
   @media (min-width: 640px) {
     min-height: 16vw;
@@ -56,10 +56,14 @@ export const StyledBlurb = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  text-align: right;
 
-  @media (max-width: 640px) {
-    text-align: left;
+  & ul {
+    margin: 1rem;
+
+    & li {
+      font-weight: bold;
+      color: var(--special);
+    }
   }
 `
 

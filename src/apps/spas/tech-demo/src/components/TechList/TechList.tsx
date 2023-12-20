@@ -15,7 +15,7 @@ export const TechList = () => {
           <IconButton
             key={title}
             iconProps={{ src, height: '2rem' }}
-            buttonProps={{ href, title, isExternal: true }}
+            buttonProps={{ href, title, boxName: 'light', isExternal: true }}
           />
         )
       )

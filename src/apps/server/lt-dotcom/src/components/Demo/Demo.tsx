@@ -11,9 +11,15 @@ export const Demo = () => {
         <Grid>
           <StyledBlurb>
             <div>
-              All components seen here are from my own library. Visit the
-              sandbox for more components and data visualisations, with theming
-              and other customisations.
+              All components seen here are from my own library. <br />
+              Visit the sandbox for more in depth demos of:
+              <ul>
+                <li>Components and data visualisations</li>
+                <li>Theming, light/dark and large text modes</li>
+                <li>Devops setup with CI/CD, MFEs and more...</li>
+              </ul>
+              At any point you can view code, modules and Storybook from the
+              footer.
             </div>
             <StyledLinkWrapper>
               <Link
