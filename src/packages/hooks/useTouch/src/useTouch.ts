@@ -1,13 +1,9 @@
 import { useCallback, useEffect, useRef } from 'react'
-import {
-  ActionMethods,
-  NumberRange,
-  Trackers,
-  UseTouchProps,
-} from './useTouch.types'
+import { ActionMethods, Trackers, UseTouchProps } from './useTouch.types'
 import { clampValue, throttle } from '@pi-lib/utils'
 import doTransition from '@pi-lib/do-transition'
-import { PanLevel } from './hooks/useControls'
+import useLimitedEvents from '@pi-lib/use-limited-events'
+import { Coords } from './hooks'
 
 /**
  * `useTouch` is a hook used to add touch controls to a React component.
@@ -21,7 +17,11 @@ export const useTouch = <T = HTMLElement>({
   targetRef,
   controls,
   zoomRange = [0.25, 2],
-  panRange,
+  panRange = [
+    [-99999, 99999],
+    [-99999, 99999],
+  ],
+  modifier,
   resetCallback,
   stopCallback,
 }: UseTouchProps<T>) => {
@@ -31,10 +31,12 @@ export const useTouch = <T = HTMLElement>({
     oldPanChange: { x: 0, y: 0 },
     activePointers: {},
     clearTransition: () => {},
+    ranges: { panRange, zoomRange },
+    controls: { zoom: 1, pan: { x: 0, y: 0 } },
   })
 
-  const ranges = useRef({ panRange, zoomRange })
-  ranges.current = { panRange, zoomRange }
+  trackers.current.ranges = { panRange, zoomRange }
+  trackers.current.controls = controls.touchState
 
   /**
    * Changes the zoom level.
@@ -42,13 +44,14 @@ export const useTouch = <T = HTMLElement>({
    */
   const zoom = useCallback((zoomChange: number) => {
     resetCallback?.()
-    const [min, max] = ranges.current.zoomRange
-    controls.setTouchState(({ pan, zoom }) => {
-      const newZoom = zoom - zoomChange * 50
-      return {
-        pan,
-        zoom: clampValue(Math.round(newZoom * 1000) / 1000, min, max),
-      }
+    const [min, max] = trackers.current.ranges.zoomRange
+    controls.setTouchState({
+      modifier,
+      zoom: clampValue(
+        trackers.current.controls.zoom - zoomChange * 50,
+        min,
+        max
+      ),
     })
   }, [])
 
@@ -56,23 +59,17 @@ export const useTouch = <T = HTMLElement>({
    * Changes the pan level.
    * @param {PanLevel} panChange - The change in pan levels along x and y axes.
    */
-  const pan = useCallback((panChange: PanLevel) => {
+  const pan = useCallback((panChange: Coords) => {
     resetCallback?.()
     trackers.current.oldPanChange = { ...panChange }
-    controls.setTouchState(({ pan, zoom }) => {
-      const setVal = (
-        axis: 'x' | 'y',
-        [min, max]: NumberRange = [-99999, 99999]
-      ) => {
-        return clampValue(pan[axis] + panChange[axis], min, max)
-      }
-      return {
-        zoom,
-        pan: {
-          x: setVal('x', ranges.current.panRange?.[0]),
-          y: setVal('y', ranges.current.panRange?.[1]),
-        },
-      }
+    const { x, y } = trackers.current.controls.pan
+    const { panRange } = trackers.current.ranges
+    controls.setTouchState({
+      modifier,
+      pan: {
+        x: clampValue(x + panChange.x, panRange[0][0], panRange?.[0][1]),
+        y: clampValue(y + panChange.y, panRange[1][0], panRange?.[1][1]),
+      },
     })
   }, [])
 
@@ -99,23 +96,24 @@ export const useTouch = <T = HTMLElement>({
    */
   const stop = useCallback(
     (e: PointerEvent) => {
+      const { zoom, pan } = controls.touchStateSignal.value
       const { x, y } = trackers.current.oldPanChange
       if (Math.abs(x) + Math.abs(y) > 10) {
-        const values = Object.values(controls.touchState.pan)
+        const values: number[] = Object.values(pan)
         const targets = [x, y].map(
-          (old, i) => values[i] + Math.round(old * 5) * controls.touchState.zoom
+          (old, i) => values[i] + Math.round(old * 5) * zoom
         )
         trackers.current.clearTransition = doTransition({
           values,
           targets,
           callback: ([newX, newY]) => {
-            controls.setTouchState(({ zoom }) => ({
-              zoom,
+            controls.setTouchState({
+              modifier,
               pan: {
                 x: newX,
                 y: newY,
               },
-            }))
+            })
           },
           endCallback: () => stopCallback?.(),
           increments: 10,
@@ -128,11 +126,7 @@ export const useTouch = <T = HTMLElement>({
       trackers.current.oldPanChange = { x: 0, y: 0 }
       !!e && delete trackers.current.activePointers[e.pointerId]
     },
-    [
-      JSON.stringify(controls.touchState),
-      trackers.current.oldPanChange.x,
-      trackers.current.oldPanChange.y,
-    ]
+    [trackers.current.oldPanChange.x, trackers.current.oldPanChange.y]
   ) as EventListener
 
   /**
@@ -194,22 +188,34 @@ export const useTouch = <T = HTMLElement>({
     [throttledMove, move]
   ) as EventListener
 
+  /**
+   * Add/remove all the listeners
+   */
   useEffect(() => {
-    // Add/remove all the listeners
-    const updateListeners = (action: 'add' | 'remove') => {
-      const args = (passive: boolean) =>
-        action === 'add' ? { passive } : undefined
-      const actionMethod: ActionMethods = `${action}EventListener`
+    const updateListeners = (action: ActionMethods) => {
       const target = targetRef.current as HTMLElement
       if (!target?.addEventListener) return
-      window[actionMethod]('pointerup', stop, args(true))
-      window[actionMethod]('pointermove', pointerMove, args(false))
-      target?.[actionMethod]('pointerdown', start, args(false))
-      target?.[actionMethod]('wheel', pinch, args(false))
+      window[action]('pointerup', stop)
+      window[action]('pointermove', pointerMove)
+      target?.[action]('pointerdown', start)
+      target?.[action]('wheel', pinch)
       target.style.userSelect = 'none'
       target.style.touchAction = 'none'
     }
-    updateListeners('add')
-    return () => updateListeners('remove')
-  }, [controls, targetRef.current])
+    updateListeners('addEventListener')
+    return () => updateListeners('removeEventListener')
+  }, [targetRef.current])
+
+  // Update the dimensions of the container as needed
+  useLimitedEvents(
+    () => {
+      const target = targetRef.current as HTMLElement
+      if (!target) return
+      const { width, height } = target.getBoundingClientRect()
+      controls.setTouchState({
+        sizes: { width, height },
+      })
+    },
+    { doInit: true }
+  )
 }

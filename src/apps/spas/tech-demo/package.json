@@ -11,7 +11,7 @@
     "lint": "npx prettier -c . && npx eslint",
     "lint:fix": "npx prettier -w . && npx eslint --fix",
     "preview": "cross-env NODE_ENV=development vite preview --host",
-    "start": "pnpm build && pnpm preview"
+    "start": "pnpm build:app && pnpm preview"
   },
   "dependencies": {
     "@originjs/vite-plugin-federation": "^1.2.2",

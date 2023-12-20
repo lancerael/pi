@@ -19,7 +19,7 @@ const render = () => {
       [-2000, 2000],
     ],
   })
-  const { zoom, pan } = controls.touchState
+  const { zoom, panWithOffset } = controls.touchStateSignal.value
   return (
     <div style={{ width: '100%', height: '500px', position: 'relative' }}>
       <div
@@ -32,8 +32,8 @@ const render = () => {
           background: 'purple',
           cursor: 'pointer',
           position: 'absolute',
-          left: `${halfWidth + pan.x - zoom * halfWidth}px`,
-          top: `${halfWidth + pan.y - zoom * halfWidth}px`,
+          left: `${panWithOffset.x}px`,
+          top: `${panWithOffset.y}px`,
           color: 'white',
           textAlign: 'center',
           padding: `${padding}px`,

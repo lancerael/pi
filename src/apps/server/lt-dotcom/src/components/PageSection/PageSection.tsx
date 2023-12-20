@@ -1,9 +1,9 @@
 import ShimmerHeader from '../ShimmerHeader'
 import { StyledPageSection } from './PageSection.style'
 
-export const PageSection = ({ title, children }: any) => {
+export const PageSection = ({ title, children, className, style }: any) => {
   return (
-    <StyledPageSection>
+    <StyledPageSection {...{ className, style }}>
       {title && <ShimmerHeader {...{ title }} />}
       {children}
     </StyledPageSection>

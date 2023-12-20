@@ -6,7 +6,13 @@ import {
   CANDLE_WIDTH,
   CHART_PADDING,
 } from '../CandlestickChart.constants'
-import { SvgRef, IAxis, Scales } from '../CandlestickChart.types'
+import {
+  SvgRef,
+  IAxis,
+  Scales,
+  Sizes,
+  DataRange,
+} from '../CandlestickChart.types'
 import { AXIS_OFFSETS } from './../CandlestickChart.constants'
 
 // Used to cache date labels
@@ -38,9 +44,9 @@ const getDateLabel = (d: string = '', i: number, xScale: Scales['xScale']) => {
 
 export const useAxes = (
   svgRef: SvgRef,
-  sizes: any,
-  dataRange: any,
-  scales: any
+  sizes: Sizes,
+  dataRange: DataRange,
+  scales: Scales
 ) => {
   const axisX = useRef<IAxis>()
   const axisY = useRef<IAxis>()

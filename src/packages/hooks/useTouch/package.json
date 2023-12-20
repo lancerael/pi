@@ -34,8 +34,10 @@
   },
   "peerDependencies": {
     "@pi-lib/do-transition": "workspace:^",
+    "@pi-lib/use-limited-events": "workspace:^",
     "@pi-lib/utils": "workspace:^",
     "react": "^18.2.0",
-    "react-aria": "^3.26.0"
+    "react-aria": "^3.26.0",
+    "signals-react-safe": "^1.1.2"
   }
 }

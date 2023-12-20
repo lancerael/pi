@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
-import { useFramerate } from '@pi-lib/utils'
+import { randomNumber, useFramerate } from '@pi-lib/utils'
 import { StyledContent, StyledStar, StyledStellar } from './Stellar.style'
 import {
   Coords,
@@ -14,7 +14,6 @@ import {
   getStarStyle,
   makeStars,
   moveStar,
-  randomNumber,
 } from './Stellar.helpers'
 import { FPS_CUTOFF, MAX_STARS } from './Stellar.constants'
 import doTransition from '@pi-lib/do-transition'

@@ -1,0 +1,7 @@
+{
+  "type": "major",
+  "comment": "Improved touch controls",
+  "packageName": "@pi-lib/use-touch",
+  "email": "lancerael@googlemail.com",
+  "dependentChangeType": "patch"
+}

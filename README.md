@@ -340,6 +340,98 @@ A React component for a table with expandable rows
   </tbody>
 </table>
 
+## Visualisations
+
+### AxisChart
+
+**@pi-lib/axis-chart**
+
+A React component used to display a bar ot line chart
+
+**Peer Dependencies:** @pi-lib/styles, @pi-lib/use-timer, @pi-lib/utils, d-theia, react, styled-components
+
+<table>
+  <tbody>
+    <tr>
+      <td><a href="https://pi.lance-taylor.com/?path=/story/visualisations-charts-axischart" target="_blank">Docs</a></td>
+      <td><a href="https://www.npmjs.com/package/@pi-lib/axis-chart?activeTab=readme" target="_blank">NPM</a></td>
+      <td><a href="https://github.com/lancerael/pi/tree/main/src/packages/components/visualisations/charts/AxisChart" target="_blank">Github</a></td>
+    </tr>
+  </tbody>
+</table>
+
+### CandlestickChart
+
+**@pi-lib/candlestick-chart**
+
+A candlestick chart React component used to show the movement of traded assets over time.
+
+**Peer Dependencies:** @pi-lib/button, @pi-lib/do-transition, @pi-lib/loader, @pi-lib/select, @pi-lib/styles, @pi-lib/tooltip, @pi-lib/use-hash-comparison, @pi-lib/use-limited-events, @pi-lib/use-touch, @pi-lib/utils, d3-axis, d3-scale, d3-selection, d3-transition, react, styled-components
+
+<table>
+  <tbody>
+    <tr>
+      <td><a href="https://pi.lance-taylor.com/?path=/story/visualisations-charts-candlestickchart" target="_blank">Docs</a></td>
+      <td><a href="https://www.npmjs.com/package/@pi-lib/candlestick-chart?activeTab=readme" target="_blank">NPM</a></td>
+      <td><a href="https://github.com/lancerael/pi/tree/main/src/packages/components/visualisations/charts/CandlestickChart" target="_blank">Github</a></td>
+    </tr>
+  </tbody>
+</table>
+
+### Shimmer
+
+**@pi-lib/shimmer**
+
+A shimmering text ticker animation.
+
+**Peer Dependencies:** @pi-lib/styles, @pi-lib/use-timer, react, styled-components
+
+<table>
+  <tbody>
+    <tr>
+      <td><a href="https://pi.lance-taylor.com/?path=/story/visualisations-text-shimmer" target="_blank">Docs</a></td>
+      <td><a href="https://www.npmjs.com/package/@pi-lib/shimmer?activeTab=readme" target="_blank">NPM</a></td>
+      <td><a href="https://github.com/lancerael/pi/tree/main//src/packages/components/visualisations/text/Shimmer" target="_blank">Github</a></td>
+    </tr>
+  </tbody>
+</table>
+
+### Stellar
+
+**@pi-lib/stellar**
+
+A spacefaring scene that takes you through the stars.
+
+**Peer Dependencies:** @pi-lib/do-transition, @pi-lib/styles, @pi-lib/use-limited-events, @pi-lib/utils, react, styled-components
+
+<table>
+  <tbody>
+    <tr>
+      <td><a href="https://pi.lance-taylor.com/?path=/story/visualisations-scenes-shimmer" target="_blank">Docs</a></td>
+      <td><a href="https://www.npmjs.com/package/@pi-lib/stellar?activeTab=readme" target="_blank">NPM</a></td>
+      <td><a href="https://github.com/lancerael/pi/tree/main/./src/packages/components/visualisations/scenes/Stellar" target="_blank">Github</a></td>
+    </tr>
+  </tbody>
+</table>
+
+### WorldMap
+
+**@pi-lib/world-map**
+
+A React component for an SVG world map chart
+
+**Peer Dependencies:** @pi-lib/styles, d3-geo, d3-selection, react, styled-components
+
+<table>
+  <tbody>
+    <tr>
+      <td><a href="https://pi.lance-taylor.com/?path=/story/visualisations-charts-worldmap" target="_blank">Docs</a></td>
+      <td><a href="https://www.npmjs.com/package/@pi-lib/world-map?activeTab=readme" target="_blank">NPM</a></td>
+      <td><a href="https://github.com/lancerael/pi/tree/main/src/packages/components/visualisations/charts/WorldMap" target="_blank">Github</a></td>
+    </tr>
+  </tbody>
+</table>
+
 ## Utilities
 
 ### config

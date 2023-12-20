@@ -1,27 +1,19 @@
 import Card from '@pi-lib/card'
 import Link from '@pi-lib/link'
-import { StyledImages, StyledLinkWrapper } from './Demo.style'
+import { StyledBlurb, StyledImages, StyledLinkWrapper } from './Demo.style'
 import PageSection from '../PageSection'
 import Grid from '@pi-lib/grid'
 
 export const Demo = () => {
   return (
-    <PageSection title={'Open Source'}>
-      <Card title="Tech Demo" subTitle="JavaScript tools and libraries">
+    <PageSection title={'Open Source'} className="pi-page-grid-full">
+      <Card isClear>
         <Grid>
-          <div
-            style={{
-              marginTop: '1rem',
-              display: 'flex',
-              flexDirection: 'column',
-              gap: '1rem',
-            }}
-          >
+          <StyledBlurb>
             <div>
-              <strong>Pi Charts</strong> - <em>JS Charting</em>
-            </div>
-            <div>
-              <strong>Pi Lib</strong> - <em>React Components</em>
+              All components seen here are from my own library. Visit the
+              sandbox for more components and data visualisations, with theming
+              and other customisations.
             </div>
             <StyledLinkWrapper>
               <Link
@@ -31,10 +23,10 @@ export const Demo = () => {
                 isExternal
                 title="Link to the Pi tech demo"
               >
-                Click for Demo
+                Sandbox Demo
               </Link>
             </StyledLinkWrapper>
-          </div>
+          </StyledBlurb>
           <StyledImages>
             <img src="/demo1.png" alt="Demo 1 diagram" />
             <img src="/demo2.png" alt="Demo 2 diagram" />

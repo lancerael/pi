@@ -9,11 +9,11 @@ import { PageHeader } from '@/components/PageHeader/PageHeader'
 import Footer from '@/components/Footer'
 import Skillset from '@/components/Skillset'
 import Highlights from '@/components/Highlights'
-import { TechList } from '@/components/TechList/TechList'
 import Ticker from '@/components/Ticker'
 import Demo from '@/components/Demo'
 import useLimitedEvents from '@pi-lib/use-limited-events'
 import { pageState, setState } from './page.state'
+import TechList from '@/components/TechList'
 
 export default function Home() {
   const wrapperRef = useRef<HTMLDivElement>(null)

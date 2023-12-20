@@ -17,6 +17,10 @@ export interface CardProps
    */
   isClear?: boolean
   /**
+   * Sets whether the background is simple and opaque
+   */
+  isSolid?: boolean
+  /**
    * Sets whether the background and border should be clear
    */
   iconProps?: CustomIconProps

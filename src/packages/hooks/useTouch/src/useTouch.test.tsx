@@ -43,14 +43,22 @@ describe('useTouch Hook', () => {
         y: 0,
       },
       zoom: 1,
-    }
+    } as TouchState
     controls = {
       touchState,
-      setTouchState: (setter: any) => {
-        touchState = setter(touchState)
-        console.log(touchState)
+      touchStateSignal: {
+        value: touchState,
       },
-    }
+      setTouchState: (newTouchState) => {
+        if (newTouchState.pan) {
+          touchState.pan.x = newTouchState.pan.x
+          touchState.pan.y = newTouchState.pan.y
+        }
+        if (newTouchState.zoom) {
+          touchState.zoom = newTouchState.zoom
+        }
+      },
+    } as TouchControls
     target = document.createElement('div')
     document.body.appendChild(target)
     targetRef = { current: target }
@@ -79,7 +87,7 @@ describe('useTouch Hook', () => {
       firePointerEvent(target, 'pointerup', 0)
     })
     expect(touchState.zoom).toBe(1)
-    expect(touchState.pan).toEqual({ x: 20, y: 20 })
+    expect(touchState.pan).toEqual({ x: 60, y: 60 })
   })
 
   test('should handle pinch correctly', async () => {
@@ -92,7 +100,7 @@ describe('useTouch Hook', () => {
       firePointerEvent(target, 'pointerup', 0)
       firePointerEvent(target, 'pointerup', 1)
     })
-    expect(touchState.zoom).toBe(1.471)
+    expect(touchState.zoom.toFixed(3)).toBe('1.471')
     expect(touchState.pan).toEqual({ x: 0, y: 0 })
   })
 })

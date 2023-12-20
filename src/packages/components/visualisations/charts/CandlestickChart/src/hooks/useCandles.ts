@@ -92,7 +92,10 @@ export const useCandles = (
 
   // Clear the tooltip selection on window resize or click
   const resetSelection = useCallback((e?: UIEvent) => {
-    if (!e || (e?.target as SVGElement)?.nodeName !== 'rect') {
+    if (
+      !e ||
+      ((e?.target as SVGElement)?.nodeName !== 'rect' && !!activeItem.item)
+    ) {
       selectedItem.current = undefined
       setActiveItem(() => ({}))
     }
@@ -135,12 +138,7 @@ export const useCandles = (
       const y2 = (d: CandlestickDayData) => y(d) + height(d)
 
       const activateItem = (d: CandlestickDayData, candle: SVGRectElement) => {
-        const { x, y, width, height } = getAttributes(candle, [
-          'x',
-          'y',
-          'width',
-          'height',
-        ])
+        const { x, y, height } = getAttributes(candle, ['x', 'y', 'height'])
         setActiveItem({
           item: d,
           position: {

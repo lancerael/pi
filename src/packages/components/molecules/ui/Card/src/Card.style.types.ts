@@ -1,4 +1,6 @@
 import { TransientProps } from '@pi-lib/styles'
 import { CardProps } from './Card.types'
 
-export type StyledCardProps = TransientProps<Pick<CardProps, 'isClear'>>
+export type StyledCardProps = TransientProps<
+  Pick<CardProps, 'isClear' | 'isSolid'>
+>
