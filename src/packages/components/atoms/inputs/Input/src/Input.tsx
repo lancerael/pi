@@ -1,6 +1,7 @@
 import { getTransientProps } from '@pi-lib/styles'
 import { StyledInput } from './Input.style'
 import { InputProps } from './Input.types'
+import { memo } from 'react'
 
 /**
  * Input is a React component for rendering form inputs with optional labels.
@@ -9,14 +10,10 @@ import { InputProps } from './Input.types'
  * @param {InputProps} props - The properties for the Input component.
  * @returns {JSX.Element} A styled input element with an optional label.
  */
-export const Input = ({
-  longTitle,
-  title,
-  type = 'text',
-  name = title?.toLowerCase().split(' ').join(),
-  dataTestid = 'pi-lib-input',
-  ...inputProps
-}: InputProps) => {
+export const Input = memo(({ longTitle, title, type = 'text', name = title
+    ?.toLowerCase()
+    .split(' ')
+    .join(), dataTestid = 'pi-lib-input', ...inputProps }: InputProps) => {
   return (
     <StyledInput data-testid={dataTestid} {...getTransientProps({ type })}>
       {title && <label htmlFor={name}>{title}:</label>}
@@ -27,6 +24,6 @@ export const Input = ({
       />
     </StyledInput>
   )
-}
+})
 
 export default Input

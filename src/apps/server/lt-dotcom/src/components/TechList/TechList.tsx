@@ -1,7 +1,7 @@
 import Carousel from '@pi-lib/carousel'
 import { ICONS_EXTENDED } from '@pi-lib/constants'
 import IconButton from '@pi-lib/icon-button'
-import { ReactElement } from 'react'
+import { ReactElement, memo } from 'react'
 import { TravelTrackerProps } from '../PageHeader/PageHeader.types'
 import { StyledFullGradient } from '@/app/page.style'
 
@@ -32,15 +32,14 @@ const itemList = Object.entries(ICONS_EXTENDED)
   })
   .filter(Boolean) as ReactElement[]
 
-export const TechList = ({
-  travelSpeed: speed,
-  isTravelling: isScroller,
-}: TravelTrackerProps) => {
-  return (
-    <StyledFullGradient className="pi-page-grid-full">
-      <Carousel {...{ itemList, speed, isScroller }} />
-    </StyledFullGradient>
-  )
-}
+export const TechList = memo(
+  ({ travelSpeed: speed, isTravelling: isScroller }: TravelTrackerProps) => {
+    return (
+      <StyledFullGradient className="pi-page-grid-full">
+        <Carousel {...{ itemList, speed, isScroller }} />
+      </StyledFullGradient>
+    )
+  }
+)
 
 export default TechList

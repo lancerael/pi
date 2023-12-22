@@ -1,4 +1,4 @@
-import { useCallback, useState } from 'react'
+import { memo, useCallback, useState } from 'react'
 import { StyledLine, StyledShimmer } from './Shimmer.style'
 import { ShimmerProps } from './Shimmer.types'
 import { useTimer } from '@pi-lib/use-timer'
@@ -11,51 +11,53 @@ import { useTimer } from '@pi-lib/use-timer'
  * @param {ShimmerProps} props - The props for the Shimmer component.
  * @returns {JSX.Element} A styled shimmer effect wrapping each provided line.
  */
-export const Shimmer = ({
-  lines,
-  delay = 1000,
-  pause = 5000,
-  holdFirst = pause,
-  fadeTime = 500,
-  behaviour = 'loop',
-  callback = () => {},
-}: ShimmerProps) => {
-  const [visibleLine, setVisibleLine] = useState(-1)
+export const Shimmer = memo(
+  ({
+    lines,
+    delay = 1000,
+    pause = 5000,
+    holdFirst = pause,
+    fadeTime = 500,
+    behaviour = 'loop',
+    callback = () => {},
+  }: ShimmerProps) => {
+    const [visibleLine, setVisibleLine] = useState(-1)
 
-  const goToNextLine = useCallback(() => {
-    setVisibleLine((currentLine) => {
-      const nextLine = currentLine + 1
-      if (behaviour === 'loop' || nextLine < lines.length)
-        return nextLine % lines.length
-      requestAnimationFrame(callback)
-      if (behaviour === 'fade') return nextLine
-      return currentLine
-    })
-  }, [])
+    const goToNextLine = useCallback(() => {
+      setVisibleLine((currentLine) => {
+        const nextLine = currentLine + 1
+        if (behaviour === 'loop' || nextLine < lines.length)
+          return nextLine % lines.length
+        requestAnimationFrame(callback)
+        if (behaviour === 'fade') return nextLine
+        return currentLine
+      })
+    }, [])
 
-  useTimer(
-    goToNextLine,
-    {
-      type: visibleLine === -1 ? 'Timeout' : 'Interval',
-      waitTime: [delay, holdFirst][visibleLine + 1] ?? pause,
-    },
-    [delay, pause, holdFirst, visibleLine]
-  )
+    useTimer(
+      goToNextLine,
+      {
+        type: visibleLine === -1 ? 'Timeout' : 'Interval',
+        waitTime: [delay, holdFirst][visibleLine + 1] ?? pause,
+      },
+      [delay, pause, holdFirst, visibleLine]
+    )
 
-  return (
-    <StyledShimmer>
-      {lines.map((line, i) => (
-        <StyledLine
-          key={i}
-          $isVisible={visibleLine === i}
-          $holdTime={i === 0 ? holdFirst : pause}
-          $fadeTime={fadeTime}
-          data-content={line}
-          data-testid={line}
-        />
-      ))}
-    </StyledShimmer>
-  )
-}
+    return (
+      <StyledShimmer>
+        {lines.map((line, i) => (
+          <StyledLine
+            key={i}
+            $isVisible={visibleLine === i}
+            $holdTime={i === 0 ? holdFirst : pause}
+            $fadeTime={fadeTime}
+            data-content={line}
+            data-testid={line}
+          />
+        ))}
+      </StyledShimmer>
+    )
+  }
+)
 
 export default Shimmer

@@ -1,10 +1,11 @@
 import { StyledFullGradient } from '@/app/page.style'
 import IconButton from '@pi-lib/icon-button'
+import { memo } from 'react'
 
 /**
  * The banner at the bottom of the page containing external links
  */
-export const Footer = () => {
+export const Footer = memo(() => {
   return (
     <StyledFullGradient
       className="pi-page-grid-full"
@@ -66,5 +67,6 @@ export const Footer = () => {
       </div>
     </StyledFullGradient>
   )
-}
+})
+
 export default Footer
