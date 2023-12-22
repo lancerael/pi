@@ -2,8 +2,9 @@ import Grid from '@pi-lib/grid'
 import Card from '@pi-lib/card'
 import { SkillsContainer, StyledCardWrapper } from './Skillset.style'
 import { skillset } from '@/data/skillset'
+import { memo } from 'react'
 
-export const Skillset = () => {
+export const Skillset = memo(() => {
   return (
     <SkillsContainer>
       <Grid>
@@ -35,6 +36,6 @@ export const Skillset = () => {
       </Grid>
     </SkillsContainer>
   )
-}
+})
 
 export default Skillset

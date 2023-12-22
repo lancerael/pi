@@ -3,8 +3,9 @@ import Card from '@pi-lib/card'
 import Grid from '@pi-lib/grid'
 import PageSection from '../PageSection'
 import { StyledList } from './Highlights.style'
+import { memo } from 'react'
 
-export const Highlights = () => {
+export const Highlights = memo(() => {
   return (
     <PageSection title={'Career Highlights'}>
       <Grid>
@@ -21,6 +22,6 @@ export const Highlights = () => {
       </Grid>
     </PageSection>
   )
-}
+})
 
 export default Highlights

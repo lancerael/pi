@@ -58,6 +58,7 @@ export const StyledInfo = styled.div`
   max-height: 100%;
   overflow-x: auto;
   margin: -16px;
+  padding: 1rem;
 `
 
 /**

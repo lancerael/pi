@@ -3,8 +3,9 @@ import Link from '@pi-lib/link'
 import { StyledBlurb, StyledImages, StyledLinkWrapper } from './Demo.style'
 import PageSection from '../PageSection'
 import Grid from '@pi-lib/grid'
+import { memo } from 'react'
 
-export const Demo = () => {
+export const Demo = memo(() => {
   return (
     <PageSection title={'Open Source'} className="pi-page-grid-full">
       <Card isClear>
@@ -42,6 +43,6 @@ export const Demo = () => {
       </Card>
     </PageSection>
   )
-}
+})
 
 export default Demo

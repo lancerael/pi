@@ -10,6 +10,7 @@ import {
 } from './Card.style'
 import { CardProps } from './Card.types'
 import CustomIcon from '@pi-lib/custom-icon'
+import { memo } from 'react'
 
 /**
  * Card component for displaying content with an optional title and subtitle.
@@ -18,37 +19,39 @@ import CustomIcon from '@pi-lib/custom-icon'
  * @param {CardProps} props - The properties passed to the component.
  * @returns {React.ReactNode} A styled card element.
  */
-export const Card = ({
-  title,
-  subTitle,
-  isClear,
-  isSolid,
-  iconProps,
-  children,
-  ...props
-}: CardProps) => {
-  const icon = iconProps && (
-    <StyledIcon>
-      <CustomIcon {...iconProps} height="3.4rem" />
-    </StyledIcon>
-  )
-  const hasHeader = !!title || !!subTitle
-  return (
-    <StyledCard {...{ ...getTransientProps({ isClear, isSolid }), ...props }}>
-      {hasHeader ? (
-        <StyledTopSection>
-          {icon}
-          <StyledHeader>
-            {!!title && <StyledTitle>{title}</StyledTitle>}
-            {!!subTitle && <StyledSubTitle>{subTitle}</StyledSubTitle>}
-          </StyledHeader>
-        </StyledTopSection>
-      ) : (
-        icon
-      )}
-      <StyledContent>{children}</StyledContent>
-    </StyledCard>
-  )
-}
+export const Card = memo(
+  ({
+    title,
+    subTitle,
+    isClear,
+    isSolid,
+    iconProps,
+    children,
+    ...props
+  }: CardProps) => {
+    const icon = iconProps && (
+      <StyledIcon>
+        <CustomIcon {...iconProps} height="3.4rem" />
+      </StyledIcon>
+    )
+    const hasHeader = !!title || !!subTitle
+    return (
+      <StyledCard {...{ ...getTransientProps({ isClear, isSolid }), ...props }}>
+        {hasHeader ? (
+          <StyledTopSection>
+            {icon}
+            <StyledHeader>
+              {!!title && <StyledTitle>{title}</StyledTitle>}
+              {!!subTitle && <StyledSubTitle>{subTitle}</StyledSubTitle>}
+            </StyledHeader>
+          </StyledTopSection>
+        ) : (
+          icon
+        )}
+        <StyledContent>{children}</StyledContent>
+      </StyledCard>
+    )
+  }
+)
 
 export default Card

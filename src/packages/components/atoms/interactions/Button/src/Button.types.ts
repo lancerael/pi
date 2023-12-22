@@ -1,7 +1,7 @@
 import { BoxNames, Size } from '@pi-lib/styles'
 import { AriaButtonProps } from 'react-aria'
 import { TestId, Status } from '@pi-lib/types'
-import { HTMLProps } from 'react'
+import { HTMLProps, RefObject } from 'react'
 
 export type HTMLElementType = HTMLButtonElement | HTMLAnchorElement
 
@@ -47,4 +47,8 @@ export interface ButtonProps extends BaseButtonProps {
    * Show a specific size of button from the theme
    */
   buttonSize?: Size
+  /**
+   * Pass in a react ref (type needed for memo)
+   */
+  ref?: RefObject<HTMLElementType> | null
 }

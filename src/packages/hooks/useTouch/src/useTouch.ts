@@ -42,36 +42,42 @@ export const useTouch = <T = HTMLElement>({
    * Changes the zoom level.
    * @param {number} zoomChange - The change in zoom level.
    */
-  const zoom = useCallback((zoomChange: number) => {
-    resetCallback?.()
-    const [min, max] = trackers.current.ranges.zoomRange
-    controls.setTouchState({
-      modifier,
-      zoom: clampValue(
-        trackers.current.controls.zoom - zoomChange * 50,
-        min,
-        max
-      ),
-    })
-  }, [])
+  const zoom = useCallback(
+    (zoomChange: number) => {
+      resetCallback?.()
+      const [min, max] = trackers.current.ranges.zoomRange
+      controls.setTouchState({
+        modifier,
+        zoom: clampValue(
+          trackers.current.controls.zoom - zoomChange * 50,
+          min,
+          max
+        ),
+      })
+    },
+    [modifier, resetCallback]
+  )
 
   /**
    * Changes the pan level.
    * @param {PanLevel} panChange - The change in pan levels along x and y axes.
    */
-  const pan = useCallback((panChange: Coords) => {
-    resetCallback?.()
-    trackers.current.oldPanChange = { ...panChange }
-    const { x, y } = trackers.current.controls.pan
-    const { panRange } = trackers.current.ranges
-    controls.setTouchState({
-      modifier,
-      pan: {
-        x: clampValue(x + panChange.x, panRange[0][0], panRange?.[0][1]),
-        y: clampValue(y + panChange.y, panRange[1][0], panRange?.[1][1]),
-      },
-    })
-  }, [])
+  const pan = useCallback(
+    (panChange: Coords) => {
+      resetCallback?.()
+      trackers.current.oldPanChange = { ...panChange }
+      const { x, y } = trackers.current.controls.pan
+      const { panRange } = trackers.current.ranges
+      controls.setTouchState({
+        modifier,
+        pan: {
+          x: clampValue(x + panChange.x, panRange[0][0], panRange?.[0][1]),
+          y: clampValue(y + panChange.y, panRange[1][0], panRange?.[1][1]),
+        },
+      })
+    },
+    [modifier, resetCallback]
+  )
 
   /**
    * Handles the start of a touch or pointer event.
@@ -126,7 +132,12 @@ export const useTouch = <T = HTMLElement>({
       trackers.current.oldPanChange = { x: 0, y: 0 }
       !!e && delete trackers.current.activePointers[e.pointerId]
     },
-    [trackers.current.oldPanChange.x, trackers.current.oldPanChange.y]
+    [
+      trackers.current.oldPanChange.x,
+      trackers.current.oldPanChange.y,
+      modifier,
+      stopCallback,
+    ]
   ) as EventListener
 
   /**

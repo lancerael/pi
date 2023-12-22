@@ -22,8 +22,8 @@ export const TechList = () => {
     })
     .filter(Boolean) as JSX.Element[]
   return (
-    <div style={{ padding: '1rem' }}>
-      <Carousel {...{ itemList }} />
+    <div style={{ padding: '0 1rem' }}>
+      <Carousel {...{ itemList, isScroller: true }} />
     </div>
   )
 }
