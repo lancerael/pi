@@ -1,7 +1,0 @@
-{
-  "type": "minor",
-  "comment": "Style & performance tweaks",
-  "packageName": "@pi-lib/carousel",
-  "email": "lancerael@googlemail.com",
-  "dependentChangeType": "patch"
-}

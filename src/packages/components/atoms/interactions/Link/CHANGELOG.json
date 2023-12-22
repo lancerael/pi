@@ -2,6 +2,21 @@
   "name": "@pi-lib/link",
   "entries": [
     {
+      "date": "Fri, 22 Dec 2023 17:54:41 GMT",
+      "tag": "@pi-lib/link_v2.2.0",
+      "version": "2.2.0",
+      "comments": {
+        "minor": [
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/link",
+            "commit": "6910a5e359c0a98a599faf8cfad986caa7978efc",
+            "comment": "Style & performance tweaks"
+          }
+        ]
+      }
+    },
+    {
       "date": "Tue, 12 Dec 2023 18:34:30 GMT",
       "tag": "@pi-lib/link_v2.1.6",
       "version": "2.1.6",

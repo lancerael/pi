@@ -1,7 +1,0 @@
-{
-  "type": "minor",
-  "comment": "Style & performance tweaks",
-  "packageName": "@pi-lib/card",
-  "email": "lancerael@googlemail.com",
-  "dependentChangeType": "patch"
-}

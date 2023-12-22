@@ -2,6 +2,21 @@
   "name": "@pi-lib/use-touch",
   "entries": [
     {
+      "date": "Fri, 22 Dec 2023 17:54:41 GMT",
+      "tag": "@pi-lib/use-touch_v3.1.0",
+      "version": "3.1.0",
+      "comments": {
+        "minor": [
+          {
+            "author": "lancerael@googlemail.com",
+            "package": "@pi-lib/use-touch",
+            "commit": "6910a5e359c0a98a599faf8cfad986caa7978efc",
+            "comment": "Style & performance tweaks"
+          }
+        ]
+      }
+    },
+    {
       "date": "Wed, 20 Dec 2023 02:00:28 GMT",
       "tag": "@pi-lib/use-touch_v3.0.0",
       "version": "3.0.0",
