@@ -32,6 +32,7 @@ const getButtonStyle = ({
           name: $boxName,
           isInverted: $isInverted,
           shadowProps: $isShadowed ? undefined : null,
+          hasHover: !disabled,
         })}
     ${disabled && 'pointer-events: none;'}
     ${$status && $status !== 'default'
@@ -47,9 +48,6 @@ const getButtonStyle = ({
     font-size: ${size};
     transition: all 0.3s;
     user-select: none;
-    &:hover:not([disabled]) {
-      filter: brightness(80%) contrast(150%) saturate(135%);
-    }
     &:disabled {
       background-color: ${theme!.colors['border']};
       border-color: ${theme!.colors['border']};

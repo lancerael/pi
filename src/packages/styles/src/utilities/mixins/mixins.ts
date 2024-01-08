@@ -53,9 +53,9 @@ export const shadow = ({
 export const formInput = (isExpanded?: boolean) => {
   return css`
     height: ${isExpanded ? '1.4em' : '1.2em'};
-    background: ${getDefaultColorVar('bg')};
+    background: ${getDefaultColorVar('input')};
     color: ${getDefaultColorVar('text')};
-    border: 1px solid ${getDefaultColorVar('text')};
+    border: 1px solid ${getDefaultColorVar('border')};
     border-radius: 4px;
     padding: 0 ${isExpanded ? '0.1em' : '0.2em'};
     font-size: 1em;
@@ -69,6 +69,7 @@ export const box = ({
   name = 'default',
   isInverted,
   isTransparent,
+  hasHover,
   shadowProps,
 }: BoxProps = {}) => {
   const colors = [...boxColors[name]]
@@ -85,6 +86,14 @@ export const box = ({
     border-radius: 6px;
     padding: 8px;
     ${shadowProps !== null && shadow(shadowProps)}
+
+    ${hasHover &&
+    css`
+      &:hover {
+        background-color: ${getDefaultColorVar(`${backgroundVar}LC`)};
+        color: ${getDefaultColorVar(`${colorVar}LC`)};
+      }
+    `}
   `
 }
 

@@ -1,6 +1,12 @@
 import styled, { css } from 'styled-components'
-import { StyledCardProps } from './Card.style.types'
-import { DEFAULT_THEME, box, container, maskGradient } from '@pi-lib/styles'
+import { StyledCardProps, StyledTopSectionProps } from './Card.style.types'
+import {
+  DEFAULT_THEME,
+  box,
+  container,
+  getDefaultColorVar,
+  maskGradient,
+} from '@pi-lib/styles'
 
 export const StyledCard = styled.div<StyledCardProps>(
   ({ $isClear, $isSolid }) => css`
@@ -8,24 +14,31 @@ export const StyledCard = styled.div<StyledCardProps>(
     ${!$isClear &&
     css`
       ${$isSolid ? box() : container()}
+      ${$isSolid &&
+      css`
+        background: ${getDefaultColorVar('subtleHC')};
+      `}
       padding: 1rem 1.5rem 1.5rem;
     `}
   `
 )
 
-export const StyledTopSection = styled.div`
-  align-items: center;
-  display: flex;
-  margin: 0 0 0.5rem -0.25rem;
+export const StyledTopSection = styled.div<StyledTopSectionProps>(
+  ({ $hasIcon }) => css`
+    align-items: center;
+    display: flex;
+    margin: 0 0 0.5rem ${$hasIcon ? '-0.25rem' : 0};
 
-  & svg {
-    margin-top: 0.1rem;
-    padding-right: 0.25rem;
-  }
-`
+    & svg {
+      margin-top: 0.1rem;
+      padding-right: 0.25rem;
+    }
+  `
+)
 
 export const StyledHeader = styled.div`
   color: ${({ theme }) => theme.colors.text};
+  margin-bottom: 0.5rem;
 `
 
 export const StyledTitle = styled.h2`

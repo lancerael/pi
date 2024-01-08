@@ -16,14 +16,16 @@ export const Modal = ({
 }: DismissableContentProps) => {
   // Used to manage closing internally
   const [isActive, setIsActive] = useState(!isDismissed)
+
   const dismiss = (isBeingDismissed: boolean) => {
+    if (!isDismissable) return
     setIsActive(!isBeingDismissed)
     isBeingDismissed && dismissCallback?.()
   }
 
   // Used to restrict page closing to modal screen
   const contentRef = useRef<HTMLDivElement>(null)
-  useWindowClick(() => isDismissable && dismiss(true), contentRef)
+  useWindowClick(() => dismiss(true), contentRef)
 
   // Ued to handle external changes to closing
   useEffect(() => {

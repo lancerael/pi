@@ -16,7 +16,14 @@ export const useWindowClick = (
    */
   useLimitedEvents(
     (e: MouseEvent) => {
-      if (!!e.target && !containerRef?.current?.contains(e.target as Node)) {
+      const isContainerVisible =
+        containerRef?.current &&
+        window.getComputedStyle(containerRef.current).opacity === '1'
+      if (
+        !!e.target &&
+        isContainerVisible &&
+        !containerRef?.current?.contains(e.target as Node)
+      ) {
         callback()
       }
     },

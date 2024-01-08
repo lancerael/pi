@@ -444,6 +444,55 @@ importers:
         specifier: ^5
         version: 5.2.2
 
+  src/apps/spas/pi-auth:
+    dependencies:
+      '@pi-lib/button':
+        specifier: workspace:^
+        version: link:../../../packages/components/atoms/interactions/Button
+      '@pi-lib/card':
+        specifier: workspace:^
+        version: link:../../../packages/components/molecules/ui/Card
+      '@pi-lib/input':
+        specifier: workspace:^
+        version: link:../../../packages/components/atoms/inputs/Input
+      '@pi-lib/modal':
+        specifier: workspace:^
+        version: link:../../../packages/components/molecules/ui/Modal
+      '@pi-lib/page-grid':
+        specifier: workspace:^
+        version: link:../../../packages/components/atoms/layout/PageGrid
+      '@pi-lib/page-loader':
+        specifier: workspace:^
+        version: link:../../../packages/components/molecules/ui/PageLoader
+      '@pi-lib/styles':
+        specifier: workspace:^
+        version: link:../../../packages/styles
+      '@pi-lib/toast':
+        specifier: workspace:^
+        version: link:../../../packages/components/molecules/ui/Toast
+      '@pi-lib/utils':
+        specifier: workspace:^
+        version: link:../../../packages/utils
+      react:
+        specifier: ^18.2.0
+        version: 18.2.0
+      react-dom:
+        specifier: ^18.2.0
+        version: 18.2.0(react@18.2.0)
+      styled-components:
+        specifier: ^6.1.0
+        version: 6.1.0(react-dom@18.2.0)(react@18.2.0)
+    devDependencies:
+      '@vitejs/plugin-react':
+        specifier: ^4.1.0
+        version: 4.1.0(vite@4.4.10)
+      typescript:
+        specifier: ^5
+        version: 5.2.2
+      vite:
+        specifier: ^4.4.10
+        version: 4.4.10(@types/node@18.15.3)
+
   src/apps/spas/tech-demo:
     dependencies:
       '@originjs/vite-plugin-federation':
@@ -1496,6 +1545,9 @@ importers:
       '@pi-lib/use-window-click':
         specifier: workspace:^
         version: link:../../../../hooks/useWindowClick
+      '@pi-lib/utils':
+        specifier: workspace:^
+        version: link:../../../../utils
       react:
         specifier: ^18.2.0
         version: 18.2.0

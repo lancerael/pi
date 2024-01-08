@@ -1,0 +1,31 @@
+{
+  "name": "@pi-lib/pi-auth-spa",
+  "version": "1.0.0",
+  "description": "A demo FE app for use with @pi-lib/auth",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite --host"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@pi-lib/button": "workspace:^",
+    "@pi-lib/card": "workspace:^",
+    "@pi-lib/input": "workspace:^",
+    "@pi-lib/modal": "workspace:^",
+    "@pi-lib/page-grid": "workspace:^",
+    "@pi-lib/page-loader": "workspace:^",
+    "@pi-lib/styles": "workspace:^",
+    "@pi-lib/toast": "workspace:^",
+    "@pi-lib/utils": "workspace:^",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "styled-components": "^6.1.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.1.0",
+    "typescript": "^5",
+    "vite": "^4.4.10"
+  }
+}

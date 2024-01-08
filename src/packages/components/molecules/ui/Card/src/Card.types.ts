@@ -3,15 +3,15 @@ import { PropsWithChildren } from 'react'
 
 export interface CardProps
   extends PropsWithChildren,
-    React.HTMLProps<HTMLInputElement> {
+    Omit<React.HTMLProps<HTMLInputElement>, 'title'> {
   /**
    * The title for the card
    */
-  title?: any
+  title?: JSX.Element | string
   /**
    * The subtitle for the card
    */
-  subTitle?: any
+  subTitle?: JSX.Element | string
   /**
    * Sets whether the background and border should be clear
    */

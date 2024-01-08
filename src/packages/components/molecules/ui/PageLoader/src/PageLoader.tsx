@@ -6,7 +6,7 @@ import { PageLoaderProps } from './PageLoader.types'
  * A React component for a page blocking loader
  */
 export const PageLoader = ({ isActive }: PageLoaderProps) => (
-  <ModalScreen {...{ isActive }}>
+  <ModalScreen {...{ isActive }} isUnclickable>
     <Loader isLarge />
   </ModalScreen>
 )

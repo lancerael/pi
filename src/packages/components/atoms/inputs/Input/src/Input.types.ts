@@ -8,8 +8,4 @@ export interface InputProps extends React.HTMLProps<HTMLInputElement>, TestId {
    * A longer title for the browser tooltip
    */
   longTitle?: string
-  /**
-   * A type for the input
-   */
-  type?: 'text' | 'number' | 'color'
 }
