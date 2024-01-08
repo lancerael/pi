@@ -36,7 +36,11 @@ export const PageHeader = memo(
       >
         <PageGrid>
           <StyledHeaderInner>
-            <StyledHeaderSection title="Lance Taylor" href="#top">
+            <StyledHeaderSection
+              title="Lance Taylor"
+              href="#top"
+              $isAndroid={/Android/.test(navigator?.userAgent)}
+            >
               <CustomIcon src="/cube.svg" {...ICON_PROPS} />
               <Shimmer lines={['LT']} behaviour="linger" delay={0} />
             </StyledHeaderSection>

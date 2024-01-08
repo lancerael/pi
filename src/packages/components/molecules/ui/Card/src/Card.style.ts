@@ -30,7 +30,7 @@ export const StyledTopSection = styled.div<StyledTopSectionProps>(
     margin: 0 0 0.5rem ${$hasIcon ? '-0.25rem' : 0};
 
     & svg {
-      margin-top: 0.1rem;
+      margin-top: -0.2rem;
       padding-right: 0.25rem;
     }
   `
