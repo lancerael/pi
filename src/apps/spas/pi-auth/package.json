@@ -4,6 +4,8 @@
   "description": "A demo FE app for use with @pi-lib/auth",
   "main": "index.js",
   "scripts": {
+    "build": "vite build",
+    "preview": "vite preview --host",
     "dev": "vite --host"
   },
   "keywords": [

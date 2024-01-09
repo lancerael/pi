@@ -25,6 +25,7 @@ coverage
 build/Release
 build/
 vanilla/
+dist/
 
 # Dependency directories
 node_modules/

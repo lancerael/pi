@@ -4,10 +4,14 @@ WORKDIR /usr/app
 
 COPY package*.json ./
 
+RUN sed -i 's/"workspace:\^"/"\*"/g' package.json
+
 RUN npm install
 
 COPY . .
 
-EXPOSE 5173:5173
+RUN npm run build
 
-CMD ["npm", "run", "dev"]
+EXPOSE 4173:4173
+
+CMD ["npm", "run", "preview"]
