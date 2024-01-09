@@ -3,7 +3,7 @@
   "version": "5.0.2",
   "description": "React theming utility for use with Pi and styled-components",
   "keywords": [
-    "pi",
+    "pi-lib",
     "react",
     "theming",
     "theme",

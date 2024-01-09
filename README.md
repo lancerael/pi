@@ -274,7 +274,7 @@ A React component for an expanding/collapsing menu with icons
 
 Modal for custom content that allows dismissal internally or externally
 
-**Peer Dependencies:** @pi-lib/dismissable-content, @pi-lib/modal-screen, @pi-lib/styles, @pi-lib/use-window-click, react, styled-components
+**Peer Dependencies:** @pi-lib/dismissable-content, @pi-lib/modal-screen, @pi-lib/styles, @pi-lib/use-window-click, @pi-lib/utils, react, styled-components
 
 <table>
   <tbody>

@@ -22,7 +22,7 @@ export const hexToRgba = (
   const [r, g, b] = [0, 1, 2].map((i) => {
     let newVal = parseInt(newHex.substring(i * 2, i * 2 + 2), 16)
     newVal *= brightness
-    return newVal > 255 ? 255 : newVal
+    return newVal > 255 ? 255 : Math.round(newVal)
   })
   return `rgba(${r}, ${g}, ${b}, ${opacity})`
 }

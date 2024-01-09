@@ -18,7 +18,9 @@ export const useWindowClick = (
     (e: MouseEvent) => {
       const isContainerVisible =
         containerRef?.current &&
-        window.getComputedStyle(containerRef.current).opacity === '1'
+        ['', '1'].includes(
+          window.getComputedStyle(containerRef.current).opacity
+        )
       if (
         !!e.target &&
         isContainerVisible &&

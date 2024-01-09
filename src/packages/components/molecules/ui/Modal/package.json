@@ -3,7 +3,7 @@
   "version": "1.1.14",
   "description": "Modal for custom content that allows dismissal internally or externally",
   "keywords": [
-    "pi",
+    "pi-lib",
     "react",
     "component",
     "molecules",

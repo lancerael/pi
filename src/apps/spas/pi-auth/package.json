@@ -6,8 +6,12 @@
   "scripts": {
     "dev": "vite --host"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "pi-lib",
+    "auth"
+  ],
+  "private": "true",
+  "author": "Lance Taylor",
   "license": "ISC",
   "dependencies": {
     "@pi-lib/button": "workspace:^",

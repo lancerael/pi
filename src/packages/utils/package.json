@@ -3,7 +3,7 @@
   "version": "7.1.0",
   "description": "Utilities for use with Pi",
   "keywords": [
-    "pi",
+    "pi-lib",
     "utilities"
   ],
   "repository": {

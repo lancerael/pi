@@ -3,7 +3,7 @@
   "version": "2.0.5",
   "description": "Shared Pi config",
   "keywords": [
-    "pi",
+    "pi-lib",
     "vite",
     "config",
     "utilities"
