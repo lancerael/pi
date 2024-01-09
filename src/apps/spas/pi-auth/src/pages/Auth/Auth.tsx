@@ -4,7 +4,7 @@ import Button from '@pi-lib/button'
 import Modal from '@pi-lib/modal'
 import PageLoader from '@pi-lib/page-loader'
 import Toast from '@pi-lib/toast'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import UserForm from '../../components/UserForm'
 import {
   API_URL,
@@ -26,6 +26,7 @@ export const Auth = () => {
     isLoggedIn: false,
     isLoading: false,
     isModalActive: false,
+    isCookieConsent: false,
   })
   const [formInputs, setFormInputs] = useState({})
   const [formType, setFormType] = useState('signup')
@@ -46,7 +47,7 @@ export const Auth = () => {
     setFlag({ isModalActive: true })
   }
 
-  const makeQuery = debounce(async (type: Endpoints = 'login') => {
+  const makeQuery = debounce(async (type: Endpoints, isSilent?: boolean) => {
     setFlag({ isLoading: true })
     const method = ENDPOINT_METHODS[type]
     const headers = {
@@ -56,8 +57,18 @@ export const Auth = () => {
       'authorization': ['validate', 'logout'].includes(type)
         ? `Bearer ${accessToken}`
         : undefined,
+      'Origin': window.location.origin,
     }
-    const body = method === 'POST' ? JSON.stringify(formInputs) : undefined
+    const body =
+      method === 'POST'
+        ? JSON.stringify({
+            ...formInputs,
+            consent:
+              type === 'login'
+                ? flagTracker.isCookieConsent.toString()
+                : undefined,
+          })
+        : undefined
     let statusProps
 
     try {
@@ -94,22 +105,25 @@ export const Auth = () => {
         children: `${error.toString()} ❌`,
       }
     } finally {
-      setToasts((currentToasts) => ({
-        ...currentToasts,
-        [`toast${++queryCount}`]: {
-          timerInterval: 15000,
-          children: (
-            <>
-              Request #{queryCount}: {type} - <Status {...statusProps} />
-            </>
-          ),
-        },
-      }))
+      !isSilent &&
+        setToasts((currentToasts) => ({
+          ...currentToasts,
+          [`toast${++queryCount}`]: {
+            timerInterval: 15000,
+            children: (
+              <>
+                Request #{queryCount}: {type} - <Status {...statusProps} />
+              </>
+            ),
+          },
+        }))
       setFlag({ isLoading: false })
     }
   }, 500)
 
-  const { isLoggedIn, isLoading, isModalActive } = flagTracker
+  useEffect(() => makeQuery('refresh', true), [])
+
+  const { isLoggedIn, isLoading, isModalActive, isCookieConsent } = flagTracker
 
   return (
     <>
@@ -137,6 +151,16 @@ export const Auth = () => {
       >
         <LoginModal title={FORM_DEFAULTS[formType].title}>
           <UserForm {...{ formInputs, setFormInputs }} />
+          {formType === 'login' && (
+            <div>
+              <input
+                type="checkbox"
+                checked={isCookieConsent}
+                onChange={() => setFlag({ isCookieConsent: !isCookieConsent })}
+              />{' '}
+              Keep me logged in 🍪
+            </div>
+          )}
           <Button
             onClick={() => makeQuery(formType)}
             disabled={!Object.values(formInputs).every(Boolean)}
