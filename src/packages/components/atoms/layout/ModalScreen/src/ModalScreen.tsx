@@ -9,6 +9,7 @@ import { getTransientProps } from '@pi-lib/styles'
 export const ModalScreen = ({
   children,
   isActive = false,
+  isUnclickable,
 }: ModalScreenProps) => {
   // Used to smooth background animation on closing
   const [isVisible, setIsVisible] = useState(isActive)
@@ -17,7 +18,9 @@ export const ModalScreen = ({
   }, [isActive])
 
   return (
-    <StyledModalScreen {...getTransientProps({ isActive, isVisible })}>
+    <StyledModalScreen
+      {...getTransientProps({ isActive, isVisible, isUnclickable })}
+    >
       {children}
     </StyledModalScreen>
   )

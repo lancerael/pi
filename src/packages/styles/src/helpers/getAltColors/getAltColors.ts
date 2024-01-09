@@ -20,7 +20,7 @@ export const getAltColors = (
 ) => {
   const isDark = scheme === 'dark'
   return Object.entries(colors).reduce((acc, [key, val]) => {
-    const dark = hexToRgba(val, 1, 0.5)
+    const dark = hexToRgba(val, 1, 0.9)
     const light = hexToRgba(val, 1, 2)
     return {
       ...acc,

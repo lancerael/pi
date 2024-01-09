@@ -1,0 +1,7 @@
+{
+  "type": "patch",
+  "comment": "Fixed double click bug",
+  "packageName": "@pi-lib/use-window-click",
+  "email": "11949472+lancerael@users.noreply.github.com",
+  "dependentChangeType": "patch"
+}

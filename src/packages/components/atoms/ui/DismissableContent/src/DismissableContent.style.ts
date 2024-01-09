@@ -3,7 +3,7 @@ import {
   StyledDismissableContentProps,
   StyledTimerProps,
 } from './DismissableContent.style.types'
-import { DEFAULT_THEME, gradient } from '@pi-lib/styles'
+import { DEFAULT_THEME, gradient, shadow } from '@pi-lib/styles'
 
 /**
  * The main container element for the styles
@@ -11,9 +11,10 @@ import { DEFAULT_THEME, gradient } from '@pi-lib/styles'
 export const StyledDismissableContent =
   styled.div<StyledDismissableContentProps>(({ $isVisible, $isPresent }) => {
     return css`
-      border: 1px solid ${({ theme }) => theme.colors.textStrong};
-      ${gradient({ name: 'special', to: 'bottom' })}
-      color: ${({ theme }) => theme.colors.shadowHC};
+      border: 1px solid ${({ theme }) => theme.colors.border};
+      ${gradient({ name: 'subtle', to: 'bottom' })}
+      ${shadow()}
+      color: ${({ theme }) => theme.colors.textStrong};
       border-radius: 8px;
       padding: 16px;
       opacity: ${$isVisible ? '1' : '0'};
@@ -37,10 +38,13 @@ export const StyledClose = styled.div`
   top: 8px;
   right: 8px;
   cursor: pointer;
+  path {
+    fill: ${({ theme }) => theme.colors.textStrong};
+  }
 
   :hover {
     path {
-      fill: ${({ theme }) => theme.colors.subtle};
+      fill: ${({ theme }) => theme.colors.text};
     }
   }
 `

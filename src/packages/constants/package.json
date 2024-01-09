@@ -3,7 +3,7 @@
   "version": "2.3.1",
   "description": "Shared Pi constants",
   "keywords": [
-    "pi",
+    "pi-lib",
     "constants",
     "utilities"
   ],

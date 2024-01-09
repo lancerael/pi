@@ -1,4 +1,4 @@
-import { BoxNames } from './theme.types'
+import { ColorTuples } from './theme.types'
 
 /**
  * The parameters of the base theme
@@ -31,18 +31,20 @@ export const statusColors = {
 /**
  * A map of the available background gradients
  */
-export const gradients = {
+export const gradients: ColorTuples = {
   default: ['dark', 'specialShadow'],
   alt: ['text', 'textSoft'],
   special: ['special', 'specialD'],
+  subtle: ['subtle', 'bg'],
 }
 
 /**
  * A map of the available box colours
  */
-export const boxColors: Record<BoxNames, [string, string]> = {
+export const boxColors: ColorTuples = {
   default: ['textSoft', 'subtle'],
   hi: ['bg', 'text'],
+  lo: ['subtle', 'textSoft'],
   alt: ['specialText', 'specialBg'],
   light: ['dark', 'light'],
 }

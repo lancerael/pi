@@ -26,3 +26,7 @@ export type StyledHeaderProps = PropsWithChildren &
   >
 
 export type HeaderState = 'hidden' | 'visible' | 'dark'
+
+export interface StyledHeaderSectionProps {
+  $isAndroid?: boolean
+}

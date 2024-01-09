@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components'
-import { StyledHeaderProps } from './PageHeader.types'
+import { StyledHeaderProps, StyledHeaderSectionProps } from './PageHeader.types'
 
 export const StyledHeader = styled.div<StyledHeaderProps>(
   ({ $fullWidth, $headerState, $isComplete }) => css`
@@ -26,22 +26,25 @@ export const StyledHeader = styled.div<StyledHeaderProps>(
   `
 )
 
-export const StyledHeaderSection = styled.a`
-  display: flex;
-  gap: 0.3rem;
-  align-items: center;
+export const StyledHeaderSection = styled.a<StyledHeaderSectionProps>(
+  ({ $isAndroid }) => css`
+    display: flex;
+    gap: 0.3rem;
+    align-items: center;
 
-  & [data-content='LT'] {
-    font-size: 1.7rem;
-    height: 1.7rem;
-    line-height: 2.1rem;
+    & [data-content='LT'] {
+      font-size: 1.7rem;
+      height: 1.7rem;
+      line-height: 2.1rem;
+      ${$isAndroid && 'margin-top: 0.4rem;'}
 
-    @media (width > 400px) {
-      line-height: auto;
-      height: auto;
+      @media (width > 400px) {
+        line-height: auto;
+        height: auto;
+      }
     }
-  }
-`
+  `
+)
 
 export const StyledHeaderInner = styled.div`
   justify-content: space-between;

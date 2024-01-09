@@ -10,7 +10,6 @@ export const throttle = (
   callback: (...args: any[]) => unknown,
   delay = 250
 ) => {
-  let timeout: NodeJS.Timeout
   let lastExecTime = 0
 
   return (...args: any[]) => {
@@ -20,14 +19,8 @@ export const throttle = (
       callback(...args)
     }
 
-    if (timeout) {
-      clearTimeout(timeout)
-    }
-
-    if (currentTime - lastExecTime >= delay) {
+    if (!lastExecTime || currentTime - lastExecTime >= delay) {
       execute()
-    } else {
-      timeout = setTimeout(execute, delay - (currentTime - lastExecTime))
     }
   }
 }

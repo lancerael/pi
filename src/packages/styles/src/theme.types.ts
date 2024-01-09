@@ -21,7 +21,9 @@ export type ThemedComponentWithChildren = ThemedComponent & PropsWithChildren
 
 export type Size = 'small' | 'medium' | 'large'
 
-export type BoxNames = 'default' | 'hi' | 'alt' | 'light'
+export type BoxNames = 'default' | 'hi' | 'lo' | 'alt' | 'light'
+
+export type ColorTuples = Record<string, [string, string]>
 
 export interface ThemeProps extends Partial<ThemedComponentWithChildren> {
   themeName?: ThemeName
@@ -50,6 +52,7 @@ export interface GradientProps {
 export interface BoxProps {
   isInverted?: boolean
   isTransparent?: boolean
+  hasHover?: boolean
   name?: keyof typeof boxColors
   shadowProps?: ShadowProps | null
 }

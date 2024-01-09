@@ -7,7 +7,7 @@
     "component",
     "atom",
     "ui",
-    "pi"
+    "pi-lib"
   ],
   "homepage": "https://pi.lance-taylor.com/?path=/docs/molecules-ui-toast",
   "repository": {

@@ -11,7 +11,8 @@ export const StyledInput = styled.div<StyledTextInputProps>`
 
   & label {
     display: inline-block;
-    min-width: calc(15% + 2em);
+    min-width: calc(15% + 2rem);
+    text-transform: capitalize;
   }
 
   & input {

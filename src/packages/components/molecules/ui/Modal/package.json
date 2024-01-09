@@ -3,7 +3,7 @@
   "version": "1.1.14",
   "description": "Modal for custom content that allows dismissal internally or externally",
   "keywords": [
-    "pi",
+    "pi-lib",
     "react",
     "component",
     "molecules",
@@ -40,6 +40,7 @@
     "@pi-lib/modal-screen": "workspace:^",
     "@pi-lib/styles": "workspace:^",
     "@pi-lib/use-window-click": "workspace:^",
+    "@pi-lib/utils": "workspace:^",
     "react": "^18.2.0",
     "styled-components": "^6.1.0"
   }

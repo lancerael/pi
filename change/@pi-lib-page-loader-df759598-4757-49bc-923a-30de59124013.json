@@ -1,0 +1,7 @@
+{
+  "type": "patch",
+  "comment": "Made unclickable",
+  "packageName": "@pi-lib/page-loader",
+  "email": "11949472+lancerael@users.noreply.github.com",
+  "dependentChangeType": "patch"
+}

@@ -6,7 +6,7 @@ import { DEFAULT_THEME } from '@pi-lib/styles'
  * The main container element for the modal screen styles
  */
 export const StyledModalScreen = styled.div<StyledModalScreenProps>(
-  ({ $isActive, $isVisible }) => css`
+  ({ $isActive, $isVisible, $isUnclickable }) => css`
     position: fixed;
     top: 0;
     left: 0;
@@ -18,6 +18,10 @@ export const StyledModalScreen = styled.div<StyledModalScreenProps>(
     justify-content: center;
     align-items: center;
     z-index: 9999;
+    ${$isUnclickable &&
+    css`
+      pointer-events: none;
+    `}
   `
 )
 

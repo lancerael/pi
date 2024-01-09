@@ -38,7 +38,7 @@ export const Card = memo(
     return (
       <StyledCard {...{ ...getTransientProps({ isClear, isSolid }), ...props }}>
         {hasHeader ? (
-          <StyledTopSection>
+          <StyledTopSection $hasIcon={!!icon}>
             {icon}
             <StyledHeader>
               {!!title && <StyledTitle>{title}</StyledTitle>}

@@ -14,9 +14,9 @@ describe('getAltColors', () => {
     // Check specific alternative versions
     assert.equal(altColors.primary, '#3498db')
     assert.equal(altColors.primaryA, 'rgba(52, 152, 219, 0.5)')
-    assert.equal(altColors.primaryD, 'rgba(26, 76, 109.5, 1)')
+    assert.equal(altColors.primaryD, 'rgba(47, 137, 197, 1)')
     assert.equal(altColors.primaryL, 'rgba(104, 255, 255, 1)')
-    assert.equal(altColors.primaryHC, 'rgba(26, 76, 109.5, 1)')
+    assert.equal(altColors.primaryHC, 'rgba(47, 137, 197, 1)')
     assert.equal(altColors.primaryLC, 'rgba(104, 255, 255, 1)')
   })
 
@@ -32,9 +32,9 @@ describe('getAltColors', () => {
     // Check specific alternative versions
     assert.equal(altColors.primary, '#3498db')
     assert.equal(altColors.primaryA, 'rgba(52, 152, 219, 0.5)')
-    assert.equal(altColors.primaryD, 'rgba(26, 76, 109.5, 1)')
+    assert.equal(altColors.primaryD, 'rgba(47, 137, 197, 1)')
     assert.equal(altColors.primaryL, 'rgba(104, 255, 255, 1)')
     assert.equal(altColors.primaryHC, 'rgba(104, 255, 255, 1)')
-    assert.equal(altColors.primaryLC, 'rgba(26, 76, 109.5, 1)')
+    assert.equal(altColors.primaryLC, 'rgba(47, 137, 197, 1)')
   })
 })
