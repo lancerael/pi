@@ -1,6 +1,6 @@
 {
   "name": "@pi-lib/use-hash-comparison",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Create a hash of any object - can be used to compare dependencies and ensure correct re-rendering.",
   "keywords": [
     "react",

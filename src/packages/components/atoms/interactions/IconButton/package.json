@@ -1,6 +1,6 @@
 {
   "name": "@pi-lib/icon-button",
-  "version": "4.1.0",
+  "version": "4.1.1",
   "description": "A React component for a special button with an icon",
   "keywords": [
     "pi-lib",

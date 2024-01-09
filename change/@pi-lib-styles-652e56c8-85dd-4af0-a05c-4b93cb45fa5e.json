@@ -1,7 +1,0 @@
-{
-  "type": "patch",
-  "comment": "Style tweaks",
-  "packageName": "@pi-lib/styles",
-  "email": "11949472+lancerael@users.noreply.github.com",
-  "dependentChangeType": "patch"
-}

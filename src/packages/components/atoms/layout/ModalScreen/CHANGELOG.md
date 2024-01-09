@@ -1,8 +1,16 @@
 # Change Log - @pi-lib/modal-screen
 
-This log was last generated on Tue, 12 Dec 2023 18:34:30 GMT and should not be manually modified.
+This log was last generated on Tue, 09 Jan 2024 00:29:26 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 1.3.0
+
+Tue, 09 Jan 2024 00:29:26 GMT
+
+### Minor changes
+
+- Added unclickable prop (11949472+lancerael@users.noreply.github.com)
 
 ## 1.2.10
 

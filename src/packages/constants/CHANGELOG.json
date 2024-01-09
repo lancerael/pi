@@ -2,6 +2,21 @@
   "name": "@pi-lib/constants",
   "entries": [
     {
+      "date": "Tue, 09 Jan 2024 00:29:26 GMT",
+      "tag": "@pi-lib/constants_v2.3.2",
+      "version": "2.3.2",
+      "comments": {
+        "patch": [
+          {
+            "author": "11949472+lancerael@users.noreply.github.com",
+            "package": "@pi-lib/constants",
+            "commit": "39d3c45a265ba3411ddd462af32b96150bcccf29",
+            "comment": "docs tweak"
+          }
+        ]
+      }
+    },
+    {
       "date": "Tue, 12 Dec 2023 18:34:30 GMT",
       "tag": "@pi-lib/constants_v2.3.1",
       "version": "2.3.1",

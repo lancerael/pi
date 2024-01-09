@@ -1,8 +1,16 @@
 # Change Log - @pi-lib/advanced-button
 
-This log was last generated on Tue, 12 Dec 2023 01:14:05 GMT and should not be manually modified.
+This log was last generated on Tue, 09 Jan 2024 00:29:26 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 1.0.43
+
+Tue, 09 Jan 2024 00:29:26 GMT
+
+### Patches
+
+- docs tweak (11949472+lancerael@users.noreply.github.com)
 
 ## 1.0.38
 
