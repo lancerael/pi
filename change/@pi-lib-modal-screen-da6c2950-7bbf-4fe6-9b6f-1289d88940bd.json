@@ -1,7 +1,0 @@
-{
-  "type": "minor",
-  "comment": "Added unclickable prop",
-  "packageName": "@pi-lib/modal-screen",
-  "email": "11949472+lancerael@users.noreply.github.com",
-  "dependentChangeType": "patch"
-}

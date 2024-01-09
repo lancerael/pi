@@ -1,6 +1,6 @@
 {
   "name": "@pi-lib/use-timer",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "Hook used to add setTimeout or setInterval to a React component",
   "keywords": [
     "react",

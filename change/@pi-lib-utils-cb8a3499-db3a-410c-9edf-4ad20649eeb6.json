@@ -1,7 +1,0 @@
-{
-  "type": "patch",
-  "comment": "Fix throttle bug",
-  "packageName": "@pi-lib/utils",
-  "email": "11949472+lancerael@users.noreply.github.com",
-  "dependentChangeType": "patch"
-}

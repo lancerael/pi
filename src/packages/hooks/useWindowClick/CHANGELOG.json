@@ -2,6 +2,21 @@
   "name": "@pi-lib/use-window-click",
   "entries": [
     {
+      "date": "Tue, 09 Jan 2024 00:29:26 GMT",
+      "tag": "@pi-lib/use-window-click_v1.0.10",
+      "version": "1.0.10",
+      "comments": {
+        "patch": [
+          {
+            "author": "11949472+lancerael@users.noreply.github.com",
+            "package": "@pi-lib/use-window-click",
+            "commit": "39d3c45a265ba3411ddd462af32b96150bcccf29",
+            "comment": "Fixed double click bug"
+          }
+        ]
+      }
+    },
+    {
       "date": "Tue, 12 Dec 2023 18:34:30 GMT",
       "tag": "@pi-lib/use-window-click_v1.0.8",
       "version": "1.0.8",

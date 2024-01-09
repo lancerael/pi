@@ -1,6 +1,6 @@
 {
   "name": "@pi-lib/candlestick-chart",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "description": "A candlestick chart React component used to show the movement of traded assets over time.",
   "keywords": [
     "pi-lib",

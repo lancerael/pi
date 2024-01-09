@@ -2,6 +2,21 @@
   "name": "@pi-lib/utils",
   "entries": [
     {
+      "date": "Tue, 09 Jan 2024 00:29:26 GMT",
+      "tag": "@pi-lib/utils_v7.1.1",
+      "version": "7.1.1",
+      "comments": {
+        "patch": [
+          {
+            "author": "11949472+lancerael@users.noreply.github.com",
+            "package": "@pi-lib/utils",
+            "commit": "39d3c45a265ba3411ddd462af32b96150bcccf29",
+            "comment": "Fix throttle bug"
+          }
+        ]
+      }
+    },
+    {
       "date": "Wed, 20 Dec 2023 02:00:28 GMT",
       "tag": "@pi-lib/utils_v7.1.0",
       "version": "7.1.0",
