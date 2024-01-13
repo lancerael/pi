@@ -580,4 +580,4 @@ Pi uses `PNPM` to manage the monorepo, with some performance enhancements from `
 
 ## Contribution
 
-If you have a contribution, make a branch and raise a pull request into `main`. Run `pnpm change` to register the changes with the pipeline, then push the change files to the PR source branch. This will automatically publish version bumps when the PR is merged.
+If you have a contribution, make a fork then set this repo as your upstream. Make your branch and raise a pull request into `main`. Run `pnpm pre:release` to run some code quality checks and register the changes with the pipeline, then push the change files to the PR source branch. This will automatically publish version bumps when the PR is merged.
