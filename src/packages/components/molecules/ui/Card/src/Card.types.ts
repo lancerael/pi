@@ -1,4 +1,5 @@
 import { CustomIconProps } from '@pi-lib/custom-icon/src/CustomIcon.types'
+import { BoxProps } from '@pi-lib/styles'
 import { PropsWithChildren } from 'react'
 
 export interface CardProps
@@ -24,4 +25,8 @@ export interface CardProps
    * Sets whether the background and border should be clear
    */
   iconProps?: CustomIconProps
+  /**
+   * Any additional args for the box mixin
+   */
+  boxProps?: BoxProps
 }

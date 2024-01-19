@@ -1,8 +1,10 @@
-import { FC, forwardRef, useCallback, useEffect, useRef, useState } from 'react'
+import { forwardRef, useCallback, useEffect, useRef, useState } from 'react'
 import {
   StyledDismissableContent,
   StyledClose,
   StyledTimer,
+  StyledTitle,
+  StyledHeader,
 } from './DismissableContent.style'
 import { DismissableContentProps } from './DismissableContent.types'
 import Icon from '@pi-lib/icon'
@@ -17,15 +19,16 @@ import { getDefaultColorVar, getTransientProps } from '@pi-lib/styles'
  * @param {DismissableContentProps} props - The props for the DismissableContent component.
  * @returns {React.ReactNode} The rendered JSX for the DismissableContent component.
  */
-export const DismissableContent: FC<DismissableContentProps> = forwardRef(
+export const DismissableContent = forwardRef(
   (
     {
       children,
+      title,
       isDismissed = false,
       isDismissable = true,
       timerInterval = 0,
       dismissCallback,
-    },
+    }: DismissableContentProps,
     ref
   ) => {
     const [isVisible, setIsVisible] = useState(!isDismissed)
@@ -76,10 +79,15 @@ export const DismissableContent: FC<DismissableContentProps> = forwardRef(
         ref={ref as React.RefObject<HTMLDivElement>}
         {...getTransientProps({ isVisible, isPresent })}
       >
-        {isDismissable && (
-          <StyledClose onClick={dismiss}>
-            <Icon iconName="Close" color={getDefaultColorVar('shadow')} />
-          </StyledClose>
+        {(title || isDismissable) && (
+          <StyledHeader>
+            <StyledTitle>{title}</StyledTitle>
+            {isDismissable && (
+              <StyledClose onClick={dismiss} title="Close modal">
+                <Icon iconName="Close" color={getDefaultColorVar('shadow')} />
+              </StyledClose>
+            )}
+          </StyledHeader>
         )}
         {children}
         {!!timerInterval && (

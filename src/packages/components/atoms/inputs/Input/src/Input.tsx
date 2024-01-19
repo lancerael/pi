@@ -13,7 +13,7 @@ import { memo } from 'react'
 export const Input = memo(({ longTitle, title, type = 'text', name = title
     ?.toLowerCase()
     .split(' ')
-    .join(), dataTestid = 'pi-lib-input', ...inputProps }: InputProps) => {
+    .join('-'), dataTestid = 'pi-lib-input', ...inputProps }: InputProps) => {
   return (
     <StyledInput data-testid={dataTestid} {...getTransientProps({ type })}>
       {title && <label htmlFor={name}>{title}:</label>}

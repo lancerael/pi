@@ -9,16 +9,17 @@ import {
 } from '@pi-lib/styles'
 
 export const StyledCard = styled.div<StyledCardProps>(
-  ({ $isClear, $isSolid }) => css`
+  ({ $isClear, $isSolid, $boxProps }) => css`
     color: ${({ theme }) => theme.colors.textSoft};
     ${!$isClear &&
     css`
-      ${$isSolid ? box() : container()}
+      ${$isSolid ? box($boxProps) : container($boxProps)}
       ${$isSolid &&
+      !$boxProps &&
       css`
         background: ${getDefaultColorVar('subtleHC')};
       `}
-      padding: 1rem 1.5rem 1.5rem;
+      padding: 1rem;
     `}
   `
 )

@@ -26,6 +26,7 @@ export const Card = memo(
     isClear,
     isSolid,
     iconProps,
+    boxProps,
     children,
     ...props
   }: CardProps) => {
@@ -36,7 +37,9 @@ export const Card = memo(
     )
     const hasHeader = !!title || !!subTitle
     return (
-      <StyledCard {...{ ...getTransientProps({ isClear, isSolid }), ...props }}>
+      <StyledCard
+        {...{ ...getTransientProps({ isClear, isSolid, boxProps }), ...props }}
+      >
         {hasHeader ? (
           <StyledTopSection $hasIcon={!!icon}>
             {icon}

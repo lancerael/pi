@@ -30,6 +30,11 @@ export const GlobalStyle = createGlobalStyle<GlobalStyleProps>`
   & li {
     transition: all 0.5s;
   }
+
+  * {
+    margin: 0;
+    padding: 0;
+  }
 `
 
 export default GlobalStyle

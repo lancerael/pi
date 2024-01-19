@@ -1,21 +1,24 @@
 import { useEffect, useRef, useState } from 'react'
 import ModalScreen from '@pi-lib/modal-screen'
-import DismissableContent, {
-  DismissableContentProps,
-} from '@pi-lib/dismissable-content'
+import DismissableContent from '@pi-lib/dismissable-content'
 import { useWindowClick } from '@pi-lib/use-window-click'
+import { ModalProps } from './Modal.types'
 
 /**
  * Modal for custom content that allows dismissal internally or externally
  */
 export const Modal = ({
   children,
+  title,
   isDismissed = false,
   isDismissable = true,
+  isWindowDismissable = true,
   dismissCallback,
-}: DismissableContentProps) => {
+}: ModalProps) => {
   // Used to manage closing internally
   const [isActive, setIsActive] = useState(!isDismissed)
+
+  console.log(isWindowDismissable)
 
   const dismiss = (isBeingDismissed: boolean) => {
     if (!isDismissable) return
@@ -25,7 +28,7 @@ export const Modal = ({
 
   // Used to restrict page closing to modal screen
   const contentRef = useRef<HTMLDivElement>(null)
-  useWindowClick(() => dismiss(true), contentRef)
+  useWindowClick(() => isWindowDismissable && dismiss(true), contentRef)
 
   // Ued to handle external changes to closing
   useEffect(() => {
@@ -40,6 +43,7 @@ export const Modal = ({
           dismissCallback: () => dismiss(true),
           isDismissed: !isActive,
           isDismissable,
+          title,
         }}
       >
         {children}

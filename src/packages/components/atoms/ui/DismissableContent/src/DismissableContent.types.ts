@@ -5,6 +5,10 @@ import { PropsWithChildren } from 'react'
  */
 export interface DismissableContentProps extends PropsWithChildren {
   /**
+   * An optional title for the content
+   */
+  title?: string
+  /**
    * The external override for dimsissing the content
    */
   isDismissed?: boolean

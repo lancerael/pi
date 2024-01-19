@@ -52,13 +52,20 @@ export const shadow = ({
  */
 export const formInput = (isExpanded?: boolean) => {
   return css`
-    height: ${isExpanded ? '1.4em' : '1.2em'};
+    width: 100%;
+    box-sizing: border-box;
     background: ${getDefaultColorVar('input')};
     color: ${getDefaultColorVar('text')};
     border: 1px solid ${getDefaultColorVar('border')};
     border-radius: 4px;
-    padding: 0 ${isExpanded ? '0.1em' : '0.2em'};
+    padding: ${isExpanded ? '0.3em' : '0.5em'};
     font-size: 1em;
+
+    &:disabled {
+      pointer-events: none;
+      color: ${getDefaultColorVar('textSoft')};
+      background: ${getDefaultColorVar('subtleHC')};
+    }
   `
 }
 
@@ -100,9 +107,9 @@ export const box = ({
 /**
  * A mixin generator for a chart container
  */
-export const container = () => {
+export const container = ($boxProps?: BoxProps) => {
   return css`
-    ${box()}
+    ${box($boxProps)}
     background: linear-gradient(
       135deg,
       ${getDefaultColorVar('subtleA')} 0%,

@@ -16,12 +16,12 @@ export const StyledDismissableContent =
       ${shadow()}
       color: ${({ theme }) => theme.colors.textStrong};
       border-radius: 8px;
-      padding: 16px;
+      padding: 1rem;
       opacity: ${$isVisible ? '1' : '0'};
       margin-bottom: ${$isVisible ? '0' : '-100px'};
       display: ${$isPresent ? 'block' : 'none'};
       position: relative;
-      width: clamp(50%, 65%, 75%);
+      width: clamp(50%, 55%, 60%);
       margin: auto;
 
       @media (max-width: 800px) {
@@ -30,13 +30,24 @@ export const StyledDismissableContent =
     `
   })
 
+export const StyledHeader = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: -0.5rem;
+`
+
+export const StyledTitle = styled.h3`
+  font-weight: bold;
+  font-size: 1.2rem;
+  flex-grow: 1;
+  color: var(--textSoft);
+`
+
 /**
  * The button used to close the content
  */
 export const StyledClose = styled.div`
-  position: absolute;
-  top: 8px;
-  right: 8px;
   cursor: pointer;
   path {
     fill: ${({ theme }) => theme.colors.textStrong};

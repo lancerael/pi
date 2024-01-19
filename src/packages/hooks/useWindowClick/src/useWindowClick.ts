@@ -1,4 +1,5 @@
 import useLimitedEvents, { CallbackFunction } from '@pi-lib/use-limited-events'
+import { DependencyList } from 'react'
 
 /**
  * Custom React hook that registers a callback function to be called when a click event occurs outside a specified container element,
@@ -9,7 +10,8 @@ import useLimitedEvents, { CallbackFunction } from '@pi-lib/use-limited-events'
  */
 export const useWindowClick = (
   callback: CallbackFunction,
-  containerRef?: React.RefObject<HTMLElement>
+  containerRef?: React.RefObject<HTMLElement>,
+  deps: DependencyList = []
 ) => {
   /**
    * Attach the callback to the window click, but not when clicking target
@@ -32,7 +34,8 @@ export const useWindowClick = (
     {
       events: ['click'],
       args: { capture: true },
-    }
+    },
+    deps
   )
 
   /**
@@ -45,5 +48,6 @@ export const useWindowClick = (
     {
       events: ['keydown'],
     }
-  )
+  ),
+    deps
 }

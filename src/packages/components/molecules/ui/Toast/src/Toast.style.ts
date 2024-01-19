@@ -7,7 +7,7 @@ export const StyledToastContainer = styled.div`
   box-sizing: border-box;
   position: fixed;
   bottom: 0;
-  margin: 16px;
+  margin-bottom: 1rem;
   width: calc(100% - 32px);
   display: flex;
   flex-direction: column;
