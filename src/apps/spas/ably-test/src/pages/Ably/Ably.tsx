@@ -29,15 +29,11 @@ client.connection.on('connected', function () {
   console.log('connected')
 })
 
-let channel = client.channels.get('getting-started')
-
-channel.subscribe(function (message) {
-  // message.name; // 'greeting'
-  // message.data; // 'Hello World!'
-  console.log(message)
-})
+let channel = client.channels.get('chat')
 
 export const Ably = () => {
+  const [username, setUsername] = useState('')
+  const [message, setMessage] = useState('')
   const [accessToken, setAccessToken] = useState('')
   const [flagTracker, setFlagTracker] = useState({
     isLoggedIn: false,
@@ -48,6 +44,16 @@ export const Ably = () => {
   const [formInputs, setFormInputs] = useState({})
   const [formType, setFormType] = useState('signup')
   const [toasts, setToasts] = useState({})
+  const [messages, setMessages] = useState([])
+
+  const addMessage = debounce((message: any) => {
+    console.log(message)
+    setMessages((messages) => [...messages, JSON.parse(message.data)])
+  }, 500)
+
+  useEffect(() => {
+    channel.subscribe((message: any) => addMessage(message))
+  }, [])
 
   const setFlag = (newVal: { [key in keyof typeof flagTracker]?: boolean }) => {
     setFlagTracker((flags) => ({ ...flags, ...newVal }))
@@ -65,7 +71,6 @@ export const Ably = () => {
   }
 
   const makeQuery = debounce(async (type: Endpoints, isSilent?: boolean) => {
-    channel.publish('greeting', type)
     console.log(type)
     setFlag({ isLoading: true })
     const method = ENDPOINT_METHODS[type]
@@ -105,7 +110,6 @@ export const Ably = () => {
           children: `${result ?? 'Network request failed'} ❌`,
         }
       } else {
-        setModal()
         const isSuccess = !['Unauthorized', 'Forbidden'].includes(result)
         statusProps = {
           children: isSuccess ? SUCCESS_MESSAGES[type] : result,
@@ -113,11 +117,15 @@ export const Ably = () => {
         }
         if (['login', 'refresh'].includes(type)) {
           setAccessToken(result)
+          //@ts-ignore
+          setUsername(formInputs.username)
           setFlag({ isLoggedIn: true })
         }
         if (type === 'logout') {
           setFlag({ isLoggedIn: false })
+          setUsername('')
         }
+        setModal()
       }
     } catch (error) {
       statusProps = {
@@ -149,19 +157,73 @@ export const Ably = () => {
       <PageGrid>
         <div style={{ margin: '2rem 0' }}>
           <Card
-            isSolid
             title="Pi Ably Demo App"
             subTitle={
               <>
                 Status:{' '}
                 <Status isSuccess={isLoggedIn}>
-                  Logged {isLoggedIn ? 'in' : 'out'}
+                  Logged {isLoggedIn ? 'in' : 'out'} {username}
                 </Status>
               </>
             }
           >
-            <ActionButtons handlers={{ setModal, makeQuery }} />
+            <ActionButtons
+              isLoggedIn={isLoggedIn}
+              handlers={{ setModal, makeQuery }}
+            />
           </Card>
+          <br />
+          <Card isSolid>
+            <div
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '1rem',
+              }}
+            >
+              {messages.map(({ sender, message }) => {
+                return (
+                  <div
+                    style={{
+                      borderRadius: '0.3rem',
+                      background:
+                        sender === username
+                          ? 'var(--outline)'
+                          : 'var(--border)',
+                      padding: '0 0.5rem 0.5rem',
+                      textAlign: 'right',
+                      marginLeft: sender === username ? '50%' : '0',
+                      width: '50%',
+                    }}
+                  >
+                    <Card title={sender} isClear>
+                      {message}
+                    </Card>
+                  </div>
+                )
+              })}
+            </div>
+          </Card>
+          <textarea
+            style={{ width: '100%', margin: '1rem 0' }}
+            onChange={(e: any) => setMessage(e.currentTarget.value)}
+            value={message}
+          />
+          <Button
+            onClick={() => {
+              console.log('send')
+              channel.publish(
+                'message',
+                JSON.stringify({
+                  sender: username,
+                  message,
+                })
+              )
+              setMessage('')
+            }}
+          >
+            Send
+          </Button>
         </div>
       </PageGrid>
       <Modal
