@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import federation from '@originjs/vite-plugin-federation'
+import replace from '@rollup/plugin-replace'
 
 export default defineConfig({
   server: {
@@ -31,5 +32,13 @@ export default defineConfig({
   ],
   build: {
     target: 'esnext',
+    rollupOptions: {
+      plugins: [
+        replace({
+          __CLOUDFRONT_URL__: `${process.env.CLOUDFRONT_URL}`,
+          __LAMBDA_URL__: `${process.env.LAMBDA_URL}`,
+        }),
+      ],
+    },
   },
 })

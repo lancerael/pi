@@ -55,3 +55,6 @@ export const FORM_DEFAULTS: FormDefaults = {
     isRequired: true,
   },
 }
+
+export const CLOUDFRONT_URL =
+  import.meta.env.VITE_CLOUDFRONT_URL ?? '__CLOUDFRONT_URL__'
