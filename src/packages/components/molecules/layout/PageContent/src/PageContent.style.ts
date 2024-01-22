@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components'
-import { StyledSidebarProps } from './PageContent.style.types'
+import { StyledMainProps, StyledSidebarProps } from './PageContent.style.types'
 import { DEFAULT_THEME, shadow } from '@pi-lib/styles'
 
 /**
@@ -30,7 +30,7 @@ export const StyledSidebar = styled.div<StyledSidebarProps>(
     height: auto;
     display: flex;
     flex-direction: column;
-    flexgrow: 1;
+    flex-grow: 1;
     background: ${({ theme }) => theme.colors.subtle};
     color: ${({ theme }) => theme.colors.textSoft};
     border-right: 1px solid ${({ theme }) => theme.colors.border};
@@ -53,17 +53,24 @@ export const StyledSidebar = styled.div<StyledSidebarProps>(
 /**
  * The conatiner element for the styles of the main content section
  */
-export const StyledMain = styled.div`
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 1rem;
-  gap: 1rem;
+export const StyledMain = styled.div<StyledMainProps>(
+  ({ $isFullScroller }) => css`
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1rem;
+    gap: 1rem;
+    min-width: 0;
+    ${!$isFullScroller &&
+    css`
+      overflow: auto;
+    `}
 
-  @media (max-width: 800px) {
-    height: calc(225px + 80vw);
-  }
-`
+    @media (max-width: 800px) {
+      height: calc(225px + 80vw);
+    }
+  `
+)
 
 StyledSidebar.defaultProps = DEFAULT_THEME

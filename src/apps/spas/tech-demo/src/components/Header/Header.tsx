@@ -36,7 +36,7 @@ import CookieToast from '../CookieToast'
  * The banner at the top of the page containing internal links
  */
 export const Header = () => {
-  const [isActive, setIsActive] = useState(false)
+  const [isModalActive, setIsModalActive] = useState(false)
   const [hasChangedSettings, setHasChangedSettings] = useState(false)
   const dispatch = useDispatch()
   const dispatchWithUpdate = (action: Action) => {
@@ -69,6 +69,16 @@ export const Header = () => {
       color={color}
     >
       Candlestick
+    </Link>,
+    <Link
+      to="/web-3"
+      onPointerUp={() => dispatch(updatePage('/web-3'))}
+      isMain
+      isInactive={page === '/web-3'}
+      key="web-3"
+      color={color}
+    >
+      Web 3
     </Link>,
   ]
 
@@ -129,7 +139,7 @@ export const Header = () => {
                   <IconButton
                     buttonProps={{
                       onClick: () => {
-                        setTimeout(() => setIsActive(true), 100)
+                        setTimeout(() => setIsModalActive(true), 100)
                       },
                       title: `View tech demo architectural diagram`,
                       boxName: 'hi',
@@ -166,8 +176,8 @@ export const Header = () => {
         </StyledToolbar>
 
         <Modal
-          isDismissed={!isActive}
-          dismissCallback={() => setIsActive(false)}
+          isActive={isModalActive}
+          dismissCallback={() => setIsModalActive(false)}
         >
           <StyledInfo>
             <img
@@ -187,7 +197,7 @@ export const Header = () => {
               <CookieToast callback={() => dispatch(updateConsent(true))} />
             ),
             timerInterval: 25000,
-            isDismissed: !hasChangedSettings || !!consent,
+            isActive: hasChangedSettings && !consent,
           },
         }}
       />

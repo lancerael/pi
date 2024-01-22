@@ -6,6 +6,7 @@ import ConfigEditor from '../../molecules/ConfigEditor'
 import DataTable from '../../molecules/DataTable'
 import { AppState } from './Sandbox.types'
 import Theme from '@pi-lib/styles'
+import { StyledCharts } from './Sandbox.style'
 
 /**
  * Layout element for the whole sandbox page
@@ -27,17 +28,20 @@ const Sandbox = () => {
             <DataTable />
           </>
         }
+        isFullScroller
       >
-        <AxisChart
-          chartId="container-bar"
-          chartType="bar"
-          {...{ chartConfig, chartData }}
-        />
-        <AxisChart
-          chartId="container-line"
-          chartType="line"
-          {...{ chartConfig, chartData }}
-        />
+        <StyledCharts>
+          <AxisChart
+            chartId="container-bar"
+            chartType="bar"
+            {...{ chartConfig, chartData }}
+          />
+          <AxisChart
+            chartId="container-line"
+            chartType="line"
+            {...{ chartConfig, chartData }}
+          />
+        </StyledCharts>
       </PageContent>
     </Theme>
   )

@@ -8,12 +8,12 @@ export const StyledColumn = styled.div<StyledColumnProps>(
   ({ $maxWidth, $isCollapsible }) => {
     return css`
       max-width: ${$maxWidth ?? '100%'};
-      min-height: 100%;
+      height: 100dvh;
       display: flex;
       flex-direction: column;
 
       @media (max-width: 800px) {
-        height: auto;
+        /* height: auto; */
         ${!!$isCollapsible && 'max-width: 100%;'}
       }
     `

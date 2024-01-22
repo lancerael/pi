@@ -17,7 +17,7 @@ export const Default: StoryObj<typeof Toast> = {
       default: {
         children: 'Contents',
         isDismissable: true,
-        isDismissed: false,
+        isActive: true,
       },
     },
   },
@@ -48,7 +48,7 @@ export const Undismissable: StoryObj<typeof Toast> = {
       default: {
         children: 'Undismissable',
         isDismissable: false,
-        isDismissed: false,
+        isActive: true,
       },
     },
   },
@@ -63,7 +63,7 @@ export const Timed: StoryObj<typeof Toast> = {
       default: {
         children: 'Timed',
         isDismissable: true,
-        isDismissed: false,
+        isActive: true,
         timerInterval: 20000,
       },
     },
@@ -79,7 +79,7 @@ export const Dismissed: StoryObj<typeof Toast> = {
       default: {
         children: 'Dismissed',
         isDismissable: true,
-        isDismissed: true,
+        isActive: false,
       },
     },
   },

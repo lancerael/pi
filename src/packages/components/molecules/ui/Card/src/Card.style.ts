@@ -9,8 +9,13 @@ import {
 } from '@pi-lib/styles'
 
 export const StyledCard = styled.div<StyledCardProps>(
-  ({ $isClear, $isSolid, $boxProps }) => css`
+  ({ $isClear, $isSolid, $boxProps, onClick }) => css`
     color: ${({ theme }) => theme.colors.textSoft};
+    min-width: 0;
+    word-wrap: break-word;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
     ${!$isClear &&
     css`
       ${$isSolid ? box($boxProps) : container($boxProps)}
@@ -21,6 +26,13 @@ export const StyledCard = styled.div<StyledCardProps>(
       `}
       padding: 1rem;
     `}
+    ${!!onClick &&
+    css`
+      &:hover {
+        filter: contrast(110%);
+      }
+      cursor: pointer;
+    `}
   `
 )
 
@@ -28,7 +40,7 @@ export const StyledTopSection = styled.div<StyledTopSectionProps>(
   ({ $hasIcon }) => css`
     align-items: center;
     display: flex;
-    margin: 0 0 0.5rem ${$hasIcon ? '-0.25rem' : 0};
+    /* margin: 0 0 0.5rem ${$hasIcon ? '-0.25rem' : 0}; */
 
     & svg {
       margin-top: -0.2rem;
@@ -38,8 +50,8 @@ export const StyledTopSection = styled.div<StyledTopSectionProps>(
 )
 
 export const StyledHeader = styled.div`
+  min-width: 0;
   color: ${({ theme }) => theme.colors.text};
-  margin-bottom: 0.5rem;
 `
 
 export const StyledTitle = styled.h2`

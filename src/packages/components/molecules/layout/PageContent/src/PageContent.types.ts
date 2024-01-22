@@ -18,4 +18,8 @@ export interface PageContentProps
    * Is the sidebar responsively collapsible
    */
   isCollapsible?: boolean
+  /**
+   * Is the full page scrollable, or just the content
+   */
+  isFullScroller?: boolean
 }

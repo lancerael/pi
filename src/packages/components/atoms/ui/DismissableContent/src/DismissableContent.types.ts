@@ -9,9 +9,9 @@ export interface DismissableContentProps extends PropsWithChildren {
    */
   title?: string
   /**
-   * The external override for dimsissing the content
+   * The external override for activating or dismissing the content
    */
-  isDismissed?: boolean
+  isActive?: boolean
   /**
    * Can the user dismiss the content?
    */

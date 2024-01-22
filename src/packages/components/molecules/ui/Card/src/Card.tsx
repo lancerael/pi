@@ -51,7 +51,7 @@ export const Card = memo(
         ) : (
           icon
         )}
-        <StyledContent>{children}</StyledContent>
+        {children && <StyledContent>{children}</StyledContent>}
       </StyledCard>
     )
   }

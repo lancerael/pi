@@ -24,14 +24,14 @@ export const DismissableContent = forwardRef(
     {
       children,
       title,
-      isDismissed = false,
+      isActive = true,
       isDismissable = true,
       timerInterval = 0,
       dismissCallback,
     }: DismissableContentProps,
     ref
   ) => {
-    const [isVisible, setIsVisible] = useState(!isDismissed)
+    const [isVisible, setIsVisible] = useState(isActive)
     const [isPresent, setIsPresent] = useState(false)
     const [isTimerTriggered, setIsTimerTriggered] = useState(false)
     const transitionTimer = useRef<NodeJS.Timer>()
@@ -53,13 +53,13 @@ export const DismissableContent = forwardRef(
 
     // Handle external dismissal
     useEffect(() => {
-      if (isDismissed) {
+      if (!isActive) {
         dismiss()
       } else {
         setIsPresent(true)
         setIsVisible(true)
       }
-    }, [isDismissed])
+    }, [isActive])
 
     // Handle timer interval
     useEffect(() => {

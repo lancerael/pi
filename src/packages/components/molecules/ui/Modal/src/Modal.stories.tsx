@@ -72,7 +72,7 @@ const meta: Meta<typeof Modal> = {
   title: 'Molecules/UI/Modal',
   component: Modal,
   argTypes: {
-    isDismissed: {
+    isActive: {
       control: 'boolean',
     },
   },
@@ -85,7 +85,7 @@ const meta: Meta<typeof Modal> = {
 export const Default: StoryObj<typeof Modal> = {
   args: {
     children: 'Content',
-    isDismissed: false,
+    isActive: true,
     isDismissable: true,
     dismissCallback: action('closed'),
   },
@@ -93,13 +93,13 @@ export const Default: StoryObj<typeof Modal> = {
 }
 
 /**
- * An undismissable modal - go to story and set isDismissed to false
+ * An undismissable modal - go to story and set isActive to true
  */
 export const Undismissable: StoryObj<typeof Modal> = {
   args: {
     children: 'Content',
     isDismissable: false,
-    isDismissed: true,
+    isActive: false,
   },
   render,
 }

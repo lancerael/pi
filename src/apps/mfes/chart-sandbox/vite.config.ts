@@ -4,6 +4,12 @@ import federation from '@originjs/vite-plugin-federation'
 import replace from '@rollup/plugin-replace'
 
 export default defineConfig({
+  server: {
+    https: false,
+    host: '0.0.0.0',
+    port: 5001,
+  },
+  cacheDir: 'node_modules/.cacheDir',
   plugins: [
     react(),
     federation({

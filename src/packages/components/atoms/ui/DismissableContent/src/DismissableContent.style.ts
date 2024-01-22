@@ -23,6 +23,7 @@ export const StyledDismissableContent =
       position: relative;
       width: clamp(50%, 55%, 60%);
       margin: auto;
+      word-wrap: break-word;
 
       @media (max-width: 800px) {
         width: clamp(75%, 80%, 85%);

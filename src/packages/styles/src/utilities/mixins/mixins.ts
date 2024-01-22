@@ -58,7 +58,7 @@ export const formInput = (isExpanded?: boolean) => {
     color: ${getDefaultColorVar('text')};
     border: 1px solid ${getDefaultColorVar('border')};
     border-radius: 4px;
-    padding: ${isExpanded ? '0.3em' : '0.5em'};
+    padding: ${isExpanded ? '0.2em' : '0.3em'};
     font-size: 1em;
 
     &:disabled {

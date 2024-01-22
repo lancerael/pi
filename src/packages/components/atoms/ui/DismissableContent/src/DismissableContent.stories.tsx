@@ -6,7 +6,7 @@ const meta: Meta<typeof DismissableContent> = {
   title: 'Atoms/UI/DismissableContent',
   component: DismissableContent,
   argTypes: {
-    isDismissed: {
+    isActive: {
       control: 'boolean',
     },
     isDismissable: {
@@ -25,7 +25,7 @@ const meta: Meta<typeof DismissableContent> = {
 export const Default: StoryObj<typeof DismissableContent> = {
   args: {
     children: 'Content',
-    isDismissed: false,
+    isActive: true,
     isDismissable: true,
     dismissCallback: action('closed'),
   },
@@ -37,7 +37,7 @@ export const Default: StoryObj<typeof DismissableContent> = {
 export const Timed: StoryObj<typeof DismissableContent> = {
   args: {
     children: 'Timed',
-    isDismissed: false,
+    isActive: true,
     isDismissable: true,
     timerInterval: 50000,
     dismissCallback: action('closed'),
@@ -50,7 +50,7 @@ export const Timed: StoryObj<typeof DismissableContent> = {
 export const Dismissed: StoryObj<typeof DismissableContent> = {
   args: {
     children: 'Dismissed',
-    isDismissed: true,
+    isActive: false,
     isDismissable: true,
     dismissCallback: action('closed'),
   },
@@ -62,7 +62,7 @@ export const Dismissed: StoryObj<typeof DismissableContent> = {
 export const Undismissable: StoryObj<typeof DismissableContent> = {
   args: {
     children: 'Undismissable',
-    isDismissed: false,
+    isActive: true,
     isDismissable: false,
   },
 }

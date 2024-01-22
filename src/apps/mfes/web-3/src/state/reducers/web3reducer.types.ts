@@ -1,17 +1,10 @@
 import { Scheme, ThemeName } from '@pi-lib/styles'
 import { TransactionLike, Eip1193Provider } from 'ethers'
+import { FIELD_LIST } from '../../constants'
 
-export type Transaction = Pick<
-  TransactionLike,
-  | 'to'
-  | 'from'
-  | 'value'
-  | 'data'
-  | 'chainId'
-  | 'gasLimit'
-  | 'gasPrice'
-  | 'hash'
->
+export type FieldListValues = (typeof FIELD_LIST)[number]
+
+export type Transaction = Pick<TransactionLike, FieldListValues>
 
 export type FormInputTypes = 'from' | 'to' | 'value'
 
@@ -21,13 +14,17 @@ export type Transactions = Transaction[]
 
 export type Status = string
 
-export interface Web3AppState {
+export interface Web3State {
   transactions: Transactions
-  appStatus: {
-    transactions: Status
-    transaction: Status
+  dataStatus: {
+    transactionsStatus: Status
+    transactionStatus: Status
   }
   walletAddress: string
+}
+
+export interface Web3RootState {
+  web3: Web3State
   settings?: {
     themeName: ThemeName
     scheme: Scheme

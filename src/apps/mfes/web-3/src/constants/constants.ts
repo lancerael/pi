@@ -13,6 +13,21 @@ export const WALLET_PATTERN = /^(0x)?[0-9a-fA-F]{40}$/
 export const HASH_PATTERN = /^0x[0-9a-fA-F]{64}$/
 
 /**
+ * A list of the transaction fields we want to store
+ * @type {RegExp}
+ */
+export const FIELD_LIST = [
+  'to',
+  'from',
+  'value',
+  'data',
+  'chainId',
+  'gasLimit',
+  'gasPrice',
+  'hash',
+] as const
+
+/**
  * Default state for the form with empty values
  * @type {FormDefaults}
  */
@@ -33,8 +48,8 @@ export const FORM_DEFAULTS: FormDefaults = {
     match: WALLET_PATTERN,
     isRequired: true,
   },
-  amount: {
-    title: 'Amount',
+  value: {
+    title: 'Value',
     type: 'number',
     value: '',
     isRequired: true,

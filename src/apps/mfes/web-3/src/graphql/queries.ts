@@ -1,19 +1,11 @@
 import { gql } from '@apollo/client'
+import { FIELD_LIST } from '../constants'
 
-const dataFields = `
-      to
-      from
-      value
-      data
-      chainId
-      gasLimit
-      gasPrice
-      hash
-`
+const dataFields = FIELD_LIST.map((field) => `  ${field}`).join('\n')
 
 export const PutTransaction = gql`
   mutation PutTransaction($transaction: TransactionInput!) {
-    putTransaction(transaction: $transaction) {
+    addTransaction(transaction: $transaction) {
       hash
     }
   }
@@ -30,6 +22,14 @@ export const GetTransaction = gql`
 export const GetTransactions = gql`
   query GetTransactions($from: String!) {
     getTransactions(from: $from) {
+      ${dataFields}
+    }
+  }
+`
+
+export const GetAllTransactions = gql`
+  query GetAllTransactions {
+    getAllTransactions {
       ${dataFields}
     }
   }

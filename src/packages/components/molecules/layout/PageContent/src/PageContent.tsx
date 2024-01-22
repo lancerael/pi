@@ -14,6 +14,7 @@ export const PageContent = ({
   sidebar,
   maxWidth = '38%',
   isCollapsible = true,
+  isFullScroller = false,
   ...props
 }: PageContentProps) => {
   return (
@@ -25,7 +26,9 @@ export const PageContent = ({
           {sidebar}
         </StyledSidebar>
       )}
-      <StyledMain>{children}</StyledMain>
+      <StyledMain {...getTransientProps({ isFullScroller })}>
+        {children}
+      </StyledMain>
     </StyledPageContent>
   )
 }

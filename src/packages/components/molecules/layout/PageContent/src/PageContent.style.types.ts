@@ -7,3 +7,10 @@ import { PageContentProps } from './PageContent.types'
 export type StyledSidebarProps = TransientProps<
   Pick<PageContentProps, 'isCollapsible' | 'maxWidth'>
 >
+
+/**
+ * The prop interface for the sidebar div
+ */
+export type StyledMainProps = TransientProps<
+  Pick<PageContentProps, 'isFullScroller'>
+>

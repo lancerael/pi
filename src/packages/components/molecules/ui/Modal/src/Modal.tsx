@@ -10,19 +10,17 @@ import { ModalProps } from './Modal.types'
 export const Modal = ({
   children,
   title,
-  isDismissed = false,
+  isActive = true,
   isDismissable = true,
   isWindowDismissable = true,
   dismissCallback,
 }: ModalProps) => {
   // Used to manage closing internally
-  const [isActive, setIsActive] = useState(!isDismissed)
-
-  console.log(isWindowDismissable)
+  const [isModalActive, setIsModalActive] = useState(isActive)
 
   const dismiss = (isBeingDismissed: boolean) => {
     if (!isDismissable) return
-    setIsActive(!isBeingDismissed)
+    setIsModalActive(!isBeingDismissed)
     isBeingDismissed && dismissCallback?.()
   }
 
@@ -32,16 +30,16 @@ export const Modal = ({
 
   // Ued to handle external changes to closing
   useEffect(() => {
-    dismiss(isDismissed)
-  }, [isDismissed])
+    dismiss(!isActive)
+  }, [isActive])
 
   return (
-    <ModalScreen {...{ isActive }}>
+    <ModalScreen {...{ isActive: isModalActive }}>
       <DismissableContent
         ref={contentRef}
         {...{
           dismissCallback: () => dismiss(true),
-          isDismissed: !isActive,
+          isActive: isModalActive,
           isDismissable,
           title,
         }}

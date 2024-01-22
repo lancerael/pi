@@ -146,7 +146,7 @@ export const Auth = () => {
         </div>
       </PageGrid>
       <Modal
-        isDismissed={!isModalActive}
+        isActive={isModalActive}
         dismissCallback={() => setFlag({ isModalActive: false })}
       >
         <LoginModal title={FORM_DEFAULTS[formType].title}>

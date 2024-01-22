@@ -5,19 +5,19 @@ import federation from '@originjs/vite-plugin-federation'
 export default defineConfig({
   server: {
     https: false,
-    host: '192.168.1.88',
-    port: 5002,
+    host: '0.0.0.0',
+    port: 5003,
   },
   cacheDir: 'node_modules/.cacheDir',
   plugins: [
     react(),
     federation({
       name: 'remote_app',
-      filename: 'remoteCandlestick.js',
+      filename: 'remoteWeb3.js',
       exposes: {
-        './Candlestick': './src/components/Candlestick',
-        './candlestickDataReducer':
-          './src/state/reducers/candlestickDataReducer',
+        './Transactions': './src/components/Transactions',
+        './web3Reducer': './src/state/reducers/web3Reducer',
+        './web3Sagas': './src/state/sagas',
       },
       shared: [
         'react',
@@ -25,6 +25,7 @@ export default defineConfig({
         '@reduxjs/toolkit',
         'react-redux',
         'redux',
+        'redux-saga',
       ],
     }),
   ],

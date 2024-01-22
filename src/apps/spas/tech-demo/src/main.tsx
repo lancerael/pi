@@ -8,6 +8,8 @@ import store from './state'
 import Sandbox from 'remoteSandbox/Sandbox'
 //@ts-ignore
 import Candlestick from 'remoteCandlestick/Candlestick'
+//@ts-ignore
+import Transactions from 'remoteWeb3/Transactions'
 import Layout from './components/Layout'
 
 const router = createBrowserRouter([
@@ -22,6 +24,10 @@ const router = createBrowserRouter([
       {
         path: 'candlestick',
         element: <Candlestick />,
+      },
+      {
+        path: 'web-3',
+        element: <Transactions />,
       },
     ],
   },

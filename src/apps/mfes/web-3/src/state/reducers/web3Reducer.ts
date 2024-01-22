@@ -1,11 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { FormFields, Transactions, Web3AppState } from './web3reducer.types'
+import { FormFields, Transactions, Web3State } from './web3reducer.types'
 
-const initialState: Web3AppState = {
+const initialState: Web3State = {
   transactions: [],
-  appStatus: {
-    transactions: '',
-    transaction: '',
+  dataStatus: {
+    transactionStatus: '',
+    transactionsStatus: '',
   },
   walletAddress: '',
 }
@@ -14,32 +14,29 @@ const web3Slice = createSlice({
   name: 'web3',
   initialState,
   reducers: {
-    setTransactions(
-      state: Web3AppState,
-      { payload }: { payload: Transactions }
-    ) {
+    setTransactions(state: Web3State, { payload }: { payload: Transactions }) {
       return { ...state, transactions: structuredClone(payload) }
     },
-    setAppStatus(
-      state: Web3AppState,
-      { payload }: { payload: Partial<Web3AppState['appStatus']> }
+    setDataStatus(
+      state: Web3State,
+      { payload }: { payload: Partial<Web3State['dataStatus']> }
     ) {
-      return { ...state, appStatus: { ...state.appStatus, ...payload } }
+      return { ...state, dataStatus: { ...state.dataStatus, ...payload } }
     },
-    setWalletAddress(state: Web3AppState, { payload }: { payload: string }) {
+    setWalletAddress(state: Web3State, { payload }: { payload: string }) {
       return { ...state, walletAddress: payload }
     },
-    sendTransaction(state: Web3AppState, _: { payload: FormFields }) {
-      return state
-    },
+    sendTransaction(_, { payload }: { payload: FormFields }) {},
+    getTransactions(_) {},
   },
 })
 
 export const {
   setTransactions,
-  setAppStatus,
+  setDataStatus,
   setWalletAddress,
   sendTransaction,
+  getTransactions,
 } = web3Slice.actions
 
 export default web3Slice.reducer

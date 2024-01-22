@@ -6,6 +6,7 @@ import replace from '@rollup/plugin-replace'
 const portMap = {
   'chart-sandbox': 5001,
   'candlestick-chart': 5002,
+  'web-3': 5003,
 }
 
 const IS_DEV = process.env.NODE_ENV === 'development'
@@ -29,6 +30,7 @@ export default defineConfig({
         remoteCandlestick: `${getPath(
           'candlestick-chart'
         )}/assets/remoteCandlestick.js`,
+        remoteWeb3: `${getPath('web-3')}/assets/remoteWeb3.js`,
       },
       shared: [
         'react',
@@ -36,6 +38,7 @@ export default defineConfig({
         '@reduxjs/toolkit',
         'react-redux',
         'redux',
+        'redux-saga',
       ],
     }),
   ],

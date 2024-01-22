@@ -2,13 +2,14 @@ import Button from '@pi-lib/button'
 import Card from '@pi-lib/card'
 import Icon from '@pi-lib/icon'
 import Modal from '@pi-lib/modal'
+import Tooltip from '@pi-lib/tooltip'
 import Onboard from '@web3-onboard/core'
 import injectedModule from '@web3-onboard/injected-wallets'
 import { useDispatch, useSelector } from 'react-redux'
-import { FormEvent, useCallback, useEffect, useState } from 'react'
+import { FormEvent, useCallback, useEffect, useRef, useState } from 'react'
 import {
   FormFields,
-  Web3AppState,
+  Web3RootState,
 } from '../../state/reducers/web3reducer.types'
 import {
   sendTransaction,
@@ -36,16 +37,24 @@ const addTransactionForm = {}
 
 const Sidebar = () => {
   const dispatch = useDispatch()
-  const { walletAddress, transactions: transactionResult } = useSelector(
-    ({ walletAddress, appStatus: { transactions } }: Web3AppState) => ({
+  const { walletAddress, transactionStatus } = useSelector(
+    ({
+      web3: {
+        walletAddress,
+        dataStatus: { transactionStatus },
+      },
+    }: Web3RootState) => ({
       walletAddress,
-      transactions,
+      transactionStatus,
     })
   )
 
   const [formInputs, setFormInputs] = useState<FormInputs>({})
-  const [isModalActiive, setIsModalActive] = useState(false)
+  const [isModalActive, setIsModalActive] = useState(false)
+  const [isTooltipActive, setIsTooltipActive] = useState(false)
   const [toasts, setToasts] = useState({})
+
+  const tooltipTimout = useRef<NodeJS.Timeout>()
 
   const openModal = () => {
     setFormInputs(
@@ -86,42 +95,56 @@ const Sidebar = () => {
         (tx, [name, { value }]) => ({ ...tx, [name]: value }),
         {}
       )
+      console.log(transaction)
       dispatch(sendTransaction(transaction))
       e.preventDefault()
     },
     [dispatch, formInputs]
   )
 
+  const showTooltip = useCallback(() => {
+    setIsTooltipActive(true)
+    clearTimeout(tooltipTimout.current)
+    tooltipTimout.current = setTimeout(() => {
+      setIsTooltipActive(false)
+    }, 5000)
+  }, [setIsTooltipActive])
+
   useEffect(() => {
-    if (transactionResult.match(HASH_PATTERN)) {
+    let isSuccess = false
+    if (!transactionStatus) return
+    if (transactionStatus.match(HASH_PATTERN)) {
       closeModal()
-    } else {
-      transactionResult &&
-        setToasts((currentToasts) => ({
-          ...currentToasts,
-          [`toast${Object.keys(toasts).length + 1}`]: {
-            timerInterval: 30000,
-            title: 'Transaction Failed',
-            children: (
-              <span style={{ color: 'var(--error)' }}>{transactionResult}</span>
-            ),
-          },
-        }))
+      isSuccess = true
     }
-  }, [transactionResult])
+    setToasts((currentToasts) => ({
+      ...currentToasts,
+      [`toast${Object.keys(toasts).length + 1}`]: {
+        timerInterval: 30000,
+        title: `Transaction ${isSuccess ? 'Successful' : 'Failed'}`,
+        children: (
+          <span
+            style={{ color: isSuccess ? 'var(--success)' : 'var(--error)' }}
+          >
+            {transactionStatus}
+          </span>
+        ),
+      },
+    }))
+  }, [transactionStatus])
 
   return (
     <div
       style={{
-        minWidth: '300px',
+        minWidth: '200px',
         display: 'flex',
         flexDirection: 'column',
         gap: '1rem',
       }}
     >
-      <Card isSolid>
+      <Card isSolid onMouseOut={() => setIsTooltipActive(false)}>
         <div
-          title={walletAddress}
+          // title={walletAddress}
           style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}
         >
           <div
@@ -136,6 +159,8 @@ const Sidebar = () => {
               overflow: 'hidden',
               flexGrow: '2',
             }}
+            onClick={showTooltip}
+            onMouseOver={showTooltip}
           >
             {walletAddress}
           </div>
@@ -168,7 +193,7 @@ const Sidebar = () => {
         Add Transaction
       </Button>
       <Modal
-        isDismissed={!isModalActiive}
+        isActive={isModalActive}
         isWindowDismissable={false}
         dismissCallback={closeModal}
         title="Transaction Details"
@@ -180,6 +205,7 @@ const Sidebar = () => {
         </StyledModalContainer>
       </Modal>
       <Toast {...{ toasts }} />
+      <Tooltip isActive={isTooltipActive} children={walletAddress} />
     </div>
   )
 }

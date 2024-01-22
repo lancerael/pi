@@ -17,7 +17,9 @@ const Layout = () => {
     <Theme {...themeProps}>
       <StyledColumn>
         <Header />
-        <Outlet />
+        <div style={{ flexGrow: 1, overflow: 'auto' }}>
+          <Outlet />
+        </div>
         <Footer />
       </StyledColumn>
     </Theme>
