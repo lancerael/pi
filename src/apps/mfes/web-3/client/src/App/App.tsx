@@ -10,8 +10,8 @@ export const App = () => {
 
   return (
     <Theme
-      themeName={'avocado'}
-      scheme={'light'}
+      themeName={settings?.themeName}
+      scheme={settings?.scheme}
       includeGlobal={!settings?.themeName}
     >
       <Transactions />

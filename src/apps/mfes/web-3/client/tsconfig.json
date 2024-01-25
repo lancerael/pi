@@ -9,7 +9,6 @@
     "allowSyntheticDefaultImports": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
-    "types": ["react", "vitest/globals", "vite/client"],
     "module": "ESNext",
     "moduleResolution": "Node",
     "resolveJsonModule": true,

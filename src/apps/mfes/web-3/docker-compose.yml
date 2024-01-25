@@ -1,0 +1,52 @@
+version: '3'
+
+services:
+  mongo:
+    container_name: 'mongo'
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    networks:
+      - web3-network
+
+  ganache:
+    container_name: 'ganache'
+    image: trufflesuite/ganache-cli:latest
+    ports:
+      - "8545:8545"
+    command:
+      - "-m"
+      - "--accounts=1"
+      - "--chainId=666999"
+      - "--defaultBalanceEther=100000"
+    networks:
+      - web3-network
+
+  server:
+    container_name: 'server'
+    build:
+      context: ./server
+    ports:
+      - "4000:4000"
+    depends_on:
+      - mongo
+      - ganache
+    networks:
+      - web3-network
+
+  client:
+    container_name: 'client'
+    volumes:
+      - "./client:/usr/src/app"
+    build:
+      context: ./client
+    ports:
+      - "3000:3000"
+    networks:
+      - web3-network
+    depends_on:
+      - server
+
+networks:
+  web3-network:
+    driver: bridge

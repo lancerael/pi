@@ -10,8 +10,8 @@ RUN npm install
 
 COPY . .
 
-RUN npm run build
+RUN npm run build:mfe
 
-EXPOSE 4173:4173
+EXPOSE 4000:4000
 
 CMD ["npm", "run", "preview"]

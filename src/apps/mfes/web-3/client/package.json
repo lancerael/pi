@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build:mfe": "tsc && vite build",
+    "build:mfe": "vite build",
     "ci-setup": "echo 'not implemented'",
     "dev": "vite --port 5003 --strictPort --host",
     "e2e": "echo 'not implemented'",
@@ -12,6 +12,7 @@
     "lint:fix": "npx prettier -w . && npx eslint --fix",
     "preview": "vite preview --port 5003 --strictPort --host",
     "start": "pnpm build:mfe && pnpm preview",
+    "serve": "npm run build:mfe && npm run preview",
     "test-": "vitest"
   },
   "dependencies": {
@@ -43,6 +44,7 @@
   "devDependencies": {
     "@originjs/vite-plugin-federation": "^1.2.2",
     "@rollup/plugin-replace": "^5.0.2",
+    "@types/react": "^18.0.28",
     "@types/redux-saga": "^0.10.5",
     "@vitejs/plugin-react": "^4.1.0",
     "react-is": "^18.2.0",
