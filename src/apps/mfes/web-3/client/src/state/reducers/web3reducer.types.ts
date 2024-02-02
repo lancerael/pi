@@ -1,5 +1,7 @@
+import { Eip1193Provider, TransactionLike } from 'ethers'
 import { Scheme, ThemeName } from '@pi-lib/styles'
-import { TransactionLike, Eip1193Provider } from 'ethers'
+
+import { ActionCreatorWithPayload } from '@reduxjs/toolkit'
 import { FIELD_LIST } from '../../constants'
 
 export type FieldListValues = (typeof FIELD_LIST)[number]
@@ -30,6 +32,11 @@ export interface Web3RootState {
     scheme: Scheme
   }
 }
+
+export type SagaParams<T> = { payload: T } & ActionCreatorWithPayload<
+  T,
+  'web3/getTransactions'
+>
 
 declare global {
   interface Window {

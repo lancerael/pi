@@ -11,8 +11,8 @@
     "lint": "npx prettier -c . && npx eslint",
     "lint:fix": "npx prettier -w . && npx eslint --fix",
     "preview": "vite preview --port 5003 --strictPort --host",
-    "start": "pnpm build:mfe && pnpm preview",
     "serve": "npm run build:mfe && npm run preview",
+    "start": "pnpm build:mfe && pnpm preview",
     "test-": "vitest"
   },
   "dependencies": {
@@ -33,6 +33,7 @@
     "@web3-onboard/core": "^2.21.2",
     "@web3-onboard/injected-wallets": "^2.10.11",
     "ethers": "^6.10.0",
+    "events": "^3.3.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-redux": "^7.1.1",
@@ -45,7 +46,6 @@
     "@originjs/vite-plugin-federation": "^1.2.2",
     "@rollup/plugin-replace": "^5.0.2",
     "@types/react": "^18.0.28",
-    "@types/redux-saga": "^0.10.5",
     "@vitejs/plugin-react": "^4.1.0",
     "react-is": "^18.2.0",
     "rimraf": "^3.0.2",

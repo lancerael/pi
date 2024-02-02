@@ -1,5 +1,6 @@
-import { createSlice } from '@reduxjs/toolkit'
 import { FormFields, Transactions, Web3State } from './web3reducer.types'
+
+import { createSlice } from '@reduxjs/toolkit'
 
 const initialState: Web3State = {
   transactions: [],
@@ -27,7 +28,7 @@ const web3Slice = createSlice({
       return { ...state, walletAddress: payload }
     },
     sendTransaction(_, { payload }: { payload: FormFields }) {},
-    getTransactions(_) {},
+    getTransactions(_, { payload }: { payload: string }) {},
   },
 })
 

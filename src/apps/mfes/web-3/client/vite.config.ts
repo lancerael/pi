@@ -1,6 +1,6 @@
 import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
 import federation from '@originjs/vite-plugin-federation'
+import react from '@vitejs/plugin-react'
 import replace from '@rollup/plugin-replace'
 
 export default defineConfig({
@@ -40,5 +40,8 @@ export default defineConfig({
         }),
       ],
     },
+  },
+  resolve: {
+    alias: {},
   },
 })

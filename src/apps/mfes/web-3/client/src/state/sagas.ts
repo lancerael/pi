@@ -1,24 +1,23 @@
-import { put, takeEvery } from 'redux-saga/effects'
 import {
-  Transaction,
-  TransactionResponse,
-  TransactionReceipt,
   BrowserProvider,
   Signer,
+  Transaction,
+  TransactionReceipt,
+  TransactionResponse,
 } from 'ethers'
-
-import { GetAllTransactions, dbCLient } from '../graphql'
-import { PutTransaction } from '../graphql'
+import { FormFields, SagaParams } from './reducers/web3reducer.types'
+import { GetTransactions, PutTransaction, dbCLient } from '../data'
 import {
   getTransactions,
   sendTransaction,
   setDataStatus,
   setTransactions,
 } from './reducers/web3Reducer'
+import { put, takeEvery } from 'redux-saga/effects'
+
 import { FIELD_LIST } from '../constants'
 
-function* makeTransaction({ payload }: any) {
-  console.log('p', payload)
+function* makeTransaction({ payload }: SagaParams<FormFields>) {
   const walletProvider = new BrowserProvider(window.ethereum)
   const signer: Signer = yield walletProvider.getSigner()
   try {
@@ -50,11 +49,14 @@ function* makeTransaction({ payload }: any) {
   }
 }
 
-function* fetchTransactions(): unknown {
+function* fetchTransactions({ payload }: SagaParams<string>): unknown {
   yield put(setDataStatus({ transactionsStatus: 'loading' }))
   try {
-    const { data } = yield dbCLient.query({ query: GetAllTransactions })
-    yield put(setTransactions(data.getAllTransactions))
+    const { data } = yield dbCLient.query({
+      query: GetTransactions,
+      variables: { from: payload },
+    })
+    yield put(setTransactions(data.getTransactions))
     yield put(setDataStatus({ transactionsStatus: 'success' }))
   } catch (error: any) {
     setDataStatus({

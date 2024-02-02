@@ -1,5 +1,5 @@
-import { gql } from '@apollo/client'
 import { FIELD_LIST } from '../constants'
+import { gql } from '@apollo/client'
 
 const dataFields = FIELD_LIST.map((field) => `  ${field}`).join('\n')
 
@@ -22,14 +22,6 @@ export const GetTransaction = gql`
 export const GetTransactions = gql`
   query GetTransactions($from: String!) {
     getTransactions(from: $from) {
-      ${dataFields}
-    }
-  }
-`
-
-export const GetAllTransactions = gql`
-  query GetAllTransactions {
-    getAllTransactions {
       ${dataFields}
     }
   }

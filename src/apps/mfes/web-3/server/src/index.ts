@@ -1,16 +1,16 @@
-import { ApolloServer } from '@apollo/server'
-import { expressMiddleware } from '@apollo/server/express4'
-import { ApolloServerPluginDrainHttpServer } from '@apollo/server/plugin/drainHttpServer'
-import mongoose from 'mongoose'
-
-import express from 'express'
-import http from 'http'
-import cors from 'cors'
-// import { json } from 'body-parser'
 import { resolvers, schema as typeDefs } from './data'
 
+import { ApolloServer } from '@apollo/server'
+import { ApolloServerPluginDrainHttpServer } from '@apollo/server/plugin/drainHttpServer'
+import bodyParser from 'body-parser'
+import cors from 'cors'
+import express from 'express'
+import { expressMiddleware } from '@apollo/server/express4'
+import http from 'http'
+import mongoose from 'mongoose'
+
 const port = 4000
-const ORIGIN = 'http://localhost:5001/'
+const ORIGIN = 'http://localhost:5003'
 
 mongoose.connect('mongodb://mongo:27017/mydb')
 
@@ -45,7 +45,7 @@ const startServer = async () => {
     cors({
       origin: ORIGIN,
     }),
-    // json(),
+    bodyParser.json(),
     expressMiddleware(server, {
       context: async ({ req }) => ({
         token: req.headers.token,
