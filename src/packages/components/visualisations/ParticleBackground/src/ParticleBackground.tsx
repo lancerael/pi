@@ -24,14 +24,12 @@ export const ParticleBackground = ({
   useEffect(() => {
     if (!backgroundRef.current) return
     particleManager.current = new Manager({
-      width: backgroundRef.current.clientWidth,
-      height: backgroundRef.current.clientHeight,
-      count: 50,
+      count: 100,
       config: {
         speed: 30,
-        scroller: window,
-        useParallax: true,
-        useMouseRepel: true,
+        isParallax: true,
+        isMouseRepelled: true,
+        isCenterRepelled: true,
       },
     })
   }, [backgroundRef.current])

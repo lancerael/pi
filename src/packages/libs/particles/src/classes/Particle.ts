@@ -1,34 +1,24 @@
-import Dimensions from './Dimensions'
+import {
+  Accelleration,
+  Coords,
+  ParticleConfig,
+  PositionOffsets,
+} from './Manager'
 
 export const randomNumber = (start: number, end: number) => {
   return Math.floor(Math.random() * end) + start
 }
 
-export type ParticleProps = Partial<Pick<Particle, 'x' | 'y' | 'z'>> & {
-  config?: Partial<ParticleConfig>
-}
-export type ParticlePropsExtended = Pick<Particle, 'dimensions'>
-
-export enum Accelleration {
-  Accellerate = 'accellerate',
-  None = 'none',
-  Decellerate = 'decellerate',
-}
-
-export interface ParticleConfig {
-  lateralRange: [number, number]
-  speed: number
-  acceleration: Accelleration
-  reflectWalls: boolean
-  reflectLateral: boolean
-  recycle: boolean
-  startAtBack: boolean
-  repel?: [number, number]
-  mouseRepel?: [number, number]
-}
+export type ParticleProps = Pick<
+  Particle,
+  'dimensions' | 'positionOffsets' | 'repelPoint'
+> &
+  Partial<Pick<Particle, 'x' | 'y' | 'z' | 'config'>>
 
 class Particle {
-  dimensions: Dimensions
+  dimensions: Coords
+  positionOffsets: PositionOffsets
+  repelPoint?: Coords
   x: number = 0
   y: number = 0
   z: number = 0
@@ -45,10 +35,8 @@ class Particle {
     lateralRange: [1, 10],
     speed: Math.random(),
     acceleration: Accelleration.Accellerate,
-    reflectWalls: false,
-    reflectLateral: false,
-    recycle: true,
-    startAtBack: true,
+    isRecycled: true,
+    isDistantSpawn: true,
   }
 
   constructor({
@@ -56,9 +44,13 @@ class Particle {
     y,
     z,
     dimensions,
+    positionOffsets,
+    repelPoint,
     config,
-  }: ParticleProps & Pick<Particle, 'dimensions'>) {
+  }: ParticleProps) {
     this.dimensions = dimensions
+    this.repelPoint = repelPoint
+    this.positionOffsets = positionOffsets
     this.config = {
       ...this.config,
       ...config,
@@ -70,74 +62,70 @@ class Particle {
     return {
       accellerate: this.age / 20,
       none: 1,
-      decellerate: this.config.lateralRange[1] - this.age / 20,
-    }[this.config.acceleration]
+      decellerate: this.config.lateralRange![1] - this.age / 20,
+    }[this.config.acceleration!]
   }
 
-  get repelPoint() {
-    return (
-      this.config.mouseRepel ??
-      this.config.repel ?? [
-        this.dimensions.width / 2,
-        this.dimensions.height / 2,
-      ]
-    )
-  }
-
-  init = ({ x, y, z }: ParticleProps = {}) => {
+  init = ({ x, y, z }: Partial<ParticleProps> = {}) => {
     this.age = 1
-    this.x = x ?? randomNumber(1, this.dimensions.width) + this.scrollTop
-    this.y = y ?? randomNumber(1, this.dimensions.height)
+    this.x = x ?? randomNumber(1, this.dimensions[0]) + this.scrollTop
+    this.y = y ?? randomNumber(1, this.dimensions[1])
     this.z =
-      z ?? this.config.startAtBack
-        ? this.config.lateralRange[0]
+      z ?? this.config.isDistantSpawn
+        ? this.config.lateralRange![0]
         : randomNumber(1, 9)
   }
 
-  reflectOrKill = (axis: 'x' | 'y', dimension: 'width' | 'height') => {
+  reflectOrKill = (axis: 'x' | 'y') => {
     if (
       this[axis] + this[`d${axis}`] >
-        this.dimensions[dimension] + this.padding ||
+        this.dimensions[axis === 'x' ? 0 : 1] + this.padding ||
       this[axis] + this[`d${axis}`] < -this.padding
     ) {
-      if (this.config.reflectWalls) {
+      if (this.config.isWallReflected) {
         this[`d${axis}`] = -this[`d${axis}`]
       } else {
         this.isDead = true
       }
-      if (this.config.reflectLateral) {
+      if (this.config.isLateralReflected) {
         this.dz = -this.dz
       }
     }
   }
 
-  setVelocity = () => {
-    if (!this.repelPoint.some(Boolean)) return
+  setRepelVelocity = () => {
+    if (!this.repelPoint?.some(Boolean)) return
     const xDist = this.x - this.repelPoint[0]
     const yDist = this.y - this.repelPoint[1]
     const magnitude = Math.sqrt(xDist * xDist + yDist * yDist)
-    this.dx = (xDist * this.accelerator * this.config.speed) / magnitude
-    this.dy = (yDist * this.accelerator * this.config.speed) / magnitude
+    this.dx = (xDist * this.accelerator * this.config.speed!) / magnitude
+    this.dy = (yDist * this.accelerator * this.config.speed!) / magnitude
     if (
-      this.config.reflectLateral &&
-      (this.z + this.dz < this.config.lateralRange[0] ||
-        this.z + this.dz > this.config.lateralRange[1])
+      this.config.isLateralReflected &&
+      (this.z + this.dz < this.config.lateralRange![0] ||
+        this.z + this.dz > this.config.lateralRange![1])
     ) {
       this.dz = -this.dz
     }
   }
 
-  move = (
-    offsetY: number = 0,
-    scrollTop: number = 0,
-    mouseRepel?: [number, number]
-  ) => {
-    this.scrollTop = scrollTop
-    this.config.mouseRepel = mouseRepel
+  move = ({
+    dimensions,
+    repelPoint,
+    positionOffsets,
+    config,
+  }: ParticleProps) => {
+    this.dimensions = dimensions
+    this.repelPoint = repelPoint
+    this.positionOffsets = positionOffsets
+    this.config = {
+      ...this.config,
+      ...config,
+    }
 
     // Recycle or ignore dead particles
     if (this.isDead) {
-      if (!this.config.recycle) return
+      if (!this.config.isRecycled) return
       if (this.age > 1) {
         this.init()
         return
@@ -148,14 +136,14 @@ class Particle {
 
     this.age++
 
-    this.setVelocity()
+    this.setRepelVelocity()
 
-    this.x += this.dx
-    this.y += this.dy + offsetY * (this.age / 5)
-    this.z += this.dz * this.accelerator * this.config.speed
+    this.x += this.dx + positionOffsets.offsets[0] * (this.age / 5)
+    this.y += this.dy + positionOffsets.offsets[1] * (this.age / 5)
+    this.z += this.dz * this.accelerator * this.config.speed!
 
-    this.reflectOrKill('x', 'width')
-    this.reflectOrKill('y', 'height')
+    this.reflectOrKill('x')
+    this.reflectOrKill('y')
   }
 }
 
