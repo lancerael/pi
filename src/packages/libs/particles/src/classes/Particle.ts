@@ -24,6 +24,7 @@ export interface ParticleConfig {
   recycle: boolean
   startAtBack: boolean
   repel?: [number, number]
+  mouseRepel?: [number, number]
 }
 
 class Particle {
@@ -75,6 +76,7 @@ class Particle {
 
   get repelPoint() {
     return (
+      this.config.mouseRepel ??
       this.config.repel ?? [
         this.dimensions.width / 2,
         this.dimensions.height / 2,
@@ -125,8 +127,13 @@ class Particle {
     }
   }
 
-  move = (offsetY: number = 0, scrollTop: number = 0) => {
+  move = (
+    offsetY: number = 0,
+    scrollTop: number = 0,
+    mouseRepel?: [number, number]
+  ) => {
     this.scrollTop = scrollTop
+    this.config.mouseRepel = mouseRepel
 
     // Recycle or ignore dead particles
     if (this.isDead) {
@@ -139,14 +146,12 @@ class Particle {
       }
     }
 
-    // console.log(offsetY)
-
     this.age++
 
     this.setVelocity()
 
     this.x += this.dx
-    this.y += this.dy + offsetY * (this.age / 3)
+    this.y += this.dy + offsetY * (this.age / 5)
     this.z += this.dz * this.accelerator * this.config.speed
 
     this.reflectOrKill('x', 'width')

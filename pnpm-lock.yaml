@@ -1680,9 +1680,6 @@ importers:
       '@pi-lib/styles':
         specifier: workspace:^
         version: link:../../../styles
-      '@pi-lib/use-hash-comparison':
-        specifier: workspace:^
-        version: link:../../../hooks/usehashComparison
       '@pi-lib/utils':
         specifier: workspace:^
         version: link:../../../utils
@@ -2256,6 +2253,13 @@ importers:
         version: 0.34.6(jsdom@20.0.3)
 
   src/packages/libs/particles:
+    dependencies:
+      '@pi-lib/do-transition':
+        specifier: workspace:^
+        version: link:../../helpers/doTransition
+      '@pi-lib/utils':
+        specifier: workspace:^
+        version: link:../../utils
     devDependencies:
       prettier:
         specifier: ^3.2.5

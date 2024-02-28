@@ -30,6 +30,8 @@ export const ParticleBackground = ({
       config: {
         speed: 30,
         scroller: window,
+        useParallax: true,
+        useMouseRepel: true,
       },
     })
   }, [backgroundRef.current])

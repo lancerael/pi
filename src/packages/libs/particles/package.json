@@ -9,6 +9,10 @@
     "dev": "vite",
     "preview": "vite preview"
   },
+  "dependencies": {
+    "@pi-lib/do-transition": "workspace:^",
+    "@pi-lib/utils": "workspace:^"
+  },
   "devDependencies": {
     "prettier": "^3.2.5",
     "typescript": "^5.2.2",
