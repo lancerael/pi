@@ -26,10 +26,13 @@ export const ParticleBackground = ({
     particleManager.current = new Manager({
       count: 100,
       config: {
-        speed: 30,
         isParallax: true,
-        isMouseRepelled: true,
-        isCenterRepelled: true,
+        // isMouseRepelled: true,
+        // isCenterRepelled: true,
+        // isWallReflected: true,
+        // isRecycled: false,
+        // isDistantSpawn: true,
+        speed: 1000,
       },
     })
   }, [backgroundRef.current])
@@ -58,10 +61,11 @@ export const ParticleBackground = ({
                 width: z,
                 height: z,
                 display: isDead ? 'none' : 'block',
-                opacity: age >= 1 ? 1 - age / 30 - dimmer : 0,
+                opacity: z >= 1 && age > 3 ? 1 - z / 20 - dimmer : 0,
+                color: 'white',
               }}
             >
-              {/* {left} */}
+              {/* {age} */}
             </StyledCircle>
           )
         }

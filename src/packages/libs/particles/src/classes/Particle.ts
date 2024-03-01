@@ -1,9 +1,10 @@
 import {
   Accelleration,
   Coords,
+  MoveZ,
   ParticleConfig,
   PositionOffsets,
-} from './Manager'
+} from '../types'
 
 export const randomNumber = (start: number, end: number) => {
   return Math.floor(Math.random() * end) + start
@@ -27,16 +28,23 @@ class Particle {
   dy: number = randomNumber(0, 2) - 1 || 1
   dz: number = 0.05
   age: number = 1
-  padding: number = 50
+  padding: number = 0
   isDead: boolean = false
   scrollTop: number = 0
 
+  fx: number = 0
+  fy: number = 0
+  forceDirection: number = 70
+  forceAmount: number = 3
+  forceVariance: number = 10
+
   config: ParticleConfig = {
-    lateralRange: [1, 10],
-    speed: Math.random(),
+    rangeZ: [1, 20],
+    moveZ: MoveZ.None,
+    speed: Math.random() * 100,
     acceleration: Accelleration.Accellerate,
     isRecycled: true,
-    isDistantSpawn: true,
+    repelStrength: 0.5 + Math.random() / 2,
   }
 
   constructor({
@@ -62,7 +70,7 @@ class Particle {
     return {
       accellerate: this.age / 20,
       none: 1,
-      decellerate: this.config.lateralRange![1] - this.age / 20,
+      decellerate: this.config.rangeZ![1] - this.age / 20,
     }[this.config.acceleration!]
   }
 
@@ -72,11 +80,24 @@ class Particle {
     this.y = y ?? randomNumber(1, this.dimensions[1])
     this.z =
       z ?? this.config.isDistantSpawn
-        ? this.config.lateralRange![0]
+        ? this.config.rangeZ![0]
         : randomNumber(1, 9)
   }
 
-  reflectOrKill = (axis: 'x' | 'y') => {
+  reflectOrKill = (axis: 'x' | 'y' | 'z') => {
+    if (axis === 'z') {
+      if (
+        this.z + this.dz < this.config.rangeZ![0] ||
+        this.z + this.dz > this.config.rangeZ![1]
+      ) {
+        if (this.config.isReflectedZ) {
+          this.dz = -this.dz
+        } else {
+          this.isDead = true
+        }
+      }
+      return
+    }
     if (
       this[axis] + this[`d${axis}`] >
         this.dimensions[axis === 'x' ? 0 : 1] + this.padding ||
@@ -87,25 +108,22 @@ class Particle {
       } else {
         this.isDead = true
       }
-      if (this.config.isLateralReflected) {
-        this.dz = -this.dz
-      }
     }
   }
 
-  setRepelVelocity = () => {
-    if (!this.repelPoint?.some(Boolean)) return
-    const xDist = this.x - this.repelPoint[0]
-    const yDist = this.y - this.repelPoint[1]
-    const magnitude = Math.sqrt(xDist * xDist + yDist * yDist)
-    this.dx = (xDist * this.accelerator * this.config.speed!) / magnitude
-    this.dy = (yDist * this.accelerator * this.config.speed!) / magnitude
-    if (
-      this.config.isLateralReflected &&
-      (this.z + this.dz < this.config.lateralRange![0] ||
-        this.z + this.dz > this.config.lateralRange![1])
-    ) {
-      this.dz = -this.dz
+  setVelocity = () => {
+    if (this.repelPoint?.some(Boolean)) {
+      const xDist = this.x - this.repelPoint[0]
+      const yDist = this.y - this.repelPoint[1]
+      const magnitude =
+        Math.sqrt(xDist * xDist + yDist * yDist) / this.config.repelStrength!
+      this.dx = (xDist * this.accelerator * this.config.speed!) / magnitude
+      this.dy = (yDist * this.accelerator * this.config.speed!) / magnitude
+    }
+    if (this.forceDirection && this.forceAmount) {
+      const radians = (this.forceDirection * Math.PI) / 180
+      this.fx = this.forceAmount * Math.cos(radians)
+      this.fy = this.forceAmount * Math.sin(radians)
     }
   }
 
@@ -136,14 +154,22 @@ class Particle {
 
     this.age++
 
-    this.setRepelVelocity()
+    this.setVelocity()
 
-    this.x += this.dx + positionOffsets.offsets[0] * (this.age / 5)
-    this.y += this.dy + positionOffsets.offsets[1] * (this.age / 5)
-    this.z += this.dz * this.accelerator * this.config.speed!
+    this.x += this.dx + this.fx + positionOffsets.offsets[0]
+    this.y += this.dy + this.fy + positionOffsets.offsets[1]
+
+    if (this.config.moveZ !== MoveZ.None) {
+      this.z +=
+        this.dz *
+        this.accelerator *
+        (this.config.speed! / 100) *
+        (this.config.moveZ === MoveZ.Forwards ? 1 : -1)
+    }
 
     this.reflectOrKill('x')
     this.reflectOrKill('y')
+    this.reflectOrKill('z')
   }
 }
 

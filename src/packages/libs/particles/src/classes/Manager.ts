@@ -1,39 +1,8 @@
+import { Coords, ManagerProps, ParticleConfig, PositionOffsets } from '../types'
 import Particle, { ParticleProps } from './Particle'
 
 import doTransition from '@pi-lib/do-transition'
 import { throttle } from '@pi-lib/utils'
-
-export type Coords = [number, number]
-
-export interface ManagerProps
-  extends Partial<Pick<Manager, 'config' | 'container'>> {
-  count: number
-}
-
-export enum Accelleration {
-  Accellerate = 'accellerate',
-  None = 'none',
-  Decellerate = 'decellerate',
-}
-
-export interface ParticleConfig {
-  isParallax?: boolean
-  isMouseRepelled?: boolean
-  isCenterRepelled?: boolean
-  isWallReflected?: boolean
-  isLateralReflected?: boolean
-  isRecycled?: boolean
-  isDistantSpawn?: boolean
-  speed?: number
-  acceleration?: Accelleration
-  lateralRange?: [number, number]
-  repelPoint?: [number, number]
-}
-
-export interface PositionOffsets {
-  scroll: Coords
-  offsets: Coords
-}
 
 export default class Manager {
   public container: typeof window | HTMLElement = window
@@ -88,26 +57,41 @@ export default class Manager {
       throttle((e: MouseEvent) => {
         if (!e || !this.config.isMouseRepelled) return
         clearTimeout(this.mouseRepelTimeout)
-        const { clientX, clientY } = e
         this.mouseRepelTransition?.()
-        this.repelPoint = [clientX, clientY]
+        const { clientX, clientY } = e
+        if (this.repelPoint || this.centerRepelPoint) {
+          this.setMouseRepelTransition(
+            (this.repelPoint ?? this.centerRepelPoint) as number[],
+            [clientX, clientY]
+          )
+        } else {
+          this.repelPoint = [clientX, clientY]
+        }
+
         this.mouseRepelTimeout = setTimeout(() => {
           if (this.centerRepelPoint) {
-            this.mouseRepelTransition = doTransition({
-              values: this.repelPoint as number[],
-              targets: this.centerRepelPoint,
-              callback: (newTarget) => {
-                this.repelPoint = newTarget as Coords
-              },
-              intervalId: `particleTarget`,
-              increments: 15,
-            })
+            this.setMouseRepelTransition(
+              this.repelPoint as number[],
+              this.centerRepelPoint
+            )
           } else {
             this.repelPoint = undefined
           }
         }, 2000)
       }, 100)
     )
+  }
+
+  setMouseRepelTransition = (values: number[], targets: number[]) => {
+    this.mouseRepelTransition = doTransition({
+      values,
+      targets,
+      callback: (newTarget) => {
+        this.repelPoint = newTarget as Coords
+      },
+      intervalId: `particleTarget`,
+      increments: 15,
+    })
   }
 
   get dimensions(): Coords {

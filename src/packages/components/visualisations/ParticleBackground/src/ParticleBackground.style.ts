@@ -14,4 +14,5 @@ export const StyledCircle = styled.div`
   position: absolute;
   border-radius: 50%;
   transition: all 0.1s linear;
+  filter: blur(1px);
 `
