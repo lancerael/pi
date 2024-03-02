@@ -6,7 +6,7 @@
 
 A monorepo design system of React UI components and supporting utilities. Pi supports theming and comes with some starter themes. All packages prefixed with `@pi-lib/...` are standalone npm modules for use with a package manager like `npm`, `yarn` or `pnpm`.
 
-Create a theme, use one of the provided themes or stick with the default, then build your app with the React components by importing them individually. Check out the docs for more details on usage.
+Create a theme, use one of the provided themes or stick with the default, then build your app with the React components by importing them individually. 
 
 - <a href="https://demo.lance-taylor.com" target="_blank">Demo</a>
 - <a href="https://pi.lance-taylor.com" target="_blank">Docs</a>
