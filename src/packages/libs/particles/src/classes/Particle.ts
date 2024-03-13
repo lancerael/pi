@@ -3,18 +3,13 @@ import {
   Coords,
   MoveZ,
   ParticleConfig,
+  ParticleProps,
   PositionOffsets,
 } from '../types'
 
 export const randomNumber = (start: number, end: number) => {
   return Math.floor(Math.random() * end) + start
 }
-
-export type ParticleProps = Pick<
-  Particle,
-  'dimensions' | 'positionOffsets' | 'repelPoint'
-> &
-  Partial<Pick<Particle, 'x' | 'y' | 'z' | 'config'>>
 
 class Particle {
   dimensions: Coords
@@ -24,27 +19,29 @@ class Particle {
   y: number = 0
   z: number = 0
 
+  // Tracking
+  age: number = 1
+  isDead: boolean = false
+
+  // Acceleration
   dx: number = randomNumber(0, 2) - 1 || 1
   dy: number = randomNumber(0, 2) - 1 || 1
   dz: number = 0.05
-  age: number = 1
-  padding: number = 0
-  isDead: boolean = false
-  scrollTop: number = 0
 
+  // Force
   fx: number = 0
   fy: number = 0
-  forceDirection: number = 70
-  forceAmount: number = 3
-  forceVariance: number = 10
 
+  // Config
+  padding: number = 0
+  scrollTop: number = 0
   config: ParticleConfig = {
     rangeZ: [1, 20],
     moveZ: MoveZ.None,
-    speed: Math.random() * 100,
+    speed: Math.random(),
     acceleration: Accelleration.Accellerate,
     isRecycled: true,
-    repelStrength: 0.5 + Math.random() / 2,
+    repelStrength: 1.5 + Math.random() / 2,
   }
 
   constructor({
@@ -63,6 +60,7 @@ class Particle {
       ...this.config,
       ...config,
     }
+    // console.log(this.config.speed)
     this.init({ x, y, z })
   }
 
@@ -79,9 +77,9 @@ class Particle {
     this.x = x ?? randomNumber(1, this.dimensions[0]) + this.scrollTop
     this.y = y ?? randomNumber(1, this.dimensions[1])
     this.z =
-      z ?? this.config.isDistantSpawn
-        ? this.config.rangeZ![0]
-        : randomNumber(1, 9)
+      z ??
+      this.config.size ??
+      (this.config.isDistantSpawn ? this.config.rangeZ![0] : randomNumber(1, 9))
   }
 
   reflectOrKill = (axis: 'x' | 'y' | 'z') => {
@@ -112,18 +110,19 @@ class Particle {
   }
 
   setVelocity = () => {
+    const { repelStrength, speed, forceAmount, forceDirection } = this.config
     if (this.repelPoint?.some(Boolean)) {
       const xDist = this.x - this.repelPoint[0]
       const yDist = this.y - this.repelPoint[1]
       const magnitude =
-        Math.sqrt(xDist * xDist + yDist * yDist) / this.config.repelStrength!
-      this.dx = (xDist * this.accelerator * this.config.speed!) / magnitude
-      this.dy = (yDist * this.accelerator * this.config.speed!) / magnitude
+        Math.sqrt(xDist * xDist + yDist * yDist) / repelStrength!
+      this.dx = (xDist * this.accelerator) / magnitude
+      this.dy = (yDist * this.accelerator) / magnitude
     }
-    if (this.forceDirection && this.forceAmount) {
-      const radians = (this.forceDirection * Math.PI) / 180
-      this.fx = this.forceAmount * Math.cos(radians)
-      this.fy = this.forceAmount * Math.sin(radians)
+    if (forceDirection && forceAmount) {
+      const radians = (forceDirection * Math.PI) / 180
+      this.fx = forceAmount * Math.cos(radians)
+      this.fy = forceAmount * Math.sin(radians)
     }
   }
 
@@ -156,14 +155,16 @@ class Particle {
 
     this.setVelocity()
 
-    this.x += this.dx + this.fx + positionOffsets.offsets[0]
-    this.y += this.dy + this.fy + positionOffsets.offsets[1]
+    this.x +=
+      this.dx * this.config.speed! + this.fx + positionOffsets.offsets[0]
+    this.y +=
+      this.dy * this.config.speed! + this.fy + positionOffsets.offsets[1]
 
     if (this.config.moveZ !== MoveZ.None) {
       this.z +=
         this.dz *
         this.accelerator *
-        (this.config.speed! / 100) *
+        (this.config.speed! / 3) *
         (this.config.moveZ === MoveZ.Forwards ? 1 : -1)
     }
 

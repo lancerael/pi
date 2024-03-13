@@ -1,6 +1,12 @@
-import { Coords, ManagerProps, ParticleConfig, PositionOffsets } from '../types'
-import Particle, { ParticleProps } from './Particle'
+import {
+  Coords,
+  ManagerProps,
+  ParticleConfig,
+  ParticleProps,
+  PositionOffsets,
+} from '../types'
 
+import Particle from './Particle'
 import doTransition from '@pi-lib/do-transition'
 import { throttle } from '@pi-lib/utils'
 
@@ -82,18 +88,6 @@ export default class Manager {
     )
   }
 
-  setMouseRepelTransition = (values: number[], targets: number[]) => {
-    this.mouseRepelTransition = doTransition({
-      values,
-      targets,
-      callback: (newTarget) => {
-        this.repelPoint = newTarget as Coords
-      },
-      intervalId: `particleTarget`,
-      increments: 15,
-    })
-  }
-
   get dimensions(): Coords {
     return this.container instanceof Window
       ? [this.container.innerWidth, this.container.innerHeight]
@@ -113,6 +107,18 @@ export default class Manager {
       repelPoint: this.repelPoint ?? this.centerRepelPoint,
       config: this.config,
     }
+  }
+
+  setMouseRepelTransition = (values: number[], targets: number[]) => {
+    this.mouseRepelTransition = doTransition({
+      values,
+      targets,
+      callback: (newTarget) => {
+        this.repelPoint = newTarget as Coords
+      },
+      intervalId: `particleTarget`,
+      increments: 15,
+    })
   }
 
   addParticle = (particleProps: Partial<ParticleProps> = {}) => {

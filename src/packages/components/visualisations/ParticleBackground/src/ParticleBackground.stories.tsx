@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
+import { MoveZ } from '@pi-lib/particles/src/types'
 import { ParticleBackground } from './ParticleBackground'
 import { ParticleBackgroundProps } from './ParticleBackground.types'
 
@@ -8,7 +9,7 @@ const render = (props: ParticleBackgroundProps) => (
     <ParticleBackground {...props} />
 
     <div style={{ padding: '1rem' }}>
-      <div>
+      {/* <div>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed fermentum
         sapien vitae tortor pulvinar commodo. Cras accumsan dapibus nunc, nec
         molestie arcu interdum nec. Sed vel eros sed nulla bibendum convallis.
@@ -42,7 +43,7 @@ const render = (props: ParticleBackgroundProps) => (
         sed consequat dui tempor id. Duis at lorem vitae neque tincidunt
         eleifend sit amet vel nunc. Suspendisse a purus nec nulla malesuada
         vehicula. Integer vitae eros nec ligula accumsan condimentum.
-      </div>
+      </div> */}
     </div>
   </div>
 )
@@ -55,10 +56,54 @@ const meta: Meta<typeof ParticleBackground> = {
 }
 
 /**
- * The default state for the component
+ * A snowy background.
  */
-export const Default: StoryObj<typeof ParticleBackground> = {
-  args: {},
+export const Snow: StoryObj<typeof ParticleBackground> = {
+  args: {
+    forceDirection: 70,
+    forceAmount: 3,
+    forceVariance: 10,
+  },
+  render,
+}
+
+/**
+ * A trip through the stars
+ */
+export const Stellar: StoryObj<typeof ParticleBackground> = {
+  args: {
+    speed: 20,
+    isMouseRepelled: true,
+    isCenterRepelled: true,
+    repelStrength: 0.5,
+    isRecycled: true,
+    isDistantSpawn: true,
+    moveZ: MoveZ.Forwards,
+  },
+  render,
+}
+
+/**
+ * A dusty background.
+ */
+export const Dust: StoryObj<typeof ParticleBackground> = {
+  args: {
+    count: 20,
+    speed: 0.5,
+  },
+  render,
+}
+
+/**
+ * A bouncy background.
+ */
+export const Pong: StoryObj<typeof ParticleBackground> = {
+  args: {
+    count: 1,
+    isWallReflected: true,
+    speed: 20,
+    size: 10,
+  },
   render,
 }
 

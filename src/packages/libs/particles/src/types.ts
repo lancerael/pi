@@ -1,4 +1,5 @@
 import Manager from './classes/Manager'
+import Particle from './classes/Particle'
 
 export type Coords = [number, number]
 
@@ -6,6 +7,12 @@ export interface ManagerProps
   extends Partial<Pick<Manager, 'config' | 'container'>> {
   count: number
 }
+
+export type ParticleProps = Pick<
+  Particle,
+  'dimensions' | 'positionOffsets' | 'repelPoint'
+> &
+  Partial<Pick<Particle, 'x' | 'y' | 'z' | 'config'>>
 
 export enum Accelleration {
   Accellerate = 'accellerate',
@@ -29,10 +36,14 @@ export interface ParticleConfig {
   isDistantSpawn?: boolean
   moveZ?: MoveZ
   speed?: number
+  size?: number
   acceleration?: Accelleration
   rangeZ?: Coords
   repelPoint?: Coords
   repelStrength?: number
+  forceDirection?: number
+  forceAmount?: number
+  forceVariance?: number
 }
 
 export interface PositionOffsets {

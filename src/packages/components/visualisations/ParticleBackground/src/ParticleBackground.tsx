@@ -15,7 +15,8 @@ import { ParticleBackgroundProps } from './ParticleBackground.types'
  */
 export const ParticleBackground = ({
   dataTestid = 'pi-lib-particle-background',
-  ...props
+  count = 100,
+  ...config
 }: ParticleBackgroundProps) => {
   const backgroundRef = useRef<HTMLDivElement>(null)
   const particleManager = useRef<Manager>()
@@ -24,15 +25,10 @@ export const ParticleBackground = ({
   useEffect(() => {
     if (!backgroundRef.current) return
     particleManager.current = new Manager({
-      count: 100,
+      count,
       config: {
         isParallax: true,
-        // isMouseRepelled: true,
-        // isCenterRepelled: true,
-        // isWallReflected: true,
-        // isRecycled: false,
-        // isDistantSpawn: true,
-        speed: 1000,
+        ...config,
       },
     })
   }, [backgroundRef.current])
@@ -58,19 +54,18 @@ export const ParticleBackground = ({
               style={{
                 left,
                 top,
-                width: z,
-                height: z,
+                width: `${z}px`,
+                height: `${z}px`,
                 display: isDead ? 'none' : 'block',
                 opacity: z >= 1 && age > 3 ? 1 - z / 20 - dimmer : 0,
                 color: 'white',
               }}
             >
-              {/* {age} */}
+              {/* {z} */}
             </StyledCircle>
           )
         }
       )}
-      {/* </svg> */}
     </StyledParticleBackground>
   )
 }
